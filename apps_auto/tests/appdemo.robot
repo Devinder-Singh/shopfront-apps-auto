@@ -12,13 +12,3 @@ Open App and Register
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Menu
     Click Menu Logout
     [Teardown]    Tear Down
-
-Open App and Register 2
-    [Setup]    Start Application
-    Click Menu
-    Click Menu Login
-    Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot123
-    Verify Logged In    Automation0.6560
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Menu
-    Click Menu Logout
-    [Teardown]    Tear Down

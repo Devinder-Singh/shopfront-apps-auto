@@ -1,6 +1,6 @@
 *** Variables ***
-${PLATFORM_VERSION}    14.1
-${UDID}           FA6D6E9E-F93E-4FA0-A9D7-34B49952B9C8
+${PLATFORM_VERSION}    14.2
+${UDID}           403670E1-384B-461E-A797-D1EB5D17D40C
 ${REMOTE_URL}     http://0.0.0.0:4723/wd/hub
 ${APP_ACTIVITY}    ${EMPTY}
 ${APP_PACKAGE}    com.takealot.iphone.dev

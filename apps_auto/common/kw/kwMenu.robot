@@ -3,6 +3,7 @@ Library           TalLibrary
 
 *** Keywords ***
 Click Menu
+    Wait Until Element Is Visible    ${btnMenu}    60s
     Click Element    ${btnMenu}
 
 Click Menu Login
