@@ -3,3 +3,4 @@
 extension/app/node_modules
 .DS_Store
 extension/.DS_Store
+.pyc
