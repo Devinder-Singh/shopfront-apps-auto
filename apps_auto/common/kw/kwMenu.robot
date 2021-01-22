@@ -3,7 +3,7 @@ Library           TalLibrary
 
 *** Keywords ***
 Click Menu
-    Wait Until Element Is Visible    ${btnMenu}    60s
+    Wait Until Element Is Visible    ${btnMenu}    30s
     Click Element    ${btnMenu}
 
 Click Menu Login
@@ -13,28 +13,37 @@ Click Menu Logout
     Click Element    ${btnLogout}
     Page Should Contain Element    ${btnMenuLogin}
 
-Login Takealot
-    [Arguments]    ${email}    ${password}
-    Clear Text    ${txtEmail}
-    Input Text    ${txtEmail}    ${email}
-    Input Text    ${txtPassword}    ${password}
-    Click Element    ${btnLogin}
+Click Menu Daily Deals
+    Click Element    ${btnMenuDailyDeals}
 
-Start Application
-    &{cap}=    Get Capabilities    ${False}    ${True}
-    Log Many    &{cap}
-    Open Application    ${REMOTE_URL}    &{cap}
-    Set Implicitly Wait    5
+Click Menu Shop By Department
+    Click Element    ${mnuShopByDepartment}
 
-Tear Down
-    Capture Page Screenshot
-    Close Application
+Click Menu Sport and Fitness
+    Wait Until Element Is Visible    ${mnuSportFitness}    5s
+    Click Element    ${mnuSportFitness}
 
-Verify Logged In
-    [Arguments]    ${verifyText}
-    ${lblUserName}=    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Set Variable    id=${verifyText}
-    ...    ELSE    Set Variable    ${lblUserName}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblUserName}    10s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Logged in successfully
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    You are logged in    10s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Contain Text    ${lblUserName}    ${verifyText}
+Click Menu My Account
+    Click Element    ${mnuMyAccount}
+
+Click Menu Address Book
+    Wait Until Element Is Visible    ${btnMenuAddressBook}    5s
+    Click Element    ${btnMenuAddressBook}
+
+Click Menu Personal Detail
+    Wait Until Element Is Visible    ${btnMenuPersonalDetail}    5s
+    Click Element    ${btnMenuPersonalDetail}
+
+Click Back My Account
+    Wait Until Element Is Visible    ${btnBackMyAcc}    5s
+    Click Element    ${btnBackMyAcc}
+
+Click Wishlist
+    Wait Until Element Is Visible    ${btnWishlist}    1s
+    Click Element    ${btnWishlist}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistItems}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlistItems}
+
+Click Cart
+    Wait Until Element Is Visible    ${btnCart}    1s
+    Click Element    ${btnCart}
