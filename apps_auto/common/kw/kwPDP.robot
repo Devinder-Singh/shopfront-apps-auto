@@ -23,7 +23,6 @@ Click Airtime
 Click 10 Kg
     Wait Until Element Is Visible    ${lblTenKgValue}    30s
     Click Element    ${lblTenKgValue}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${lblTenKgValue}
 
 Click Go To Cart
     Wait Until Element Is Visible    ${btnGoToCart}    30s

@@ -13,21 +13,22 @@ Add Delivery Address
     Input Text    ${txtRecipientName}    ${name}
     Input Text    ${txtRecipientMobile}    ${mobile}
     Input Text    ${txtRecipientStreet}    ${street}
-    Click Element    ${txtRecipientStreet}
-    Press Keycode    AndroidKeyCode.ENTER
-    Wait Until Element Is Visible    ${lblStreetAddress}    10s
-    Click Element    ${lblStreetAddress}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
+    Sleep    5s
+    Sleep    5s
     Click Element    ${btnSaveAddress}
 
 Add Delivery Address My Acc
     [Arguments]    ${name}    ${mobile}    ${street}
-    Wait Until Element Is Visible    ${txtRecipientName}    5s
-    Clear Text    ${txtRecipientName}
-    Input Text    ${txtRecipientName}    ${name}
-    Input Text    ${txtRecipientMobile}    ${mobile}
-    Input Text    ${txtRecipientStreet}    ${street}
-    Comment    PAUSE
-    Press Keycode    20
-    Press Keycode    20
-    Press Keycode    66
+
+    Wait Until Element Is Visible    ${txtRecipientNameMyAcc}    5s
+
+    Clear Text    ${txtRecipientNameMyAcc}
+    Input Text    ${txtRecipientNameMyAcc}    ${name}
+    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
+    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Sleep    10s
     Click Element    ${btnSaveAddress}

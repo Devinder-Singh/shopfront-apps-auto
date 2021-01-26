@@ -1,9 +1,11 @@
 *** Settings ***
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
+Resource    ../common/kw/kwMenu.robot
 
 *** Test Cases ***
 Search and Buy Item on Delivery using Credit Card
+    Clear Environment
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -27,6 +29,7 @@ Search and Buy Item on Delivery using Credit Card
     [Teardown]    Tear Down
 
 Buy Daily Deal Item on Delivery using Pay Fast
+    Clear Environment
     [Setup]    Start Application
     Click Menu
     Click Menu Daily Deals
@@ -45,6 +48,7 @@ Buy Daily Deal Item on Delivery using Pay Fast
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Payfast and Create new Address
+    Clear Environment
     [Setup]    Start Application
     Click Menu
     Click Menu Shop By Department
@@ -68,6 +72,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV
+    Clear Environment
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -96,6 +101,7 @@ Search and Buy Heavy Item on Delivery along with TV
     [Teardown]    Tear Down
 
 Edit Personal Details, Create Address and Buy Item on Delivery
+    Clear Environment
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -107,6 +113,8 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Residential
     Add Delivery Address My Acc    Tester Residential    0723456778    38 Baxter Way
     Click Home
+    Click Back android
+    Click Back android
     Click Search Home
     Search Product    Pencil Case
     Click Product
@@ -124,6 +132,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     [Teardown]    Tear Down
 
 Buy Airtime
+    Clear Environment
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -142,6 +151,7 @@ Buy Airtime
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Delivery
+    Clear Environment
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -169,6 +179,7 @@ Buy Airtime along with another Item on Delivery
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Collection
+    Clear Environment
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -196,6 +207,7 @@ Buy Airtime along with another Item on Collection
     [Teardown]    Tear Down
 
 Buy Daily Deals Item and verify no Promotions
+    Clear Environment
     [Setup]    Start Application
     Click Menu
     Click Menu Daily Deals
@@ -214,6 +226,7 @@ Buy Daily Deals Item and verify no Promotions
     [Teardown]    Tear Down
 
 Buy Daily Deals Item and verify Promotions
+    Clear Environment
     [Setup]    Start Application
     Click Menu
     Click Menu Daily Deals
