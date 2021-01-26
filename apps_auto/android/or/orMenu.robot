@@ -14,4 +14,4 @@ ${btnWishlist}      accessibility_id=My Lists
 ${btnWishlistItems}      id=${APP_PACKAGE}:id/wishlistListItemContainer
 ${btnCart}      xpath=//android.widget.ImageView[@content-desc="Cart"]
 
-${btnBackMyAcc}      chain=**/XCUIElementTypeButton[`label == "My Account"`][1]
+${btnBackMyAcc}      accessibility_id=Navigate up

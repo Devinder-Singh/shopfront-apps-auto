@@ -39,6 +39,7 @@ Resource          ../kw/kwSelectAddress.robot
 Resource          ../kw/kwTVLicence.robot
 Resource          ../kw/kwWishlist.robot
 Resource          ../kw/kwStartApp.robot
+Resource          ../kw/kwAPI.robot
 
 *** Variables ***
 ${PLATFORM_NAME}    ios

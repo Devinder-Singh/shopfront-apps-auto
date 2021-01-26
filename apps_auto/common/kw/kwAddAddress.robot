@@ -16,9 +16,9 @@ Add Delivery Address
     Input Text    ${txtRecipientMobile}    ${mobile}
     Input Text    ${txtRecipientStreet}    ${street}
 
-    Click Element    ${txtRecipientStreet}
-    Wait Until Element Is Visible    ${lblStreetAddress}    10s
-    Click Element    ${lblStreetAddress}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
+    Sleep    5s
+    Sleep    5s
     Click Element    ${btnSaveAddress}
 
 Add Delivery Address My Acc
@@ -31,5 +31,6 @@ Add Delivery Address My Acc
     Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
 
-    Click Element    ${lblStreetAddress}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Sleep    10s
     Click Element    ${btnSaveAddress}

@@ -38,6 +38,10 @@ Click Back My Account
     Wait Until Element Is Visible    ${btnBackMyAcc}    5s
     Click Element    ${btnBackMyAcc}
 
+Click Back android
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnBackMyAcc}    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnBackMyAcc}
+
 Click Wishlist
     Wait Until Element Is Visible    ${btnWishlist}    1s
     Click Element    ${btnWishlist}
