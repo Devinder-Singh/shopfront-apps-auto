@@ -17,9 +17,7 @@ Resource          ../../${PLATFORM_NAME}/or/orSearch.robot
 Resource          ../../${PLATFORM_NAME}/or/orSelectAddress.robot
 Resource          ../../${PLATFORM_NAME}/or/orTVLicence.robot
 Resource          ../../${PLATFORM_NAME}/or/orWishlist.robot
-
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
-
 Resource          ../kw/kwAddAddress.robot
 Resource          ../kw/kwAirtimeContinue.robot
 Resource          ../kw/kwCardPayment.robot
@@ -39,7 +37,8 @@ Resource          ../kw/kwSelectAddress.robot
 Resource          ../kw/kwTVLicence.robot
 Resource          ../kw/kwWishlist.robot
 Resource          ../kw/kwStartApp.robot
+Library           TalLibrary
 
 *** Variables ***
-${PLATFORM_NAME}    ios
+${PLATFORM_NAME}    android
 ${PATH}           /users/muhammad.valodia/desktop/apps_auto
