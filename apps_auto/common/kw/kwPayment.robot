@@ -17,3 +17,7 @@ Click Change Payment Method
 Click Pay With Payfast
     Wait Until Element Is Visible    ${btnPayWithFast}    30s
     Click Element    ${btnPayWithFast}
+
+Click Back Payment Screen
+    Wait Until Element Is Visible    ${btnBackPayment}    30s
+    Click Element    ${btnBackPayment}

@@ -17,6 +17,9 @@ Resource          ../../${PLATFORM_NAME}/or/orSearch.robot
 Resource          ../../${PLATFORM_NAME}/or/orSelectAddress.robot
 Resource          ../../${PLATFORM_NAME}/or/orTVLicence.robot
 Resource          ../../${PLATFORM_NAME}/or/orWishlist.robot
+Resource          ../../${PLATFORM_NAME}/or/orAgeVerification.robot
+Resource          ../../${PLATFORM_NAME}/or/orConfirmAddress.robot
+Resource          ../../${PLATFORM_NAME}/or/orPinDeliveryLocation.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
 
@@ -40,6 +43,9 @@ Resource          ../kw/kwTVLicence.robot
 Resource          ../kw/kwWishlist.robot
 Resource          ../kw/kwStartApp.robot
 Resource          ../kw/kwAPI.robot
+Resource          ../kw/kwAgeVerification.robot
+Resource          ../kw/kwConfirmAddress.robot
+Resource          ../kw/kwPinDeliveryLocation.robot
 
 *** Variables ***
 ${PLATFORM_NAME}    ios

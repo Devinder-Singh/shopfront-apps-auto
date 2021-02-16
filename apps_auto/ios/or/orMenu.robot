@@ -1,5 +1,5 @@
 *** Variables ***
-${btnMenu}        chain=**/XCUIElementTypeNavigationBar[`name == "HomeView"`]/XCUIElementTypeButton[1]
+${btnMenu}        chain=**/XCUIElementTypeButton[`label == "hamburger menu"`]
 ${btnMenuLogin}    chain=**/XCUIElementTypeStaticText[`label == "Login"`]
 ${btnLogout}      chain=**/XCUIElementTypeStaticText[`label == "Sign out"`]
 
