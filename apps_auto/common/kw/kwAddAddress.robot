@@ -28,9 +28,7 @@ Click Address Province
 
 Add Delivery Address
     [Arguments]    ${name}    ${mobile}    ${street}
-
     Wait Until Element Is Visible    ${txtRecipientName}    5s
-
     Clear Text    ${txtRecipientName}
     Input Text    ${txtRecipientName}    ${name}
     Input Text    ${txtRecipientMobile}    ${mobile}

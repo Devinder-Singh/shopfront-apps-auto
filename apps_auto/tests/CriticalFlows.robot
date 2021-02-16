@@ -111,7 +111,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc   Tester Residential    0723456778    13 Caro Road
+    Add Delivery Address My Acc    Tester Residential    0723456778    38 Baxter Way
     Click Home
     Click Back android
     Click Back android

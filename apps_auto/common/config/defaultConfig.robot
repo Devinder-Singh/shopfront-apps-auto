@@ -22,7 +22,6 @@ Resource          ../../${PLATFORM_NAME}/or/orConfirmAddress.robot
 Resource          ../../${PLATFORM_NAME}/or/orPinDeliveryLocation.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
-
 Resource          ../kw/kwAddAddress.robot
 Resource          ../kw/kwAirtimeContinue.robot
 Resource          ../kw/kwCardPayment.robot
@@ -48,5 +47,5 @@ Resource          ../kw/kwConfirmAddress.robot
 Resource          ../kw/kwPinDeliveryLocation.robot
 
 *** Variables ***
-${PLATFORM_NAME}    ios
+${PLATFORM_NAME}    android
 ${PATH}           /users/muhammad.valodia/desktop/apps_auto
