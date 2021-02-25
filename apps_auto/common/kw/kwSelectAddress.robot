@@ -10,6 +10,10 @@ Click Pickup Point
     Wait Until Element Is Visible    ${btnPickupPoint}    30s
     Click Element    ${btnPickupPoint}
 
+Click Pickup Point Brackenfell
+    Wait Until Element Is Visible    ${btnPickupPointBrackenfell}    30s
+    Click Element    ${btnPickupPointBrackenfell}
+
 Click Pickup Point Info
     Wait Until Element Is Visible    ${txtInfoAddress}    30s
     Click Element    ${txtInfoAddress}

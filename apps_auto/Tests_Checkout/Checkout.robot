@@ -648,3 +648,45 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QA-5223
     Click Change Payment Delivery Method
     Click Collect
     [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Tablet > Change Delivery Method - QA-5252
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    zagg slim book
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    Click Donate No Thanks
+    Verify Payment Text    ORDER REVIEW
+    Click Change Payment Pickup Point
+    Click Pickup Point
+    Click Free Delivery
+    Click Change Payment Delivery Method
+    Click Collect
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Change Pickup point - QA-5250
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    zagg slim book
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    Click Donate No Thanks
+    Verify Payment Text    ORDER REVIEW
+    Click Change Payment Pickup Point
+    Click Pickup Point Brackenfell
+    Click Free Delivery
+    [Teardown]    Tear Down

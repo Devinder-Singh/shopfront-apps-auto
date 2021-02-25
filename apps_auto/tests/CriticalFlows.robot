@@ -1,13 +1,13 @@
 *** Settings ***
+Suite Setup    Install App    ${APP_PATH}    ${APP_PACKAGE}
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 Resource    ../common/kw/kwMenu.robot
 
 *** Test Cases ***
 Search and Buy Item on Delivery using Credit Card
-    [Setup]    Install App    ${APP_PATH}    ${APP_PACKAGE}
+    [Setup]    Start Application
     Clear Environment
-    Start Application
     Click Menu
     Click Menu Login
     Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234

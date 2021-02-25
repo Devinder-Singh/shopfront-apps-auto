@@ -6,3 +6,6 @@ ${btnPayWithFast}      chain=**/XCUIElementTypeStaticText[`label == "PAY WITH PA
 ${btnBackPayment}      chain=**/XCUIElementTypeNavigationBar[`name == "Payment"`]/XCUIElementTypeButton
 ${txtChangePaymentDeliveryMethod}      chain=**/XCUIElementTypeStaticText[`label == "CHANGE"`][2]
 ${txtChangePaymentPickup}      chain=**/XCUIElementTypeStaticText[`label == "CHANGE"`][3]
+
+${txtPaymentShowDetails}      chain=**/XCUIElementTypeStaticText[`label == "Show Details"`]
+${txtPaymentCancel}      chain=**/XCUIElementTypeButton[`label == "Cancel"`]

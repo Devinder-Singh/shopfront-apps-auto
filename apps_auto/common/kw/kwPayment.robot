@@ -14,6 +14,10 @@ Click Change Payment Method
     Wait Until Element Is Visible    ${btnChange}    30s
     Click Element    ${btnChange}
 
+Click Payment Cancel
+    Wait Until Element Is Visible    ${txtPaymentCancel}    30s
+    Click Element    ${txtPaymentCancel}
+
 Click Change Payment Delivery Method
     Wait Until Element Is Visible    ${btnChange}    30s
     swipe by percent    50     70     50    100  1000
@@ -25,6 +29,12 @@ Click Change Payment Pickup Point
     swipe by percent    50     70     50    100  1000
     Wait Until Element Is Visible    ${txtChangePaymentPickup}    30s
     Click Element    ${txtChangePaymentPickup}
+
+Click Payment Show Details
+    Wait Until Element Is Visible    ${btnChange}    30s
+    swipe by percent    50     70     50    100  1000
+    Wait Until Element Is Visible    ${txtPaymentShowDetails}    30s
+    Click Element    ${txtPaymentShowDetails}
 
 Click Pay With Payfast
     Wait Until Element Is Visible    ${btnPayWithFast}    30s

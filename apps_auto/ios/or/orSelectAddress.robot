@@ -10,3 +10,5 @@ ${txtGautengProvinceAddress}      chain=**/XCUIElementTypeStaticText[`label == "
 ${txtWCProvinceAddress}      chain=**/XCUIElementTypeStaticText[`label == "Western Cape"`]
 ${txtPickupPointGauteng}      chain=**/XCUIElementTypeStaticText[`label == "Midrand (N1 Bridge) Johannesburg, Gauteng"`]
 ${txtAllProvinceAddress}      chain=**/XCUIElementTypeStaticText[`label == "All Available Provinces"`]
+
+${btnPickupPointBrackenfell}      chain=**/XCUIElementTypeStaticText[`label == "Brackenfell Cape Town, Western Cape"`]
