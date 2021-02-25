@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.7 on darwin)" generated="20210225 06:54:03.363" rpa="false">
+<suite id="s1" name="CriticalFlows01" source="/Users/devinder.singh/Documents/shopfront-apps-auto/apps_auto/tests/CriticalFlows01.robot">
+<test id="s1-t1" name="Apps &gt; Checkout &gt; Collect &gt; Delivery Options (Collect Options) - QA-">
+<kw name="Start Application" library="kwStartApp" type="setup">
+<kw name="Get Capabilities" library="TalLibrary">
+<arguments>
+<arg>${False}</arg>
+<arg>${True}</arg>
+</arguments>
+<assign>
+<var>&amp;{cap}</var>
+</assign>
+<msg timestamp="20210225 06:54:04.085" level="INFO">&amp;{cap} = { platformName=android | platformVersion=9.0 | deviceName=Android | appPackage=fi.android.takealot.debug | automationName=uiautomator2 | fullReset=False | udid=emulator-5554 | newCommandTimeout=60 | n...</msg>
+<status status="PASS" starttime="20210225 06:54:04.079" endtime="20210225 06:54:04.085"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>&amp;{cap}</arg>
+</arguments>
+<msg timestamp="20210225 06:54:04.086" level="INFO">platformName=android</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">platformVersion=9.0</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">deviceName=Android</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">appPackage=fi.android.takealot.debug</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">automationName=uiautomator2</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">fullReset=False</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">udid=emulator-5554</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">newCommandTimeout=60</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">noReset=True</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">appActivity=fi.android.takealot.clean.presentation.splash.ViewSplashScreenActivity</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">printPageSourceOnFindFailure=True</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">autoGrantPermissions=True</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">nativeWebScreenshot=True</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">recreateChromeDriverSessions=True</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">chromedriverExecutableDir=/users/muhammad.valodia/desktop/apps_auto/Latest/</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">language=None</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">locale=None</msg>
+<msg timestamp="20210225 06:54:04.086" level="INFO">resetKeyboard=True</msg>
+<status status="PASS" starttime="20210225 06:54:04.086" endtime="20210225 06:54:04.087"></status>
+</kw>
+<kw name="Open Application" library="TalLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>&amp;{cap}</arg>
+</arguments>
+<status status="PASS" starttime="20210225 06:54:04.087" endtime="20210225 06:54:13.991"></status>
+</kw>
+<kw name="Set Implicitly Wait" library="TalLibrary">
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210225 06:54:13.999" level="INFO">Setting implicit wait timeout</msg>
+<status status="PASS" starttime="20210225 06:54:13.992" endtime="20210225 06:54:14.013"></status>
+</kw>
+<status status="PASS" starttime="20210225 06:54:04.078" endtime="20210225 06:54:14.014"></status>
+</kw>
+<kw name="Click Home" library="kwHome">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${btnHome}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210225 06:54:14.017" endtime="20210225 06:54:14.018"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>Click Element</arg>
+<arg>${btnHome}</arg>
+</arguments>
+<status status="PASS" starttime="20210225 06:54:14.018" endtime="20210225 06:54:14.019"></status>
+</kw>
+<status status="PASS" starttime="20210225 06:54:14.015" endtime="20210225 06:54:14.019"></status>
+</kw>
+<kw name="Click Search Home" library="kwSearch">
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${txtSearch}</arg>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20210225 06:54:25.948" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1440" height="2392"&gt;
+  &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1440,2392]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="fi.android.takealot.debug" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1440,2392]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,84][1440,2392]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="fi.android.takealot.debug" class="android.widget.LinearLayout" text="" resource-id="fi.android.takealot.debug:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,84][1440,2392]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,84][1440,2392]" displayed="true"&gt;
+            &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/appRootContainer" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,84][1440,2392]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,84][1440,2392]" displayed="true" /&gt;
+              &lt;android.widget.LinearLayout index="1" package="fi.android.takealot.debug" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,84][1440,452]" displayed="true"&gt;
+                &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,84][1440,452]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/appRootToolbarContainer" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,84][1440,452]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/appRootToolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,84][1440,280]" displayed="true"&gt;
+                      &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,126][492,238]" displayed="true" /&gt;
+                      &lt;androidx.appcompat.widget.LinearLayoutCompat index="1" package="fi.android.takealot.debug" class="androidx.appcompat.widget.LinearLayoutCompat" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1272,84][1440,280]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1272,98][1440,266]" displayed="true"&gt;
+                          &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" content-desc="Cart" resource-id="fi.android.takealot.debug:id/toolbar_cart_icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1314,140][1398,224]" displayed="true" /&gt;
+                          &lt;android.widget.TextView index="1" package="fi.android.takealot.debug" class="android.widget.TextView" text="1" resource-id="fi.android.takealot.debug:id/toolbar_cart_count" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1377,98][1433,153]" displayed="true" /&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/androidx.appcompat.widget.LinearLayoutCompat&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                    &lt;android.view.ViewGroup index="1" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/appRootSearch" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,280][1384,420]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/searchHomeRoot" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,280][1384,420]" displayed="true"&gt;
+                        &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" content-desc="search icon" resource-id="fi.android.takealot.debug:id/searchIcon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[112,308][196,392]" displayed="true" /&gt;
+                        &lt;android.widget.TextView index="1" package="fi.android.takealot.debug" class="android.widget.TextView" text="Search products, brands…" resource-id="fi.android.takealot.debug:id/searchInput" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[224,317][1328,383]" displayed="true" /&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                    &lt;android.view.View index="2" package="fi.android.takealot.debug" class="android.view.View" text="" resource-id="fi.android.takealot.debug:id/appRootToolbarDivider" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,448][1440,452]" displayed="true" /&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.widget.FrameLayout&gt;
+              &lt;/android.widget.LinearLayout&gt;
+              &lt;android.widget.FrameLayout index="2" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" resource-id="fi.android.takealot.debug:id/appRootContent" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,452][1440,2196]" displayed="true"&gt;
+                &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" resource-id="fi.android.takealot.debug:id/appRootContentLayout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,452][1440,2196]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/cmsPageRoot" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,452][1440,2196]" displayed="true"&gt;
+                    &lt;androidx.recyclerview.widget.RecyclerView index="0" package="fi.android.takealot.debug" class="androidx.recyclerview.widget.RecyclerView" text="" resource-id="fi.android.takealot.debug:id/cmsPageContentContainer" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,452][1440,2196]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListRoot" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,480][1440,1298]" displayed="true"&gt;
+                        &lt;android.widget.TextView index="0" package="fi.android.takealot.debug" class="android.widget.TextView" text="Fire Sale Daily Deals" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListTitle" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,536][1126,612]" displayed="true" /&gt;
+                        &lt;android.widget.Button index="1" package="fi.android.takealot.debug" class="android.widget.Button" text="VIEW ALL" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListViewAllText" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1140,508][1412,630]" displayed="true" /&gt;
+                        &lt;androidx.recyclerview.widget.RecyclerView index="2" package="fi.android.takealot.debug" class="androidx.recyclerview.widget.RecyclerView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListContent" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,668][1440,1242]" displayed="true"&gt;
+                          &lt;androidx.cardview.widget.CardView index="0" package="fi.android.takealot.debug" class="androidx.cardview.widget.CardView" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,668][1384,1242]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemConstraintLayout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,668][1384,1242]" displayed="true"&gt;
+                              &lt;android.widget.LinearLayout index="0" package="fi.android.takealot.debug" class="android.widget.LinearLayout" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemBadgesView" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,668][224,990]" displayed="true"&gt;
+                                &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[84,696][224,836]" displayed="true"&gt;
+                                  &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[87,699][221,833]" displayed="true" /&gt;
+                                &lt;/android.widget.FrameLayout&gt;
+                                &lt;android.widget.FrameLayout index="1" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[84,850][224,990]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="fi.android.takealot.debug" class="android.widget.TextView" text="31%&amp;#10;OFF" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[121,875][187,965]" displayed="true" /&gt;
+                                &lt;/android.widget.FrameLayout&gt;
+                              &lt;/android.widget.LinearLayout&gt;
+                              &lt;android.widget.ImageView index="1" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[112,724][574,1186]" displayed="true" /&gt;
+                              &lt;android.widget.TextView index="2" package="fi.android.takealot.debug" class="android.widget.TextView" text="PSVR MEGAPACK 2" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemTitle" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[630,809][1230,941]" displayed="true" /&gt;
+                              &lt;android.widget.ImageView index="3" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemAddToList" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[1230,675][1377,822]" displayed="true" /&gt;
+                              &lt;android.widget.TextView index="4" package="fi.android.takealot.debug" class="android.widget.TextView" text="R 4,799" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemCurrentPrice" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[630,955][822,1031]" displayed="true" /&gt;
+                              &lt;android.widget.TextView index="5" package="fi.android.takealot.debug" class="android.widget.TextView" text="R 6,999  " resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemPreviousPrice" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[850,962][1073,1025]" displayed="true" /&gt;
+                              &lt;android.widget.TextView index="6" package="fi.android.takealot.debug" class="android.widget.TextView" text="4.8 (29)" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemRating" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[630,1045][839,1102]" displayed="true" /&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/androidx.cardview.widget.CardView&gt;
+                          &lt;androidx.cardview.widget.CardView index="1" package="fi.android.takealot.debug" class="androidx.cardview.widget.CardView" text="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1412,668][1440,1242]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemConstraintLayout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1412,668][1440,1242]" displayed="true"&gt;
+                              &lt;android.widget.LinearLayout index="0" package="fi.android.takealot.debug" class="android.widget.LinearLayout" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListSingleItemBadgesView" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1412,668][1440,990]" displayed="true" /&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/androidx.cardview.widget.CardView&gt;
+                        &lt;/androidx.recyclerview.widget.RecyclerView&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                      &lt;android.view.ViewGroup index="1" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1326][1440,1914]" displayed="true"&gt;
+                        &lt;android.widget.TextView index="0" package="fi.android.takealot.debug" class="android.widget.TextView" text="Shop by Department" resource-id="fi.android.takealot.debug:id/shopByDepartmentTitle" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,1382][1384,1458]" displayed="true" /&gt;
+                        &lt;androidx.recyclerview.widget.RecyclerView index="1" package="fi.android.takealot.debug" class="androidx.recyclerview.widget.RecyclerView" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentContainer" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,1486][1440,1858]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemContainer" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,1486][336,1858]" displayed="true"&gt;
+                            &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[100,1514][293,1707]" displayed="true" /&gt;
+                            &lt;android.widget.TextView index="1" package="fi.android.takealot.debug" class="android.widget.TextView" text="Daily Deals" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemHeading" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[70,1735][322,1858]" displayed="true" /&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                          &lt;android.view.ViewGroup index="1" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemContainer" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[350,1486][630,1858]" displayed="true"&gt;
+                            &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[394,1514][587,1707]" displayed="true" /&gt;
+                            &lt;android.widget.TextView index="1" package="fi.android.takealot.debug" class="android.widget.TextView" text="Fire Sale Tech Deals" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemHeading" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[364,1735][616,1858]" displayed="true" /&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                          &lt;android.view.ViewGroup index="2" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemContainer" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[644,1486][924,1858]" displayed="true"&gt;
+                            &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[688,1514][881,1707]" displayed="true" /&gt;
+                            &lt;android.widget.TextView index="1" package="fi.android.takealot.debug" class="android.widget.TextView" text="Fire Sale Home &amp;amp; Kitchen" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemHeading" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[658,1735][910,1858]" displayed="true" /&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                          &lt;android.view.ViewGroup index="3" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemContainer" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[938,1486][1218,1858]" displayed="true"&gt;
+                            &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[982,1514][1175,1707]" displayed="true" /&gt;
+                            &lt;android.widget.TextView index="1" package="fi.android.takealot.debug" class="android.widget.TextView" text="Fire Sale Sport &amp;amp; Outdoor" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemHeading" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[952,1735][1204,1858]" displayed="true" /&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                          &lt;android.view.ViewGroup index="4" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemContainer" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1232,1486][1440,1858]" displayed="true"&gt;
+                            &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1276,1514][1440,1707]" displayed="true" /&gt;
+                            &lt;android.widget.TextView index="1" package="fi.android.takealot.debug" class="android.widget.TextView" text="Fire Sale Beauty" resource-id="fi.android.takealot.debug:id/shopByDepartmentItemHeading" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1246,1735][1440,1858]" displayed="true" /&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/androidx.recyclerview.widget.RecyclerView&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                      &lt;android.view.ViewGroup index="2" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListRoot" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,1942][1440,2196]" displayed="true"&gt;
+                        &lt;android.widget.TextView index="0" package="fi.android.takealot.debug" class="android.widget.TextView" text="Fire Sale - Toys App Only Deals" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListTitle" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,1998][1126,2074]" displayed="true" /&gt;
+                        &lt;android.widget.Button index="1" package="fi.android.takealot.debug" class="android.widget.Button" text="VIEW ALL" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListViewAllText" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1140,1970][1412,2092]" displayed="true" /&gt;
+                        &lt;androidx.recyclerview.widget.RecyclerView index="2" package="fi.android.takealot.debug" class="androidx.recyclerview.widget.RecyclerView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListContent" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,2130][1440,2196]" displayed="true"&gt;
+                          &lt;androidx.cardview.widget.CardView index="0" package="fi.android.takealot.debug" class="androidx.cardview.widget.CardView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemRoot" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,2130][602,2196]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemContainer" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,2130][602,2196]" displayed="true"&gt;
+                              &lt;android.widget.LinearLayout index="0" package="fi.android.takealot.debug" class="android.widget.LinearLayout" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemBadge" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[56,2130][224,2196]" displayed="true"&gt;
+                                &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[84,2158][224,2196]" displayed="true"&gt;
+                                  &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[87,2161][221,2196]" displayed="true" /&gt;
+                                &lt;/android.widget.FrameLayout&gt;
+                              &lt;/android.widget.LinearLayout&gt;
+                              &lt;android.widget.ImageView index="1" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[84,2158][574,2196]" displayed="true" /&gt;
+                              &lt;android.widget.ImageView index="2" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemAddToList" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[455,2137][595,2196]" displayed="true" /&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/androidx.cardview.widget.CardView&gt;
+                          &lt;androidx.cardview.widget.CardView index="1" package="fi.android.takealot.debug" class="androidx.cardview.widget.CardView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemRoot" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[630,2130][1176,2196]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemContainer" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[630,2130][1176,2196]" displayed="true"&gt;
+                              &lt;android.widget.LinearLayout index="0" package="fi.android.takealot.debug" class="android.widget.LinearLayout" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemBadge" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[630,2130][798,2196]" displayed="true"&gt;
+                                &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[658,2158][798,2196]" displayed="true"&gt;
+                                  &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[661,2161][795,2196]" displayed="true" /&gt;
+                                &lt;/android.widget.FrameLayout&gt;
+                              &lt;/android.widget.LinearLayout&gt;
+                              &lt;android.widget.ImageView index="1" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[658,2158][1148,2196]" displayed="true" /&gt;
+                              &lt;android.widget.ImageView index="2" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemAddToList" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[1029,2137][1169,2196]" displayed="true" /&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/androidx.cardview.widget.CardView&gt;
+                          &lt;androidx.cardview.widget.CardView index="2" package="fi.android.takealot.debug" class="androidx.cardview.widget.CardView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemRoot" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1204,2130][1440,2196]" displayed="true"&gt;
+                            &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemContainer" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1204,2130][1440,2196]" displayed="true"&gt;
+                              &lt;android.widget.LinearLayout index="0" package="fi.android.takealot.debug" class="android.widget.LinearLayout" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemBadge" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1204,2130][1372,2196]" displayed="true"&gt;
+                                &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1232,2158][1372,2196]" displayed="true"&gt;
+                                  &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1235,2161][1369,2196]" displayed="true" /&gt;
+                                &lt;/android.widget.FrameLayout&gt;
+                              &lt;/android.widget.LinearLayout&gt;
+                              &lt;android.widget.ImageView index="1" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/cmsPageWidgetProductListItemImage" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1232,2158][1440,2196]" displayed="true" /&gt;
+                            &lt;/android.view.ViewGroup&gt;
+                          &lt;/androidx.cardview.widget.CardView&gt;
+                        &lt;/androidx.recyclerview.widget.RecyclerView&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/androidx.recyclerview.widget.RecyclerView&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.widget.FrameLayout&gt;
+              &lt;/android.widget.FrameLayout&gt;
+              &lt;android.view.View index="3" package="fi.android.takealot.debug" class="android.view.View" text="" resource-id="fi.android.takealot.debug:id/appRootDivider" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2192][1440,2196]" displayed="true" /&gt;
+              &lt;android.widget.FrameLayout index="4" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" resource-id="fi.android.takealot.debug:id/appRootNavBar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2196][1440,2392]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,2196][1440,2392]" displayed="true"&gt;
+                  &lt;android.widget.FrameLayout index="0" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" content-desc="Home" resource-id="fi.android.takealot.debug:id/app_root_home" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[0,2196][288,2392]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[102,2224][186,2308]" displayed="true" /&gt;
+                    &lt;android.view.ViewGroup index="1" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[87,2312][200,2392]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="fi.android.takealot.debug" class="android.widget.TextView" text="Home" resource-id="fi.android.takealot.debug:id/largeLabel" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="true" bounds="[87,2312][200,2369]" displayed="true" /&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="1" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" content-desc="Categories" resource-id="fi.android.takealot.debug:id/app_root_categories" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[288,2196][576,2392]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[390,2224][474,2308]" displayed="true" /&gt;
+                    &lt;android.view.ViewGroup index="1" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[331,2312][533,2392]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="fi.android.takealot.debug" class="android.widget.TextView" text="Categories" resource-id="fi.android.takealot.debug:id/smallLabel" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[331,2312][533,2369]" displayed="true" /&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="2" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" content-desc="Deals" resource-id="fi.android.takealot.debug:id/app_root_deals" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[576,2196][864,2392]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[678,2224][762,2308]" displayed="true" /&gt;
+                    &lt;android.view.ViewGroup index="1" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[667,2312][772,2392]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="fi.android.takealot.debug" class="android.widget.TextView" text="Deals" resource-id="fi.android.takealot.debug:id/smallLabel" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[667,2312][772,2369]" displayed="true" /&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="3" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" content-desc="Lists" resource-id="fi.android.takealot.debug:id/app_root_lists" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[864,2196][1152,2392]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[966,2224][1050,2308]" displayed="true" /&gt;
+                    &lt;android.view.ViewGroup index="1" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[962,2312][1053,2392]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="fi.android.takealot.debug" class="android.widget.TextView" text="Lists" resource-id="fi.android.takealot.debug:id/smallLabel" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[962,2312][1053,2369]" displayed="true" /&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                  &lt;android.widget.FrameLayout index="4" package="fi.android.takealot.debug" class="android.widget.FrameLayout" text="" content-desc="Account" resource-id="fi.android.takealot.debug:id/app_root_account" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1152,2196][1440,2392]" displayed="true"&gt;
+                    &lt;android.widget.ImageView index="0" package="fi.android.takealot.debug" class="android.widget.ImageView" text="" resource-id="fi.android.takealot.debug:id/icon" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1254,2224][1338,2308]" displayed="true" /&gt;
+                    &lt;android.view.ViewGroup index="1" package="fi.android.takealot.debug" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1218,2312][1373,2392]" displayed="true"&gt;
+                      &lt;android.widget.TextView index="0" package="fi.android.takealot.debug" class="android.widget.TextView" text="Account" resource-id="fi.android.takealot.debug:id/smallLabel" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[1218,2312][1373,2369]" displayed="true" /&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.widget.FrameLayout&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.widget.FrameLayout&gt;
+            &lt;/android.view.ViewGroup&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<kw name="Capture Page Screenshot" library="TalLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210225 06:54:26.398" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210225 06:54:25.949" endtime="20210225 06:54:26.398"></status>
+</kw>
+<msg timestamp="20210225 06:54:26.398" level="FAIL">Element locator 'id=fi.android.takealot.debug:id/searchParentToolbarSearchInput' did not match any elements after 10 seconds</msg>
+<status status="FAIL" starttime="20210225 06:54:14.021" endtime="20210225 06:54:26.398"></status>
+</kw>
+<status status="FAIL" starttime="20210225 06:54:14.020" endtime="20210225 06:54:26.399"></status>
+</kw>
+<kw name="Tear Down" library="kwStartApp" type="teardown">
+<kw name="Capture Page Screenshot" library="TalLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210225 06:54:26.764" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210225 06:54:26.400" endtime="20210225 06:54:26.764"></status>
+</kw>
+<kw name="Set Implicitly Wait" library="TalLibrary">
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210225 06:54:26.766" level="INFO">Setting implicit wait timeout</msg>
+<status status="PASS" starttime="20210225 06:54:26.764" endtime="20210225 06:54:26.770"></status>
+</kw>
+<kw name="Close Application" library="TalLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210225 06:54:26.770" endtime="20210225 06:54:27.032"></status>
+</kw>
+<status status="PASS" starttime="20210225 06:54:26.399" endtime="20210225 06:54:27.032"></status>
+</kw>
+<tags>
+<tag>regression</tag>
+</tags>
+<status status="FAIL" starttime="20210225 06:54:04.077" endtime="20210225 06:54:27.032" critical="yes">Element locator 'id=fi.android.takealot.debug:id/searchParentToolbarSearchInput' did not match any elements after 10 seconds</status>
+</test>
+<status status="FAIL" starttime="20210225 06:54:03.365" endtime="20210225 06:54:27.033"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">regression</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="CriticalFlows01">CriticalFlows01</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210225 06:54:03.427" level="ERROR">Error in file '/Users/devinder.singh/Documents/shopfront-apps-auto/apps_auto/common/config/defaultConfig.robot' on line 24: Resource file '../../android/or/orOrders.robot' does not exist.</msg>
+</errors>
+</robot>

@@ -43,7 +43,5 @@ Get First Search Option
     Get    ${search_URL}
     Integer    response status    200
     ${query_result}=    Output    $.suggestions[0].query
-    log    ${query_result}
     ${searchResult}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${query_result}"`]
-    log    ${searchResult}
     [return]    ${searchResult}

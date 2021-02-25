@@ -20,8 +20,11 @@ Resource          ../../${PLATFORM_NAME}/or/orWishlist.robot
 Resource          ../../${PLATFORM_NAME}/or/orAgeVerification.robot
 Resource          ../../${PLATFORM_NAME}/or/orConfirmAddress.robot
 Resource          ../../${PLATFORM_NAME}/or/orPinDeliveryLocation.robot
+Resource          ../../${PLATFORM_NAME}/or/orSelectPickupPoint.robot
+Resource          ../../${PLATFORM_NAME}/or/orOrders.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
+Resource          ../kw/kwOrders.robot
 Resource          ../kw/kwAddAddress.robot
 Resource          ../kw/kwAirtimeContinue.robot
 Resource          ../kw/kwCardPayment.robot
@@ -45,6 +48,7 @@ Resource          ../kw/kwAPI.robot
 Resource          ../kw/kwAgeVerification.robot
 Resource          ../kw/kwConfirmAddress.robot
 Resource          ../kw/kwPinDeliveryLocation.robot
+Resource          ../kw/kwSelectPickupPoint.robot
 
 *** Variables ***
 ${PLATFORM_NAME}    android

@@ -13,3 +13,5 @@ ${btnMenuPersonalDetail}      chain=**/XCUIElementTypeStaticText[`label == "Pers
 ${btnBackMyAcc}      chain=**/XCUIElementTypeButton[`label == "My Account"`][1]
 ${btnWishlist}      chain=**/XCUIElementTypeButton[`label == "menu btn wishlist"`]
 ${btnCart}      chain=**/XCUIElementTypeButton[`label == "Cart"`]
+
+${btnMenuOrders}      chain=**/XCUIElementTypeStaticText[`label == "Orders"`][1]

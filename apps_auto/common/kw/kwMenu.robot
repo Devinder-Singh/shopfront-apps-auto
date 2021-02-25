@@ -34,6 +34,10 @@ Click Menu Personal Detail
     Wait Until Element Is Visible    ${btnMenuPersonalDetail}    5s
     Click Element    ${btnMenuPersonalDetail}
 
+Click Menu Orders
+    Wait Until Element Is Visible    ${btnMenuOrders}    5s
+    Click Element    ${btnMenuOrders}
+
 Click Back My Account
     Wait Until Element Is Visible    ${btnBackMyAcc}    5s
     Click Element    ${btnBackMyAcc}

@@ -3,7 +3,7 @@ Library           TalLibrary
 
 *** Keywords ***
 Click Product
-    ${txtProduct}      Set Variable    chain=**/XCUIElementTypeStaticText[`label == "Eco Pencil Case with zipper"`]
+    ${txtProduct}      Set Variable    chain=**/XCUIElementTypeStaticText[`label == "ZAGG Slim Book Go"`]
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
 

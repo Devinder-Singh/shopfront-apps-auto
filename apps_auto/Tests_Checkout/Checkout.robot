@@ -5,8 +5,8 @@ Resource    ../common/kw/kwMenu.robot
 
 *** Test Cases ***
 Apps - Checkout - Delivery Methods - QA-5227
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Menu
     Click Menu Login
     Login Takealot    take2Automation+201905211152@gmail.com    t@ke@!ot1234
@@ -23,8 +23,8 @@ Apps - Checkout - Delivery Methods - QA-5227
     [Teardown]    Tear Down
 
 Apps - Checkout - Delivery Methods - Digital Items - QA-5227
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
@@ -38,8 +38,8 @@ Apps - Checkout - Delivery Methods - Digital Items - QA-5227
     [Teardown]    Tear Down
 
 Apps - Checkout - Delivery Methods - Digital Items 02 - QA-5227
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -54,8 +54,8 @@ Apps - Checkout - Delivery Methods - Digital Items 02 - QA-5227
     [Teardown]    Tear Down
 
 Apps - Checkout - Delivery Methods - Liquor Item - QA-5227 / QA-5232
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    johnny
@@ -70,8 +70,8 @@ Apps - Checkout - Delivery Methods - Liquor Item - QA-5227 / QA-5232
     [Teardown]    Tear Down
 
 Apps - Checkout - Delivery Methods - Digital and Physical Item - QA-5227
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
@@ -91,8 +91,8 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item - QA-5227
     [Teardown]    Tear Down
 
 Checkout - Collect - Add Delivery and Digital Items - QA-5231
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
@@ -112,8 +112,8 @@ Checkout - Collect - Add Delivery and Digital Items - QA-5231
     [Teardown]    Tear Down
 
 Checkout - Collect - Add Only Delivery Items - QA-5247
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    montego
@@ -127,8 +127,8 @@ Checkout - Collect - Add Only Delivery Items - QA-5247
     [Teardown]    Tear Down
 
 Checkout - Collect - White Goods - QA-5240
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    fridg
@@ -142,8 +142,8 @@ Checkout - Collect - White Goods - QA-5240
     [Teardown]    Tear Down
 
 Checkout - Age Verification - QA-5244
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    johnny
@@ -158,8 +158,8 @@ Checkout - Age Verification - QA-5244
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - General - QA-5200
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -189,8 +189,8 @@ Checkout - Delivery Address - General 02 - QA-5200
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - General 03 - QA-5200
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -203,8 +203,8 @@ Checkout - Delivery Address - General 03 - QA-5200
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - General 04 - QA-5200
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -221,8 +221,8 @@ Checkout - Delivery Address - General 04 - QA-5200
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -248,8 +248,8 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Edit Address - Street Correction 03 - QA-5206
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -284,8 +284,8 @@ Checkout - Delivery Address - Edit Address - Street Correction 04 - QA-5206
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5213
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -301,8 +301,8 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Address Form Validation - QA-5217
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Menu
     Click Menu My Account
     Click Menu Address Book
@@ -325,8 +325,8 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Address Form Validation 02 - QA-5217
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Menu
     Click Menu My Account
     Click Menu Address Book
@@ -380,8 +380,8 @@ Checkout - Delivery Address - Address Form Validation 04 - QA-5217
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Street Suggestion - QA-5238
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -403,8 +403,8 @@ Checkout - Delivery Address - Street Suggestion - QA-5238
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Pin on Map - QA-5251
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -434,4 +434,217 @@ Checkout - Delivery Address - Pin on Map 02 - QA-5251
     Verify Edit Address Text    Cape Town
     Verify Edit Address Text    Western Cape
     Verify Edit Address Text    8006
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Select Pickup Point button - QA-5256
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Pickup Point INFO - QA-5207
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point Info
+    Verify Pickup Point Text    Block B, Montague Park Business Estate, Topaz Boulevard, Montague Gardens, Cape Town, 7441
+    Verify Pickup Point Text    We’ll send you an email once your order is ready for collection
+    Verify Pickup Point Text    Business Hours
+    Verify Pickup Point Text    (Next 7 Days)
+    Verify Pickup Point Text    Thursday
+    Verify Pickup Point Text    Friday
+    Verify Pickup Point Text    Saturday
+    Verify Pickup Point Text    Sunday
+    Verify Pickup Point Text    Monday
+    Verify Pickup Point Text    Tuesday
+    Verify Pickup Point Text    Wednesday
+    Verify Pickup Point Text    08h00 - 18h00
+    Verify Pickup Point Text    08h00 - 13h00
+    Verify Pickup Point Text    08h00 - 15h00
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Pickup Point INFO 02 - QA-5207
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Filter Province
+    Click Gauteng Province
+    Click Pickup Point Info
+    Verify Pickup Point Text    Big Bird Petroport, N1 Highway, Midrand, Johannesburg, 1685
+    Verify Pickup Point Text    We’ll send you an SMS or email once your order is ready for collection. You’ll then have 7 days to collect your order
+    Verify Pickup Point Text    Business Hours
+    Verify Pickup Point Text    (Next 7 Days)
+    Verify Pickup Point Text    Thursday
+    Verify Pickup Point Text    Friday
+    Verify Pickup Point Text    Saturday
+    Verify Pickup Point Text    Sunday
+    Verify Pickup Point Text    Monday
+    Verify Pickup Point Text    Tuesday
+    Verify Pickup Point Text    Wednesday
+    Verify Pickup Point Text    06h00 - 18h00
+    Verify Pickup Point Text    08h00 - 13h00
+    Verify Pickup Point Text    08h00 - 15h00
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Pickup Points List - QA-5237
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Filter Province
+    Click Gauteng Province
+    Verify Pickup Points Gauteng
+    Click Filter Province
+    Click All Available Provinces
+    Verify All Pickup Points
+    Verify Pickup Points Gauteng
+    Verify Pickup Point
+    Verify Collect Address Text    LAST USED
+    Click Filter Province
+    Click Western Cape Province
+    Click Pickup Point Info
+    Click Select Pickup Point
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment    Card Number
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Pickup Points List 02 - QA-5237
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Verify Order Detail Text    Takealot Cape Town Warehouse Pickup Point
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Add Only Digital Item - QA-5265
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    airtime
+    Click Product
+    Click Airtime
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Continue Airtime
+    Click Donate No Thanks
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Shipping Options (Standard) - QA-5243
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Verify Delivery Options Text    Standard Collect
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QA-5239
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    chair office
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QA-5202
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil case
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Collection Fee R25
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QA-5258
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    chair office
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Delivery Options (Collect Options) - QA-5223
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    zagg slim book
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Verify Delivery Options Text    Standard Collect
+    Verify Delivery Options Text    Why the wait?
+    Click Free Delivery
+    Click Donate No Thanks
+    Verify Payment Text    ORDER REVIEW
+    Verify Payment Text    Delivery Method
+    Verify Payment Text    Pickup Point
+    Click Change Payment Pickup Point
+    Click Pickup Point
+    Click Free Delivery
+    Click Change Payment Delivery Method
+    Click Collect
     [Teardown]    Tear Down

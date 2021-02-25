@@ -4,6 +4,7 @@ Resource    kwAPI.robot
 
 *** Keywords ***
 Click Search Home
+    Wait Until Element Is Visible    ${txtSearch}    10s
     Click Element    ${txtSearch}
 
 Search Product
