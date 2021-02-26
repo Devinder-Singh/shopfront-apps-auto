@@ -3,26 +3,33 @@ Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Checkout > Order Review - QA-5230
+Apps > Checkout > Payment > Earn eBucks - QA-5203
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Search Product    airtime
+    Search Product    pencil case
     Click Product
-    Click Airtime
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Continue Airtime
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
     Click Donate No Thanks
-    Verify Payment Text    ORDER REVIEW
-    Verify Payment Text    Sent upon payment DIGITAL ITEMS
-    Click Payment Show Details
-    Verify Payment Text    Sent upon payment
-    Verify Payment Text    DIGITAL ITEMS
-    Verify Payment Text    Delivery via email to take2Automation+201905211152@gmail.com
-    Verify Payment Text    Vodacom Mobile Airtime Voucher - R10
-    Verify Payment Text    R  10
-    Verify Payment Text    Qty: 1
-    Click Payment Cancel
+    Click Change Payment Method
+    Click Card Payment Method
+    Select Earn eBucks
+    Enter eBucks ID Number    8201095098089
+    Click Earn eBucks
+    Verify Payment Text    eBucks details Successfully captured
+    Click Change Payment Method
+    Click eBucks Payment Method
+    Click eBucks Payment Info
+    Verify Payment Options Text No Wait    eBucks is not available for this order
+    Click Card Payment Method
+    Select Earn eBucks
+    Click eBucks Delete
+    Click eBucks Cancel
+    Click Change Payment Method
+    Click eBucks Payment Method
     [Teardown]    Tear Down

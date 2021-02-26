@@ -10,6 +10,10 @@ Click Pay With Credit Card
     Wait Until Element Is Visible    ${btnCreditCard}    30s
     Click Element    ${btnCreditCard}
 
+Select Earn eBucks
+    Wait Until Element Is Visible    ${txtPaymentEBucks}    30s
+    Click Element    ${txtPaymentEBucks}
+
 Click Change Payment Method
     Wait Until Element Is Visible    ${btnChange}    30s
     Click Element    ${btnChange}
@@ -47,5 +51,11 @@ Click Back Payment Screen
 Verify Payment Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnChange}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+
+Verify Payment Details Text
+    [Arguments]    ${verifyText}
+    Wait Until Element Is Visible    ${txtPaymentCancel}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s

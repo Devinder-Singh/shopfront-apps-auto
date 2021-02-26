@@ -9,3 +9,4 @@ ${txtChangePaymentPickup}      chain=**/XCUIElementTypeStaticText[`label == "CHA
 
 ${txtPaymentShowDetails}      chain=**/XCUIElementTypeStaticText[`label == "Show Details"`]
 ${txtPaymentCancel}      chain=**/XCUIElementTypeButton[`label == "Cancel"`]
+${txtPaymentEBucks}      chain=**/XCUIElementTypeStaticText[`label == "Earn eBucks"`]

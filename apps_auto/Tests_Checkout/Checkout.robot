@@ -690,3 +690,93 @@ Apps > Checkout > Collect > Change Pickup point - QA-5250
     Click Pickup Point Brackenfell
     Click Free Delivery
     [Teardown]    Tear Down
+
+Apps > Checkout > Order Review - QA-5230
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    airtime
+    Click Product
+    Click Airtime
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Continue Airtime
+    Click Donate No Thanks
+    Verify Payment Text    ORDER REVIEW
+    Verify Payment Text    Sent upon payment DIGITAL ITEMS
+    Click Payment Show Details
+    Verify Payment Details Text    Sent upon payment
+    Verify Payment Details Text    DIGITAL ITEMS
+    Verify Payment Details Text    Delivery via email to take2Automation+201905211152@gmail.com
+    Verify Payment Details Text    Vodacom Mobile Airtime Voucher - R10
+    Verify Payment Details Text    Qty: 1
+    Click Payment Cancel
+    Click Change Payment Method
+    Verify Payment Options Text    EFT with Ozow
+    Verify Payment Options Text    EFT with PayFast
+    Verify Payment Options Text    Cash on Delivery
+    Verify Payment Options Text    eBucks
+    Verify Payment Options Text    Mobicred
+    [Teardown]    Tear Down
+
+Apps > Checkout > Order Review 02 - QA-5230
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil case
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    [Teardown]    Tear Down
+
+Apps > Checkout > Order Review 03 - QA-5230
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil case
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout Delete First Item
+    Click Checkout
+    Click Continue Airtime
+    Click Donate No Thanks
+    Verify Payment Text    ORDER REVIEW
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Earn eBucks - QA-5211
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil case
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Select Earn eBucks
+    Enter eBucks ID Number    8201095098089
+    Click Earn eBucks
+#    Verify Payment Text    eBucks details Successfully captured
+    Click Change Payment Method
+    Click eBucks Payment Method
+    Click eBucks Payment Info
+    Verify Payment Options Text No Wait    eBucks is not available for this order
+    Click Card Payment Method
+    Select Earn eBucks
+#    Verify Earn eBucks Text    eBucks details Successfully captured
+    Click eBucks Delete
+    Click eBucks Cancel
+    Click Change Payment Method
+    Click eBucks Payment Method
+    [Teardown]    Tear Down

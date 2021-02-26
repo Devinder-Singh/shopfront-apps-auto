@@ -22,6 +22,7 @@ Resource          ../../${PLATFORM_NAME}/or/orConfirmAddress.robot
 Resource          ../../${PLATFORM_NAME}/or/orPinDeliveryLocation.robot
 Resource          ../../${PLATFORM_NAME}/or/orSelectPickupPoint.robot
 Resource          ../../${PLATFORM_NAME}/or/orOrders.robot
+Resource          ../../${PLATFORM_NAME}/or/orEarneBucks.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
 Resource          ../kw/kwOrders.robot
@@ -49,6 +50,7 @@ Resource          ../kw/kwAgeVerification.robot
 Resource          ../kw/kwConfirmAddress.robot
 Resource          ../kw/kwPinDeliveryLocation.robot
 Resource          ../kw/kwSelectPickupPoint.robot
+Resource          ../kw/kwEarneBucks.robot
 
 *** Variables ***
 ${PLATFORM_NAME}    android

@@ -2,6 +2,10 @@
 Library           TalLibrary
 
 *** Keywords ***
+Click Cancel Delivery Method
+    Wait Until Element Is Visible    ${btnDelivery}    30s
+    Click Element    ${btnCancelDelivery}
+
 Click Delivery
     Wait Until Element Is Visible    ${btnDelivery}    30s
     Click Element    ${btnDelivery}
