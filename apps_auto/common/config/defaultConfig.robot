@@ -23,7 +23,6 @@ Resource          ../../${PLATFORM_NAME}/or/orPinDeliveryLocation.robot
 Resource          ../../${PLATFORM_NAME}/or/orSelectPickupPoint.robot
 Resource          ../../${PLATFORM_NAME}/or/orOrders.robot
 Resource          ../../${PLATFORM_NAME}/or/orEarneBucks.robot
-
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
 Resource          ../kw/kwOrders.robot
 Resource          ../kw/kwAddAddress.robot
@@ -54,4 +53,4 @@ Resource          ../kw/kwEarneBucks.robot
 
 *** Variables ***
 ${PLATFORM_NAME}    android
-${PATH}           /users/muhammad.valodia/desktop/apps_auto
+${PATH}           /users/jenkins/desktop/shopfront-apps-auto/apps_auto
