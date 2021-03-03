@@ -1,5 +1,5 @@
 *** Settings ***
-Suite Setup    Install App    ${APP_PATH}    ${APP_PACKAGE}
+Suite Setup       Install Application
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 

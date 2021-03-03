@@ -62,4 +62,4 @@ Resource          ../kw/kwPaymentMobi.robot
 
 *** Variables ***
 ${PLATFORM_NAME}    android
-${PATH}           /users/muhammad.valodia/desktop/apps_auto
+${PATH}           /users/jenkins/desktop/shopfront-apps-auto/apps_auto

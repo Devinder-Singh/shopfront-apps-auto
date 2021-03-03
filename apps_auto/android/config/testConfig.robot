@@ -5,4 +5,4 @@ ${REMOTE_URL}     http://0.0.0.0:4723/wd/hub
 ${APP_ACTIVITY}    fi.android.takealot.clean.presentation.splash.ViewSplashScreenActivity
 ${APP_PACKAGE}    fi.android.takealot.debug
 ${CHROME_VERSION}    Latest
-${APP_PATH}    Latest
+${APP_PATH}    /Users/jenkins/Desktop/debug-2.10.0.apk
