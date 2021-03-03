@@ -2,7 +2,6 @@
 Suite Setup    Install App    ${APP_PATH}    ${APP_PACKAGE}
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
-Resource    ../common/kw/kwMenu.robot
 
 *** Test Cases ***
 Search and Buy Item on Delivery using Credit Card

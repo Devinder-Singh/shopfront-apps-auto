@@ -1,7 +1,6 @@
 *** Settings ***
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
-Resource    ../common/kw/kwMenu.robot
 
 *** Test Cases ***
 Apps - Checkout - Delivery Methods - QA-5227
@@ -598,7 +597,7 @@ Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QA-5202
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    pencil case
+    Search Product    pencil
     Click Product
     Click Add To Cart
     Click Go To Cart
@@ -725,7 +724,7 @@ Apps > Checkout > Order Review 02 - QA-5230
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Search Product    pencil case
+    Search Product    pencil
     Click Product
     Click Add To Cart
     Click Go To Cart
@@ -737,7 +736,7 @@ Apps > Checkout > Order Review 03 - QA-5230
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Search Product    pencil case
+    Search Product    pencil
     Click Product
     Click Add To Cart
     Click Go To Cart
@@ -753,7 +752,7 @@ Apps > Checkout > Payment > Earn eBucks - QA-5211
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    pencil case
+    Search Product    pencil
     Click Product
     Click Add To Cart
     Click Go To Cart
@@ -779,4 +778,429 @@ Apps > Checkout > Payment > Earn eBucks - QA-5211
     Click eBucks Cancel
     Click Change Payment Method
     Click eBucks Payment Method
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Gift Msg - QA-5203
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Verify Payment Text    Is this a gift? Add a gift message
+    Click Add Gift
+    Verify Gift Text    Hi Test, Enjoy your gift! From AutoTest Tester
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Gift Msg 02 - QA-5203
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Airtime
+    Click Product
+    Click Airtime
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Continue Airtime
+    Click Donate No Thanks
+    Verify Payment Text Not    Is this a gift? Add a gift message
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Payment Method Availability - QA-5209
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Change Payment Method
+    Click eBucks Payment Method
+    Click Change Payment Method
+    Click Ozow Payment Method
+    Click Change Payment Method
+    Click Mobicred Payment Method
+    Click Change Payment Method
+    Click Cash Payment Method
+    Click Change Payment Method
+    Click Payfast Payment Method
+    Click Pay With Payfast
+    Verify Payfast Payment    Secure payments by PayFast
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Payment Method Availability 02 - QA-5209
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Pay With Payfast
+    Verify Payfast Payment    Secure payments by PayFast
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Payment Method Availability 03 - QA-5209
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    airtime
+    Click Product
+    Click Airtime
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Continue Airtime
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Mobicred Payment Info
+    Verify Mobicred Payment Info
+    Click Got It Thanks Payment Method
+    Click COD Payment Info
+    Verify COD Payment Info
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Post-Order Creation - QA-5279
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment    Card Number
+    Click Pay with Credit Card Back
+    Click Change Payment Method
+    Click Card Payment Method
+    Verify Payment Element Not Exists    ${txtChangePaymentDeliveryMethod}
+    Verify Payment Element Not Exists    ${txtChangePaymentPickup}
+    Verify Payment Element Not Exists    ${txtPaymentEBucks}
+    Verify Payment Element Not Exists    ${txtGiftAdd}
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Donation - QA-5198
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Verify Payment Donation Text    Donate R 5 to Beautiful Gate Children's Charity
+    Verify Payment Donation Text    Beautiful Gate South Africa is a registered non-profit organisation providing care and support to vulnerable children and families
+    Verify Payment Element Exists    ${imgPaymentDonation}
+    Click Payment Donate
+    Verify Payment Element Exists    ${rdoDonationSelected}
+    Verify Payment Element Exists    ${lblPaymentDonation}
+#    Verify Payment Element Exists    ${lblPaymentR5}
+    Click Payment Donation Info Icon
+    Verify Payment Donation Info Text    Beautiful Gate South Africa is a registered non-profit organisation providing care and support to vulnerable children and families
+#    Click Payment Donation Ok
+    Click Payment Donation Deselect
+    Verify Payment Element Not Exists    ${lblPaymentDonation}
+    Verify Payment Element Not Exists    ${lblPaymentR5}
+    Click Back Payment Screen
+    Click Free Delivery
+    Click Change Payment Method
+    Click Card Payment Method
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Donation 02 - QA-5198
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Back Payment Screen
+    Click Back Delivery Options
+    Click Delivery Address Back
+    Click Cancel Delivery Method
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Confirmation - QA-5269
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Change Payment Method
+    Click eBucks Payment Method
+    Click Change Payment Method
+    Click Ozow Payment Method
+    Click Change Payment Method
+    Click Mobicred Payment Method
+    Click Change Payment Method
+    Click Payfast Payment Method
+    Click Change Payment Method
+    Click Cash Payment Method
+#    Click Payment Confirm Order
+#    Verify Confirmation Text    You have chosen to pay with Cash on Delivery. Please have your cash ready for the driver
+#    Verify Confirmation Text    Share your purchase on Facebook or Twitter and you could win its value back in takealot.com store credit! To enter: Share your purchase on takealot.com's Facebook page or on Twitter, tag takealot.com's page or handle and add the hashtag #anythingyoucanimagine. T&C’s apply
+#    Verify Confirmation Element Exists    ${lblShareAndWin}
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Confirmation 02 - QA-5269
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Input Credit Card Number    8997877654456554
+    Click Credit Card Name
+    Verify Card Payment Text    Please enter a valid credit card number
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay with PayFast - QA-5282
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Payfast Payment Method
+    Click Pay With Payfast
+    Verify Payfast Payment
+    Click PayFast Cancel
+    Click Pay With Payfast
+    Verify Payfast Payment
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay with PayFast 02 - QA-5282
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Click Order Pay Now
+    Click Change Payment Method
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Credit Card - PayU - QA-5285
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment    Card Number
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > COD - QA-5286
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Cash Payment Method
+#    Click Payment Confirm Order
+#    Verify Confirmation Text    You have chosen to pay with Cash on Delivery. Please have your cash ready for the driver
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QA-5287
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Payfast Payment Method
+    Click Pay With Payfast
+    Verify Payfast Payment
+    Click PayFast Cancel
+    Click Pay With Payfast
+    Verify Payfast Payment
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment 02 - QA-5287
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Click Order Pay Now
+    Click Change Payment Method
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay with Ozow - QA-5288
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Ozow Payment Method
+    Click Pay With Ozow
+    Click Back Payment Ozow
+    Click Pay With Ozow
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay with Ozow 02 - QA-5288
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Click Order Pay Now
+    Click Pay With Ozow
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QA-5289
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment    Card Number
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order 02 - QA-5289
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Click Order Pay Now
+    Click Pay With Credit Card
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Mobicred - QA-5295
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Mobicred Payment Method
+    Click Pay With Mobi
+    Verify Payment Mobi Text    Please log in to your Mobicred account
     [Teardown]    Tear Down

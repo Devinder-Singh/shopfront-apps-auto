@@ -11,3 +11,7 @@ Verify Order Detail Text
     Wait Until Element Is Visible    ${btnOrdersPayNow}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+
+Click Order Pay Now
+    Wait Until Element Is Visible    ${btnOrdersPayNow}    30s
+    Click Element    ${btnOrdersPayNow}

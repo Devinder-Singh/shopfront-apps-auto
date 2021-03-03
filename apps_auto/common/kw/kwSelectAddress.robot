@@ -43,6 +43,10 @@ Click All Available Provinces
     Wait Until Element Is Visible    ${txtAllProvinceAddress}    30s
     Click Element    ${txtAllProvinceAddress}
 
+Click Delivery Address Back
+    Wait Until Element Is Visible    ${navDeliveryAddressBack}    30s
+    Click Element    ${navDeliveryAddressBack}
+
 Verify Delivery Address Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnDeliveryAddress}    30s

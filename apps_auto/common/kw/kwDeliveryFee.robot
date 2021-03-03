@@ -14,6 +14,10 @@ Click Collection Fee R25
     Wait Until Element Is Visible    ${txtCollectionFee}    30s
     Click Element    ${txtCollectionFee}
 
+Click Back Delivery Options
+    Wait Until Element Is Visible    ${navDeliveryOptBack}    30s
+    Click Element    ${navDeliveryOptBack}
+
 Verify Delivery Options Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${txtEstimatedCollection}    30s

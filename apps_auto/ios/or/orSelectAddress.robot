@@ -12,3 +12,4 @@ ${txtPickupPointGauteng}      chain=**/XCUIElementTypeStaticText[`label == "Midr
 ${txtAllProvinceAddress}      chain=**/XCUIElementTypeStaticText[`label == "All Available Provinces"`]
 
 ${btnPickupPointBrackenfell}      chain=**/XCUIElementTypeStaticText[`label == "Brackenfell Cape Town, Western Cape"`]
+${navDeliveryAddressBack}      chain=**/XCUIElementTypeNavigationBar[`name == "Delivery Addresses"`]/XCUIElementTypeButton

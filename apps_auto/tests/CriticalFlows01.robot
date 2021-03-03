@@ -3,33 +3,21 @@ Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Checkout > Payment > Earn eBucks - QA-5203
+Apps > Checkout > Payment > Mobicred - QA-5295
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Search Product    pencil case
+    Search Product    pencil
     Click Product
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Collect
-    Click Pickup Point
+    Click Delivery
+    Click Address
     Click Free Delivery
     Click Donate No Thanks
     Click Change Payment Method
-    Click Card Payment Method
-    Select Earn eBucks
-    Enter eBucks ID Number    8201095098089
-    Click Earn eBucks
-    Verify Payment Text    eBucks details Successfully captured
-    Click Change Payment Method
-    Click eBucks Payment Method
-    Click eBucks Payment Info
-    Verify Payment Options Text No Wait    eBucks is not available for this order
-    Click Card Payment Method
-    Select Earn eBucks
-    Click eBucks Delete
-    Click eBucks Cancel
-    Click Change Payment Method
-    Click eBucks Payment Method
+    Click Mobicred Payment Method
+    Click Pay With Mobi
+    Verify Payment Mobi Text    Please log in to your Mobicred account
     [Teardown]    Tear Down
