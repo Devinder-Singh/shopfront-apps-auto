@@ -7,6 +7,7 @@ Click Address
     Click Element    ${btnAddress}
 
 Click Pickup Point
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtFilterProvince}    30s
     Wait Until Element Is Visible    ${btnPickupPoint}    30s
     Click Element    ${btnPickupPoint}
 

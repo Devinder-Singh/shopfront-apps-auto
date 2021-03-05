@@ -3,6 +3,7 @@ Library           TalLibrary
 
 *** Keywords ***
 Click Residential
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${lytAddressType}    15s
     Wait Until Element Is Visible    ${btnResidential}    15s
     Click Element    ${btnResidential}
 
@@ -28,7 +29,7 @@ Click Address Province
 
 Add Delivery Address
     [Arguments]    ${name}    ${mobile}    ${street}
-    Wait Until Element Is Visible    ${txtRecipientName}    5s
+    Wait Until Element Is Visible    ${txtRecipientStreet}    5s
     Clear Text    ${txtRecipientName}
     Input Text    ${txtRecipientName}    ${name}
     Input Text    ${txtRecipientMobile}    ${mobile}
@@ -41,20 +42,23 @@ Add Delivery Address
 Add Delivery Address My Acc
     [Arguments]    ${name}    ${mobile}    ${street}
 
-    Wait Until Element Is Visible    ${txtRecipientNameMyAcc}    5s
+    Wait Until Element Is Visible    ${txtRecipientStreet}    5s
 
     Clear Text    ${txtRecipientNameMyAcc}
     Input Text    ${txtRecipientNameMyAcc}    ${name}
     Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
-    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Input Text    ${txtRecipientStreet}    ${street}
 
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
     Sleep    5s
     Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
     Run Keyword If    '${street}'=='""'    swipe by percent    50     50     50    100  1000
     Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
     Run Keyword If    '${street}'=='&*'    swipe by percent    50     50     50    100  1000
     Click Save Address
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCancelDelivery}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCancelDelivery}
 
 Edit Delivery Address Mobile Number
     [Arguments]    ${mobile}

@@ -36,12 +36,26 @@ Clear Address Business
     Post    ${address_URL}    ${address_Body_Business}
     Integer    response status    200
 
-Get First Search Option
+Get First Search Option iOS
     [Arguments]    ${search}
 
     ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/search/autocomplete?query=${search}
     Get    ${search_URL}
     Integer    response status    200
     ${query_result}=    Output    $.suggestions[0].query
+
     ${searchResult}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${query_result}"`]
+
+    [return]    ${searchResult}
+
+Get First Search Option Android
+    [Arguments]    ${search}
+
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/search/autocomplete?query=${search}
+    Get    ${search_URL}
+    Integer    response status    200
+    ${query_result}=    Output    $.suggestions[0].query
+
+    ${searchResult}=    Set Variable    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]
+
     [return]    ${searchResult}

@@ -7,10 +7,12 @@ Click Got It Thanks Payment Method
     Click Element    ${btnGotItThanks}
 
 Click Payfast Payment Method
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrPaymentMethodAndroid}    30s
     Wait Until Element Is Visible    ${lblPayFastEFT}    30s
     Click Element    ${lblPayFastEFT}
 
 Click Card Payment Method
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrPaymentMethodAndroid}    30s
     Wait Until Element Is Visible    ${lblCreditCardEFT}    30s
     Click Element    ${lblCreditCardEFT}
 

@@ -10,10 +10,10 @@ Search and Buy Item on Delivery using Credit Card
     Click Menu
     Click Menu Login
     Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234
-    Verify Logged In    AutoTester
+ #   Verify Logged In    AutoTester
     Click Home
     Click Search Home
-    Search Product    Pencil Case
+    Search Product    Pencil
     Click Product
     Click Add To Cart
     Click Go To Cart
@@ -28,7 +28,7 @@ Search and Buy Item on Delivery using Credit Card
     Verify Card Payment    Card Number
     [Teardown]    Tear Down
 
-Buy Daily Deal Item on Delivery using Pay Fast
+Buy Daily Deal Item on Delivery using Credit Card
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -68,7 +68,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment    Secure payments by PayFast
+    Verify Payfast Payment
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV
@@ -113,10 +113,8 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Residential
     Add Delivery Address My Acc    Tester Residential    0723456778    38 Baxter Way
     Click Home
-    Click Back android
-    Click Back android
     Click Search Home
-    Search Product    Pencil Case
+    Search Product    Pencil
     Click Product
     Click Add To Cart
     Click Go To Cart

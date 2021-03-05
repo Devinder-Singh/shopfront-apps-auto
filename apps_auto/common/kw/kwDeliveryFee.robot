@@ -3,6 +3,7 @@ Library           TalLibrary
 
 *** Keywords ***
 Click Free Delivery
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    30s
     Wait Until Element Is Visible    ${btnFree}    30s
     Click Element    ${btnFree}
 

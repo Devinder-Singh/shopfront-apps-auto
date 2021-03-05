@@ -1204,3 +1204,46 @@ Apps > Checkout > Payment > Mobicred - QA-5295
     Click Pay With Mobi
     Verify Payment Mobi Text    Please log in to your Mobicred account
     [Teardown]    Tear Down
+
+Apps > Checkout > TV Licence Verification - QA-6692
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Television
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Business TV Licence
+    Verify Tv Licence Text    COMPANY REGISTRATION NUMBER / OWNER ID
+    Verify Tv Licence Text    TV LICENCE / EASYPAY NUMBER
+    Click Back TV Licence
+    Click Holiday TV Licence
+    Verify Tv Licence Text    LICENCE HOLDER SA ID / PASSPORT NUMBER
+    Click Back TV Licence
+    Click Domestic TV Licence
+    Click Verify TV Licence
+    Enter TV Licence    1234
+    Click Delivery
+    [Teardown]    Tear Down
+
+Apps > Checkout > TV Licence Verification 02 - QA-6692
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Television
+    Click Product
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    johnny wal
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Verify Tv Licence Text    TV Licence
+    Verify Tv Licence Text    Age Verification
+    Verify Tv Licence Element Exists    ${navTvLicVerification}
+    [Teardown]    Tear Down

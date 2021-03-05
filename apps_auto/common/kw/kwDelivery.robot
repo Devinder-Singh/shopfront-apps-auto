@@ -7,10 +7,12 @@ Click Cancel Delivery Method
     Click Element    ${btnCancelDelivery}
 
 Click Delivery
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryAndroid}    30s
     Wait Until Element Is Visible    ${btnDelivery}    30s
     Click Element    ${btnDelivery}
 
 Click Collect
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryAndroid}    30s
     Wait Until Element Is Visible    ${btnCollect}    30s
     Click Element    ${btnCollect}
 

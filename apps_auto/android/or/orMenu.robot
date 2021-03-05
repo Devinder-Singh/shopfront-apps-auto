@@ -1,18 +1,21 @@
 *** Variables ***
-${btnMenu}        accessibility_id=Navigate up
-${btnMenuLogin}    id=${APP_PACKAGE}:id/log_in_item
+${btnMenu}        id=${APP_PACKAGE}:id/app_root_account
+${btnMenuLogin}    id=${APP_PACKAGE}:id/accountLogin
 ${btnLogout}      id=${APP_PACKAGE}:id/log_in_item
 
-${btnMenuDailyDeals}    id=${APP_PACKAGE}:id/ddeal_menu_item
+${btnMenuDailyDeals}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]
 ${mnuShopByDepartment}    id=${APP_PACKAGE}:id/dept_menu_item
-${mnuSportFitness}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[3]/android.view.ViewGroup/android.widget.TextView
+${mnuSportFitness}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[4]
 ${mnuMyAccount}    id=${APP_PACKAGE}:id/your_account_menu_item
-${btnMenuAddressBook}    id=${APP_PACKAGE}:id/accountOrdersAddressBookSelector
-${btnMenuPersonalDetail}    id=${APP_PACKAGE}:id/accountOrdersPersonalDetailsSelector
+${btnMenuAddressBook}    id=${APP_PACKAGE}:id/accountAddressBookSelector
+${btnMenuPersonalDetail}    id=${APP_PACKAGE}:id/accountPersonalDetailsSelector
 
 ${btnBackMyAcc}      accessibility_id=Navigate up
-${btnWishlist}    accessibility_id=My Lists
+${btnWishlist}    id=${APP_PACKAGE}:id/app_root_lists
 ${btnWishlistItems}    id=${APP_PACKAGE}:id/wishlistListItemContainer
 ${btnCart}        xpath=//android.widget.ImageView[@content-desc="Cart"]
 
 ${btnMenuOrders}    id=${APP_PACKAGE}:id/accountOrdersSelector
+${btnMenuCategories}        id=${APP_PACKAGE}:id/app_root_categories
+
+${btnWishlistCreate}    id=${APP_PACKAGE}:id/wishlistListsCreateNewList

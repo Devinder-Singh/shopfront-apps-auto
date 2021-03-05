@@ -3,8 +3,11 @@ Library           TalLibrary
 
 *** Keywords ***
 Click Menu
-    Wait Until Element Is Visible    ${btnMenu}    30s
-    Click Element    ${btnMenu}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHome}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHome}
 
 Click Menu Login
     Click Element    ${btnMenuLogin}
@@ -14,17 +17,20 @@ Click Menu Logout
     Page Should Contain Element    ${btnMenuLogin}
 
 Click Menu Daily Deals
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuCategories}
     Click Element    ${btnMenuDailyDeals}
 
 Click Menu Shop By Department
-    Click Element    ${mnuShopByDepartment}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuCategories}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuShopByDepartment}
 
 Click Menu Sport and Fitness
     Wait Until Element Is Visible    ${mnuSportFitness}    5s
     Click Element    ${mnuSportFitness}
 
 Click Menu My Account
-    Click Element    ${mnuMyAccount}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccount}
 
 Click Menu Address Book
     Wait Until Element Is Visible    ${btnMenuAddressBook}    5s
@@ -42,14 +48,10 @@ Click Back My Account
     Wait Until Element Is Visible    ${btnBackMyAcc}    5s
     Click Element    ${btnBackMyAcc}
 
-Click Back android
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnBackMyAcc}    10s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnBackMyAcc}
-
 Click Wishlist
     Wait Until Element Is Visible    ${btnWishlist}    1s
     Click Element    ${btnWishlist}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistItems}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlistItems}
 
 Click Cart
