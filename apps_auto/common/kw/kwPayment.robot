@@ -26,6 +26,10 @@ Click Pay With Credit Card
     Wait Until Element Is Visible    ${btnCreditCard}    30s
     Click Element    ${btnCreditCard}
 
+Click Pay With eBucks
+    Wait Until Element Is Visible    ${btnPayWithEBucks}    30s
+    Click Element    ${btnPayWithEBucks}
+
 Select Earn eBucks
     Wait Until Element Is Visible    ${txtPaymentEBucks}    30s
     Click Element    ${txtPaymentEBucks}

@@ -3,11 +3,12 @@ Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Buy Daily Deals Item and verify Promotions
+Apps > Checkout > Payment > Pay with eBucks - QA-5283
     [Setup]    Start Application
-    Click Menu
-    Click Menu Daily Deals
-    Click Product Daily Deals
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -16,7 +17,7 @@ Buy Daily Deals Item and verify Promotions
     Click Free Delivery
     Click Donate No Thanks
     Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
+    Click eBucks Payment Method
+    Click Pay With eBucks
     Verify Card Payment    Card Number
     [Teardown]    Tear Down
