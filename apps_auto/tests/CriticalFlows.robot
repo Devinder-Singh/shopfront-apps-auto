@@ -1,5 +1,5 @@
 *** Settings ***
-Suite Setup       Install Application
+#Suite Setup       Install Application
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
@@ -10,7 +10,7 @@ Search and Buy Item on Delivery using Credit Card
     Click Menu
     Click Menu Login
     Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234
- #   Verify Logged In    AutoTester
+#   Verify Logged In    AutoTester
     Click Home
     Click Search Home
     Search Product    Pencil

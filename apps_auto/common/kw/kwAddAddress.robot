@@ -37,6 +37,12 @@ Add Delivery Address
 
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
     Sleep    5s
+    Press Keycode    20
+    Sleep    1s
+    Press Keycode    20
+    Sleep    1s
+    Press Keycode    66
+    Sleep    2s
     Click Save Address
 
 Add Delivery Address My Acc
@@ -55,6 +61,14 @@ Add Delivery Address My Acc
     Run Keyword If    '${street}'=='""'    swipe by percent    50     50     50    100  1000
     Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
     Run Keyword If    '${street}'=='&*'    swipe by percent    50     50     50    100  1000
+
+    Press Keycode    20
+    Sleep    1s
+    Press Keycode    20
+    Sleep    1s
+    Press Keycode    66
+    Sleep    2s
+
     Click Save Address
 
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCancelDelivery}    30s

@@ -6,10 +6,15 @@ Click Menu
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
 
+    ${btnPresentNotificationsNo}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnDealsNotification}    30s
+    Run Keyword If    ${btnPresentNotificationsNo}    Click Element    ${btnDealsNotification}
+
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHome}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHome}
 
 Click Menu Login
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
     Click Element    ${btnMenuLogin}
 
 Click Menu Logout
@@ -52,6 +57,7 @@ Click Wishlist
     Wait Until Element Is Visible    ${btnWishlist}    1s
     Click Element    ${btnWishlist}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistItems}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlistItems}
 
 Click Cart

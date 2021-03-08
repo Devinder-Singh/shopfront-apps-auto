@@ -19,3 +19,5 @@ ${btnMenuOrders}    id=${APP_PACKAGE}:id/accountOrdersSelector
 ${btnMenuCategories}        id=${APP_PACKAGE}:id/app_root_categories
 
 ${btnWishlistCreate}    id=${APP_PACKAGE}:id/wishlistListsCreateNewList
+
+${btnDealsNotification}    id=${APP_PACKAGE}:id/no
