@@ -10,6 +10,9 @@ Click Search Home
 Search Product
     [Arguments]    ${search}
 
+    ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    10s
+    Run Keyword If    ${btnPresentSearchHistory}    Click Element    ${btnSearchClearAll}
+
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Clear Text    ${btnSearchHome}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Input Text    ${btnSearchHome}    ${search}
 

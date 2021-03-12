@@ -45,8 +45,12 @@ Click All Available Provinces
     Click Element    ${txtAllProvinceAddress}
 
 Click Delivery Address Back
-    Wait Until Element Is Visible    ${navDeliveryAddressBack}    30s
+    Wait Until Element Is Visible    ${btnEditAddress}    30s
     Click Element    ${navDeliveryAddressBack}
+
+Click Collect Address Back
+    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+    Click Element    ${navCollectAddressBack}
 
 Verify Delivery Address Text
     [Arguments]    ${verifyText}

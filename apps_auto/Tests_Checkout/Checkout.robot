@@ -1247,3 +1247,145 @@ Apps > Checkout > TV Licence Verification 02 - QA-6692
     Verify Tv Licence Text    Age Verification
     Verify Tv Licence Element Exists    ${navTvLicVerification}
     [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > Promise Date - QA-5205
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Back Delivery Options
+    Click Delivery Address Back
+    Click Cancel Delivery Method
+    Click Home
+    Click Search Icon
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Back Delivery Options
+    Click Delivery Address Back
+    Click Cancel Delivery Method
+    Click Home
+    Click Search Icon
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Back Delivery Options
+    Click Delivery Address Back
+    Click Cancel Delivery Method
+    Click Home
+    Click Search Icon
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Back Delivery Options
+    Click Delivery Address Back
+    Click Cancel Delivery Method
+    Click Home
+    Click Search Icon
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment    Card Number
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > Promise Date 02 - QA-5205
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Verify Order Detail Text    ORDER SUMMARY
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect Options > Promise Date - QA-5210
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Back Collect Options
+    Click Collect Address Back
+    Click Cancel Delivery Method
+    Click Home
+    Click Search Icon
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Back Collect Options
+    Click Collect Address Back
+    Click Cancel Delivery Method
+    Click Home
+    Click Search Icon
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Back Collect Options
+    Click Collect Address Back
+    Click Cancel Delivery Method
+    Click Home
+    Click Search Icon
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment    Card Number
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect Options > Promise Date 02 - QA-5210
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Verify Order Detail Text    ORDER SUMMARY
+    [Teardown]    Tear Down
