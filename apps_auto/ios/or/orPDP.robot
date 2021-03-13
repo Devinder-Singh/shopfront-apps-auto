@@ -5,3 +5,5 @@ ${btnContinueShopping}      chain=**/XCUIElementTypeButton[`label == "Continue S
 ${lblAirtimeValue}      chain=**/XCUIElementTypeStaticText[`label == "R10"`]
 ${lblTenKgValue}      chain=**/XCUIElementTypeStaticText[`label == "10.0 kg"`]
 ${btnGoToCart}      chain=**/XCUIElementTypeButton[`label == "Go to Cart"`]
+
+${btnPDPSelectOption}      id=${APP_PACKAGE}:id/pdpWidgetButtonContainerVariantsCallToAction

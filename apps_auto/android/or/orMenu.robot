@@ -3,9 +3,9 @@ ${btnMenu}        id=${APP_PACKAGE}:id/app_root_account
 ${btnMenuLogin}    id=${APP_PACKAGE}:id/accountLogin
 ${btnLogout}      id=${APP_PACKAGE}:id/log_in_item
 
-${btnMenuDailyDeals}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]
+${btnMenuDailyDeals}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]
 ${mnuShopByDepartment}    id=${APP_PACKAGE}:id/dept_menu_item
-${mnuSportFitness}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[4]
+${mnuSportFitness}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[5]
 ${mnuMyAccount}    id=${APP_PACKAGE}:id/your_account_menu_item
 ${btnMenuAddressBook}    id=${APP_PACKAGE}:id/accountAddressBookSelector
 ${btnMenuPersonalDetail}    id=${APP_PACKAGE}:id/accountPersonalDetailsSelector

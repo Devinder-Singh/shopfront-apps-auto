@@ -71,9 +71,6 @@ Add Delivery Address My Acc
 
     Click Save Address
 
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCancelDelivery}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCancelDelivery}
-
 Edit Delivery Address Mobile Number
     [Arguments]    ${mobile}
 

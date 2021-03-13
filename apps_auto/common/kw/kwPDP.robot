@@ -16,13 +16,14 @@ Click Continue Shopping
     Click Element    ${btnContinueShopping}
 
 Click Airtime
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${grpVariantsRoot}    30s
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
     Wait Until Element Is Visible    ${lblAirtimeValue}    30s
     Click Element    ${lblAirtimeValue}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${lblAirtimeValue}
 
 Click 10 Kg
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${grpVariantsRoot}    30s
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+    swipe by percent    50     30     50    90    1000
     Wait Until Element Is Visible    ${lblTenKgValue}    30s
     Click Element    ${lblTenKgValue}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${lblTenKgValue}

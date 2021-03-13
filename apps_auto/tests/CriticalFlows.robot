@@ -68,7 +68,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment
+    Verify Payfast Payment Text    Secure payments by PayFast
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV
@@ -112,6 +112,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Add Delivery Address
     Click Residential
     Add Delivery Address My Acc    Tester Residential    0723456778    38 Baxter Way
+    Click Back Delivery Android
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -129,7 +130,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Verify Card Payment    Card Number
     [Teardown]    Tear Down
 
-Buy Airtime
+Buy Airtime and Pay with Credit Card
     [Setup]    Start Application
     Clear Environment
     Click Home

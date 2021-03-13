@@ -6,4 +6,4 @@ ${lblAirtimeValue}      xpath=/hierarchy/android.widget.FrameLayout/android.widg
 ${lblTenKgValue}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.FrameLayout[3]/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]
 ${btnGoToCart}      id=${APP_PACKAGE}:id/pdpAddToCartGoToCart
 
-${grpVariantsRoot}      id=${APP_PACKAGE}:id/pdp_widget_variants_selector_root
+${btnPDPSelectOption}      id=${APP_PACKAGE}:id/pdpWidgetButtonContainerVariantsCallToAction
