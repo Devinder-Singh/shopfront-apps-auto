@@ -19,11 +19,7 @@ Search Product
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Clear Text    ${txtSearch}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Input Text    ${txtSearch}    ${search}
 
-    ${searchFirstOptionIOS}=    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Get First Search Option iOS    ${search}
-    ${searchFirstOptionAndroid}=    Run Keyword If    '${PLATFORM_NAME}'=='android'    Get First Search Option Android    ${search}
+    ${searchFirstOption}=    Get First Search Option    ${search}
 
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${searchFirstOptionIOS}    15s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${searchFirstOptionIOS}
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${searchFirstOptionAndroid}    15s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${searchFirstOptionAndroid}
+    Wait Until Element Is Visible    ${searchFirstOption}    15s
+    Click Element    ${searchFirstOption}

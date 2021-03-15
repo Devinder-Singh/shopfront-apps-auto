@@ -5,7 +5,7 @@ Resource          ../common/config/defaultConfig.robot
 *** Test Cases ***
 Apps > Checkout > Delivery Options > Promise Date - QA-5205
     [Setup]    Start Application
-    Clear Environment
+#    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil

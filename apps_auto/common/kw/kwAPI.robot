@@ -36,7 +36,7 @@ Clear Address Business
     Post    ${address_URL}    ${address_Body_Business}
     Integer    response status    200
 
-Get First Search Option iOS
+Get First Search Option
     [Arguments]    ${search}
 
     ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/search/autocomplete?query=${search}
@@ -44,18 +44,28 @@ Get First Search Option iOS
     Integer    response status    200
     ${query_result}=    Output    $.suggestions[0].query
 
-    ${searchResult}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${query_result}"`]
+    Set Global Variable    ${query_result_wearch}    ${query_result}
+
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${query_result}"`]
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]
 
     [return]    ${searchResult}
 
-Get First Search Option Android
-    [Arguments]    ${search}
+Get Product to Add To Cart
 
-    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/search/autocomplete?query=${search}
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_wearch}
     Get    ${search_URL}
     Integer    response status    200
-    ${query_result}=    Output    $.suggestions[0].query
+    ${query_result}=    Output    $.sections.products.results[11].product_views.buybox_summary.is_add_to_cart_available
 
-    ${searchResult}=    Set Variable    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]
+    @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.is_add_to_cart_available
+
+    ${index}=    Set Variable    1
+    FOR    ${result}    IN    @{results}
+        ${index}=    Evaluate    ${index} + 1
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[${index}]
+        Exit For Loop If    '${result}'=='True'
+    END
 
     [return]    ${searchResult}
