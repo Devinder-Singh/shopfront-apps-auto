@@ -14,6 +14,7 @@ ${txtPaymentCancel}    accessibility_id=Navigate up
 ${txtPaymentEBucks}    id=${APP_PACKAGE}:id/checkout_order_review_earn_ebucks_selector
 
 ${txtGiftAdd}      id=${APP_PACKAGE}:id/checkout_order_review_earn_add_gift_message_selector
+${txtPaymentVoucher}      id=${APP_PACKAGE}:id/checkout_order_review_gift_voucher_selector
 
 ${lblPaymentDonate}      id=${APP_PACKAGE}:id/checkout_donation_beautiful_gate_donate_btn
 ${imgPaymentDonation}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ImageView
@@ -27,3 +28,4 @@ ${btnPaymentDonationOK}      xpath=/hierarchy/android.widget.FrameLayout/android
 ${btnPayWithCash}      id=${APP_PACKAGE}:id/checkout_order_review_pay
 ${btnPayWithOzow}      id=${APP_PACKAGE}:id/checkout_order_review_pay
 ${btnPayWithMobi}      id=${APP_PACKAGE}:id/checkout_order_review_pay
+${btnPayWithEBucks}      id=${APP_PACKAGE}:id/checkout_order_review_pay

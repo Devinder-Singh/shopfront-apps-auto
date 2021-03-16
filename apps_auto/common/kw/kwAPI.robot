@@ -47,7 +47,7 @@ Get First Search Option
     Set Global Variable    ${query_result_wearch}    ${query_result}
 
     ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${query_result}"`]
-    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${query_result}"]
 
     [return]    ${searchResult}
 
@@ -56,16 +56,117 @@ Get Product to Add To Cart
     ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_wearch}
     Get    ${search_URL}
     Integer    response status    200
-    ${query_result}=    Output    $.sections.products.results[11].product_views.buybox_summary.is_add_to_cart_available
 
     @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.is_add_to_cart_available
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
 
-    ${index}=    Set Variable    1
+    ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${index}=    Evaluate    ${index} + 1
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[${index}]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
         Exit For Loop If    '${result}'=='True'
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    [return]    ${searchResult}
+
+Get Product with Leadtime
+
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_wearch}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.stock_availability_summary.is_leadtime
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+        Exit For Loop If    '${result}'=='True'
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    [return]    ${searchResult}
+
+Get Product in JHB only
+
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_wearch}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.stock_availability_summary.distribution_centres
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    ${searchResult}=    Set Variable    ''
+    FOR    ${result}    IN    @{results}
+        ${cnt}=    Get length    ${result}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+
+        Run Keyword If
+            ...    ${cnt}==1
+            ...    Run Keyword If
+                   ...    '${result}[0][text]'=='JHB'
+                   ...    Exit For Loop
+
+        ${searchResult}=    Set Variable    ''
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    [return]    ${searchResult}
+
+Get Product in CPT only
+
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_wearch}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.stock_availability_summary.distribution_centres
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    ${searchResult}=    Set Variable    ''
+    FOR    ${result}    IN    @{results}
+        ${cnt}=    Get length    ${result}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+
+        Run Keyword If
+            ...    ${cnt}==1
+            ...    Run Keyword If
+                   ...    '${result}[0][text]'=='CPT'
+                   ...    Exit For Loop
+
+        ${searchResult}=    Set Variable    ''
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    [return]    ${searchResult}
+
+Get Product in JHB and CPT
+
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_wearch}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.stock_availability_summary.distribution_centres
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    ${searchResult}=    Set Variable    ''
+    FOR    ${result}    IN    @{results}
+        ${cnt}=    Get length    ${result}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+
+        Run Keyword If
+            ...    ${cnt}==2
+            ...    Exit For Loop
+
+        ${searchResult}=    Set Variable    ''
+        ${index}=    Evaluate    ${index} + 1
     END
 
     [return]    ${searchResult}

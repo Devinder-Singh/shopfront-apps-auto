@@ -1090,8 +1090,8 @@ Apps > Checkout > Payment > COD - QA-5286
     Click Donate No Thanks
     Click Change Payment Method
     Click Cash Payment Method
-#    Click Payment Confirm Order
-#    Verify Confirmation Text    You have chosen to pay with Cash on Delivery. Please have your cash ready for the driver
+    Click Payment Confirm Order
+    Verify Confirmation Text    You have chosen to pay with Cash on Delivery. Please have your cash ready for the driver
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QA-5287
@@ -1254,7 +1254,7 @@ Apps > Checkout > Delivery Options > Promise Date - QA-5205
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product available in CPT only
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1267,7 +1267,7 @@ Apps > Checkout > Delivery Options > Promise Date - QA-5205
     Click Search Icon
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product in Leadtime
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1279,7 +1279,7 @@ Apps > Checkout > Delivery Options > Promise Date - QA-5205
     Click Home
     Click Search Icon
     Search Product    pencil
-    Click Product
+    Click Product available in JHB only
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1291,7 +1291,7 @@ Apps > Checkout > Delivery Options > Promise Date - QA-5205
     Click Home
     Click Search Icon
     Search Product    pencil
-    Click Product
+    Click Product available in JHB and CPT
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1303,7 +1303,7 @@ Apps > Checkout > Delivery Options > Promise Date - QA-5205
     Click Home
     Click Search Icon
     Search Product    pencil
-    Click Product
+    Click Product available in JHB and CPT
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1331,7 +1331,7 @@ Apps > Checkout > Collect Options > Promise Date - QA-5210
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product available in CPT only
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1344,7 +1344,7 @@ Apps > Checkout > Collect Options > Promise Date - QA-5210
     Click Search Icon
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product in Leadtime
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1356,7 +1356,7 @@ Apps > Checkout > Collect Options > Promise Date - QA-5210
     Click Home
     Click Search Icon
     Search Product    pencil
-    Click Product
+    Click Product available in JHB only
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1368,7 +1368,7 @@ Apps > Checkout > Collect Options > Promise Date - QA-5210
     Click Home
     Click Search Icon
     Search Product    pencil
-    Click Product
+    Click Product available in JHB and CPT
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1388,4 +1388,48 @@ Apps > Checkout > Collect Options > Promise Date 02 - QA-5210
     Click Menu Orders
     Click Order Awaiting Payment
     Verify Order Detail Text    ORDER SUMMARY
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay with eBucks - QA-5283
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click eBucks Payment Method
+    Click Pay With eBucks
+    Fill In EBucks Credentials
+    Click EBucks Balance
+    Fill In EBucks Amount Form
+    Fill In EBUcks OTP Form
+    Verify Payment EBucks Text    Invalid OTP
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay with eBucks - QA-5284
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Add Payment Voucher
+    Enter Payment Voucher Code    1110
+    Click Apply Payment Voucher
+#    Add Donation
+#    Click Pay
     [Teardown]    Tear Down

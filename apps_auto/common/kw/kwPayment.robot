@@ -72,6 +72,10 @@ Click Add Gift
     Wait Until Element Is Visible    ${txtGiftAdd}    30s
     Click Element    ${txtGiftAdd}
 
+Click Add Payment Voucher
+    Wait Until Element Is Visible    ${txtPaymentVoucher}    30s
+    Click Element    ${txtPaymentVoucher}
+
 Click Payment Donation Info Icon
     Wait Until Element Is Visible    ${btnPaymentDonationIcon}    30s
     Click Element    ${btnPaymentDonationIcon}
