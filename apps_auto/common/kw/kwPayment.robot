@@ -1,5 +1,5 @@
 *** Settings ***
-Library           TalLibrary
+Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Pay With Mobi
@@ -44,19 +44,19 @@ Click Payment Cancel
 
 Click Change Payment Delivery Method
     Wait Until Element Is Visible    ${btnChange}    30s
-    swipe by percent    50     70     50    100  1000
+    swipe by percent    50    70    50    100    1000
     Wait Until Element Is Visible    ${txtChangePaymentDeliveryMethod}    30s
     Click Element    ${txtChangePaymentDeliveryMethod}
 
 Click Change Payment Pickup Point
     Wait Until Element Is Visible    ${btnChange}    30s
-    swipe by percent    50     70     50    100  1000
+    swipe by percent    50    70    50    100    1000
     Wait Until Element Is Visible    ${txtChangePaymentPickup}    30s
     Click Element    ${txtChangePaymentPickup}
 
 Click Payment Show Details
     Wait Until Element Is Visible    ${btnChange}    30s
-    swipe by percent    50     70     50    100  1000
+    swipe by percent    50    70    50    100    1000
     Wait Until Element Is Visible    ${txtPaymentShowDetails}    30s
     Click Element    ${txtPaymentShowDetails}
 
@@ -121,7 +121,7 @@ Verify Payment Donation Info Text
 Verify Payment Element Not Exists
     [Arguments]    ${verifyElement}
     Wait Until Element Is Visible    ${btnBackPayment}    30s
-    swipe by percent    50     70     50    100  1000
+    swipe by percent    50    70    50    100    1000
     Wait Until Page Does Not Contain Element    ${verifyElement}
 
 Verify Payment Element Exists

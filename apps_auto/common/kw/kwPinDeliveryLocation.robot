@@ -1,5 +1,5 @@
 *** Settings ***
-Library           TalLibrary
+Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Got It Thanks
@@ -16,8 +16,6 @@ Click Use This Location
 
 Add Map Street Address
     [Arguments]    ${street}
-
     Wait Until Element Is Visible    ${txtMapStreetAddress}    15s
-
     Clear Text    ${txtMapStreetAddress}
     Input Text    ${txtMapStreetAddress}    ${street}

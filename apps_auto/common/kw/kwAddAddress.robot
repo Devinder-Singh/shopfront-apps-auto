@@ -1,5 +1,5 @@
 *** Settings ***
-Library           TalLibrary
+Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Residential
@@ -34,7 +34,6 @@ Add Delivery Address
     Input Text    ${txtRecipientName}    ${name}
     Input Text    ${txtRecipientMobile}    ${mobile}
     Input Text    ${txtRecipientStreet}    ${street}
-
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
     Sleep    5s
     Press Keycode    20
@@ -47,116 +46,90 @@ Add Delivery Address
 
 Add Delivery Address My Acc
     [Arguments]    ${name}    ${mobile}    ${street}
-
     Wait Until Element Is Visible    ${txtRecipientStreet}    5s
-
     Clear Text    ${txtRecipientNameMyAcc}
     Input Text    ${txtRecipientNameMyAcc}    ${name}
     Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
     Input Text    ${txtRecipientStreet}    ${street}
-
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
     Sleep    5s
     Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
-    Run Keyword If    '${street}'=='""'    swipe by percent    50     50     50    100  1000
+    Run Keyword If    '${street}'=='""'    swipe by percent    50    50    50    100    1000
     Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
-    Run Keyword If    '${street}'=='&*'    swipe by percent    50     50     50    100  1000
-
+    Run Keyword If    '${street}'=='&*'    swipe by percent    50    50    50    100    1000
     Press Keycode    20
     Sleep    1s
     Press Keycode    20
     Sleep    1s
     Press Keycode    66
     Sleep    2s
-
     Click Save Address
 
 Edit Delivery Address Mobile Number
     [Arguments]    ${mobile}
-
     Wait Until Element Is Visible    ${lblAddAddress}    15s
-
     Clear Text    ${txtRecipientMobile}
     Input Text    ${txtRecipientMobile}    ${mobile}
 
 Edit Delivery Address Postal Code
     [Arguments]    ${postalCode}
-
     Wait Until Element Is Visible    ${txtRecipientMobile}    15s
-    swipe by percent    50     50     50    100  1000
+    swipe by percent    50    50    50    100    1000
     Wait Until Element Is Visible    ${txtRecipientPostCode}    15s
-
     Clear Text    ${txtRecipientPostCode}
     Input Text    ${txtRecipientPostCode}    ${postalCode}
-    swipe by percent    50     50     50    100  1000
+    swipe by percent    50    50    50    100    1000
 
 Edit Delivery Address Street
     [Arguments]    ${street}
-
     Wait Until Element Is Visible    ${txtRecipientStreet}    15s
-
     Clear Text    ${txtRecipientStreet}
     Input Text    ${txtRecipientStreet}    ${street}
-
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
     Sleep    5s
 
 Edit Delivery Address Street My Acc
     [Arguments]    ${street}
-
     Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    15s
-
     Clear Text    ${txtRecipientStreetMyAcc}
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
-
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
     Sleep    5s
     Click Element    ${txtRecipientMobileMyAcc}
-    swipe by percent    50     70     50    100  1000
+    swipe by percent    50    70    50    100    1000
     Click Save Address
 
 Edit Delivery Address Suburb
     [Arguments]    ${suburb}
-
     Wait Until Element Is Visible    ${txtRecipientSuburbMyAcc}    15s
-
     Clear Text    ${txtRecipientSuburbMyAcc}
     Input Text    ${txtRecipientSuburbMyAcc}    ${suburb}
 
 Edit Delivery Address City
     [Arguments]    ${city}
-
     Wait Until Element Is Visible    ${txtRecipientCityMyAcc}    15s
-
     Clear Text    ${txtRecipientCityMyAcc}
     Input Text    ${txtRecipientCityMyAcc}    ${city}
 
 Edit Delivery Address Complex
     [Arguments]    ${complex}
-
     Wait Until Element Is Visible    ${txtRecipientComplexMyAcc}    15s
-
     Clear Text    ${txtRecipientComplexMyAcc}
     Input Text    ${txtRecipientComplexMyAcc}    ${complex}
 
 Edit Delivery Address Business
     [Arguments]    ${business}
-
     Wait Until Element Is Visible    ${txtBusinessName}    15s
-
     Clear Text    ${txtBusinessName}
     Input Text    ${txtBusinessName}    ${business}
 
 Edit Delivery Address Business My Acc
     [Arguments]    ${business}
-
     Wait Until Element Is Visible    ${txtBusinessNameMyAcc}    15s
-
     Clear Text    ${txtBusinessNameMyAcc}
     Input Text    ${txtBusinessNameMyAcc}    ${business}
-
-    swipe by percent    50     50     50    100  1000
-    swipe by percent    50     50     50    100  1000
+    swipe by percent    50    50    50    100    1000
+    swipe by percent    50    50    50    100    1000
 
 Verify Edit Address Text
     [Arguments]    ${verifyText}
