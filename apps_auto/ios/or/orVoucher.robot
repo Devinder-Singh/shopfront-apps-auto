@@ -1,3 +1,3 @@
 *** Variables ***
-${txtVoucherCode}      id=${APP_PACKAGE}:id/validation_input_text_input_edit_text
-${btnVoucherApply}      id=${APP_PACKAGE}:id/voucher_coupon_apply_button
+${txtVoucherCode}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeTextField
+${btnVoucherApply}      chain=**/XCUIElementTypeButton[`label == "Apply"`]

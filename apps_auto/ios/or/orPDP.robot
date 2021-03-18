@@ -6,4 +6,4 @@ ${lblAirtimeValue}      chain=**/XCUIElementTypeStaticText[`label == "R10"`]
 ${lblTenKgValue}      chain=**/XCUIElementTypeStaticText[`label == "10.0 kg"`]
 ${btnGoToCart}      chain=**/XCUIElementTypeButton[`label == "Go to Cart"`]
 
-${btnPDPSelectOption}      id=${APP_PACKAGE}:id/pdpWidgetButtonContainerVariantsCallToAction
+${btnPDPSelectOption}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[7]/XCUIElementTypeOther[1]
