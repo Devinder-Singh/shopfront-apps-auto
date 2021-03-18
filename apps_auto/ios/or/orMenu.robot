@@ -2,6 +2,7 @@
 ${btnMenu}        chain=**/XCUIElementTypeButton[`label == "hamburger menu"`]
 ${btnMenuLogin}    chain=**/XCUIElementTypeStaticText[`label == "Login"`]
 ${btnLogout}      chain=**/XCUIElementTypeStaticText[`label == "Sign out"`]
+${btnMenuRegister}    id=${APP_PACKAGE}:id/accountRegisterToolTip2
 
 ${btnMenuDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Daily Deals"`][1]
 ${mnuShopByDepartment}      chain=**/XCUIElementTypeStaticText[`label == "Shop by Department"`]

@@ -1414,8 +1414,9 @@ Apps > Checkout > Payment > Pay with eBucks - QA-5283
     Verify Payment EBucks Text    Invalid OTP
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Pay with eBucks - QA-5284
+Apps > Checkout > Payment > Credits (Voucher) - QA-5284
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil

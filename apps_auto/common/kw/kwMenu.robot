@@ -17,7 +17,14 @@ Click Menu Login
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
     Click Element    ${btnMenuLogin}
 
+Click Menu Register
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
+    Click Element    ${btnMenuRegister}
+
 Click Menu Logout
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
     Click Element    ${btnLogout}
     Page Should Contain Element    ${btnMenuLogin}
 
