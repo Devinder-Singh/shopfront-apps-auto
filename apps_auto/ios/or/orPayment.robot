@@ -25,3 +25,5 @@ ${btnPayWithCash}      chain=**/XCUIElementTypeButton[`label == "CONFIRM ORDER"`
 ${btnPayWithOzow}      chain=**/XCUIElementTypeButton[`label == "PAY WITH OZOW"`]
 ${btnPayWithMobi}      chain=**/XCUIElementTypeButton[`label == "PAY WITH MOBICRED"`]
 ${btnPayWithEBucks}      chain=**/XCUIElementTypeButton[`label == "PAY WITH EBUCKS"`]
+
+${txtPaymentVoucher}      id=Add Gift Voucher or Coupon Code

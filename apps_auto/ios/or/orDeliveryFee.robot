@@ -5,5 +5,5 @@ ${txtEstimatedCollection}      chain=**/XCUIElementTypeWindow[1]/XCUIElementType
 ${txtCollectionFee}      chain=**/XCUIElementTypeStaticText[`label == "R 25"`]
 ${navDeliveryOptBack}      chain=**/XCUIElementTypeNavigationBar[`name == "Delivery Options"`]/XCUIElementTypeButton
 
-${btnStdDeliveryFee}      chain=**/XCUIElementTypeStaticText[`label == "R 60"`]
 ${navCollectOptBack}      chain=**/XCUIElementTypeNavigationBar[`name == "Collect Options"`]/XCUIElementTypeButton
+${btnStdDeliveryFee}      chain=**/XCUIElementTypeStaticText[`label == "R 60"`]

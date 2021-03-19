@@ -17,6 +17,10 @@ Click App Only Deals
     Wait Until Element Is Visible    ${btnProductAppOnlyDeals}    30s
     Click Element    ${btnProductAppOnlyDeals}
 
+Click Wine Club Deals
+    Wait Until Element Is Visible    ${btnProductWineClubDeals}    30s
+    Click Element    ${btnProductWineClubDeals}
+
 Click Product Filter
     Wait Until Element Is Visible    ${btnProductFilter}    30s
     Click Element    ${btnProductFilter}
@@ -42,8 +46,9 @@ Click Product in Leadtime
     Click Element    ${txtProduct}
 
 Verify Product Image
+    Wait Until Element Is Visible    ${btnProductFilter}    30s
     Wait Until Element Is Visible    ${btnProductImage}    30s
-    
+
 Click Product
     [Arguments]    ${productText}
     ${lblProduct}=    Replace String    ${lblProduct}    $productText    ${productText}

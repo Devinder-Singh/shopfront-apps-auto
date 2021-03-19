@@ -16,22 +16,13 @@ Apps > Promotions (Android) - QA-5357
     Click Add To Cart
     Click Increase Cart Quantity    4
     Click Go To Cart
-    [Teardown]    Tear Down
-
-Apps > Promotions (Android) 02 - QA-5357
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Click Menu Daily Deals
-    Click App Only Deals
-    Verify Product Image
-    Click Product Filter
-    Select Filter Option    Cellphones & Wearables
-    Click Apply Filter
-    Click Product Daily Deals
-    Click Add To Cart
-    Click Increase Cart Quantity    4
-    Click Go To Cart
+    Click Item Promotion Text
+    Verify Checkout Text    4 x R 
+    Verify Checkout Text    1 x R 
+    Verify Checkout Text    Daily Deals
+    Verify Checkout Text    Only 4 per customer
+    Verify Checkout Text    Normal Price
+    Verify Checkout Text    Item Total
     [Teardown]    Tear Down
 
 

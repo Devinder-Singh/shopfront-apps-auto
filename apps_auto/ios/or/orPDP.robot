@@ -6,3 +6,5 @@ ${lblAirtimeValue}    chain=**/XCUIElementTypeStaticText[`label == "R10"`]
 ${lblTenKgValue}    chain=**/XCUIElementTypeStaticText[`label == "10.0 kg"`]
 ${btnGoToCart}    chain=**/XCUIElementTypeButton[`label == "Go to Cart"`]
 ${btnPDPSelectOption}    nsp=label == "Select an option" AND name == "Select an option" AND value == "Select an option"
+
+${btnPDPCartItemIncrease}      chain=**/XCUIElementTypeButton[`label == "Button"`][1]
