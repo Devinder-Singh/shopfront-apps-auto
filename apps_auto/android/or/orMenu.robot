@@ -1,7 +1,8 @@
 *** Variables ***
 ${btnMenu}        id=${APP_PACKAGE}:id/app_root_account
 ${btnMenuLogin}    id=${APP_PACKAGE}:id/accountLogin
-${btnLogout}      id=${APP_PACKAGE}:id/log_in_item
+${btnLogout}      id=${APP_PACKAGE}:id/accountLogout
+${btnMenuRegister}    id=${APP_PACKAGE}:id/accountRegisterToolTip2
 
 ${btnMenuDailyDeals}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]
 ${mnuShopByDepartment}    id=${APP_PACKAGE}:id/dept_menu_item
