@@ -1,5 +1,5 @@
 *** Settings ***
-Library           TalLibrary
+Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Increase Cart Quantity
@@ -26,13 +26,14 @@ Click Continue Shopping
 
 Click Airtime
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+    Click Element    ${btnPDPSelectOption}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Page Contains    Voucher valid
     Wait Until Element Is Visible    ${lblAirtimeValue}    30s
     Click Element    ${lblAirtimeValue}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${lblAirtimeValue}
 
 Click 10 Kg
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
-    swipe by percent    50     30     50    90    1000
+    Swipe By Percent    500    1000    500    90    1000
     Wait Until Element Is Visible    ${lblTenKgValue}    30s
     Click Element    ${lblTenKgValue}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${lblTenKgValue}

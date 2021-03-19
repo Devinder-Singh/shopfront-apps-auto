@@ -1,14 +1,12 @@
 *** Settings ***
-Library           TalLibrary
+Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Menu
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
-
     ${btnPresentNotificationsNo}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnDealsNotification}    5s
     Run Keyword If    ${btnPresentNotificationsNo}    Click Element    ${btnDealsNotification}
-
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHome}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHome}
 

@@ -1,5 +1,5 @@
 *** Settings ***
-Library           TalLibrary
+Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Domestic TV Licence

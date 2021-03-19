@@ -63,11 +63,14 @@ Resource          ../kw/kwGift.robot
 Resource          ../kw/kwConfirmation.robot
 Resource          ../kw/kwPaymentOzow.robot
 Resource          ../kw/kwPaymentMobi.robot
+Resource          ../kw/kwAPI.robot
+Library           TalLibrary
+Library           String
 Resource          ../kw/kwPaymentEBucks.robot
 Resource          ../kw/kwVoucher.robot
 Resource          ../kw/kwRegister.robot
 Resource          ../kw/kwProductFilter.robot
 
 *** Variables ***
-${PLATFORM_NAME}    android
+${PLATFORM_NAME}    ios
 ${PATH}           /users/jenkins/desktop/shopfront-apps-auto/apps_auto

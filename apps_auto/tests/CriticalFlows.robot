@@ -1,6 +1,5 @@
 *** Settings ***
-#Suite Setup       Install Application
-Default Tags      regression
+Default Tags      regression    #Suite Setup    Install Application
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
@@ -10,11 +9,11 @@ Search and Buy Item on Delivery using Credit Card
     Click Menu
     Click Menu Login
     Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234
-#   Verify Logged In    AutoTester
+    #    Verify Logged In    AutoTester
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -77,13 +76,13 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Home
     Click Search Home
     Search Product    Fridge
-    Click Product
+    Click Product from API
     Verify Delivery Surcharge    + R 200 Delivery Surcharge
     Click Add To Cart
     Click Continue Shopping
     Click Search Icon
     Search Product    Television
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -116,7 +115,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -132,11 +131,11 @@ Edit Personal Details, Create Address and Buy Item on Delivery
 
 Buy Airtime and Pay with Credit Card
     [Setup]    Start Application
-    Clear Environment
+    Comment    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtime
-    Click Product
+    Click Product    Vodacom Mobile Airtime Voucher
     Click Airtime
     Click Add To Cart
     Click Go To Cart
@@ -155,13 +154,13 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    airtime
-    Click Product
+    Click Product from API
     Click Airtime
     Click Add To Cart
     Click Continue Shopping
     Click Search Icon
     Search Product    montego
-    Click Product
+    Click Product from API
     Click 10 Kg
     Click Add To Cart
     Click Go To Cart
@@ -183,13 +182,13 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    airtime
-    Click Product
+    Click Product from API
     Click Airtime
     Click Add To Cart
     Click Continue Shopping
     Click Search Icon
     Search Product    montego
-    Click Product
+    Click Product from API
     Click 10 Kg
     Click Add To Cart
     Click Go To Cart

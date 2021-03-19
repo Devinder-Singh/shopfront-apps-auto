@@ -5,3 +5,4 @@ ${cntProductDeals}      id=${APP_PACKAGE}:id/dealsPromotionRecyclerView
 ${btnProductImage}      xpath=(//android.widget.ImageView[@content-desc="Product Image"])[1]
 ${btnProductFilter}      id=${APP_PACKAGE}:id/dealsPromotionFilterButton
 ${btnProductAppOnlyDeals}      accessibility_id=App Only Deals
+${lblProduct}     android=new UiSelector().textContains("$productText")

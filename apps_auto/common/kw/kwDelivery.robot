@@ -1,5 +1,5 @@
 *** Settings ***
-Library           TalLibrary
+Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Cancel Delivery Method

@@ -1,9 +1,9 @@
 *** Settings ***
-Library           TalLibrary
-Resource    kwAPI.robot
+Resource          ../config/defaultConfig.robot
 
-*** Keywords ***
-Click Product
+*** Keywords ***    
+Click Product from API
+    #    ${txtProduct}    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "Omega 32" HD Ready LED TV"`]
     ${txtProduct}=    Get Product to Add To Cart
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
@@ -43,3 +43,10 @@ Click Product in Leadtime
 
 Verify Product Image
     Wait Until Element Is Visible    ${btnProductImage}    30s
+    
+Click Product
+    [Arguments]    ${productText}
+    ${lblProduct}=    Replace String    ${lblProduct}    $productText    ${productText}
+    Wait Until Page Contains Element    ${lblProduct}    15s
+    Click Element    ${lblProduct}
+    [Teardown]
