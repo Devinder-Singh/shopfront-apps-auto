@@ -2,6 +2,15 @@
 Library           TalLibrary
 
 *** Keywords ***
+Click Increase Cart Quantity
+    [Arguments]    ${qty}
+
+    Wait Until Element Is Visible    ${btnPDPCartItemIncrease}    30s
+    FOR    ${i}    IN RANGE    ${qty}
+        Click Element    ${btnPDPCartItemIncrease}
+        Sleep    1s
+    END
+
 Click Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}

@@ -13,6 +13,14 @@ Click Product Daily Deals
     Wait Until Element Is Visible    ${btnProductDailyDeals}    30s
     Click Element    ${btnProductDailyDeals}
 
+Click App Only Deals
+    Wait Until Element Is Visible    ${btnProductAppOnlyDeals}    30s
+    Click Element    ${btnProductAppOnlyDeals}
+
+Click Product Filter
+    Wait Until Element Is Visible    ${btnProductFilter}    30s
+    Click Element    ${btnProductFilter}
+
 Click Product available in JHB only
     ${txtProduct}=    Get Product in JHB only
     Wait Until Element Is Visible    ${txtProduct}    30s
@@ -32,3 +40,6 @@ Click Product in Leadtime
     ${txtProduct}=    Get Product with Leadtime
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
+
+Verify Product Image
+    Wait Until Element Is Visible    ${btnProductImage}    30s

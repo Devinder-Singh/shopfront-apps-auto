@@ -30,6 +30,7 @@ Resource          ../../${PLATFORM_NAME}/or/orPaymentMobi.robot
 Resource          ../../${PLATFORM_NAME}/or/orPaymentEBucks.robot
 Resource          ../../${PLATFORM_NAME}/or/orVoucher.robot
 Resource          ../../${PLATFORM_NAME}/or/orRegister.robot
+Resource          ../../${PLATFORM_NAME}/or/orProductFilter.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
 Resource          ../kw/kwOrders.robot
@@ -65,6 +66,7 @@ Resource          ../kw/kwPaymentMobi.robot
 Resource          ../kw/kwPaymentEBucks.robot
 Resource          ../kw/kwVoucher.robot
 Resource          ../kw/kwRegister.robot
+Resource          ../kw/kwProductFilter.robot
 
 *** Variables ***
 ${PLATFORM_NAME}    android
