@@ -7,6 +7,7 @@ Click Wishlist Add To Cart
     Click Element    ${btnWishlistCart}
 
 Click Wishlist Edit
+    Click Wishlist Options
     Wait Until Element Is Visible    ${btnWishlistEdit}    30s
     Click Element    ${btnWishlistEdit}
 

@@ -8,3 +8,6 @@ ${btnGoToCart}      id=${APP_PACKAGE}:id/pdpAddToCartGoToCart
 
 ${btnPDPSelectOption}      id=${APP_PACKAGE}:id/pdpWidgetButtonContainerVariantsCallToAction
 ${btnPDPCartItemIncrease}      id=${APP_PACKAGE}:id/pdpAddToCartIncreaseButton
+
+${navBackPDP}    accessibility_id=Navigate up
+${navCartScr}    xpath=//android.widget.ImageView[@content-desc="Cart"]

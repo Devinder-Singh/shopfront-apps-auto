@@ -2,9 +2,9 @@
 ${btnProductDailyDeals}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]
 ${cntProductDeals}      id=${APP_PACKAGE}:id/dealsPromotionRecyclerView
 
-${btnProductImage}      xpath=(//android.widget.ImageView[@content-desc="Product Image"])[1]
-${btnProductFilter}      id=${APP_PACKAGE}:id/dealsPromotionFilterButton
+${lblProduct}     android=new UiSelector().textContains("$productText")
+
 ${btnProductAppOnlyDeals}      accessibility_id=App Only Deals
 ${btnProductWineClubDeals}      accessibility_id=Wine Club
-
-${lblProduct}     android=new UiSelector().textContains("$productText")
+${btnProductImage}      xpath=(//android.widget.ImageView[@content-desc="Product Image"])[1]
+${btnProductFilter}      id=${APP_PACKAGE}:id/dealsPromotionFilterButton

@@ -14,7 +14,6 @@ ${txtPaymentCancel}    accessibility_id=Navigate up
 ${txtPaymentEBucks}    id=${APP_PACKAGE}:id/checkout_order_review_earn_ebucks_selector
 
 ${txtGiftAdd}      id=${APP_PACKAGE}:id/checkout_order_review_earn_add_gift_message_selector
-${txtPaymentVoucher}      id=${APP_PACKAGE}:id/checkout_order_review_gift_voucher_selector
 
 ${lblPaymentDonate}      id=${APP_PACKAGE}:id/checkout_donation_beautiful_gate_donate_btn
 ${imgPaymentDonation}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ImageView
@@ -29,3 +28,10 @@ ${btnPayWithCash}      id=${APP_PACKAGE}:id/checkout_order_review_pay
 ${btnPayWithOzow}      id=${APP_PACKAGE}:id/checkout_order_review_pay
 ${btnPayWithMobi}      id=${APP_PACKAGE}:id/checkout_order_review_pay
 ${btnPayWithEBucks}      id=${APP_PACKAGE}:id/checkout_order_review_pay
+
+${txtPaymentVoucher}      id=${APP_PACKAGE}:id/checkout_order_review_gift_voucher_selector
+
+${rdoPaymentUseMyCredit}      id=${APP_PACKAGE}:id/tal_input_selector_field_layout_selector_check_box
+${txtPaymentAmount}      id=${APP_PACKAGE}:id/checkout_order_review_summary_price_to_pay_value
+
+${rdoPaymentDonation}      id=${APP_PACKAGE}:id/checkout_donate_checkbox

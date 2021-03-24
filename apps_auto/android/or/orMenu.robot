@@ -13,10 +13,11 @@ ${btnMenuPersonalDetail}    id=${APP_PACKAGE}:id/accountPersonalDetailsSelector
 
 ${btnBackMyAcc}      accessibility_id=Navigate up
 ${btnWishlist}    id=${APP_PACKAGE}:id/app_root_lists
-${btnWishlistItems}    id=${APP_PACKAGE}:id/wishlistListItemContainer
 ${btnCart}        xpath=//android.widget.ImageView[@content-desc="Cart"]
 
 ${btnMenuOrders}    id=${APP_PACKAGE}:id/accountOrdersSelector
+
+${btnWishlistItems}    id=${APP_PACKAGE}:id/wishlistListItemContainer
 ${btnMenuCategories}        id=${APP_PACKAGE}:id/app_root_categories
 
 ${btnWishlistCreate}    id=${APP_PACKAGE}:id/wishlistListsCreateNewList

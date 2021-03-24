@@ -12,6 +12,10 @@ Click Add To Wishlist
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
 
+Click Wishlist Options
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMoreOptions}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
+
 Click Search Icon
     Wait Until Element Is Visible    ${btnSearchIcon}    30s
     Click Element    ${btnSearchIcon}
@@ -29,8 +33,8 @@ Click Cancel Clear All Recently Viewed
     Click Element    ${btnHomeClearCancelRecent}
 
 Confirm Clear All Recently Viewed
-    Wait Until Element Is Visible    ${btnHomeClearRecent}    30s
-    Click Element    ${btnHomeClearRecent}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHomeClearRecent}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnHomeClearRecent}
 
 Verify Home Screen Text
     [Arguments]    ${verifyText}

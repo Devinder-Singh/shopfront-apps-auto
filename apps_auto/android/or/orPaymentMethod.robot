@@ -12,9 +12,11 @@ ${lblCash}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.Linea
 
 ${btnCODInfo}      id=${APP_PACKAGE}:id/checkout_payment_method_selector_info
 ${btnMobicredEFTInfo}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.view.ViewGroup[2]/androidx.appcompat.widget.LinearLayoutCompat/android.widget.LinearLayout/android.widget.TextView
+
+${btnGotItThanks}      id=android:id/button1
+
 ${lblCODInfo}      id=android:id/message
 ${lblMobicredInfo}      id=android:id/message
 
-${btnGotItThanks}      id=android:id/button1
 
 ${scrPaymentMethodAndroid}      id=${APP_PACKAGE}:id/checkout_payment_method_content
