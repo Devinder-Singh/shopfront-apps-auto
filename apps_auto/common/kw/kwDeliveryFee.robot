@@ -23,8 +23,25 @@ Click Back Collect Options
     Wait Until Element Is Visible    ${btnFree}    30s
     Click Element    ${navCollectOptBack}
 
+Click Why The Wait
+    Wait Until Element Is Visible    ${btnWhyTheWait}    30s
+    Click Element    ${btnWhyTheWait}
+
+Click Got It Thanks
+    Wait Until Element Is Visible    ${btnGotItThanks}    30s
+    Click Element    ${btnGotItThanks}
+
+Click +2 Show Details
+    Wait Until Element Is Visible    ${btnPlusTwo}    30s
+    Click Element    ${btnPlusTwo}
+
+Verify Delivery Options Thimbnail Images
+    Wait Until Element Is Visible    ${imgDelOptionsOne}    10s
+    Wait Until Element Is Visible    ${imgDelOptionsTwo}    1s
+    Wait Until Element Is Visible    ${imgDelOptionsThree}    1s
+    Wait Until Element Is Visible    ${imgDelOptionsFour}    1s
+    Wait Until Element Is Visible    ${imgDelOptionsFive}    1s
+
 Verify Delivery Options Text
     [Arguments]    ${verifyText}
-    Wait Until Element Is Visible    ${txtEstimatedCollection}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    Wait Until Page Contains    ${verifyText}    30s

@@ -15,3 +15,51 @@ Click Add To Wishlist
 Click Search Icon
     Wait Until Element Is Visible    ${btnSearchIcon}    30s
     Click Element    ${btnSearchIcon}
+
+Click View All Daily Deals
+    Wait Until Element Is Visible    ${btnHomeViewAllDailyDeals}    30s
+    Click Element    ${btnHomeViewAllDailyDeals}
+
+Click Clear All Recently Viewed
+    Wait Until Element Is Visible    ${btnHomeClearAllRecent}    30s
+    Click Element    ${btnHomeClearAllRecent}
+
+Click Cancel Clear All Recently Viewed
+    Wait Until Element Is Visible    ${btnHomeClearCancelRecent}    30s
+    Click Element    ${btnHomeClearCancelRecent}
+
+Confirm Clear All Recently Viewed
+    Wait Until Element Is Visible    ${btnHomeClearRecent}    30s
+    Click Element    ${btnHomeClearRecent}
+
+Verify Home Screen Text
+    [Arguments]    ${verifyText}
+    Wait Until Page Contains    ${verifyText}    30s
+
+Verify Home Screen Text Not
+    [Arguments]    ${verifyText}
+    Wait Until Page Does Not Contain    ${verifyText}    30s
+
+Click Icon Daily Deals
+    Wait Until Element Is Visible    ${btnHomeDeptDailyDeals}    30s
+    Click Element    ${btnHomeDeptDailyDeals}
+
+Click Icon App Only Deals
+    Wait Until Element Is Visible    ${btnHomeDeptAppOnlyDeals}    30s
+    Click Element    ${btnHomeDeptAppOnlyDeals}
+
+Click Icon Home Cook Essentials
+    Wait Until Element Is Visible    ${btnHomeDeptHomeCook}    30s
+    Click Element    ${btnHomeDeptHomeCook}
+
+Click Icon Health & Personal Care
+    Wait Until Element Is Visible    ${btnHomeDeptHealthCare}    30s
+    Click Element    ${btnHomeDeptHealthCare}
+
+Click Home Back
+    Wait Until Element Is Visible    ${btnHomeBack}    30s
+    Click Element    ${btnHomeBack}
+
+Click Home WishList
+    Wait Until Element Is Visible    ${btnHomeWishlist}    30s
+    Click Element    ${btnHomeWishlist}

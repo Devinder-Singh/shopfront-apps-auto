@@ -33,7 +33,7 @@ Click Airtime
 
 Click 10 Kg
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
-    Swipe By Percent    500    1000    500    90    1000
+    Swipe By Percent    50    100    50    90    1000
     Wait Until Element Is Visible    ${lblTenKgValue}    30s
     Click Element    ${lblTenKgValue}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${lblTenKgValue}
@@ -41,3 +41,15 @@ Click 10 Kg
 Click Go To Cart
     Wait Until Element Is Visible    ${btnGoToCart}    30s
     Click Element    ${btnGoToCart}
+
+Click Back PDP
+    Wait Until Element Is Visible    ${navBackPDP}    30s
+    Click Element    ${navBackPDP}
+
+Verify PDP Screen Text
+    [Arguments]    ${verifyText}
+    Wait Until Page Contains    ${verifyText}    30s
+
+Verify PDP Screen Element
+    [Arguments]    ${verifyElement}
+    Wait Until Element Is Visible    ${verifyElement}    30s

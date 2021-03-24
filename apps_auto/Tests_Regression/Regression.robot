@@ -92,3 +92,71 @@ Apps > Promotions (Android) 03 - QA-5357
     Verify Checkout Text    5 x R 
     Verify Checkout Text    Item Total
     [Teardown]    Tear Down
+
+Apps > Verify Home Screen - QA-5355
+    [Setup]    Start Application
+    Click Home
+    Verify Home Screen Text    Daily Deals
+    Click View All Daily Deals
+    Click Product Daily Deals
+    [Teardown]    Tear Down
+
+Apps > Verify Home Screen 02 - QA-5355
+    [Setup]    Start Application
+    Click Home
+    Verify Home Screen Text Not    Recommended For You
+    Verify Home Screen Text Not    Recently Viewed
+    Click Menu
+    Click Menu Login
+    Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234
+    Click Home
+    Verify Home Screen Text    Recommended For You
+    Verify Home Screen Text    Recently Viewed
+    Click Clear All Recently Viewed
+    Click Cancel Clear All Recently Viewed
+    Click Clear All Recently Viewed
+    Confirm Clear All Recently Viewed
+    Verify Home Screen Text Not    Recently Viewed
+    Verify Home Screen Text    Essential Campsite Supplies
+    Click Menu
+    Click Menu Shop By Department
+    Verify Home Screen Text    Daily Deals
+    Verify Home Screen Text    App Only Deals
+    Verify Home Screen Text    Home Cook Essentials
+    Verify Home Screen Text    Health & Personal Care
+    Verify Home Screen Text    Essential Campsite Supplies
+    Click Home Back
+    Click Icon Daily Deals
+    Click Product Daily Deals
+    Click Back PDP
+    Click Home Back
+    Click Icon App Only Deals
+    Click Product Daily Deals
+    Click Back PDP
+    Click Home Back
+    Click Icon Home Cook Essentials
+    Click Product Daily Deals
+    Click Back PDP
+    Click Home Back
+    Click Icon Health & Personal Care
+    Click Product Daily Deals
+    [Teardown]    Tear Down
+
+Apps > Verify Home Screen 03 - QA-5355
+    [Setup]    Start Application
+    Click Home
+    Click Cart
+    Verify PDP Screen Element    ${navCartScr}
+    [Teardown]    Tear Down
+
+Apps > Verify Home Screen 04 - QA-5355
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Home WishList
+    Click Wishlist
+    Click Wishlist Edit
+    Select Wishlist Item
+    Click Wishlist Delete
+    Verify Wishlist Text    No items
+    [Teardown]    Tear Down

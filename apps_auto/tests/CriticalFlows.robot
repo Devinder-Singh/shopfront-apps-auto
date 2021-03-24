@@ -140,7 +140,7 @@ Buy Airtime and Pay with Credit Card
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Continue Airtime
+    Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -168,7 +168,7 @@ Buy Airtime along with another Item on Delivery
     Click Delivery
     Click Address
     Click Free Delivery
-    Click Continue Airtime
+    Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -196,7 +196,7 @@ Buy Airtime along with another Item on Collection
     Click Collect
     Click Pickup Point
     Click Free Delivery
-    Click Continue Airtime
+    Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method

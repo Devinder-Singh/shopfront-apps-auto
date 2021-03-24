@@ -90,9 +90,11 @@ Click Payment Donation Deselect
 
 Verify Payment Text
     [Arguments]    ${verifyText}
-    Wait Until Element Is Visible    ${btnChange}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    Wait Until Page Contains    ${verifyText}    30s
+
+Click Payment Donation
+    Wait Until Element Is Visible    ${rdoPaymentDonation}    30s
+    Click Element    ${rdoPaymentDonation}
 
 Verify Payment Details Text
     [Arguments]    ${verifyText}

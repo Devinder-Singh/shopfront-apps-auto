@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          ../../${PLATFORM_NAME}/or/orAddAddress.robot
-Resource          ../../${PLATFORM_NAME}/or/orAirtimeContinue.robot
+Resource          ../../${PLATFORM_NAME}/or/orDigitalItemContinue.robot
 Resource          ../../${PLATFORM_NAME}/or/orCardPayment.robot
 Resource          ../../${PLATFORM_NAME}/or/orCheckout.robot
 Resource          ../../${PLATFORM_NAME}/or/orDelivery.robot
@@ -31,11 +31,12 @@ Resource          ../../${PLATFORM_NAME}/or/orPaymentEBucks.robot
 Resource          ../../${PLATFORM_NAME}/or/orVoucher.robot
 Resource          ../../${PLATFORM_NAME}/or/orRegister.robot
 Resource          ../../${PLATFORM_NAME}/or/orProductFilter.robot
+Resource          ../../${PLATFORM_NAME}/or/orChangeRecepient.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
 Resource          ../kw/kwOrders.robot
 Resource          ../kw/kwAddAddress.robot
-Resource          ../kw/kwAirtimeContinue.robot
+Resource          ../kw/kwDigitalItemContinue.robot
 Resource          ../kw/kwCardPayment.robot
 Resource          ../kw/kwCheckout.robot
 Resource          ../kw/kwDelivery.robot
@@ -64,12 +65,13 @@ Resource          ../kw/kwConfirmation.robot
 Resource          ../kw/kwPaymentOzow.robot
 Resource          ../kw/kwPaymentMobi.robot
 Resource          ../kw/kwAPI.robot
-Library           TalLibrary
-Library           String
 Resource          ../kw/kwPaymentEBucks.robot
 Resource          ../kw/kwVoucher.robot
 Resource          ../kw/kwRegister.robot
 Resource          ../kw/kwProductFilter.robot
+Resource          ../kw/kwChangeRecepient.robot
+Library           TalLibrary
+Library           String
 
 *** Variables ***
 ${PLATFORM_NAME}    ios

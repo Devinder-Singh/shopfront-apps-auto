@@ -32,7 +32,7 @@ Apps - Checkout - Delivery Methods - Digital Items - QA-5227
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Continue Airtime
+    Click Continue Digital Item
     Click Donate No Thanks
     [Teardown]    Tear Down
 
@@ -558,7 +558,7 @@ Apps > Checkout > Collect > Add Only Digital Item - QA-5265
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Continue Airtime
+    Click Continue Digital Item
     Click Donate No Thanks
     [Teardown]    Tear Down
 
@@ -701,7 +701,7 @@ Apps > Checkout > Order Review - QA-5230
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Continue Airtime
+    Click Continue Digital Item
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Verify Payment Text    Sent upon payment DIGITAL ITEMS
@@ -742,7 +742,7 @@ Apps > Checkout > Order Review 03 - QA-5230
     Click Go To Cart
     Click Checkout Delete First Item
     Click Checkout
-    Click Continue Airtime
+    Click Continue Digital Item
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     [Teardown]    Tear Down
@@ -810,7 +810,7 @@ Apps > Checkout > Payment > Gift Msg 02 - QA-5203
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Continue Airtime
+    Click Continue Digital Item
     Click Donate No Thanks
     Verify Payment Text Not    Is this a gift? Add a gift message
     [Teardown]    Tear Down
@@ -874,7 +874,7 @@ Apps > Checkout > Payment > Payment Method Availability 03 - QA-5209
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Continue Airtime
+    Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method
     Click Mobicred Payment Info
@@ -1420,7 +1420,7 @@ Apps > Checkout > Payment > Credits (Voucher) - QA-5284
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1429,8 +1429,243 @@ Apps > Checkout > Payment > Credits (Voucher) - QA-5284
     Click Free Delivery
     Click Donate No Thanks
     Click Add Payment Voucher
-    Enter Payment Voucher Code    1110
+    Enter Payment Voucher Code
     Click Apply Payment Voucher
-#    Add Donation
-#    Click Pay
+    Click Back Payment Voucher
+    Verify Payment Element Exists    ${rdoPaymentUseMyCredit}
+    Verify Payment Text    Use my Credit (R
+    Verify Payment Text    You don't owe us a cent. Your available credit balance covers the full value of your order
+    Click Payment Donation
+    Verify Payment Element Exists    ${txtPaymentAmount}
+    Click Payment Confirm Order
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > General Test Case - QA-5215
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    airtime
+    Click First Product from API
+    Click Airtime
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Verify Continue Digital Item Text    Digital Items
+    Verify Continue Digital Item Text    Sent upon payment
+    Click Continue Digital Item
+    Click Donate No Thanks
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > General Test Case 02 - QA-5215
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    airtime
+    Click First Product from API
+    Click Airtime
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    montego
+    Click First Product from API
+    Click 10 Kg
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Continue Digital Item
+    Click Donate No Thanks
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > General Test Case 03 - QA-5215
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product in Leadtime
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Why The Wait
+    Verify Delivery Options Text    Why the wait?
+    Verify Delivery Options Text    One or more items in your cart need to be ordered from our supplier. You can collect your order once all your items have arrived and you've received email confirmation that your order is ready
+    Click Got It Thanks
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > General Test Case 04 - QA-5215
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product in Leadtime
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Why The Wait
+    Verify Delivery Options Text    Why the wait?
+    Verify Delivery Options Text    One or more items in your cart need to be ordered from our supplier. You can collect your order once all your items have arrived and you've received email confirmation that your order is ready
+    Click Got It Thanks
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > General Test Case 05 - QA-5215
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product in Leadtime
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Why The Wait
+    Verify Delivery Options Text    Why the wait?
+    Verify Delivery Options Text    One or more items in your cart need to be ordered from our supplier. You can collect your order once all your items have arrived and you've received email confirmation that your order is ready
+    Click Got It Thanks
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > General Test Case 06 - QA-5215
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    Television
+    Click Product from API
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    Fridge
+    Click Product from API
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    toy
+    Click Product from API
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    glass
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    Click +2 Show Details
+    Verify Delivery Options Text    Items for Collection
+    Verify Delivery Options Text    Qty: 1
+    Verify Delivery Options Thimbnail Images
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > Add Gift Recipient - QA-7850
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Gift Vouch
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Verify Continue Digital Item Text    Delivery via email to
+    Verify Continue Digital Item Text    take2Automation+201905213934@gmail.com
+    Click Change Digital Item Recepient
+    Enter Gift Message    Automation Test
+    Click Gift Message Save Button
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QA-7850
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Airtime
+    Click Product from API
+    Click Airtime
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Verify Continue Digital Item Text    Delivery via email to
+    Verify Continue Digital Item Text    take2Automation+201905213934@gmail.com
+    Verify Continue Digital Item Text    Digital Items
+    Verify Continue Digital Item Text    Sent upon payment
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > Add Gift Recipient 03 - QA-7850
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    eBook
+    Click Product from API
+    Verify PDP Screen Text    This is an electronic book (eBook). In order to read this eBook you need to: (1) have a compatible device; (2) register for an Adobe ID; (3) download the correct eReader software
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QA-7850
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Verify Delivery Options Text    Items for Delivery
+    Verify Delivery Options Text    When would you like it delivered?
+    [Teardown]    Tear Down
+
+Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QA-7850
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Verify Delivery Options Text    Items for Collection
+    Verify Delivery Options Text    Estimated collection from:
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Mobicred - QA-5266
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Mobicred Payment Method
+    Click Pay With Mobi
+#    Pay with Mobi not working
     [Teardown]    Tear Down

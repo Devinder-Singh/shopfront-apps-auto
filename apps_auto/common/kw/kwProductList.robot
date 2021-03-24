@@ -3,8 +3,12 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***    
 Click Product from API
-    #    ${txtProduct}    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "Omega 32" HD Ready LED TV"`]
     ${txtProduct}=    Get Product to Add To Cart
+    Wait Until Element Is Visible    ${txtProduct}    30s
+    Click Element    ${txtProduct}
+
+Click First Product from API
+    ${txtProduct}=    Get Airtime Product to Add To Cart
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
 

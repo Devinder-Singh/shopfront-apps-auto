@@ -27,3 +27,7 @@ ${btnPayWithMobi}      chain=**/XCUIElementTypeButton[`label == "PAY WITH MOBICR
 ${btnPayWithEBucks}      chain=**/XCUIElementTypeButton[`label == "PAY WITH EBUCKS"`]
 
 ${txtPaymentVoucher}      id=Add Gift Voucher or Coupon Code
+${rdoPaymentUseMyCredit}      id=btn radio selected
+${txtPaymentAmount}      chain=**/XCUIElementTypeStaticText[`label == "R  0"`]
+
+${rdoPaymentDonation}      id=Donate R 5 to Beautiful Gate Children's Charity
