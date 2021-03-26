@@ -1,21 +1,26 @@
 *** Settings ***
 Resource          ../config/defaultConfig.robot
 
-*** Keywords ***    
+*** Keywords ***
 Click Product from API
     ${txtProduct}=    Get Product to Add To Cart
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
 
 Click First Product from API
-    ${txtProduct}=    Get Airtime Product to Add To Cart
+    ${txtProduct}=    Get Variant Product to Add To Cart
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
 
 Click Product Daily Deals
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cntProductDeals}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${imgProductDeals}    30s
+    Sleep    1s
     Wait Until Element Is Visible    ${btnProductDailyDeals}    30s
     Click Element    ${btnProductDailyDeals}
+
+Click Product From Title
+    Wait Until Element Is Visible    ${btnProductTitle}    30s
+    Click Element    ${btnProductTitle}
 
 Click App Only Deals
     Wait Until Element Is Visible    ${btnProductAppOnlyDeals}    30s
@@ -28,6 +33,14 @@ Click Wine Club Deals
 Click Product Filter
     Wait Until Element Is Visible    ${btnProductFilter}    30s
     Click Element    ${btnProductFilter}
+
+Click Search Product Filter
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Click Element    ${btnProductSearchFilter}
+
+Click Search Product Sort
+    Wait Until Element Is Visible    ${btnProductSearchSort}    30s
+    Click Element    ${btnProductSearchSort}
 
 Click Product available in JHB only
     ${txtProduct}=    Get Product in JHB only
@@ -56,6 +69,6 @@ Verify Product Image
 Click Product
     [Arguments]    ${productText}
     ${lblProduct}=    Replace String    ${lblProduct}    $productText    ${productText}
-    Wait Until Page Contains Element    ${lblProduct}    15s
+    Wait Until Page Contains Element    ${lblProduct}    30s
     Click Element    ${lblProduct}
     [Teardown]

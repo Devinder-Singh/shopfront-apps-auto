@@ -21,7 +21,7 @@ ${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, Vo
 Clear Environment
     Clear Cart
     Clear Wishlist
-    Clear Address
+#    Clear Address
 
 Clear Cart
     Post    ${cart_URL}    ${cart_Body}
@@ -59,21 +59,21 @@ Get Product to Add To Cart
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"] 
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]'] 
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
 
     [return]    ${searchResult}
 
-Get Airtime Product to Add To Cart
+Get Variant Product to Add To Cart
     ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
 
     @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
 
-    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[0]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[0]"] 
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[0]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[0]"]
 
     [return]    ${searchResult}
 

@@ -23,3 +23,7 @@ Swipe Up
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.3)
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
     Sleep  1
+
+Verify Text On Screen
+    [Arguments]    ${verifyText}
+    Wait Until Page Contains    ${verifyText}    30s

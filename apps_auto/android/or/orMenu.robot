@@ -23,3 +23,4 @@ ${btnMenuCategories}        id=${APP_PACKAGE}:id/app_root_categories
 ${btnWishlistCreate}    id=${APP_PACKAGE}:id/wishlistListsCreateNewList
 
 ${btnDealsNotification}    id=${APP_PACKAGE}:id/no
+${btnMenuNewToElec}      xpath=//*[@text="New To Electronics"]

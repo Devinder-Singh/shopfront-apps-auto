@@ -160,3 +160,125 @@ Apps > Verify Home Screen 04 - QA-5355
     Click Wishlist Delete
     Verify Wishlist Text    No items
     [Teardown]    Tear Down
+
+Apps > Search - QA-5358
+    [Setup]    Start Application
+    Clear Environment
+    Verify Home Menu
+    Click Menu
+    Verify Menu Items
+    Click Menu Shop By Department
+    Click Menu New To Electronics
+    Click Product From Title
+    Click Add To Cart
+    [Teardown]    Tear Down
+
+Apps > PLP - QA-5360
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu Daily Deals
+    Click Product Daily Deals
+    Verify Add To Wishlist
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    toy
+    Click Product from API
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    pencil
+    Click Product from API
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    johnnie wal
+    Click Product from API
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    glass
+    Click First Product from API
+    Click Seller Name
+    Click Product Daily Deals
+    [Teardown]    Tear Down
+
+Apps > PLP 02 - QA-5360
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Search Product    pencil
+    Click First Product from API
+    Click Search Product Sort
+    Click Sort High To Low
+    Click Search Product Sort
+    Click Sort Low To High
+    Click Search Product Sort
+    Click Sort Top Rated
+    Click Search Product Sort
+    Click Sort New Arrivals
+    Click Search Product Filter
+    Click Filter Category
+    Click Filter Office Stationery
+    Click Filter Select Button
+    Click Filter Apply Button
+    Click Search Product Filter
+    Click Filter Availability
+    Click Filter In Stock
+    Click Filter Apply Button
+    Click Search Product Filter
+    Click Filter Brand
+    Click Filter Brand Name
+    Click Filter Select Button
+    Click Filter Apply Button
+    Click Search Product Filter
+    Click Filter Colour
+    Click Filter Colour Name
+    Click Filter Select Button
+    Click Filter Apply Button
+    Click Search Product Filter
+    Click Filter Material
+    Click Filter Material Name
+    Click Filter Select Button
+    Click Filter Apply Button
+    Click Search Product Filter
+    Click Filter Rating
+    Click Filter Rating Name
+    Click Filter Apply Button
+
+Apps > PLP 03 - QA-5360
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Search Product    pencil
+    Click First Product from API
+    Click Back My Account
+    Click Home
+    Search Product    pencil
+    Click First Product from API
+    Click More Options
+    Click Options Menu Home
+    Click Home
+    Search Product    pencil
+    Click First Product from API
+    Click More Options
+    Click Options Menu Categories
+    Verify Text On Screen    Daily Deals
+    Click Home
+    Search Product    pencil
+    Click First Product from API
+    Click More Options
+    Click Options Menu Deals
+    Click Home
+    Search Product    pencil
+    Click First Product from API
+    Click More Options
+    Click Options Menu Lists
+    Verify Text On Screen    Wish List
+    Click Home
+    Search Product    pencil
+    Click First Product from API
+    Click More Options
+    Click Options Menu Account
+    Verify Text On Screen    Personal Details

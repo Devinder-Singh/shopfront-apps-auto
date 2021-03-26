@@ -96,7 +96,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment    Card number
     [Teardown]    Tear Down
 
 Edit Personal Details, Create Address and Buy Item on Delivery
@@ -134,7 +134,7 @@ Buy Airtime and Pay with Credit Card
     Comment    Clear Environment
     Click Home
     Click Search Home
-    Search Product    airtime
+    Search Product    airtim
     Click Product    Vodacom Mobile Airtime Voucher
     Click Airtime
     Click Add To Cart
@@ -153,8 +153,8 @@ Buy Airtime along with another Item on Delivery
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    airtime
-    Click Product from API
+    Search Product    airtim
+    Click First Product from API
     Click Airtime
     Click Add To Cart
     Click Continue Shopping
@@ -181,14 +181,14 @@ Buy Airtime along with another Item on Collection
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    airtime
-    Click Product from API
+    Search Product    airtim
+    Click First Product from API
     Click Airtime
     Click Add To Cart
     Click Continue Shopping
     Click Search Icon
     Search Product    montego
-    Click Product from API
+    Click First Product from API
     Click 10 Kg
     Click Add To Cart
     Click Go To Cart

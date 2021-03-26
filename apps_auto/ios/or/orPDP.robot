@@ -11,3 +11,5 @@ ${btnPDPCartItemIncrease}      chain=**/XCUIElementTypeButton[`label == "Button"
 
 ${navBackPDP}    id=Deals
 ${navCartScr}    chain=**/XCUIElementTypeNavigationBar[`name == "Shopping Cart"`]
+
+${btnPDPSellerName}      chain=**/XCUIElementTypeLink[`label == "Sophie Moda"`][1]

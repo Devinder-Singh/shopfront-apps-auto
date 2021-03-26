@@ -12,9 +12,29 @@ Click Add To Wishlist
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
 
-Click Wishlist Options
+Click More Options Menu
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMoreOptions}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
+
+Click Options Menu Home
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionHome}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
+
+Click Options Menu Cetegories
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionCategories}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionCategories}
+
+Click Options Menu Deals
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionDeals}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionDeals}
+
+Click Options Menu Lists
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionLists}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionLists}
+
+Click Options Menu Account
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionAccount}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionAccount}
 
 Click Search Icon
     Wait Until Element Is Visible    ${btnSearchIcon}    30s
@@ -67,3 +87,10 @@ Click Home Back
 Click Home WishList
     Wait Until Element Is Visible    ${btnHomeWishlist}    30s
     Click Element    ${btnHomeWishlist}
+
+Verify Home Menu
+    Wait Until Element Is Visible    ${btnHome}    30s
+    Wait Until Element Is Visible    ${btnHomeWishlist}    30s
+
+Verify Add To Wishlist
+    Wait Until Element Is Visible    ${btnAddWishlist}    30s

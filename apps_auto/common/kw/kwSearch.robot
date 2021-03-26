@@ -8,8 +8,9 @@ Click Search Home
 
 Search Product
     [Arguments]    ${search}
-    Comment    ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    10s
-    Comment    Run Keyword If    ${btnPresentSearchHistory}    Click Element    ${btnSearchClearAll}
+    ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    10s
+    Run Keyword If    ${btnPresentSearchHistory}    Click Element    ${btnSearchClearAll}
+
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Input Text    ${btnSearchHome}    ${search}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Input Text    ${txtSearch}    ${search}
     ${searchFirstOption}=    Get First Search Option    ${search}

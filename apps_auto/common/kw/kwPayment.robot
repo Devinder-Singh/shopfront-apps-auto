@@ -35,6 +35,10 @@ Select Earn eBucks
     Click Element    ${txtPaymentEBucks}
 
 Click Change Payment Method
+    Wait Until Element Is Visible    ${txtPaymentVoucher}    30s
+    ${rdoPaymentCredit}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${rdoPaymentUseMyCredit}    1s
+    Run Keyword If    ${rdoPaymentCredit}    Click Element    ${rdoPaymentUseMyCredit}
+
     Wait Until Element Is Visible    ${btnChange}    30s
     Click Element    ${btnChange}
 

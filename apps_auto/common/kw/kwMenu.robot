@@ -38,6 +38,10 @@ Click Menu Sport and Fitness
     Wait Until Element Is Visible    ${mnuSportFitness}    5s
     Click Element    ${mnuSportFitness}
 
+Click Menu New To Electronics
+    Wait Until Element Is Visible    ${btnMenuNewToElec}    5s
+    Click Element    ${btnMenuNewToElec}
+
 Click Menu My Account
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccount}
@@ -68,3 +72,9 @@ Click Wishlist
 Click Cart
     Wait Until Element Is Visible    ${btnCart}    1s
     Click Element    ${btnCart}
+
+Verify Menu Items
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuCategories}
+    Wait Until Element Is Visible    ${btnMenuDailyDeals}    1s
+    Wait Until Element Is Visible    ${mnuShopByDepartment}    1s
+    Wait Until Element Is Visible    ${mnuMyAccount}    1s

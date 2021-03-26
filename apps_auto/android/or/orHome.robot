@@ -4,7 +4,11 @@ ${btnAddWishlist}      id=${APP_PACKAGE}:id/pdpWidgetButtonContainerAddToWishlis
 ${btnSearchIcon}      xpath=//android.widget.TextView[@content-desc="Search"]
 
 ${btnMoreOptions}      xpath=//android.widget.ImageView[@content-desc="More options"]
-${btnOptionHome}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView
+${btnOptionHome}      xpath=//*[@text="Home"]
+${btnOptionCategories}      xpath=//*[@text="Categories"]
+${btnOptionDeals}      xpath=//*[@text="Deals"]
+${btnOptionLists}      xpath=//*[@text="Lists"]
+${btnOptionAccount}      xpath=//*[@text="Account"]
 
 ${btnHomeViewAllDailyDeals}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListViewAllText
 ${btnHomeClearAllRecent}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListViewAllText

@@ -15,6 +15,10 @@ Click Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}
 
+Click Seller Name
+    Wait Until Element Is Visible    ${btnPDPSellerName}    30s
+    Click Element    ${btnPDPSellerName}
+
 Verify Delivery Surcharge
     [Arguments]    ${verifyText}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblDeliverySurcharge}    30s
@@ -33,10 +37,9 @@ Click Airtime
 
 Click 10 Kg
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
-    Swipe By Percent    50    100    50    90    1000
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Swipe By Percent    50    70    50    100    1000
     Wait Until Element Is Visible    ${lblTenKgValue}    30s
     Click Element    ${lblTenKgValue}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${lblTenKgValue}
 
 Click Go To Cart
     Wait Until Element Is Visible    ${btnGoToCart}    30s
