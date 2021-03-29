@@ -72,3 +72,21 @@ Click Product
     Wait Until Page Contains Element    ${lblProduct}    30s
     Click Element    ${lblProduct}
     [Teardown]
+
+Verify Sorted Products
+    [Arguments]    ${sort}
+
+    ${txtProduct}=    Get First Sort Product    ${sort}
+    Wait Until Element Is Visible    ${txtProduct}    30s
+
+    ${txtProduct}=    Get Fourth Sort Product    ${sort}
+    Wait Until Element Is Visible    ${txtProduct}    30s
+
+Verify Filtered Products
+    [Arguments]    ${filter}
+
+    ${txtProduct}=    Get First Filter Product    ${filter}
+    Wait Until Element Is Visible    ${txtProduct}    30s
+
+    ${txtProduct}=    Get Fourth Filter Product    ${filter}
+    Wait Until Element Is Visible    ${txtProduct}    30s

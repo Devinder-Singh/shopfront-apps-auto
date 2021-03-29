@@ -16,3 +16,11 @@ Search Product
     ${searchFirstOption}=    Get First Search Option    ${search}
     Wait Until Element Is Visible    ${searchFirstOption}    15s
     Click Element    ${searchFirstOption}
+
+Click Search Recent
+    Wait Until Element Is Visible    ${btnSearchRecent}    30s
+    Click Element    ${btnSearchRecent}
+
+Click Search Trending
+    Wait Until Element Is Visible    ${btnSearchTrending}    30s
+    Click Element    ${btnSearchTrending}

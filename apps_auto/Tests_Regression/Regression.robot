@@ -212,12 +212,16 @@ Apps > PLP 02 - QA-5360
     Click First Product from API
     Click Search Product Sort
     Click Sort High To Low
+    Verify Sorted Products    Price+Descending
     Click Search Product Sort
     Click Sort Low To High
+    Verify Sorted Products    Price+Ascending
     Click Search Product Sort
     Click Sort Top Rated
+    Verify Sorted Products    Rating+Descending
     Click Search Product Sort
     Click Sort New Arrivals
+    Verify Sorted Products    ReleaseDate+Descending
     Click Search Product Filter
     Click Filter Category
     Click Filter Office Stationery
@@ -227,25 +231,31 @@ Apps > PLP 02 - QA-5360
     Click Filter Availability
     Click Filter In Stock
     Click Filter Apply Button
+    Verify Filtered Products    Availability:0.0-0.0
     Click Search Product Filter
     Click Filter Brand
     Click Filter Brand Name
     Click Filter Select Button
     Click Filter Apply Button
+    Verify Filtered Products    Brand:Meeco
     Click Search Product Filter
     Click Filter Colour
     Click Filter Colour Name
     Click Filter Select Button
     Click Filter Apply Button
+    Verify Filtered Products    BasicColours:Blue
     Click Search Product Filter
     Click Filter Material
     Click Filter Material Name
     Click Filter Select Button
     Click Filter Apply Button
+    Verify Filtered Products    ASMaterials:Nylon
     Click Search Product Filter
     Click Filter Rating
     Click Filter Rating Name
     Click Filter Apply Button
+    Verify Filtered Products    Rating:4.0-5.0
+    [Teardown]    Tear Down
 
 Apps > PLP 03 - QA-5360
     [Setup]    Start Application
@@ -257,28 +267,118 @@ Apps > PLP 03 - QA-5360
     Click Home
     Search Product    pencil
     Click First Product from API
-    Click More Options
+    Click More Options Menu
     Click Options Menu Home
     Click Home
     Search Product    pencil
     Click First Product from API
-    Click More Options
+    Click More Options Menu
     Click Options Menu Categories
     Verify Text On Screen    Daily Deals
     Click Home
     Search Product    pencil
     Click First Product from API
-    Click More Options
+    Click More Options Menu
     Click Options Menu Deals
     Click Home
     Search Product    pencil
     Click First Product from API
-    Click More Options
+    Click More Options Menu
     Click Options Menu Lists
     Verify Text On Screen    Wish List
     Click Home
     Search Product    pencil
     Click First Product from API
-    Click More Options
+    Click More Options Menu
     Click Options Menu Account
     Verify Text On Screen    Personal Details
+    [Teardown]    Tear Down
+
+Apps > PDP - QA-5307
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Search Product    pencil
+    Click Product from API
+    Click Add To Cart
+    Click Continue Shopping
+    Click Add To Wishlist
+    Verify Text On Screen    Description
+    Verify Text On Screen    Product Information
+    Verify Text On Screen    Write a Review
+    [Teardown]    Tear Down
+
+Apps > PDP 02 - QA-5307
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Search Product    airtim
+    Click First Product from API
+    Click Airtime
+    Click Add To Cart
+    Click Continue Shopping
+    Click Add To Wishlist
+    Verify Text On Screen    Description
+    Verify Text On Screen    Product Information
+    Verify Text On Screen    Write a Review
+    [Teardown]    Tear Down
+
+Apps > PDP 03 - QA-5307
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Search Product    Pencil
+    Get Variant Product to Add To Cart
+    Click Add To Wishlist
+    Verify PDP Screen Element Not Exists    ${btnAddToCart}
+    Verify Text On Screen    Description
+    Verify Text On Screen    Product Information
+    Verify Text On Screen    Write a Review
+    Click Blue Colour Option
+    Click Add To Cart
+    [Teardown]    Tear Down
+
+Apps > PDP 04 - QA-5307
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Search Product    pencil
+    Get Variant Product to Add To Cart
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message
+    Click Review Submit
+    Verify Text On Screen    You Might Also Like
+    [Teardown]    Tear Down
+
+Apps > Merchandised Landing Pages (CMS Widgets) - QA-5359
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    [Teardown]    Tear Down
+
+Apps > Merchandised Landing Pages (CMS Widgets) 02 - QA-5359
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Shop By Department
+    Click Menu Sport and Fitness
+    Click Product Widget First View All
+    Click Product Daily Deals
+    [Teardown]    Tear Down
+
+Apps > Merchandised Landing Pages (CMS Widgets) 03 - QA-5359
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Click Search Recent
+    [Teardown]    Tear Down
+
+Apps > Merchandised Landing Pages (CMS Widgets) 04 - QA-5359
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Click Search Trending
+    [Teardown]    Tear Down

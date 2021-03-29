@@ -41,7 +41,7 @@ Clear Address Business
 
 Get First Search Option
     [Arguments]    ${search}
-    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/search/autocomplete?query=${search}
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/search/autocomplete?query=${search}
     Get    ${search_URL}
     Integer    response status    200
     ${query_result}=    Output    $.suggestions[0].query
@@ -59,7 +59,7 @@ Get Product to Add To Cart
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]'] 
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
@@ -71,9 +71,15 @@ Get Variant Product to Add To Cart
     Get    ${search_URL}
     Integer    response status    200
 
+    @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.is_shop_all_options_available
     @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
 
-    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[0]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[0]"]
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+        Exit For Loop If    '${result}'=='True'
+        ${index}=    Evaluate    ${index} + 1
+    END
 
     [return]    ${searchResult}
 
@@ -88,7 +94,7 @@ Get Product with Leadtime
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"] 
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
@@ -108,7 +114,7 @@ Get Product in JHB only
     ${searchResult}=    Set Variable    ''
     FOR    ${result}    IN    @{results}
         ${cnt}=    Get length    ${result}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
 
         Run Keyword If
             ...    ${cnt}==1
@@ -135,7 +141,7 @@ Get Product in CPT only
     ${searchResult}=    Set Variable    ''
     FOR    ${result}    IN    @{results}
         ${cnt}=    Get length    ${result}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
 
         Run Keyword If
             ...    ${cnt}==1
@@ -162,7 +168,8 @@ Get Product in JHB and CPT
     ${searchResult}=    Set Variable    ''
     FOR    ${result}    IN    @{results}
         ${cnt}=    Get length    ${result}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[2]/XCUIElementTypeOther/XCUIElementTypeStaticText[1]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+
         Run Keyword If
             ...    ${cnt}==2
             ...    Exit For Loop
@@ -178,3 +185,51 @@ Get Payment Voucher Number
     ${query_result}=    Output    $[0].VoucherCode
     Set Global Variable    ${query_result_voucher}    ${query_result}
     [return]    ${query_result_voucher}
+
+Get First Sort Product
+    [Arguments]    ${sort}
+
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}&sort=${sort}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[0]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[0]"]
+
+    [Return]    ${searchResult}
+
+Get Fourth Sort Product
+    [Arguments]    ${sort}
+
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}&sort=${sort}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[3]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[3]"]
+
+    [Return]    ${searchResult}
+
+Get First Filter Product
+    [Arguments]    ${filter}
+
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?filter=${filter}&qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[0]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[0]"]
+
+    [Return]    ${searchResult}
+
+Get Fourth Filter Product
+    [Arguments]    ${filter}
+
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?filter=${filter}&qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[3]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[3]"]
+
+    [Return]    ${searchResult}

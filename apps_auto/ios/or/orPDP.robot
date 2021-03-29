@@ -13,3 +13,5 @@ ${navBackPDP}    id=Deals
 ${navCartScr}    chain=**/XCUIElementTypeNavigationBar[`name == "Shopping Cart"`]
 
 ${btnPDPSellerName}      chain=**/XCUIElementTypeLink[`label == "Sophie Moda"`][1]
+${lblBlueValue}      chain=**/XCUIElementTypeStaticText[`label == "Blue"`]
+${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write a Review"`]

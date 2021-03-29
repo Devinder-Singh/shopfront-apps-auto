@@ -41,9 +41,19 @@ Click 10 Kg
     Wait Until Element Is Visible    ${lblTenKgValue}    30s
     Click Element    ${lblTenKgValue}
 
+Click Blue Colour Option
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Swipe By Percent    50    70    50    100    1000
+    Wait Until Element Is Visible    ${lblBlueValue}    30s
+    Click Element    ${lblBlueValue}
+
 Click Go To Cart
     Wait Until Element Is Visible    ${btnGoToCart}    30s
     Click Element    ${btnGoToCart}
+
+Click PDP Write Review
+    Wait Until Element Is Visible    ${btnPDPReview}    30s
+    Click Element    ${btnPDPReview}
 
 Click Back PDP
     Wait Until Element Is Visible    ${navBackPDP}    30s
@@ -56,3 +66,7 @@ Verify PDP Screen Text
 Verify PDP Screen Element
     [Arguments]    ${verifyElement}
     Wait Until Element Is Visible    ${verifyElement}    30s
+
+Verify PDP Screen Element Not Exists
+    [Arguments]    ${verifyElement}
+    Wait Until Page Does Not Contain Element    ${verifyElement}

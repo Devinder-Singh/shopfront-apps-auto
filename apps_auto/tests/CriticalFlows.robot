@@ -75,13 +75,13 @@ Search and Buy Heavy Item on Delivery along with TV
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Fridge
+    Search Product    Fridg
     Click Product from API
     Verify Delivery Surcharge    + R 200 Delivery Surcharge
     Click Add To Cart
     Click Continue Shopping
     Click Search Icon
-    Search Product    Television
+    Search Product    Televisio
     Click Product from API
     Click Add To Cart
     Click Go To Cart
@@ -131,11 +131,11 @@ Edit Personal Details, Create Address and Buy Item on Delivery
 
 Buy Airtime and Pay with Credit Card
     [Setup]    Start Application
-    Comment    Clear Environment
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Product    Vodacom Mobile Airtime Voucher
+    Click First Product from API
     Click Airtime
     Click Add To Cart
     Click Go To Cart
@@ -159,8 +159,8 @@ Buy Airtime along with another Item on Delivery
     Click Add To Cart
     Click Continue Shopping
     Click Search Icon
-    Search Product    montego
-    Click Product from API
+    Search Product    monteg
+    Click First Product from API
     Click 10 Kg
     Click Add To Cart
     Click Go To Cart
@@ -187,7 +187,7 @@ Buy Airtime along with another Item on Collection
     Click Add To Cart
     Click Continue Shopping
     Click Search Icon
-    Search Product    montego
+    Search Product    monteg
     Click First Product from API
     Click 10 Kg
     Click Add To Cart

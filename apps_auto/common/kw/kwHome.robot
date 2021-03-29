@@ -20,7 +20,7 @@ Click Options Menu Home
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionHome}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
 
-Click Options Menu Cetegories
+Click Options Menu Categories
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionCategories}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionCategories}
 

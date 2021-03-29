@@ -5,6 +5,7 @@ Resource          ../config/defaultConfig.robot
 Click Wishlist Add To Cart
     Wait Until Element Is Visible    ${btnWishlistCart}    30s
     Click Element    ${btnWishlistCart}
+    Sleep    1s
 
 Click Wishlist Edit
     Click More Options Menu
