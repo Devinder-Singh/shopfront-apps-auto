@@ -1,5 +1,6 @@
 *** Variables ***
 ${btnProductDailyDeals}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]/XCUIElementTypeOther
+${imgProductDeals}      ${EMPTY}
 ${lblProduct}     id=$productText
 
 ${btnProductAppOnlyDeals}      id=App Only Deals
@@ -11,3 +12,5 @@ ${btnProductSearchFilter}      chain=**/XCUIElementTypeButton[`label == "Filter"
 ${btnProductSearchSort}      chain=**/XCUIElementTypeButton[`label == "Sort"`]
 
 ${btnProductTitle}      id=Fitbit Inspire 2 Fitness Tracker - Black
+
+${btnProductWishlist}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[4]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]

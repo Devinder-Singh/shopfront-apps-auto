@@ -42,6 +42,10 @@ Click Search Product Sort
     Wait Until Element Is Visible    ${btnProductSearchSort}    30s
     Click Element    ${btnProductSearchSort}
 
+Click Search Product Wishlist
+    Wait Until Element Is Visible    ${btnProductSearchSort}    30s
+    Click Element    ${btnProductWishlist}
+
 Click Product available in JHB only
     ${txtProduct}=    Get Product in JHB only
     Wait Until Element Is Visible    ${txtProduct}    30s

@@ -157,7 +157,7 @@ Apps > Verify Home Screen 04 - QA-5355
     Click Wishlist
     Click Wishlist Edit
     Select Wishlist Item
-    Click Wishlist Delete
+    Click Wishlist Delete Items
     Verify Wishlist Text    No items
     [Teardown]    Tear Down
 
@@ -381,4 +381,141 @@ Apps > Merchandised Landing Pages (CMS Widgets) 04 - QA-5359
     Click Home
     Click Search Home
     Click Search Trending
+    [Teardown]    Tear Down
+
+Apps > Wishlist (Android) - QA-5367
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Wishlist Nav Bar
+    Verify Text On Screen    Trending on Takealot
+    Verify Text On Screen    Wish List
+    Verify Text On Screen    DEFAULT
+    Click Create Wishlist
+    [Teardown]    Tear Down
+
+Apps > Wishlist (Android) 02 - QA-5367
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist
+    [Teardown]    Tear Down
+
+Apps > Wishlist (Android) 03 - QA-5367
+    [Setup]    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Click Wishlist Add To Cart
+    Click More Options Menu
+    Verify Text On Screen    Share List
+    Verify Text On Screen    Edit
+    Verify Text On Screen    Rename List
+    Verify Text On Screen    Delete List
+    [Teardown]    Tear Down
+
+Apps > Wishlist (Android) 04 - QA-5367
+    [Setup]    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Click Cart
+    Click Checkout
+    [Teardown]    Tear Down
+
+Apps > Wishlist (Android) 05 - QA-5367
+    [Setup]    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Click More Options Menu
+    Click Delete Wishlist
+    [Teardown]    Tear Down
+
+Apps > Wishlist (Android) 06 - QA-5367
+    [Setup]    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist
+    Click More Options Menu
+    Check Text On Screen Not    Delete List
+    [Teardown]    Tear Down
+
+Apps > Wishlist (Android) 07 - QA-5367
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Verify Text On Screen    Recent Searches
+    Verify Text On Screen    Trending
+    [Teardown]    Tear Down
+
+Apps > Cart & Wishlist - QA-5361
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu Daily Deals
+    Click Product Daily Deals
+    Click Add To Cart
+    Click Increase Cart Quantity    2
+    Click Go To Cart
+    Click Checkout Delete First Item
+    [Teardown]    Tear Down
+
+Apps > Cart & Wishlist 02 - QA-5361
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu Shop By Department
+    Click Menu Sport and Fitness
+    Click Product Daily Deals
+    Click Add To Wishlist
+    Click Wishlist
+    Click Wishlist Add To Cart
+    Click Cart
+    Click Checkout
+    [Teardown]    Tear Down
+
+Apps > Cart & Wishlist 03 - QA-5361
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Search Product Wishlist
+    Verify Text On Screen    Item added to Wish List
+    [Teardown]    Tear Down
+
+Apps > Cart & Wishlist 04 - QA-5361
+    [Setup]    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist
+    Click More Options Menu
+    Click Wishlist Delete Items
+    [Teardown]    Tear Down
+
+Apps > Cart & Wishlist 05 - QA-5361
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Search Product Wishlist
+    Verify Text On Screen    Item added to Wish List
+    [Teardown]    Tear Down
+
+Apps > Cart & Wishlist 06 - QA-5361
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout Move To Wishlist First Item
+    Verify Text On Screen    Item(s) moved to list
     [Teardown]    Tear Down

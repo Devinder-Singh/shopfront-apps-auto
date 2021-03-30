@@ -27,3 +27,7 @@ Swipe Up
 Verify Text On Screen
     [Arguments]    ${verifyText}
     Wait Until Page Contains    ${verifyText}    30s
+
+Check Text On Screen Not
+    [Arguments]    ${verifyText}
+    Page Should Not Contain Text    ${verifyText}

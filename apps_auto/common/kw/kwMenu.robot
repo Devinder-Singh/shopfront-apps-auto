@@ -62,12 +62,14 @@ Click Back My Account
     Wait Until Element Is Visible    ${btnBackMyAcc}    5s
     Click Element    ${btnBackMyAcc}
 
+Click Wishlist Nav Bar
+    Wait Until Element Is Visible    ${btnWishlist}    1s
+    Click Element    ${btnWishlist}
+
 Click Wishlist
     Wait Until Element Is Visible    ${btnWishlist}    1s
     Click Element    ${btnWishlist}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistItems}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlistItems}
+    Navigate to Wishlist
 
 Click Cart
     Wait Until Element Is Visible    ${btnCart}    1s

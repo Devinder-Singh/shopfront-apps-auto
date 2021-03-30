@@ -17,10 +17,7 @@ ${btnCart}        xpath=//android.widget.ImageView[@content-desc="Cart"]
 
 ${btnMenuOrders}    id=${APP_PACKAGE}:id/accountOrdersSelector
 
-${btnWishlistItems}    id=${APP_PACKAGE}:id/wishlistListItemContainer
 ${btnMenuCategories}        id=${APP_PACKAGE}:id/app_root_categories
-
-${btnWishlistCreate}    id=${APP_PACKAGE}:id/wishlistListsCreateNewList
 
 ${btnDealsNotification}    id=${APP_PACKAGE}:id/no
 ${btnMenuNewToElec}      xpath=//*[@text="New To Electronics"]

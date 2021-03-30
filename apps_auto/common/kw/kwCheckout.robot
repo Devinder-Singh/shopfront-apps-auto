@@ -17,6 +17,13 @@ Click Checkout Delete First Item
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutSelect}
     Click Element    ${btnCheckoutDelete}
 
+Click Checkout Move To Wishlist First Item
+    Wait Until Element Is Visible    ${btnCheckout}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutEdit}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCheckoutSelect}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutSelect}
+    Click Element    ${btnCheckoutMoveToWishlist}
+
 Verify Checkout Text
     [Arguments]    ${verifyText}
 

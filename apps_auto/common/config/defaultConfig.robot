@@ -36,6 +36,7 @@ Resource          ../../${PLATFORM_NAME}/or/orFilter.robot
 Resource          ../../${PLATFORM_NAME}/or/orSort.robot
 Resource          ../../${PLATFORM_NAME}/or/orReview.robot
 Resource          ../../${PLATFORM_NAME}/or/orProductWidgets.robot
+Resource          ../../${PLATFORM_NAME}/or/orMyLists.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
 Resource          ../kw/kwOrders.robot
@@ -79,6 +80,7 @@ Resource          ../kw/kwSort.robot
 Resource          ../kw/kwCommon.robot
 Resource          ../kw/kwReview.robot
 Resource          ../kw/kwProductWidgets.robot
+Resource          ../kw/kwMyLists.robot
 Library           TalLibrary
 Library           String
 
