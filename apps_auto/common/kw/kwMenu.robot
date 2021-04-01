@@ -13,6 +13,11 @@ Click Menu
 Click Menu Login
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${cntMenuAccountScroll}
+
+    ${chkLoginElement}=    Run Keyword And Return Status    Page Should Contain Element    ${btnMenuLogin}
+    Run Keyword If    ${chkLoginElement}==False    Click Element    ${btnLogout}
     Click Element    ${btnMenuLogin}
 
 Click Menu Register
@@ -58,6 +63,10 @@ Click Menu Orders
     Wait Until Element Is Visible    ${btnMenuOrders}    5s
     Click Element    ${btnMenuOrders}
 
+Click Menu Exchanges And Returns
+    Wait Until Element Is Visible    ${btnMenuExchReturns}    10s
+    Click Element    ${btnMenuExchReturns}
+
 Click Back My Account
     Wait Until Element Is Visible    ${btnBackMyAcc}    5s
     Click Element    ${btnBackMyAcc}
@@ -67,7 +76,7 @@ Click Wishlist Nav Bar
     Click Element    ${btnWishlist}
 
 Click Wishlist
-    Wait Until Element Is Visible    ${btnWishlist}    1s
+    Wait Until Element Is Visible    ${btnWishlist}    30s
     Click Element    ${btnWishlist}
     Navigate to Wishlist
 

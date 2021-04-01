@@ -274,7 +274,7 @@ Apps > PLP 03 - QA-5360
     Click First Product from API
     Click More Options Menu
     Click Options Menu Categories
-    Verify Text On Screen    Daily Deals
+    Verify Text On Screen    Daily Deals    30s
     Click Home
     Search Product    pencil
     Click First Product from API
@@ -285,13 +285,13 @@ Apps > PLP 03 - QA-5360
     Click First Product from API
     Click More Options Menu
     Click Options Menu Lists
-    Verify Text On Screen    Wish List
+    Verify Text On Screen    Wish List    30s
     Click Home
     Search Product    pencil
     Click First Product from API
     Click More Options Menu
     Click Options Menu Account
-    Verify Text On Screen    Personal Details
+    Verify Text On Screen    Personal Details    30s
     [Teardown]    Tear Down
 
 Apps > PDP - QA-5307
@@ -303,9 +303,9 @@ Apps > PDP - QA-5307
     Click Add To Cart
     Click Continue Shopping
     Click Add To Wishlist
-    Verify Text On Screen    Description
-    Verify Text On Screen    Product Information
-    Verify Text On Screen    Write a Review
+    Verify Text On Screen    Description    30s
+    Verify Text On Screen    Product Information    30s
+    Verify Text On Screen    Write a Review    30s
     [Teardown]    Tear Down
 
 Apps > PDP 02 - QA-5307
@@ -318,9 +318,9 @@ Apps > PDP 02 - QA-5307
     Click Add To Cart
     Click Continue Shopping
     Click Add To Wishlist
-    Verify Text On Screen    Description
-    Verify Text On Screen    Product Information
-    Verify Text On Screen    Write a Review
+    Verify Text On Screen    Description    30s
+    Verify Text On Screen    Product Information    30s
+    Verify Text On Screen    Write a Review    30s
     [Teardown]    Tear Down
 
 Apps > PDP 03 - QA-5307
@@ -331,9 +331,9 @@ Apps > PDP 03 - QA-5307
     Get Variant Product to Add To Cart
     Click Add To Wishlist
     Verify PDP Screen Element Not Exists    ${btnAddToCart}
-    Verify Text On Screen    Description
-    Verify Text On Screen    Product Information
-    Verify Text On Screen    Write a Review
+    Verify Text On Screen    Description    30s
+    Verify Text On Screen    Product Information    30s
+    Verify Text On Screen    Write a Review    30s
     Click Blue Colour Option
     Click Add To Cart
     [Teardown]    Tear Down
@@ -348,7 +348,7 @@ Apps > PDP 04 - QA-5307
     Click Review Rating
     Enter Review Message
     Click Review Submit
-    Verify Text On Screen    You Might Also Like
+    Verify Text On Screen    You Might Also Like    30s
     [Teardown]    Tear Down
 
 Apps > Merchandised Landing Pages (CMS Widgets) - QA-5359
@@ -388,9 +388,9 @@ Apps > Wishlist (Android) - QA-5367
     Clear Environment
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen    Trending on Takealot
-    Verify Text On Screen    Wish List
-    Verify Text On Screen    DEFAULT
+    Verify Text On Screen    Trending on Takealot    30s
+    Verify Text On Screen    Wish List    30s
+    Verify Text On Screen    DEFAULT    30s
     Click Create Wishlist
     [Teardown]    Tear Down
 
@@ -411,10 +411,10 @@ Apps > Wishlist (Android) 03 - QA-5367
     Navigate to Wishlist Auto
     Click Wishlist Add To Cart
     Click More Options Menu
-    Verify Text On Screen    Share List
-    Verify Text On Screen    Edit
-    Verify Text On Screen    Rename List
-    Verify Text On Screen    Delete List
+    Verify Text On Screen    Share List    30s
+    Verify Text On Screen    Edit    30s
+    Verify Text On Screen    Rename List    30s
+    Verify Text On Screen    Delete List    30s
     [Teardown]    Tear Down
 
 Apps > Wishlist (Android) 04 - QA-5367
@@ -448,8 +448,8 @@ Apps > Wishlist (Android) 07 - QA-5367
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Verify Text On Screen    Recent Searches
-    Verify Text On Screen    Trending
+    Verify Text On Screen    Recent Searches    30s
+    Verify Text On Screen    Trending    30s
     [Teardown]    Tear Down
 
 Apps > Cart & Wishlist - QA-5361
@@ -485,7 +485,7 @@ Apps > Cart & Wishlist 03 - QA-5361
     Click Search Home
     Search Product    Pencil
     Click Search Product Wishlist
-    Verify Text On Screen    Item added to Wish List
+    Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
 
 Apps > Cart & Wishlist 04 - QA-5361
@@ -504,7 +504,7 @@ Apps > Cart & Wishlist 05 - QA-5361
     Click Search Home
     Search Product    Pencil
     Click Search Product Wishlist
-    Verify Text On Screen    Item added to Wish List
+    Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
 
 Apps > Cart & Wishlist 06 - QA-5361
@@ -517,5 +517,5 @@ Apps > Cart & Wishlist 06 - QA-5361
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
-    Verify Text On Screen    Item(s) moved to list
+    Verify Text On Screen    Item(s) moved to list    30s
     [Teardown]    Tear Down

@@ -3,14 +3,12 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Verify Card Payment
-    [Arguments]    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblCardNumber}    60s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Contain Text    ${lblCardNumber}    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    60s
+    ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    60s
+    Run Keyword If    ${chkTextSuccess}==False    Verify Text On Screen    Card number    1s
 
 Verify Payfast Payment Text
     [Arguments]    ${verifyText}
-    Wait Until Page Contains    ${verifyText}    60s
+    Verify Text On Screen    ${verifyText}    60s
 
 Click Pay with Credit Card Back
     Wait Until Element Is Visible    ${navPayCreditCardBack}    30s

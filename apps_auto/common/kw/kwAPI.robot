@@ -1,6 +1,7 @@
 *** Settings ***
 Library           Collections
 Library           REST
+Library    TalLibrary
 
 *** Variables ***
 ${cart_URL}       http://tal-test-data-service.test-automation-platform.env/remove_products_in_cart

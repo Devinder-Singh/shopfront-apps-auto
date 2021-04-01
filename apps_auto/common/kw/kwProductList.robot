@@ -4,7 +4,20 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Click Product from API
     ${txtProduct}=    Get Product to Add To Cart
-    Wait Until Element Is Visible    ${txtProduct}    30s
+
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnProductListView}
+        ${index}=    Evaluate    ${index} + 1
+    END
     Click Element    ${txtProduct}
 
 Click First Product from API
@@ -13,10 +26,10 @@ Click First Product from API
     Click Element    ${txtProduct}
 
 Click Product Daily Deals
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${imgProductDeals}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnProductFilter}    30s
     Sleep    1s
-    Wait Until Element Is Visible    ${btnProductDailyDeals}    30s
-    Click Element    ${btnProductDailyDeals}
+    Wait Until Element Is Visible    ${imgProductDeals}    5s
+    Click Element    ${imgProductDeals}
 
 Click Product From Title
     Wait Until Element Is Visible    ${btnProductTitle}    30s

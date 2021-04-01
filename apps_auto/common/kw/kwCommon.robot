@@ -1,6 +1,9 @@
 *** Settings ***
 Library           TalLibrary
 
+*** Variables ***
+${navBack}      accessibility_id=Navigate up
+
 *** Keywords ***
 Swipe Down
     [Arguments]       ${locator}
@@ -25,9 +28,13 @@ Swipe Up
     Sleep  1
 
 Verify Text On Screen
-    [Arguments]    ${verifyText}
-    Wait Until Page Contains    ${verifyText}    30s
+    [Arguments]    ${verifyText}    ${delay}
+    Wait Until Page Contains    ${verifyText}    ${delay}
 
 Check Text On Screen Not
     [Arguments]    ${verifyText}
     Page Should Not Contain Text    ${verifyText}
+
+Click Back Screen
+    Wait Until Element Is Visible    ${navBack}    30s
+    Click Element    ${navBack}

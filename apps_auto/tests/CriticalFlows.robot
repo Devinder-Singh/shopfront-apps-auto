@@ -9,7 +9,6 @@ Search and Buy Item on Delivery using Credit Card
     Click Menu
     Click Menu Login
     Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234
-    #    Verify Logged In    AutoTester
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -24,7 +23,7 @@ Search and Buy Item on Delivery using Credit Card
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     [Teardown]    Tear Down
 
 Buy Daily Deal Item on Delivery using Credit Card
@@ -43,7 +42,7 @@ Buy Daily Deal Item on Delivery using Credit Card
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Payfast and Create new Address
@@ -81,14 +80,15 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Add To Cart
     Click Continue Shopping
     Click Search Icon
-    Search Product    Televisio
+#    Search Product    Televisio
+    Search Product    Monito
     Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Domestic TV Licence
-    Click Verify TV Licence
-    Enter TV Licence    1234
+#    Click Domestic TV Licence
+#    Click Verify TV Licence
+#    Enter TV Licence    1234
     Click Delivery
     Click Address
     Click Surcharge Delivery
@@ -96,7 +96,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card number
+    Verify Card Payment
     [Teardown]    Tear Down
 
 Edit Personal Details, Create Address and Buy Item on Delivery
@@ -126,7 +126,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     [Teardown]    Tear Down
 
 Buy Airtime and Pay with Credit Card
@@ -145,7 +145,7 @@ Buy Airtime and Pay with Credit Card
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Delivery
@@ -173,7 +173,7 @@ Buy Airtime along with another Item on Delivery
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Collection
@@ -201,7 +201,7 @@ Buy Airtime along with another Item on Collection
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     [Teardown]    Tear Down
 
 Buy Daily Deals Item and verify no Promotions
@@ -220,7 +220,7 @@ Buy Daily Deals Item and verify no Promotions
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     [Teardown]    Tear Down
 
 Buy Daily Deals Item and verify Promotions
@@ -239,5 +239,5 @@ Buy Daily Deals Item and verify Promotions
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     [Teardown]    Tear Down

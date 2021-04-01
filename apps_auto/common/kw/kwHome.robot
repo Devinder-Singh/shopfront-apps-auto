@@ -9,6 +9,7 @@ Click Home
 Click Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    30s
     Click Element    ${btnAddWishlist}
+    Sleep    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
 

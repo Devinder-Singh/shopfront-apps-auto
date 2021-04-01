@@ -10,7 +10,6 @@ Click Domestic TV Licence
 Enter TV Licence
     [Arguments]    ${licemce}
     Wait Until Element Is Visible    ${txtLicence}    30s
-    Clear Text    ${txtLicence}
     Input Text    ${txtLicence}    ${licemce}
     Click Element    ${btnVerify}
 

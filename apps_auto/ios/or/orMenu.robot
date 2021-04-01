@@ -17,3 +17,5 @@ ${btnCart}      chain=**/XCUIElementTypeButton[`label == "Cart"`]
 
 ${btnMenuOrders}      chain=**/XCUIElementTypeStaticText[`label == "Orders"`][1]
 ${btnMenuNewToElec}      id=New To Electronics
+
+${cntMenuAccountScroll}    ${EMPTY}

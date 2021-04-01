@@ -37,8 +37,18 @@ Click Airtime
 
 Click 10 Kg
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Swipe By Percent    50    70    50    100    1000
-    Wait Until Element Is Visible    ${lblTenKgValue}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblTenKgValue}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPSelectOption}
+        ${index}=    Evaluate    ${index} + 1
+    END
     Click Element    ${lblTenKgValue}
 
 Click Blue Colour Option

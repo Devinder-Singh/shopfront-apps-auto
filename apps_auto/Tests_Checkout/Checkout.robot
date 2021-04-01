@@ -9,7 +9,6 @@ Apps - Checkout - Delivery Methods - QA-5227
     Click Menu
     Click Menu Login
     Login Takealot    take2Automation+201905211152@gmail.com    t@ke@!ot1234
-    Verify Logged In    AutoTest
     Click Home
     Click Search Home
     Search Product    Pencil Case
