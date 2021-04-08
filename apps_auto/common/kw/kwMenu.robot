@@ -67,6 +67,10 @@ Click Menu Exchanges And Returns
     Wait Until Element Is Visible    ${btnMenuExchReturns}    10s
     Click Element    ${btnMenuExchReturns}
 
+Click Menu Load Gift Voucher
+    Wait Until Element Is Visible    ${btnMenuGiftVoucher}    10s
+    Click Element    ${btnMenuGiftVoucher}
+
 Click Back My Account
     Wait Until Element Is Visible    ${btnBackMyAcc}    5s
     Click Element    ${btnBackMyAcc}

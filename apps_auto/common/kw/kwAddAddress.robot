@@ -95,6 +95,12 @@ Edit Delivery Address Street My Acc
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
     Sleep    5s
+    Press Keycode    20
+    Sleep    1s
+    Press Keycode    20
+    Sleep    1s
+    Press Keycode    66
+    Sleep    2s
     Click Element    ${txtRecipientMobileMyAcc}
     swipe by percent    50    70    50    100    1000
     Click Save Address
@@ -134,14 +140,12 @@ Edit Delivery Address Business My Acc
 Verify Edit Address Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblEditAddress}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    Wait Until Page Contains    ${verifyText}    30s
 
 Verify Add Address Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblAddAddress}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    Wait Until Page Contains    ${verifyText}    30s
 
 Verify Add Address Question Text
     [Arguments]    ${verifyText}

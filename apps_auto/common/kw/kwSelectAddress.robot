@@ -20,9 +20,9 @@ Click Pickup Point Info
     Click Element    ${txtInfoAddress}
 
 Click Delete Address
-    Wait Until Element Is Visible    ${txtDeleteAddress}    30s
-    Click Element    ${txtDeleteAddress}
+    Wait Until Element Is Visible    ${btnDeleteAddress}    30s
     Click Element    ${btnDeleteAddress}
+    Click Element    ${btnConfDeleteAddress}
 
 Click Edit Address
     Wait Until Element Is Visible    ${btnEditAddress}    30s

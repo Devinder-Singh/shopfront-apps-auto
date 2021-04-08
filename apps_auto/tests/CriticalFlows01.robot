@@ -27,4 +27,44 @@ Apps > My Account Verifications - QA-5356
     Verify Text On Screen    Your mobile number has been successfully updated    30s
     Update Personal Detail Business
     Verify Text On Screen    Your business details have been successfully updated    30s
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address My Acc    Tester Residential    0723456778    38 Baxter Way
+    Click Back Delivery Android
+    Click Menu Address Book
+    Edit Delivery Address Street My Acc    13 Caro Road
+    Click Back Delivery Android
+    Click Menu Address Book
+    Click Delete Address
+    Verify Text On Screen    Address successfully deleted    30s
     [Teardown]    Tear Down
+
+Apps > My Account Verifications 02 - QA-5356
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen    12 Ridge Way, Pinelands, Cape Town, Western Cape, 7405    30s
+
+Apps > My Account Verifications 03 - QA-5356
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Load Gift Voucher
+    Apply Gift Voucher Code
+
+Apps > My Account Verifications 04 - QA-5356
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Load Gift Voucher
+    Apply Gift Voucher Code
