@@ -71,6 +71,22 @@ Click Menu Load Gift Voucher
     Wait Until Element Is Visible    ${btnMenuGiftVoucher}    10s
     Click Element    ${btnMenuGiftVoucher}
 
+Click Menu Credits Refunds
+    Wait Until Element Is Visible    ${btnMenuCreditRefunds}    10s
+    Click Element    ${btnMenuCreditRefunds}
+
+Click Menu Settings
+    Wait Until Element Is Visible    ${btnMenuSettings}    10s
+    Click Element    ${btnMenuSettings}
+
+Click Menu Takealot Group
+    Wait Until Element Is Visible    ${btnMenuTakealotGroup}    10s
+    Click Element    ${btnMenuTakealotGroup}
+
+Click Menu Help
+    Wait Until Element Is Visible    ${btnMenuHelp}    10s
+    Click Element    ${btnMenuHelp}
+
 Click Back My Account
     Wait Until Element Is Visible    ${btnBackMyAcc}    5s
     Click Element    ${btnBackMyAcc}

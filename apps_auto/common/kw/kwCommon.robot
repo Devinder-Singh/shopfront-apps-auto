@@ -35,6 +35,10 @@ Check Text On Screen Not
     [Arguments]    ${verifyText}
     Page Should Not Contain Text    ${verifyText}
 
+Verify Element On Screen
+    [Arguments]    ${verifyElement}    ${delay}
+    Wait Until Page Contains Element    ${verifyElement}    ${delay}
+
 Click Back Screen
     Wait Until Element Is Visible    ${navBack}    30s
     Click Element    ${navBack}

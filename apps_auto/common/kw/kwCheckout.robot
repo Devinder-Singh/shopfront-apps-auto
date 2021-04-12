@@ -24,6 +24,21 @@ Click Checkout Move To Wishlist First Item
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutSelect}
     Click Element    ${btnCheckoutMoveToWishlist}
 
+Increase Cart Quantity
+    Wait Until Element Is Visible    ${btnCartQty}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartQty}
+
+    Wait Until Element Is Visible    ${txtCartQty}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtCartQty}
+
+Click Checkout Cart Undo
+    Wait Until Element Is Visible    ${btnCartUndo}    30s
+    Click Element    ${btnCartUndo}
+
+Add To Cart Trending First Item
+    Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    30s
+    Click Element    ${btnCartTrendingAddToCart}
+
 Verify Checkout Text
     [Arguments]    ${verifyText}
 

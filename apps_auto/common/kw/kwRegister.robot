@@ -1,9 +1,12 @@
 *** Settings ***
-Library           TalLibrary
+Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Register Takealot
     [Arguments]    ${name}    ${surname}    ${email}    ${password}
+
+    Wait Until Element Is Visible    ${btnLoginRegRegister}    30s
+    Click Element    ${btnLoginRegRegister}
 
     Wait Until Element Is Visible    ${txtRegFirstName}    30s
     Input Text    ${txtRegFirstName}    ${name}
@@ -14,8 +17,4 @@ Register Takealot
 
     Click Element    ${btnRegRegister}
 
-Verify Register Text
-    [Arguments]    ${verifyText}
-
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Page Contains    ${verifyText}    10s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    Verify Text On Screen    You are now successfully registered and logged in    30s

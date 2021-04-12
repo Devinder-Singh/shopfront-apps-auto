@@ -26,3 +26,7 @@ ${btnDealsNotification}    id=${APP_PACKAGE}:id/no
 ${btnMenuNewToElec}      xpath=//*[@text="New To Electronics"]
 
 ${cntMenuAccountScroll}    id=${APP_PACKAGE}:id/accountScrollContainer
+
+${btnMenuSettings}      xpath=//*[@text="Settings"]
+${btnMenuTakealotGroup}      xpath=//*[@text="Takealot Group"]
+${btnMenuHelp}      xpath=//*[@text="Help"]

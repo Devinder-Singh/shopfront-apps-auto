@@ -23,3 +23,4 @@ ${btnHomeDeptHealthCare}      xpath=//*[@text="Health & Personal Care"]
 ${btnHomeBack}      accessibility_id=Navigate up
 
 ${btnHomeWishlist}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListSingleItemAddToList
+${btnWishListIcon}      accessibility_id=Lists

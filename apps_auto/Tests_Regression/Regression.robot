@@ -8,11 +8,11 @@ Apps > Register & Login - QA-5329
     Click Menu
     Click Menu Register
     Register Takealot    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
-    Verify Register Text    Please enter your first name
-    Verify Register Text    Please enter your surname
-    Verify Register Text    Please enter your email address
-    Verify Register Text    Please enter your password
-    Verify Register Text    Please confirm your password
+    Verify Text On Screen    Please enter your first name    30s
+    Verify Text On Screen    Please enter your surname    1s
+    Verify Text On Screen    Please enter your email address    1s
+    Verify Text On Screen    Please enter your password    1s
+    Verify Text On Screen    Please confirm your password    1s
     Click Back My Account
     Click Menu Register
     Register Takealot    AutoTest    Test    AutoTest10@take2.co.za    t@ke@!ot1234
@@ -21,8 +21,8 @@ Apps > Register & Login - QA-5329
     Click Menu Logout
     Click Menu Login
     Login Takealot    ${EMPTY}    ${EMPTY}
-    Verify Register Text    Please enter your email address
-    Verify Register Text    Please enter your password
+    Verify Text On Screen    Please enter your email address    30s
+    Verify Text On Screen    Please enter your password    1s
     Login Takealot    AutoTest10@take2.co.za    t@ke@!ot1234
     Click Home
     Click Menu
@@ -518,4 +518,317 @@ Apps > Cart & Wishlist 06 - QA-5361
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
     Verify Text On Screen    Item(s) moved to list    30s
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications - QA-5356
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Verify Text On Screen    Order History    30s
+    Click Back Screen
+    Click Menu Exchanges And Returns
+    Verify Text On Screen    Open file with    30s
+    Verify Text On Screen    Chrome    1s
+    Click Menu Exchanges And Returns
+    Click Menu Personal Detail
+    Update Personal Detail Name    AutoTester
+    Verify Text On Screen    Your name has been successfully updated    30s
+    Update Personal Detail Email
+    Verify Text On Screen    Your email address has been successfully updated    30s
+    Update Personal Detail Mobile
+    Verify Text On Screen    Your mobile number has been successfully updated    30s
+    Update Personal Detail Password
+    Verify Text On Screen    Your mobile number has been successfully updated    30s
+    Update Personal Detail Business
+    Verify Text On Screen    Your business details have been successfully updated    30s
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address My Acc    Tester Residential    0723456778    38 Baxter Way
+    Click Back Delivery Android
+    Click Menu Address Book
+    Edit Delivery Address Street My Acc    13 Caro Road
+    Click Back Delivery Android
+    Click Menu Address Book
+    Click Delete Address
+    Verify Text On Screen    Address successfully deleted    30s
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications 02 - QA-5356
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen    12 Ridge Way, Pinelands, Cape Town, Western Cape, 7405    30s
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications 03 - QA-5356
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Load Gift Voucher
+    Apply Gift Voucher Code
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications 04 - QA-5356
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account
+    Verify Text On Screen    Available Credit: R    30s
+    Click Menu Credits Refunds
+    Verify Text On Screen    Credit will be automatically applied to your next purchase    30s
+    Verify Text On Screen    REFUND MY CREDIT    30s
+    Verify Text On Screen    REDEEM GIFT VOUCHER    30s
+    Click Menu Credit History
+    Verify Text On Screen    Available Credit    30s
+    Verify Text On Screen    Gift Voucher:    1s
+    Click Back Credit and Refunds
+    Click Menu Refund History
+    Verify Text On Screen    You have no refund history    30s
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications 05 - QA-5356
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Settings
+    Verify Text On Screen    Notifications    30s
+    Verify Text On Screen    Login and Security    5s
+    Click Back Screen
+    Click Menu Takealot Group
+    Verify Text On Screen    Mr. D    30s
+    Verify Text On Screen    Superbalist    5s
+    Click Back Screen
+    Click Menu Help
+    Verify Text On Screen    Open file with    30s
+    Verify Text On Screen    Chrome    5s
+    [Teardown]    Tear Down
+
+Apps > Order Tracking - QA-5274
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment
+    [Teardown]    Tear Down
+
+Apps > Order Tracking 02 - QA-5274
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Verify Product Added to Cart
+    Verify Text On Screen    ORDER SUMMARY    1s
+    Verify Text On Screen    1 Item    1s
+    Verify Text On Screen    Delivery    1s
+    Verify Text On Screen    Order Total    1s
+    Verify Text On Screen    To Pay    1s
+    Verify Text On Screen    PAYMENT METHOD    1s
+    Verify Text On Screen    Credit Card    1s
+    Verify Text On Screen    DELIVERY METHOD    1s
+    Verify Text On Screen    First Delivery Free - Standard    1s
+    Verify Text On Screen    SHIPPING ADDRESS    1s
+    Verify Text On Screen    Test    1s
+    Verify Text On Screen    12 Ridge Way    1s
+    Verify Text On Screen    Green Point    1s
+    Verify Text On Screen    Cape Town    1s
+    Verify Text On Screen    8005    1s
+    Click Order Pay Now
+    Click Change Payment Method
+    Click Payfast Payment Method
+    Click Pay With Payfast
+    Verify Payfast Payment Text    Secure payments by PayFast
+    [Teardown]    Tear Down
+
+Apps > Order Tracking 03 - QA-5274
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment
+    [Teardown]    Tear Down
+
+Apps > Order Tracking 04 - QA-5274
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Verify Product Added to Cart
+    Verify Text On Screen    ORDER SUMMARY    1s
+    Verify Text On Screen    1 Item    1s
+    Verify Text On Screen    Delivery    1s
+    Verify Text On Screen    Order Total    1s
+    Verify Text On Screen    To Pay    1s
+    Verify Text On Screen    PAYMENT METHOD    1s
+    Verify Text On Screen    Credit Card    1s
+    Verify Text On Screen    DELIVERY METHOD    1s
+    Verify Text On Screen    First Delivery Free - Standard    1s
+    Verify Text On Screen    SHIPPING ADDRESS    1s
+    Verify Text On Screen    Test    1s
+    Verify Text On Screen    12 Ridge Way    1s
+    Verify Text On Screen    Green Point    1s
+    Verify Text On Screen    Cape Town    1s
+    Verify Text On Screen    8005    1s
+    Click Order Pay Now
+    Click Change Payment Method
+    Click Payfast Payment Method
+    Click Pay With Payfast
+    Verify Payfast Payment Text    Secure payments by PayFast
+    [Teardown]    Tear Down
+
+Apps > Order Tracking 05 - QA-5274
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Fridg
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Add Payment Voucher
+    Enter Payment Voucher Code
+    Click Apply Payment Voucher
+    Click Back Payment Voucher
+    Click Payment Confirm Order
+    [Teardown]    Tear Down
+
+Apps > Order Tracking 06 - QA-5274
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Verify Product Added to Cart
+    Verify Text On Screen    ORDER SUMMARY    1s
+    Verify Text On Screen    1 Item    1s
+    Verify Text On Screen    Delivery    1s
+    Verify Text On Screen    Order Total    1s
+    Verify Text On Screen    To Pay    1s
+    Verify Text On Screen    PAYMENT METHOD    1s
+    Verify Text On Screen    Credit Card    1s
+    Verify Text On Screen    DELIVERY METHOD    1s
+    Verify Text On Screen    First Delivery Free - Standard    1s
+    Verify Text On Screen    SHIPPING ADDRESS    1s
+    Verify Text On Screen    Test    1s
+    Verify Text On Screen    12 Ridge Way    1s
+    Verify Text On Screen    Green Point    1s
+    Verify Text On Screen    Cape Town    1s
+    Verify Text On Screen    8005    1s
+    Click Order Pay Now
+    Click Change Payment Method
+    Click Payfast Payment Method
+    Click Pay With Payfast
+    Verify Payfast Payment Text    Secure payments by PayFast
+    [Teardown]    Tear Down
+
+Apps > Cart (Android) - QA-5298
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout Delete First Item
+    Click Checkout Cart Undo
+    Click Checkout
+    [Teardown]    Tear Down
+
+Apps > Cart (Android) 02 - QA-5298
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout Move To Wishlist First Item
+    Verify Text On Screen    Item(s) moved to list    30s
+    Verify Text On Screen    Your Shopping Cart is Empty    5s
+    Verify Text On Screen    Trending on Takealot    5s
+    Verify Element On Screen    ${btnCartContinueShopping}    1s
+    Add To Cart Trending First Item
+    Click Checkout
+    [Teardown]    Tear Down
+
+Apps > Cart (Android) 03 - QA-5298
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Increase Cart Quantity
+    Click Checkout
+    [Teardown]    Tear Down
+
+Apps > Cart (Android) 04 - QA-5298
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    airtim
+    Click First Product from API
+    Click Airtime
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    ebook
+    Click First Product from API
+    Click Add To Cart
+    Click Continue Shopping
+    Click Search Icon
+    Search Product    vouche
+    Click First Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    The gift voucher will be delivered via email to the recipient    30s
+    Verify Text On Screen    The eBook will be added to your Digital Library, ready for you to download    1s
+    Verify Text On Screen    The prepaid code will be delivered to you via email    1s
+    Verify Text On Screen    This product is not eligible for Cash on Delivery (COD)    1s
+    Verify Text On Screen    Cart    1s
+    Verify Element On Screen    ${btnWishListIcon}    1s
     [Teardown]    Tear Down

@@ -88,7 +88,6 @@ Click Product
     ${lblProduct}=    Replace String    ${lblProduct}    $productText    ${productText}
     Wait Until Page Contains Element    ${lblProduct}    30s
     Click Element    ${lblProduct}
-    [Teardown]
 
 Verify Sorted Products
     [Arguments]    ${sort}

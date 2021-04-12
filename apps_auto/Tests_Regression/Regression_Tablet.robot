@@ -1,7 +1,6 @@
 *** Settings ***
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
-Library           TalLibrary
 
 *** Test Cases ***
 Search and Buy Item on Delivery using Credit Card

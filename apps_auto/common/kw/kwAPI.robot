@@ -1,7 +1,7 @@
 *** Settings ***
+Resource          ../config/defaultConfig.robot
 Library           Collections
 Library           REST
-Library    TalLibrary
 
 *** Variables ***
 ${cart_URL}       http://tal-test-data-service.test-automation-platform.env/remove_products_in_cart
@@ -15,7 +15,7 @@ ${address_Body}    { "email": "take2Automation+201905213934@gmail.com", "passwor
 ${address_Body_Business}    { "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "business", "city": "Cape Town", "contact_number": "0820000001", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
 
 ${voucher_URL}    http://tal-test-data-service.test-automation-platform.env/execute_query_voucher_service
-${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-03-21' and DateUsed is null limit 1" }
+${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-04-10' and DateUsed is null limit 1" }
 
 
 *** Keywords ***
@@ -50,6 +50,9 @@ Get First Search Option
     ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${query_result}"]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${query_result}"`]
     [return]    ${searchResult}
 
+Verify Product Added to Cart
+    Verify Text On Screen    ${query_result_CartProduct}    30s
+
 Get Product to Add To Cart
     ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
@@ -61,6 +64,7 @@ Get Product to Add To Cart
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[${index}]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
