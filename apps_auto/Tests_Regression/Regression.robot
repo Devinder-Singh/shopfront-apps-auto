@@ -93,6 +93,63 @@ Apps > Promotions (Android) 03 - QA-5357
     Verify Checkout Text    Item Total
     [Teardown]    Tear Down
 
+Apps > Promotions (Android) - QA-8367
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Hobbit Trilogy
+    Click Product From Title    Hobbit Trilogy/The Lord of the Rings Trilogy: Extended...(Blu-ray)
+#    Click Add Bundle To Cart
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    Missed promotion:    30s
+    Verify Text On Screen    VIEW BUNDLE    1s
+    [Teardown]    Tear Down
+
+Apps > Promotions (Android) 02 - QA-8367
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Hobbit Trilog
+    Click Product From Title    Hobbit Trilogy/The Lord of the Rings Trilogy: Extended...(Blu-ray)
+    Click Add Bundle To Cart
+    Click Go To Cart
+    Check Text On Screen Not    Missed promotion:
+    Check Text On Screen Not    VIEW BUNDLE
+    [Teardown]    Tear Down
+
+Apps > Promotions (Android) 03 - QA-8367
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Dumi Mkoksta
+    Click Product From Title    Dumi Mkokstad - Egameni Likajesu (CD)
+    Click Shop The Deal
+    Click Product From Title    Amazing Spiderman 2 (DVD)
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    Missed promotion:    30s
+    Verify Text On Screen    ADD 1 ITEM TO QUALIFY    1s
+    Change Cart Quantity    2
+    Check Text On Screen Not    Missed promotion:
+    Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
+    [Teardown]    Tear Down
+
+Apps > Promotions (Android) 04 - QA-8367
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Unboxed Dea
+    Click Product from API
+    Click Other Offers Add To Cart
+    Click Go To Cart
+    Click Checkout
+    [Teardown]    Tear Down
+
 Apps > Verify Home Screen - QA-5355
     [Setup]    Start Application
     Click Home
@@ -169,7 +226,7 @@ Apps > Search - QA-5358
     Verify Menu Items
     Click Menu Shop By Department
     Click Menu New To Electronics
-    Click Product From Title
+    Click Product From Title    Fitbit Inspire 2 Fitness Tracker - Black
     Click Add To Cart
     [Teardown]    Tear Down
 
@@ -204,7 +261,7 @@ Apps > PLP - QA-5360
     Click Product Daily Deals
     [Teardown]    Tear Down
 
-Apps > PLP 02 - QA-5360
+Apps > PLP > Sort & Filter - QA-8340
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -257,7 +314,7 @@ Apps > PLP 02 - QA-5360
     Verify Filtered Products    Rating:4.0-5.0
     [Teardown]    Tear Down
 
-Apps > PLP 03 - QA-5360
+Apps > PLP > Overflow Menus - QA-8341
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -801,7 +858,7 @@ Apps > Cart (Android) 03 - QA-5298
     Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Increase Cart Quantity
+    Change Cart Quantity    2
     Click Checkout
     [Teardown]    Tear Down
 

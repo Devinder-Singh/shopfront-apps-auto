@@ -32,8 +32,24 @@ Click Product Daily Deals
     Click Element    ${imgProductDeals}
 
 Click Product From Title
-    Wait Until Element Is Visible    ${btnProductTitle}    30s
-    Click Element    ${btnProductTitle}
+    [Arguments]    ${title}
+
+    ${lblProdTitle}=    Set Variable    xpath=//*[@text="${title}"]
+
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblProdTitle}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnProductListView}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${lblProdTitle}
 
 Click App Only Deals
     Wait Until Element Is Visible    ${btnProductAppOnlyDeals}    30s

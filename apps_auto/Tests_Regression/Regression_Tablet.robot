@@ -3,7 +3,7 @@ Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Search and Buy Item on Delivery using Credit Card
+Tablet / iPad Verifications - QA-5366
     [Setup]    Start Application
     Clear Environment
     Click Menu

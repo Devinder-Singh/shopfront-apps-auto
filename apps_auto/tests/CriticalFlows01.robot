@@ -1,15 +1,13 @@
 *** Settings ***
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
-Library           TalLibrary
 
 *** Test Cases ***
-Search and Buy Item on Delivery using Credit Card
+Apps > Cart Update & Cart Notification - QA-5362
+    Start Browser
+    Login Takealot On Web    take2Automation+201905213934@gmail.com    t@ke@!ot1234
     [Setup]    Start Application
     Clear Environment
-    Click Menu
-    Click Menu Login
-    Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -23,6 +21,5 @@ Search and Buy Item on Delivery using Credit Card
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
+
     [Teardown]    Tear Down

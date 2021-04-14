@@ -24,11 +24,18 @@ Click Checkout Move To Wishlist First Item
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutSelect}
     Click Element    ${btnCheckoutMoveToWishlist}
 
-Increase Cart Quantity
+Change Cart Quantity
+    [Arguments]    ${qty}
+
     Wait Until Element Is Visible    ${btnCartQty}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartQty}
 
-    Wait Until Element Is Visible    ${txtCartQty}    30s
+    ${txtCartQty}=    Set Variable    xpath=//*[@text="${qty}"]
+
+    Wait Until Element Is Visible    ${btnCartQtyRoot}    10s
+    Swipe Down    ${btnCartQtyRoot}
+
+    Wait Until Element Is Visible    ${txtCartQty}    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtCartQty}
 
 Click Checkout Cart Undo

@@ -51,6 +51,54 @@ Click 10 Kg
     END
     Click Element    ${lblTenKgValue}
 
+Click Add Bundle To Cart
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPAddBundleToCart}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPScrollRoot}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${btnPDPAddBundleToCart}
+
+Click Other Offers Add To Cart
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPOtherOfferAddToCart}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPScrollRoot}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${btnPDPOtherOfferAddToCart}
+
+Click Shop The Deal
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblPDPShopTheDeal}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPScrollRoot}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${lblPDPShopTheDeal}
+
 Click Blue Colour Option
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Swipe By Percent    50    70    50    100    1000

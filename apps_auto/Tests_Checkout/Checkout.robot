@@ -1666,5 +1666,6 @@ Apps > Checkout > Payment > Mobicred - QA-5266
     Click Change Payment Method
     Click Mobicred Payment Method
     Click Pay With Mobi
-#    Pay with Mobi not working
+    Verify Text On Screen    Mobicred Username    60s
+    Verify Text On Screen    Mobicred Password    60s
     [Teardown]    Tear Down
