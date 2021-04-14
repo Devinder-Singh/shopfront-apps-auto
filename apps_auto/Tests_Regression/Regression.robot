@@ -105,10 +105,8 @@ Apps > Promotions (Android) - QA-8367
     Click Go To Cart
     Verify Text On Screen    Missed promotion:    30s
     Verify Text On Screen    VIEW BUNDLE    1s
-    [Teardown]    Tear Down
-
-Apps > Promotions (Android) 02 - QA-8367
-    [Setup]    Start Application
+    Tear Down
+    Start Application
     Clear Environment
     Click Home
     Click Search Home
@@ -120,7 +118,7 @@ Apps > Promotions (Android) 02 - QA-8367
     Check Text On Screen Not    VIEW BUNDLE
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) 03 - QA-8367
+Apps > Promotions (Android) 02 - QA-8367
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -138,7 +136,7 @@ Apps > Promotions (Android) 03 - QA-8367
     Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) 04 - QA-8367
+Apps > Promotions (Android) 03 - QA-8367
     [Setup]    Start Application
     Clear Environment
     Click Home
