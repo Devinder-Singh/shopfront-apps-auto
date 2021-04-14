@@ -29,7 +29,7 @@ Apps > Register & Login - QA-5329
     Click Menu Logout
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) - QA-5357
+Apps > Promotions (Android) Daily Deals - QA-5357
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -51,7 +51,7 @@ Apps > Promotions (Android) - QA-5357
     Verify Checkout Text    Item Total
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) 02 - QA-5357
+Apps > Promotions (Android) App Only Deals - QA-8409
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -74,7 +74,7 @@ Apps > Promotions (Android) 02 - QA-5357
     Verify Checkout Text    Item Total
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) 03 - QA-5357
+Apps > Promotions (Android) Other Promo tabs - QA-8410
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -93,7 +93,7 @@ Apps > Promotions (Android) 03 - QA-5357
     Verify Checkout Text    Item Total
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) - QA-8367
+Apps > Promotions (Android) Set Bundle - QA-8367
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -118,7 +118,7 @@ Apps > Promotions (Android) - QA-8367
     Check Text On Screen Not    VIEW BUNDLE
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) 02 - QA-8367
+Apps > Promotions (Android) Multi-Buys - QA-8411
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -136,7 +136,7 @@ Apps > Promotions (Android) 02 - QA-8367
     Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) 03 - QA-8367
+Apps > Promotions (Android) Unboxed & Other Offers - QA-8412
     [Setup]    Start Application
     Clear Environment
     Click Home
