@@ -1,9 +1,10 @@
 *** Variables ***
 ${btnAddress}      chain=**/XCUIElementTypeStaticText[`label == "Test"`]
-${btnPickupPoint}      id=Berea East London, Eastern Cape
-${txtDeleteAddress}      chain=**/XCUIElementTypeStaticText[`label == "DELETE"`][1]
-${btnDeleteAddress}      chain=**/XCUIElementTypeButton[`label == "Delete"`]
+${btnPickupPoint}      id=Takealot Cape Town Warehouse Cape Town, Western Cape
+${btnDeleteAddress}      chain=**/XCUIElementTypeStaticText[`label == "DELETE"`][1]
+${btnConfDeleteAddress}      chain=**/XCUIElementTypeButton[`label == "Delete"`]
 ${btnEditAddress}      chain=**/XCUIElementTypeButton[`label == "EDIT"`]
+
 ${txtInfoAddress}      chain=**/XCUIElementTypeStaticText[`label == "INFO"`][1]
 ${txtFilterProvince}      chain=**/XCUIElementTypeStaticText[`label == "Filter by Province:"`]
 ${txtGautengProvinceAddress}      chain=**/XCUIElementTypeStaticText[`label == "Gauteng"`]

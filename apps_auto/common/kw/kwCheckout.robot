@@ -39,12 +39,12 @@ Change Cart Quantity
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtCartQty}
 
 Click Checkout Cart Undo
-    Wait Until Element Is Visible    ${btnCartUndo}    30s
-    Click Element    ${btnCartUndo}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCartUndo}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartUndo}
 
 Add To Cart Trending First Item
-    Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    30s
-    Click Element    ${btnCartTrendingAddToCart}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartTrendingAddToCart}
 
 Verify Checkout Text
     [Arguments]    ${verifyText}

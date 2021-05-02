@@ -5,7 +5,8 @@ Resource          ../config/defaultConfig.robot
 Click Wishlist Add To Cart
     Wait Until Element Is Visible    ${btnWishlistCart}    30s
     Click Element    ${btnWishlistCart}
-    Verify Text On Screen    Item added to your cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to your cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Product moved to Cart    30s
 
 Click Wishlist Edit
     Click More Options Menu
@@ -25,5 +26,5 @@ Verify Wishlist Text
     Wait Until Page Contains    ${verifyText}    30s
 
 Click Delete Wishlist
-    Wait Until Element Is Visible    ${btnDeleteWishlist}    30s
-    Click Element    ${btnDeleteWishlist}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnDeleteWishlist}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnDeleteWishlist}

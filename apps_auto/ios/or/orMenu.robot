@@ -16,6 +16,17 @@ ${btnWishlist}      chain=**/XCUIElementTypeButton[`label == "menu btn wishlist"
 ${btnCart}      chain=**/XCUIElementTypeButton[`label == "Cart"`]
 
 ${btnMenuOrders}      chain=**/XCUIElementTypeStaticText[`label == "Orders"`][1]
-${btnMenuNewToElec}      id=New To Electronics
 
+${btnMenuExchReturns}    id=Exchanges & Returns
+${btnMenuGiftVoucher}    id=Redeem Gift Voucher
+${btnMenuCreditRefunds}    id=Credit & Refunds
+
+${btnMenuCategories}        ${EMPTY}
+${btnDealsNotification}    ${EMPTY}
+
+${btnMenuNewToElec}      id=New To Electronics
 ${cntMenuAccountScroll}    ${EMPTY}
+
+${btnMenuSettings}      id=Settings
+${btnMenuTakealotGroup}      id=Takealot.group
+${btnMenuHelp}      id=Help

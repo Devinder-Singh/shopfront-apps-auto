@@ -19,10 +19,3 @@ Install Application
     &{cap}=    Get Capabilities    ${True}    ${autoAlert}
     Log Many    &{cap}
     Open Application    ${REMOTE_URL}    &{cap}
-
-Start Browser
-    [Arguments]    ${autoAlert}=${True}
-    &{cap}=    Get Capabilities    ${False}    ${autoAlert}
-    Log Many    &{cap}
-    Open Application    ${REMOTE_URL}    &{cap}
-    Set Implicitly Wait    5

@@ -13,3 +13,5 @@ ${btnGotItThanks}      chain=**/XCUIElementTypeButton[`label == "Got it, thanks!
 
 ${lblCODInfo}      chain=**/XCUIElementTypeStaticText[`label == "Cash on Delivery is not available for this order"`]
 ${lblMobicredInfo}      chain=**/XCUIElementTypeStaticText[`label == "Mobicred is not available for this order"`]
+
+${scrPaymentMethodAndroid}      ${EMPTY}

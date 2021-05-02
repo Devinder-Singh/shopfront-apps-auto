@@ -842,7 +842,7 @@ Apps > Cart (Android) 02 - QA-5298
     Verify Text On Screen    Item(s) moved to list    30s
     Verify Text On Screen    Your Shopping Cart is Empty    5s
     Verify Text On Screen    Trending on Takealot    5s
-    Verify Element On Screen    ${btnCartContinueShopping}    1s
+    Verify Element On Screen Android    ${btnCartContinueShopping}    1s
     Add To Cart Trending First Item
     Click Checkout
     [Teardown]    Tear Down

@@ -17,5 +17,5 @@ ${btnProductFilterColourName}      id=Blue
 ${btnProductFilterMaterial}      id=Material
 ${btnProductFilterMaterialName}      id=Nylon
 
-${btnProductFilterRating}      xpath=Rating
-${btnProductFilterRatingName}      xpath=4 and up
+${btnProductFilterRating}      id=Rating
+${btnProductFilterRatingName}      id=4 and up

@@ -1,5 +1,6 @@
 *** Settings ***
-Default Tags      regression    #Suite Setup    Install Application
+Default Tags      critical    
+#Suite Setup    Install Application
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
@@ -51,7 +52,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Menu
     Click Menu Shop By Department
     Click Menu Sport and Fitness
-    Click Product Daily Deals
+    Click Product Department
     Click Add To Wishlist
     Click Wishlist
     Click Wishlist Add To Cart
@@ -80,15 +81,15 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Add To Cart
     Click Continue Shopping
     Click Search Icon
-#    Search Product    Televisio
-    Search Product    Monito
+    Search Product    Televisio
+#    Search Product    Monito
     Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-#    Click Domestic TV Licence
-#    Click Verify TV Licence
-#    Enter TV Licence    1234
+    Click Domestic TV Licence
+    Click Verify TV Licence
+    Enter TV Licence    1234
     Click Delivery
     Click Address
     Click Surcharge Delivery
@@ -110,8 +111,10 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    Tester Residential    0723456778    38 Baxter Way
+    Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
     Click Back Delivery Android
+    Click Back Delivery iOS
+    Click Back My Account
     Click Home
     Click Search Home
     Search Product    Pencil

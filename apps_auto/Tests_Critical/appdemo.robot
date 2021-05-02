@@ -1,5 +1,5 @@
 *** Settings ***
-Default Tags      regression
+Default Tags      demo
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***

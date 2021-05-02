@@ -28,6 +28,10 @@ Click Continue Shopping
     Wait Until Element Is Visible    ${btnContinueShopping}    30s
     Click Element    ${btnContinueShopping}
 
+Click Continue Shopping Ignore Error
+    ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnContinueShopping}    10s
+    Run Keyword If    ${chkElement}==True    Click Element    ${btnContinueShopping}
+
 Click Airtime
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
     Click Element    ${btnPDPSelectOption}

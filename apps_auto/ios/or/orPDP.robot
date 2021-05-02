@@ -15,3 +15,8 @@ ${navCartScr}    chain=**/XCUIElementTypeNavigationBar[`name == "Shopping Cart"`
 ${btnPDPSellerName}      chain=**/XCUIElementTypeLink[`label == "Sophie Moda"`][1]
 ${lblBlueValue}      chain=**/XCUIElementTypeStaticText[`label == "Blue"`]
 ${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write a Review"`]
+
+${btnPDPScrollRoot}      xpath=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable
+${btnPDPAddBundleToCart}      chain=**/XCUIElementTypeButton[`label CONTAINS "Add Bundle to Cart"`]
+${btnPDPOtherOfferAddToCart}      id=icon cartButton
+${lblPDPShopTheDeal}      chain=**/XCUIElementTypeButton[`label == "Shop the Deal"`]

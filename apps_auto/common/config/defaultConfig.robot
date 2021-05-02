@@ -39,7 +39,8 @@ Resource          ../../${PLATFORM_NAME}/or/orProductWidgets.robot
 Resource          ../../${PLATFORM_NAME}/or/orMyLists.robot
 Resource          ../../${PLATFORM_NAME}/or/orLoadGiftVoucher.robot
 Resource          ../../${PLATFORM_NAME}/or/orCreditRefunds.robot
-Resource          ../../${PLATFORM_NAME}/or/orWeb.robot
+Resource          ../../${PLATFORM_NAME}/or/orCartUpdate.robot
+Resource          ../../android/or/orWeb.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
 Resource          ../kw/kwOrders.robot
@@ -87,6 +88,7 @@ Resource          ../kw/kwMyLists.robot
 Resource          ../kw/kwLoadGiftVoucher.robot
 Resource          ../kw/kwCreditRefunds.robot
 Resource          ../kw/kwWeb.robot
+Resource          ../kw/kwCartUpdate.robot
 Library           TalLibrary
 Library           String
 

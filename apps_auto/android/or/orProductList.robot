@@ -1,5 +1,6 @@
 *** Variables ***
 ${imgProductDeals}      xpath=(//android.widget.ImageView[@content-desc="Product Image"])[1]
+${imgProductDealsDept}    xpath=(//android.widget.ImageView[@content-desc="Product Image"])[1]
 
 ${lblProduct}     android=new UiSelector().textContains("$productText")
 

@@ -3,6 +3,7 @@ ${btnResidential}      chain=**/XCUIElementTypeStaticText[`label == "Residential
 ${txtRecipientName}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[5]/XCUIElementTypeTextField
 ${txtRecipientMobile}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[6]/XCUIElementTypeTextField
 ${txtRecipientStreet}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[7]/XCUIElementTypeTextField
+
 ${txtBusinessName}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[8]/XCUIElementTypeTextField
 
 ${btnSaveAddress}      chain=**/XCUIElementTypeStaticText[`label == "Save"`]
@@ -25,3 +26,6 @@ ${navAddressProvince}      chain=**/XCUIElementTypeNavigationBar[`name == "Provi
 
 ${lblAddressBusiness}      chain=**/XCUIElementTypeStaticText[`label == "Business"`]
 ${txtBusinessNameMyAcc}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[8]/XCUIElementTypeTextField
+
+${lblAddresOption}      chain=**/XCUIElementTypeStaticText[`label == "13 Caro Road, Robertsham, Johannesburg South, South Africa"`]
+${lytAddressType}      chain=**/XCUIElementTypeNavigationBar[`name == "Address Type"`]

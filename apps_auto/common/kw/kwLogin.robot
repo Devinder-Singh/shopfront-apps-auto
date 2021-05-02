@@ -9,8 +9,23 @@ Login Takealot
     Input Text    ${txtPassword}    ${password}
     Click Element    ${btnLogin}
 
-#    ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    30s
+    Run Keyword If
+        ...    '${PLATFORM_NAME}'=='android'
+        ...    Return Android Login Status    ${email}    ${password}
+
+    Run Keyword If
+        ...    '${PLATFORM_NAME}'=='ios'
+        ...    Return iOS Login Status    ${email}    ${password}
+
+Return Android Login Status
+    [Arguments]    ${email}    ${password}
     ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Page Contains    You are logged in    30s
+    Run Keyword If    ${chkLoginSuccess}==False    Register Takealot    AutoTest    Test    ${email}    ${password}
+
+Return iOS Login Status
+    [Arguments]    ${email}    ${password}
+#    ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    30s
+    ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Page Contains    Logged in successfully    30s
     Run Keyword If    ${chkLoginSuccess}==False    Register Takealot    AutoTest    Test    ${email}    ${password}
 
 Verify Logged In

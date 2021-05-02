@@ -36,33 +36,40 @@ Add Delivery Address
     Input Text    ${txtRecipientStreet}    ${street}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
     Sleep    5s
-    Press Keycode    20
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    20
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    66
-    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
+    Sleep    3s
     Click Save Address
 
 Add Delivery Address My Acc
     [Arguments]    ${name}    ${mobile}    ${street}
-    Wait Until Element Is Visible    ${txtRecipientStreet}    5s
+    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    5s
     Clear Text    ${txtRecipientNameMyAcc}
     Input Text    ${txtRecipientNameMyAcc}    ${name}
     Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
-    Input Text    ${txtRecipientStreet}    ${street}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
+    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
     Sleep    5s
     Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
     Run Keyword If    '${street}'=='""'    swipe by percent    50    50    50    100    1000
     Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
     Run Keyword If    '${street}'=='&*'    swipe by percent    50    50    50    100    1000
-    Press Keycode    20
+    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    20
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    66
-    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
+    Sleep    3s
     Click Save Address
 
 Edit Delivery Address Mobile Number

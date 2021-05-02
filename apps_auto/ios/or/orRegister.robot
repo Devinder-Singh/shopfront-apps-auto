@@ -6,3 +6,4 @@ ${txtRegPassword}       chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/X
 ${txtRegConfirmPwd}       chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[6]/XCUIElementTypeSecureTextField
 
 ${btnRegRegister}      chain=**/XCUIElementTypeButton[`label == "Register"`]
+${btnLoginRegRegister}       chain=**/XCUIElementTypeStaticText[`label == "Register"`]

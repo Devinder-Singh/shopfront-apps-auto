@@ -17,4 +17,5 @@ Register Takealot
 
     Click Element    ${btnRegRegister}
 
-    Verify Text On Screen    You are now successfully registered and logged in    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You are now successfully registered and logged in    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Logged in successfully    30s

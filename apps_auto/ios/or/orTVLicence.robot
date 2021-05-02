@@ -9,3 +9,5 @@ ${btnTvLicHoliday}      chain=**/XCUIElementTypeStaticText[`label == "Holiday Ho
 ${btnTvLicBack}      chain=**/XCUIElementTypeNavigationBar[`name == "TV Licence"`]/XCUIElementTypeButton
 
 ${navTvLicVerification}      chain=**/XCUIElementTypeStaticText[`label == "Verification"`]
+
+${scrTvLicType}      ${EMPTY}

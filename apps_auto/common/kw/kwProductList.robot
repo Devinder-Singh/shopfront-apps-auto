@@ -26,10 +26,16 @@ Click First Product from API
     Click Element    ${txtProduct}
 
 Click Product Daily Deals
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnProductFilter}    30s
+    Wait Until Element Is Visible    ${btnProductFilter}    30s
     Sleep    1s
     Wait Until Element Is Visible    ${imgProductDeals}    5s
     Click Element    ${imgProductDeals}
+
+Click Product Department
+    Wait Until Element Is Visible    ${btnProductFilter}    30s
+    Sleep    1s
+    Wait Until Element Is Visible    ${imgProductDealsDept}    5s
+    Click Element    ${imgProductDealsDept}
 
 Click Product From Title
     [Arguments]    ${title}

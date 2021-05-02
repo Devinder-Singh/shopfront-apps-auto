@@ -42,6 +42,7 @@ Click Menu Shop By Department
 Click Menu Sport and Fitness
     Wait Until Element Is Visible    ${mnuSportFitness}    5s
     Click Element    ${mnuSportFitness}
+    Click Product Widget First View All
 
 Click Menu New To Electronics
     Wait Until Element Is Visible    ${btnMenuNewToElec}    5s
@@ -90,6 +91,10 @@ Click Menu Help
 Click Back My Account
     Wait Until Element Is Visible    ${btnBackMyAcc}    5s
     Click Element    ${btnBackMyAcc}
+
+Click Back Delivery iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnBackMyAcc}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnBackMyAcc}
 
 Click Wishlist Nav Bar
     Wait Until Element Is Visible    ${btnWishlist}    1s
