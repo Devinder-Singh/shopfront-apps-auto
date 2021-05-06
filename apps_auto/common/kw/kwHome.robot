@@ -14,6 +14,11 @@ Click Add To Wishlist
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
     Click Continue Shopping Ignore Error
 
+Click Add To Wishlist Only
+    Wait Until Element Is Visible    ${btnAddWishlist}    30s
+    Click Element    ${btnAddWishlist}
+    Sleep    1s
+
 Click More Options Menu
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMoreOptions}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}

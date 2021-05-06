@@ -3,36 +3,41 @@ Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
+Apps > Search Listings > Badges (Up to <% discount> off) - QA-8741
     [Setup]    Start Application
-    Add To Cart Takealot API
-    Remove From Cart Takealot API
-#    Login Takealot API    take2Automation+201905213934@gmail.com    t@ke@!ot1234
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Free Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-#    Login Takealot API    take2Automation+201905213934@gmail.com    t@ke@!ot1234
-    Add To Cart Takealot API
-    Click Pay With Credit Card
-    Click Cart Update Continue Checkout
-    Click Change Payment Method
-    Click Card Payment Method
-    Remove From Cart Takealot API
-    Click Pay With Credit Card
-    Click Cart Update Continue Checkout
-    Click Change Payment Method
+    Verify Product Daily Deals Badge
     [Teardown]    Tear Down
+
+#Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
+#    [Setup]    Start Application
+#    Add To Cart Takealot API
+#    Remove From Cart Takealot API
+##    Login Takealot API    take2Automation+201905213934@gmail.com    t@ke@!ot1234
+#    Clear Environment
+#    Click Home
+#    Click Search Home
+#    Search Product    Pencil
+#    Click Product from API
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout
+#    Click Delivery
+#    Click Address
+#    Click Free Delivery
+#    Click Donate No Thanks
+#    Click Change Payment Method
+#    Click Card Payment Method
+##    Login Takealot API    take2Automation+201905213934@gmail.com    t@ke@!ot1234
+#    Add To Cart Takealot API
+#    Click Pay With Credit Card
+#    Click Cart Update Continue Checkout
+#    Click Change Payment Method
+#    Click Card Payment Method
+#    Remove From Cart Takealot API
+#    Click Pay With Credit Card
+#    Click Cart Update Continue Checkout
+#    Click Change Payment Method
+#    [Teardown]    Tear Down
 
 #Apps > Cart Update & Cart Notification - Liquor - QA-8419
 #    [Setup]    Start Application

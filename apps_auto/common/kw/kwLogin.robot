@@ -2,6 +2,13 @@
 Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
+Login Takealot Only
+    [Arguments]    ${email}    ${password}
+    Clear Text    ${txtEmail}
+    Input Text    ${txtEmail}    ${email}
+    Input Text    ${txtPassword}    ${password}
+    Click Element    ${btnLogin}
+
 Login Takealot
     [Arguments]    ${email}    ${password}
     Clear Text    ${txtEmail}
@@ -16,6 +23,16 @@ Login Takealot
     Run Keyword If
         ...    '${PLATFORM_NAME}'=='ios'
         ...    Return iOS Login Status    ${email}    ${password}
+
+Login Takealot Forgot Password
+    [Arguments]    ${email}
+
+    Wait Until Element Is Visible    ${btnForgotPwd}    30s
+    Click Element    ${btnForgotPwd}
+
+    Wait Until Element Is Visible    ${txtEmailResetPwd}    30s
+    Input Text    ${txtEmailResetPwd}    ${email}
+    Click Element    ${btnRequestResetPwd}
 
 Return Android Login Status
     [Arguments]    ${email}    ${password}

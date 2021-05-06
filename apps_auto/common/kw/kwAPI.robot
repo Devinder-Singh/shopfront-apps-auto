@@ -286,3 +286,71 @@ Post Remove Product To Cart
 #    Delete    ${items_URL}    ${items_Body_Delete_any}
     Delete    ${items_URL_Delete}
     Integer    response status    200
+
+Get Product Daily Deals
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/productlines/search?daily_deals_rows=100&filter=Available:true&filter=Promotions:62621
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_title}=    Output    $.results.productlines[0].title
+    Set Global Variable    ${query_result_DailyDealProduct}    ${results_title}
+
+    [return]    ${results_title}
+
+Verify Product Search Daily Deals Badge
+
+    ${searchProd} =	Get Substring	${query_result_DailyDealProduct}    0    11
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${searchProd}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.badges.entries[0].type
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    ${searchResult}=    Set Variable    ''
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable    ${results_title}
+
+        Run Keyword If
+            ...    '${result}'=='image'
+            ...    Exit For Loop
+
+        ${searchResult}=    Set Variable    ''
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Should Be True    '${results}[${index}]'=='image'
+    [Return]    ${searchResult}
+
+Verify Product Search Percent Off Badge
+
+    ${searchProd} =	Get Substring	${query_result_DailyDealProduct}    0    11
+    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${searchProd}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.badges.entries[1].type
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    ${searchResult}=    Set Variable    ''
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable    ${results_title}
+
+        Run Keyword If
+            ...    '${result}'=='saving'
+            ...    Exit For Loop
+
+        ${searchResult}=    Set Variable    ''
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Should Be True    '${results}[${index}]'=='saving'
+    [Return]    ${searchResult}
+
+Verify Product Daily Deals Badge
+    Get Product Daily Deals
+    Verify Product Search Daily Deals Badge
+
+Verify Product Percent Off Badge
+    Get Product Daily Deals
+    Verify Product Search Percent Off Badge

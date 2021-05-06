@@ -3,6 +3,7 @@ Library           TalLibrary
 
 *** Variables ***
 ${navBack}      accessibility_id=Navigate up
+${navBackiOS}      id=Cancel
 
 *** Keywords ***
 Swipe Down
@@ -40,8 +41,11 @@ Verify Element On Screen
     Wait Until Page Contains Element    ${verifyElement}    ${delay}
 
 Click Back Screen
-    Wait Until Element Is Visible    ${navBack}    30s
-    Click Element    ${navBack}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${navBack}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${navBackiOS}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBackiOS}
 
 Verify Element On Screen Android
     [Arguments]    ${verifyElement}    ${delay}

@@ -20,7 +20,7 @@ Apps > Register & Login - QA-5329
     Click Menu
     Click Menu Logout
     Click Menu Login
-    Login Takealot    ${EMPTY}    ${EMPTY}
+    Login Takealot Only    ${EMPTY}    ${EMPTY}
     Verify Text On Screen    Please enter your email address    30s
     Verify Text On Screen    Please enter your password    1s
     Login Takealot    AutoTest10@take2.co.za    t@ke@!ot1234
