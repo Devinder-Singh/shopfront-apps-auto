@@ -11,8 +11,9 @@ ${btnCheckoutSelect}    xpath=/hierarchy/android.widget.FrameLayout/android.widg
 ${btnCartQty}    id=${APP_PACKAGE}:id/cartProductItemQuantitySelector
 ${btnCartUndo}    id=${APP_PACKAGE}:id/snackbar_action
 
-${btnCartTrendingAddToCart}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/android.view.ViewGroup/android.widget.Button
+${btnCartTrendingAddToCart}      id=${APP_PACKAGE}:id/widgetProductListItemAddToCart
 
 ${btnCartContinueShopping}      xpath=//*[@text="CONTINUE SHOPPING"]
 
 ${btnCartQtyRoot}    id=${APP_PACKAGE}:id/cartQuantityItemsRv
+${btnCartAddPromoItems}    ${EMPTY}

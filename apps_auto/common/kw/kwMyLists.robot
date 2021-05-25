@@ -23,6 +23,10 @@ Click Save Wishlist
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistSave}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlistSave}
 
+Click Wishlist Default
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistItems}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlistItems}
+
 Navigate to Wishlist Auto
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistAuto}    30s

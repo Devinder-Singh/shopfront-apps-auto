@@ -107,14 +107,16 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Menu My Account
     Click Menu Personal Detail
     Update Personal Detail Name    AutoTester
-    Click Back My Account
+    Click Back iOS    My Account
+    Click Back Android
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
     Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
     Click Back Delivery Android
     Click Back Delivery iOS
-    Click Back My Account
+    Click Back iOS    My Account
+    Click Back Android
     Click Home
     Click Search Home
     Search Product    Pencil

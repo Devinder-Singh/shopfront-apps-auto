@@ -12,13 +12,13 @@ ${btnOptionAccount}      ${EMPTY}
 
 ${btnHomeViewAllDailyDeals}      chain=**/XCUIElementTypeButton[`label == "View All"`][1]
 
-${btnHomeClearAllRecent}      chain=**/XCUIElementTypeButton[`label == "Clear All"`]
-${btnHomeClearCancelRecent}      id=Cancel
+${btnHomeClearAllRecent}      chain=**/XCUIElementTypeStaticText[`label == "Clear All"`]
+${btnHomeClearCancelRecent}      chain=**/XCUIElementTypeButton[`label == "Cancel"`]
 ${btnHomeClearRecent}      id=Clear
 
-${btnHomeDeptDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Daily Deals"`][2]
+${btnHomeDeptDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Daily Deals"`]
 ${btnHomeDeptAppOnlyDeals}      id=App Only Deals
-${btnHomeDeptHomeCook}      id=Home Cook Essentials
+${btnHomeDeptHomeCook}      chain=**/XCUIElementTypeStaticText[`label == "Gaming & Tech "`]
 ${btnHomeDeptHealthCare}      id=Health & Personal Care
 ${btnHomeBack}      id=Back
 

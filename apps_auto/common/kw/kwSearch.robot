@@ -3,11 +3,13 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Search Home
+    [Arguments]    ${clearAll}=${True}
+
     Wait Until Element Is Visible    ${btnSearchHome}    10s
     Click Element    ${btnSearchHome}
 
     ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    15s
-    Run Keyword If    ${btnPresentSearchHistory}    Click Element    ${btnSearchClearAll}
+    Run Keyword If    ${btnPresentSearchHistory} and ${clearAll}    Click Element    ${btnSearchClearAll}
 
 Search Product
     [Arguments]    ${search}

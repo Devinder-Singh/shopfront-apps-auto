@@ -27,6 +27,10 @@ Clear Personal Detail
 
 Update Personal Detail Email
     [Arguments]    ${email}    ${pwd}
+
+    Get New Email Address
+    ${email}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
+
     Wait Until Element Is Visible    ${lblPersonalDetailEmail}    5s
     Click Element    ${lblPersonalDetailEmail}
 
@@ -53,6 +57,7 @@ Update Personal Detail Mobile
     [Arguments]    ${mobile}
     Wait Until Element Is Visible    ${lblPersonalDetailMobile}    5s
     Click Element    ${lblPersonalDetailMobile}
+    Sleep    2s
 
     Input Text    ${txtPDMobile}    ${mobile}
     Click Element    ${btnSaveDetail}
@@ -112,6 +117,9 @@ Update Personal Detail Business
     [Arguments]    ${businessName}    ${vat}
     Wait Until Element Is Visible    ${lblPersonalDetailBusiness}    5s
     Click Element    ${lblPersonalDetailBusiness}
+
+    Clear Text    ${txtPDBusName}
+    Clear Text    ${txtPDVat}
 
     Input Text    ${txtPDBusName}    ${businessName}
     Input Text    ${txtPDVat}    ${vat}

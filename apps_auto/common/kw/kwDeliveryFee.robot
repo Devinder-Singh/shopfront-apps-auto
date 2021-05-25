@@ -7,6 +7,11 @@ Click Free Delivery
     Wait Until Element Is Visible    ${btnFree}    30s
     Click Element    ${btnFree}
 
+Click Free Delivery Android
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnFree}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnFree}
+
 Click Surcharge Delivery
     Wait Until Element Is Visible    ${txtSurchargeDelivery}    30s
     Click Element    ${txtSurchargeDelivery}

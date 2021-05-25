@@ -40,9 +40,11 @@ Resource          ../../${PLATFORM_NAME}/or/orMyLists.robot
 Resource          ../../${PLATFORM_NAME}/or/orLoadGiftVoucher.robot
 Resource          ../../${PLATFORM_NAME}/or/orCreditRefunds.robot
 Resource          ../../${PLATFORM_NAME}/or/orCartUpdate.robot
+Resource          ../../${PLATFORM_NAME}/or/orCommon.robot
 Resource          ../../android/or/orWeb.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
+Resource          ../../${PLATFORM_NAME}/config/testData.robot
 Resource          ../kw/kwOrders.robot
 Resource          ../kw/kwAddAddress.robot
 Resource          ../kw/kwDigitalItemContinue.robot

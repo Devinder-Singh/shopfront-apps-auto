@@ -4,13 +4,13 @@ ${lblDeliverySurcharge}      id=${APP_PACKAGE}:id/pdp_widget_buy_box_price_deliv
 ${btnContinueShopping}      id=${APP_PACKAGE}:id/pdpAddToCartContinueShopping
 ${lblAirtimeValue}      xpath=//*[@text="R5"]
 ${lblTenKgValue}      xpath=//*[@text="10.0 kg"]
-${btnGoToCart}      id=${APP_PACKAGE}:id/pdpAddToCartGoToCart
+${btnGoToCart}      xpath=//*[@text="GO TO CART"]
 
 ${btnPDPSelectOption}      id=${APP_PACKAGE}:id/pdpWidgetButtonContainerVariantsCallToAction
 ${btnPDPCartItemIncrease}      id=${APP_PACKAGE}:id/pdpAddToCartIncreaseButton
 
 ${navBackPDP}    accessibility_id=Navigate up
-${navCartScr}    xpath=//android.widget.ImageView[@content-desc="Cart"]
+${navCartScr}    ${EMPTY}
 
 ${btnPDPSellerName}      id=${APP_PACKAGE}:id/pdp_widget_buy_box_sub_title_action_button
 ${lblBlueValue}      xpath=//*[@text="Blue"]

@@ -55,7 +55,7 @@ Add Delivery Address My Acc
     Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
-    Sleep    5s
+    Sleep    10s
     Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
     Run Keyword If    '${street}'=='""'    swipe by percent    50    50    50    100    1000
     Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
@@ -97,19 +97,20 @@ Edit Delivery Address Street
 
 Edit Delivery Address Street My Acc
     [Arguments]    ${street}
+
     Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    15s
     Clear Text    ${txtRecipientStreetMyAcc}
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
-    Sleep    5s
-    Press Keycode    20
+    Sleep    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    20
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    66
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
     Sleep    2s
-    Click Element    ${txtRecipientMobileMyAcc}
-    swipe by percent    50    70    50    100    1000
+
+    Swipe Up    ${windowScroll}
     Click Save Address
 
 Edit Delivery Address Suburb

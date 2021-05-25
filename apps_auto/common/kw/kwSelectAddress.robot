@@ -6,9 +6,24 @@ Click Address
     Wait Until Element Is Visible    ${btnAddress}    30s
     Click Element    ${btnAddress}
 
+Click Address Android
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnAddress}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnAddress}
+
 Click Pickup Point
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtFilterProvince}    30s
-    Wait Until Element Is Visible    ${btnPickupPoint}    30s
+    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
     Click Element    ${btnPickupPoint}
 
 Click Pickup Point Brackenfell
@@ -22,6 +37,7 @@ Click Pickup Point Info
 Click Delete Address
     Wait Until Element Is Visible    ${btnDeleteAddress}    30s
     Click Element    ${btnDeleteAddress}
+    Wait Until Element Is Visible    ${btnConfDeleteAddress}    5s
     Click Element    ${btnConfDeleteAddress}
 
 Click Edit Address

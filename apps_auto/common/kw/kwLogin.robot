@@ -37,13 +37,18 @@ Login Takealot Forgot Password
 Return Android Login Status
     [Arguments]    ${email}    ${password}
     ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Page Contains    You are logged in    30s
-    Run Keyword If    ${chkLoginSuccess}==False    Register Takealot    AutoTest    Test    ${email}    ${password}
+    Run Keyword If    ${chkLoginSuccess}==False    Register From Login Takealot    ${email}    ${password}
 
 Return iOS Login Status
     [Arguments]    ${email}    ${password}
 #    ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    30s
     ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Page Contains    Logged in successfully    30s
-    Run Keyword If    ${chkLoginSuccess}==False    Register Takealot    AutoTest    Test    ${email}    ${password}
+    Run Keyword If    ${chkLoginSuccess}==False    Register From Login Takealot    ${email}    ${password}
+
+Register From Login Takealot
+    [Arguments]    ${email}    ${password}
+    Click Login Register
+    Register Takealot    AutoTest    Test    ${email}    ${password}
 
 Verify Logged In
     [Arguments]    ${verifyText}

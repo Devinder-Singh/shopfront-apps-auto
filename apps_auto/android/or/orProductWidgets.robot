@@ -1,2 +1,2 @@
 *** Variables ***
-${btnProductViwAllFirst}      xpath=xpath=//*[@text="VIEW ALL"]
+${btnProductViwAllFirst}      xpath=//*[@text="VIEW ALL"]

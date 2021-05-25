@@ -8,7 +8,7 @@ Click Increase Cart Quantity
     Wait Until Element Is Visible    ${btnPDPCartItemIncrease}    30s
     FOR    ${i}    IN RANGE    ${qty}
         Click Element    ${btnPDPCartItemIncrease}
-        Sleep    1s
+        Sleep    3s
     END
 
 Click Add To Cart
@@ -16,8 +16,13 @@ Click Add To Cart
     Click Element    ${btnAddToCart}
 
 Click Seller Name
-    Wait Until Element Is Visible    ${btnPDPSellerName}    30s
-    Click Element    ${btnPDPSellerName}
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+    ${sellerNameAndroid}=    Convert To Upper Case    ${query_result_FirstProductBrand}
+
+    ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeLink[`label == "${query_result_FirstProductBrand}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${sellerNameAndroid}']
+
+    Wait Until Element Is Visible    ${txtProduct}    5s
+    Click Element    ${txtProduct}
 
 Verify Delivery Surcharge
     [Arguments]    ${verifyText}
@@ -28,9 +33,14 @@ Click Continue Shopping
     Wait Until Element Is Visible    ${btnContinueShopping}    30s
     Click Element    ${btnContinueShopping}
 
+Click Continue Shopping iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnContinueShopping}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnContinueShopping}
+
 Click Continue Shopping Ignore Error
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnContinueShopping}    10s
     Run Keyword If    ${chkElement}==True    Click Element    ${btnContinueShopping}
+    Sleep    3s
 
 Click Airtime
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
@@ -99,6 +109,7 @@ Click Shop The Deal
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
+        Sleep    1s
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${lblPDPShopTheDeal}
@@ -114,7 +125,21 @@ Click Go To Cart
     Click Element    ${btnGoToCart}
 
 Click PDP Write Review
-    Wait Until Element Is Visible    ${btnPDPReview}    30s
+    ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
+    Run Keyword If    ${chkElement}==False    Wait Until Element Is Visible    ${btnPDPSelectOption}    1s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPReview}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPScrollRoot}
+        Sleep    1s
+        ${index}=    Evaluate    ${index} + 1
+    END
     Click Element    ${btnPDPReview}
 
 Click Back PDP
@@ -132,3 +157,45 @@ Verify PDP Screen Element
 Verify PDP Screen Element Not Exists
     [Arguments]    ${verifyElement}
     Wait Until Page Does Not Contain Element    ${verifyElement}
+
+Click Product Size
+    [Arguments]    ${size}
+
+    ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${size}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${size}"]
+
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPSelectOption}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${txtProduct}
+
+Click Product Variant From API
+
+    ${txtProduct}=    Get Product Variant
+
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPSelectOption}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${txtProduct}
+    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}

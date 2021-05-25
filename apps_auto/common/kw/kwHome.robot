@@ -6,10 +6,17 @@ Click Home
     Wait Until Element Is Visible    ${btnHome}    30s
     Click Element    ${btnHome}
 
+Click Home iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHome}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnHome}
+    Sleep    2s
+
 Click Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    30s
     Click Element    ${btnAddWishlist}
-    Sleep    1s
+    Verify Text On Screen iOS    Item added to Wishlist    30s
+    Verify Text On Screen Android    Item added to Wish List    30s
+    Sleep    5s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
     Click Continue Shopping Ignore Error
@@ -47,12 +54,32 @@ Click Search Icon
     Wait Until Element Is Visible    ${btnSearchIcon}    30s
     Click Element    ${btnSearchIcon}
 
+    ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    15s
+    Run Keyword If    ${btnPresentSearchHistory}    Click Element    ${btnSearchClearAll}
+
 Click View All Daily Deals
     Wait Until Element Is Visible    ${btnHomeViewAllDailyDeals}    30s
     Click Element    ${btnHomeViewAllDailyDeals}
 
+Click View All Daily Deals If Present
+    ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnHomeViewAllDailyDeals}    10s
+    Run Keyword If    ${chkElement}==True    Click Element    ${btnHomeViewAllDailyDeals}
+
 Click Clear All Recently Viewed
-    Wait Until Element Is Visible    ${btnHomeClearAllRecent}    30s
+
+    Wait Until Element Is Visible    ${btnSearchHome}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnHomeClearAllRecent}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
     Click Element    ${btnHomeClearAllRecent}
 
 Click Cancel Clear All Recently Viewed
@@ -63,15 +90,8 @@ Confirm Clear All Recently Viewed
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHomeClearRecent}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnHomeClearRecent}
 
-Verify Home Screen Text
-    [Arguments]    ${verifyText}
-    Wait Until Page Contains    ${verifyText}    30s
-
-Verify Home Screen Text Not
-    [Arguments]    ${verifyText}
-    Wait Until Page Does Not Contain    ${verifyText}    30s
-
 Click Icon Daily Deals
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuCategories}
     Wait Until Element Is Visible    ${btnHomeDeptDailyDeals}    30s
     Click Element    ${btnHomeDeptDailyDeals}
 
@@ -92,12 +112,13 @@ Click Home Back
     Click Element    ${btnHomeBack}
 
 Click Home WishList
-    Wait Until Element Is Visible    ${btnHomeWishlist}    30s
-    Click Element    ${btnHomeWishlist}
+    Wait Until Element Is Visible    ${btnWishListIcon}    30s
+    Click Element    ${btnWishListIcon}
+    Navigate to Wishlist
 
 Verify Home Menu
     Wait Until Element Is Visible    ${btnHome}    30s
-    Wait Until Element Is Visible    ${btnHomeWishlist}    30s
+    Wait Until Element Is Visible    ${btnWishListIcon}    30s
 
 Verify Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    30s

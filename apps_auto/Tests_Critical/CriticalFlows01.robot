@@ -2,11 +2,20 @@
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
+*** Variables ***
+
 *** Test Cases ***
-Apps > Search Listings > Badges (Up to <% discount> off) - QA-8741
-    [Setup]    Start Application
-    Verify Product Daily Deals Badge
-    [Teardown]    Tear Down
+
+#Apps > Search Listings > Badges (Deal Sold Out) - QA-8744
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    Pencil
+#    Verify Element On Screen    ${btnProductSearchFilter}    30s
+#    Verify Text On Screen    items    5s
+#    Verify Element On Screen    ${btnProductSearchSort}    30s
+#    Click Product Grid View
+#    [Teardown]    Tear Down
 
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
 #    [Setup]    Start Application

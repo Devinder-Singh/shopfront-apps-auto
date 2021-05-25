@@ -1,8 +1,8 @@
 *** Variables ***
 ${btnSearchHome}      chain=**/XCUIElementTypeSearchField[`label == "Search for products, brands..."`]
-${btnSearchClearAll}      chain=**/XCUIElementTypeButton[`label == "Clear All"`]
+${btnSearchClearAll}      chain=**/XCUIElementTypeStaticText[`label == "Clear All"`]
 
 ${txtSearch}      ${EMPTY}
 
-${btnSearchRecent}      id=pencil cases
-${btnSearchTrending}      id=derma roller
+${btnSearchRecent}      id=pencil case
+${btnSearchTrending}      id=masks disposable

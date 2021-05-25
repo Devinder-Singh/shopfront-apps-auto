@@ -1,11 +1,19 @@
 *** Settings ***
-Library           TalLibrary
+Resource          ../config/defaultConfig.robot
+Library    DateTime
 
 *** Variables ***
-${navBack}      accessibility_id=Navigate up
-${navBackiOS}      id=Cancel
+
 
 *** Keywords ***
+Get New Email Address
+    ${newEmailAddress}=    Set Variable    ''
+    ${date}=      Get Current Date    exclude_millis=True
+    ${convert}=      Convert Date      ${date}      result_format=%Y%m%d%H%M%S
+    ${newEmailAddress}=    Set Variable    take2+${convert}@gmail.com
+    Set Global Variable    ${new_email_address}    ${newEmailAddress}
+    [Return]    ${newEmailAddress}
+
 Swipe Down
     [Arguments]       ${locator}
     ${element_size}=    Get Element Size    ${locator}
@@ -32,21 +40,89 @@ Verify Text On Screen
     [Arguments]    ${verifyText}    ${delay}
     Wait Until Page Contains    ${verifyText}    ${delay}
 
+Verify Text On Screen Android
+    [Arguments]    ${verifyText}    ${delay}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    ${delay}
+
+Verify Text On Screen iOS
+    [Arguments]    ${verifyText}    ${delay}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Page Contains    ${verifyText}    ${delay}
+
+Verify Text On Screen Scroll
+    [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
+
+    Wait Until Element Is Visible    ${verifyScreenElement}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    15
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${scrollElement}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Wait Until Page Contains    ${verifyText}    1s
+
 Check Text On Screen Not
     [Arguments]    ${verifyText}
-    Page Should Not Contain Text    ${verifyText}
+    Wait Until Page Does Not Contain    ${verifyText}    15s
+
+Check Text On Screen Not Android
+    [Arguments]    ${verifyText}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain    ${verifyText}    15s
 
 Verify Element On Screen
     [Arguments]    ${verifyElement}    ${delay}
     Wait Until Page Contains Element    ${verifyElement}    ${delay}
 
-Click Back Screen
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${navBack}
-
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${navBackiOS}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBackiOS}
+Verify Element On Screen iOS
+    [Arguments]    ${verifyElement}    ${delay}
+    Run Keyword If    '${PLATFORM_NAME}'=='iOS'    Wait Until Page Contains Element    ${verifyElement}    ${delay}
 
 Verify Element On Screen Android
     [Arguments]    ${verifyElement}    ${delay}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains Element    ${verifyElement}    ${delay}
+
+Click Back Screen
+    [Arguments]    ${elementID}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${navBack}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${navBack}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBack}
+
+    Sleep    2s
+
+Click Back Android
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${navBack}
+
+    Sleep    2s
+
+Click Window Android
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${windowScroll}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${windowScroll}
+
+    Sleep    2s
+
+Click Back iOS
+    [Arguments]    ${elementID}
+
+    ${backiOS}=    Set Variable    chain=**/XCUIElementTypeButton[`label == "${elementID}"`]
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${backiOS}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${backiOS}
+
+    Sleep    2s
+
+Click Cancel Screen
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${navBack}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${navBack}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBack}
+
+    Sleep    2s

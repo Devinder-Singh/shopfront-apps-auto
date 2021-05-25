@@ -2,28 +2,28 @@
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
+*** Variables ***
+${titleNewToElec}      Fitbit Inspire 2 Fitness Tracker - Black
+
 *** Test Cases ***
 Apps > Register & Login - QA-5329
     [Setup]    Start Application
     Click Menu
     Click Menu Register
-    Register Takealot    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
-    Verify Text On Screen    Please enter your first name    30s
-    Verify Text On Screen    Please enter your surname    1s
-    Verify Text On Screen    Please enter your email address    1s
-    Verify Text On Screen    Please enter your password    1s
-    Verify Text On Screen    Please confirm your password    1s
-    Click Back My Account
+    Register Takealot Unverify    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    Verify Register Takealot Blank
+    Click Cancel Screen
     Click Menu Register
-    Register Takealot    AutoTest    Test    AutoTest10@take2.co.za    t@ke@!ot1234
-    Click Back My Account
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
     Click Menu
+    Click Menu iOS
     Click Menu Logout
+    Click Menu iOS
     Click Menu Login
     Login Takealot Only    ${EMPTY}    ${EMPTY}
-    Verify Text On Screen    Please enter your email address    30s
+    Verify Text On Screen    Please enter your email address    10s
     Verify Text On Screen    Please enter your password    1s
-    Login Takealot    AutoTest10@take2.co.za    t@ke@!ot1234
+    Login Takealot    ${new_email_address}    t@ke@!ot1234
     Click Home
     Click Menu
     Click Menu Logout
@@ -33,22 +33,24 @@ Apps > Promotions (Android) Daily Deals - QA-5357
     [Setup]    Start Application
     Clear Environment
     Click Menu
+    Click Menu Login
+    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu Daily Deals
     Verify Product Image
     Click Product Filter
-    Select Filter Option    Baby & Toddler
+    Select Daily Deals Filter Option From API
     Click Apply Filter
-    Click Product Daily Deals
+    Click Filter Product from API
     Click Add To Cart
-    Click Increase Cart Quantity    4
     Click Go To Cart
+    Change Cart Quantity Android    4
     Click Item Promotion Text
-    Verify Checkout Text    4 x R 
-    Verify Checkout Text    1 x R 
-    Verify Checkout Text    Daily Deals
-    Verify Checkout Text    Only 4 per customer
-    Verify Checkout Text    Normal Price
-    Verify Checkout Text    Item Total
+    Verify Text On Screen    4 x R    10s
+    Verify Text On Screen    Daily Deals    1s
+    Verify Text On Screen    Only 4 per customer    1s
+    Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) App Only Deals - QA-8409
@@ -59,19 +61,18 @@ Apps > Promotions (Android) App Only Deals - QA-8409
     Click App Only Deals
     Verify Product Image
     Click Product Filter
-    Select Filter Option    Cellphones & Wearables
+    Select App Only Deals Filter Option From API
     Click Apply Filter
-    Click Product Daily Deals
+    Click Filter Product from API
     Click Add To Cart
-    Click Increase Cart Quantity    4
+#    Click Increase Cart Quantity    3
     Click Go To Cart
+    Change Cart Quantity Android    4
     Click Item Promotion Text
-    Verify Checkout Text    4 x R 
-    Verify Checkout Text    1 x R 
-    Verify Checkout Text    App Only Deals
-    Verify Checkout Text    Only 4 per customer
-    Verify Checkout Text    Normal Price
-    Verify Checkout Text    Item Total
+    Verify Text On Screen    4 x R    10s
+    Verify Text On Screen    App Only Deals    1s
+    Verify Text On Screen    Only 4 per customer    1s
+    Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Other Promo tabs - QA-8410
@@ -79,46 +80,53 @@ Apps > Promotions (Android) Other Promo tabs - QA-8410
     Clear Environment
     Click Menu
     Click Menu Daily Deals
-    Click Wine Club Deals
+    Select Third Deals From API
     Verify Product Image
     Click Product Filter
-    Select Filter Option    Home & Kitchen
+    Select Third Deals Filter Option From API
     Click Apply Filter
-    Click Product Daily Deals
+    Click Filter Product from API
     Click Add To Cart
-    Click Increase Cart Quantity    4
     Click Go To Cart
+    Change Cart Quantity Android    5
     Click Item Promotion Text
-    Verify Checkout Text    5 x R 
-    Verify Checkout Text    Item Total
+    Verify Text On Screen    5 x R    10s
+    Verify Element On Screen    ${query_result_DealsName}    2s
+    Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Set Bundle - QA-8367
+    [Tags]    data
     [Setup]    Start Application
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Hobbit Trilogy
-    Click Product From Title    Hobbit Trilogy/The Lord of the Rings Trilogy: Extended...(Blu-ray)
-#    Click Add Bundle To Cart
+    Search Product    krone brut mc
+    Click Product From Title    Krone - Borealis Cuvee Brut MCC - 750ml
     Click Add To Cart
     Click Go To Cart
-    Verify Text On Screen    Missed promotion:    30s
-    Verify Text On Screen    VIEW BUNDLE    1s
+    Verify Text On Screen Android    Missed promotion:    30s
+    Verify Text On Screen iOS    Missed promotions:    30s
+    Verify Text On Screen Android    VIEW BUNDLE    1s
+    Verify Text On Screen iOS    View Bundle    1s
     Tear Down
     Start Application
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Hobbit Trilog
-    Click Product From Title    Hobbit Trilogy/The Lord of the Rings Trilogy: Extended...(Blu-ray)
+    Search Product    krone brut mc
+    Click Product From Title    Krone - Borealis Cuvee Brut MCC - 750ml
     Click Add Bundle To Cart
     Click Go To Cart
+    Wait for Checkout
     Check Text On Screen Not    Missed promotion:
+    Check Text On Screen Not    Missed promotions:
     Check Text On Screen Not    VIEW BUNDLE
+    Check Text On Screen Not    View Bundle
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Multi-Buys - QA-8411
+    [Tags]    data
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -126,23 +134,30 @@ Apps > Promotions (Android) Multi-Buys - QA-8411
     Search Product    Dumi Mkoksta
     Click Product From Title    Dumi Mkokstad - Egameni Likajesu (CD)
     Click Shop The Deal
-    Click Product From Title    Amazing Spiderman 2 (DVD)
+    Click Product From Title    EET KREEF! HERLEEF
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion:    30s
-    Verify Text On Screen    ADD 1 ITEM TO QUALIFY    1s
-    Change Cart Quantity    2
+    Verify Text On Screen Android    ADD 1 ITEM TO QUALIFY    1s
+    Verify Text On Screen iOS    Add 1 item to qualify    1s
+    Change Cart Quantity Android    2
+    Click Add Items to Qualify iOS
+    Click Product From Title    EET KREEF! HERLEEF
+    Click Add To Cart
+    Click Go To Cart
     Check Text On Screen Not    Missed promotion:
     Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
+    Check Text On Screen Not    Add 1 item to qualify
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Unboxed & Other Offers - QA-8412
+    [Tags]    data
     [Setup]    Start Application
     Clear Environment
     Click Home
     Click Search Home
     Search Product    Unboxed Dea
-    Click Product from API
+    Click Product From Title    Redragon 6W Air RGB PC Gaming Speaker Set
     Click Other Offers Add To Cart
     Click Go To Cart
     Click Checkout
@@ -151,69 +166,94 @@ Apps > Promotions (Android) Unboxed & Other Offers - QA-8412
 Apps > Verify Home Screen - QA-5355
     [Setup]    Start Application
     Click Home
-    Verify Home Screen Text    Daily Deals
+    Verify Text On Screen    Daily Deals    30s
     Click View All Daily Deals
-    Click Product Daily Deals
+    Click Daily Deals Product from API
     [Teardown]    Tear Down
 
-Apps > Verify Home Screen 02 - QA-5355
+Apps > Verify Home Screen - QA-8876
     [Setup]    Start Application
-    Click Home
-    Verify Home Screen Text Not    Recommended For You
-    Verify Home Screen Text Not    Recently Viewed
     Click Menu
     Click Menu Login
-    Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234
+    Tear Down
+    Start Application    ${False}
     Click Home
-    Verify Home Screen Text    Recommended For You
-    Verify Home Screen Text    Recently Viewed
+    Check Text On Screen Not    Recommended For You
+    Check Text On Screen Not    Recently Viewed
+    Click Menu
+    Click Menu Login
+    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Tear Down
+    Start Application    ${False}
+#    Verify Text On Screen    Recommended For You    30s
+    Verify Text On Screen Scroll    Recently Viewed    1s    ${windowScroll}    ${btnSearchHome}
     Click Clear All Recently Viewed
     Click Cancel Clear All Recently Viewed
     Click Clear All Recently Viewed
     Confirm Clear All Recently Viewed
-    Verify Home Screen Text Not    Recently Viewed
-    Verify Home Screen Text    Essential Campsite Supplies
+    Check Text On Screen Not    Recently Viewed
     Click Menu
     Click Menu Shop By Department
-    Verify Home Screen Text    Daily Deals
-    Verify Home Screen Text    App Only Deals
-    Verify Home Screen Text    Home Cook Essentials
-    Verify Home Screen Text    Health & Personal Care
-    Verify Home Screen Text    Essential Campsite Supplies
-    Click Home Back
+    Verify Text On Screen    Daily Deals    30s
+    Verify Text On Screen    App Only Deals    1s
+#    Verify Text On Screen    Gaming    1s
+#    Verify Text On Screen    Health & Personal Care    1s
+#    Verify Text On Screen    Essential Campsite Supplies    1s
     Click Icon Daily Deals
-    Click Product Daily Deals
-    Click Back PDP
-    Click Home Back
+    Click Daily Deals Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Click Back Android
+    Verify Element On Screen Android    ${btnProductSearchFilter}    30s
+    Click Back Android
+    Click Back iOS    Deals
+    Verify Element On Screen iOS    ${btnProductSearchFilter}    30s
+    Click Back iOS    Back
     Click Icon App Only Deals
-    Click Product Daily Deals
-    Click Back PDP
-    Click Home Back
-    Click Icon Home Cook Essentials
-    Click Product Daily Deals
-    Click Back PDP
-    Click Home Back
-    Click Icon Health & Personal Care
-    Click Product Daily Deals
+    Click App Only Deals Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Click Back Android
+    Verify Element On Screen Android    ${btnProductSearchFilter}    30s
+    Click Back Android
+    Click Back iOS    Deals
+    Verify Element On Screen iOS    ${btnProductSearchFilter}    30s
+    Click Back iOS    Back
+    Click Icon Daily Deals
+    Select Third Deals From API
+    Click Third Tab Product from API
+#    Click Back PDP
+#    Click Home Back
     [Teardown]    Tear Down
 
-Apps > Verify Home Screen 03 - QA-5355
+Apps > Verify Home Screen - QA-8877
     [Setup]    Start Application
     Click Home
-    Click Cart
-    Verify PDP Screen Element    ${navCartScr}
+    Click Home Cart
+    Verify Text On Screen    Cart    30s
     [Teardown]    Tear Down
 
-Apps > Verify Home Screen 04 - QA-5355
+Apps > Verify Home Screen - QA-8878
     [Setup]    Start Application
     Clear Environment
     Click Home
-    Click Home WishList
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist
     Click Wishlist
+    Tear Down
+    Start Application
+    Click Home
+    Click Home WishList
     Click Wishlist Edit
     Select Wishlist Item
     Click Wishlist Delete Items
-    Verify Wishlist Text    No items
+    Verify Text On Screen iOS    No items    30s
+    Verify Text On Screen Android    This list is empty    30s
     [Teardown]    Tear Down
 
 Apps > Search - QA-5358
@@ -223,8 +263,8 @@ Apps > Search - QA-5358
     Click Menu
     Verify Menu Items
     Click Menu Shop By Department
-    Click Menu New To Electronics
-    Click Product From Title    Fitbit Inspire 2 Fitness Tracker - Black
+    Click Menu Sport and Fitness
+    Click Product Auto from API
     Click Add To Cart
     [Teardown]    Tear Down
 
@@ -233,78 +273,149 @@ Apps > PLP - QA-5360
     Clear Environment
     Click Menu
     Click Menu Daily Deals
-    Click Product Daily Deals
+    Click Daily Deals Product from API
     Verify Add To Wishlist
     Click Add To Cart
-    Click Continue Shopping
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Click Continue Shopping iOS
+    Click Back Android
     Click Search Icon
     Search Product    toy
     Click Product from API
     Click Add To Cart
-    Click Continue Shopping
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Click Back Android
+    Click Continue Shopping iOS
     Click Search Icon
     Search Product    pencil
     Click Product from API
     Click Add To Cart
-    Click Continue Shopping
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Click Back Android
+    Click Continue Shopping iOS
     Click Search Icon
     Search Product    johnnie wal
     Click Product from API
     Click Add To Cart
-    Click Continue Shopping
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Click Back Android
+    Click Continue Shopping iOS
     Click Search Icon
     Search Product    glass
     Click First Product from API
     Click Seller Name
-    Click Product Daily Deals
+    Click Product Seller Deals
     [Teardown]    Tear Down
 
-Apps > PLP > Sort & Filter - QA-8340
+Apps > PLP > Sort - QA-8889
     [Setup]    Start Application
-    Clear Environment
-    Click Menu
+    Click Home
+    Click Search Home
     Search Product    pencil
-    Click First Product from API
     Click Search Product Sort
     Click Sort High To Low
     Verify Sorted Products    Price+Descending
+    [Teardown]    Tear Down
+
+Apps > PLP > Sort 02 - QA-8889
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
     Click Search Product Sort
     Click Sort Low To High
     Verify Sorted Products    Price+Ascending
+    [Teardown]    Tear Down
+
+Apps > PLP > Sort 03 - QA-8889
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
     Click Search Product Sort
     Click Sort Top Rated
     Verify Sorted Products    Rating+Descending
+    [Teardown]    Tear Down
+
+Apps > PLP > Sort 04 - QA-8889
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
     Click Search Product Sort
     Click Sort New Arrivals
     Verify Sorted Products    ReleaseDate+Descending
+    [Teardown]    Tear Down
+
+Apps > PLP > Mulit-Filter - QA-8340
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
     Click Search Product Filter
     Click Filter Category
     Click Filter Office Stationery
     Click Filter Select Button
     Click Filter Apply Button
+    [Teardown]    Tear Down
+
+Apps > PLP > Mulit-Filter 02 - QA-8340
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
     Click Search Product Filter
     Click Filter Availability
     Click Filter In Stock
+    Click Filter Select Button iOS
     Click Filter Apply Button
     Verify Filtered Products    Availability:0.0-0.0
+    [Teardown]    Tear Down
+
+Apps > PLP > Mulit-Filter 03 - QA-8340
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
     Click Search Product Filter
     Click Filter Brand
     Click Filter Brand Name
     Click Filter Select Button
     Click Filter Apply Button
     Verify Filtered Products    Brand:Meeco
+    [Teardown]    Tear Down
+
+Apps > PLP > Mulit-Filter 04 - QA-8340
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
     Click Search Product Filter
     Click Filter Colour
     Click Filter Colour Name
     Click Filter Select Button
     Click Filter Apply Button
     Verify Filtered Products    BasicColours:Blue
+    [Teardown]    Tear Down
+
+Apps > PLP > Mulit-Filter 05 - QA-8340
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
     Click Search Product Filter
     Click Filter Material
     Click Filter Material Name
     Click Filter Select Button
     Click Filter Apply Button
     Verify Filtered Products    ASMaterials:Nylon
+    [Teardown]    Tear Down
+
+Apps > PLP > Mulit-Filter 06 - QA-8340
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
     Click Search Product Filter
     Click Filter Rating
     Click Filter Rating Name
@@ -314,142 +425,192 @@ Apps > PLP > Sort & Filter - QA-8340
 
 Apps > PLP > Overflow Menus - QA-8341
     [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Search Product    pencil
-    Click First Product from API
-    Click Back My Account
     Click Home
+    Click Search Home
     Search Product    pencil
-    Click First Product from API
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Click Back Android
+    Click Back Android
+    Click Back iOS    pencil case
+    Click Back iOS    Back
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
     Click More Options Menu
     Click Options Menu Home
+    Click Back iOS    pencil case
+    Click Back iOS    Back
     Click Home
+    Click Search Home
     Search Product    pencil
-    Click First Product from API
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
     Click More Options Menu
     Click Options Menu Categories
+    Click Back iOS    pencil case
+    Click Back iOS    Back
     Verify Text On Screen    Daily Deals    30s
     Click Home
+    Click Search Home
     Search Product    pencil
-    Click First Product from API
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
     Click More Options Menu
     Click Options Menu Deals
+    Click Back iOS    pencil case
+    Click Back iOS    Back
     Click Home
+    Click Search Home
     Search Product    pencil
-    Click First Product from API
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
     Click More Options Menu
     Click Options Menu Lists
-    Verify Text On Screen    Wish List    30s
+    Click Back iOS    pencil case
+    Click Back iOS    Back
+    Verify Text On Screen Android    Wish List    30s
+    Verify Text On Screen ios    Wish list    30s
     Click Home
+    Click Search Home
     Search Product    pencil
-    Click First Product from API
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
     Click More Options Menu
     Click Options Menu Account
-    Verify Text On Screen    Personal Details    30s
+    Click Back iOS    pencil case
+    Click Back iOS    Back
+    Verify Text On Screen Android    Personal Details    30s
     [Teardown]    Tear Down
 
 Apps > PDP - QA-5307
     [Setup]    Start Application
     Clear Environment
-    Click Menu
+    Click Home
+    Click Search Home
     Search Product    pencil
     Click Product from API
     Click Add To Cart
-    Click Continue Shopping
-    Click Add To Wishlist
-    Verify Text On Screen    Description    30s
-    Verify Text On Screen    Product Information    30s
-    Verify Text On Screen    Write a Review    30s
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Click Back Android
+    Click Continue Shopping iOS
+    Click Add To Wishlist Only
+    Verify Text On Screen iOS    Item added to Wishlist    30s
+    Verify Text On Screen Android    Item added to Wish List    30s
     [Teardown]    Tear Down
 
-Apps > PDP 02 - QA-5307
+Apps > PDP - QA-8890
     [Setup]    Start Application
     Clear Environment
-    Click Menu
+    Click Home
+    Click Search Home
     Search Product    airtim
-    Click First Product from API
-    Click Airtime
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
-    Click Continue Shopping
-    Click Add To Wishlist
-    Verify Text On Screen    Description    30s
-    Verify Text On Screen    Product Information    30s
-    Verify Text On Screen    Write a Review    30s
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Click Back Android
+    Click Continue Shopping iOS
+    Click Add To Wishlist Only
+    Verify Text On Screen iOS    Item added to Wishlist    30s
+    Verify Text On Screen Android    Item added to Wish List    30s
     [Teardown]    Tear Down
 
-Apps > PDP 03 - QA-5307
+Apps > PDP - QA-8891
     [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Search Product    Pencil
-    Get Variant Product to Add To Cart
-    Click Add To Wishlist
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
     Verify PDP Screen Element Not Exists    ${btnAddToCart}
-    Verify Text On Screen    Description    30s
-    Verify Text On Screen    Product Information    30s
-    Verify Text On Screen    Write a Review    30s
-    Click Blue Colour Option
-    Click Add To Cart
+    Verify PDP Screen Element Not Exists    ${btnAddWishlist}
     [Teardown]    Tear Down
 
-Apps > PDP 04 - QA-5307
+Apps > PDP - QA-8892
     [Setup]    Start Application
-    Clear Environment
     Click Menu
-    Search Product    pencil
-    Get Variant Product to Add To Cart
+    Click Menu Login
+    Tear Down
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
     Click PDP Write Review
     Click Review Rating
-    Enter Review Message
+    Enter Review Message    Auto Test
     Click Review Submit
-    Verify Text On Screen    You Might Also Like    30s
+    Verify Text On Screen    Thank you for your review    30s
     [Teardown]    Tear Down
 
-Apps > Merchandised Landing Pages (CMS Widgets) - QA-5359
+Apps > PDP - QA-8893
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
+    Verify PDP Screen Element Not Exists    ${btnAddToCart}
+    Click Product Variant From API
+    Click Add To Wishlist Only
+    Verify Text On Screen iOS    Item added to Wishlist    30s
+    Verify Text On Screen Android    Item added to Wish List    30s
+    Click Continue Shopping iOS
+    Click Add To Cart
+    [Teardown]    Tear Down
+
+Apps > Merchandised Landing Pages (CMS Widgets) - Carousel Widget - QA-5359
     [Setup]    Start Application
     Clear Environment
     Click Home
     Click Search Home
     Search Product    Pencil
     Click Product from API
+    Click Add To Cart
+    Tear Down
+    Start Application
+    Click Home
+    Click Search Home    False
+    Verify Text On Screen    Recent Search    30s
+    Click Search Recent
     [Teardown]    Tear Down
 
-Apps > Merchandised Landing Pages (CMS Widgets) 02 - QA-5359
+Apps > Merchandised Landing Pages (CMS Widgets) - Banner Pair Widget - QA-8901
     [Setup]    Start Application
     Click Menu
     Click Menu Shop By Department
     Click Menu Sport and Fitness
-    Click Product Widget First View All
-    Click Product Daily Deals
+    Click Product Auto from API
     [Teardown]    Tear Down
 
-Apps > Merchandised Landing Pages (CMS Widgets) 03 - QA-5359
+Apps > Merchandised Landing Pages (CMS Widgets) - QA-8902
+    [Tags]    data
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Click Search Recent
-    [Teardown]    Tear Down
-
-Apps > Merchandised Landing Pages (CMS Widgets) 04 - QA-5359
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
+    Verify Text On Screen    Trending    30s
     Click Search Trending
     [Teardown]    Tear Down
 
 Apps > Wishlist (Android) - QA-5367
+    [Tags]    android
     [Setup]    Start Application
     Clear Environment
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen    Trending on Takealot    30s
-    Verify Text On Screen    Wish List    30s
-    Verify Text On Screen    DEFAULT    30s
+    Verify Text On Screen Android    Trending on Takealot    30s
+    Verify Text On Screen Android    Wish List    30s
+    Verify Text On Screen Android    DEFAULT    30s
     Click Create Wishlist
     [Teardown]    Tear Down
 
-Apps > Wishlist (Android) 02 - QA-5367
+Apps > Wishlist (Android) > Delete List - QA-8906
+    [Tags]    android
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -457,112 +618,98 @@ Apps > Wishlist (Android) 02 - QA-5367
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist
-    [Teardown]    Tear Down
-
-Apps > Wishlist (Android) 03 - QA-5367
-    [Setup]    Start Application
+    Tear Down
+    Start Application
     Click Home
     Click Wishlist Nav Bar
-    Navigate to Wishlist Auto
+    Click Wishlist Default
     Click Wishlist Add To Cart
-    Click More Options Menu
-    Verify Text On Screen    Share List    30s
-    Verify Text On Screen    Edit    30s
-    Verify Text On Screen    Rename List    30s
-    Verify Text On Screen    Delete List    30s
-    [Teardown]    Tear Down
-
-Apps > Wishlist (Android) 04 - QA-5367
-    [Setup]    Start Application
-    Click Home
-    Click Wishlist Nav Bar
-    Navigate to Wishlist Auto
-    Click Cart
+    Click Back Android
+    Click Home Cart
     Click Checkout
-    [Teardown]    Tear Down
-
-Apps > Wishlist (Android) 05 - QA-5367
-    [Setup]    Start Application
+    Tear Down
+    Start Application
     Click Home
     Click Wishlist Nav Bar
+    Click Create Wishlist
     Navigate to Wishlist Auto
     Click More Options Menu
+    Verify Text On Screen Android    Rename List    30s
+    Verify Text On Screen Android    Delete List    1s
     Click Delete Wishlist
     [Teardown]    Tear Down
 
-Apps > Wishlist (Android) 06 - QA-5367
+Apps > Wishlist (Android) > Bottom Navigation - QA-8907
+    [Tags]    android
     [Setup]    Start Application
-    Click Home
-    Click Wishlist Nav Bar
-    Navigate to Wishlist
-    Click More Options Menu
-    Check Text On Screen Not    Delete List
-    [Teardown]    Tear Down
-
-Apps > Wishlist (Android) 07 - QA-5367
-    [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
-    Verify Text On Screen    Recent Searches    30s
-    Verify Text On Screen    Trending    30s
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist
+    Tear Down
+    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Click Wishlist Default
+    Click Wishlist Add To Cart
+    Click More Options Menu
+    Verify Text On Screen Android    Share List    30s
+    Verify Text On Screen Android    Edit    30s
     [Teardown]    Tear Down
 
-Apps > Cart & Wishlist - QA-5361
+Apps > Wishlist (iOS) - QA-5361
     [Setup]    Start Application
     Clear Environment
     Click Menu
     Click Menu Daily Deals
-    Click Product Daily Deals
+    Click Daily Deals Product from API
     Click Add To Cart
-    Click Increase Cart Quantity    2
     Click Go To Cart
+    Change Cart Quantity Android    2
     Click Checkout Delete First Item
+    Verify Text On Screen iOS    No items    30s
+    Verify Text On Screen Android    Your Shopping Cart is Empty    30s
     [Teardown]    Tear Down
 
-Apps > Cart & Wishlist 02 - QA-5361
+Apps > Cart (iOS) - QA-8908
     [Setup]    Start Application
     Clear Environment
     Click Menu
     Click Menu Shop By Department
     Click Menu Sport and Fitness
-    Click Product Daily Deals
+    Click Product Auto from API
     Click Add To Wishlist
     Click Wishlist
     Click Wishlist Add To Cart
-    Click Cart
+    Click Back Android
+    Click Home Cart
     Click Checkout
     [Teardown]    Tear Down
 
-Apps > Cart & Wishlist 03 - QA-5361
+Apps > Cart (iOS) 02 - QA-8908
     [Setup]    Start Application
     Clear Environment
     Click Home
     Click Search Home
     Search Product    Pencil
     Click Search Product Wishlist
-    Verify Text On Screen    Item added to Wish List    30s
-    [Teardown]    Tear Down
-
-Apps > Cart & Wishlist 04 - QA-5361
-    [Setup]    Start Application
+    Verify Text On Screen Android    Item added to Wish List    30s
+    Tear Down
+    Start Application
     Click Home
     Click Wishlist Nav Bar
-    Navigate to Wishlist
+    Click Wishlist Default
     Click More Options Menu
+    Click Wishlist Edit iOS
+    Select Wishlist Item iOS
     Click Wishlist Delete Items
+    Verify Text On Screen iOS    No items    30s
+    Verify Text On Screen Android    This list is empty!    30s
     [Teardown]    Tear Down
 
-Apps > Cart & Wishlist 05 - QA-5361
-    [Setup]    Start Application
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Search Product Wishlist
-    Verify Text On Screen    Item added to Wish List    30s
-    [Teardown]    Tear Down
-
-Apps > Cart & Wishlist 06 - QA-5361
+Apps > Cart (iOS) 03 - QA-8908
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -572,99 +719,8 @@ Apps > Cart & Wishlist 06 - QA-5361
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
-    Verify Text On Screen    Item(s) moved to list    30s
-    [Teardown]    Tear Down
-
-Apps > My Account Verifications - QA-5356
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Click Menu My Account
-    Click Menu Orders
-    Verify Text On Screen    Order History    30s
-    Click Back Screen
-    Click Menu Exchanges And Returns
-    Verify Text On Screen    Open file with    30s
-    Verify Text On Screen    Chrome    1s
-    Click Menu Exchanges And Returns
-    Click Menu Personal Detail
-    Update Personal Detail Name    AutoTester
-    Verify Text On Screen    Your name has been successfully updated    30s
-    Update Personal Detail Email
-    Verify Text On Screen    Your email address has been successfully updated    30s
-    Update Personal Detail Mobile
-    Verify Text On Screen    Your mobile number has been successfully updated    30s
-    Update Personal Detail Password
-    Verify Text On Screen    Your mobile number has been successfully updated    30s
-    Update Personal Detail Business
-    Verify Text On Screen    Your business details have been successfully updated    30s
-    Click Menu Address Book
-    Click Add Delivery Address
-    Click Residential
-    Add Delivery Address My Acc    Tester Residential    0723456778    38 Baxter Way
-    Click Back Delivery Android
-    Click Menu Address Book
-    Edit Delivery Address Street My Acc    13 Caro Road
-    Click Back Delivery Android
-    Click Menu Address Book
-    Click Delete Address
-    Verify Text On Screen    Address successfully deleted    30s
-    [Teardown]    Tear Down
-
-Apps > My Account Verifications 02 - QA-5356
-    [Setup]    Start Application
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Verify Text On Screen    12 Ridge Way, Pinelands, Cape Town, Western Cape, 7405    30s
-    [Teardown]    Tear Down
-
-Apps > My Account Verifications 03 - QA-5356
-    [Setup]    Start Application
-    Click Menu
-    Click Menu My Account
-    Click Menu Load Gift Voucher
-    Apply Gift Voucher Code
-    [Teardown]    Tear Down
-
-Apps > My Account Verifications 04 - QA-5356
-    [Setup]    Start Application
-    Click Menu
-    Click Menu My Account
-    Verify Text On Screen    Available Credit: R    30s
-    Click Menu Credits Refunds
-    Verify Text On Screen    Credit will be automatically applied to your next purchase    30s
-    Verify Text On Screen    REFUND MY CREDIT    30s
-    Verify Text On Screen    REDEEM GIFT VOUCHER    30s
-    Click Menu Credit History
-    Verify Text On Screen    Available Credit    30s
-    Verify Text On Screen    Gift Voucher:    1s
-    Click Back Credit and Refunds
-    Click Menu Refund History
-    Verify Text On Screen    You have no refund history    30s
-    [Teardown]    Tear Down
-
-Apps > My Account Verifications 05 - QA-5356
-    [Setup]    Start Application
-    Click Menu
-    Click Menu My Account
-    Click Menu Settings
-    Verify Text On Screen    Notifications    30s
-    Verify Text On Screen    Login and Security    5s
-    Click Back Screen
-    Click Menu Takealot Group
-    Verify Text On Screen    Mr. D    30s
-    Verify Text On Screen    Superbalist    5s
-    Click Back Screen
-    Click Menu Help
-    Verify Text On Screen    Open file with    30s
-    Verify Text On Screen    Chrome    5s
+    Verify Text On Screen Android    Item(s) moved to list    30s
+    Verify Text On Screen iOS    Product added to wish list    30s
     [Teardown]    Tear Down
 
 Apps > Order Tracking - QA-5274
@@ -693,27 +749,136 @@ Apps > Order Tracking 02 - QA-5274
     Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
-    Verify Product Added to Cart
-    Verify Text On Screen    ORDER SUMMARY    1s
+    Verify Text On Screen    ORDER SUMMARY    30s
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
-    Verify Text On Screen    Order Total    1s
-    Verify Text On Screen    To Pay    1s
+    Verify Text On Screen Android    Order Total    1s
+    Verify Text On Screen Android    To Pay    1s
+    Verify Text On Screen iOS    TO PAY    1s
     Verify Text On Screen    PAYMENT METHOD    1s
     Verify Text On Screen    Credit Card    1s
+    Swipe Up    ${windowScroll}
     Verify Text On Screen    DELIVERY METHOD    1s
     Verify Text On Screen    First Delivery Free - Standard    1s
     Verify Text On Screen    SHIPPING ADDRESS    1s
+    Swipe Up    ${windowScroll}
     Verify Text On Screen    Test    1s
     Verify Text On Screen    12 Ridge Way    1s
-    Verify Text On Screen    Green Point    1s
+    Verify Text On Screen    Pinelands    1s
     Verify Text On Screen    Cape Town    1s
-    Verify Text On Screen    8005    1s
+    Verify Text On Screen    7405    1s
+    Swipe Down    ${windowScroll}
     Click Order Pay Now
-    Click Change Payment Method
+    Click Change Payment Method Only
     Click Payfast Payment Method
     Click Pay With Payfast
     Verify Payfast Payment Text    Secure payments by PayFast
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications - QA-5356
+    [Setup]    Start Application    False
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Verify Text On Screen    Last 3 months    30s
+    Click Back Android
+    Click Back iOS    My Account
+    Click Menu Exchanges And Returns
+    Verify Element On Screen    ${btnMenuExchReturns}    30s
+    Verify Text On Screen Android    Open file with    30s
+    Verify Text On Screen Android    Chrome    1s
+    Click Window Android
+    Click Menu Personal Detail
+    Update Personal Detail Name    AutoTester
+    Verify Text On Screen    Your name has been successfully updated    30s
+    Update Personal Detail Email    ?    t@ke@!ot1234
+    Update Personal Detail Email    ${G_EMAIL}    t@ke@!ot1234
+    Verify Text On Screen    Your email address has been successfully updated    30s
+    Update Personal Detail Mobile    0789896556
+    Verify Text On Screen    Your mobile number has been successfully updated    30s
+    Update Personal Detail Password    t@ke@!ot1234    Abcd2200
+    Update Personal Detail Password    Abcd2200    t@ke@!ot1234
+    Verify Text On Screen    Your password has been successfully updated    30s
+    Update Personal Detail Business    Automation    12345
+    Verify Text On Screen    Your business details have been successfully updated    30s
+    Click Back Android
+    Click Back iOS    My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
+    Verify Text On Screen iOS    DELETE    30s
+    Click Back Delivery Android
+    Click Back iOS    My Account
+    Click Menu Address Book
+    Click Edit Address
+    Edit Delivery Address Street My Acc    13 Caro Roa
+    Verify Text On Screen iOS    DELETE    30s
+    Click Back Delivery Android
+    Click Back iOS    My Account
+    Click Menu Address Book
+    Click Delete Address
+    Verify Text On Screen Android    Address successfully deleted    30s
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications 02 - QA-5356
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen    12 Ridge Way, Pinelands, Cape Town, Western Cape, 7405    30s
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications 03 - QA-5356
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Load Gift Voucher
+    Apply Dummy Gift Voucher Code
+    Tear Down
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Verify Text On Screen    Available Credit: R    30s
+    Click Menu Credits Refunds
+    Verify Text On Screen    Credit will be automatically applied to your next purchase    30s
+    Verify Text On Screen    Refund History    1s
+    Verify Text On Screen Android    REDEEM GIFT VOUCHER    1s
+    Verify Text On Screen iOS    Redeem Gift Voucher    1s
+    Click Menu Credit History
+    Verify Text On Screen    Available Credit    30s
+#    Verify Text On Screen    Gift Voucher:    1s
+    Click Back Android
+    Click Back iOS    Credit & Refunds
+    Click Menu Refund History
+    Verify Text On Screen    You have no refund history    30s
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications 04 - QA-5356
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account Android
+    Click Menu Settings
+    Verify Text On Screen    Notifications    30s
+    Verify Text On Screen    Login and Security    5s
+    Click Back Screen    Back
+    Click Menu iOS
+    Click Menu Takealot Group
+    Verify Text On Screen iOS    Takealot.group    30s
+    Verify Text On Screen Android    Mr. D    30s
+    Verify Text On Screen iOS    Mr D    30s
+    Verify Text On Screen    Superbalist    5s
+    Click Back Android
+    Click Menu Help
+    Verify Text On Screen Android    Open file with    30s
+    Verify Text On Screen Android    Chrome    5s
     [Teardown]    Tear Down
 
 Apps > Order Tracking 03 - QA-5274
@@ -742,24 +907,27 @@ Apps > Order Tracking 04 - QA-5274
     Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
-    Verify Product Added to Cart
-    Verify Text On Screen    ORDER SUMMARY    1s
+    Verify Text On Screen    ORDER SUMMARY    30s
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
-    Verify Text On Screen    Order Total    1s
-    Verify Text On Screen    To Pay    1s
+    Verify Text On Screen Android    Order Total    1s
+    Verify Text On Screen Android    To Pay    1s
+    Verify Text On Screen iOS    TO PAY    1s
     Verify Text On Screen    PAYMENT METHOD    1s
     Verify Text On Screen    Credit Card    1s
+    Swipe Up    ${windowScroll}
     Verify Text On Screen    DELIVERY METHOD    1s
-    Verify Text On Screen    First Delivery Free - Standard    1s
-    Verify Text On Screen    SHIPPING ADDRESS    1s
-    Verify Text On Screen    Test    1s
-    Verify Text On Screen    12 Ridge Way    1s
-    Verify Text On Screen    Green Point    1s
-    Verify Text On Screen    Cape Town    1s
-    Verify Text On Screen    8005    1s
+    Verify Text On Screen    Standard Collect    1s
+    Verify Text On Screen    TAKEALOT PICKUP POINT    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Berea Pickup Point    1s
+    Verify Text On Screen    Shop 3, 33 Devereux Avenue    1s
+    Verify Text On Screen    Berea    1s
+    Verify Text On Screen    East London    1s
+    Verify Text On Screen    5241    1s
+    Swipe Down    ${windowScroll}
     Click Order Pay Now
-    Click Change Payment Method
+    Click Change Payment Method Only
     Click Payfast Payment Method
     Click Pay With Payfast
     Verify Payfast Payment Text    Secure payments by PayFast
@@ -777,7 +945,7 @@ Apps > Order Tracking 05 - QA-5274
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Surcharge Delivery
     Click Donate No Thanks
     Click Add Payment Voucher
     Enter Payment Voucher Code
@@ -792,30 +960,34 @@ Apps > Order Tracking 06 - QA-5274
     Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
-    Verify Product Added to Cart
-    Verify Text On Screen    ORDER SUMMARY    1s
+    Verify Text On Screen    ORDER SUMMARY    30s
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
-    Verify Text On Screen    Order Total    1s
-    Verify Text On Screen    To Pay    1s
+    Verify Text On Screen Android    Order Total    1s
+    Verify Text On Screen Android    To Pay    1s
+    Verify Text On Screen iOS    TO PAY    1s
+    Swipe Up    ${windowScroll}
     Verify Text On Screen    PAYMENT METHOD    1s
     Verify Text On Screen    Credit Card    1s
     Verify Text On Screen    DELIVERY METHOD    1s
-    Verify Text On Screen    First Delivery Free - Standard    1s
+    Verify Text On Screen    Standard    1s
     Verify Text On Screen    SHIPPING ADDRESS    1s
+    Swipe Up    ${windowScroll}
     Verify Text On Screen    Test    1s
     Verify Text On Screen    12 Ridge Way    1s
-    Verify Text On Screen    Green Point    1s
+    Verify Text On Screen    Pinelands    1s
     Verify Text On Screen    Cape Town    1s
-    Verify Text On Screen    8005    1s
+    Verify Text On Screen    7405    1s
+    Swipe Down    ${windowScroll}
     Click Order Pay Now
-    Click Change Payment Method
+    Click Change Payment Method Only
     Click Payfast Payment Method
     Click Pay With Payfast
     Verify Payfast Payment Text    Secure payments by PayFast
     [Teardown]    Tear Down
 
 Apps > Cart (Android) - QA-5298
+    [Tags]    android
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -826,7 +998,7 @@ Apps > Cart (Android) - QA-5298
     Click Go To Cart
     Click Checkout Delete First Item
     Click Checkout Cart Undo
-    Click Checkout
+    Click Checkout Android
     [Teardown]    Tear Down
 
 Apps > Cart (Android) 02 - QA-5298
@@ -839,10 +1011,11 @@ Apps > Cart (Android) 02 - QA-5298
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
-    Verify Text On Screen    Item(s) moved to list    30s
-    Verify Text On Screen    Your Shopping Cart is Empty    5s
-    Verify Text On Screen    Trending on Takealot    5s
+#    Verify Text On Screen Android    Item(s) moved to list    30s
+    Verify Text On Screen Android    Your Shopping Cart is Empty    5s
+    Verify Text On Screen Android    Trending on Takealot    5s
     Verify Element On Screen Android    ${btnCartContinueShopping}    1s
+    Verify Text On Screen iOS    Product added to wish list    30s
     Add To Cart Trending First Item
     Click Checkout
     [Teardown]    Tear Down
@@ -856,7 +1029,7 @@ Apps > Cart (Android) 03 - QA-5298
     Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity    2
+    Change Cart Quantity Android    2
     Click Checkout
     [Teardown]    Tear Down
 
@@ -866,24 +1039,30 @@ Apps > Cart (Android) 04 - QA-5298
     Click Home
     Click Search Home
     Search Product    airtim
-    Click First Product from API
-    Click Airtime
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
-    Click Continue Shopping
+    Click Continue Shopping iOS
+    Click Back Android
     Click Search Icon
-    Search Product    ebook
-    Click First Product from API
+    Search Product    book
+    Click Product from API
     Click Add To Cart
-    Click Continue Shopping
+    Click Continue Shopping iOS
+    Click Back Android
     Click Search Icon
     Search Product    vouche
-    Click First Product from API
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Verify Text On Screen    The gift voucher will be delivered via email to the recipient    30s
-    Verify Text On Screen    The eBook will be added to your Digital Library, ready for you to download    1s
-    Verify Text On Screen    The prepaid code will be delivered to you via email    1s
-    Verify Text On Screen    This product is not eligible for Cash on Delivery (COD)    1s
-    Verify Text On Screen    Cart    1s
-    Verify Element On Screen    ${btnWishListIcon}    1s
+    Verify Element On Screen    ${btnWishListIcon}    30s
+    Verify Text On Screen Android    The gift voucher will be delivered via email to the recipient    30s
+#    Verify Text On Screen    The eBook will be added to your Digital Library, ready for you to download    1s
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen Android    The prepaid code will be delivered to you via email    1s
+    Verify Text On Screen Android    This product is not eligible for Cash on Delivery (COD)    1s
+    Verify Text On Screen Android    Cart    1s
+    Click Checkout
+    Verify Text On Screen    Delivery via email to    30s
     [Teardown]    Tear Down

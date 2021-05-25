@@ -1,6 +1,6 @@
 *** Variables ***
 ${btnAddress}      chain=**/XCUIElementTypeStaticText[`label == "Test"`]
-${btnPickupPoint}      id=Takealot Cape Town Warehouse Cape Town, Western Cape
+${btnPickupPoint}      chain=**/XCUIElementTypeStaticText[`label == "Takealot Cape Town Warehouse Cape Town, Western Cape"`]
 ${btnDeleteAddress}      chain=**/XCUIElementTypeStaticText[`label == "DELETE"`][1]
 ${btnConfDeleteAddress}      chain=**/XCUIElementTypeButton[`label == "Delete"`]
 ${btnEditAddress}      chain=**/XCUIElementTypeButton[`label == "EDIT"`]
