@@ -19,3 +19,6 @@ ${lnkPLPSellerDeals}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/X
 
 ${btnProductGridView}      chain=**/XCUIElementTypeButton[`label == "icon list"`]
 ${btnProductIconClose}      chain=**/XCUIElementTypeButton[`label == "icon close"`]
+
+${lblRatingText}      ${EMPTY}
+${lblRatingNumber}    ${EMPTY}

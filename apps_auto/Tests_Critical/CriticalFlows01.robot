@@ -5,17 +5,28 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-
-#Apps > Search Listings > Badges (Deal Sold Out) - QA-8744
-#    [Setup]    Start Application
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Verify Element On Screen    ${btnProductSearchFilter}    30s
-#    Verify Text On Screen    items    5s
-#    Verify Element On Screen    ${btnProductSearchSort}    30s
-#    Click Product Grid View
-#    [Teardown]    Tear Down
+Apps > Register & Login - QA-5329
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Register
+    Register Takealot Unverify    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    Verify Register Takealot Blank
+    Click Cancel Screen
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Menu
+    Click Menu iOS
+    Click Menu Logout
+    Click Menu iOS
+    Click Menu Login
+    Login Takealot Only    ${EMPTY}    ${EMPTY}
+    Verify Text On Screen    Please enter your email address    10s
+    Verify Text On Screen    Please enter your password    1s
+    Login Takealot    ${new_email_address}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu Logout
+    [Teardown]    Tear Down
 
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
 #    [Setup]    Start Application

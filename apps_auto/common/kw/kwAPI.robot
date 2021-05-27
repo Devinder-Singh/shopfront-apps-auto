@@ -85,8 +85,26 @@ Get Product to Add To Cart
 
     [return]    ${searchResult}
 
+Get Product List Review
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_review}=    Output    $.sections.products.results[*].product_views.core.reviews
+    @{results_rating}=    Output    $.sections.products.results[*].product_views.core.star_rating
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results_review}
+        Set Global Variable    ${query_result_Review}    ${result}
+        Set Global Variable    ${query_result_Rating}    ${results_rating}[${index}]
+        Exit For Loop If    '${result}'!='None'
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    [return]    ${query_result_Review}
+
 Get Product Auto to Add To Cart
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?sort=Relevance&department_slug=pool-garden&category_slug=maintenance-and-service-25855
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?sort=Relevance&department_slug=pool-garden&category_slug=maintenance-and-service-25855
     Get    ${search_URL}
     Integer    response status    200
 
@@ -105,7 +123,7 @@ Get Product Auto to Add To Cart
 
 Verify Product Search App Only Deals Badge
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Output    ${search_URL}
     Get    ${search_URL}
     Integer    response status    200
@@ -129,7 +147,7 @@ Verify Product Search App Only Deals Badge
     [Return]    ${searchResult}
 
 Get Variant Product to Add To Cart
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -149,7 +167,7 @@ Get Variant Product to Add To Cart
 
 Get Product Variant
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
     Output    ${search_URL}
     Get    ${search_URL}
     Integer    response status    200
@@ -168,7 +186,7 @@ Get Product Variant
     [return]    ${searchResult}
 
 Get First Product From API
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -183,7 +201,7 @@ Get First Product From API
 
 Get Product with Leadtime
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -201,7 +219,7 @@ Get Product with Leadtime
 
 Get Product in JHB only
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -228,7 +246,7 @@ Get Product in JHB only
 
 Get Product in CPT only
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -255,7 +273,7 @@ Get Product in CPT only
 
 Get Product in JHB and CPT
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -381,7 +399,7 @@ Post Remove Product To Cart
     Integer    response status    200
 
 Get Product Daily Deals
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/productlines/search?daily_deals_rows=100&filter=Available:true&filter=Promotions:62621
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-9-0/productlines/search?daily_deals_rows=100&filter=Available:true&filter=Promotions:62621
     Get    ${search_URL}
     Integer    response status    200
 
@@ -391,7 +409,7 @@ Get Product Daily Deals
     [return]    ${results_title}
 
 Get Product Deals Third Tab Slug
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/promotions?is_bundle_included=True
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-9-0/promotions?is_bundle_included=True
     Get    ${search_URL}
     Integer    response status    200
 
@@ -450,7 +468,7 @@ Get Product Deals Third Tab Name
     [Return]    ${searchResult}
 
 Get Product Daily Deals Slug
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/promotions?is_bundle_included=True
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-9-0/promotions?is_bundle_included=True
     Get    ${search_URL}
     Integer    response status    200
 
@@ -473,7 +491,7 @@ Get Product Daily Deals Slug
     [Return]    ${searchResult}
 
 Get Product App Only Deals Slug
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/promotions?is_bundle_included=True
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-9-0/promotions?is_bundle_included=True
     Get    ${search_URL}
     Integer    response status    200
 
@@ -498,7 +516,7 @@ Get Product App Only Deals Slug
 Verify Product Search Daily Deals Badge
 
     ${searchProd} =	Get Substring	${query_result_DailyDealProduct}    0    11
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${searchProd}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${searchProd}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -523,7 +541,7 @@ Verify Product Search Daily Deals Badge
 Verify Product Search Percent Off Badge
 
     ${searchProd} =	Get Substring	${query_result_DailyDealProduct}    0    11
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${searchProd}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${searchProd}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -547,7 +565,7 @@ Verify Product Search Percent Off Badge
 
 Verify Product Search Sales Badge
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${query_result_ThirdTabSlug}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${query_result_ThirdTabSlug}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -571,7 +589,7 @@ Verify Product Search Sales Badge
 
 Get Product Search App Only Deals Badge
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${query_result_AppOnlyDealsSlug}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${query_result_AppOnlyDealsSlug}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -583,7 +601,7 @@ Get Product Search App Only Deals Badge
 
 Verify Product Search Daily Deals Image
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${query_result_DailyDealsSlug}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${query_result_DailyDealsSlug}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -619,7 +637,7 @@ Verify Daily Deals Image
 Get Product Filter
     [Arguments]    ${option}
 
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${option}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${option}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -632,7 +650,7 @@ Get Product Filter
     [return]    ${searchResult}
 
 Get Filter Product to Add To Cart
-    ${search_URL}=    Set Variable    http://api.master.env/rest/v-1-9-0/productlines/search?daily_deals_rows=100&start=0&filter=Available:true&filter=Promotions:${query_result_DailyDealsSlug}&filter=${query_result_FilterType}
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-9-0/productlines/search?daily_deals_rows=100&start=0&filter=Available:true&filter=Promotions:${query_result_DailyDealsSlug}&filter=${query_result_FilterType}
     ${apiResult}=    Get Api Request    ${search_URL}
 
     ${objDict}=    Convert To Dictionary    ${apiResult}

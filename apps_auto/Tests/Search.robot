@@ -85,3 +85,38 @@ Apps > Search Listings > UI Checks - QA-8841
     Verify Element On Screen    ${btnProductSearchSort}    30s
     Click Product Grid View
     [Teardown]    Tear Down
+
+Apps > Search Listings > Product Title - QA-8748
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Reviews - QA-8750
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Tear Down
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Verify Element On Screen Scroll Android    ${lblRatingText}    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Element On Screen Scroll Android    ${lblRatingNumber}    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Product Review iOS
+    Click Back Android
+    Click Back iOS    Back
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test
+    Click Review Submit
+    Verify Text On Screen    Thank you for your review    30s
+    [Teardown]    Tear Down

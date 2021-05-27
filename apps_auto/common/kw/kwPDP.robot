@@ -140,6 +140,7 @@ Click PDP Write Review
         Sleep    1s
         ${index}=    Evaluate    ${index} + 1
     END
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
     Click Element    ${btnPDPReview}
 
 Click Back PDP

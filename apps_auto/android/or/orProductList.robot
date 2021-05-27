@@ -16,3 +16,6 @@ ${btnProductListView}      id=${APP_PACKAGE}:id/productListingRecyclerView
 ${btnProductGridView}    id=${APP_PACKAGE}:id/product_listing_layout_button
 
 ${lnkPLPSellerDeals}    xpath=(//android.widget.ImageView[@content-desc="Product Image"])[1]
+
+${lblRatingText}      id=${APP_PACKAGE}:id/productListingRatingText
+${lblRatingNumber}    id=${APP_PACKAGE}:id/productListingNumberOfRatings
