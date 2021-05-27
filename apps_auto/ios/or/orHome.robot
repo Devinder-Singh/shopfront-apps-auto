@@ -1,9 +1,9 @@
 *** Variables ***
 ${btnHome}      chain=**/XCUIElementTypeButton[`label == "Home"`]
-${btnAddWishlist}      chain=**/XCUIElementTypeButton[`label == "icon wishListButton"`]
+${btnAddWishlist}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther[3]/XCUIElementTypeButton
 ${btnSearchIcon}      chain=**/XCUIElementTypeButton[`label == "icon search"`]
 
-${btnMoreOptions}      ${EMPTY}
+${btnMoreOptions}      chain=**/XCUIElementTypeButton[`label == "overflowDots"`]
 ${btnOptionHome}      ${EMPTY}
 ${btnOptionCategories}      ${EMPTY}
 ${btnOptionDeals}      ${EMPTY}
@@ -23,4 +23,4 @@ ${btnHomeDeptHealthCare}      id=Health & Personal Care
 ${btnHomeBack}      id=Back
 
 ${btnHomeWishlist}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeButton[1]
-${btnWishListIcon}      chain=**/XCUIElementTypeButton[`label == "Wish list"`]
+${btnWishListIcon}      chain=**/XCUIElementTypeButton[`label == "My Lists"`]

@@ -70,6 +70,7 @@ Add Delivery Address My Acc
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
     Sleep    3s
+    Swipe Up    ${windowScroll}
     Click Save Address
 
 Edit Delivery Address Mobile Number
@@ -110,6 +111,8 @@ Edit Delivery Address Street My Acc
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
     Sleep    2s
 
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
     Swipe Up    ${windowScroll}
     Click Save Address
 

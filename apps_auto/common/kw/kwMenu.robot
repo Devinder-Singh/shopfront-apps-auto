@@ -57,7 +57,6 @@ Click Menu Logout
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
     Click Element    ${btnLogout}
-    Page Should Contain Element    ${btnMenuLogin}
     Sleep    2s
 
 Click Menu Daily Deals
@@ -69,7 +68,8 @@ Click Menu Shop By Department
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuShopByDepartment}
 
 Click Menu Sport and Fitness
-    Swipe Up    ${windowScroll}
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}    5s
+    Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
     Wait Until Element Is Visible    ${mnuSportFitness}    5s
     Click Element    ${mnuSportFitness}
     Click Product Widget First View All
@@ -130,7 +130,7 @@ Click Wishlist Nav Bar
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlist}    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlist}
 
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Home WishList
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Home WishList Only
 
 Click Wishlist
     Wait Until Element Is Visible    ${btnWishlist}    30s

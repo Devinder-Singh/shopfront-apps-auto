@@ -689,7 +689,7 @@ Get Daily Deals Product to Add To Cart
         ${objVariant}=    Get From Dictionary    ${result}    has_variants
         ${objTitle}=    Get From Dictionary    ${result}    title
 
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${objTitle}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${objTitle}"]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${objTitle}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${objTitle}']
         Set Global Variable    ${query_result_CartFilterProduct}    ${objTitle}
         Exit For Loop If    '${objVariant}'=='False'
 

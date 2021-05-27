@@ -5,4 +5,4 @@ ${btnSearchClearAll}      chain=**/XCUIElementTypeStaticText[`label == "Clear Al
 ${txtSearch}      ${EMPTY}
 
 ${btnSearchRecent}      id=pencil case
-${btnSearchTrending}      id=masks disposable
+${btnSearchTrending}      id=mask

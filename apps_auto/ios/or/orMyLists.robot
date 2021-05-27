@@ -1,5 +1,5 @@
 *** Variables ***
-${btnWishlistItems}    ${EMPTY}
+${btnWishlistItems}    chain=**/XCUIElementTypeStaticText[`label == "DEFAULT"`]
 ${btnWishlistAuto}    ${EMPTY}
 
 ${btnWishListScreen}      ${EMPTY}

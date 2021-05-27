@@ -14,8 +14,7 @@ Click Home iOS
 Click Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    30s
     Click Element    ${btnAddWishlist}
-    Verify Text On Screen iOS    Item added to Wishlist    30s
-    Verify Text On Screen Android    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    30s
     Sleep    5s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
@@ -27,6 +26,10 @@ Click Add To Wishlist Only
     Sleep    1s
 
 Click More Options Menu
+    Wait Until Element Is Visible    ${btnMoreOptions}    30s
+    Click Element    ${btnMoreOptions}
+
+Click More Options Menu Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMoreOptions}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
 
@@ -110,6 +113,10 @@ Click Icon Health & Personal Care
 Click Home Back
     Wait Until Element Is Visible    ${btnHomeBack}    30s
     Click Element    ${btnHomeBack}
+
+Click Home WishList Only
+    Wait Until Element Is Visible    ${btnWishListIcon}    30s
+    Click Element    ${btnWishListIcon}
 
 Click Home WishList
     Wait Until Element Is Visible    ${btnWishListIcon}    30s

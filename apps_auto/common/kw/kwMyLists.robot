@@ -4,9 +4,9 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Navigate to Wishlist
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistItems}    30s
+    Wait Until Element Is Visible    ${btnWishlistItems}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishListScreen}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlistItems}
+    Click Element    ${btnWishlistItems}
 
 Click Create Wishlist
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    30s
@@ -24,8 +24,8 @@ Click Save Wishlist
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlistSave}
 
 Click Wishlist Default
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistItems}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishlistItems}
+    Wait Until Element Is Visible    ${btnWishlistItems}    30s
+    Click Element    ${btnWishlistItems}
 
 Navigate to Wishlist Auto
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    30s

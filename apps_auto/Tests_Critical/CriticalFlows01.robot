@@ -5,27 +5,31 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Register & Login - QA-5329
+Apps > Search Listings > Price (List Price) - QA-8751
     [Setup]    Start Application
     Click Menu
-    Click Menu Register
-    Register Takealot Unverify    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
-    Verify Register Takealot Blank
-    Click Cancel Screen
+    Click Menu Login
+    Tear Down
+    Start Application    ${False}
+    Click Menu
     Click Menu Register
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
-    Click Menu
-    Click Menu iOS
-    Click Menu Logout
-    Click Menu iOS
-    Click Menu Login
-    Login Takealot Only    ${EMPTY}    ${EMPTY}
-    Verify Text On Screen    Please enter your email address    10s
-    Verify Text On Screen    Please enter your password    1s
-    Login Takealot    ${new_email_address}    t@ke@!ot1234
     Click Home
-    Click Menu
-    Click Menu Logout
+    Click Search Home
+    Search Product    pencil
+    Verify Element On Screen Scroll Android    ${lblRatingText}    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Element On Screen Scroll Android    ${lblRatingNumber}    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Product Review iOS
+    Click Back Android
+    Click Back iOS    Back
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test
+    Click Review Submit
+    Verify Text On Screen    Thank you for your review    30s
     [Teardown]    Tear Down
 
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362

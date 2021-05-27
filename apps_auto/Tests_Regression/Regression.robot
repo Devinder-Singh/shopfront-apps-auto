@@ -44,6 +44,7 @@ Apps > Promotions (Android) Daily Deals - QA-5357
     Click Apply Filter
     Click Filter Product from API
     Click Add To Cart
+    Click Increase Cart Quantity iOS    3
     Click Go To Cart
     Change Cart Quantity Android    4
     Click Item Promotion Text
@@ -65,7 +66,7 @@ Apps > Promotions (Android) App Only Deals - QA-8409
     Click Apply Filter
     Click Filter Product from API
     Click Add To Cart
-#    Click Increase Cart Quantity    3
+    Click Increase Cart Quantity iOS    3
     Click Go To Cart
     Change Cart Quantity Android    4
     Click Item Promotion Text
@@ -87,6 +88,7 @@ Apps > Promotions (Android) Other Promo tabs - QA-8410
     Click Apply Filter
     Click Filter Product from API
     Click Add To Cart
+    Click Increase Cart Quantity iOS    4
     Click Go To Cart
     Change Cart Quantity Android    5
     Click Item Promotion Text
@@ -105,8 +107,7 @@ Apps > Promotions (Android) Set Bundle - QA-8367
     Click Product From Title    Krone - Borealis Cuvee Brut MCC - 750ml
     Click Add To Cart
     Click Go To Cart
-    Verify Text On Screen Android    Missed promotion:    30s
-    Verify Text On Screen iOS    Missed promotions:    30s
+    Verify Text On Screen    Missed promotion:    30s
     Verify Text On Screen Android    VIEW BUNDLE    1s
     Verify Text On Screen iOS    View Bundle    1s
     Tear Down
@@ -136,6 +137,7 @@ Apps > Promotions (Android) Multi-Buys - QA-8411
     Click Shop The Deal
     Click Product From Title    EET KREEF! HERLEEF
     Click Add To Cart
+    Click Increase Cart Quantity iOS    1
     Click Go To Cart
     Verify Text On Screen    Missed promotion:    30s
     Verify Text On Screen Android    ADD 1 ITEM TO QUALIFY    1s
@@ -178,8 +180,8 @@ Apps > Verify Home Screen - QA-8876
     Tear Down
     Start Application    ${False}
     Click Home
-    Check Text On Screen Not    Recommended For You
-    Check Text On Screen Not    Recently Viewed
+    Verify Element On Screen Not    Recommended For You    15s
+    Verify Element On Screen Not    Recently Viewed    15s
     Click Menu
     Click Menu Login
     Login Takealot    ${G_EMAIL}    t@ke@!ot1234
@@ -246,13 +248,12 @@ Apps > Verify Home Screen - QA-8878
     Click Add To Wishlist
     Click Wishlist
     Tear Down
-    Start Application
+    Start Application    ${False}
     Click Home
     Click Home WishList
     Click Wishlist Edit
     Select Wishlist Item
     Click Wishlist Delete Items
-    Verify Text On Screen iOS    No items    30s
     Verify Text On Screen Android    This list is empty    30s
     [Teardown]    Tear Down
 
@@ -439,7 +440,7 @@ Apps > PLP > Overflow Menus - QA-8341
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    30s
-    Click More Options Menu
+    Click More Options Menu Android
     Click Options Menu Home
     Click Back iOS    pencil case
     Click Back iOS    Back
@@ -448,7 +449,7 @@ Apps > PLP > Overflow Menus - QA-8341
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    30s
-    Click More Options Menu
+    Click More Options Menu Android
     Click Options Menu Categories
     Click Back iOS    pencil case
     Click Back iOS    Back
@@ -458,7 +459,7 @@ Apps > PLP > Overflow Menus - QA-8341
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    30s
-    Click More Options Menu
+    Click More Options Menu Android
     Click Options Menu Deals
     Click Back iOS    pencil case
     Click Back iOS    Back
@@ -467,18 +468,18 @@ Apps > PLP > Overflow Menus - QA-8341
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    30s
-    Click More Options Menu
+    Click More Options Menu Android
     Click Options Menu Lists
     Click Back iOS    pencil case
     Click Back iOS    Back
     Verify Text On Screen Android    Wish List    30s
-    Verify Text On Screen ios    Wish list    30s
+    Verify Text On Screen ios    My Lists    30s
     Click Home
     Click Search Home
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    30s
-    Click More Options Menu
+    Click More Options Menu Android
     Click Options Menu Account
     Click Back iOS    pencil case
     Click Back iOS    Back
@@ -497,8 +498,7 @@ Apps > PDP - QA-5307
     Click Back Android
     Click Continue Shopping iOS
     Click Add To Wishlist Only
-    Verify Text On Screen iOS    Item added to Wishlist    30s
-    Verify Text On Screen Android    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8890
@@ -514,8 +514,7 @@ Apps > PDP - QA-8890
     Click Back Android
     Click Continue Shopping iOS
     Click Add To Wishlist Only
-    Verify Text On Screen iOS    Item added to Wishlist    30s
-    Verify Text On Screen Android    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8891
@@ -558,9 +557,7 @@ Apps > PDP - QA-8893
     Verify PDP Screen Element Not Exists    ${btnAddToCart}
     Click Product Variant From API
     Click Add To Wishlist Only
-    Verify Text On Screen iOS    Item added to Wishlist    30s
-    Verify Text On Screen Android    Item added to Wish List    30s
-    Click Continue Shopping iOS
+    Verify Text On Screen    Item added to Wish List    30s
     Click Add To Cart
     [Teardown]    Tear Down
 
@@ -603,9 +600,9 @@ Apps > Wishlist (Android) - QA-5367
     Clear Environment
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen Android    Trending on Takealot    30s
-    Verify Text On Screen Android    Wish List    30s
-    Verify Text On Screen Android    DEFAULT    30s
+    Verify Text On Screen    Trending on Takealot    30s
+    Verify Text On Screen    Wish List    1s
+    Verify Text On Screen    DEFAULT    1s
     Click Create Wishlist
     [Teardown]    Tear Down
 
@@ -625,6 +622,7 @@ Apps > Wishlist (Android) > Delete List - QA-8906
     Click Wishlist Default
     Click Wishlist Add To Cart
     Click Back Android
+    Click Back iOS    My Lists
     Click Home Cart
     Click Checkout
     Tear Down
@@ -633,7 +631,7 @@ Apps > Wishlist (Android) > Delete List - QA-8906
     Click Wishlist Nav Bar
     Click Create Wishlist
     Navigate to Wishlist Auto
-    Click More Options Menu
+    Click More Options Menu Android
     Verify Text On Screen Android    Rename List    30s
     Verify Text On Screen Android    Delete List    1s
     Click Delete Wishlist
@@ -649,14 +647,15 @@ Apps > Wishlist (Android) > Bottom Navigation - QA-8907
     Click Product from API
     Click Add To Wishlist
     Tear Down
-    Start Application
+    Start Application    ${False}
     Click Home
     Click Wishlist Nav Bar
     Click Wishlist Default
     Click Wishlist Add To Cart
     Click More Options Menu
     Verify Text On Screen Android    Share List    30s
-    Verify Text On Screen Android    Edit    30s
+    Verify Text On Screen iOS    Share    30s
+    Verify Text On Screen    Edit    1s
     [Teardown]    Tear Down
 
 Apps > Wishlist (iOS) - QA-5361
@@ -666,6 +665,7 @@ Apps > Wishlist (iOS) - QA-5361
     Click Menu Daily Deals
     Click Daily Deals Product from API
     Click Add To Cart
+    Click Increase Cart Quantity iOS    1
     Click Go To Cart
     Change Cart Quantity Android    2
     Click Checkout Delete First Item
@@ -684,6 +684,7 @@ Apps > Cart (iOS) - QA-8908
     Click Wishlist
     Click Wishlist Add To Cart
     Click Back Android
+    Click Back iOS    My Lists
     Click Home Cart
     Click Checkout
     [Teardown]    Tear Down
@@ -697,16 +698,14 @@ Apps > Cart (iOS) 02 - QA-8908
     Click Search Product Wishlist
     Verify Text On Screen Android    Item added to Wish List    30s
     Tear Down
-    Start Application
+    Start Application    ${False}
     Click Home
     Click Wishlist Nav Bar
     Click Wishlist Default
-    Click More Options Menu
-    Click Wishlist Edit iOS
-    Select Wishlist Item iOS
+    Click Wishlist Edit
+    Select Wishlist Item
     Click Wishlist Delete Items
-    Verify Text On Screen iOS    No items    30s
-    Verify Text On Screen Android    This list is empty!    30s
+    Verify Text On Screen    This list is empty!    30s
     [Teardown]    Tear Down
 
 Apps > Cart (iOS) 03 - QA-8908
@@ -720,7 +719,7 @@ Apps > Cart (iOS) 03 - QA-8908
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
     Verify Text On Screen Android    Item(s) moved to list    30s
-    Verify Text On Screen iOS    Product added to wish list    30s
+    Verify Text On Screen iOS    Item added to Wish List    30s
     [Teardown]    Tear Down
 
 Apps > Order Tracking - QA-5274
@@ -868,7 +867,8 @@ Apps > My Account Verifications 04 - QA-5356
     Click Menu Settings
     Verify Text On Screen    Notifications    30s
     Verify Text On Screen    Login and Security    5s
-    Click Back Screen    Back
+    Click Back Android
+    Click Back iOS    Back
     Click Menu iOS
     Click Menu Takealot Group
     Verify Text On Screen iOS    Takealot.group    30s
@@ -917,14 +917,15 @@ Apps > Order Tracking 04 - QA-5274
     Verify Text On Screen    Credit Card    1s
     Swipe Up    ${windowScroll}
     Verify Text On Screen    DELIVERY METHOD    1s
-    Verify Text On Screen    Standard Collect    1s
+    Verify Text On Screen    Collect    1s
     Verify Text On Screen    TAKEALOT PICKUP POINT    1s
     Swipe Up    ${windowScroll}
-    Verify Text On Screen    Berea Pickup Point    1s
-    Verify Text On Screen    Shop 3, 33 Devereux Avenue    1s
-    Verify Text On Screen    Berea    1s
-    Verify Text On Screen    East London    1s
-    Verify Text On Screen    5241    1s
+    Verify Text On Screen    Takealot Cape Town Warehouse Pickup Point    1s
+    Verify Text On Screen    Takealot Cape Town Warehouse, Block B, Montague Park    1s
+    Verify Text On Screen    Business Estate    1s
+    Verify Text On Screen    Montague Gardens    1s
+    Verify Text On Screen    Cape Town    1s
+    Verify Text On Screen    7441    1s
     Swipe Down    ${windowScroll}
     Click Order Pay Now
     Click Change Payment Method Only
@@ -951,7 +952,8 @@ Apps > Order Tracking 05 - QA-5274
     Enter Payment Voucher Code
     Click Apply Payment Voucher
     Click Back Payment Voucher
-    Click Payment Confirm Order
+    Click Pay With Credit Card
+#    Click Payment Confirm Order
     [Teardown]    Tear Down
 
 Apps > Order Tracking 06 - QA-5274
@@ -1015,7 +1017,7 @@ Apps > Cart (Android) 02 - QA-5298
     Verify Text On Screen Android    Your Shopping Cart is Empty    5s
     Verify Text On Screen Android    Trending on Takealot    5s
     Verify Element On Screen Android    ${btnCartContinueShopping}    1s
-    Verify Text On Screen iOS    Product added to wish list    30s
+    Verify Text On Screen iOS    Item added to Wish List    30s
     Add To Cart Trending First Item
     Click Checkout
     [Teardown]    Tear Down
@@ -1028,6 +1030,7 @@ Apps > Cart (Android) 03 - QA-5298
     Search Product    Pencil
     Click Product from API
     Click Add To Cart
+    Click Increase Cart Quantity iOS    1
     Click Go To Cart
     Change Cart Quantity Android    2
     Click Checkout

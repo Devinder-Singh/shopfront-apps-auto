@@ -11,6 +11,15 @@ Click Increase Cart Quantity
         Sleep    3s
     END
 
+Click Increase Cart Quantity iOS
+    [Arguments]    ${qty}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnPDPCartItemIncrease}    30s
+    FOR    ${i}    IN RANGE    ${qty}
+        Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPCartItemIncrease}
+        Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    3s
+    END
+
 Click Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}

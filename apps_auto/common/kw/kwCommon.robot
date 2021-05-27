@@ -143,6 +143,12 @@ Verify Element On Screen
     [Arguments]    ${verifyElement}    ${delay}
     Wait Until Page Contains Element    ${verifyElement}    ${delay}
 
+Verify Element On Screen Not
+    [Arguments]    ${verifyElement}    ${delay}
+    ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${verifyElement}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${verifyElement}']
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${delay}
+    Should Be True    ${chkTextSuccess}==False
+
 Verify Element On Screen iOS
     [Arguments]    ${verifyElement}    ${delay}
     Run Keyword If    '${PLATFORM_NAME}'=='iOS'    Wait Until Page Contains Element    ${verifyElement}    ${delay}
