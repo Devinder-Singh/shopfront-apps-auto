@@ -132,19 +132,18 @@ Apps > Promotions (Android) Multi-Buys - QA-8411
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Dumi Mkoksta
-    Click Product From Title    Dumi Mkokstad - Egameni Likajesu (CD)
+    Search Product    rOtrin
+    Click Product From Title    rOtring Visumax - 0,5mm Black Barrel
     Click Shop The Deal
-    Click Product From Title    EET KREEF! HERLEEF
+    Click Product From Title    DAS Air Hardening Modelling Clay 500g - White
     Click Add To Cart
-    Click Increase Cart Quantity iOS    1
     Click Go To Cart
     Verify Text On Screen    Missed promotion:    30s
     Verify Text On Screen Android    ADD 1 ITEM TO QUALIFY    1s
     Verify Text On Screen iOS    Add 1 item to qualify    1s
     Change Cart Quantity Android    2
     Click Add Items to Qualify iOS
-    Click Product From Title    EET KREEF! HERLEEF
+    Click Product From Title    DAS Air Hardening Modelling Clay 500g - White
     Click Add To Cart
     Click Go To Cart
     Check Text On Screen Not    Missed promotion:

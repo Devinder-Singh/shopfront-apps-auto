@@ -1,0 +1,1879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.7 on darwin)" generated="20210527 19:13:21.287" rpa="false">
+<suite id="s1" name="CriticalFlows01" source="/Users/devinder.singh/Documents/shopfront-apps-auto/apps_auto/Tests_Critical/CriticalFlows01.robot">
+<test id="s1-t1" name="Apps &gt; Promotions (Android) Multi-Buys - QA-8411">
+<kw name="Start Application" library="kwStartApp" type="setup">
+<kw name="Get Capabilities" library="TalLibrary">
+<arguments>
+<arg>${False}</arg>
+<arg>${autoAlert}</arg>
+</arguments>
+<assign>
+<var>&amp;{cap}</var>
+</assign>
+<msg timestamp="20210527 19:13:22.528" level="INFO">&amp;{cap} = { platformName=ios | platformVersion=14.4 | deviceName=iPhone 11 | bundleId=com.takealot.iphone.dev | automationName=XCUITest | fullReset=False | autoAcceptAlerts=True | newCommandTimeout=60 | noReset...</msg>
+<status status="PASS" starttime="20210527 19:13:22.508" endtime="20210527 19:13:22.528"></status>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<arguments>
+<arg>&amp;{cap}</arg>
+</arguments>
+<msg timestamp="20210527 19:13:22.529" level="INFO">platformName=ios</msg>
+<msg timestamp="20210527 19:13:22.529" level="INFO">platformVersion=14.4</msg>
+<msg timestamp="20210527 19:13:22.529" level="INFO">deviceName=iPhone 11</msg>
+<msg timestamp="20210527 19:13:22.529" level="INFO">bundleId=com.takealot.iphone.dev</msg>
+<msg timestamp="20210527 19:13:22.530" level="INFO">automationName=XCUITest</msg>
+<msg timestamp="20210527 19:13:22.530" level="INFO">fullReset=False</msg>
+<msg timestamp="20210527 19:13:22.530" level="INFO">autoAcceptAlerts=True</msg>
+<msg timestamp="20210527 19:13:22.530" level="INFO">newCommandTimeout=60</msg>
+<msg timestamp="20210527 19:13:22.530" level="INFO">noReset=True</msg>
+<msg timestamp="20210527 19:13:22.530" level="INFO">includeSafariInWebviews=False</msg>
+<msg timestamp="20210527 19:13:22.530" level="INFO">printPageSourceOnFindFailure=True</msg>
+<status status="PASS" starttime="20210527 19:13:22.529" endtime="20210527 19:13:22.530"></status>
+</kw>
+<kw name="Open Application" library="TalLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>&amp;{cap}</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:22.530" endtime="20210527 19:13:30.653"></status>
+</kw>
+<kw name="Set Implicitly Wait" library="TalLibrary">
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210527 19:13:30.673" level="INFO">Setting implicit wait timeout</msg>
+<status status="PASS" starttime="20210527 19:13:30.655" endtime="20210527 19:13:30.678"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:22.506" endtime="20210527 19:13:30.679"></status>
+</kw>
+<kw name="Click Home" library="kwHome">
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnHome}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:30.680" endtime="20210527 19:13:32.727"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnHome}</arg>
+</arguments>
+<msg timestamp="20210527 19:13:32.737" level="INFO">Clicking element 'chain=**/XCUIElementTypeButton[`label == "Home"`]'.</msg>
+<status status="PASS" starttime="20210527 19:13:32.728" endtime="20210527 19:13:33.702"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:30.679" endtime="20210527 19:13:33.703"></status>
+</kw>
+<kw name="Click Search Home" library="kwSearch">
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnSearchHome}</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:33.704" endtime="20210527 19:13:34.068"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnSearchHome}</arg>
+</arguments>
+<msg timestamp="20210527 19:13:34.075" level="INFO">Clicking element 'chain=**/XCUIElementTypeSearchField[`label == "Search for products, brands..."`]'.</msg>
+<status status="PASS" starttime="20210527 19:13:34.068" endtime="20210527 19:13:35.369"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${btnSearchClearAll}</arg>
+<arg>15s</arg>
+</arguments>
+<assign>
+<var>${btnPresentSearchHistory}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnSearchClearAll}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:35.371" endtime="20210527 19:13:36.264"></status>
+</kw>
+<msg timestamp="20210527 19:13:36.264" level="INFO">${btnPresentSearchHistory} = True</msg>
+<status status="PASS" starttime="20210527 19:13:35.370" endtime="20210527 19:13:36.264"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${btnPresentSearchHistory} and ${clearAll}</arg>
+<arg>Click Element</arg>
+<arg>${btnSearchClearAll}</arg>
+</arguments>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnSearchClearAll}</arg>
+</arguments>
+<msg timestamp="20210527 19:13:36.272" level="INFO">Clicking element 'chain=**/XCUIElementTypeStaticText[`label == "Clear All"`]'.</msg>
+<status status="PASS" starttime="20210527 19:13:36.265" endtime="20210527 19:13:37.144"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:36.264" endtime="20210527 19:13:37.144"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:33.703" endtime="20210527 19:13:37.144"></status>
+</kw>
+<kw name="Search Product" library="kwSearch">
+<arguments>
+<arg>rOtrin</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>Input Text</arg>
+<arg>${btnSearchHome}</arg>
+<arg>${search}</arg>
+</arguments>
+<kw name="Input Text" library="TalLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${btnSearchHome}</arg>
+<arg>${search}</arg>
+</arguments>
+<msg timestamp="20210527 19:13:37.155" level="INFO">Typing text 'rOtrin' into text field 'chain=**/XCUIElementTypeSearchField[`label == "Search for products, brands..."`]'</msg>
+<status status="PASS" starttime="20210527 19:13:37.146" endtime="20210527 19:13:37.847"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:37.145" endtime="20210527 19:13:37.847"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>Input Text</arg>
+<arg>${txtSearch}</arg>
+<arg>${search}</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:37.847" endtime="20210527 19:13:37.848"></status>
+</kw>
+<kw name="Get First Search Option" library="kwAPI">
+<arguments>
+<arg>${search}</arg>
+</arguments>
+<assign>
+<var>${searchFirstOption}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://api.takealot.com/rest/v-1-10-0/search/autocomplete?query=${search}</arg>
+</arguments>
+<assign>
+<var>${search_URL}</var>
+</assign>
+<msg timestamp="20210527 19:13:37.851" level="INFO">${search_URL} = https://api.takealot.com/rest/v-1-10-0/search/autocomplete?query=rOtrin</msg>
+<status status="PASS" starttime="20210527 19:13:37.850" endtime="20210527 19:13:37.851"></status>
+</kw>
+<kw name="GET" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>${search_URL}</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:37.852" endtime="20210527 19:13:39.032"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:39.032" endtime="20210527 19:13:39.033"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>$.suggestions[0].query</arg>
+</arguments>
+<assign>
+<var>${query_result}</var>
+</assign>
+<msg timestamp="20210527 19:13:39.060" level="INFO">
+"rotring"</msg>
+<msg timestamp="20210527 19:13:39.075" level="INFO">${query_result} = rotring</msg>
+<status status="PASS" starttime="20210527 19:13:39.033" endtime="20210527 19:13:39.075"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${query_result_search}</arg>
+<arg>${query_result}</arg>
+</arguments>
+<msg timestamp="20210527 19:13:39.081" level="INFO">${query_result_search} = rotring</msg>
+<status status="PASS" starttime="20210527 19:13:39.076" endtime="20210527 19:13:39.081"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>xpath=//*[@text="${query_result}"]</arg>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label == "${query_result}"`]</arg>
+</arguments>
+<assign>
+<var>${searchResult}</var>
+</assign>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label == "${query_result}"`]</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:39.082" endtime="20210527 19:13:39.082"></status>
+</kw>
+<msg timestamp="20210527 19:13:39.082" level="INFO">${searchResult} = chain=**/XCUIElementTypeStaticText[`label == "rotring"`]</msg>
+<status status="PASS" starttime="20210527 19:13:39.081" endtime="20210527 19:13:39.082"></status>
+</kw>
+<msg timestamp="20210527 19:13:39.082" level="INFO">${searchFirstOption} = chain=**/XCUIElementTypeStaticText[`label == "rotring"`]</msg>
+<status status="PASS" starttime="20210527 19:13:37.849" endtime="20210527 19:13:39.082"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${searchFirstOption}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:39.083" endtime="20210527 19:13:39.603"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${searchFirstOption}</arg>
+</arguments>
+<msg timestamp="20210527 19:13:39.610" level="INFO">Clicking element 'chain=**/XCUIElementTypeStaticText[`label == "rotring"`]'.</msg>
+<status status="PASS" starttime="20210527 19:13:39.604" endtime="20210527 19:13:40.450"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:37.144" endtime="20210527 19:13:40.450"></status>
+</kw>
+<kw name="Click Product From Title" library="kwProductList">
+<arguments>
+<arg>rOtring Visumax - 0,5mm Black Barrel</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>xpath=//*[contains(@text, '${title}')]</arg>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]</arg>
+</arguments>
+<assign>
+<var>${lblProdTitle}</var>
+</assign>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:40.454" endtime="20210527 19:13:40.455"></status>
+</kw>
+<msg timestamp="20210527 19:13:40.455" level="INFO">${lblProdTitle} = chain=**/XCUIElementTypeStaticText[`label CONTAINS 'rOtring Visumax - 0,5mm Black Barrel'`]</msg>
+<status status="PASS" starttime="20210527 19:13:40.453" endtime="20210527 19:13:40.455"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnProductSearchFilter}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:40.456" endtime="20210527 19:13:42.514"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:13:42.514" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20210527 19:13:42.514" endtime="20210527 19:13:42.515"></status>
+</kw>
+<kw name="${index} IN RANGE [ 10 ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="TalLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210527 19:13:48.058" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210527 19:13:47.966" endtime="20210527 19:13:48.058"></status>
+</kw>
+<msg timestamp="20210527 19:13:48.061" level="FAIL">Element 'chain=**/XCUIElementTypeStaticText[`label CONTAINS 'rOtring Visumax - 0,5mm Black Barrel'`]' is not visible .</msg>
+<status status="FAIL" starttime="20210527 19:13:42.516" endtime="20210527 19:13:48.061"></status>
+</kw>
+<msg timestamp="20210527 19:13:48.061" level="INFO">${chkProdVisible} = False</msg>
+<status status="PASS" starttime="20210527 19:13:42.515" endtime="20210527 19:13:48.061"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:48.062" endtime="20210527 19:13:48.062"></status>
+</kw>
+<kw name="Swipe Up" library="kwCommon">
+<arguments>
+<arg>${btnProductListView}</arg>
+</arguments>
+<kw name="Get Element Size" library="TalLibrary">
+<doc>Get element size</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_size}</var>
+</assign>
+<msg timestamp="20210527 19:13:48.388" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView' size: {'height': 896, 'width': 414} </msg>
+<msg timestamp="20210527 19:13:48.388" level="INFO">${element_size} = {'height': 896, 'width': 414}</msg>
+<status status="PASS" starttime="20210527 19:13:48.064" endtime="20210527 19:13:48.388"></status>
+</kw>
+<kw name="Get Element Location" library="TalLibrary">
+<doc>Get element location</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_location}</var>
+</assign>
+<msg timestamp="20210527 19:13:48.701" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView' location: {'x': 0, 'y': 0} </msg>
+<msg timestamp="20210527 19:13:48.701" level="INFO">${element_location} = {'x': 0, 'y': 0}</msg>
+<status status="PASS" starttime="20210527 19:13:48.389" endtime="20210527 19:13:48.702"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${start_x}</var>
+</assign>
+<msg timestamp="20210527 19:13:48.702" level="INFO">${start_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:13:48.702" endtime="20210527 19:13:48.703"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+</arguments>
+<assign>
+<var>${start_y}</var>
+</assign>
+<msg timestamp="20210527 19:13:48.703" level="INFO">${start_y} = 627.1999999999999</msg>
+<status status="PASS" starttime="20210527 19:13:48.703" endtime="20210527 19:13:48.703"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${end_x}</var>
+</assign>
+<msg timestamp="20210527 19:13:48.704" level="INFO">${end_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:13:48.704" endtime="20210527 19:13:48.704"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+</arguments>
+<assign>
+<var>${end_y}</var>
+</assign>
+<msg timestamp="20210527 19:13:48.705" level="INFO">${end_y} = 268.8</msg>
+<status status="PASS" starttime="20210527 19:13:48.704" endtime="20210527 19:13:48.705"></status>
+</kw>
+<kw name="Swipe" library="TalLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:48.705" endtime="20210527 19:13:51.434"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210527 19:13:52.437" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210527 19:13:51.436" endtime="20210527 19:13:52.437"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:48.063" endtime="20210527 19:13:52.438"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${index} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:13:52.440" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20210527 19:13:52.439" endtime="20210527 19:13:52.440"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:42.515" endtime="20210527 19:13:52.440"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="TalLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210527 19:13:57.530" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210527 19:13:57.448" endtime="20210527 19:13:57.531"></status>
+</kw>
+<msg timestamp="20210527 19:13:57.531" level="FAIL">Element 'chain=**/XCUIElementTypeStaticText[`label CONTAINS 'rOtring Visumax - 0,5mm Black Barrel'`]' is not visible .</msg>
+<status status="FAIL" starttime="20210527 19:13:52.443" endtime="20210527 19:13:57.531"></status>
+</kw>
+<msg timestamp="20210527 19:13:57.531" level="INFO">${chkProdVisible} = False</msg>
+<status status="PASS" starttime="20210527 19:13:52.441" endtime="20210527 19:13:57.531"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:57.532" endtime="20210527 19:13:57.532"></status>
+</kw>
+<kw name="Swipe Up" library="kwCommon">
+<arguments>
+<arg>${btnProductListView}</arg>
+</arguments>
+<kw name="Get Element Size" library="TalLibrary">
+<doc>Get element size</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_size}</var>
+</assign>
+<msg timestamp="20210527 19:13:58.076" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView' size: {'height': 896, 'width': 414} </msg>
+<msg timestamp="20210527 19:13:58.076" level="INFO">${element_size} = {'height': 896, 'width': 414}</msg>
+<status status="PASS" starttime="20210527 19:13:57.533" endtime="20210527 19:13:58.076"></status>
+</kw>
+<kw name="Get Element Location" library="TalLibrary">
+<doc>Get element location</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_location}</var>
+</assign>
+<msg timestamp="20210527 19:13:58.444" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView' location: {'x': 0, 'y': 0} </msg>
+<msg timestamp="20210527 19:13:58.444" level="INFO">${element_location} = {'x': 0, 'y': 0}</msg>
+<status status="PASS" starttime="20210527 19:13:58.077" endtime="20210527 19:13:58.444"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${start_x}</var>
+</assign>
+<msg timestamp="20210527 19:13:58.445" level="INFO">${start_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:13:58.444" endtime="20210527 19:13:58.445"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+</arguments>
+<assign>
+<var>${start_y}</var>
+</assign>
+<msg timestamp="20210527 19:13:58.446" level="INFO">${start_y} = 627.1999999999999</msg>
+<status status="PASS" starttime="20210527 19:13:58.445" endtime="20210527 19:13:58.446"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${end_x}</var>
+</assign>
+<msg timestamp="20210527 19:13:58.446" level="INFO">${end_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:13:58.446" endtime="20210527 19:13:58.446"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+</arguments>
+<assign>
+<var>${end_y}</var>
+</assign>
+<msg timestamp="20210527 19:13:58.447" level="INFO">${end_y} = 268.8</msg>
+<status status="PASS" starttime="20210527 19:13:58.447" endtime="20210527 19:13:58.447"></status>
+</kw>
+<kw name="Swipe" library="TalLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:13:58.447" endtime="20210527 19:14:01.140"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210527 19:14:02.143" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210527 19:14:01.141" endtime="20210527 19:14:02.144"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:57.532" endtime="20210527 19:14:02.144"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${index} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:14:02.146" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20210527 19:14:02.145" endtime="20210527 19:14:02.146"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:52.440" endtime="20210527 19:14:02.146"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="TalLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210527 19:14:02.523" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210527 19:14:02.447" endtime="20210527 19:14:02.524"></status>
+</kw>
+<msg timestamp="20210527 19:14:02.524" level="FAIL">Element 'chain=**/XCUIElementTypeStaticText[`label CONTAINS 'rOtring Visumax - 0,5mm Black Barrel'`]' is not visible .</msg>
+<status status="FAIL" starttime="20210527 19:14:02.149" endtime="20210527 19:14:02.524"></status>
+</kw>
+<msg timestamp="20210527 19:14:02.524" level="INFO">${chkProdVisible} = False</msg>
+<status status="PASS" starttime="20210527 19:14:02.148" endtime="20210527 19:14:02.524"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:02.524" endtime="20210527 19:14:02.525"></status>
+</kw>
+<kw name="Swipe Up" library="kwCommon">
+<arguments>
+<arg>${btnProductListView}</arg>
+</arguments>
+<kw name="Get Element Size" library="TalLibrary">
+<doc>Get element size</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_size}</var>
+</assign>
+<msg timestamp="20210527 19:14:02.899" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView' size: {'height': 896, 'width': 414} </msg>
+<msg timestamp="20210527 19:14:02.899" level="INFO">${element_size} = {'height': 896, 'width': 414}</msg>
+<status status="PASS" starttime="20210527 19:14:02.526" endtime="20210527 19:14:02.900"></status>
+</kw>
+<kw name="Get Element Location" library="TalLibrary">
+<doc>Get element location</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_location}</var>
+</assign>
+<msg timestamp="20210527 19:14:03.276" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView' location: {'x': 0, 'y': 0} </msg>
+<msg timestamp="20210527 19:14:03.276" level="INFO">${element_location} = {'x': 0, 'y': 0}</msg>
+<status status="PASS" starttime="20210527 19:14:02.900" endtime="20210527 19:14:03.277"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${start_x}</var>
+</assign>
+<msg timestamp="20210527 19:14:03.279" level="INFO">${start_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:14:03.277" endtime="20210527 19:14:03.279"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+</arguments>
+<assign>
+<var>${start_y}</var>
+</assign>
+<msg timestamp="20210527 19:14:03.281" level="INFO">${start_y} = 627.1999999999999</msg>
+<status status="PASS" starttime="20210527 19:14:03.280" endtime="20210527 19:14:03.281"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${end_x}</var>
+</assign>
+<msg timestamp="20210527 19:14:03.282" level="INFO">${end_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:14:03.281" endtime="20210527 19:14:03.282"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+</arguments>
+<assign>
+<var>${end_y}</var>
+</assign>
+<msg timestamp="20210527 19:14:03.282" level="INFO">${end_y} = 268.8</msg>
+<status status="PASS" starttime="20210527 19:14:03.282" endtime="20210527 19:14:03.282"></status>
+</kw>
+<kw name="Swipe" library="TalLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:03.283" endtime="20210527 19:14:05.969"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210527 19:14:06.972" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210527 19:14:05.970" endtime="20210527 19:14:06.972"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:02.525" endtime="20210527 19:14:06.973"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${index} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:14:06.974" level="INFO">${index} = 3</msg>
+<status status="PASS" starttime="20210527 19:14:06.974" endtime="20210527 19:14:06.974"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:02.147" endtime="20210527 19:14:06.975"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<msg timestamp="20210527 19:14:07.330" level="INFO">Element 'chain=**/XCUIElementTypeStaticText[`label CONTAINS 'rOtring Visumax - 0,5mm Black Barrel'`]' is visible .</msg>
+<status status="PASS" starttime="20210527 19:14:06.977" endtime="20210527 19:14:07.331"></status>
+</kw>
+<msg timestamp="20210527 19:14:07.331" level="INFO">${chkProdVisible} = True</msg>
+<status status="PASS" starttime="20210527 19:14:06.976" endtime="20210527 19:14:07.331"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20210527 19:14:07.332" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210527 19:14:07.332" endtime="20210527 19:14:07.332"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:07.331" endtime="20210527 19:14:07.332"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:06.975" endtime="20210527 19:14:07.332"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:42.515" endtime="20210527 19:14:07.332"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<msg timestamp="20210527 19:14:07.339" level="INFO">Clicking element 'chain=**/XCUIElementTypeStaticText[`label CONTAINS 'rOtring Visumax - 0,5mm Black Barrel'`]'.</msg>
+<status status="PASS" starttime="20210527 19:14:07.332" endtime="20210527 19:14:08.059"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:13:40.451" endtime="20210527 19:14:08.060"></status>
+</kw>
+<kw name="Click Shop The Deal" library="kwPDP">
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnAddToCart}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:08.062" endtime="20210527 19:14:10.979"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:14:10.980" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20210527 19:14:10.980" endtime="20210527 19:14:10.980"></status>
+</kw>
+<kw name="${index} IN RANGE [ 10 ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblPDPShopTheDeal}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblPDPShopTheDeal}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="TalLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210527 19:14:16.725" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210527 19:14:16.638" endtime="20210527 19:14:16.726"></status>
+</kw>
+<msg timestamp="20210527 19:14:16.726" level="FAIL">Element 'chain=**/XCUIElementTypeButton[`label == "Shop the Deal"`]' is not visible .</msg>
+<status status="FAIL" starttime="20210527 19:14:10.983" endtime="20210527 19:14:16.726"></status>
+</kw>
+<msg timestamp="20210527 19:14:16.726" level="INFO">${chkProdVisible} = False</msg>
+<status status="PASS" starttime="20210527 19:14:10.982" endtime="20210527 19:14:16.726"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:16.726" endtime="20210527 19:14:16.727"></status>
+</kw>
+<kw name="Swipe Up" library="kwCommon">
+<arguments>
+<arg>${btnPDPScrollRoot}</arg>
+</arguments>
+<kw name="Get Element Size" library="TalLibrary">
+<doc>Get element size</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_size}</var>
+</assign>
+<msg timestamp="20210527 19:14:17.160" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]' size: {'height': 896, 'width': 414} </msg>
+<msg timestamp="20210527 19:14:17.160" level="INFO">${element_size} = {'height': 896, 'width': 414}</msg>
+<status status="PASS" starttime="20210527 19:14:16.728" endtime="20210527 19:14:17.160"></status>
+</kw>
+<kw name="Get Element Location" library="TalLibrary">
+<doc>Get element location</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_location}</var>
+</assign>
+<msg timestamp="20210527 19:14:17.711" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]' location: {'x': 0, 'y': 0} </msg>
+<msg timestamp="20210527 19:14:17.711" level="INFO">${element_location} = {'x': 0, 'y': 0}</msg>
+<status status="PASS" starttime="20210527 19:14:17.160" endtime="20210527 19:14:17.711"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${start_x}</var>
+</assign>
+<msg timestamp="20210527 19:14:17.712" level="INFO">${start_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:14:17.712" endtime="20210527 19:14:17.712"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+</arguments>
+<assign>
+<var>${start_y}</var>
+</assign>
+<msg timestamp="20210527 19:14:17.713" level="INFO">${start_y} = 627.1999999999999</msg>
+<status status="PASS" starttime="20210527 19:14:17.713" endtime="20210527 19:14:17.713"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${end_x}</var>
+</assign>
+<msg timestamp="20210527 19:14:17.714" level="INFO">${end_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:14:17.713" endtime="20210527 19:14:17.714"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+</arguments>
+<assign>
+<var>${end_y}</var>
+</assign>
+<msg timestamp="20210527 19:14:17.715" level="INFO">${end_y} = 268.8</msg>
+<status status="PASS" starttime="20210527 19:14:17.714" endtime="20210527 19:14:17.715"></status>
+</kw>
+<kw name="Swipe" library="TalLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:17.715" endtime="20210527 19:14:20.892"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210527 19:14:21.895" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210527 19:14:20.893" endtime="20210527 19:14:21.896"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:16.727" endtime="20210527 19:14:21.896"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20210527 19:14:22.899" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210527 19:14:21.897" endtime="20210527 19:14:22.899"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${index} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:14:22.901" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20210527 19:14:22.900" endtime="20210527 19:14:22.901"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:10.981" endtime="20210527 19:14:22.901"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblPDPShopTheDeal}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblPDPShopTheDeal}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="TalLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210527 19:14:28.496" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210527 19:14:28.289" endtime="20210527 19:14:28.496"></status>
+</kw>
+<msg timestamp="20210527 19:14:28.496" level="FAIL">Element 'chain=**/XCUIElementTypeButton[`label == "Shop the Deal"`]' is not visible .</msg>
+<status status="FAIL" starttime="20210527 19:14:22.903" endtime="20210527 19:14:28.496"></status>
+</kw>
+<msg timestamp="20210527 19:14:28.496" level="INFO">${chkProdVisible} = False</msg>
+<status status="PASS" starttime="20210527 19:14:22.902" endtime="20210527 19:14:28.496"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:28.497" endtime="20210527 19:14:28.497"></status>
+</kw>
+<kw name="Swipe Up" library="kwCommon">
+<arguments>
+<arg>${btnPDPScrollRoot}</arg>
+</arguments>
+<kw name="Get Element Size" library="TalLibrary">
+<doc>Get element size</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_size}</var>
+</assign>
+<msg timestamp="20210527 19:14:28.923" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]' size: {'height': 896, 'width': 414} </msg>
+<msg timestamp="20210527 19:14:28.923" level="INFO">${element_size} = {'height': 896, 'width': 414}</msg>
+<status status="PASS" starttime="20210527 19:14:28.498" endtime="20210527 19:14:28.923"></status>
+</kw>
+<kw name="Get Element Location" library="TalLibrary">
+<doc>Get element location</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_location}</var>
+</assign>
+<msg timestamp="20210527 19:14:29.350" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]' location: {'x': 0, 'y': 0} </msg>
+<msg timestamp="20210527 19:14:29.350" level="INFO">${element_location} = {'x': 0, 'y': 0}</msg>
+<status status="PASS" starttime="20210527 19:14:28.924" endtime="20210527 19:14:29.350"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${start_x}</var>
+</assign>
+<msg timestamp="20210527 19:14:29.351" level="INFO">${start_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:14:29.351" endtime="20210527 19:14:29.351"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+</arguments>
+<assign>
+<var>${start_y}</var>
+</assign>
+<msg timestamp="20210527 19:14:29.352" level="INFO">${start_y} = 627.1999999999999</msg>
+<status status="PASS" starttime="20210527 19:14:29.352" endtime="20210527 19:14:29.352"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${end_x}</var>
+</assign>
+<msg timestamp="20210527 19:14:29.353" level="INFO">${end_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:14:29.352" endtime="20210527 19:14:29.353"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+</arguments>
+<assign>
+<var>${end_y}</var>
+</assign>
+<msg timestamp="20210527 19:14:29.353" level="INFO">${end_y} = 268.8</msg>
+<status status="PASS" starttime="20210527 19:14:29.353" endtime="20210527 19:14:29.353"></status>
+</kw>
+<kw name="Swipe" library="TalLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:29.354" endtime="20210527 19:14:32.158"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210527 19:14:33.160" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210527 19:14:32.159" endtime="20210527 19:14:33.161"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:28.497" endtime="20210527 19:14:33.161"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20210527 19:14:34.165" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210527 19:14:33.162" endtime="20210527 19:14:34.166"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${index} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:14:34.168" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20210527 19:14:34.167" endtime="20210527 19:14:34.168"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:22.901" endtime="20210527 19:14:34.168"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblPDPShopTheDeal}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblPDPShopTheDeal}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="TalLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210527 19:14:39.520" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210527 19:14:39.427" endtime="20210527 19:14:39.520"></status>
+</kw>
+<msg timestamp="20210527 19:14:39.520" level="FAIL">Element 'chain=**/XCUIElementTypeButton[`label == "Shop the Deal"`]' is not visible .</msg>
+<status status="FAIL" starttime="20210527 19:14:34.171" endtime="20210527 19:14:39.520"></status>
+</kw>
+<msg timestamp="20210527 19:14:39.520" level="INFO">${chkProdVisible} = False</msg>
+<status status="PASS" starttime="20210527 19:14:34.170" endtime="20210527 19:14:39.521"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:39.521" endtime="20210527 19:14:39.521"></status>
+</kw>
+<kw name="Swipe Up" library="kwCommon">
+<arguments>
+<arg>${btnPDPScrollRoot}</arg>
+</arguments>
+<kw name="Get Element Size" library="TalLibrary">
+<doc>Get element size</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_size}</var>
+</assign>
+<msg timestamp="20210527 19:14:39.967" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]' size: {'height': 896, 'width': 414} </msg>
+<msg timestamp="20210527 19:14:39.967" level="INFO">${element_size} = {'height': 896, 'width': 414}</msg>
+<status status="PASS" starttime="20210527 19:14:39.522" endtime="20210527 19:14:39.967"></status>
+</kw>
+<kw name="Get Element Location" library="TalLibrary">
+<doc>Get element location</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${element_location}</var>
+</assign>
+<msg timestamp="20210527 19:14:40.395" level="INFO">Element 'chain=**/XCUIElementTypeWindow[1]' location: {'x': 0, 'y': 0} </msg>
+<msg timestamp="20210527 19:14:40.396" level="INFO">${element_location} = {'x': 0, 'y': 0}</msg>
+<status status="PASS" starttime="20210527 19:14:39.967" endtime="20210527 19:14:40.396"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${start_x}</var>
+</assign>
+<msg timestamp="20210527 19:14:40.396" level="INFO">${start_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:14:40.396" endtime="20210527 19:14:40.397"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+</arguments>
+<assign>
+<var>${start_y}</var>
+</assign>
+<msg timestamp="20210527 19:14:40.397" level="INFO">${start_y} = 627.1999999999999</msg>
+<status status="PASS" starttime="20210527 19:14:40.397" endtime="20210527 19:14:40.397"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${end_x}</var>
+</assign>
+<msg timestamp="20210527 19:14:40.398" level="INFO">${end_x} = 207.0</msg>
+<status status="PASS" starttime="20210527 19:14:40.398" endtime="20210527 19:14:40.398"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+</arguments>
+<assign>
+<var>${end_y}</var>
+</assign>
+<msg timestamp="20210527 19:14:40.399" level="INFO">${end_y} = 268.8</msg>
+<status status="PASS" starttime="20210527 19:14:40.398" endtime="20210527 19:14:40.399"></status>
+</kw>
+<kw name="Swipe" library="TalLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:40.399" endtime="20210527 19:14:43.172"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210527 19:14:44.176" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210527 19:14:43.173" endtime="20210527 19:14:44.176"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:39.522" endtime="20210527 19:14:44.177"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20210527 19:14:45.180" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210527 19:14:44.178" endtime="20210527 19:14:45.180"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${index} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:14:45.182" level="INFO">${index} = 3</msg>
+<status status="PASS" starttime="20210527 19:14:45.181" endtime="20210527 19:14:45.182"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:34.169" endtime="20210527 19:14:45.182"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblPDPShopTheDeal}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblPDPShopTheDeal}</arg>
+</arguments>
+<msg timestamp="20210527 19:14:46.108" level="INFO">Element 'chain=**/XCUIElementTypeButton[`label == "Shop the Deal"`]' is visible .</msg>
+<status status="PASS" starttime="20210527 19:14:45.185" endtime="20210527 19:14:46.108"></status>
+</kw>
+<msg timestamp="20210527 19:14:46.108" level="INFO">${chkProdVisible} = True</msg>
+<status status="PASS" starttime="20210527 19:14:45.184" endtime="20210527 19:14:46.108"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20210527 19:14:46.109" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210527 19:14:46.109" endtime="20210527 19:14:46.109"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:46.108" endtime="20210527 19:14:46.109"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:45.183" endtime="20210527 19:14:46.109"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:10.981" endtime="20210527 19:14:46.109"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${lblPDPShopTheDeal}</arg>
+</arguments>
+<msg timestamp="20210527 19:14:46.117" level="INFO">Clicking element 'chain=**/XCUIElementTypeButton[`label == "Shop the Deal"`]'.</msg>
+<status status="PASS" starttime="20210527 19:14:46.110" endtime="20210527 19:14:47.413"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:08.060" endtime="20210527 19:14:47.414"></status>
+</kw>
+<kw name="Click Product From Title" library="kwProductList">
+<arguments>
+<arg>DAS Air Hardening Modelling Clay 500g - White</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>xpath=//*[contains(@text, '${title}')]</arg>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]</arg>
+</arguments>
+<assign>
+<var>${lblProdTitle}</var>
+</assign>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:47.418" endtime="20210527 19:14:47.419"></status>
+</kw>
+<msg timestamp="20210527 19:14:47.419" level="INFO">${lblProdTitle} = chain=**/XCUIElementTypeStaticText[`label CONTAINS 'DAS Air Hardening Modelling Clay 500g - White'`]</msg>
+<status status="PASS" starttime="20210527 19:14:47.416" endtime="20210527 19:14:47.419"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnProductSearchFilter}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:47.419" endtime="20210527 19:14:49.241"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:14:49.242" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20210527 19:14:49.242" endtime="20210527 19:14:49.242"></status>
+</kw>
+<kw name="${index} IN RANGE [ 10 ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<msg timestamp="20210527 19:14:49.495" level="INFO">Element 'chain=**/XCUIElementTypeStaticText[`label CONTAINS 'DAS Air Hardening Modelling Clay 500g - White'`]' is visible .</msg>
+<status status="PASS" starttime="20210527 19:14:49.243" endtime="20210527 19:14:49.495"></status>
+</kw>
+<msg timestamp="20210527 19:14:49.495" level="INFO">${chkProdVisible} = True</msg>
+<status status="PASS" starttime="20210527 19:14:49.243" endtime="20210527 19:14:49.495"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20210527 19:14:49.496" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210527 19:14:49.496" endtime="20210527 19:14:49.496"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:49.496" endtime="20210527 19:14:49.496"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:49.242" endtime="20210527 19:14:49.497"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:49.242" endtime="20210527 19:14:49.497"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<msg timestamp="20210527 19:14:49.503" level="INFO">Clicking element 'chain=**/XCUIElementTypeStaticText[`label CONTAINS 'DAS Air Hardening Modelling Clay 500g - White'`]'.</msg>
+<status status="PASS" starttime="20210527 19:14:49.497" endtime="20210527 19:14:50.081"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:47.415" endtime="20210527 19:14:50.081"></status>
+</kw>
+<kw name="Click Add To Cart" library="kwPDP">
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnAddToCart}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:50.084" endtime="20210527 19:14:54.282"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnAddToCart}</arg>
+</arguments>
+<msg timestamp="20210527 19:14:54.294" level="INFO">Clicking element 'chain=**/XCUIElementTypeButton[`label CONTAINS "Add to Cart"`]'.</msg>
+<status status="PASS" starttime="20210527 19:14:54.283" endtime="20210527 19:14:55.563"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:50.082" endtime="20210527 19:14:55.563"></status>
+</kw>
+<kw name="Click Increase Cart Quantity iOS" library="kwPDP">
+<arguments>
+<arg>1</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${btnPDPCartItemIncrease}</arg>
+<arg>30s</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnPDPCartItemIncrease}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:14:55.567" endtime="20210527 19:14:58.942"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:55.565" endtime="20210527 19:14:58.943"></status>
+</kw>
+<kw name="${i} IN RANGE [ ${qty} ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>Click Element</arg>
+<arg>${btnPDPCartItemIncrease}</arg>
+</arguments>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnPDPCartItemIncrease}</arg>
+</arguments>
+<msg timestamp="20210527 19:14:58.953" level="INFO">Clicking element 'chain=**/XCUIElementTypeButton[`label == "Button"`][1]'.</msg>
+<status status="PASS" starttime="20210527 19:14:58.945" endtime="20210527 19:15:00.155"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:58.944" endtime="20210527 19:15:00.155"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>Sleep</arg>
+<arg>3s</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20210527 19:15:03.159" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210527 19:15:00.157" endtime="20210527 19:15:03.159"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:00.156" endtime="20210527 19:15:03.159"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:58.943" endtime="20210527 19:15:03.159"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:58.943" endtime="20210527 19:15:03.159"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:14:55.564" endtime="20210527 19:15:03.159"></status>
+</kw>
+<kw name="Click Go To Cart" library="kwPDP">
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnGoToCart}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:03.161" endtime="20210527 19:15:03.904"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnGoToCart}</arg>
+</arguments>
+<msg timestamp="20210527 19:15:03.911" level="INFO">Clicking element 'chain=**/XCUIElementTypeButton[`label == "Go to Cart"`]'.</msg>
+<status status="PASS" starttime="20210527 19:15:03.904" endtime="20210527 19:15:05.468"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:03.160" endtime="20210527 19:15:05.469"></status>
+</kw>
+<kw name="Verify Text On Screen" library="kwCommon">
+<arguments>
+<arg>Missed promotion:</arg>
+<arg>30s</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="TalLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${verifyText}</arg>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:05.471" endtime="20210527 19:15:07.740"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:05.470" endtime="20210527 19:15:07.741"></status>
+</kw>
+<kw name="Verify Text On Screen Android" library="kwCommon">
+<arguments>
+<arg>ADD 1 ITEM TO QUALIFY</arg>
+<arg>1s</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>${verifyText}</arg>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:07.742" endtime="20210527 19:15:07.742"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:07.741" endtime="20210527 19:15:07.742"></status>
+</kw>
+<kw name="Verify Text On Screen iOS" library="kwCommon">
+<arguments>
+<arg>Add 1 item to qualify</arg>
+<arg>1s</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>Wait Until Page Contains</arg>
+<arg>${verifyText}</arg>
+<arg>${delay}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="TalLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${verifyText}</arg>
+<arg>${delay}</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:07.744" endtime="20210527 19:15:08.658"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:07.743" endtime="20210527 19:15:08.658"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:07.743" endtime="20210527 19:15:08.658"></status>
+</kw>
+<kw name="Change Cart Quantity Android" library="kwCheckout">
+<arguments>
+<arg>2</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${btnCartQty}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:08.659" endtime="20210527 19:15:08.659"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>Click Element</arg>
+<arg>${btnCartQty}</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:08.660" endtime="20210527 19:15:08.660"></status>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>xpath=//*[@text="${qty}"]</arg>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label CONTAINS "${qty}"`]</arg>
+</arguments>
+<assign>
+<var>${txtCartQty}</var>
+</assign>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label CONTAINS "${qty}"`]</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:08.661" endtime="20210527 19:15:08.661"></status>
+</kw>
+<msg timestamp="20210527 19:15:08.661" level="INFO">${txtCartQty} = chain=**/XCUIElementTypeStaticText[`label CONTAINS "2"`]</msg>
+<status status="PASS" starttime="20210527 19:15:08.660" endtime="20210527 19:15:08.661"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${txtCartQty}</arg>
+<arg>1s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:08.661" endtime="20210527 19:15:08.661"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>Click Element</arg>
+<arg>${txtCartQty}</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:08.662" endtime="20210527 19:15:08.662"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20210527 19:15:10.663" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210527 19:15:08.662" endtime="20210527 19:15:10.663"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:08.659" endtime="20210527 19:15:10.663"></status>
+</kw>
+<kw name="Click Add Items to Qualify iOS" library="kwCheckout">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${btnCartAddPromoItems}</arg>
+<arg>30s</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnCartAddPromoItems}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:10.667" endtime="20210527 19:15:10.846"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:10.666" endtime="20210527 19:15:10.846"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>Click Element</arg>
+<arg>${btnCartAddPromoItems}</arg>
+</arguments>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnCartAddPromoItems}</arg>
+</arguments>
+<msg timestamp="20210527 19:15:10.854" level="INFO">Clicking element 'chain=**/XCUIElementTypeButton[`label == "Add 1 item to qualify"`]'.</msg>
+<status status="PASS" starttime="20210527 19:15:10.847" endtime="20210527 19:15:11.247"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:10.846" endtime="20210527 19:15:11.247"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:10.664" endtime="20210527 19:15:11.248"></status>
+</kw>
+<kw name="Click Product From Title" library="kwProductList">
+<arguments>
+<arg>DAS Air Hardening Modelling Clay 500g - White</arg>
+</arguments>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='android'</arg>
+<arg>xpath=//*[contains(@text, '${title}')]</arg>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]</arg>
+</arguments>
+<assign>
+<var>${lblProdTitle}</var>
+</assign>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>'${PLATFORM_NAME}'=='ios'</arg>
+<arg>chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:11.250" endtime="20210527 19:15:11.251"></status>
+</kw>
+<msg timestamp="20210527 19:15:11.251" level="INFO">${lblProdTitle} = chain=**/XCUIElementTypeStaticText[`label CONTAINS 'DAS Air Hardening Modelling Clay 500g - White'`]</msg>
+<status status="PASS" starttime="20210527 19:15:11.249" endtime="20210527 19:15:11.251"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnProductSearchFilter}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:11.251" endtime="20210527 19:15:12.376"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210527 19:15:12.377" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20210527 19:15:12.377" endtime="20210527 19:15:12.377"></status>
+</kw>
+<kw name="${index} IN RANGE [ 10 ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<assign>
+<var>${chkProdVisible}</var>
+</assign>
+<kw name="Element Should Be Visible" library="TalLibrary">
+<doc>Checks that a given element is visible </doc>
+<arguments>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<msg timestamp="20210527 19:15:12.648" level="INFO">Element 'chain=**/XCUIElementTypeStaticText[`label CONTAINS 'DAS Air Hardening Modelling Clay 500g - White'`]' is visible .</msg>
+<status status="PASS" starttime="20210527 19:15:12.378" endtime="20210527 19:15:12.648"></status>
+</kw>
+<msg timestamp="20210527 19:15:12.648" level="INFO">${chkProdVisible} = True</msg>
+<status status="PASS" starttime="20210527 19:15:12.378" endtime="20210527 19:15:12.648"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${chkProdVisible}==True</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20210527 19:15:12.650" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210527 19:15:12.650" endtime="20210527 19:15:12.651"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:12.649" endtime="20210527 19:15:12.651"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:12.377" endtime="20210527 19:15:12.651"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:12.377" endtime="20210527 19:15:12.651"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${lblProdTitle}</arg>
+</arguments>
+<msg timestamp="20210527 19:15:12.658" level="INFO">Clicking element 'chain=**/XCUIElementTypeStaticText[`label CONTAINS 'DAS Air Hardening Modelling Clay 500g - White'`]'.</msg>
+<status status="PASS" starttime="20210527 19:15:12.651" endtime="20210527 19:15:13.148"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:11.248" endtime="20210527 19:15:13.149"></status>
+</kw>
+<kw name="Click Add To Cart" library="kwPDP">
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnAddToCart}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:13.151" endtime="20210527 19:15:16.273"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnAddToCart}</arg>
+</arguments>
+<msg timestamp="20210527 19:15:16.284" level="INFO">Clicking element 'chain=**/XCUIElementTypeButton[`label CONTAINS "Add to Cart"`]'.</msg>
+<status status="PASS" starttime="20210527 19:15:16.274" endtime="20210527 19:15:17.501"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:13.150" endtime="20210527 19:15:17.501"></status>
+</kw>
+<kw name="Click Go To Cart" library="kwPDP">
+<kw name="Wait Until Element Is Visible" library="TalLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${btnGoToCart}</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:17.502" endtime="20210527 19:15:19.446"></status>
+</kw>
+<kw name="Click Element" library="TalLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnGoToCart}</arg>
+</arguments>
+<msg timestamp="20210527 19:15:19.454" level="INFO">Clicking element 'chain=**/XCUIElementTypeButton[`label == "Go to Cart"`]'.</msg>
+<status status="PASS" starttime="20210527 19:15:19.447" endtime="20210527 19:15:21.351"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:17.501" endtime="20210527 19:15:21.352"></status>
+</kw>
+<kw name="Check Text On Screen Not" library="kwCommon">
+<arguments>
+<arg>Missed promotion:</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain" library="TalLibrary">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>${verifyText}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:21.354" endtime="20210527 19:15:25.304"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:21.352" endtime="20210527 19:15:25.305"></status>
+</kw>
+<kw name="Check Text On Screen Not" library="kwCommon">
+<arguments>
+<arg>ADD 1 ITEM TO QUALIFY</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain" library="TalLibrary">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>${verifyText}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:25.306" endtime="20210527 19:15:26.946"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:25.305" endtime="20210527 19:15:26.947"></status>
+</kw>
+<kw name="Check Text On Screen Not" library="kwCommon">
+<arguments>
+<arg>Add 1 item to qualify</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain" library="TalLibrary">
+<doc>Waits until `text` disappears from current page.</doc>
+<arguments>
+<arg>${verifyText}</arg>
+<arg>15s</arg>
+</arguments>
+<status status="PASS" starttime="20210527 19:15:26.948" endtime="20210527 19:15:28.637"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:26.947" endtime="20210527 19:15:28.638"></status>
+</kw>
+<kw name="Tear Down" library="kwStartApp" type="teardown">
+<kw name="Capture Page Screenshot" library="TalLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210527 19:15:28.755" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210527 19:15:28.639" endtime="20210527 19:15:28.755"></status>
+</kw>
+<kw name="Set Implicitly Wait" library="TalLibrary">
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20210527 19:15:28.763" level="INFO">Setting implicit wait timeout</msg>
+<status status="PASS" starttime="20210527 19:15:28.756" endtime="20210527 19:15:28.766"></status>
+</kw>
+<kw name="Close Application" library="TalLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20210527 19:15:28.767" endtime="20210527 19:15:29.844"></status>
+</kw>
+<status status="PASS" starttime="20210527 19:15:28.638" endtime="20210527 19:15:29.845"></status>
+</kw>
+<tags>
+<tag>data</tag>
+</tags>
+<status status="PASS" starttime="20210527 19:13:22.504" endtime="20210527 19:15:29.845" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210527 19:13:21.289" endtime="20210527 19:15:29.846"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">data</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="CriticalFlows01">CriticalFlows01</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
