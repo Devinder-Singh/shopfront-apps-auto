@@ -120,3 +120,62 @@ Apps > Search Listings > Reviews - QA-8750
     Click Review Submit
     Verify Text On Screen    Thank you for your review    30s
     [Teardown]    Tear Down
+
+Apps > Search Listings > Price (List Price) - QA-8751
+    [Setup]    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Listing Product from API
+#    Verify Text On Screen    This is our List Price. Find out what this means in out T&Cs    5s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Price Range - QA-8752
+    [Setup]    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Verify Price Range Product from API
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Call to Action Buttons > Add To Cart - QA-8753
+    [Setup]    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Check Text On Screen Not    Add To Cart
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Call to Action Buttons > Add To Wishlist - QA-8754
+    [Setup]    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Search Product Wishlist
+    Verify Text On Screen    Item added to Wish List    30s
+    Click Back Android
+    Click Search Product Wishlist
+    Verify Element On Screen iOS    ${btnProductWLSave}    5s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Colour Swatches - QA-8757
+    [Setup]    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    shirt
+    Verify Text On Screen    More Colours    30s
+    Click Back iOS    Back
+    Click Search Home
+    Search Product    pencil
+    Check Text On Screen Not    More Colours
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
+    [Tags]    data
+    [Setup]    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    rOtrin
+    Verify Product From Title    rOtring Visumax - 0,5mm Black Barrel
+    Verify Text On Screen    2 for R100    5s
+    [Teardown]    Tear Down

@@ -19,3 +19,5 @@ ${lnkPLPSellerDeals}    xpath=(//android.widget.ImageView[@content-desc="Product
 
 ${lblRatingText}      id=${APP_PACKAGE}:id/productListingRatingText
 ${lblRatingNumber}    id=${APP_PACKAGE}:id/productListingNumberOfRatings
+
+${btnProductWLSave}      ${EMPTY}

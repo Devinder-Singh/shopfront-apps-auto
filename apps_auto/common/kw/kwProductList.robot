@@ -38,6 +38,48 @@ Click Product from API
     END
     Click Element    ${txtProduct}
 
+Verify Price Range Product from API
+    ${txtProduct}=    Get Price Range Product to Add To Cart
+
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnProductListView}
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    ${result_f}=    Convert To String    ${query_result_RangeCartProductPriceL}
+    ${result_f}=    Remove String    ${result_f}    .0
+    Verify Text On Screen    ${result_f}    5s
+
+Click Listing Product from API
+    ${txtProduct}=    Get Product Listing Price
+
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnProductListView}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    ${result_f}=    Convert To String    ${query_result_CartListingProduct}
+    ${result_f}=    Remove String    ${result_f}    .0
+    ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeButton[`label CONTAINS "${result_f}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[Contains(@text,"${result_f}")]
+    Click Element    ${txtProduct}
+
 Click Product Auto from API
     ${txtProduct}=    Get Product Auto to Add To Cart
 
@@ -172,6 +214,26 @@ Click Product From Title
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${lblProdTitle}
+
+Verify Product From Title
+    [Arguments]    ${title}
+
+    ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
+
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblProdTitle}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnProductListView}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Element Should Be Visible    ${lblProdTitle}
 
 Click App Only Deals
     Wait Until Element Is Visible    ${btnProductAppOnlyDeals}    30s

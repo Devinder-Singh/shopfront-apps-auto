@@ -22,3 +22,5 @@ ${btnProductIconClose}      chain=**/XCUIElementTypeButton[`label == "icon close
 
 ${lblRatingText}      ${EMPTY}
 ${lblRatingNumber}    ${EMPTY}
+
+${btnProductWLSave}      chain=**/XCUIElementTypeButton[`label == "Save"`]

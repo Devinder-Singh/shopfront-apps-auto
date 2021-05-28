@@ -5,31 +5,13 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Search Listings > Price (List Price) - QA-8751
-    [Setup]    Start Application
-    Click Menu
-    Click Menu Login
-    Tear Down
-    Start Application    ${False}
-    Click Menu
-    Click Menu Register
-    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
-    Search Product    pencil
-    Verify Element On Screen Scroll Android    ${lblRatingText}    30s    ${windowScroll}    ${btnProductSearchFilter}
-    Verify Element On Screen Scroll Android    ${lblRatingNumber}    30s    ${windowScroll}    ${btnProductSearchFilter}
-    Verify Product Review iOS
-    Click Back Android
-    Click Back iOS    Back
-    Click Search Home
-    Search Product    pencil
-    Click Product from API
-    Click PDP Write Review
-    Click Review Rating
-    Enter Review Message    Auto Test
-    Click Review Submit
-    Verify Text On Screen    Thank you for your review    30s
+    Search Product    rOtrin
+    Verify Product From Title    rOtring Visumax - 0,5mm Black Barrel
+    Verify Text On Screen    2 for R100    5s
     [Teardown]    Tear Down
 
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362

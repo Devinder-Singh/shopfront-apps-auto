@@ -85,6 +85,25 @@ Get Product to Add To Cart
 
     [return]    ${searchResult}
 
+Get Product Listing Price
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.listing_price
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        Output    ${result}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        Set Global Variable    ${query_result_CartListingProduct}    ${result}
+        Exit For Loop If    '${result}'!='None'
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    [return]    ${searchResult}
+
 Get Product List Review
     ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
@@ -162,6 +181,37 @@ Get Variant Product to Add To Cart
     END
     ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
     Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+
+    [return]    ${searchResult}
+
+Get Price Range Product to Add To Cart
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.prices
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${cnt}=    Get length    ${result}
+
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+
+        Run Keyword If
+            ...    ${cnt}==2
+            ...    Exit For Loop
+
+        Exit For Loop If    '${result}'=='True'
+        ${index}=    Evaluate    ${index} + 1
+    END
+    ${results_Price_Upper}=    Output    $.sections.products.results[${index}].product_views.buybox_summary.prices[1]
+    ${results_Price_Lower}=    Output    $.sections.products.results[${index}].product_views.buybox_summary.prices[0]
+    Set Global Variable    ${query_result_RangeCartProductPriceU}    ${results_Price_Upper}
+    Set Global Variable    ${query_result_RangeCartProductPriceL}    ${results_Price_Lower}
+
+    ${result_Price}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].price
+    Should Be True    ${results_Price_Upper}==${result_Price}
 
     [return]    ${searchResult}
 
