@@ -9,7 +9,7 @@ Search and Buy Item on Delivery using Credit Card
     Clear Environment
     Click Menu
     Click Menu Login
-    Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234
+    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil

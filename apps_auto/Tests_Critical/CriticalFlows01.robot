@@ -6,12 +6,8 @@ Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
-    [Setup]    Start Application    ${False}
-    Click Home
-    Click Search Home
-    Search Product    rOtrin
-    Verify Product From Title    rOtring Visumax - 0,5mm Black Barrel
-    Verify Text On Screen    2 for R100    5s
+    Install Application
+    [Setup]    Start Application
     [Teardown]    Tear Down
 
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362

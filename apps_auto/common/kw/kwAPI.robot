@@ -6,10 +6,13 @@ Library           String
 
 *** Variables ***
 ${cart_URL}       http://tal-test-data-service.test-automation-platform.env/remove_products_in_cart
-${cart_Body}      { "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234", "customer_id": "4933518", "env": "master.env" }
+${cart_Body}      { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "4933518", "env": "master.env" }
 
 ${wishlist_URL}    http://tal-test-data-service.test-automation-platform.env/clear_customer_wishlists
-${wishlist_Body}    { "namespace": "master", "customer_id":4933518, "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234" }
+${wishlist_Body}    { "namespace": "master", "customer_id":4933518, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
+
+${wishlist_Del_URL}    http://tal-test-data-service.test-automation-platform.env/delete_customer_wishlists
+${wishlist_Del_Body}    { "namespace": "master", "customer_id":7974729, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
 
 ${address_URL}    http://tal-test-data-service.test-automation-platform.env/clear_add_customer_addresses
 ${address_Body}    { "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
@@ -34,16 +37,37 @@ ${envProd}    https://api.takealot.com
 
 *** Keywords ***
 Clear Environment
+    Get Customer ID
     Clear Cart
+    Delete Wishlist
     Clear Wishlist
 #    Clear Address
 
+Get Customer ID
+    ${token_URL}=    Set Variable    http://tal-test-data-service.master.env/login/tokens
+    ${token_BODY}=    Set Variable    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "remember_me": true}
+
+    Post    ${token_URL}    ${token_BODY}
+    Integer    response status    200
+
+    ${query_result}=    Output    $.customer_id
+    Set Global Variable    ${query_customer_id}    ${query_result}
+    Output    ${query_customer_id}
+    [return]    ${query_result}
+
 Clear Cart
+    ${cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "${query_customer_id}", "env": "master.env" }
     Post    ${cart_URL}    ${cart_Body}
     Integer    response status    200
 
 Clear Wishlist
+    ${wishlist_Body}=    Set Variable    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
     Post    ${wishlist_URL}    ${wishlist_Body}
+    Integer    response status    200
+
+Delete Wishlist
+    ${wishlist_Del_Body}=    Set Variable    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
+    Post    ${wishlist_Del_URL}    ${wishlist_Del_Body}
     Integer    response status    200
 
 Clear Address
