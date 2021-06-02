@@ -18,11 +18,6 @@ Tear Down
 Install Application
     [Arguments]    ${autoAlert}=${True}
 
-    Build Ios App
-#    ${result}=    Run Process    xcodebuild -workspace /Users/devinder.singh/Documents/apps_ios/takealot.xcworkspace -scheme takealot clean archive -archivePath /Users/devinder.singh/Documents/takealot.xcarchive -allowProvisioningUpdates    shell=yes
-#    Log    ${result.stdout}
-#    Should Not Contain    ${result.stdout}    FAIL
-
     &{cap}=    Get Capabilities    ${True}    ${autoAlert}
-#    Log Many    &{cap}
-#    Open Application    ${REMOTE_URL}    &{cap}
+    Log Many    &{cap}
+    Open Application    ${REMOTE_URL}    &{cap}

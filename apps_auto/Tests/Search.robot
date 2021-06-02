@@ -179,3 +179,39 @@ Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
     Verify Product From Title    rOtring Visumax - 0,5mm Black Barrel
     Verify Text On Screen    2 for R100    5s
     [Teardown]    Tear Down
+
+Apps > Search Listings > Set Bundle Deals (More than one active) - QA-8760
+    [Tags]    data
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    ring video doorbell
+    Verify Text On Screen    Save with Bundle Deals    30s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy) - QA-8761
+    [Tags]    data
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    ring video doorbell
+    Verify Text On Screen    Save with Bundle Deals    30s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Multi-Buy Deals (One active) - QA-8763
+    [Tags]    data
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    nature box
+    Verify Text On Screen    Nature Box 2 For R100    30s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QA-8764
+    [Tags]    data
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    ring video doorbell
+    Verify Text On Screen    Save with Bundle Deals    30s
+    [Teardown]    Tear Down

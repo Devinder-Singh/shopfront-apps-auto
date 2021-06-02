@@ -5,10 +5,19 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
-    Install Application
+Apps > Search Listings > Stock > Supplier Out of Stock - QA-8769
+    [Tags]    data
     [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    ring video doorbell
+    Verify Text On Screen    Save with Bundle Deals    30s
     [Teardown]    Tear Down
+
+#Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
+#    Install Application
+#    [Setup]    Start Application
+#    [Teardown]    Tear Down
 
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
 #    [Setup]    Start Application
