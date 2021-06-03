@@ -6,3 +6,4 @@ ${APP_ACTIVITY}    fi.android.takealot.clean.presentation.splash.ViewSplashScree
 ${APP_PACKAGE}    fi.android.takealot.debug
 ${CHROME_VERSION}    Latest
 ${APP_PATH}    /Users/jenkins/qa_build/apk_files/debug.apk
+${DEVICE_NAME}    android
