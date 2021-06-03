@@ -215,3 +215,21 @@ Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QA-8764
     Search Product    ring video doorbell
     Verify Text On Screen    Save with Bundle Deals    30s
     [Teardown]    Tear Down
+
+Apps > Search Listings > Stock > Supplier Out of Stock - QA-8769
+    [Tags]    data
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    ring video doorbell
+    Verify Text On Screen    Out of Stock    30s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Stock > Available Now - QA-8770
+    [Tags]    data
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    ebook
+    Verify Text On Screen    Available Now    30s
+    [Teardown]    Tear Down

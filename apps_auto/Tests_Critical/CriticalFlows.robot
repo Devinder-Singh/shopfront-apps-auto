@@ -1,6 +1,6 @@
 *** Settings ***
 Default Tags      critical    
-#Suite Setup    Install Application
+Suite Setup    Install Application
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***

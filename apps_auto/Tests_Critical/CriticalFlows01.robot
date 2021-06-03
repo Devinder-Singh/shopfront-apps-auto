@@ -5,13 +5,13 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Search Listings > Stock > Supplier Out of Stock - QA-8769
+Apps > Search Listings > Stock > Pre-Order - QA-8771
     [Tags]    data
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Search Product    ring video doorbell
-    Verify Text On Screen    Save with Bundle Deals    30s
+    Search Product    ebook
+    Verify Text On Screen    Available Now    30s
     [Teardown]    Tear Down
 
 #Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
