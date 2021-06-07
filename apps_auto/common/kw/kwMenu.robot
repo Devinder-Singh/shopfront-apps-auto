@@ -74,6 +74,12 @@ Click Menu Sport and Fitness
     Click Element    ${mnuSportFitness}
     Click Product Widget First View All
 
+Click Menu Gaming
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
+    Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
+    Wait Until Element Is Visible    ${mnuGaming}    5s
+    Click Element    ${mnuGaming}
+
 Click Menu New To Electronics
     Wait Until Element Is Visible    ${btnMenuNewToElec}    5s
     Click Element    ${btnMenuNewToElec}

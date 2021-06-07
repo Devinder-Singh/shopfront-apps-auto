@@ -51,6 +51,12 @@ Click Filter Brand
     Wait Until Element Is Visible    ${btnProductFilterBrand}    30s
     Click Element    ${btnProductFilterBrand}
 
+Click Filter Clear All
+    Wait Until Element Is Visible    ${btnProductFilterClearAll}    30s
+    Click Element    ${btnProductFilterClearAll}
+    Wait Until Element Is Visible    ${btnProductFilterShowAll}    30s
+    Click Element    ${btnProductFilterShowAll}
+
 Click Filter Brand Name
     Wait Until Element Is Visible    ${btnProductFilterBrandName}    30s
     Click Element    ${btnProductFilterBrandName}

@@ -5,13 +5,13 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Search Listings > Stock > Pre-Order - QA-8771
+Apps > Search Listings > No Search Results - QA-8835
     [Tags]    data
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    ebook
-    Verify Text On Screen    Available Now    30s
+    Verify Text On Screen    Currently Unavailable    30s
     [Teardown]    Tear Down
 
 #Apps > Search Listings > Set Bundle Deals (One active) - QA-8758

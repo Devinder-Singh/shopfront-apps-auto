@@ -19,3 +19,6 @@ ${btnProductFilterMaterialName}      id=Nylon
 
 ${btnProductFilterRating}      id=Rating
 ${btnProductFilterRatingName}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "4"`]
+
+${btnProductFilterShowAll}      chain=**/XCUIElementTypeStaticText[`label == "Show all Items"`]
+${btnProductFilterClearAll}      chain=**/XCUIElementTypeButton[`label == "Clear All"`]

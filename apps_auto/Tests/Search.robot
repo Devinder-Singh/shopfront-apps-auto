@@ -222,7 +222,7 @@ Apps > Search Listings > Stock > Supplier Out of Stock - QA-8769
     Click Home
     Click Search Home
     Search Product    ring video doorbell
-    Verify Text On Screen    Out of Stock    30s
+    Verify Text On Screen    Supplier out of stock    30s
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Available Now - QA-8770
@@ -232,4 +232,56 @@ Apps > Search Listings > Stock > Available Now - QA-8770
     Click Search Home
     Search Product    ebook
     Verify Text On Screen    Available Now    30s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Stock > Pre-Order - QA-8771
+    [Setup]    Start Application
+    Click Menu
+    Verify Menu Items
+    Click Menu Shop By Department
+    Click Menu Gaming
+    Click Product Widget Top Pre Orders
+    Verify Text On Screen    Pre-order: Ships    30s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Stock > Currently Unavailable - QA-8773
+    [Tags]    data
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    ebook
+    Verify Text On Screen    Currently Unavailable    30s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Filters - QA-8833
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Search Product Filter
+    Click Filter Category
+    Click Filter Office Stationery
+    Click Filter Select Button
+    Click Filter Apply Button
+    Verify Text On Screen    In stock    30s
+    Click Search Product Filter
+    Click Filter Availability
+    Click Filter In Stock
+    Click Filter Select Button iOS
+    Click Filter Apply Button
+    Verify Text On Screen    In stock    30s
+    Click Search Product Filter
+    Click Filter Brand
+    Click Filter Brand Name
+    Click Filter Select Button
+    Click Filter Apply Button
+    Verify Text On Screen    In stock    30s
+    Click Search Product Filter
+    Click Filter Clear All
+    Verify Text On Screen    In stock    30s
+    Click Search Product Filter
+    Click Back iOS    icon close
+    Click Back Android
+    Verify Text On Screen    In stock    30s
+    Click Product from API
     [Teardown]    Tear Down

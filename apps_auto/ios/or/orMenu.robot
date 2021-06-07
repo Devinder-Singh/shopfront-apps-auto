@@ -30,3 +30,5 @@ ${cntMenuAccountScroll}    ${EMPTY}
 ${btnMenuSettings}      id=Settings
 ${btnMenuTakealotGroup}      id=Takealot.group
 ${btnMenuHelp}      id=Help
+
+${mnuGaming}      chain=**/XCUIElementTypeStaticText[`label == "Gaming"`]

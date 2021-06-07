@@ -19,3 +19,6 @@ ${btnProductFilterMaterialName}      xpath=//*[@text="Nylon"]
 
 ${btnProductFilterRating}      xpath=//*[@text="Rating"]
 ${btnProductFilterRatingName}      xpath=//*[@text="4 {star} and up"]
+
+${btnProductFilterShowAll}      xpath=//*[@text="Show all Items"]
+${btnProductFilterClearAll}      xpath=//*[@text="Clear All"]

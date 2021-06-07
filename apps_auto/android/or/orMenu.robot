@@ -30,3 +30,5 @@ ${cntMenuAccountScroll}    id=${APP_PACKAGE}:id/accountScrollContainer
 ${btnMenuSettings}      xpath=//*[@text="Settings"]
 ${btnMenuTakealotGroup}      xpath=//*[@text="Takealot Group"]
 ${btnMenuHelp}      xpath=//*[@text="Help"]
+
+${mnuGaming}      xpath=//*[@text="Gaming"]
