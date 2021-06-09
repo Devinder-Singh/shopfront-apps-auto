@@ -8,7 +8,7 @@ ${btnCheckoutMoveToWishlist}    id=CartItemWishlistButton
 ${btnCheckoutEdit}    accessibility_id=Edit
 ${btnCheckoutSelect}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeButton
 
-${btnCartQty}    id=1
+${btnCartQty}    id=CartItemQuantityButton
 
 ${btnCartUndo}    ${EMPTY}
 ${btnCartTrendingAddToCart}      ${EMPTY}

@@ -34,15 +34,15 @@ Click Checkout Move To Wishlist First Item
 Change Cart Quantity Android
     [Arguments]    ${qty}
 
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCartQty}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartQty}
+    Wait Until Element Is Visible    ${btnCartQty}    30s
+    Click Element    ${btnCartQty}
 
-    ${txtCartQty}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${qty}"]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${qty}"`]
+    ${txtCartQty}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${qty}"]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
 
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtCartQty}    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtCartQty}
+    Wait Until Element Is Visible    ${txtCartQty}    1s
+    Click Element    ${txtCartQty}
 
-    Sleep    2s
+    Sleep    3s
 
 Click Add Items to Qualify iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnCartAddPromoItems}    30s

@@ -20,6 +20,17 @@ Search Product
     Wait Until Element Is Visible    ${searchFirstOption}    15s
     Click Element    ${searchFirstOption}
 
+Search and Press Enter
+    [Arguments]    ${search}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Input Text    ${btnSearchHome}    ${search}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Input Text    ${txtSearch}    ${search}
+
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+    ${searchiOS}=    Set Variable    chain=**/XCUIElementTypeButton[`label == "search"`]
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${searchiOS}
+
 Click Search Recent
     Wait Until Element Is Visible    ${btnSearchRecent}    30s
     Click Element    ${btnSearchRecent}

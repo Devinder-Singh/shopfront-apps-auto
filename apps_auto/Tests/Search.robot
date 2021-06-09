@@ -285,3 +285,34 @@ Apps > Search Listings > Filters - QA-8833
     Verify Text On Screen    In stock    30s
     Click Product from API
     [Teardown]    Tear Down
+
+Apps > Search Listings > No Search Results - QA-8835
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search and Press Enter    ghhjgjkhkuyiuy
+    Verify Text On Screen    We could not find results for    30s
+    Verify Text On Screen    Please check your spelling or try a more generic search term    1s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Sorting - QA-8836
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Search Product Sort
+    Verify Text On Screen    Relevance    30s
+    Verify Text On Screen    Price: High to Low    1s
+    Verify Text On Screen    Price: Low to High    1s
+    Verify Text On Screen    Top Rated    1s
+    Verify Text On Screen    Newest Arrivals    1s
+    Click Back iOS    icon close
+    Click Back Android
+    Verify Text On Screen    In stock    30s
+    Click Search Product Sort
+    Click Sort High To Low
+    Verify Sorted Products    Price+Descending
+    Click Search Product Sort
+    Click Sort Top Rated
+    Verify Sorted Products    Rating+Descending
+    [Teardown]    Tear Down

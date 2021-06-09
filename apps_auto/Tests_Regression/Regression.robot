@@ -44,7 +44,6 @@ Apps > Promotions (Android) Daily Deals - QA-5357
     Click Apply Filter
     Click Filter Product from API
     Click Add To Cart
-    Click Increase Cart Quantity iOS    3
     Click Go To Cart
     Change Cart Quantity Android    4
     Click Item Promotion Text
@@ -66,7 +65,6 @@ Apps > Promotions (Android) App Only Deals - QA-8409
     Click Apply Filter
     Click Filter Product from API
     Click Add To Cart
-    Click Increase Cart Quantity iOS    3
     Click Go To Cart
     Change Cart Quantity Android    4
     Click Item Promotion Text
@@ -88,7 +86,6 @@ Apps > Promotions (Android) Other Promo tabs - QA-8410
     Click Apply Filter
     Click Filter Product from API
     Click Add To Cart
-    Click Increase Cart Quantity iOS    4
     Click Go To Cart
     Change Cart Quantity Android    5
     Click Item Promotion Text
@@ -132,20 +129,20 @@ Apps > Promotions (Android) Multi-Buys - QA-8411
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    rOtrin
-    Click Product From Title    rOtring Visumax - 0,5mm Black Barrel
+    Search Product    TOWER Reward Sticker
+    Click Product From Title    TOWER Reward Subject Stickers Value Pack 240 Stickers
     Click Shop The Deal
-    Click Product From Title    DAS Air Hardening Modelling Clay 500g - White
+    Click Product From Title    Teddy Finger Paint - 4 x 100ml
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion:    30s
     Verify Text On Screen Android    ADD 1 ITEM TO QUALIFY    1s
     Verify Text On Screen iOS    Add 1 item to qualify    1s
     Change Cart Quantity Android    2
-    Click Add Items to Qualify iOS
-    Click Product From Title    DAS Air Hardening Modelling Clay 500g - White
-    Click Add To Cart
-    Click Go To Cart
+#    Click Add Items to Qualify iOS
+#    Click Product From Title    Teddy Finger Paint - 4 x 100ml
+#    Click Add To Cart
+#    Click Go To Cart
     Check Text On Screen Not    Missed promotion:
     Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
     Check Text On Screen Not    Add 1 item to qualify
@@ -191,7 +188,7 @@ Apps > Verify Home Screen - QA-8876
     Click Add To Cart
     Tear Down
     Start Application    ${False}
-#    Verify Text On Screen    Recommended For You    30s
+    Verify Text On Screen Scroll    Recommended For You    1s    ${windowScroll}    ${btnSearchHome}
     Verify Text On Screen Scroll    Recently Viewed    1s    ${windowScroll}    ${btnSearchHome}
     Click Clear All Recently Viewed
     Click Cancel Clear All Recently Viewed
@@ -277,30 +274,34 @@ Apps > PLP - QA-5360
     Verify Add To Wishlist
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    30s
-    Click Continue Shopping iOS
-    Click Back Android
-    Click Search Icon
+    Tear Down
+    Start Application
+    Click Home
+    Click Search Home
     Search Product    toy
     Click Product from API
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    30s
-    Click Back Android
-    Click Continue Shopping iOS
-    Click Search Icon
+    Tear Down
+    Start Application
+    Click Home
+    Click Search Home
     Search Product    pencil
     Click Product from API
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    30s
-    Click Back Android
-    Click Continue Shopping iOS
-    Click Search Icon
+    Tear Down
+    Start Application
+    Click Home
+    Click Search Home
     Search Product    johnnie wal
     Click Product from API
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    30s
-    Click Back Android
-    Click Continue Shopping iOS
-    Click Search Icon
+    Tear Down
+    Start Application
+    Click Home
+    Click Search Home
     Search Product    glass
     Click First Product from API
     Click Seller Name
@@ -493,9 +494,8 @@ Apps > PDP - QA-5307
     Search Product    pencil
     Click Product from API
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
-    Click Back Android
-    Click Continue Shopping iOS
+    Click Go To Cart
+    Click Product Text    ${query_result_CartProduct}
     Click Add To Wishlist Only
     Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
@@ -509,9 +509,8 @@ Apps > PDP - QA-8890
     Click Variant Product from API
     Click Product Variant From API
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
-    Click Back Android
-    Click Continue Shopping iOS
+    Click Go To Cart
+    Click Home
     Click Add To Wishlist Only
     Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
@@ -664,7 +663,6 @@ Apps > Wishlist (iOS) - QA-5361
     Click Menu Daily Deals
     Click Daily Deals Product from API
     Click Add To Cart
-    Click Increase Cart Quantity iOS    1
     Click Go To Cart
     Change Cart Quantity Android    2
     Click Checkout Delete First Item
@@ -1044,14 +1042,14 @@ Apps > Cart (Android) 04 - QA-5298
     Click Variant Product from API
     Click Product Variant From API
     Click Add To Cart
-    Click Continue Shopping iOS
-    Click Back Android
+    Click Go To Cart
+    Click Home
     Click Search Icon
     Search Product    book
     Click Product from API
     Click Add To Cart
-    Click Continue Shopping iOS
-    Click Back Android
+    Click Go To Cart
+    Click Home
     Click Search Icon
     Search Product    vouche
     Click Product from API
@@ -1066,5 +1064,8 @@ Apps > Cart (Android) 04 - QA-5298
     Verify Text On Screen Android    This product is not eligible for Cash on Delivery (COD)    1s
     Verify Text On Screen Android    Cart    1s
     Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
     Verify Text On Screen    Delivery via email to    30s
     [Teardown]    Tear Down

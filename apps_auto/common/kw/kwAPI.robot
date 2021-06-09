@@ -205,6 +205,7 @@ Get Variant Product to Add To Cart
     END
     ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
     Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+    Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
 
     [return]    ${searchResult}
 
@@ -551,7 +552,8 @@ Get Product Daily Deals Slug
     ${index}=    Set Variable    0
     ${searchResult}=    Set Variable    ''
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Run Keyword If    '${result}'=='Daily Deals'    Output    $.response[${index}].promotion_id
+        Output    ${result}
+        ${searchResult}=    Run Keyword If    "${result}"=='Daily Deals'    Output    $.response[${index}].promotion_id
 
         Run Keyword If
             ...    '${searchResult}'!='None'
@@ -745,7 +747,7 @@ Get Filter Product to Add To Cart
         ${searchResult}=    Set Variable    '0'
         ${index}=    Evaluate    ${index} + 1
     END
-    Should Be True    '${searchResult}'!='0'
+#    Should Be True    '${searchResult}'!='0'
     [return]    ${searchResult}
 
 Get Daily Deals Product to Add To Cart

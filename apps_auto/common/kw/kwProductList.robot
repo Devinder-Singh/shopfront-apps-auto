@@ -215,6 +215,15 @@ Click Product From Title
     END
     Click Element    ${lblProdTitle}
 
+Click Product Text
+    [Arguments]    ${title}
+
+    ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
+
+    Wait Until Element Is Visible    ${lblProdTitle}    30s
+
+    Click Element    ${lblProdTitle}
+
 Verify Product From Title
     [Arguments]    ${title}
 
