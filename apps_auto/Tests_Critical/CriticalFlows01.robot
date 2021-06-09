@@ -5,26 +5,14 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Search Listings > Related Search - QA-8839
+Apps > Search Listings > Related Search - QA-8765
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Search Product Sort
-    Verify Text On Screen    Relevance    30s
-    Verify Text On Screen    Price: High to Low    1s
-    Verify Text On Screen    Price: Low to High    1s
-    Verify Text On Screen    Top Rated    1s
-    Verify Text On Screen    Newest Arrivals    1s
-    Click Back iOS    icon close
-    Click Back Android
-    Verify Text On Screen    In stock    30s
-    Click Search Product Sort
-    Click Sort High To Low
-    Verify Sorted Products    Price+Descending
-    Click Search Product Sort
-    Click Sort Top Rated
-    Verify Sorted Products    Rating+Descending
+    Verify Text On Screen    Related Searches    30s
+    Click Product from API Scroll
+    Verify Element On Screen    ${btnAddToCart}    30s
     [Teardown]    Tear Down
 
 #Apps > Search Listings > Set Bundle Deals (One active) - QA-8758

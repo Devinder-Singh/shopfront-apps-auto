@@ -316,3 +316,22 @@ Apps > Search Listings > Sorting - QA-8836
     Click Sort Top Rated
     Verify Sorted Products    Rating+Descending
     [Teardown]    Tear Down
+
+Apps > Search Listings > Related Search - QA-8839
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Verify Text On Screen    Related Searches    30s
+    Click Product from API Scroll
+    Verify Element On Screen    ${btnAddToCart}    30s
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Pagination - QA-8840
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API Scroll
+    Verify Element On Screen    ${btnAddToCart}    30s
+    [Teardown]    Tear Down

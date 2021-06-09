@@ -109,6 +109,25 @@ Get Product to Add To Cart
 
     [return]    ${searchResult}
 
+Get Scroll Product to Add To Cart
+
+    ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.is_add_to_cart_available
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
+        Exit For Loop If    '${result}'=='True' and ${index} > 4
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    [return]    ${searchResult}
+
 Get Product Listing Price
     ${search_URL}=    Set Variable    https://api.takealot.com/rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
