@@ -335,3 +335,21 @@ Apps > Search Listings > Pagination - QA-8840
     Click Product from API Scroll
     Verify Element On Screen    ${btnAddToCart}    30s
     [Teardown]    Tear Down
+
+Apps > Search Listings > Stock > In Stock - QA-8765
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Verify Text On Screen Scroll    In stock    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Text On Screen Scroll    JHB    1s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Text On Screen Scroll    CPT    1s    ${windowScroll}    ${btnProductSearchFilter}
+    [Teardown]    Tear Down
+
+Apps > Search Listings > Stock > Lead Time - QA-8768
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Verify Text On Screen Scroll    Ships in 5 - 7 work days    30s    ${windowScroll}    ${btnProductSearchFilter}
+    [Teardown]    Tear Down
