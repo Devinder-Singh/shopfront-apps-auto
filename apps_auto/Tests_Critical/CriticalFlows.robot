@@ -1,5 +1,5 @@
 *** Settings ***
-Default Tags      critical    
+Default Tags      critical
 Suite Setup    Install Application
 Resource          ../common/config/defaultConfig.robot
 

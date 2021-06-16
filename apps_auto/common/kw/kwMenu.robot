@@ -28,6 +28,7 @@ Click Menu Login
     Run Keyword If    '${PLATFORM_NAME}'=='ios' and ${chkLoginElement}==False    Click Element    ${btnMenu}
 
     Click Element    ${btnMenuLogin}
+    Sleep    2s
 
 Click Menu Register
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
@@ -75,6 +76,8 @@ Click Menu Sport and Fitness
     Click Product Widget First View All
 
 Click Menu Gaming
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
+    Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
     Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
     Wait Until Element Is Visible    ${mnuGaming}    5s

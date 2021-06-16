@@ -1,13 +1,14 @@
 *** Settings ***
-Default Tags      login
+Default Tags      search
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Apps > Search Listings > Image - QA-8738
-    [Setup]    Start Application
+    [Tags]    QA-8738
+    [Setup]    Start Application    ${False}
     Click Menu
     Click Menu Login
-    Login Takealot    take2Automation+201905213934@gmail.com    t@ke@!ot1234
+    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -15,32 +16,38 @@ Apps > Search Listings > Image - QA-8738
     [Teardown]    Tear Down
 
 Apps > Search Listings > Badges (Daily Deal) - QA-8739
+    [Tags]    QA-8739
     [Setup]    Start Application
     Verify Product Daily Deals Badge
     [Teardown]    Tear Down
 
 Apps > Search Listings > Badges (Daily Deal) - QA-8740
+    [Tags]    QA-8740
     [Setup]    Start Application
     Verify Product Percent Off Badge
     [Teardown]    Tear Down
 
 Apps > Search Listings > Badges (Up to <% discount> off) - QA-8741
+    [Tags]    QA-8741
     [Setup]    Start Application
     Verify Product Percent Off Badge
     [Teardown]    Tear Down
 
 Apps > Search Listings > Badges (Sale / Image) - QA-8742
+    [Tags]    QA-8742
     [Setup]    Start Application
     Verify Sales Badge
     [Teardown]    Tear Down
 
 Apps > Search Listings > Badges (App Only Deal) - QA-8745
+    [Tags]    QA-8745
     [Setup]    Start Application
     Verify App Only Badge
     [Teardown]    Tear Down
 
 Apps > Search Listings > Attributes - QA-8737
-    [Setup]    Start Application
+    [Tags]    QA-8737
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    Hisense
@@ -48,16 +55,19 @@ Apps > Search Listings > Attributes - QA-8737
     [Teardown]    Tear Down
 
 Apps > Search Listings > Attributes 02 - QA-8737
-    [Setup]    Start Application
+    [Tags]    QA-8737
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    Book
-    Verify Text On Screen    By    30s
+    Verify Text On Screen iOS    By    30s
+    Verify Text On Screen Android    by    30s
     Verify Text On Screen Scroll    et al    5s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
 Apps | Search Listings | Section below header - QA-3417
-    [Setup]    Start Application
+    [Tags]    QA-3417
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -69,14 +79,17 @@ Apps | Search Listings | Section below header - QA-3417
     Verify Text On Screen    Price: Low to High    1s
     Verify Text On Screen    Top Rated    1s
     Verify Text On Screen    Newest Arrivals    1s
-    Click Product Icon Close
+    Click Back Android
+    Click Back iOS    icon close
+#    Click Product Icon Close
     Click Search Product Sort
     Click Sort High To Low
     Click Product Grid View
     [Teardown]    Tear Down
 
 Apps > Search Listings > UI Checks - QA-8841
-    [Setup]    Start Application
+    [Tags]    QA-8841
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -87,7 +100,8 @@ Apps > Search Listings > UI Checks - QA-8841
     [Teardown]    Tear Down
 
 Apps > Search Listings > Product Title - QA-8748
-    [Setup]    Start Application
+    [Tags]    QA-8748
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -95,6 +109,7 @@ Apps > Search Listings > Product Title - QA-8748
     [Teardown]    Tear Down
 
 Apps > Search Listings > Reviews - QA-8750
+    [Tags]    QA-8750
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -122,15 +137,17 @@ Apps > Search Listings > Reviews - QA-8750
     [Teardown]    Tear Down
 
 Apps > Search Listings > Price (List Price) - QA-8751
+    [Tags]    QA-8751
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    pencil
     Click Listing Product from API
-#    Verify Text On Screen    This is our List Price. Find out what this means in out T&Cs    5s
+    Verify Element On Screen    ${lblTermsCond}    5s
     [Teardown]    Tear Down
 
 Apps > Search Listings > Price Range - QA-8752
+    [Tags]    QA-8752
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -139,6 +156,7 @@ Apps > Search Listings > Price Range - QA-8752
     [Teardown]    Tear Down
 
 Apps > Search Listings > Call to Action Buttons > Add To Cart - QA-8753
+    [Tags]    QA-8753
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -147,31 +165,36 @@ Apps > Search Listings > Call to Action Buttons > Add To Cart - QA-8753
     [Teardown]    Tear Down
 
 Apps > Search Listings > Call to Action Buttons > Add To Wishlist - QA-8754
+    [Tags]    QA-8754
     [Setup]    Start Application    ${False}
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
     Click Search Product Wishlist
     Verify Text On Screen    Item added to Wish List    30s
-    Click Back Android
     Click Search Product Wishlist
-    Verify Element On Screen iOS    ${btnProductWLSave}    5s
+    Verify Element On Screen    ${btnProductWLSave}    5s
     [Teardown]    Tear Down
 
 Apps > Search Listings > Colour Swatches - QA-8757
+    [Tags]    QA-8757
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    shirt
-    Verify Text On Screen    More Colours    30s
+    Verify Text On Screen Android    More colours    30s
+    Verify Text On Screen iOS    More Colours    30s
+    Click Back Android
     Click Back iOS    Back
     Click Search Home
     Search Product    pencil
     Check Text On Screen Not    More Colours
+    Check Text On Screen Not    More colours
     [Teardown]    Tear Down
 
 Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
-    [Tags]    data
+    [Tags]    data    QA-8758
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -181,60 +204,61 @@ Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
     [Teardown]    Tear Down
 
 Apps > Search Listings > Set Bundle Deals (More than one active) - QA-8760
-    [Tags]    data
-    [Setup]    Start Application
+    [Tags]    data    QA-8760
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
-    Search Product    ring video doorbell
+    Search Product    ring video doorbel
     Verify Text On Screen    Save with Bundle Deals    30s
     [Teardown]    Tear Down
 
 Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy) - QA-8761
-    [Tags]    data
-    [Setup]    Start Application
+    [Tags]    data    QA-8761
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
-    Search Product    ring video doorbell
+    Search Product    ring video doorbel
     Verify Text On Screen    Save with Bundle Deals    30s
     [Teardown]    Tear Down
 
 Apps > Search Listings > Multi-Buy Deals (One active) - QA-8763
-    [Tags]    data
-    [Setup]    Start Application
+    [Tags]    data    QA-8763
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    nature box
-    Verify Text On Screen    Nature Box 2 For R100    30s
+    Verify Text On Screen    Nature Box Buy 2 For    30s
     [Teardown]    Tear Down
 
 Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QA-8764
-    [Tags]    data
-    [Setup]    Start Application
+    [Tags]    data    QA-8764
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
-    Search Product    ring video doorbell
+    Search Product    ring video doorbel
     Verify Text On Screen    Save with Bundle Deals    30s
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Supplier Out of Stock - QA-8769
-    [Tags]    data
-    [Setup]    Start Application
+    [Tags]    data    QA-8769
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
-    Search Product    ring video doorbell
+    Search Product    ring video doorbel
     Verify Text On Screen    Supplier out of stock    30s
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Available Now - QA-8770
-    [Tags]    data
-    [Setup]    Start Application
+    [Tags]    data    QA-8770
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
-    Search Product    ebook
-    Verify Text On Screen    Available Now    30s
+    Search Product    eboo
+    Verify Text On Screen Scroll    Available Now    30s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Pre-Order - QA-8771
+    [Tags]    QA-8771
     [Setup]    Start Application
     Click Menu
     Verify Menu Items
@@ -245,16 +269,17 @@ Apps > Search Listings > Stock > Pre-Order - QA-8771
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Currently Unavailable - QA-8773
-    [Tags]    data
-    [Setup]    Start Application
+    [Tags]    data    QA-8773
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
-    Search Product    ebook
-    Verify Text On Screen    Currently Unavailable    30s
+    Search Product    eboo
+    Verify Text On Screen Scroll    Currently Unavailable    30s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Filters - QA-8833
-    [Setup]    Start Application
+    [Tags]    QA-8833
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -287,7 +312,8 @@ Apps > Search Listings > Filters - QA-8833
     [Teardown]    Tear Down
 
 Apps > Search Listings > No Search Results - QA-8835
-    [Setup]    Start Application
+    [Tags]    QA-8835
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search and Press Enter    ghhjgjkhkuyiuy
@@ -296,7 +322,8 @@ Apps > Search Listings > No Search Results - QA-8835
     [Teardown]    Tear Down
 
 Apps > Search Listings > Sorting - QA-8836
-    [Setup]    Start Application
+    [Tags]    QA-8836
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -312,23 +339,26 @@ Apps > Search Listings > Sorting - QA-8836
     Click Search Product Sort
     Click Sort High To Low
     Verify Sorted Products    Price+Descending
+    Swipe Down    ${windowScroll}
     Click Search Product Sort
     Click Sort Top Rated
     Verify Sorted Products    Rating+Descending
     [Teardown]    Tear Down
 
 Apps > Search Listings > Related Search - QA-8839
-    [Setup]    Start Application
+    [Tags]    QA-8839
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Text On Screen    Related Searches    30s
+    Verify Text On Screen Scroll    Related Searches    30s    ${windowScroll}    ${btnProductSearchFilter}
     Click Product from API Scroll
     Verify Element On Screen    ${btnAddToCart}    30s
     [Teardown]    Tear Down
 
 Apps > Search Listings > Pagination - QA-8840
-    [Setup]    Start Application
+    [Tags]    QA-8840
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -337,7 +367,8 @@ Apps > Search Listings > Pagination - QA-8840
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > In Stock - QA-8765
-    [Setup]    Start Application
+    [Tags]    QA-8765
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -347,7 +378,8 @@ Apps > Search Listings > Stock > In Stock - QA-8765
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Lead Time - QA-8768
-    [Setup]    Start Application
+    [Tags]    QA-8768
+    [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    pencil

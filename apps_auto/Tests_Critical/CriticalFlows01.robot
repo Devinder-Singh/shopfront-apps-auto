@@ -5,6 +5,36 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
+Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QA-9293
+    [Tags]    data    QA-2037
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    dog food
+    Click Product From Title    Enerpets - Enerdog Economy 25kg dry dog food
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Click PDP Description Show More
+    Click Back Android
+    Click Back iOS    icon cross
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Click PDP Description Show More
+    [Teardown]    Tear Down
+
+#Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QA-9293
+#    [Tags]    data    QA-9293
+#    [Setup]    Start Application
+#    Clear Environment
+#    Click Home
+#    Click Search Home
+#    Search Product    dog food
+#    Click Product From Title    Enerpets - Enerdog Economy 25kg dry dog food
+#    Verify Element On Screen    ${btnAddToCart}    30s
+#    Click PDP Description Show More
+#    Click Back Android
+#    Click Back iOS    icon cross
+#    Verify Element On Screen    ${btnAddToCart}    30s
+#    [Teardown]    Tear Down
+
 #Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
 #    Install Application
 #    [Setup]    Start Application

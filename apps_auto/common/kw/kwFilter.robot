@@ -54,8 +54,9 @@ Click Filter Brand
 Click Filter Clear All
     Wait Until Element Is Visible    ${btnProductFilterClearAll}    30s
     Click Element    ${btnProductFilterClearAll}
-    Wait Until Element Is Visible    ${btnProductFilterShowAll}    30s
-    Click Element    ${btnProductFilterShowAll}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnProductFilterShowAll}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnProductFilterShowAll}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Filter Apply Button
 
 Click Filter Brand Name
     Wait Until Element Is Visible    ${btnProductFilterBrandName}    30s

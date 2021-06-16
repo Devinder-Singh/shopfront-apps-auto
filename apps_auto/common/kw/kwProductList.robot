@@ -93,9 +93,11 @@ Click Listing Product from API
         Swipe Up    ${btnProductListView}
         ${index}=    Evaluate    ${index} + 1
     END
+    Swipe Up    ${btnProductListView}
     ${result_f}=    Convert To String    ${query_result_CartListingProduct}
     ${result_f}=    Remove String    ${result_f}    .0
-    ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeButton[`label CONTAINS "${result_f}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[Contains(@text,"${result_f}")]
+    ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeButton[`label CONTAINS "${result_f}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text,"${result_f}")]
+
     Click Element    ${txtProduct}
 
 Click Product Auto from API

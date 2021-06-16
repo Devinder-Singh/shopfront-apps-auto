@@ -4,11 +4,12 @@ Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Apps - Checkout - Delivery Methods - QA-5227
+    [Tags]    QA-5227
     [Setup]    Start Application
     Clear Environment
     Click Menu
     Click Menu Login
-    Login Takealot    take2Automation+201905211152@gmail.com    t@ke@!ot1234
+    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil Case
@@ -20,7 +21,8 @@ Apps - Checkout - Delivery Methods - QA-5227
     Verify Delivery Text    50+ Takealot Pickup Points nationwide. Open 6 days a week
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital Items - QA-5227
+Apps - Checkout - Delivery Methods - Digital Items 02 - QA-5227
+    [Tags]    QA-5227
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -35,7 +37,8 @@ Apps - Checkout - Delivery Methods - Digital Items - QA-5227
     Click Donate No Thanks
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital Items 02 - QA-5227
+Apps - Checkout - Delivery Methods - Digital Items 03 - QA-5227
+    [Tags]    QA-5227
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -52,6 +55,7 @@ Apps - Checkout - Delivery Methods - Digital Items 02 - QA-5227
     [Teardown]    Tear Down
 
 Apps - Checkout - Delivery Methods - Liquor Item - QA-5227 / QA-5232
+    [Tags]    QA-5227    QA-5232
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -67,7 +71,8 @@ Apps - Checkout - Delivery Methods - Liquor Item - QA-5227 / QA-5232
     Verify Delivery Text Not    Takealot Pickup Points
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital and Physical Item - QA-5227
+Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QA-5227
+    [Tags]    QA-5227
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -89,6 +94,7 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item - QA-5227
     [Teardown]    Tear Down
 
 Checkout - Collect - Add Delivery and Digital Items - QA-5231
+    [Tags]    QA-5231
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -110,6 +116,7 @@ Checkout - Collect - Add Delivery and Digital Items - QA-5231
     [Teardown]    Tear Down
 
 Checkout - Collect - Add Only Delivery Items - QA-5247
+    [Tags]    QA-5247
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -125,6 +132,7 @@ Checkout - Collect - Add Only Delivery Items - QA-5247
     [Teardown]    Tear Down
 
 Checkout - Collect - White Goods - QA-5240
+    [Tags]    QA-5240
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -140,6 +148,7 @@ Checkout - Collect - White Goods - QA-5240
     [Teardown]    Tear Down
 
 Checkout - Age Verification - QA-5244
+    [Tags]    QA-5244
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -156,6 +165,7 @@ Checkout - Age Verification - QA-5244
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - General - QA-5200
+    [Tags]    QA-5200
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -170,6 +180,7 @@ Checkout - Delivery Address - General - QA-5200
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - General 02 - QA-5200
+    [Tags]    QA-5200
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -187,6 +198,7 @@ Checkout - Delivery Address - General 02 - QA-5200
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - General 03 - QA-5200
+    [Tags]    QA-5200
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -201,6 +213,7 @@ Checkout - Delivery Address - General 03 - QA-5200
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - General 04 - QA-5200
+    [Tags]    QA-5200
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -219,6 +232,7 @@ Checkout - Delivery Address - General 04 - QA-5200
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
+    [Tags]    QA-5206
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -245,7 +259,8 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     Verify Add Address Text    Please enter a 4 digit postal code
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - Edit Address - Street Correction 03 - QA-5206
+Checkout - Delivery Address - Edit Address - Street Correction 02 - QA-5206
+    [Tags]    QA-5206
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -267,7 +282,8 @@ Checkout - Delivery Address - Edit Address - Street Correction 03 - QA-5206
     Click Use This Location
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - Edit Address - Street Correction 04 - QA-5206
+Checkout - Delivery Address - Edit Address - Street Correction 03 - QA-5206
+    [Tags]    QA-5206
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -282,6 +298,7 @@ Checkout - Delivery Address - Edit Address - Street Correction 04 - QA-5206
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5213
+    [Tags]    QA-5213
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -299,6 +316,7 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Address Form Validation - QA-5217
+    [Tags]    QA-5217
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -323,6 +341,7 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Address Form Validation 02 - QA-5217
+    [Tags]    QA-5217
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -343,6 +362,7 @@ Checkout - Delivery Address - Address Form Validation 02 - QA-5217
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Address Form Validation 03 - QA-5217
+    [Tags]    QA-5217
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -365,6 +385,7 @@ Checkout - Delivery Address - Address Form Validation 03 - QA-5217
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Address Form Validation 04 - QA-5217
+    [Tags]    QA-5217
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -378,6 +399,7 @@ Checkout - Delivery Address - Address Form Validation 04 - QA-5217
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Street Suggestion - QA-5238
+    [Tags]    QA-5238
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -401,6 +423,7 @@ Checkout - Delivery Address - Street Suggestion - QA-5238
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Pin on Map - QA-5251
+    [Tags]    QA-5251
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -422,6 +445,7 @@ Checkout - Delivery Address - Pin on Map - QA-5251
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Pin on Map 02 - QA-5251
+    [Tags]    QA-5251
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -435,6 +459,7 @@ Checkout - Delivery Address - Pin on Map 02 - QA-5251
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Select Pickup Point button - QA-5256
+    [Tags]    QA-5256
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -449,6 +474,7 @@ Apps > Checkout > Collect > Select Pickup Point button - QA-5256
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Pickup Point INFO - QA-5207
+    [Tags]    QA-5207
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -477,6 +503,7 @@ Apps > Checkout > Collect > Pickup Point INFO - QA-5207
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Pickup Point INFO 02 - QA-5207
+    [Tags]    QA-5207
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -507,6 +534,7 @@ Apps > Checkout > Collect > Pickup Point INFO 02 - QA-5207
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Pickup Points List - QA-5237
+    [Tags]    QA-5237
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -539,6 +567,7 @@ Apps > Checkout > Collect > Pickup Points List - QA-5237
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Pickup Points List 02 - QA-5237
+    [Tags]    QA-5237
     [Setup]    Start Application
     Click Menu
     Click Menu Orders
@@ -547,6 +576,7 @@ Apps > Checkout > Collect > Pickup Points List 02 - QA-5237
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Add Only Digital Item - QA-5265
+    [Tags]    QA-5265
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -562,6 +592,7 @@ Apps > Checkout > Collect > Add Only Digital Item - QA-5265
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options (Standard) - QA-5243
+    [Tags]    QA-5243
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -577,6 +608,7 @@ Apps > Checkout > Collect > Shipping Options (Standard) - QA-5243
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QA-5239
+    [Tags]    QA-5239
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -592,6 +624,7 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QA-5239
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QA-5202
+    [Tags]    QA-5202
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -607,6 +640,7 @@ Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QA-5202
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QA-5258
+    [Tags]    QA-5258
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -622,6 +656,7 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QA-5258
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Delivery Options (Collect Options) - QA-5223
+    [Tags]    QA-5223
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -648,6 +683,7 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QA-5223
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Tablet > Change Delivery Method - QA-5252
+    [Tags]    QA-5252
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -670,6 +706,7 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QA-5252
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Change Pickup point - QA-5250
+    [Tags]    QA-5250
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -690,6 +727,7 @@ Apps > Checkout > Collect > Change Pickup point - QA-5250
     [Teardown]    Tear Down
 
 Apps > Checkout > Order Review - QA-5230
+    [Tags]    QA-5230
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -720,6 +758,7 @@ Apps > Checkout > Order Review - QA-5230
     [Teardown]    Tear Down
 
 Apps > Checkout > Order Review 02 - QA-5230
+    [Tags]    QA-5230
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -732,6 +771,7 @@ Apps > Checkout > Order Review 02 - QA-5230
     [Teardown]    Tear Down
 
 Apps > Checkout > Order Review 03 - QA-5230
+    [Tags]    QA-5230
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -747,6 +787,7 @@ Apps > Checkout > Order Review 03 - QA-5230
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Earn eBucks - QA-5211
+    [Tags]    QA-5211
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -780,6 +821,7 @@ Apps > Checkout > Payment > Earn eBucks - QA-5211
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Gift Msg - QA-5203
+    [Tags]    QA-5203
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -799,6 +841,7 @@ Apps > Checkout > Payment > Gift Msg - QA-5203
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Gift Msg 02 - QA-5203
+    [Tags]    QA-5203
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -815,6 +858,7 @@ Apps > Checkout > Payment > Gift Msg 02 - QA-5203
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Payment Method Availability - QA-5209
+    [Tags]    QA-5209
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -845,6 +889,7 @@ Apps > Checkout > Payment > Payment Method Availability - QA-5209
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Payment Method Availability 02 - QA-5209
+    [Tags]    QA-5209
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -863,6 +908,7 @@ Apps > Checkout > Payment > Payment Method Availability 02 - QA-5209
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Payment Method Availability 03 - QA-5209
+    [Tags]    QA-5209
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -884,6 +930,7 @@ Apps > Checkout > Payment > Payment Method Availability 03 - QA-5209
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Post-Order Creation - QA-5279
+    [Tags]    QA-5279
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -911,6 +958,7 @@ Apps > Checkout > Payment > Post-Order Creation - QA-5279
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Donation - QA-5198
+    [Tags]    QA-5198
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -943,6 +991,7 @@ Apps > Checkout > Payment > Donation - QA-5198
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Donation 02 - QA-5198
+    [Tags]    QA-5198
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -968,6 +1017,7 @@ Apps > Checkout > Payment > Donation 02 - QA-5198
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Confirmation - QA-5269
+    [Tags]    QA-5269
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1000,6 +1050,7 @@ Apps > Checkout > Payment > Confirmation - QA-5269
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Confirmation 02 - QA-5269
+    [Tags]    QA-5269
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1022,6 +1073,7 @@ Apps > Checkout > Payment > Confirmation 02 - QA-5269
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Pay with PayFast - QA-5282
+    [Tags]    QA-5282
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1045,6 +1097,7 @@ Apps > Checkout > Payment > Pay with PayFast - QA-5282
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Pay with PayFast 02 - QA-5282
+    [Tags]    QA-5282    dependent
     [Setup]    Start Application
     Click Menu
     Click Menu Orders
@@ -1054,6 +1107,7 @@ Apps > Checkout > Payment > Pay with PayFast 02 - QA-5282
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Credit Card - PayU - QA-5285
+    [Tags]    QA-5285
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1074,6 +1128,7 @@ Apps > Checkout > Payment > Credit Card - PayU - QA-5285
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > COD - QA-5286
+    [Tags]    QA-5286
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1094,6 +1149,7 @@ Apps > Checkout > Payment > COD - QA-5286
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QA-5287
+    [Tags]    QA-5287
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1117,6 +1173,7 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QA-52
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment 02 - QA-5287
+    [Tags]    QA-5287    dependent
     [Setup]    Start Application
     Click Menu
     Click Menu Orders
@@ -1126,6 +1183,7 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment 02 - QA
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Pay with Ozow - QA-5288
+    [Tags]    QA-5288
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1147,6 +1205,7 @@ Apps > Checkout > Payment > Pay with Ozow - QA-5288
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Pay with Ozow 02 - QA-5288
+    [Tags]    QA-5288    dependent
     [Setup]    Start Application
     Click Menu
     Click Menu Orders
@@ -1156,6 +1215,7 @@ Apps > Checkout > Payment > Pay with Ozow 02 - QA-5288
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QA-5289
+    [Tags]    QA-5289
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1176,6 +1236,7 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QA-
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order 02 - QA-5289
+    [Tags]    QA-5289    dependent
     [Setup]    Start Application
     Click Menu
     Click Menu Orders
@@ -1185,6 +1246,7 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order 02 - 
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Mobicred - QA-5295
+    [Tags]    QA-5295
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1205,6 +1267,7 @@ Apps > Checkout > Payment > Mobicred - QA-5295
     [Teardown]    Tear Down
 
 Apps > Checkout > TV Licence Verification - QA-6692
+    [Tags]    QA-6692
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1228,6 +1291,7 @@ Apps > Checkout > TV Licence Verification - QA-6692
     [Teardown]    Tear Down
 
 Apps > Checkout > TV Licence Verification 02 - QA-6692
+    [Tags]    QA-6692
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1248,6 +1312,7 @@ Apps > Checkout > TV Licence Verification 02 - QA-6692
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > Promise Date - QA-5205
+    [Tags]    QA-5205
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1317,6 +1382,7 @@ Apps > Checkout > Delivery Options > Promise Date - QA-5205
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > Promise Date 02 - QA-5205
+    [Tags]    QA-5205    dependent
     [Setup]    Start Application
     Click Menu
     Click Menu Orders
@@ -1325,6 +1391,7 @@ Apps > Checkout > Delivery Options > Promise Date 02 - QA-5205
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect Options > Promise Date - QA-5210
+    [Tags]    QA-5210
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1382,6 +1449,7 @@ Apps > Checkout > Collect Options > Promise Date - QA-5210
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect Options > Promise Date 02 - QA-5210
+    [Tags]    QA-5210    dependent
     [Setup]    Start Application
     Click Menu
     Click Menu Orders
@@ -1390,6 +1458,7 @@ Apps > Checkout > Collect Options > Promise Date 02 - QA-5210
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Pay with eBucks - QA-5283
+    [Tags]    QA-5283
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1414,6 +1483,7 @@ Apps > Checkout > Payment > Pay with eBucks - QA-5283
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Credits (Voucher) - QA-5284
+    [Tags]    QA-5284
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1440,6 +1510,7 @@ Apps > Checkout > Payment > Credits (Voucher) - QA-5284
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > General Test Case - QA-5215
+    [Tags]    QA-5215
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1457,6 +1528,7 @@ Apps > Checkout > Delivery Options > General Test Case - QA-5215
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > General Test Case 02 - QA-5215
+    [Tags]    QA-5215
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1481,6 +1553,7 @@ Apps > Checkout > Delivery Options > General Test Case 02 - QA-5215
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > General Test Case 03 - QA-5215
+    [Tags]    QA-5215
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1499,6 +1572,7 @@ Apps > Checkout > Delivery Options > General Test Case 03 - QA-5215
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > General Test Case 04 - QA-5215
+    [Tags]    QA-5215
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1517,6 +1591,7 @@ Apps > Checkout > Delivery Options > General Test Case 04 - QA-5215
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > General Test Case 05 - QA-5215
+    [Tags]    QA-5215
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1535,6 +1610,7 @@ Apps > Checkout > Delivery Options > General Test Case 05 - QA-5215
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > General Test Case 06 - QA-5215
+    [Tags]    QA-5215
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1574,6 +1650,7 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QA-5215
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > Add Gift Recipient - QA-7850
+    [Tags]    QA-7850
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1591,6 +1668,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient - QA-7850
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QA-7850
+    [Tags]    QA-7850
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1608,6 +1686,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QA-7850
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > Add Gift Recipient 03 - QA-7850
+    [Tags]    QA-7850
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1618,6 +1697,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 03 - QA-7850
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QA-7850
+    [Tags]    QA-7850
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1634,6 +1714,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QA-7850
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QA-7850
+    [Tags]    QA-7850
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1650,6 +1731,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QA-7850
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Mobicred - QA-5266
+    [Tags]    QA-5266
     [Setup]    Start Application
     Clear Environment
     Click Home

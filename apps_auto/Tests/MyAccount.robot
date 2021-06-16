@@ -4,10 +4,11 @@ Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-8462
+    [Tags]    QA-8462
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    testM2@take2.co.za    Abcd2200
+    Login Takealot    testM2@take2.co.za    t@ke@!ot1234
     Click Home
     Click Menu My Account
     Click Menu Personal Detail
@@ -17,6 +18,7 @@ Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-84
     [Teardown]    Tear Down
 
 Apps > Personal Details Parity > Update Personal Details - Edit First & Last Name - QA-5341
+    [Tags]    QA-5341
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -34,6 +36,7 @@ Apps > Personal Details Parity > Update Personal Details - Edit First & Last Nam
     [Teardown]    Tear Down
 
 Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-5342
+    [Tags]    QA-5342
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -45,6 +48,7 @@ Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-53
     [Teardown]    Tear Down
 
 Apps > Personal Details Parity > Update Personal Details - Password and Reset Password - QA-5335
+    [Tags]    QA-5335
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -55,11 +59,12 @@ Apps > Personal Details Parity > Update Personal Details - Password and Reset Pa
     Update Personal Detail Invalid Password    Abcd2200    Abc2    Abc2
     Verify Text On Screen    Password must be at least 5 characters long    30s
     Update Personal Detail Invalid Password    Abcd2200    Abcd2300    Abcd2300
-    Update Personal Detail Password    Abcd2300    Abcd2200
+    Update Personal Detail Password    t@ke@!ot1234    Abcd2200
     Verify Text On Screen    Your password has been successfukky updated    30s
     [Teardown]    Tear Down
 
 Apps > Personal Details Parity > Update Personal Details - Business Details - QA-5336
+    [Tags]    QA-5336
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -71,6 +76,7 @@ Apps > Personal Details Parity > Update Personal Details - Business Details - QA
     [Teardown]    Tear Down
 
 Apps > Personal Details Parity > Update Personal Details - Email Address - QA-5337
+    [Tags]    QA-5337
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -84,6 +90,7 @@ Apps > Personal Details Parity > Update Personal Details - Email Address - QA-53
     [Teardown]    Tear Down
 
 Apps > Personal Details Parity > Update Personal Details - Add/Edit Business Name & VAT - QA-5338
+    [Tags]    QA-5338
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -93,6 +100,7 @@ Apps > Personal Details Parity > Update Personal Details - Add/Edit Business Nam
     [Teardown]    Tear Down
 
 Apps > Personal Details Parity > Update Personal Details - Email Address Field Validation - QA-5339
+    [Tags]    QA-5339
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -105,6 +113,7 @@ Apps > Personal Details Parity > Update Personal Details - Email Address Field V
     [Teardown]    Tear Down
 
 Apps > Personal Details Parity > Update Personal Details - Add/Edit Mobile Number - QA-5340
+    [Tags]    QA-5340
     [Setup]    Start Application
     Click Menu
     Click Menu My Account

@@ -1,6 +1,6 @@
 *** Variables ***
 ${btnSearchHome}      chain=**/XCUIElementTypeSearchField[`label == "Search for products, brands..."`]
-${btnSearchClearAll}      chain=**/XCUIElementTypeStaticText[`label == "Clear All"`]
+${btnSearchClearAll}      chain=**/XCUIElementTypeButton[`label == "Clear All"`]
 
 ${txtSearch}      ${EMPTY}
 

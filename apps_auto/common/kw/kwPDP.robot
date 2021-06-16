@@ -24,6 +24,22 @@ Click Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}
 
+Click PDP Description Show More
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lnkPDPShowMore}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPScrollRoot}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${lnkPDPShowMore}
+
 Click Seller Name
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     ${sellerNameAndroid}=    Convert To Upper Case    ${query_result_FirstProductBrand}

@@ -21,4 +21,4 @@ ${btnProductFilterRating}      xpath=//*[@text="Rating"]
 ${btnProductFilterRatingName}      xpath=//*[@text="4 {star} and up"]
 
 ${btnProductFilterShowAll}      xpath=//*[@text="Show all Items"]
-${btnProductFilterClearAll}      xpath=//*[@text="Clear All"]
+${btnProductFilterClearAll}      xpath=//*[@text="CLEAR ALL"]

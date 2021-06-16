@@ -42,7 +42,7 @@ Return Android Login Status
 Return iOS Login Status
     [Arguments]    ${email}    ${password}
 #    ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    30s
-    ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Page Contains    Logged in successfully    30s
+    ${chkLoginSuccess}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    30s
     Run Keyword If    ${chkLoginSuccess}==False    Register From Login Takealot    ${email}    ${password}
 
 Register From Login Takealot

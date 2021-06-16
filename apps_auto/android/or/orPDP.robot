@@ -22,3 +22,4 @@ ${btnPDPAddBundleToCart}      id=${APP_PACKAGE}:id/pdp_widget_bundle_deals_butto
 ${btnPDPOtherOfferAddToCart}      id=${APP_PACKAGE}:id/pdp_widget_other_offers_item_add_to_cart
 
 ${lblPDPShopTheDeal}      xpath=//*[@text="SHOP THE DEAL"]
+${lnkPDPShowMore}      xpath=//*[@text="SHOW MORE"]

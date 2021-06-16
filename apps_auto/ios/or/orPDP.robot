@@ -20,3 +20,5 @@ ${btnPDPScrollRoot}      chain=**/XCUIElementTypeWindow[1]
 ${btnPDPAddBundleToCart}      chain=**/XCUIElementTypeButton[`label CONTAINS "Add Bundle to Cart"`]
 ${btnPDPOtherOfferAddToCart}      chain=**/XCUIElementTypeButton[`label == "icon cartButton"`]
 ${lblPDPShopTheDeal}      chain=**/XCUIElementTypeButton[`label == "Shop the Deal"`]
+
+${lnkPDPShowMore}      chain=**/XCUIElementTypeButton[`label == "Show More Description"`]

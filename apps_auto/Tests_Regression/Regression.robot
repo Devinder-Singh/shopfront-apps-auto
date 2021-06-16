@@ -2,11 +2,10 @@
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
-*** Variables ***
-${titleNewToElec}      Fitbit Inspire 2 Fitness Tracker - Black
 
 *** Test Cases ***
 Apps > Register & Login - QA-5329
+    [Tags]    QA-5329
     [Setup]    Start Application
     Click Menu
     Click Menu Register
@@ -30,6 +29,7 @@ Apps > Register & Login - QA-5329
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Daily Deals - QA-5357
+    [Tags]    QA-5357
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -54,6 +54,7 @@ Apps > Promotions (Android) Daily Deals - QA-5357
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) App Only Deals - QA-8409
+    [Tags]    QA-8409
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -75,6 +76,7 @@ Apps > Promotions (Android) App Only Deals - QA-8409
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Other Promo tabs - QA-8410
+    [Tags]    QA-8410
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -95,7 +97,7 @@ Apps > Promotions (Android) Other Promo tabs - QA-8410
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Set Bundle - QA-8367
-    [Tags]    data
+    [Tags]    data    QA-8367
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -124,7 +126,7 @@ Apps > Promotions (Android) Set Bundle - QA-8367
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Multi-Buys - QA-8411
-    [Tags]    data
+    [Tags]    data    QA-8411
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -149,7 +151,7 @@ Apps > Promotions (Android) Multi-Buys - QA-8411
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Unboxed & Other Offers - QA-8412
-    [Tags]    data
+    [Tags]    data    QA-8412
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -162,6 +164,7 @@ Apps > Promotions (Android) Unboxed & Other Offers - QA-8412
     [Teardown]    Tear Down
 
 Apps > Verify Home Screen - QA-5355
+    [Tags]    QA-5355
     [Setup]    Start Application
     Click Home
     Verify Text On Screen    Daily Deals    30s
@@ -170,6 +173,7 @@ Apps > Verify Home Screen - QA-5355
     [Teardown]    Tear Down
 
 Apps > Verify Home Screen - QA-8876
+    [Tags]    QA-8876
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -228,6 +232,7 @@ Apps > Verify Home Screen - QA-8876
     [Teardown]    Tear Down
 
 Apps > Verify Home Screen - QA-8877
+    [Tags]    QA-8877
     [Setup]    Start Application
     Click Home
     Click Home Cart
@@ -235,6 +240,7 @@ Apps > Verify Home Screen - QA-8877
     [Teardown]    Tear Down
 
 Apps > Verify Home Screen - QA-8878
+    [Tags]    QA-8878
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -254,6 +260,7 @@ Apps > Verify Home Screen - QA-8878
     [Teardown]    Tear Down
 
 Apps > Search - QA-5358
+    [Tags]    QA-5358
     [Setup]    Start Application
     Clear Environment
     Verify Home Menu
@@ -266,6 +273,7 @@ Apps > Search - QA-5358
     [Teardown]    Tear Down
 
 Apps > PLP - QA-5360
+    [Tags]    QA-5360
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -309,6 +317,7 @@ Apps > PLP - QA-5360
     [Teardown]    Tear Down
 
 Apps > PLP > Sort - QA-8889
+    [Tags]    QA-8889
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -319,6 +328,7 @@ Apps > PLP > Sort - QA-8889
     [Teardown]    Tear Down
 
 Apps > PLP > Sort 02 - QA-8889
+    [Tags]    QA-8889
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -329,6 +339,7 @@ Apps > PLP > Sort 02 - QA-8889
     [Teardown]    Tear Down
 
 Apps > PLP > Sort 03 - QA-8889
+    [Tags]    QA-8889
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -339,6 +350,7 @@ Apps > PLP > Sort 03 - QA-8889
     [Teardown]    Tear Down
 
 Apps > PLP > Sort 04 - QA-8889
+    [Tags]    QA-8889
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -349,6 +361,7 @@ Apps > PLP > Sort 04 - QA-8889
     [Teardown]    Tear Down
 
 Apps > PLP > Mulit-Filter - QA-8340
+    [Tags]    QA-8340
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -361,6 +374,7 @@ Apps > PLP > Mulit-Filter - QA-8340
     [Teardown]    Tear Down
 
 Apps > PLP > Mulit-Filter 02 - QA-8340
+    [Tags]    QA-8340
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -374,6 +388,7 @@ Apps > PLP > Mulit-Filter 02 - QA-8340
     [Teardown]    Tear Down
 
 Apps > PLP > Mulit-Filter 03 - QA-8340
+    [Tags]    QA-8340
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -387,6 +402,7 @@ Apps > PLP > Mulit-Filter 03 - QA-8340
     [Teardown]    Tear Down
 
 Apps > PLP > Mulit-Filter 04 - QA-8340
+    [Tags]    QA-8340
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -400,6 +416,7 @@ Apps > PLP > Mulit-Filter 04 - QA-8340
     [Teardown]    Tear Down
 
 Apps > PLP > Mulit-Filter 05 - QA-8340
+    [Tags]    QA-8340
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -413,6 +430,7 @@ Apps > PLP > Mulit-Filter 05 - QA-8340
     [Teardown]    Tear Down
 
 Apps > PLP > Mulit-Filter 06 - QA-8340
+    [Tags]    QA-8340
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -425,6 +443,7 @@ Apps > PLP > Mulit-Filter 06 - QA-8340
     [Teardown]    Tear Down
 
 Apps > PLP > Overflow Menus - QA-8341
+    [Tags]    QA-8341
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -487,6 +506,7 @@ Apps > PLP > Overflow Menus - QA-8341
     [Teardown]    Tear Down
 
 Apps > PDP - QA-5307
+    [Tags]    QA-5307
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -501,6 +521,7 @@ Apps > PDP - QA-5307
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8890
+    [Tags]    QA-8890
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -516,6 +537,7 @@ Apps > PDP - QA-8890
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8891
+    [Tags]    QA-8891
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -526,6 +548,7 @@ Apps > PDP - QA-8891
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8892
+    [Tags]    QA-8892
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -546,6 +569,7 @@ Apps > PDP - QA-8892
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8893
+    [Tags]    QA-8893
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -560,6 +584,7 @@ Apps > PDP - QA-8893
     [Teardown]    Tear Down
 
 Apps > Merchandised Landing Pages (CMS Widgets) - Carousel Widget - QA-5359
+    [Tags]    QA-5359
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -576,6 +601,7 @@ Apps > Merchandised Landing Pages (CMS Widgets) - Carousel Widget - QA-5359
     [Teardown]    Tear Down
 
 Apps > Merchandised Landing Pages (CMS Widgets) - Banner Pair Widget - QA-8901
+    [Tags]    QA-8901
     [Setup]    Start Application
     Click Menu
     Click Menu Shop By Department
@@ -584,7 +610,7 @@ Apps > Merchandised Landing Pages (CMS Widgets) - Banner Pair Widget - QA-8901
     [Teardown]    Tear Down
 
 Apps > Merchandised Landing Pages (CMS Widgets) - QA-8902
-    [Tags]    data
+    [Tags]    data    QA-8902
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -593,7 +619,7 @@ Apps > Merchandised Landing Pages (CMS Widgets) - QA-8902
     [Teardown]    Tear Down
 
 Apps > Wishlist (Android) - QA-5367
-    [Tags]    android
+    [Tags]    android    QA-5367
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -605,7 +631,7 @@ Apps > Wishlist (Android) - QA-5367
     [Teardown]    Tear Down
 
 Apps > Wishlist (Android) > Delete List - QA-8906
-    [Tags]    android
+    [Tags]    android    QA-8906
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -636,7 +662,7 @@ Apps > Wishlist (Android) > Delete List - QA-8906
     [Teardown]    Tear Down
 
 Apps > Wishlist (Android) > Bottom Navigation - QA-8907
-    [Tags]    android
+    [Tags]    android    QA-8907
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -657,6 +683,7 @@ Apps > Wishlist (Android) > Bottom Navigation - QA-8907
     [Teardown]    Tear Down
 
 Apps > Wishlist (iOS) - QA-5361
+    [Tags]    QA-5361
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -671,6 +698,7 @@ Apps > Wishlist (iOS) - QA-5361
     [Teardown]    Tear Down
 
 Apps > Cart (iOS) - QA-8908
+    [Tags]    QA-8908
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -687,6 +715,7 @@ Apps > Cart (iOS) - QA-8908
     [Teardown]    Tear Down
 
 Apps > Cart (iOS) 02 - QA-8908
+    [Tags]    QA-8908
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -706,6 +735,7 @@ Apps > Cart (iOS) 02 - QA-8908
     [Teardown]    Tear Down
 
 Apps > Cart (iOS) 03 - QA-8908
+    [Tags]    QA-8908
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -720,6 +750,7 @@ Apps > Cart (iOS) 03 - QA-8908
     [Teardown]    Tear Down
 
 Apps > Order Tracking - QA-5274
+    [Tags]    QA-5274
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -740,6 +771,7 @@ Apps > Order Tracking - QA-5274
     [Teardown]    Tear Down
 
 Apps > Order Tracking 02 - QA-5274
+    [Tags]    QA-5274    dependent
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -772,6 +804,7 @@ Apps > Order Tracking 02 - QA-5274
     [Teardown]    Tear Down
 
 Apps > My Account Verifications - QA-5356
+    [Tags]    QA-5356
     [Setup]    Start Application    False
     Clear Environment
     Click Menu
@@ -819,6 +852,7 @@ Apps > My Account Verifications - QA-5356
     [Teardown]    Tear Down
 
 Apps > My Account Verifications 02 - QA-5356
+    [Tags]    QA-5356
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -833,6 +867,7 @@ Apps > My Account Verifications 02 - QA-5356
     [Teardown]    Tear Down
 
 Apps > My Account Verifications 03 - QA-5356
+    [Tags]    QA-5356
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -858,6 +893,7 @@ Apps > My Account Verifications 03 - QA-5356
     [Teardown]    Tear Down
 
 Apps > My Account Verifications 04 - QA-5356
+    [Tags]    QA-5356
     [Setup]    Start Application
     Click Menu
     Click Menu My Account Android
@@ -879,6 +915,7 @@ Apps > My Account Verifications 04 - QA-5356
     [Teardown]    Tear Down
 
 Apps > Order Tracking 03 - QA-5274
+    [Tags]    QA-5274
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -899,6 +936,7 @@ Apps > Order Tracking 03 - QA-5274
     [Teardown]    Tear Down
 
 Apps > Order Tracking 04 - QA-5274
+    [Tags]    QA-5274    dependent
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -932,6 +970,7 @@ Apps > Order Tracking 04 - QA-5274
     [Teardown]    Tear Down
 
 Apps > Order Tracking 05 - QA-5274
+    [Tags]    QA-5274
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -954,6 +993,7 @@ Apps > Order Tracking 05 - QA-5274
     [Teardown]    Tear Down
 
 Apps > Order Tracking 06 - QA-5274
+    [Tags]    QA-5274    dependent
     [Setup]    Start Application
     Click Menu
     Click Menu My Account
@@ -986,7 +1026,7 @@ Apps > Order Tracking 06 - QA-5274
     [Teardown]    Tear Down
 
 Apps > Cart (Android) - QA-5298
-    [Tags]    android
+    [Tags]    android    QA-5298
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1001,6 +1041,7 @@ Apps > Cart (Android) - QA-5298
     [Teardown]    Tear Down
 
 Apps > Cart (Android) 02 - QA-5298
+    [Tags]    QA-5298
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1020,6 +1061,7 @@ Apps > Cart (Android) 02 - QA-5298
     [Teardown]    Tear Down
 
 Apps > Cart (Android) 03 - QA-5298
+    [Tags]    QA-5298
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -1034,6 +1076,7 @@ Apps > Cart (Android) 03 - QA-5298
     [Teardown]    Tear Down
 
 Apps > Cart (Android) 04 - QA-5298
+    [Tags]    QA-5298
     [Setup]    Start Application
     Clear Environment
     Click Home
