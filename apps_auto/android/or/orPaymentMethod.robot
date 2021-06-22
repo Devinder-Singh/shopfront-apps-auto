@@ -18,5 +18,4 @@ ${btnGotItThanks}      id=android:id/button1
 ${lblCODInfo}      id=android:id/message
 ${lblMobicredInfo}      id=android:id/message
 
-
 ${scrPaymentMethodAndroid}      id=${APP_PACKAGE}:id/checkout_payment_method_content

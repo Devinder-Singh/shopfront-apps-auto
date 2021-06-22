@@ -3,7 +3,7 @@ ${btnProductFilterCategory}      id=Category
 ${btnProductFilterOfficeStationery}      id=Office & Stationery
 
 ${btnProductFilterSelect}      chain=**/XCUIElementTypeButton[`label == "Done"`]
-${btnProductFilterApply}      xpath=//XCUIElementTypeButton[contain(@name,"Show")]
+${btnProductFilterApply}      chain=**/XCUIElementTypeButton[`label CONTAINS "Show"`]
 
 ${btnProductFilterAvailability}      id=Availability
 ${btnProductFilterInStock}      id=In Stock
@@ -17,5 +17,8 @@ ${btnProductFilterColourName}      id=Blue
 ${btnProductFilterMaterial}      id=Material
 ${btnProductFilterMaterialName}      id=Nylon
 
-${btnProductFilterRating}      xpath=Rating
-${btnProductFilterRatingName}      xpath=4 and up
+${btnProductFilterRating}      id=Rating
+${btnProductFilterRatingName}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "4"`]
+
+${btnProductFilterShowAll}      chain=**/XCUIElementTypeStaticText[`label == "Show all Items"`]
+${btnProductFilterClearAll}      chain=**/XCUIElementTypeButton[`label == "Clear All"`]

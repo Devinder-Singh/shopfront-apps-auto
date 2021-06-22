@@ -1,5 +1,6 @@
 *** Settings ***
 Resource          ../config/defaultConfig.robot
+Library    Process
 
 *** Keywords ***
 Start Application
@@ -16,7 +17,7 @@ Tear Down
 
 Install Application
     [Arguments]    ${autoAlert}=${True}
+
     &{cap}=    Get Capabilities    ${True}    ${autoAlert}
     Log Many    &{cap}
     Open Application    ${REMOTE_URL}    &{cap}
-    [Teardown]

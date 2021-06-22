@@ -4,9 +4,9 @@ ${btnMenuLogin}    id=${APP_PACKAGE}:id/accountLogin
 ${btnLogout}      id=${APP_PACKAGE}:id/accountLogout
 ${btnMenuRegister}    id=${APP_PACKAGE}:id/accountRegisterToolTip2
 
-${btnMenuDailyDeals}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]
+${btnMenuDailyDeals}    xpath=//*[@text="Daily Deals"]
 ${mnuShopByDepartment}    id=${APP_PACKAGE}:id/dept_menu_item
-${mnuSportFitness}    xpath=//*[@text="Fragrance Sale"]
+${mnuSportFitness}    xpath=//*[@text="Auto"]
 ${mnuMyAccount}    id=${APP_PACKAGE}:id/your_account_menu_item
 ${btnMenuAddressBook}    id=${APP_PACKAGE}:id/accountAddressBookSelector
 ${btnMenuPersonalDetail}    id=${APP_PACKAGE}:id/accountPersonalDetailsSelector
@@ -26,3 +26,9 @@ ${btnDealsNotification}    id=${APP_PACKAGE}:id/no
 ${btnMenuNewToElec}      xpath=//*[@text="New To Electronics"]
 
 ${cntMenuAccountScroll}    id=${APP_PACKAGE}:id/accountScrollContainer
+
+${btnMenuSettings}      xpath=//*[@text="Settings"]
+${btnMenuTakealotGroup}      xpath=//*[@text="Takealot Group"]
+${btnMenuHelp}      xpath=//*[@text="Help"]
+
+${mnuGaming}      xpath=//*[@text="Gaming"]

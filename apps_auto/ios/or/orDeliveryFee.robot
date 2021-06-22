@@ -8,6 +8,8 @@ ${navDeliveryOptBack}      chain=**/XCUIElementTypeNavigationBar[`name == "Deliv
 ${navCollectOptBack}      chain=**/XCUIElementTypeNavigationBar[`name == "Collect Options"`]/XCUIElementTypeButton
 ${btnStdDeliveryFee}      chain=**/XCUIElementTypeStaticText[`label == "R 60"`]
 
+${scrDeliveryFeeAndroid}      ${EMPTY}
+
 ${btnWhyTheWait}      chain=**/XCUIElementTypeButton[`label == "Why the wait?"`]
 ${btnGotItThanks}      id=Got it, thanks!
 ${btnPlusTwo}      id=+ 2

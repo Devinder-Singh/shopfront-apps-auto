@@ -14,9 +14,30 @@ Click Filter Select Button
     Wait Until Element Is Visible    ${btnProductFilterSelect}    30s
     Click Element    ${btnProductFilterSelect}
 
+Click Filter Select Button iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnProductFilterSelect}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnProductFilterSelect}
+
 Click Filter Apply Button
     Wait Until Element Is Visible    ${btnProductFilterApply}    30s
     Click Element    ${btnProductFilterApply}
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    2s
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        ${chkProdVisible}=    Run Keyword And Return Status    Click Element    ${btnProductFilterApply}
+        Run Keyword If
+            ...    ${chkProdVisible}==False
+            ...    Exit For Loop
+
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    2s
 
 Click Filter Availability
     Wait Until Element Is Visible    ${btnProductFilterAvailability}    30s
@@ -29,6 +50,13 @@ Click Filter In Stock
 Click Filter Brand
     Wait Until Element Is Visible    ${btnProductFilterBrand}    30s
     Click Element    ${btnProductFilterBrand}
+
+Click Filter Clear All
+    Wait Until Element Is Visible    ${btnProductFilterClearAll}    30s
+    Click Element    ${btnProductFilterClearAll}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnProductFilterShowAll}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnProductFilterShowAll}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Filter Apply Button
 
 Click Filter Brand Name
     Wait Until Element Is Visible    ${btnProductFilterBrandName}    30s

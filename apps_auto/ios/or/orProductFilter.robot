@@ -1,2 +1,2 @@
 *** Variables ***
-${btnProdFilterApply}      chain=**/XCUIElementTypeButton[`label == "Show Items"`]
+${btnProdFilterApply}      chain=**/XCUIElementTypeButton[`label CONTAINS "Show"`]

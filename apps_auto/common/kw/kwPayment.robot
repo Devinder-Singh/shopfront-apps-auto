@@ -42,6 +42,10 @@ Click Change Payment Method
     Wait Until Element Is Visible    ${btnChange}    30s
     Click Element    ${btnChange}
 
+Click Change Payment Method Only
+    Wait Until Element Is Visible    ${btnChange}    30s
+    Click Element    ${btnChange}
+
 Click Payment Cancel
     Wait Until Element Is Visible    ${txtPaymentCancel}    30s
     Click Element    ${txtPaymentCancel}

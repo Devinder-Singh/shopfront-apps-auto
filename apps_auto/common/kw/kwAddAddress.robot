@@ -36,33 +36,41 @@ Add Delivery Address
     Input Text    ${txtRecipientStreet}    ${street}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
     Sleep    5s
-    Press Keycode    20
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    20
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    66
-    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
+    Sleep    3s
     Click Save Address
 
 Add Delivery Address My Acc
     [Arguments]    ${name}    ${mobile}    ${street}
-    Wait Until Element Is Visible    ${txtRecipientStreet}    5s
+    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    5s
     Clear Text    ${txtRecipientNameMyAcc}
     Input Text    ${txtRecipientNameMyAcc}    ${name}
     Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
-    Input Text    ${txtRecipientStreet}    ${street}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
-    Sleep    5s
+    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Sleep    10s
     Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
     Run Keyword If    '${street}'=='""'    swipe by percent    50    50    50    100    1000
     Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
     Run Keyword If    '${street}'=='&*'    swipe by percent    50    50    50    100    1000
-    Press Keycode    20
+    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    20
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
-    Press Keycode    66
-    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
+    Sleep    3s
+    Swipe Up    ${windowScroll}
     Click Save Address
 
 Edit Delivery Address Mobile Number
@@ -90,13 +98,22 @@ Edit Delivery Address Street
 
 Edit Delivery Address Street My Acc
     [Arguments]    ${street}
+
     Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    15s
     Clear Text    ${txtRecipientStreetMyAcc}
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
-    Sleep    5s
-    Click Element    ${txtRecipientMobileMyAcc}
-    swipe by percent    50    70    50    100    1000
+    Sleep    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+    Sleep    2s
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
+    Swipe Up    ${windowScroll}
     Click Save Address
 
 Edit Delivery Address Suburb
@@ -134,14 +151,12 @@ Edit Delivery Address Business My Acc
 Verify Edit Address Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblEditAddress}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    Wait Until Page Contains    ${verifyText}    30s
 
 Verify Add Address Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblAddAddress}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    Wait Until Page Contains    ${verifyText}    30s
 
 Verify Add Address Question Text
     [Arguments]    ${verifyText}

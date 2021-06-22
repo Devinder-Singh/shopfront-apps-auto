@@ -11,8 +11,17 @@ Click Wishlist Edit
     Click More Options Menu
     Wait Until Element Is Visible    ${btnWishlistEdit}    30s
     Click Element    ${btnWishlistEdit}
+    Sleep    2s
+
+Click Wishlist Edit iOS
+    Wait Until Element Is Visible    ${btnWishlistEdit}    30s
+    Click Element    ${btnWishlistEdit}
 
 Select Wishlist Item
+    Wait Until Element Is Visible    ${btnWishlistItemSelect}    30s
+    Click Element    ${btnWishlistItemSelect}
+
+Select Wishlist Item iOS
     Wait Until Element Is Visible    ${btnWishlistItemSelect}    30s
     Click Element    ${btnWishlistItemSelect}
 
@@ -20,10 +29,8 @@ Click Wishlist Delete Items
     Wait Until Element Is Visible    ${btnWishlistDelete}    30s
     Click Element    ${btnWishlistDelete}
 
-Verify Wishlist Text
-    [Arguments]    ${verifyText}
-    Wait Until Page Contains    ${verifyText}    30s
-
 Click Delete Wishlist
-    Wait Until Element Is Visible    ${btnDeleteWishlist}    30s
-    Click Element    ${btnDeleteWishlist}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnDeleteWishlist}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnDeleteWishlist}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnDeleteWishlistConfirm}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnDeleteWishlistConfirm}

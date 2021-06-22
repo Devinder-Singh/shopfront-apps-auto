@@ -6,3 +6,4 @@ ${txtRegPassword}       xpath=//*[@text="Password"]
 ${txtRegConfirmPwd}       xpath=//*[@text="Confirm Password"]
 
 ${btnRegRegister}       id=${APP_PACKAGE}:id/accountAuthRegisterLayoutRegisterButton
+${btnLoginRegRegister}       id=${APP_PACKAGE}:id/accountAuthLoginLayoutRegister

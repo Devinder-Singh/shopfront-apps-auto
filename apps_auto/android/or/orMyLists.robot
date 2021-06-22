@@ -1,6 +1,6 @@
 *** Variables ***
 ${btnWishlistItems}    xpath=//*[@text="DEFAULT"]
-${btnWishlistAuto}    xpath=//*[@text="AutoTestWishlist"]
+${btnWishlistAuto}    xpath=//*[contains(@text,"AutoTestWishlist")]
 
 ${btnWishListScreen}      xpath=//*[@text="My Lists"]
 ${btnWishlistCreate}    id=${APP_PACKAGE}:id/wishlistListsCreateNewList

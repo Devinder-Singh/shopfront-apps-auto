@@ -11,15 +11,16 @@ ${btnOptionLists}      xpath=//*[@text="Lists"]
 ${btnOptionAccount}      xpath=//*[@text="Account"]
 
 ${btnHomeViewAllDailyDeals}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListViewAllText
-${btnHomeClearAllRecent}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListViewAllText
+${btnHomeClearAllRecent}      xpath=//*[@text="CLEAR ALL"]
 
 ${btnHomeClearCancelRecent}      id=${APP_PACKAGE}:id/snackbar_action
 ${btnHomeClearRecent}      ${EMPTY}
 
-${btnHomeDeptDailyDeals}      xpath=//*[@text="Daily Deals"][2]
+${btnHomeDeptDailyDeals}      xpath=//*[@text="Daily Deals"]
 ${btnHomeDeptAppOnlyDeals}      xpath=//*[@text="App Only Deals"]
 ${btnHomeDeptHomeCook}      xpath=//*[@text="Home Cook Essentials"]
 ${btnHomeDeptHealthCare}      xpath=//*[@text="Health & Personal Care"]
 ${btnHomeBack}      accessibility_id=Navigate up
 
 ${btnHomeWishlist}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListSingleItemAddToList
+${btnWishListIcon}      accessibility_id=Lists
