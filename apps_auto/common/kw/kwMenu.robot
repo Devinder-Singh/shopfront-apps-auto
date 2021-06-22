@@ -75,6 +75,25 @@ Click Menu Sport and Fitness
     Click Element    ${mnuSportFitness}
     Click Product Widget First View All
 
+Click Menu Department
+    [Arguments]    ${dept}
+
+    ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${dept}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${dept}')]
+
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
+    Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
+    Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
+    Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
+    Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
+
+    Wait Until Element Is Visible    ${txtProduct}    5s
+    Click Element    ${txtProduct}
+
+    Sleep    3s
+
 Click Menu Gaming
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
     Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}

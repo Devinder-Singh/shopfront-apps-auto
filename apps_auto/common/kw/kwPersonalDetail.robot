@@ -31,7 +31,7 @@ Update Personal Detail Email
     Get New Email Address
     ${email}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
 
-    Wait Until Element Is Visible    ${lblPersonalDetailEmail}    5s
+    Wait Until Element Is Visible    ${lblPersonalDetailEmail}    10s
     Click Element    ${lblPersonalDetailEmail}
 
     Input Text    ${txtNewEmail}    ${email}
@@ -50,7 +50,7 @@ Update Personal Detail Invalid Email
     Click Element    ${btnSaveDetail}
 
 Click Personal Detail Mobile
-    Wait Until Element Is Visible    ${lblPersonalDetailMobile}    5s
+    Wait Until Element Is Visible    ${lblPersonalDetailMobile}    10s
     Click Element    ${lblPersonalDetailMobile}
 
 Update Personal Detail Mobile
@@ -68,18 +68,22 @@ Update Personal Detail Mobile Country Code
     Click Element    ${lblPersonalDetailMobile}
 
     Click Element    ${lblPersonalDetailMobileCC}
-    Verify Text On Screen    (+93)    5s
+    Sleep    1s
+#    Verify Text On Screen    Afghanistan    5s
     Click Element    ${lblPersonalDetailCCAfghanistan}
+    Sleep    2s
 
     Input Text    ${txtPDMobile}    ${mobile}
     Click Element    ${btnSaveDetail}
 
 Click Why Add Personal Detail Mobile
-    Wait Until Element Is Visible    ${lnkPDMobile}    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${lnkPDMobile}    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblPersonalDetailMobile}    10s
     Click Element    ${lnkPDMobile}
 
 Click Why Add Personal Detail Business Detail
-    Wait Until Element Is Visible    ${lnkPDBusiness}    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${lnkPDBusiness}    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblPersonalDetailMobile}    10s
     Click Element    ${lnkPDBusiness}
 
 Clear Personal Detail Mobile
@@ -108,8 +112,11 @@ Update Personal Detail Invalid Password
 
     Wait Until Element Is Visible    ${btnSaveDetail}    30s
 
+    Clear Text    ${txtCurrentPwd}
     Input Text    ${txtCurrentPwd}    ${currentPwd}
+    Clear Text    ${txtNewPwd}
     Input Text    ${txtNewPwd}    ${newPwd}
+    Clear Text    ${txtConfNewPwd}
     Input Text    ${txtConfNewPwd}    ${confPwd}
     Click Element    ${btnSaveDetail}
 

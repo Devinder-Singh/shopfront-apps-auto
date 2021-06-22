@@ -28,8 +28,8 @@ Apps > Register & Login - QA-5329
     Click Menu Logout
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Daily Deals - QA-5357
-    [Tags]    QA-5357
+Apps > Promotions (Android) Daily Deals - QA-5357 / QA-7443
+    [Tags]    QA-5357    QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -53,8 +53,8 @@ Apps > Promotions (Android) Daily Deals - QA-5357
     Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) App Only Deals - QA-8409
-    [Tags]    QA-8409
+Apps > Promotions (Android) App Only Deals - QA-8409 / QA-7443
+    [Tags]    QA-8409    QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -75,8 +75,8 @@ Apps > Promotions (Android) App Only Deals - QA-8409
     Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Other Promo tabs - QA-8410
-    [Tags]    QA-8410
+Apps > Promotions (Android) Other Promo tabs - QA-8410 / QA-7443
+    [Tags]    QA-8410    QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -96,8 +96,8 @@ Apps > Promotions (Android) Other Promo tabs - QA-8410
     Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Set Bundle - QA-8367
-    [Tags]    data    QA-8367
+Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
+    [Tags]    data    QA-8367    QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -125,8 +125,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367
     Check Text On Screen Not    View Bundle
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Multi-Buys - QA-8411
-    [Tags]    data    QA-8411
+Apps > Promotions (Android) Multi-Buys - QA-8411 / QA-7443
+    [Tags]    data    QA-8411    QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -150,8 +150,8 @@ Apps > Promotions (Android) Multi-Buys - QA-8411
     Check Text On Screen Not    Add 1 item to qualify
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Unboxed & Other Offers - QA-8412
-    [Tags]    data    QA-8412
+Apps > Promotions (Android) Unboxed & Other Offers - QA-8412 / QA-7443
+    [Tags]    data    QA-8412    QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -325,36 +325,12 @@ Apps > PLP > Sort - QA-8889
     Click Search Product Sort
     Click Sort High To Low
     Verify Sorted Products    Price+Descending
-    [Teardown]    Tear Down
-
-Apps > PLP > Sort 02 - QA-8889
-    [Tags]    QA-8889
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
     Click Search Product Sort
     Click Sort Low To High
     Verify Sorted Products    Price+Ascending
-    [Teardown]    Tear Down
-
-Apps > PLP > Sort 03 - QA-8889
-    [Tags]    QA-8889
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
     Click Search Product Sort
     Click Sort Top Rated
     Verify Sorted Products    Rating+Descending
-    [Teardown]    Tear Down
-
-Apps > PLP > Sort 04 - QA-8889
-    [Tags]    QA-8889
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
     Click Search Product Sort
     Click Sort New Arrivals
     Verify Sorted Products    ReleaseDate+Descending
@@ -373,74 +349,74 @@ Apps > PLP > Mulit-Filter - QA-8340
     Click Filter Apply Button
     [Teardown]    Tear Down
 
-Apps > PLP > Mulit-Filter 02 - QA-8340
-    [Tags]    QA-8340
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Search Product Filter
-    Click Filter Availability
-    Click Filter In Stock
-    Click Filter Select Button iOS
-    Click Filter Apply Button
-    Verify Filtered Products    Availability:0.0-0.0
-    [Teardown]    Tear Down
+#Apps > PLP > Mulit-Filter 02 - QA-8340
+#    [Tags]    QA-8340
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    pencil
+#    Click Search Product Filter
+#    Click Filter Availability
+#    Click Filter In Stock
+#    Click Filter Select Button iOS
+#    Click Filter Apply Button
+#    Verify Filtered Products    Availability:0.0-0.0
+#    [Teardown]    Tear Down
 
-Apps > PLP > Mulit-Filter 03 - QA-8340
-    [Tags]    QA-8340
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Search Product Filter
-    Click Filter Brand
-    Click Filter Brand Name
-    Click Filter Select Button
-    Click Filter Apply Button
-    Verify Filtered Products    Brand:Meeco
-    [Teardown]    Tear Down
+#Apps > PLP > Mulit-Filter 03 - QA-8340
+#    [Tags]    QA-8340
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    pencil
+#    Click Search Product Filter
+#    Click Filter Brand
+#    Click Filter Brand Name
+#    Click Filter Select Button
+#    Click Filter Apply Button
+#    Verify Filtered Products    Brand:Meeco
+#    [Teardown]    Tear Down
 
-Apps > PLP > Mulit-Filter 04 - QA-8340
-    [Tags]    QA-8340
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Search Product Filter
-    Click Filter Colour
-    Click Filter Colour Name
-    Click Filter Select Button
-    Click Filter Apply Button
-    Verify Filtered Products    BasicColours:Blue
-    [Teardown]    Tear Down
+#Apps > PLP > Mulit-Filter 04 - QA-8340 / QA-8910
+#    [Tags]    QA-8340    QA-8910
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    pencil
+#    Click Search Product Filter
+#    Click Filter Colour
+#    Click Filter Colour Name
+#    Click Filter Select Button
+#    Click Filter Apply Button
+#    Verify Filtered Products    BasicColours:Blue
+#    [Teardown]    Tear Down
 
-Apps > PLP > Mulit-Filter 05 - QA-8340
-    [Tags]    QA-8340
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Search Product Filter
-    Click Filter Material
-    Click Filter Material Name
-    Click Filter Select Button
-    Click Filter Apply Button
-    Verify Filtered Products    ASMaterials:Nylon
-    [Teardown]    Tear Down
+#Apps > PLP > Mulit-Filter 05 - QA-8340
+#    [Tags]    QA-8340
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    pencil
+#    Click Search Product Filter
+#    Click Filter Material
+#    Click Filter Material Name
+#    Click Filter Select Button
+#    Click Filter Apply Button
+#    Verify Filtered Products    ASMaterials:Nylon
+#    [Teardown]    Tear Down
 
-Apps > PLP > Mulit-Filter 06 - QA-8340
-    [Tags]    QA-8340
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Search Product Filter
-    Click Filter Rating
-    Click Filter Rating Name
-    Click Filter Apply Button
-    Verify Filtered Products    Rating:4.0-5.0
-    [Teardown]    Tear Down
+#Apps > PLP > Mulit-Filter 06 - QA-8340 / QA-8910
+#   [Tags]    QA-8340    QA-8910
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    pencil
+#    Click Search Product Filter
+#    Click Filter Rating
+#    Click Filter Rating Name
+#    Click Filter Apply Button
+#    Verify Filtered Products    Rating:4.0-5.0
+#    [Teardown]    Tear Down
 
 Apps > PLP > Overflow Menus - QA-8341
     [Tags]    QA-8341
@@ -586,27 +562,21 @@ Apps > PDP - QA-8893
 Apps > Merchandised Landing Pages (CMS Widgets) - Carousel Widget - QA-5359
     [Tags]    QA-5359
     [Setup]    Start Application
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Tear Down
-    Start Application
-    Click Home
-    Click Search Home    False
-    Verify Text On Screen    Recent Search    30s
-    Click Search Recent
+    Click Menu
+    Click Menu Shop By Department
+    Click Menu Department    Beauty
+    Click Product Widget Carousel
+    Verify Product Widget Navigation
     [Teardown]    Tear Down
 
-Apps > Merchandised Landing Pages (CMS Widgets) - Banner Pair Widget - QA-8901
+Merchandised Landing Pages (CMS Widgets) - Banner Pair Widget - QA-8901
     [Tags]    QA-8901
     [Setup]    Start Application
     Click Menu
     Click Menu Shop By Department
-    Click Menu Sport and Fitness
-    Click Product Auto from API
+    Click Menu Department    Beauty
+    Click Product Widget Banner
+    Verify Product Widget Navigation
     [Teardown]    Tear Down
 
 Apps > Merchandised Landing Pages (CMS Widgets) - QA-8902
@@ -616,6 +586,36 @@ Apps > Merchandised Landing Pages (CMS Widgets) - QA-8902
     Click Search Home
     Verify Text On Screen    Trending    30s
     Click Search Trending
+    [Teardown]    Tear Down
+
+Merchandised Landing Pages (CMS Widgets) -> Product List Widget - QA-8903
+    [Tags]    QA-8903
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Shop By Department
+    Click Menu Department    Beauty
+    Click Product Widget Product
+    Verify Product Widget Navigation
+    [Teardown]    Tear Down
+
+Merchandised Landing Pages (CMS Widgets) - Image List Widget - QA-8904
+    [Tags]    QA-8904
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Shop By Department
+    Click Menu Department    Beauty
+    Click Product Widget Image
+    Verify Product Widget Navigation
+    [Teardown]    Tear Down
+
+Merchandised Landing Pages (CMS Widgets) - Contextual Navigation Widget - QA-8905
+    [Tags]    QA-8905
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Shop By Department
+    Click Menu Department    Beauty
+    Click Product Widget Image
+    Verify Product Widget Navigation
     [Teardown]    Tear Down
 
 Apps > Wishlist (Android) - QA-5367
@@ -768,11 +768,8 @@ Apps > Order Tracking - QA-5274
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    [Teardown]    Tear Down
-
-Apps > Order Tracking 02 - QA-5274
-    [Tags]    QA-5274    dependent
-    [Setup]    Start Application
+    Tear Down
+    Start Application
     Click Menu
     Click Menu My Account
     Click Menu Orders
@@ -914,7 +911,7 @@ Apps > My Account Verifications 04 - QA-5356
     Verify Text On Screen Android    Chrome    5s
     [Teardown]    Tear Down
 
-Apps > Order Tracking 03 - QA-5274
+Apps > Order Tracking 02 - QA-5274
     [Tags]    QA-5274
     [Setup]    Start Application
     Clear Environment
@@ -933,11 +930,8 @@ Apps > Order Tracking 03 - QA-5274
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    [Teardown]    Tear Down
-
-Apps > Order Tracking 04 - QA-5274
-    [Tags]    QA-5274    dependent
-    [Setup]    Start Application
+    Tear Down
+    Start Application
     Click Menu
     Click Menu My Account
     Click Menu Orders
@@ -990,11 +984,8 @@ Apps > Order Tracking 05 - QA-5274
     Click Back Payment Voucher
     Click Pay With Credit Card
 #    Click Payment Confirm Order
-    [Teardown]    Tear Down
-
-Apps > Order Tracking 06 - QA-5274
-    [Tags]    QA-5274    dependent
-    [Setup]    Start Application
+    Tear Down
+    Start Application
     Click Menu
     Click Menu My Account
     Click Menu Orders

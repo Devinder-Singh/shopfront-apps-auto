@@ -54,8 +54,8 @@ Apps > Search Listings > Attributes - QA-8737
     Verify Text On Screen    Hisense    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Attributes 02 - QA-8737
-    [Tags]    QA-8737
+Apps > Search Listings > Attributes 02 - QA-9552
+    [Tags]    QA-9552
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -351,7 +351,7 @@ Apps > Search Listings > Related Search - QA-8839
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Text On Screen Scroll    Related Searches    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Text On Screen Scroll Android    Related Searches    30s    ${windowScroll}    ${btnProductSearchFilter}
     Click Product from API Scroll
     Verify Element On Screen    ${btnAddToCart}    30s
     [Teardown]    Tear Down
