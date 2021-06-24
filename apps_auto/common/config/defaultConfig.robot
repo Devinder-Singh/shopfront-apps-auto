@@ -34,7 +34,7 @@ Resource          ../../${PLATFORM_NAME}/or/orProductFilter.robot
 Resource          ../../${PLATFORM_NAME}/or/orChangeRecepient.robot
 Resource          ../../${PLATFORM_NAME}/or/orFilter.robot
 Resource          ../../${PLATFORM_NAME}/or/orSort.robot
-Resource          ../../${PLATFORM_NAME}/or/orReview.robot
+Resource          ../../${PLATFORM_NAME}/or/orReviews.robot
 Resource          ../../${PLATFORM_NAME}/or/orProductWidgets.robot
 Resource          ../../${PLATFORM_NAME}/or/orMyLists.robot
 Resource          ../../${PLATFORM_NAME}/or/orLoadGiftVoucher.robot

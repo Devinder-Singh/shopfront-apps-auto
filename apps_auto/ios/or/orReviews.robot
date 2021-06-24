@@ -3,3 +3,5 @@ ${txtReviewMsg}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUI
 ${btnReviewSubmit}      chain=**/XCUIElementTypeButton[`label == "Submit"`]
 
 ${btnReviewStarRating}      chain=**/XCUIElementTypeButton[`label == "icon ratingStar"`][3]
+
+${btnReviewsContainer}    ${EMPTY}

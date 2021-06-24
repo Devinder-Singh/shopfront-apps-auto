@@ -184,6 +184,23 @@ Get Product No Reviews
 
     [return]    ${searchResult}
 
+Get Product Review Count Multiple
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_rating_count}=    Output    $.sections.products.results[*].product_views.core.reviews
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results_rating_count}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        Exit For Loop If    '${result}'>='1'
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    [return]    ${searchResult}
+
 Get Product Auto to Add To Cart
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?sort=Relevance&department_slug=pool-garden&category_slug=maintenance-and-service-25855
     Get    ${search_URL}
