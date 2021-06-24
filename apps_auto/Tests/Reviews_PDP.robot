@@ -25,9 +25,24 @@ Apps > Reviews > Review Components > Read Reviews - QA-9166
     Search Product    Toothpaste
     Click Product Multiple Reviews
     Scroll To PDP Reviews Auto
-    Element Should Not Be Visible    ${btnPDPNoReviewsDescription}
-    Element Should Be Visible    ${btnPDPReviewSummaryOverallRating}
-    Element Should Be Visible    ${btnPDPUserReviews}
+    Verify Reviews Card Distribution Summary Visible
+    Verify Reviews Card User Reviews Visible
     Click PDP Reviews Show More
-    Verify PDP Screen Element    ${btnReviewsContainer}
+    Verify Reviews PDP Section Visible
+    [Teardown]    Tear Down
+
+Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
+    [Tags]    data    QA-7937
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Toothpaste
+    Click Product Multiple Reviews
+    Scroll To PDP Reviews Auto
+    Verify Reviews Card Distribution Summary Visible
+    Verify Reviews Distribution Summary View
+    Verify Reviews Card User Reviews Visible
+    Click PDP Reviews Show More
+    Verify Reviews PDP Section Visible
+    Verify Reviews Distribution Summary View
     [Teardown]    Tear Down

@@ -17,8 +17,6 @@ ${lblBlueValue}      xpath=//*[@text="Blue"]
 ${btnPDPReview}      id=${APP_PACKAGE}:id/write_reviews_button
 ${btnPDPReviewsSummary}    id=${APP_PACKAGE}:id/pdp_reviews_distribution_summary
 ${btnPDPUserReviews}    id=${APP_PACKAGE}:id/pdp_reviews_user_reviews_container
-${btnPDPNoReviewsDescription}    id=${APP_PACKAGE}:id/no_reviews_description
-${btnPDPReviewSummaryOverallRating}    id=${APP_PACKAGE}:id/overall_rating
 ${btnPDPReviewBuyboxTitleButton}    id=${APP_PACKAGE}:id/pdp_widget_buy_box_title_review_reviews
 ${btnPDPReviewShowMoreButton}    id=${APP_PACKAGE}:id/pdp_reviews_show_more_button
 

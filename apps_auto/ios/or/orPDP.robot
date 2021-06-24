@@ -17,8 +17,6 @@ ${lblBlueValue}      chain=**/XCUIElementTypeStaticText[`label == "Blue"`]
 ${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write a Review"`]
 ${btnPDPReviewsSummary}    ${EMPTY}
 ${btnPDPUserReviews}    ${EMPTY}
-${btnPDPNoReviewsDescription}    ${EMPTY}
-${btnPDPReviewSummaryOverallRating}    ${EMPTY}
 ${btnPDPReviewBuyboxTitleButton}    ${EMPTY}
 ${btnPDPReviewShowMoreButton}    ${EMPTY}
 

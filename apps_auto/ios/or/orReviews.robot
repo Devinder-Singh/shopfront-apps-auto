@@ -4,4 +4,6 @@ ${btnReviewSubmit}      chain=**/XCUIElementTypeButton[`label == "Submit"`]
 
 ${btnReviewStarRating}      chain=**/XCUIElementTypeButton[`label == "icon ratingStar"`][3]
 
+${btnNoReviewsDescription}    ${EMPTY}
+${btnReviewsSummaryOverallRating}    ${EMPTY}
 ${btnReviewsContainer}    ${EMPTY}

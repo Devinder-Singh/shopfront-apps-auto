@@ -84,7 +84,7 @@ Resource          ../kw/kwChangeRecepient.robot
 Resource          ../kw/kwFilter.robot
 Resource          ../kw/kwSort.robot
 Resource          ../kw/kwCommon.robot
-Resource          ../kw/kwReview.robot
+Resource          ../kw/kwReviews.robot
 Resource          ../kw/kwProductWidgets.robot
 Resource          ../kw/kwMyLists.robot
 Resource          ../kw/kwLoadGiftVoucher.robot
