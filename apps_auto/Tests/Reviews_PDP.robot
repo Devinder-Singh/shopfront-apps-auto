@@ -50,7 +50,6 @@ Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
 Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     [Tags]    data    QA-7937
     [Setup]    Start Application
-    Set SSL Verify    False
     Click Home
     Click Search Home
     Search Product    Toothpaste
