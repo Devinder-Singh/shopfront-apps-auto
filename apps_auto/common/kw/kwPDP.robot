@@ -185,6 +185,7 @@ Scroll To PDP Reviews
         Swipe Up    ${btnPDPScrollRoot}
         ${index}=    Evaluate    ${index} + 1
     END
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
 
 Click PDP Reviews Show More
     Wait Until Element Is Visible    ${btnPDPUserReviews}    30s
