@@ -46,3 +46,21 @@ Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
     Verify Reviews PDP Section Visible
     Verify Reviews Distribution Summary View
     [Teardown]    Tear Down
+
+Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
+    [Tags]    data    QA-7937
+    [Setup]    Start Application
+    Set SSL Verify    False
+    Click Home
+    Click Search Home
+    Search Product    Toothpaste
+    Click Product Multiple Reviews
+    Scroll To PDP Reviews Auto
+    Verify Reviews Card User Reviews Visible
+    Click PDP Reviews Show More
+    Verify Reviews PDP Section Visible
+    Click Element    ${btnReviewsSortButton}
+    Verify Reviews Sort Option Default
+    Click Reviews Sort Option Most Recent
+    Verify Reviews Sort Option Most Recent
+    [Teardown]    Tear Down

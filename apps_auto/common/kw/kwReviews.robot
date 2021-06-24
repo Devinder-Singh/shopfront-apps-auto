@@ -17,6 +17,20 @@ Verify Reviews Distribution Summary View
     Element Should Be Visible    ${btnReviewsSummaryOverallRatingCount}
     Element Should Be Visible    ${btnReviewsSummaryOverallStarRating}
 
+Verify Reviews Sort Option Default
+    ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostHelpful}
+    Run Keyword If    '${checkboxStatus}'=='false'    Fail
+
+Verify Reviews Sort Option Most Recent
+    Wait Until Element Is Visible    ${btnReviewsSortButton}    30s
+    Click Element    ${btnReviewsSortButton}
+    ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostRecent}
+    Run Keyword If    '${checkboxStatus}'=='false'    Fail
+
+
+Click Reviews Sort Option Most Recent
+    Click Element    ${btnReviewsSortOptionMostRecent}
+
 Click Review Submit
     Wait Until Element Is Visible    ${btnReviewSubmit}    30s
     Click Element    ${btnReviewSubmit}
