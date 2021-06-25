@@ -85,3 +85,21 @@ Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
     Click Element    ${btnReviewsFilterButton}
     Verify Reviews Filter Options All
     [Teardown]    Tear Down
+
+Apps > Reviews > Read Reviews > Review Screen > Filter Options - QA-7943
+    [Tags]    data    QA-7943
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Mens Shoes
+    Click Variant Product from API
+    Goto PDP Reviews Section
+    Click Element    ${btnReviewsFilterButton}
+    Verify Reviews Filter Options All
+    Select Reviews Filter Option Rating
+    Select Reviews Filter Option Colour
+    Select Reviews Filter Option Size
+    Click Reviews Filter Clear All Button
+    Apply Reviews Filter Options
+    Verify Reviews Filter Options Applied    0
+    [Teardown]    Tear Down

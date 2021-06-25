@@ -35,13 +35,20 @@ Verify Reviews Filter Options All
 Verify Reviews Filter Options Applied
     [Arguments]    ${numberOfFilters}
     Wait Until Element Is Visible    ${btnReviewsFilterButton}
-    Element Text Should Be    ${btnReviewsFilterButton}    FILTER (${numberOfFilters})
+    IF    ${numberOfFilters} == 0
+        Element Text Should Be    ${btnReviewsFilterButton}    FILTER
+    ELSE
+        Element Text Should Be    ${btnReviewsFilterButton}    FILTER (${numberOfFilters})
+    END
+
+Apply Reviews Filter Options
+    Wait Until Element Is Visible    ${btnReviewsFilterApplyButton}    30s
+    Click Element    ${btnReviewsFilterApplyButton}
 
 Apply Reviews Filter Option Ratings Filter
     Click Element    ${btnReviewsFilterButton}
-    Click Element    ${btnReviewsFilterOptionRatings}
-    Click Element    ${btnReviewsFilterOptionsRatingsFilter}
-    Click Element    ${btnReviewsFilterApplyButton}
+    Select Reviews Filter Option Rating
+    Apply Reviews Filter Options
 
 Click Reviews Sort Option Most Recent
     Click Element    ${btnReviewsSortOptionMostRecent}
@@ -64,3 +71,18 @@ Goto PDP Reviews Section
     Verify Reviews Card User Reviews Visible
     Click PDP Reviews Show More
     Verify Reviews PDP Section Visible
+
+Select Reviews Filter Option Rating
+    Click Element    ${btnReviewsFilterOptionRatings}
+    Click Element    ${btnReviewsFilterOptionsRatingsFilter}
+
+Select Reviews Filter Option Colour
+    Click Element    ${btnReviewsFilterOptionColour}
+    Click Element    ${btnReviewsFilterOptionsColourFilter}
+
+Select Reviews Filter Option Size
+    Click Element    ${btnReviewsFilterOptionSize}
+    Click Element    ${btnReviewsFilterOptionsSizeFilter}
+
+Click Reviews Filter Clear All Button
+    Click Element    ${btnReviewsFilterClearAllButton}

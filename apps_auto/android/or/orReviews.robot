@@ -18,3 +18,7 @@ ${btnReviewsFilterClearAllButton}    id=${APP_PACKAGE}:id/talMaterialToolbarClea
 ${btnReviewsFilterApplyButton}    id=${APP_PACKAGE}:id/productListingFilterApplyButton
 ${btnReviewsFilterOptionRatings}    xpath=//*[@text="Ratings"]
 ${btnReviewsFilterOptionsRatingsFilter}    id=${APP_PACKAGE}:id/productListingFilterSingleSelectRatingButton
+${btnReviewsFilterOptionColour}    xpath=//*[@text="Colour"]
+${btnReviewsFilterOptionsColourFilter}    id=${APP_PACKAGE}:id/productListingFilterSingleSelectButton
+${btnReviewsFilterOptionSize}    xpath=//*[@text="Size"]
+${btnReviewsFilterOptionsSizeFilter}    id=${APP_PACKAGE}:id/productListingFilterSingleSelectButton

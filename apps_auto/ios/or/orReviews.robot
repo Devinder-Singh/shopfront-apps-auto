@@ -18,3 +18,7 @@ ${btnReviewsFilterClearAllButton}    ${EMPTY}
 ${btnReviewsFilterApplyButton}    ${EMPTY}
 ${btnReviewsFilterOptionRatings}    ${EMPTY}
 ${btnReviewsFilterOptionsRatingsFilter}    ${EMPTY}
+${btnReviewsFilterOptionColour}    ${EMPTY}
+${btnReviewsFilterOptionsColourFilter}    ${EMPTY}
+${btnReviewsFilterOptionSize}    ${EMPTY}
+${btnReviewsFilterOptionsSizeFilter}    ${EMPTY}
