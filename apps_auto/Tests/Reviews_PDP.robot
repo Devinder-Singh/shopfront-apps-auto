@@ -105,7 +105,7 @@ Apps > Reviews > Read Reviews > Review Screen > Filter Options - QA-7943
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QA-7946
-    [Tags]    data    QA-7943
+    [Tags]    data    QA-7946
     [Setup]    Start Application
     Click Home
     Click Search Home
