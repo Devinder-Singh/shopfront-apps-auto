@@ -14,7 +14,7 @@ Apps > Reviews > Review Components > Read Reviews - QA-9166
     Search Product    Toothpaste
     Click Product No Reviews
     Verify Text On Screen Android    WRITE REVIEW    30s
-    Scroll To PDP Reviews
+    Scroll To PDP Reviews    ${btnPDPNoReviewsDescription}
     Element Should Be Visible    ${btnPDPNoReviewsDescription}
     Click Element    ${btnPDPReview}
     Verify PDP Screen Element    ${btnReviewSubmit}
@@ -58,7 +58,7 @@ Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     Click Search Home
     Search Product    Toothpaste
     Click Product Multiple Reviews
-    Scroll To PDP Reviews Auto
+    Scroll To PDP Reviews     ${btnPDPUserReviews}
     Verify Reviews Card User Reviews Visible
     Click PDP Reviews Show More
     Verify Reviews PDP Section Visible
@@ -75,11 +75,20 @@ Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
     Click Search Home
     Search Product    Toothpaste
     Click Product Multiple Reviews
-    Scroll To PDP Reviews Auto
+    Scroll To PDP Reviews    ${btnPDPUserReviews}
     Verify Reviews Card User Reviews Visible
     Click PDP Reviews Show More
     Verify Reviews PDP Section Visible
     Apply Reviews Filter Option Ratings Filter
     Verify Reviews Filter Options Applied    1
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Mens Shoes
+    Click Variant Product from API
+    Scroll To PDP Reviews    ${btnPDPUserReviews}
+    Verify Reviews Card User Reviews Visible
+    Click PDP Reviews Show More
+    Verify Reviews Filter Options All
     [Teardown]    Tear Down
-    

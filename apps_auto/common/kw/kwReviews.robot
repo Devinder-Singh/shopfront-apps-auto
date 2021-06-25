@@ -27,6 +27,11 @@ Verify Reviews Sort Option Most Recent
     ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostRecent}
     Run Keyword If    '${checkboxStatus}'=='false'    Fail
 
+Verify Reviews Filter Options All
+    Text Should Be Visible    Ratings
+    Text Should Be Visible    Colour
+    Text Should Be Visible    Size
+
 Verify Reviews Filter Options Applied
     [Arguments]    ${numberOfFilters}
     Wait Until Element Is Visible    ${btnReviewsFilterButton}

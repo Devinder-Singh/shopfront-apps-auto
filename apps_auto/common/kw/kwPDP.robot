@@ -172,11 +172,12 @@ Scroll To PDP Reviews Auto
     Click Element    ${btnPDPReviewBuyboxTitleButton}
 
 Scroll To PDP Reviews
+    [Arguments]    ${locatorReviewsCard}
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPReviewsSummary}
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${locatorReviewsCard}
 
         Run Keyword If
             ...    ${chkProdVisible}==True
