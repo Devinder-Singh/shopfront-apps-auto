@@ -34,12 +34,16 @@ Verify Reviews Filter Options All
 
 Verify Reviews Filter Options Applied
     [Arguments]    ${numberOfFilters}
-    Wait Until Element Is Visible    ${btnReviewsFilterButton}
+    Wait Until Element Is Visible    ${btnReviewsFilterButton}    30s
     IF    ${numberOfFilters} == 0
         Element Text Should Be    ${btnReviewsFilterButton}    FILTER
     ELSE
         Element Text Should Be    ${btnReviewsFilterButton}    FILTER (${numberOfFilters})
     END
+
+Verify Reviews Filter No Reviews Displayed
+    Wait Until Element Is Visible    ${btnReviewsFilterButton}    30s
+    Text Should Be Visible    There are no reviews matching your filters.
 
 Apply Reviews Filter Options
     Wait Until Element Is Visible    ${btnReviewsFilterApplyButton}    30s
