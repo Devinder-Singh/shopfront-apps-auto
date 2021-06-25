@@ -58,3 +58,9 @@ Enter Review Message
     [Arguments]    ${msg}
 
     Input Text    ${txtReviewMsg}    ${msg}
+
+Goto PDP Reviews Section
+    Scroll To PDP Reviews    ${btnPDPUserReviews}
+    Verify Reviews Card User Reviews Visible
+    Click PDP Reviews Show More
+    Verify Reviews PDP Section Visible

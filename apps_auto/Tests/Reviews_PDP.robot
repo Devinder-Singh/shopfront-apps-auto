@@ -52,16 +52,13 @@ Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
-    [Tags]    data    QA-7937
+    [Tags]    data    QA-7938
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    Toothpaste
     Click Product Multiple Reviews
-    Scroll To PDP Reviews     ${btnPDPUserReviews}
-    Verify Reviews Card User Reviews Visible
-    Click PDP Reviews Show More
-    Verify Reviews PDP Section Visible
+    Goto PDP Reviews Section
     Click Element    ${btnReviewsSortButton}
     Verify Reviews Sort Option Default
     Click Reviews Sort Option Most Recent
@@ -75,10 +72,7 @@ Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
     Click Search Home
     Search Product    Toothpaste
     Click Product Multiple Reviews
-    Scroll To PDP Reviews    ${btnPDPUserReviews}
-    Verify Reviews Card User Reviews Visible
-    Click PDP Reviews Show More
-    Verify Reviews PDP Section Visible
+    Goto PDP Reviews Section
     Apply Reviews Filter Option Ratings Filter
     Verify Reviews Filter Options Applied    1
     Close Application
@@ -87,8 +81,7 @@ Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
     Click Search Home
     Search Product    Mens Shoes
     Click Variant Product from API
-    Scroll To PDP Reviews    ${btnPDPUserReviews}
-    Verify Reviews Card User Reviews Visible
-    Click PDP Reviews Show More
+    Goto PDP Reviews Section
+    Click Element    ${btnReviewsFilterButton}
     Verify Reviews Filter Options All
     [Teardown]    Tear Down
