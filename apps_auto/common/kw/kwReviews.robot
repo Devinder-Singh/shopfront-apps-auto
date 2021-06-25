@@ -27,6 +27,16 @@ Verify Reviews Sort Option Most Recent
     ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostRecent}
     Run Keyword If    '${checkboxStatus}'=='false'    Fail
 
+Verify Reviews Filter Options Applied
+    [Arguments]    ${numberOfFilters}
+    Wait Until Element Is Visible    ${btnReviewsFilterButton}
+    Element Text Should Be    ${btnReviewsFilterButton}    FILTER (${numberOfFilters})
+
+Apply Reviews Filter Option Ratings Filter
+    Click Element    ${btnReviewsFilterButton}
+    Click Element    ${btnReviewsFilterOptionRatings}
+    Click Element    ${btnReviewsFilterOptionsRatingsFilter}
+    Click Element    ${btnReviewsFilterApplyButton}
 
 Click Reviews Sort Option Most Recent
     Click Element    ${btnReviewsSortOptionMostRecent}

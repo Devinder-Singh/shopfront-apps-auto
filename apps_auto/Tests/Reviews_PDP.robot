@@ -45,6 +45,10 @@ Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
     Click PDP Reviews Show More
     Verify Reviews PDP Section Visible
     Verify Reviews Distribution Summary View
+    ${txtRating}=    Get Text    ${btnReviewsSummaryOverallRatingCount}
+    Apply Reviews Filter Option Ratings Filter
+    ${txtRatingChanged}=    Get Text    ${btnReviewsSummaryOverallRatingCount}
+    Run Keyword If    '${txtRating}'!='${txtRatingChanged}'    Fail
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
@@ -63,3 +67,19 @@ Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     Click Reviews Sort Option Most Recent
     Verify Reviews Sort Option Most Recent
     [Teardown]    Tear Down
+
+Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
+    [Tags]    data    QA-7941
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Toothpaste
+    Click Product Multiple Reviews
+    Scroll To PDP Reviews Auto
+    Verify Reviews Card User Reviews Visible
+    Click PDP Reviews Show More
+    Verify Reviews PDP Section Visible
+    Apply Reviews Filter Option Ratings Filter
+    Verify Reviews Filter Options Applied    1
+    [Teardown]    Tear Down
+    

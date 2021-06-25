@@ -13,3 +13,8 @@ ${btnReviewsContainer}    id=${APP_PACKAGE}:id/reviews_container
 ${btnReviewsSortButton}    id=${APP_PACKAGE}:id/sort_button
 ${btnReviewsSortOptionMostHelpful}    xpath=//*[@text="Most Helpful"]
 ${btnReviewsSortOptionMostRecent}    xpath=//*[@text="Most Recent"]
+${btnReviewsFilterButton}    id=${APP_PACKAGE}:id/filter_button
+${btnReviewsFilterClearAllButton}    id=${APP_PACKAGE}:id/talMaterialToolbarClearAllButton
+${btnReviewsFilterApplyButton}    id=${APP_PACKAGE}:id/productListingFilterApplyButton
+${btnReviewsFilterOptionRatings}    xpath=//*[@text="Ratings"]
+${btnReviewsFilterOptionsRatingsFilter}    id=${APP_PACKAGE}:id/productListingFilterSingleSelectRatingButton

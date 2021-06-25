@@ -13,3 +13,8 @@ ${btnReviewsContainer}    ${EMPTY}
 ${btnReviewsSortButton}    ${EMPTY}
 ${btnReviewsSortOptionMostHelpful}    ${EMPTY}
 ${btnReviewsSortOptionMostRecent}    ${EMPTY}
+${btnReviewsFilterButton}    ${EMPTY}
+${btnReviewsFilterClearAllButton}    ${EMPTY}
+${btnReviewsFilterApplyButton}    ${EMPTY}
+${btnReviewsFilterOptionRatings}    ${EMPTY}
+${btnReviewsFilterOptionsRatingsFilter}    ${EMPTY}
