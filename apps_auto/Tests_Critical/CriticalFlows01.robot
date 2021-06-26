@@ -5,41 +5,20 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > PDP > You Might Also Like - QA-2012
-    [Tags]    QA-2012
-    [Setup]    Start Application
-    Click Menu
-    Click Menu Login
-    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
-    Click Home
-    Click Search Home
-    Search Product    airtim
-    Click First Product from API
-    Verify Text On Screen    eB20 - eB    30s
-    Click Airtime
-    Verify Text On Screen    eB50    30s
-    Tear Down
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Product from API
-    Verify eBucks On Screen
-    Tear Down
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    fridg
-    Click Product from API
-    Verify eBucks On Screen
-    Tear Down
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    johnny
-    Click Product from API
-    Verify eBucks On Screen
-    [Teardown]    Tear Down
+#Cart Update & Cart Notification - Heavy Good - QA-8421
+#    [Tags]    QA-8421
+#    [Setup]    Start Application
+#    Clear Environment
+#    Click Home
+#    Click Search Home
+#    Search Product    johnny
+#    Click Product from API
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout
+#    Click Select Age
+#    Click Verify Age
+#    [Teardown]    Tear Down
 
 #Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
 #    Install Application

@@ -63,14 +63,40 @@ Verify eBucks On Screen
 
 Verify Text On Screen Android
     [Arguments]    ${verifyText}    ${delay}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    ${delay}
+    ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    ${delay}
+
+    ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text,"${verifyText}")]
+    Run Keyword If    '${PLATFORM_NAME}'=='android' and ${chkProdVisible}==False    Wait Until Page Contains Element    ${checkElement}    1s
 
 Verify Text On Screen iOS
     [Arguments]    ${verifyText}    ${delay}
     ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    ${delay}
 
-    ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS ${verifyText}`]
+    ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${verifyText}'`]
     Run Keyword If    '${PLATFORM_NAME}'=='ios' and ${chkProdVisible}==False    Wait Until Page Contains Element    ${checkElement}    1s
+
+Verify Text Element On Screen iOS
+    [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
+
+    Wait Until Element Is Visible    ${verifyScreenElement}    30s
+    ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${verifyText}'`]
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    15
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${checkElement}    1s
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Run Keyword If
+            ...    '${PLATFORM_NAME}'=='android'
+            ...    Exit For Loop
+
+        Swipe Up    ${scrollElement}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${checkElement}    2s
 
 Verify Text On Screen Scroll
     [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
@@ -93,7 +119,7 @@ Verify Text On Screen Scroll
 Verify Text On Screen Scroll Android
     [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
 
-    Wait Until Element Is Visible    ${verifyScreenElement}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${verifyScreenElement}    30s
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    15
@@ -104,13 +130,35 @@ Verify Text On Screen Scroll Android
             ...    Exit For Loop
 
         Run Keyword If
-            ...    ${PLATFORM_NAME}=='ios'
+            ...    '${PLATFORM_NAME}'=='ios'
             ...    Exit For Loop
 
         Swipe Up    ${scrollElement}
         ${index}=    Evaluate    ${index} + 1
     END
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    1s
+
+Verify Text On Screen Scroll iOS
+    [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${verifyScreenElement}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    15
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Run Keyword If
+            ...    '${PLATFORM_NAME}'=='android'
+            ...    Exit For Loop
+
+        Swipe Up    ${scrollElement}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Page Contains    ${verifyText}    1s
 
 Verify Element On Screen Scroll
     [Arguments]    ${verifyElement}    ${delay}    ${scrollElement}    ${verifyScreenElement}
@@ -151,6 +199,28 @@ Verify Element On Screen Scroll Android
         ${index}=    Evaluate    ${index} + 1
     END
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains Element    ${verifyElement}    1s
+
+Verify Element On Screen Scroll iOS
+    [Arguments]    ${verifyElement}    ${delay}    ${scrollElement}    ${verifyScreenElement}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${verifyScreenElement}    ${delay}
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    15
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Run Keyword If
+            ...    '${PLATFORM_NAME}'=='android'
+            ...    Exit For Loop
+
+        Swipe Up    ${scrollElement}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Page Contains Element    ${verifyElement}    1s
 
 Verify Product Review iOS
 

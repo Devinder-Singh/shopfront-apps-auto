@@ -23,3 +23,15 @@ ${btnPDPOtherOfferAddToCart}      id=${APP_PACKAGE}:id/pdp_widget_other_offers_i
 
 ${lblPDPShopTheDeal}      xpath=//*[@text="SHOP THE DEAL"]
 ${lnkPDPShowMore}      xpath=//*[@text="SHOW MORE"]
+${lnkPDPCOD}    xpath=//*[contains(@text, "Eligible for Cash on Delivery")]
+
+${txtPDPJHB}      xpath=//*[@text="JHB"]
+${txtPDPCPT}      xpath=//*[@text="CPT"]
+${txtPDPWarehouseOK}      xpath=//*[@text="OK"]
+
+${btnPDPListPrice}      id=${APP_PACKAGE}:id/pdp_widget_buy_box_price_price_previous
+${btnPDPListPriceCancel}      xpath=//*[@text="CANCEL"]
+${lnkPDPShopTheDealTCs}    xpath=//*[contains(@text, "Bundle Deals expire when stock runs out")]
+
+${lnkPDPWhatIsThis}    xpath=//*[contains(@text, "WHAT IS THIS")]
+${lnkPDPSelectOption}    xpath=//*[@text="SELECT AN OPTION"]

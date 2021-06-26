@@ -24,6 +24,41 @@ Click Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}
 
+Click PDP Shop The Deal TCs
+    Wait Until Element Is Visible    ${lnkPDPShopTheDealTCs}    30s
+    Click Element    ${lnkPDPShopTheDealTCs}
+
+Click PDP List Price
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+    Click Element    ${btnPDPListPrice}
+
+Click PDP List Price Cancel
+    Wait Until Element Is Visible    ${btnPDPListPriceCancel}    30s
+    Click Element    ${btnPDPListPriceCancel}
+
+Click PDP JHB
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtPDPJHB}
+    Run Keyword If    ${chkProdVisible}==False    Swipe Up    ${windowScroll}
+    Click Element    ${txtPDPJHB}
+
+Click PDP CPT
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtPDPCPT}
+    Run Keyword If    ${chkProdVisible}==False    Swipe Up    ${windowScroll}
+    Click Element    ${txtPDPCPT}
+
+Click PDP Warehouse OK
+    Wait Until Element Is Visible    ${txtPDPWarehouseOK}    3s
+    Click Element    ${txtPDPWarehouseOK}
+    Sleep    2s
+
+Click Eligible for Cash on Delivery
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+    Swipe Up    ${windowScroll}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${lnkPDPCOD}    3s
+    Click Element    ${lnkPDPCOD}
+
 Click PDP Description Show More
     Wait Until Element Is Visible    ${btnAddToCart}    30s
 
@@ -39,6 +74,29 @@ Click PDP Description Show More
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${lnkPDPShowMore}
+
+Click PDP What Is This
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lnkPDPWhatIsThis}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${lnkPDPWhatIsThis}
+
+Click PDP What Is This No Scroll Android
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${lnkPDPWhatIsThis}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${lnkPDPWhatIsThis}
+
+Click PDP What Is This iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click PDP What Is This
 
 Click Seller Name
     Wait Until Element Is Visible    ${btnAddToCart}    30s
@@ -106,6 +164,16 @@ Click Add Bundle To Cart
     END
     Click Element    ${btnPDPAddBundleToCart}
 
+Click Add Bundle To Cart No Scroll Android
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnPDPAddBundleToCart}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPAddBundleToCart}
+
+Click Add Bundle To Cart iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Add Bundle To Cart
+
+Click Other Offers Add To Cart iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Other Offers Add To Cart
+
 Click Other Offers Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
 
@@ -121,6 +189,14 @@ Click Other Offers Add To Cart
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${btnPDPOtherOfferAddToCart}
+
+Click Other Offers Add To Cart No Scroll Android
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnPDPOtherOfferAddToCart}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPOtherOfferAddToCart}
+
+Click Other Offers Add To Cart No Scroll iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnPDPOtherOfferAddToCart}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPOtherOfferAddToCart}
 
 Click Shop The Deal
     Wait Until Element Is Visible    ${btnAddToCart}    30s
@@ -148,6 +224,10 @@ Click Blue Colour Option
 Click Go To Cart
     Wait Until Element Is Visible    ${btnGoToCart}    30s
     Click Element    ${btnGoToCart}
+
+Click Go To Cart iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Go To Cart
+    Sleep    2s
 
 Click PDP Write Review
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
@@ -248,6 +328,27 @@ Click Product Variant Colour From API
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
+Click Product Variant From Name
+    [Arguments]    ${title}
+
+    ${lblProdVariant}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${title}']    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label=='${title}'`]
+
+    Wait Until Element Is Visible    ${lnkPDPSelectOption}    30s
+    Swipe Up    ${windowScroll}
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblProdVariant}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${lblProdVariant}
+
 Click Product Variant Colour Size From API
 
     ${txtProduct}=    Get Product Variant Colour Size
@@ -329,3 +430,22 @@ Click Product Disabled Variant Colour Size From API
     END
     Click Element    ${txtProduct}
     Sleep    2s
+
+Verify Product YAML from API
+    Get Product YAML Detail
+
+    Verify Text On Screen Android    You Might Also Like    30s
+    Verify Text Element On Screen iOS    You Might Also Like    30s    ${windowScroll}    ${btnAddToCart}
+
+    ${txtProductRating}=    Convert To String    ${query_result_YMALProductRating}
+
+#    Verify Text On Screen    ${txtProductRating}    30s
+
+    ${txtProductPrice}=    Get Substring    ${query_result_YMALProductPrice}    2
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    ${txtProductPrice}    30s
+    Swipe Down    ${windowScroll}
+
+    Swipe Up    ${windowScroll}
+    Click YMAL Product From Title    ${query_result_YMALProductTitle}
+    Verify Element On Screen    ${btnAddToCart}    30s

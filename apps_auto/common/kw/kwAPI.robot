@@ -103,12 +103,15 @@ Get Product to Add To Cart
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${results_title}[${index}]'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
         Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
         Set Global Variable    ${query_result_CartProductPrice}    ${results_price}[${index}]
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
+
+    ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+    Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
 
     [return]    ${searchResult}
 
@@ -260,6 +263,22 @@ Get Price Range Product to Add To Cart
     Should Be True    ${results_Price_Upper}==${result_Price}
 
     [return]    ${searchResult}
+
+Get Product YAML Detail
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}/frequently-bought-together?platform=desktop&allow_variant=true
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Title}=    Output    $.items[0].core.title
+    ${results_StarRating}=    Output    $.items[0].core.star_rating
+    ${results_Price}=    Output    $.items[0].pretty_price
+
+    Set Global Variable    ${query_result_YMALProductTitle}    ${results_Title}
+    Set Global Variable    ${query_result_YMALProductRating}    ${results_StarRating}
+    Set Global Variable    ${query_result_YMALProductPrice}    ${results_Price}
+
+    [return]
 
 Get Product Variant
 

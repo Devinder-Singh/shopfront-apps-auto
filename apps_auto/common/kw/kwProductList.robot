@@ -218,7 +218,7 @@ Click Product Department
 Click Product From Title
     [Arguments]    ${title}
 
-    ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
+    ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${title}"`]
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
 
@@ -230,9 +230,18 @@ Click Product From Title
             ...    ${chkProdVisible}==True
             ...    Exit For Loop
 
-        Swipe Up    ${btnProductListView}
+        Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
+    Click Element    ${lblProdTitle}
+
+Click YMAL Product From Title
+    [Arguments]    ${title}
+
+    ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
+
+    Verify Text On Screen    You Might Also Like    30s
+
     Click Element    ${lblProdTitle}
 
 Click Product Text

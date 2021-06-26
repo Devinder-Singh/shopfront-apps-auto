@@ -7,7 +7,7 @@ ${btnMenuRegister}    chain=**/XCUIElementTypeButton[`label == "Register"`]
 ${btnMenuDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Daily Deals"`][1]
 ${mnuShopByDepartment}      chain=**/XCUIElementTypeStaticText[`label == "Shop by Department"`]
 ${mnuSportFitness}      chain=**/XCUIElementTypeStaticText[`label == "Auto"`]
-${mnuMyAccount}      chain=**/XCUIElementTypeStaticText[`label == "My Account"`]
+${mnuMyAccount}      chain=**/XCUIElementTypeButton[`label == "My Account"`]
 ${btnMenuAddressBook}      chain=**/XCUIElementTypeStaticText[`label == "Address Book"`]
 ${btnMenuPersonalDetail}      chain=**/XCUIElementTypeStaticText[`label == "Personal Details"`]
 

@@ -110,6 +110,7 @@ Click Menu New To Electronics
 Click Menu My Account
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccount}
+    Sleep    2s
 
 Click Menu My Account Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}

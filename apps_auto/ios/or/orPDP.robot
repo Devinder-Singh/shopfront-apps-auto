@@ -22,3 +22,16 @@ ${btnPDPOtherOfferAddToCart}      chain=**/XCUIElementTypeButton[`label == "icon
 ${lblPDPShopTheDeal}      chain=**/XCUIElementTypeButton[`label == "Shop the Deal"`]
 
 ${lnkPDPShowMore}      chain=**/XCUIElementTypeButton[`label == "Show More Description"`]
+
+${lnkPDPCOD}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "Eligible for Cash on Delivery"`]
+
+${txtPDPJHB}      chain=**/XCUIElementTypeStaticText[`label == "JHB"`]
+${txtPDPCPT}      chain=**/XCUIElementTypeStaticText[`label == "CPT"`]
+${txtPDPWarehouseOK}      chain=**/XCUIElementTypeButton[`label == "Close"`]
+
+${btnPDPListPrice}      chain=**/XCUIElementTypeButton[`label == "icon info"`][1]
+${btnPDPListPriceCancel}      chain=**/XCUIElementTypeButton[`label == "Close"`]
+${lnkPDPShopTheDealTCs}    chain=**/XCUIElementTypeButton[`label CONTAINS "Bundle Deals expire when stock runs out"`]
+
+${lnkPDPWhatIsThis}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "What is this"`]
+${lnkPDPSelectOption}    chain=**/XCUIElementTypeButton[`label == "Select an option"`]
