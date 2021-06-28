@@ -59,6 +59,10 @@ Verify Reviews Upvote Success Message
     ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsUpvoteButton}
     Run Keyword If    '${checkboxStatus}'=='false'    Verify Reviews Upvote Removed    ELSE    Verify Reviews Upvote Added
 
+Verify Reviews Report Review Success Message
+    Verify Text On Screen Android    Thank you for reporting    30s
+    Element Should Be Visible    ${btnReviewsReportReviewText}
+
 Apply Reviews Filter Option Ratings Filter
     Click Element    ${btnReviewsFilterButton}
     Select Reviews Filter Option Rating
@@ -77,6 +81,15 @@ Click Review Rating
 
 Click Review Upvote Button
     Click Element    ${btnReviewsUpvoteButton}
+
+Click Review Report Review Menu Button
+    Click Element    ${btnReviewsMenuButton}
+    Wait Until Element Is Visible    ${btnReviewsReportReviewButton}    30s
+    Click Element    ${btnReviewsReportReviewButton}
+
+Click Review Report Review Dialog Button
+    Wait Until Element Is Visible    ${btnReviewsReportReviewDialogButton}    30s
+    Click Element    ${btnReviewsReportReviewDialogButton}
 
 Enter Review Message
     [Arguments]    ${msg}

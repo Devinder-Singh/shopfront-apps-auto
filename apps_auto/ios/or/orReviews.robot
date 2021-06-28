@@ -23,3 +23,7 @@ ${btnReviewsFilterOptionsColourFilter}    ${EMPTY}
 ${btnReviewsFilterOptionSize}    ${EMPTY}
 ${btnReviewsFilterOptionsSizeFilter}    ${EMPTY}
 ${btnReviewsUpvoteButton}    ${EMPTY}
+${btnReviewsMenuButton}    ${EMPTY}
+${btnReviewsReportReviewButton}    ${EMPTY}
+${btnReviewsReportReviewText}    ${EMPTY}
+${btnReviewsReportReviewDialogButton}    ${EMPTY}

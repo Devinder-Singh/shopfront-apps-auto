@@ -23,3 +23,7 @@ ${btnReviewsFilterOptionsColourFilter}    id=${APP_PACKAGE}:id/productListingFil
 ${btnReviewsFilterOptionSize}    xpath=//*[@text="Size"]
 ${btnReviewsFilterOptionsSizeFilter}    id=${APP_PACKAGE}:id/productListingFilterSingleSelectButton
 ${btnReviewsUpvoteButton}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'reviews_container')]//android.widget.Button[contains(@resource-id, 'review_up_vote_button')]
+${btnReviewsMenuButton}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'reviews_container')]//android.widget.ImageView[contains(@resource-id, 'context_menu_button')]
+${btnReviewsReportReviewButton}    id=${APP_PACKAGE}:id/title
+${btnReviewsReportReviewText}    id=${APP_PACKAGE}:id/review_reported_success_message
+${btnReviewsReportReviewDialogButton}    id=android:id/button1

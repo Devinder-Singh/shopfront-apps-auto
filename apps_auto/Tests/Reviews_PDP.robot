@@ -134,3 +134,17 @@ Apps > Reviews > Read Reviews > Upvote - QA-7950
     Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
     Verify Reviews Upvote Success Message
     [Teardown]    Tear Down
+
+Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
+    [Tags]    data    QA-9168
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Toothpaste
+    Click Product Multiple Reviews
+    Goto PDP Reviews Section
+    Click Review Report Review Menu Button
+    Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
+    Click Review Report Review Dialog Button
+    Verify Reviews Report Review Success Message
+    [Teardown]    Tear Down
