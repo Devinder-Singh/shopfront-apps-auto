@@ -22,3 +22,4 @@ ${btnReviewsFilterOptionColour}    xpath=//*[@text="Colour"]
 ${btnReviewsFilterOptionsColourFilter}    id=${APP_PACKAGE}:id/productListingFilterSingleSelectButton
 ${btnReviewsFilterOptionSize}    xpath=//*[@text="Size"]
 ${btnReviewsFilterOptionsSizeFilter}    id=${APP_PACKAGE}:id/productListingFilterSingleSelectButton
+${btnReviewsUpvoteButton}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'reviews_container')]//android.widget.Button[contains(@resource-id, 'review_up_vote_button')]

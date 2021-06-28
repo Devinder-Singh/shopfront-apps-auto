@@ -121,3 +121,16 @@ Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QA-7946
     Verify Reviews Filter Options Applied    3
     Verify Reviews Filter No Reviews Displayed
     [Teardown]    Tear Down
+
+Apps > Reviews > Read Reviews > Upvote - QA-7950
+    [Tags]    data    QA-7950
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Toothpaste
+    Click Product Multiple Reviews
+    Goto PDP Reviews Section
+    Click Review Upvote Button
+    Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
+    Verify Reviews Upvote Success Message
+    [Teardown]    Tear Down

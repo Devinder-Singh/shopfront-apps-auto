@@ -49,6 +49,16 @@ Apply Reviews Filter Options
     Wait Until Element Is Visible    ${btnReviewsFilterApplyButton}    30s
     Click Element    ${btnReviewsFilterApplyButton}
 
+Verify Reviews Upvote Added
+    Verify Text On Screen Android    Thank you for your feedback    30s
+
+Verify Reviews Upvote Removed
+    Verify Text On Screen Android    Vote removed    30s    
+
+Verify Reviews Upvote Success Message
+    ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsUpvoteButton}
+    Run Keyword If    '${checkboxStatus}'=='false'    Verify Reviews Upvote Removed    ELSE    Verify Reviews Upvote Added
+
 Apply Reviews Filter Option Ratings Filter
     Click Element    ${btnReviewsFilterButton}
     Select Reviews Filter Option Rating
@@ -64,6 +74,9 @@ Click Review Submit
 Click Review Rating
     Wait Until Element Is Visible    ${btnReviewStarRating}    30s
     Click Element    ${btnReviewStarRating}
+
+Click Review Upvote Button
+    Click Element    ${btnReviewsUpvoteButton}
 
 Enter Review Message
     [Arguments]    ${msg}

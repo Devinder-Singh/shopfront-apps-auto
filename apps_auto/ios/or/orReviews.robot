@@ -22,3 +22,4 @@ ${btnReviewsFilterOptionColour}    ${EMPTY}
 ${btnReviewsFilterOptionsColourFilter}    ${EMPTY}
 ${btnReviewsFilterOptionSize}    ${EMPTY}
 ${btnReviewsFilterOptionsSizeFilter}    ${EMPTY}
+${btnReviewsUpvoteButton}    ${EMPTY}
