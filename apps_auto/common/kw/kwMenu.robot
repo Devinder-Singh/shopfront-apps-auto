@@ -11,6 +11,8 @@ Click Menu
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHome}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHome}
 
+    Sleep    2s
+
 Click Menu iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
@@ -109,7 +111,10 @@ Click Menu New To Electronics
 
 Click Menu My Account
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccount}
+
+    ${chkTextSuccess}=    Run Keyword And Return Status    Click Element    ${mnuMyAccount}
+    Run Keyword If    ${chkTextSuccess}==False and '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccountText}
+
     Sleep    2s
 
 Click Menu My Account Android
@@ -181,4 +186,4 @@ Verify Menu Items
     Wait Until Element Is Visible    ${btnMenuDailyDeals}    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Account
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuShopByDepartment}    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuMyAccount}    1s
+    Verify Text On Screen iOS    My Account    1s

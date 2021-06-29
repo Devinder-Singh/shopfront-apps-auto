@@ -24,6 +24,10 @@ Click Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}
 
+Click Show All Colours
+    Wait Until Element Is Visible    ${btnPDPShowAllColours}    30s
+    Click Element    ${btnPDPShowAllColours}
+
 Click PDP Shop The Deal TCs
     Wait Until Element Is Visible    ${lnkPDPShopTheDealTCs}    30s
     Click Element    ${lnkPDPShopTheDealTCs}
@@ -90,6 +94,28 @@ Click PDP What Is This
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${lnkPDPWhatIsThis}
+
+Click PDP Show All Offers
+    Wait Until Element Is Visible    ${btnAddToCart}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPShowAllOffers}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${btnPDPShowAllOffers}
+    Sleep    2s
+
+Click PDP Show All Offers No Scroll
+    Wait Until Element Is Visible    ${btnPDPShowAllOffers}    5s
+    Click Element    ${btnPDPShowAllOffers}
+    Sleep    2s
 
 Click PDP What Is This No Scroll Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${lnkPDPWhatIsThis}    30s
@@ -190,6 +216,9 @@ Click Other Offers Add To Cart
     END
     Click Element    ${btnPDPOtherOfferAddToCart}
 
+Click Other Offer Sellers Add To Cart
+    Click Element    ${btnPDPShowAllOffersCart}
+
 Click Other Offers Add To Cart No Scroll Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnPDPOtherOfferAddToCart}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPOtherOfferAddToCart}
@@ -223,6 +252,7 @@ Click Blue Colour Option
 
 Click Go To Cart
     Wait Until Element Is Visible    ${btnGoToCart}    30s
+    Sleep    2s
     Click Element    ${btnGoToCart}
 
 Click Go To Cart iOS
@@ -327,6 +357,18 @@ Click Product Variant Colour From API
     Sleep    2s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
+
+Verify Product Variant Colour From API
+
+    @{txtProductColours}=    Get Product Variant All Colours
+
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{txtProductColours}
+        Verify Text On Screen Android    ${result}    5s
+        Verify Text On Screen iOS    ${result}    5s
+    END
 
 Click Product Variant From Name
     [Arguments]    ${title}

@@ -453,3 +453,63 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QA-1985
     Verify Text On Screen Android    You asked for 2 but we only have 1 available    30s
     Verify Text On Screen iOS    You asked for 2 but we only have 1 available    30s
     [Teardown]    Tear Down
+
+Apps > PDP >Bundle Deals > Multi-buy Bundle - QA-1978
+    [Tags]    data    QA-1978
+    [Setup]    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    Maybelline Fit Me Matte Poreles
+    Click Product From Title    Maybelline Fit Me Matte Poreless 356 Warm Coconut
+    Verify Text On Screen Scroll Android    Bundle Deals expire when stock runs out    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll iOS    Bundle Deals expire when stock runs out    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Android    Mix and match any    1s
+    Verify Text On Screen Android    eligible products for    1s
+    Verify Text On Screen iOS    Mix and match any    1s
+    Verify Text On Screen iOS    eligible products for    1s
+    Click Shop The Deal
+    Click Back Android
+    Click Back iOS    Maybelline Fit Me Matte Poreless 356 Warm Coconut
+    Click Shop The Deal
+    Click Product From Title    Teddy Finger Paint - 4 x 100ml
+    [Teardown]    Tear Down
+
+Apps > PDP > Other Offers > More than one offer - QA-5166
+    [Tags]    data    QA-5166
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Samsung Galaxy A02
+    Click Product From Title    Samsung Galaxy A02 32GB Dual Sim - Blue
+    Click PDP Show All Offers
+    Verify Product Other Offers from API    Samsung Galaxy A02 32GB Dual Sim - Blue
+    Click Back Android
+    Click Back iOS    icon cross
+    Click PDP Show All Offers No Scroll
+    Click Other Offer Sellers Add To Cart
+    Verify Text On Screen Android    Item Added To Cart    30s
+    Verify Text On Screen iOS    Item added to Cart    30s
+    Verify Element On Screen    ${btnGoToCart}    5s
+    [Teardown]    Tear Down
+
+Apps > PDP > Variants > Colour - QA-1977
+    [Tags]    data    QA-1977
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    shirts for me
+    Click Variant Product from API
+    Verify Text On Screen Android    Select a colour    30s
+    Verify Text On Screen iOS    Select a colour    30s
+    Swipe Up    ${windowScroll}
+    Verify Product Variant Colour From API
+    Click Product Variant Colour From API
+    Click Show All Colours
+    Click Back Android
+    Click Back iOS    icon cross
+    Click Add To Cart
+    Verify Text On Screen Android    Item Added To Cart    30s
+    Verify Text On Screen iOS    Item added to Cart    30s
+    [Teardown]    Tear Down
