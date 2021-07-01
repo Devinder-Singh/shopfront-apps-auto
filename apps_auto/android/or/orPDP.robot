@@ -35,3 +35,5 @@ ${lnkPDPShopTheDealTCs}    xpath=//*[contains(@text, "Bundle Deals expire when s
 
 ${lnkPDPWhatIsThis}    xpath=//*[contains(@text, "WHAT IS THIS")]
 ${lnkPDPSelectOption}    xpath=//*[@text="SELECT AN OPTION"]
+
+${btnVariantShowMore}    id=fi.android.takealot.debug:id/pdp_widget_variants_selector_show_all
