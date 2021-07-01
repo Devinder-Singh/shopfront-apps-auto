@@ -2,7 +2,6 @@
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
-
 *** Test Cases ***
 Apps > Register & Login - QA-5329
     [Tags]    QA-5329
@@ -102,8 +101,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    krone brut mc
-    Click Product From Title    Krone - Borealis Cuvee Brut MCC - 750ml
+    Search Product    Ring - Video Doorbel
+    Click Product From Title    Ring - Video Doorbell 3 Faceplate - Silver Metal
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
@@ -114,8 +113,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    krone brut mc
-    Click Product From Title    Krone - Borealis Cuvee Brut MCC - 750ml
+    Search Product    Ring - Video Doorbel
+    Click Product From Title    Ring - Video Doorbell 3 Faceplate - Silver Metal
     Click Add Bundle To Cart
     Click Go To Cart
     Wait for Checkout
@@ -623,9 +622,12 @@ Apps > Wishlist (Android) - QA-5367
     Clear Environment
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen    Trending on Takealot    30s
-    Verify Text On Screen    Wish List    1s
-    Verify Text On Screen    DEFAULT    1s
+    Verify Text On Screen Android    Trending on Takealot    30s
+    Verify Text On Screen Android    Wish List    1s
+    Verify Text On Screen Android    DEFAULT    1s
+    Verify Text On Screen iOS    Trending on Takealot    30s
+    Verify Text On Screen iOS    Wish List    1s
+    Verify Text On Screen iOS    DEFAULT    1s
     Click Create Wishlist
     [Teardown]    Tear Down
 
@@ -662,8 +664,8 @@ Apps > Wishlist (Android) > Delete List - QA-8906
 
 Apps > Wishlist (Android) > Bottom Navigation - QA-8907
     [Tags]    android    QA-8907
-    [Setup]    Start Application
     Clear Environment
+    [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -739,7 +741,7 @@ Apps > Cart (iOS) - QA-8908
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
     Verify Text On Screen Android    Item(s) moved to list    30s
-    Verify Text On Screen iOS    Item added to Wish List    30s
+#    Verify Text On Screen iOS    Item added to Wish List    30s
     [Teardown]    Tear Down
 
 Apps > Order Tracking - QA-5274
@@ -782,9 +784,9 @@ Apps > Order Tracking - QA-5274
     Swipe Up    ${windowScroll}
     Verify Text On Screen    Test    1s
     Verify Text On Screen    12 Ridge Way    1s
-    Verify Text On Screen    Pinelands    1s
+    Verify Text On Screen    Green Point    1s
     Verify Text On Screen    Cape Town    1s
-    Verify Text On Screen    7405    1s
+    Verify Text On Screen    8005    1s
     Swipe Down    ${windowScroll}
     Click Order Pay Now
     Click Change Payment Method Only
@@ -850,7 +852,7 @@ Apps > My Account Verifications - QA-5356
     Click Go To Cart
     Click Checkout
     Click Delivery
-    Verify Text On Screen    12 Ridge Way, Pinelands, Cape Town, Western Cape, 7405    30s
+    Verify Text On Screen    12 Ridge Way, Green Point, Cape Town, Western Cape, 8005    30s
     [Teardown]    Tear Down
 
 Apps > My Account Verifications - QA-9567
@@ -992,9 +994,9 @@ Apps > Order Tracking 05 - QA-9619
     Swipe Up    ${windowScroll}
     Verify Text On Screen    Test    1s
     Verify Text On Screen    12 Ridge Way    1s
-    Verify Text On Screen    Pinelands    1s
+    Verify Text On Screen    Green Point    1s
     Verify Text On Screen    Cape Town    1s
-    Verify Text On Screen    7405    1s
+    Verify Text On Screen    8005    1s
     Swipe Down    ${windowScroll}
     Click Order Pay Now
     Click Change Payment Method Only
@@ -1034,7 +1036,7 @@ Apps > Cart (Android) 02 - QA-9599
     Verify Text On Screen Android    Your Shopping Cart is Empty    5s
     Verify Text On Screen Android    Trending on Takealot    5s
     Verify Element On Screen Android    ${btnCartContinueShopping}    1s
-    Verify Text On Screen iOS    Item added to Wish List    30s
+#    Verify Text On Screen iOS    Item added to Wish List    30s
     Add To Cart Trending First Item
     Click Checkout
     Tear Down
@@ -1086,7 +1088,8 @@ Apps > Cart (Android) 04 - QA-9600 / QA-9605
     Click Delivery
     Click Address
     Click Free Delivery
-    Verify Text On Screen    Delivery via email to    30s
+    Verify Text On Screen Android    Delivery via email to    30s
+    Verify Text On Screen iOS    Delivery via email to    30s
     [Teardown]    Tear Down
 
 Cart Update & Cart Notification - TV - QA-8420

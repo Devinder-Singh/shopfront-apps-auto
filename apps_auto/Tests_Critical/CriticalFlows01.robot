@@ -5,6 +5,25 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
+Apps > PDP > Variants > Size - QA-9592
+    [Tags]    data    QA-9592
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Samsung Galaxy A02
+    Click Product From Title    Samsung Galaxy A02 32GB Dual Sim - Blue
+    Click PDP Show All Offers
+    Verify Product Other Offers from API    Samsung Galaxy A02 32GB Dual Sim - Blue
+    Click Back Android
+    Click Back iOS    icon cross
+    Click PDP Show All Offers No Scroll
+    Click Other Offer Sellers Add To Cart
+    Verify Text On Screen Android    Item Added To Cart    30s
+    Verify Text On Screen iOS    Item added to Cart    30s
+    Verify Element On Screen    ${btnGoToCart}    5s
+    [Teardown]    Tear Down
+
 #Cart Update & Cart Notification - Heavy Good - QA-8421
 #    [Tags]    QA-8421
 #    [Setup]    Start Application

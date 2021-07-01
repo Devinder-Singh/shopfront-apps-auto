@@ -61,6 +61,28 @@ Verify eBucks On Screen
     Run Keyword If    ${cnt}==5    Verify Text On Screen Android    eB${resultFinal}    30s
     Run Keyword If    ${cnt}==5    Verify Text On Screen iOS    eB${resultFinal}    30s
 
+Verify Price On Screen
+    [Arguments]    ${title}    ${delay}
+
+    ${result}=    Convert To String    ${title}
+    ${cnt}=    Get length    ${result}
+
+    ${resultFinal}=    Set Variable    ${result}
+    Run Keyword If    ${cnt}<4    Verify Text On Screen Android    ${resultFinal}    ${delay}
+    Run Keyword If    ${cnt}<4    Verify Text On Screen iOS    ${resultFinal}    ${delay}
+
+    ${resultLeft}=    Run Keyword If    ${cnt}==4    Get Substring    ${result}    0    1
+    ${resultRight}=    Run Keyword If    ${cnt}==4    Get Substring    ${result}    1    4
+    ${resultFinal}=    Set Variable If    '${resultLeft}'!='None'    ${resultLeft},${resultRight}
+    Run Keyword If    ${cnt}==4    Verify Text On Screen Android    ${resultFinal}    ${delay}
+    Run Keyword If    ${cnt}==4    Verify Text On Screen iOS    ${resultFinal}    ${delay}
+
+    ${resultLeft}=    Run Keyword If    ${cnt}==5    Get Substring    ${result}    0    2
+    ${resultRight}=    Run Keyword If    ${cnt}==5    Get Substring    ${result}    2    5
+    ${resultFinal}=    Set Variable If    '${resultLeft}'!='None'    ${resultLeft},${resultRight}
+    Run Keyword If    ${cnt}==5    Verify Text On Screen Android    ${resultFinal}    ${delay}
+    Run Keyword If    ${cnt}==5    Verify Text On Screen iOS    ${resultFinal}    ${delay}
+
 Verify Text On Screen Android
     [Arguments]    ${verifyText}    ${delay}
     ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    ${delay}

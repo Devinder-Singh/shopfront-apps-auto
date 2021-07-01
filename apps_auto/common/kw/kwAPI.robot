@@ -115,6 +115,58 @@ Get Product to Add To Cart
 
     [return]    ${searchResult}
 
+Get Product PLID from Title
+    [Arguments]    ${title}
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.core.title
+    @{results_PLID}=    Output    $.sections.products.results[*].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+
+        Exit For Loop If    '${result}'=='${title}'
+
+        ${results_variant}=    Set Variable    zero
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    Should Be True    '${results_variant}'!='zero'
+    Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+
+    [return]    ${results_variant}
+
+Get Product Display Names from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_DisplayNames}=    Output    $.other_offers.conditions[0].items[*].seller.display_name
+
+    [return]    @{results_DisplayNames}
+
+Get Product Lead Times from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_LeadTimes}=    Output    $.other_offers.conditions[0].items[*].event_data.documents.product.lead_time
+
+    [return]    @{results_LeadTimes}
+
+Get Product Prices from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_Prices}=    Output    $.other_offers.conditions[0].items[*].event_data.documents.product.purchase_price
+
+    [return]    @{results_Prices}
+
 Get Scroll Product to Add To Cart
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
@@ -317,6 +369,16 @@ Get Product Variant Colour
     Set Global Variable    ${query_result_CartProductVariant}    ${results_variant}[${index}]
 
     [return]    ${searchResult}
+
+Get Product Variant All Colours
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_variant}=    Output    $.variants.selectors[0].options[*].link_data.fields.colour_variant
+
+    [return]    @{results_variant}
 
 Get Product Variant Colour Size
 

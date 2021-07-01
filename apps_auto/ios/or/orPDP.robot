@@ -35,4 +35,10 @@ ${lnkPDPShopTheDealTCs}    chain=**/XCUIElementTypeButton[`label CONTAINS "Bundl
 
 ${lnkPDPWhatIsThis}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "What is this"`]
 ${lnkPDPSelectOption}    chain=**/XCUIElementTypeButton[`label == "Select an option"`]
+
 ${btnVariantShowMore}    chain=**/XCUIElementTypeButton[`label == "Show All"`]
+
+${btnPDPShowAllOffers}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show All Offers"`]
+${btnPDPShowAllOffersCart}    chain=**/XCUIElementTypeButton[`label == "icon cartButton"`][1]
+
+${btnPDPShowAllColours}    chain=**/XCUIElementTypeButton[`label == "Show All"`]

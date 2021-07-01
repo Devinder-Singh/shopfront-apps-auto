@@ -38,6 +38,33 @@ Click Product from API
     END
     Click Element    ${txtProduct}
 
+Verify Product Other Offers from API
+    [Arguments]    ${title}
+
+    ${txtProduct}=    Get Product PLID from Title    ${title}
+
+    @{txtProductNames}=    Get Product Display Names from PLID
+    @{txtProductPrices}=    Get Product Prices from PLID
+    @{txtProductLeadTimes}=    Get Product Lead Times from PLID
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{txtProductNames}
+        ${txtProductResult}=    Run Keyword    Convert To Upper Case    ${result}
+        Verify Text On Screen Android    ${txtProductResult}    5s
+        Verify Text On Screen iOS    ${result}    5s
+        Verify Price On Screen    ${txtProductPrices}[${index}]    5s
+
+        ${resultLeft}=    Run Keyword    Get Substring    ${txtProductLeadTimes}[${index}]    0    8
+        ${resultFinal}=    Set Variable If    '${resultLeft}'=='In stock'    ${resultLeft}
+        Run Keyword If    '${resultLeft}'=='In stock'    Verify Text On Screen Android    ${resultFinal}    5s
+        Run Keyword If    '${resultLeft}'=='In stock'    Verify Text On Screen iOS    ${resultFinal}    5s
+
+        ${resultTwo}=    Run Keyword    Replace String    ${txtProductLeadTimes}[${index}]    working    work
+        ${resultFinal}=    Set Variable If    '${resultLeft}'!='In stock'    ${resultTwo}
+        Run Keyword If    '${resultLeft}'!='In stock'    Verify Text On Screen Android    ${resultFinal}    5s
+        Run Keyword If    '${resultLeft}'!='In stock'    Verify Text On Screen iOS    ${resultFinal}    5s
+    END
+
 Click Product from API Scroll
     ${txtProduct}=    Get Scroll Product to Add To Cart
 

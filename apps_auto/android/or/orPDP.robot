@@ -37,3 +37,9 @@ ${lnkPDPWhatIsThis}    xpath=//*[contains(@text, "WHAT IS THIS")]
 ${lnkPDPSelectOption}    xpath=//*[@text="SELECT AN OPTION"]
 
 ${btnVariantShowMore}    id=fi.android.takealot.debug:id/pdp_widget_variants_selector_show_all
+
+${btnPDPShowAllOffers}    xpath=//*[contains(@text, "SHOW ALL OFFERS")]
+${btnPDPShowAllOffersCart}    id=${APP_PACKAGE}:id/pdp_widget_other_offers_item_add_to_cart
+
+${btnPDPShowAllColours}    xpath=//*[contains(@text, "SHOW ALL")]
+
