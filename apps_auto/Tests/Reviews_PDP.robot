@@ -125,6 +125,7 @@ Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QA-7946
 Apps > Reviews > Read Reviews > Upvote - QA-7950
     [Tags]    data    QA-7950
     [Setup]    Start Application
+    Click Menu Logout If Logged In
     Click Home
     Click Search Home
     Search Product    Toothpaste
@@ -138,6 +139,7 @@ Apps > Reviews > Read Reviews > Upvote - QA-7950
 Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
     [Tags]    data    QA-9168
     [Setup]    Start Application
+    Click Menu Logout If Logged In
     Click Home
     Click Search Home
     Search Product    Toothpaste
@@ -147,4 +149,22 @@ Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
     Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
     Click Review Report Review Dialog Button
     Verify Reviews Report Review Success Message
+    [Teardown]    Tear Down
+
+Apps > Reviews > Write A Review (Legacy) - QA-9169
+    [Tags]    data    QA-9168
+    [Setup]    Start Application
+    Set SSL Verify    False
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Toothpaste
+    Click Product Multiple Reviews
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test
+    Click Review Submit
+    Verify Text On Screen    Thank you for your review    30s
     [Teardown]    Tear Down
