@@ -454,6 +454,17 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QA-1985
     Verify Text On Screen iOS    You asked for 2 but we only have 1 available    30s
     [Teardown]    Tear Down
 
+Apps > PDP > Variants > Colour > No show all link - QA-9594
+    [Tags]    data    QA-9594
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Retro Filter Coffee Machine
+    Click Product From Title    50's Retro Style - Filter Coffee Machine
+    Verify PDP Screen Element Not Exists    ${btnVariantShowMore}
+    [Teardown]    Tear Down
+
 Apps > PDP >Bundle Deals > Multi-buy Bundle - QA-1978
     [Tags]    data    QA-1978
     [Setup]    Start Application    ${False}
