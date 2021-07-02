@@ -513,3 +513,41 @@ Apps > PDP > Variants > Colour - QA-1977
     Verify Text On Screen Android    Item Added To Cart    30s
     Verify Text On Screen iOS    Item added to Cart    30s
     [Teardown]    Tear Down
+
+Apps > PDP > Variants > Size - QA-9592
+    [Tags]    data    QA-9592
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
+    Verify Text On Screen Android    Select a size    30s
+    Verify Text On Screen iOS    Select a size    30s
+    Swipe Up    ${windowScroll}
+    Verify Product Variant Size From API
+    Click Product Variant From API
+    Click Add To Cart
+    Verify Text On Screen Android    Item Added To Cart    30s
+    Verify Text On Screen iOS    Item added to Cart    30s
+    [Teardown]    Tear Down
+
+Apps > PDP > Variants > Colour & Size - QA-9595
+    [Tags]    data    QA-9595
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    shirts for me
+    Click Variant Product from API
+    Verify Text On Screen Android    Select a colour    30s
+    Verify Text On Screen iOS    Select a colour    30s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen Android    Select a size    30s
+    Verify Text On Screen iOS    Select a size    30s
+    Click Product Variant Colour From API
+    Verify Element On Screen Not    ${btnAddToCart}    2s
+    Verify Element On Screen Not    ${btnAddWishlist}    2s
+    Click Product Variant Colour Size From API
+    Click Add To Cart
+    [Teardown]    Tear Down

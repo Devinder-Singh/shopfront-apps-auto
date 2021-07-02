@@ -380,18 +380,28 @@ Get Product Variant All Colours
 
     [return]    @{results_variant}
 
-Get Product Variant Colour Size
+Get Product Variant All Size
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
     Get    ${search_URL}
     Integer    response status    200
 
-    @{results}=    Output    $.variants.selectors[0].options[*].is_enabled
+    @{results_variant}=    Output    $.variants.selectors[0].options[*].link_data.fields.size
+
+    [return]    @{results_variant}
+
+Get Product Variant Colour Size
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop&colour_variant=${query_result_CartProductVariant}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.variants.selectors[1].options[*].is_enabled
     @{results_variant}=    Output    $.variants.selectors[1].options[*].link_data.fields.size
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END

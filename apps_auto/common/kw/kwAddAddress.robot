@@ -53,6 +53,7 @@ Add Delivery Address My Acc
     Clear Text    ${txtRecipientNameMyAcc}
     Input Text    ${txtRecipientNameMyAcc}    ${name}
     Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
+    Input Text    ${txtRecipientComplexMyAcc}    ABC
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
     Sleep    10s
@@ -73,11 +74,46 @@ Add Delivery Address My Acc
     Swipe Up    ${windowScroll}
     Click Save Address
 
+Add Delivery Address Business My Acc No Name
+    [Arguments]    ${name}    ${mobile}    ${street}
+    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    5s
+    Clear Text    ${txtRecipientNameMyAcc}
+    Input Text    ${txtRecipientNameMyAcc}    ${name}
+    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
+    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Sleep    10s
+    Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='""'    swipe by percent    50    50    50    100    1000
+    Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='&*'    swipe by percent    50    50    50    100    1000
+    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Click Element    ${lblAddresOption}
+    Sleep    3s
+    Swipe Up    ${windowScroll}
+    Click Save Address
+
 Edit Delivery Address Mobile Number
     [Arguments]    ${mobile}
     Wait Until Element Is Visible    ${lblAddAddress}    15s
     Clear Text    ${txtRecipientMobile}
     Input Text    ${txtRecipientMobile}    ${mobile}
+
+Clear Delivery Address Mobile Number Dyneamic
+    [Arguments]    ${mobile}    ${field}
+    Wait Until Element Is Visible    ${lblAddAddress}    15s
+
+    ${txtMobile}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeTextField[`value == "${field}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${field}']
+    Swipe Down    ${windowScroll}
+
+    Clear Text    ${txtMobile}
 
 Edit Delivery Address Postal Code
     [Arguments]    ${postalCode}
@@ -145,8 +181,7 @@ Edit Delivery Address Business My Acc
     Wait Until Element Is Visible    ${txtBusinessNameMyAcc}    15s
     Clear Text    ${txtBusinessNameMyAcc}
     Input Text    ${txtBusinessNameMyAcc}    ${business}
-    swipe by percent    50    50    50    100    1000
-    swipe by percent    50    50    50    100    1000
+    Edit Delivery Address Street My Acc    13 Caro Road
 
 Verify Edit Address Text
     [Arguments]    ${verifyText}

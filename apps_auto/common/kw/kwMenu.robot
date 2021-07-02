@@ -112,8 +112,10 @@ Click Menu New To Electronics
 Click Menu My Account
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
 
-    ${chkTextSuccess}=    Run Keyword And Return Status    Click Element    ${mnuMyAccount}
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuMyAccount}    5s
+    Log    ${chkTextSuccess}
     Run Keyword If    ${chkTextSuccess}==False and '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccountText}
+    Run Keyword If    ${chkTextSuccess}==True and '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccount}
 
     Sleep    2s
 

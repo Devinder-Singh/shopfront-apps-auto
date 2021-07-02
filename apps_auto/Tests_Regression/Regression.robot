@@ -131,14 +131,22 @@ Apps > Promotions (Android) Multi-Buys - QA-8411 / QA-7443
     Click Search Home
     Search Product    TOWER Reward Sticker
     Click Product From Title    TOWER Reward Subject Stickers Value Pack 240 Stickers
-    Click Shop The Deal
-    Click Product From Title    Teddy Finger Paint - 4 x 100ml
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
     Verify Text On Screen Android    ADD 1 ITEM TO QUALIFY    1s
     Verify Text On Screen iOS    Add 1 item to qualify    1s
-    Change Cart Quantity Android    2
+    Tear Down
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    TOWER Reward Sticker
+    Click Product From Title    TOWER Reward Subject Stickers Value Pack 240 Stickers
+    Click Shop The Deal
+    Click Product From Title    Teddy Finger Paint - 4 x 100ml
+    Click Add To Cart
+    Click Go To Cart
+#    Change Cart Quantity Android    2
 #    Click Add Items to Qualify iOS
 #    Click Product From Title    Teddy Finger Paint - 4 x 100ml
 #    Click Add To Cart
@@ -797,7 +805,7 @@ Apps > Order Tracking - QA-5274
 
 Apps > My Account Verifications - QA-5356
     [Tags]    QA-5356
-    [Setup]    Start Application    False
+    [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
     Click Menu My Account

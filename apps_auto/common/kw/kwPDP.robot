@@ -370,6 +370,18 @@ Verify Product Variant Colour From API
         Verify Text On Screen iOS    ${result}    5s
     END
 
+Verify Product Variant Size From API
+
+    @{txtProductSize}=    Get Product Variant All Size
+
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{txtProductSize}
+        Verify Text On Screen Android    ${result}    5s
+        Verify Text On Screen iOS    ${result}    5s
+    END
+
 Click Product Variant From Name
     [Arguments]    ${title}
 

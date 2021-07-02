@@ -5,24 +5,77 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > PDP > Variants > Size - QA-9592
-    [Tags]    data    QA-9592
-    [Setup]    Start Application    ${False}
-    Clear Environment
+Apps > My Account > Address Book > Edit Address > Street Corrections (Business) - QA-9735
+    [Tags]    QA-9735
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc No Name    ""    ""    ""
+    Verify Add Address Text    Please enter the recipient's name
+    Verify Add Address Text    Please enter a 10-digit SA phone number without country code, spaces, or special characters
+    Verify Add Address Text    Please enter the street address
+    Verify Add Address Text    Please enter a business name
+    Verify Add Address Text    Please enter the suburb
+    Verify Add Address Text    Please enter the city
+    Verify Add Address Text    Please select a province
+    Verify Add Address Text    Please enter a postal code
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc No Name    Tester Residential    0723456778    13 Caro Road
+    Verify Text On Screen Android    Please enter a business name    5s
+    Verify Text On Screen iOS    Please enter a business name    5s
+    Edit Delivery Address Business My Acc    ABC
+    Verify Text On Screen Android    Add Delivery Address    30s
+    Verify Text On Screen Android    Tester Residential    1s
+    Verify Text On Screen Android    BUSINESS    1s
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    Add Delivery Address    30s
+    Verify Text On Screen iOS    Tester Residential    1s
+    Verify Text On Screen iOS    BUSINESS    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen iOS    0723456778    1s
+    Close Application
+    Start Application
     Click Home
     Click Search Home
-    Search Product    Samsung Galaxy A02
-    Click Product From Title    Samsung Galaxy A02 32GB Dual Sim - Blue
-    Click PDP Show All Offers
-    Verify Product Other Offers from API    Samsung Galaxy A02 32GB Dual Sim - Blue
-    Click Back Android
-    Click Back iOS    icon cross
-    Click PDP Show All Offers No Scroll
-    Click Other Offer Sellers Add To Cart
-    Verify Text On Screen Android    Item Added To Cart    30s
-    Verify Text On Screen iOS    Item added to Cart    30s
-    Verify Element On Screen    ${btnGoToCart}    5s
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen iOS    0723456778    1s
     [Teardown]    Tear Down
+
+#Apps > PDP > Variants > Sold out - QA-9593
+#    [Tags]    data    QA-9593
+#    [Setup]    Start Application    ${False}
+#    Clear Environment
+#    Click Home
+#    Click Search Home
+#    Search Product    jean
+#    Click Variant Product from API
+#    Verify Text On Screen Android    Select a size    30s
+#    Verify Text On Screen iOS    Select a size    30s
+#    Swipe Up    ${windowScroll}
+#    Verify Product Variant Size From API
+#    Click Product Variant From API
+#    Click Add To Cart
+#    Verify Text On Screen Android    Item Added To Cart    30s
+#    Verify Text On Screen iOS    Item added to Cart    30s
+#    [Teardown]    Tear Down
 
 #Cart Update & Cart Notification - Heavy Good - QA-8421
 #    [Tags]    QA-8421

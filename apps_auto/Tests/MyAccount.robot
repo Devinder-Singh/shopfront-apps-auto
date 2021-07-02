@@ -139,3 +139,175 @@ Apps > Personal Details Parity > Update Personal Details - Add/Edit Mobile Numbe
     Update Personal Detail Mobile    0662327661
     Verify Text On Screen    Your mobile number has been successfully updated    30s
     [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Delivery Address (with pre-saved addresses) - QA-5344
+    [Tags]    QA-5344
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Delete Address
+    Verify Text On Screen Android    Address successfully deleted    30s
+    Verify Text On Screen Android    You don't have any addresses saved. Please add a Delivery Address    30s
+    Verify Text On Screen iOS    You don't have any addresses saved. Please add a Delivery Address    30s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Add Business Address > Street Suggestion - QA-5345
+    [Tags]    QA-5345
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc No Name    Tester Residential    0723456778    13 Caro Road
+    Verify Text On Screen Android    Please enter a business name    30s
+    Verify Text On Screen iOS    Please enter a business name    30s
+    Edit Delivery Address Business My Acc    ABC
+    Verify Text On Screen Android    Add Delivery Address    30s
+    Verify Text On Screen Android    Tester Residential    1s
+    Verify Text On Screen Android    BUSINESS    1s
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    Add Delivery Address    30s
+    Verify Text On Screen iOS    Tester Residential    1s
+    Verify Text On Screen iOS    BUSINESS    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen iOS    0723456778    1s
+    Tear Down
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen iOS    0723456778    1s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Add Residential Address > Street Suggestion - QA-5347
+    [Tags]    QA-5347
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address My Acc    Tester Residential    072345677    13 Caro Road
+    Verify Text On Screen Android    Please enter a 10-digit SA phone number without country code, spaces, or special characters    30s
+    Verify Text On Screen iOS    Please enter a 10-digit SA phone number without country code, spaces, or special characters    30s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
+    Verify Text On Screen Android    Add Delivery Address    30s
+    Verify Text On Screen Android    Tester Residential    1s
+    Verify Text On Screen Android    RESIDENTIAL    1s
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    Add Delivery Address    30s
+    Verify Text On Screen iOS    Tester Residential    1s
+    Verify Text On Screen iOS    RESIDENTIAL    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen iOS    0723456778    1s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen iOS    0723456778    1s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Delivery Address (with no saved addresses) - QA-9733
+    [Tags]    QA-9733
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Delete Address
+    Verify Text On Screen Android    Address successfully deleted    30s
+    Verify Text On Screen Android    You don't have any addresses saved. Please add a Delivery Address    30s
+    Verify Text On Screen iOS    You don't have any addresses saved. Please add a Delivery Address    30s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Verify Text On Screen Android    You don't have any addresses saved. Please add a Delivery Address    30s
+    Verify Text On Screen iOS    You don't have any addresses saved. Please add a Delivery Address    30s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Delivery Address > Field Validations - QA-9734
+    [Tags]    QA-9734
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc No Name    ""    ""    ""
+    Verify Add Address Text    Please enter the recipient's name
+    Verify Add Address Text    Please enter a 10-digit SA phone number without country code, spaces, or special characters
+    Verify Add Address Text    Please enter the street address
+    Verify Add Address Text    Please enter a business name
+    Verify Add Address Text    Please enter the suburb
+    Verify Add Address Text    Please enter the city
+    Verify Add Address Text    Please select a province
+    Verify Add Address Text    Please enter a postal code
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc No Name    Tester Residential    0723456778    13 Caro Road
+    Verify Text On Screen Android    Please enter a business name    5s
+    Verify Text On Screen iOS    Please enter a business name    5s
+    Edit Delivery Address Business My Acc    ABC
+    Verify Text On Screen Android    Add Delivery Address    30s
+    Verify Text On Screen Android    Tester Residential    1s
+    Verify Text On Screen Android    BUSINESS    1s
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    Add Delivery Address    30s
+    Verify Text On Screen iOS    Tester Residential    1s
+    Verify Text On Screen iOS    BUSINESS    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen iOS    0723456778    1s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen iOS    0723456778    1s
+    [Teardown]    Tear Down
