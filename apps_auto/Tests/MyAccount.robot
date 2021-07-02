@@ -176,7 +176,7 @@ Apps > My Account > Address Book > Add Business Address > Street Suggestion - QA
     Verify Text On Screen iOS    BUSINESS    1s
     Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
     Verify Text On Screen iOS    0723456778    1s
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home

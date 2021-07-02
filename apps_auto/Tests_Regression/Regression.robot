@@ -108,7 +108,7 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Verify Text On Screen    Missed promotion    30s
     Verify Text On Screen Android    VIEW BUNDLE    1s
     Verify Text On Screen iOS    View Bundle    1s
-    Tear Down
+    Close Application
     Start Application
     Clear Environment
     Click Home
@@ -136,7 +136,7 @@ Apps > Promotions (Android) Multi-Buys - QA-8411 / QA-7443
     Verify Text On Screen    Missed promotion    30s
     Verify Text On Screen Android    ADD 1 ITEM TO QUALIFY    1s
     Verify Text On Screen iOS    Add 1 item to qualify    1s
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -183,7 +183,7 @@ Apps > Verify Home Screen - QA-8876
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Tear Down
+    Close Application
     Start Application    ${False}
     Click Home
     Verify Element On Screen Not    Recommended For You    15s
@@ -196,7 +196,7 @@ Apps > Verify Home Screen - QA-8876
     Search Product    Pencil
     Click Product from API
     Click Add To Cart
-    Tear Down
+    Close Application
     Start Application    ${False}
     Verify Text On Screen Scroll    Recommended For You    1s    ${windowScroll}    ${btnSearchHome}
     Verify Text On Screen Scroll    Recently Viewed    1s    ${windowScroll}    ${btnSearchHome}
@@ -255,7 +255,7 @@ Apps > Verify Home Screen - QA-8878
     Click Product from API
     Click Add To Wishlist
     Click Wishlist
-    Tear Down
+    Close Application
     Start Application    ${False}
     Click Home
     Click Home WishList
@@ -288,7 +288,7 @@ Apps > PLP - QA-5360
     Verify Add To Wishlist
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    30s
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -296,7 +296,7 @@ Apps > PLP - QA-5360
     Click Product from API
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    30s
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -304,7 +304,7 @@ Apps > PLP - QA-5360
     Click Product from API
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    30s
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -312,7 +312,7 @@ Apps > PLP - QA-5360
     Click Product from API
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    30s
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -534,7 +534,7 @@ Apps > PDP - QA-8892
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Tear Down
+    Close Application
     Start Application    ${False}
     Click Menu
     Click Menu Register
@@ -648,7 +648,7 @@ Apps > Wishlist (Android) > Delete List - QA-8906
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Wishlist Nav Bar
@@ -658,7 +658,7 @@ Apps > Wishlist (Android) > Delete List - QA-8906
     Click Back iOS    My Lists
     Click Home Cart
     Click Checkout
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Wishlist Nav Bar
@@ -679,7 +679,7 @@ Apps > Wishlist (Android) > Bottom Navigation - QA-8907
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist
-    Tear Down
+    Close Application
     Start Application    ${False}
     Click Home
     Click Wishlist Nav Bar
@@ -721,7 +721,7 @@ Apps > Cart (iOS) - QA-8908
     Click Back iOS    My Lists
     Click Home Cart
     Click Checkout
-    Tear Down
+    Close Application
     Start Application
     Clear Environment
     Click Home
@@ -729,7 +729,7 @@ Apps > Cart (iOS) - QA-8908
     Search Product    Pencil
     Click Search Product Wishlist
     Verify Text On Screen Android    Item added to Wish List    30s
-    Tear Down
+    Close Application
     Start Application    ${False}
     Click Home
     Click Wishlist Nav Bar
@@ -738,7 +738,7 @@ Apps > Cart (iOS) - QA-8908
     Select Wishlist Item
     Click Wishlist Delete Items
     Verify Text On Screen    This list is empty!    30s
-    Tear Down
+    Close Application
     Start Application
     Clear Environment
     Click Home
@@ -771,7 +771,7 @@ Apps > Order Tracking - QA-5274
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account
@@ -849,7 +849,7 @@ Apps > My Account Verifications - QA-5356
     Click Menu Address Book
     Click Delete Address
     Verify Text On Screen Android    Address successfully deleted    30s
-    Tear Down
+    Close Application
     Start Application
     Clear Environment
     Click Home
@@ -870,7 +870,7 @@ Apps > My Account Verifications - QA-9567
     Click Menu My Account
     Click Menu Load Gift Voucher
     Apply Dummy Gift Voucher Code
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account
@@ -887,7 +887,7 @@ Apps > My Account Verifications - QA-9567
     Click Back iOS    Credit & Refunds
     Click Menu Refund History
     Verify Text On Screen    You have no refund history    30s
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account Android
@@ -927,7 +927,7 @@ Apps > Order Tracking 02 - QA-9609
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account
@@ -981,7 +981,7 @@ Apps > Order Tracking 05 - QA-9619
     Click Back Payment Voucher
     Click Pay With Credit Card
 #    Click Payment Confirm Order
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account
@@ -1047,7 +1047,7 @@ Apps > Cart (Android) 02 - QA-9599
 #    Verify Text On Screen iOS    Item added to Wish List    30s
     Add To Cart Trending First Item
     Click Checkout
-    Tear Down
+    Close Application
     Start Application
     Clear Environment
     Click Home

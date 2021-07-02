@@ -29,7 +29,7 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QA-9293
     Verify Element On Screen Not    ${btnAddToCart}    30s
     Click Product Variant From API
     Click Add To Cart
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -39,7 +39,7 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QA-9293
     Verify Element On Screen Not    ${btnAddToCart}    30s
     Click Product Variant Colour From API
     Click Add To Cart
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -64,7 +64,7 @@ Apps > PDP > Buy Box > Select an Option - QA-2031
     Click Product Variant From API
     Verify Element On Screen    ${btnAddWishlist}    30s
     Click Add To Cart
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -75,7 +75,7 @@ Apps > PDP > Buy Box > Select an Option - QA-2031
     Click Product Variant Colour From API
     Verify Element On Screen    ${btnAddWishlist}    30s
     Click Add To Cart
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -97,7 +97,7 @@ Apps > PDP > Buy Box > Delivery Cost - QA-2027
     Search Product    Pencil
     Click Product from API
     Check Text On Screen Not    FREE DELIVERY
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -105,7 +105,7 @@ Apps > PDP > Buy Box > Delivery Cost - QA-2027
     Click Product from API
     Verify Text On Screen Android    FREE DELIVERY    30s
     Verify Text On Screen iOS    FREE DELIVERY    30s
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -125,21 +125,21 @@ Apps > PDP > Buy Box > eBucks - QA-2028
     Verify Text On Screen    eB20 - eB    30s
     Click Airtime
     Verify Text On Screen    eB50    30s
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    pencil
     Click Product from API
     Verify eBucks On Screen
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    fridg
     Click Product from API
     Verify eBucks On Screen
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home

@@ -257,7 +257,7 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     Click Save Address
     Verify Add Address Text    Please enter a 10-digit SA phone number without country code, spaces, or special characters
     Verify Add Address Text    Please enter a 4 digit postal code
-    Tear Down
+    Close Application
     Start Application
     Clear Environment
     Click Home
@@ -277,7 +277,7 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     Add Map Street Address    12 Ridge Way
     Click Map Address Option
     Click Use This Location
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account
@@ -332,7 +332,7 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Verify Add Address Province Text    Northern Cape
     Verify Add Address Province Text    North West
     Verify Add Address Province Text    Western Cape
-    Tear Down
+    Close Application
     Start Application
     Clear Environment
     Click Menu
@@ -350,7 +350,7 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Verify Add Address Text    Please enter a postal code
     Edit Delivery Address Street My Acc    PO Box 3456
     Verify Add Address Text    PO Box addresses are not allowed
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account
@@ -370,7 +370,7 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Verify Add Address Text    Maximum length for complex details is 128 characters
     Verify Add Address Text    Maximum length for city is 64 characters
     Verify Add Address Text    Maximum length for suburb is 64 characters
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account
@@ -427,7 +427,7 @@ Checkout - Delivery Address - Pin on Map - QA-5251
     Add Map Street Address    12 Ridge Way
     Click Map Address Option
     Click Use This Location
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account
@@ -482,7 +482,7 @@ Apps > Checkout > Collect > Pickup Point INFO - QA-5207
     Verify Pickup Point Text    08h00 - 18h00
     Verify Pickup Point Text    08h00 - 13h00
     Verify Pickup Point Text    08h00 - 15h00
-    Tear Down
+    Close Application
     Start Application
     Clear Environment
     Click Home
@@ -543,7 +543,7 @@ Apps > Checkout > Collect > Pickup Points List - QA-5237
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment    Card Number
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu Orders
@@ -744,7 +744,7 @@ Apps > Checkout > Order Review 02 - QA-9532
     Click Go To Cart
     Click Checkout
     Click Collect
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -1067,7 +1067,7 @@ Apps > Checkout > Payment > Pay with PayFast - QA-5282
     Click PayFast Cancel
     Click Pay With Payfast
     Verify Payfast Payment
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu Orders
@@ -1140,7 +1140,7 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QA-52
     Click PayFast Cancel
     Click Pay With Payfast
     Verify Payfast Payment
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu Orders
@@ -1169,7 +1169,7 @@ Apps > Checkout > Payment > Pay with Ozow - QA-5288
     Click Pay With Ozow
     Click Back Payment Ozow
     Click Pay With Ozow
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu Orders
@@ -1197,7 +1197,7 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QA-
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment    Card Number
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu Orders
@@ -1340,7 +1340,7 @@ Apps > Checkout > Delivery Options > Promise Date - QA-5205
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment    Card Number
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu Orders
@@ -1404,7 +1404,7 @@ Apps > Checkout > Collect Options > Promise Date - QA-5210
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment    Card Number
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu Orders
