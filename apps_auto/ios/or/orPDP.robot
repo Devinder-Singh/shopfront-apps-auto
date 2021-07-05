@@ -5,7 +5,8 @@ ${btnContinueShopping}    chain=**/XCUIElementTypeButton[`label == "Continue Sho
 ${lblAirtimeValue}    chain=**/XCUIElementTypeStaticText[`label == "R5"`]
 ${lblTenKgValue}    id=10.0 kg
 ${btnGoToCart}    chain=**/XCUIElementTypeButton[`label == "Go to Cart"`]
-${btnPDPSelectOption}    nsp=label == "Select an option" AND name == "Select an option" AND value == "Select an option"
+# ${btnPDPSelectOption}    nsp=label == "Select an option" AND name == "Select an option" AND value == "Select an option"
+${btnPDPSelectOption}    chain=**/XCUIElementTypeButton[`label == "Select an option"`]
 
 ${btnPDPCartItemIncrease}      chain=**/XCUIElementTypeButton[`label == "Button"`][1]
 

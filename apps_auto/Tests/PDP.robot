@@ -1,6 +1,7 @@
 *** Settings ***
 Default Tags      search
 Resource          ../common/config/defaultConfig.robot
+Library    OperatingSystem
 
 *** Test Cases ***
 Apps > PDP > Main Product Details > Description - QA-2037
@@ -510,16 +511,14 @@ Apps > PDP > Variants > Colour - QA-1977
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    shirts for me
+    Search Product    Luxurious suede microfibre fleece
     Click Variant Product from API
     Verify Text On Screen Android    Select a colour    30s
     Verify Text On Screen iOS    Select a colour    30s
     Swipe Up    ${windowScroll}
+    Click Show All Colours
     Verify Product Variant Colour From API
     Click Product Variant Colour From API
-    Click Show All Colours
-    Click Back Android
-    Click Back iOS    icon cross
     Click Add To Cart
     Verify Text On Screen Android    Item Added To Cart    30s
     Verify Text On Screen iOS    Item added to Cart    30s
@@ -561,4 +560,25 @@ Apps > PDP > Variants > Colour & Size - QA-9595
     Verify Element On Screen Not    ${btnAddWishlist}    2s
     Click Product Variant Colour Size From API
     Click Add To Cart
+    [Teardown]    Tear Down
+
+Apps > PDP > Variants > Colour (swatches) - QA-9771
+    [Tags]    data    QA-9771
+    [Setup]    Start Application    ${False}
+    # Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Estee Lauder Double
+    Click Variant Product from API
+    Verify Text On Screen Android    Select a colour    30s
+    Verify Text On Screen iOS    Select a colour    30s
+    Swipe Up    ${windowScroll}
+    Click Show All Colours
+    Verify Product Variant Colour From API
+    Click Product Variant Colour From API
+    # Click Back Android
+    # Click Back iOS    	icon close
+    Click Add To Cart
+    Verify Text On Screen Android    Item Added To Cart    30s
+    Verify Text On Screen iOS    Item added to Cart    30s
     [Teardown]    Tear Down
