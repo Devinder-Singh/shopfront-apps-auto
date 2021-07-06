@@ -11,6 +11,10 @@ Click Address Business
     Wait Until Element Is Visible    ${lblAddressBusiness}    15s
     Click Element    ${lblAddressBusiness}
 
+Click Edit Address Business
+    Wait Until Element Is Visible    ${lblEditAddressBusiness}    15s
+    Click Element    ${lblEditAddressBusiness}
+
 Click Save Address
     Wait Until Element Is Visible    ${btnSaveAddress}    15s
     Click Element    ${btnSaveAddress}
@@ -84,10 +88,40 @@ Add Delivery Address Business My Acc No Name
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
     Sleep    10s
     Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
-    Run Keyword If    '${street}'=='""'    swipe by percent    50    50    50    100    1000
+    Run Keyword If    '${street}'=='""'    Swipe Down    ${windowScroll}
     Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
-    Run Keyword If    '${street}'=='&*'    swipe by percent    50    50    50    100    1000
-    
+    Run Keyword If    '${street}'=='&*'    Swipe Down    ${windowScroll}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""' and '${street}'!=''    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""' and '${street}'!=''    Click Element    ${lblAddresOption}
+    Sleep    3s
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'==''    Click Element    ${txtBusinessNameMyAcc}
+
+    Swipe Up    ${windowScroll}
+    Click Save Address
+
+Add Delivery Address Business My Acc
+    [Arguments]    ${name}    ${mobile}    ${street}
+    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    5s
+    Clear Text    ${txtRecipientNameMyAcc}
+    Input Text    ${txtRecipientNameMyAcc}    ${name}
+    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
+    Input Text    ${txtBusinessNameMyAcc}    ABC
+    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Sleep    10s
+    Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='""'    Swipe Down    ${windowScroll}
+    Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='&*'    Swipe Down    ${windowScroll}
+
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
     Sleep    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
@@ -97,8 +131,33 @@ Add Delivery Address Business My Acc No Name
     Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Wait Until Element Is Visible    ${lblAddresOption}    15s
     Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Click Element    ${lblAddresOption}
     Sleep    3s
-    Swipe Up    ${windowScroll}
+#    Swipe Up    ${windowScroll}
     Click Save Address
+
+Edit Delivery Address On Map
+    [Arguments]    ${street}
+    Wait Until Element Is Visible    ${txtSearchAddressOnMap}    30s
+    Click Element    ${txtSearchAddressOnMap}
+    Clear Text    ${txtSearchAddressOnMap}
+    Input Text    ${txtSearchAddressOnMap}    ${street}
+
+    Sleep    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtSearchAddressOnMap}
+    Sleep    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    67
+    Sleep    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    32
+    Sleep    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Click Element    ${lblAddresOption}
+    Sleep    3s
+
+    Wait Until Element Is Visible    ${lblEditAddressMapLocation}    30s
+    Click Element    ${lblEditAddressMapLocation}
 
 Edit Delivery Address Mobile Number
     [Arguments]    ${mobile}
@@ -118,11 +177,19 @@ Clear Delivery Address Mobile Number Dyneamic
 Edit Delivery Address Postal Code
     [Arguments]    ${postalCode}
     Wait Until Element Is Visible    ${txtRecipientMobile}    15s
-    swipe by percent    50    50    50    100    1000
+    Swipe Up    ${windowScroll}
+
     Wait Until Element Is Visible    ${txtRecipientPostCode}    15s
     Clear Text    ${txtRecipientPostCode}
     Input Text    ${txtRecipientPostCode}    ${postalCode}
-    swipe by percent    50    50    50    100    1000
+
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Back iOS    Close
+    Swipe Up    ${windowScroll}
+
+Edit Delivery Address Confirm Address
+    Wait Until Element Is Visible    ${lblAddresOptionChanged}    15s
+    Click Element    ${lblAddresOptionChanged}
 
 Edit Delivery Address Street
     [Arguments]    ${street}
@@ -175,6 +242,10 @@ Edit Delivery Address Business
     Wait Until Element Is Visible    ${txtBusinessName}    15s
     Clear Text    ${txtBusinessName}
     Input Text    ${txtBusinessName}    ${business}
+
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Back iOS    Close
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Swipe Up    ${windowScroll}
 
 Edit Delivery Address Business My Acc
     [Arguments]    ${business}

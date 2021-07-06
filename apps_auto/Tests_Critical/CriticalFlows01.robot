@@ -5,23 +5,28 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > My Account > Address Book > Edit Address > Street Corrections (Business) - QA-9735
-    [Tags]    QA-9735
-    [Setup]    Start Application
+Apps > My Account > Address Book > Delivery Address > Field Validations - QA-9734 / QA-9735
+    [Tags]    QA-9734    QA-9735
+    [Setup]    Start Application    ${False}
+    Clear Environment
     Click Menu
     Click Menu My Account
     Click Menu Address Book
+    Click Delete Address
+    Verify Text On Screen Android    Address successfully deleted    30s
     Click Add Delivery Address
     Click Address Business
-    Add Delivery Address Business My Acc No Name    ""    ""    ""
-    Verify Add Address Text    Please enter the recipient's name
-    Verify Add Address Text    Please enter a 10-digit SA phone number without country code, spaces, or special characters
-    Verify Add Address Text    Please enter the street address
-    Verify Add Address Text    Please enter a business name
-    Verify Add Address Text    Please enter the suburb
-    Verify Add Address Text    Please enter the city
-    Verify Add Address Text    Please select a province
-    Verify Add Address Text    Please enter a postal code
+    Add Delivery Address Business My Acc No Name    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    Verify Text On Screen    Please enter the recipient's name    5s
+    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    1s
+    Verify Text On Screen    Please enter the street address    1s
+    Verify Text On Screen    Please enter a business name    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Please enter the suburb    1s
+    Verify Text On Screen    Please enter the city    1s
+    Verify Text On Screen    Please select a province    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Please enter a postal code    1s
     Close Application
     Start Application
     Click Menu
@@ -32,7 +37,14 @@ Apps > My Account > Address Book > Edit Address > Street Corrections (Business) 
     Add Delivery Address Business My Acc No Name    Tester Residential    0723456778    13 Caro Road
     Verify Text On Screen Android    Please enter a business name    5s
     Verify Text On Screen iOS    Please enter a business name    5s
-    Edit Delivery Address Business My Acc    ABC
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc    Tester Residential    0723456778    13 Caro Road
     Verify Text On Screen Android    Add Delivery Address    30s
     Verify Text On Screen Android    Tester Residential    1s
     Verify Text On Screen Android    BUSINESS    1s
@@ -44,7 +56,7 @@ Apps > My Account > Address Book > Edit Address > Street Corrections (Business) 
     Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
     Verify Text On Screen iOS    0723456778    1s
     Close Application
-    Start Application
+    Start Application    ${False}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -56,6 +68,30 @@ Apps > My Account > Address Book > Edit Address > Street Corrections (Business) 
     Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
     Verify Text On Screen Android    0723456778    1s
     Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen iOS    0723456778    1s
+    Click Edit Address Business
+    Edit Delivery Address Business    ${EMPTY}
+    Click Save Address
+    Verify Text On Screen Android    Please enter a business name    5s
+    Verify Text On Screen iOS    Please enter a business name    5s
+    Swipe Down    ${windowScroll}
+    Click Cancel Screen
+    Click Edit Address Business
+    Edit Delivery Address Postal Code    ${EMPTY}
+    Click Save Address
+    Verify Text On Screen Android    Please enter a postal code    5s
+    Verify Text On Screen iOS    Please enter a postal code    5s
+    Swipe Down    ${windowScroll}
+    Click Cancel Screen
+    Click Edit Address Business
+    Edit Delivery Address Postal Code    8007
+    Click Save Address
+    Edit Delivery Address Confirm Address
+    Click Address Got It Thanks
+    Edit Delivery Address On Map    13 Caro Road
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 8007    30s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 8007    30s
     Verify Text On Screen iOS    0723456778    1s
     [Teardown]    Tear Down
 

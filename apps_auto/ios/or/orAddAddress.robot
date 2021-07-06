@@ -8,7 +8,7 @@ ${txtBusinessName}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/X
 
 ${btnSaveAddress}      chain=**/XCUIElementTypeStaticText[`label == "Save"`]
 
-${txtRecipientPostCode}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[12]/XCUIElementTypeTextField
+${txtRecipientPostCode}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[13]/XCUIElementTypeTextField
 
 ${txtRecipientNameMyAcc}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[5]/XCUIElementTypeTextField
 ${txtRecipientMobileMyAcc}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[6]/XCUIElementTypeTextField
@@ -27,5 +27,11 @@ ${navAddressProvince}      chain=**/XCUIElementTypeNavigationBar[`name == "Provi
 ${lblAddressBusiness}      chain=**/XCUIElementTypeStaticText[`label == "Business"`]
 ${txtBusinessNameMyAcc}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[8]/XCUIElementTypeTextField
 
-${lblAddresOption}      chain=**/XCUIElementTypeStaticText[`label == "13 Caro Road, Robertsham, Johannesburg South, South Africa"`]
+${lblAddresOption}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "13 Caro Road, Robertsham, Johannesburg South"`]
+${lblAddresOptionChanged}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "13 Caro Road, Robertsham, Johannesburg South, Gauteng, 8007"`]
 ${lytAddressType}      chain=**/XCUIElementTypeNavigationBar[`name == "Address Type"`]
+
+${lblEditAddressBusiness}      chain=**/XCUIElementTypeStaticText[`label == "EDIT"`]
+${txtSearchAddressOnMap}      chain=**/XCUIElementTypeTextField[`value == "Enter your street address"`]
+
+${lblEditAddressMapLocation}      chain=**/XCUIElementTypeButton[`label == "USE THIS LOCATION"`]

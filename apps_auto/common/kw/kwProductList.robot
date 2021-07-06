@@ -245,7 +245,7 @@ Click Product Department
 Click Product From Title
     [Arguments]    ${title}
 
-    ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, "${title}")]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${title}"`]
+    ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, "${title}")]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
 
@@ -332,6 +332,11 @@ Click Search Product Sort
 Click Search Product Wishlist
     Wait Until Element Is Visible    ${btnProductSearchSort}    30s
     Click Element    ${btnProductWishlist}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
+
+Click Search Product Wishlist iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnProductSearchSort}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnProductWishlist}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
 
 Click Product available in JHB only
