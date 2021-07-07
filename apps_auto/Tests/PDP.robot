@@ -517,8 +517,9 @@ Apps > PDP > Variants > Colour - QA-1977
     Verify Text On Screen iOS    Select a colour    30s
     Swipe Up    ${windowScroll}
     Click Show All Colours
-    Verify Product Variant Colour From API
-    Click Product Variant Colour From API
+    Verify Product Variant Colour With ShowAll From API
+    Swipe Down    ${windowScroll}
+    Click Product Variant Colour with ShowAll From API
     Click Add To Cart
     Verify Text On Screen Android    Item Added To Cart    30s
     Verify Text On Screen iOS    Item added to Cart    30s
