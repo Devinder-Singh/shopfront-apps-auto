@@ -47,6 +47,13 @@ Click Edit Address
     Wait Until Element Is Visible    ${btnEditAddress}    30s
     Click Element    ${btnEditAddress}
 
+Display WC Province Pickup Points
+    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+
+    ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Western Cape    2s
+    Run Keyword If    ${chkTextSuccess}==False    Click Filter Province
+    Run Keyword If    ${chkTextSuccess}==False    Click Western Cape Province
+
 Click Filter Province
     Wait Until Element Is Visible    ${txtFilterProvince}    30s
     Click Element    ${txtFilterProvince}

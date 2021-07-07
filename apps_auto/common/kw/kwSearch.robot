@@ -20,6 +20,8 @@ Search Product
     Wait Until Element Is Visible    ${searchFirstOption}    15s
     Click Element    ${searchFirstOption}
 
+    Sleep    2s
+
 Search and Press Enter
     [Arguments]    ${search}
 

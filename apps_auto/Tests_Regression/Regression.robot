@@ -30,7 +30,6 @@ Apps > Register & Login - QA-5329
 Apps > Promotions (Android) Daily Deals - QA-5357 / QA-7443
     [Tags]    QA-5357    QA-7443
     [Setup]    Start Application
-    Clear Environment
     Click Menu
     Click Menu Login
     Login Takealot    ${G_EMAIL}    t@ke@!ot1234
@@ -225,6 +224,7 @@ Apps > Verify Home Screen - QA-8876
     Click App Only Deals Product from API
     Verify Element On Screen    ${btnAddToCart}    30s
     Click Back Android
+    Swipe Down    ${windowScroll}
     Verify Element On Screen Android    ${btnProductSearchFilter}    30s
     Click Back Android
     Click Back iOS    Deals
@@ -331,12 +331,15 @@ Apps > PLP > Sort - QA-8889
     Click Search Product Sort
     Click Sort High To Low
     Verify Sorted Products    Price+Descending
+    Swipe Down    ${windowScroll}
     Click Search Product Sort
     Click Sort Low To High
     Verify Sorted Products    Price+Ascending
+    Swipe Down    ${windowScroll}
     Click Search Product Sort
     Click Sort Top Rated
     Verify Sorted Products    Rating+Descending
+    Swipe Down    ${windowScroll}
     Click Search Product Sort
     Click Sort New Arrivals
     Verify Sorted Products    ReleaseDate+Descending
@@ -630,11 +633,11 @@ Apps > Wishlist (Android) - QA-5367
     Clear Environment
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen Android    Trending on Takealot    30s
-    Verify Text On Screen Android    Wish List    1s
+    Verify Text On Screen Android    Wish List    30s
+    Verify Text On Screen Android    Trending on Takealot    1s
     Verify Text On Screen Android    DEFAULT    1s
-    Verify Text On Screen iOS    Trending on Takealot    30s
-    Verify Text On Screen iOS    Wish List    1s
+    Verify Text On Screen iOS    Wish List    30s
+    Verify Text On Screen iOS    Trending on Takealot    1s
     Verify Text On Screen iOS    DEFAULT    1s
     Click Create Wishlist
     [Teardown]    Tear Down
@@ -672,8 +675,8 @@ Apps > Wishlist (Android) > Delete List - QA-8906
 
 Apps > Wishlist (Android) > Bottom Navigation - QA-8907
     [Tags]    android    QA-8907
-    Clear Environment
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -815,9 +818,13 @@ Apps > My Account Verifications - QA-5356
     Click Back iOS    My Account
     Click Menu Exchanges And Returns
     Verify Element On Screen    ${btnMenuExchReturns}    30s
-    Verify Text On Screen Android    Open file with    30s
-    Verify Text On Screen Android    Chrome    1s
-    Click Window Android
+#    Verify Text On Screen Android    Open file with    30s
+#    Verify Text On Screen Android    Chrome    1s
+#    Click Window Android
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
     Click Menu Personal Detail
     Update Personal Detail Name    AutoTester
     Verify Text On Screen    Your name has been successfully updated    30s
@@ -904,8 +911,8 @@ Apps > My Account Verifications - QA-9567
     Verify Text On Screen    Superbalist    5s
     Click Back Android
     Click Menu Help
-    Verify Text On Screen Android    Open file with    30s
-    Verify Text On Screen Android    Chrome    5s
+#    Verify Text On Screen Android    Open file with    30s
+#    Verify Text On Screen Android    Chrome    5s
     [Teardown]    Tear Down
 
 Apps > Order Tracking 02 - QA-9609
@@ -920,6 +927,7 @@ Apps > Order Tracking 02 - QA-9609
     Click Go To Cart
     Click Checkout
     Click Collect
+    Display WC Province Pickup Points
     Click Pickup Point
     Click Free Delivery
     Click Donate No Thanks
@@ -947,7 +955,7 @@ Apps > Order Tracking 02 - QA-9609
     Verify Text On Screen    TAKEALOT PICKUP POINT    1s
     Swipe Up    ${windowScroll}
     Verify Text On Screen    Takealot Cape Town Warehouse Pickup Point    1s
-    Verify Text On Screen    Takealot Cape Town Warehouse, Block B, Montague Park    1s
+    Verify Text On Screen    Block B, Montague Park    1s
     Verify Text On Screen    Business Estate    1s
     Verify Text On Screen    Montague Gardens    1s
     Verify Text On Screen    Cape Town    1s
@@ -1072,14 +1080,18 @@ Apps > Cart (Android) 04 - QA-9600 / QA-9605
     Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
+    Close Application
+    Start Application
     Click Home
-    Click Search Icon
+    Click Search Home
     Search Product    book
     Click Product from API
     Click Add To Cart
     Click Go To Cart
+    Close Application
+    Start Application
     Click Home
-    Click Search Icon
+    Click Search Home
     Search Product    vouche
     Click Product from API
     Click Add To Cart

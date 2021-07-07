@@ -23,6 +23,7 @@ Click Increase Cart Quantity iOS
 Click Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}
+    Sleep    2s
 
 Click Show All Colours
     Wait Until Element Is Visible    ${btnPDPShowAllColours}    30s
