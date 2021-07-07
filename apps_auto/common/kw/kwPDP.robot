@@ -341,7 +341,7 @@ Click Product Variant Colour From API
 
     ${txtProduct}=    Get Product Variant Colour
 
-    # Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -363,7 +363,7 @@ Verify Product Variant Colour From API
 
     @{txtProductColours}=    Get Product Variant All Colours
 
-    # Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{txtProductColours}
