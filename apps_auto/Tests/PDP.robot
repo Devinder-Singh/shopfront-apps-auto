@@ -1,6 +1,7 @@
 *** Settings ***
 Default Tags      search
 Resource          ../common/config/defaultConfig.robot
+Library    OperatingSystem
 
 *** Test Cases ***
 Apps > PDP > Main Product Details > Description - QA-2037
@@ -505,21 +506,20 @@ Apps > PDP > Other Offers > More than one offer - QA-5166
     [Teardown]    Tear Down
 
 Apps > PDP > Variants > Colour - QA-1977
-    [Tags]    data    QA-1977
+    [Tags]    data    QA-1977    QA-9771
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    shirts for me
+    Search Product    Luxurious suede microfibre fleece
     Click Variant Product from API
     Verify Text On Screen Android    Select a colour    30s
     Verify Text On Screen iOS    Select a colour    30s
     Swipe Up    ${windowScroll}
-    Verify Product Variant Colour From API
-    Click Product Variant Colour From API
     Click Show All Colours
-    Click Back Android
-    Click Back iOS    icon cross
+    Verify Product Variant Colour With ShowAll From API
+    Swipe Down    ${windowScroll}
+    Click Product Variant Colour with ShowAll From API
     Click Add To Cart
     Verify Text On Screen Android    Item Added To Cart    30s
     Verify Text On Screen iOS    Item added to Cart    30s
