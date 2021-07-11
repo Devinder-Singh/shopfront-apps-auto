@@ -370,6 +370,28 @@ Click Product Variant Colour From API
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
+
+Click Product Variant Colour With ShowAll From API
+
+    ${txtProduct}=    Get Product Variant Colour
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPSelectOption}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${txtProduct}
+    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
+
+
 Verify Product Variant Colour From API
 
     @{txtProductColours}=    Get Product Variant All Colours
@@ -380,6 +402,22 @@ Verify Product Variant Colour From API
     FOR    ${result}    IN    @{txtProductColours}
         Verify Text On Screen Android    ${result}    5s
         Verify Text On Screen iOS    ${result}    5s
+    END
+
+Verify Product Variant Colour With ShowAll From API
+
+    @{txtProductColours}=    Get Product Variant All Colours
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{txtProductColours}
+
+        ${chkProdVisible}=    Run Keyword And Return Status    Page Should Contain Text    ${result} 
+            Run Keyword If    ${chkProdVisible}==False    Swipe Up    ${windowScroll}
+
+        Verify Text On Screen Android    ${result}    5s
+        Verify Text On Screen iOS    ${result}    5s    
+ 
+        ${index}=    Evaluate    ${index} + 1
     END
 
 Verify Product Variant Size From API
