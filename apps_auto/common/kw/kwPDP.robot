@@ -25,6 +25,17 @@ Click Add To Cart
     Click Element    ${btnAddToCart}
     Sleep    2s
 
+Click Exchange And Returns
+    Swipe Up    ${windowScroll}
+    Wait Until Element Is Visible    ${lblPDPExchAndReturn}    30s
+    Click Element    ${lblPDPExchAndReturn}
+    Sleep    2s
+
+Click Non Refundable
+    Wait Until Element Is Visible    ${lblPDPNonrefundable}    30s
+    Click Element    ${lblPDPNonrefundable}
+    Sleep    2s
+
 Click Show All Colours
     Wait Until Element Is Visible    ${btnPDPShowAllColours}    30s
     Click Element    ${btnPDPShowAllColours}

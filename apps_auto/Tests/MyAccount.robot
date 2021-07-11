@@ -347,3 +347,113 @@ Apps > My Account > Address Book > Delivery Address > Field Validations - QA-973
     Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 8007    30s
     Verify Text On Screen iOS    0723456778    1s
     [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Edit Address > Pin On Map (Outside SA) - QA-9736
+    [Tags]    QA-9736
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Edit Address Business
+    Edit Delivery Address Postal Code My Acc    8007
+    Click Save Address
+    Edit Delivery Address Confirm Address My Acc
+    Click Address Got It Thanks
+    Edit Delivery Address On Map My Acc    12 Ridge Way
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Edit Address > Street Corrections (Residential) - QA-5346
+    [Tags]    QA-5346
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Edit Address Business
+    Edit Delivery Address My Acc Empty
+    Click Save Address
+    Verify Text On Screen    Please enter the recipient's name    5s
+    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Please enter the suburb    1s
+    Verify Text On Screen    Please enter the city    1s
+    Click Back Android
+    Click Back iOS    Back
+    Click Edit Address Business
+    Edit Delivery Address Postal Code My Acc    8007
+    Click Save Address
+    Edit Delivery Address Confirm Address My Acc
+    Click Address Got It Thanks
+    Edit Delivery Address On Map My Acc    12 Ridge Way
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Edit Address > Pin On Map - QA-5348
+    [Tags]    QA-5348
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Edit Address Business
+    Edit Delivery Address Postal Code My Acc    8007
+    Click Save Address
+    Edit Delivery Address Confirm Address My Acc
+    Click Address Got It Thanks
+    Edit Delivery Address On Map My Acc    12 Ridge Way
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Edit Address Business
+    Edit Delivery Address Suburb My Acc
+    Click Save Address
+    Edit Delivery Address Confirm Address My Acc Suburb
+    Click Address Got It Thanks
+    Edit Delivery Address On Map My Acc Suburb    13 Caro Road
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Gauteng, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Gauteng, 8007    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Gauteng, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Gauteng, 8007    30s
+    [Teardown]    Tear Down

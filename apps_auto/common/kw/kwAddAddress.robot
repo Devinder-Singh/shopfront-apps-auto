@@ -159,6 +159,56 @@ Edit Delivery Address On Map
     Wait Until Element Is Visible    ${lblEditAddressMapLocation}    30s
     Click Element    ${lblEditAddressMapLocation}
 
+Edit Delivery Address On Map My Acc
+    [Arguments]    ${street}
+    Wait Until Element Is Visible    ${txtSearchAddressOnMap}    30s
+    Click Element    ${txtSearchAddressOnMap}
+    Clear Text    ${txtSearchAddressOnMap}
+    Input Text    ${txtSearchAddressOnMap}    ${street}
+
+    Sleep    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtSearchAddressOnMap}
+    Sleep    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    67
+    Sleep    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    32
+    Sleep    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Wait Until Element Is Visible    ${lblAddresOptionMyAccMap}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Click Element    ${lblAddresOptionMyAccMap}
+    Sleep    3s
+
+    Wait Until Element Is Visible    ${lblEditAddressMapLocation}    30s
+    Click Element    ${lblEditAddressMapLocation}
+
+Edit Delivery Address On Map My Acc Suburb
+    [Arguments]    ${street}
+    Wait Until Element Is Visible    ${txtSearchAddressOnMap}    30s
+    Click Element    ${txtSearchAddressOnMap}
+    Clear Text    ${txtSearchAddressOnMap}
+    Input Text    ${txtSearchAddressOnMap}    ${street}
+
+    Sleep    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtSearchAddressOnMap}
+    Sleep    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    67
+    Sleep    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    32
+    Sleep    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Wait Until Element Is Visible    ${lblAddresOptionMyAccMapSuburb}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Click Element    ${lblAddresOptionMyAccMapSuburb}
+    Sleep    3s
+
+    Wait Until Element Is Visible    ${lblEditAddressMapLocation}    30s
+    Click Element    ${lblEditAddressMapLocation}
+
 Edit Delivery Address Mobile Number
     [Arguments]    ${mobile}
     Wait Until Element Is Visible    ${lblAddAddress}    15s
@@ -187,9 +237,55 @@ Edit Delivery Address Postal Code
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Back iOS    Close
     Swipe Up    ${windowScroll}
 
+Edit Delivery Address Postal Code My Acc
+    [Arguments]    ${postalCode}
+    Wait Until Element Is Visible    ${lblRecepientMobile}    15s
+    Swipe Up    ${windowScroll}
+
+    Wait Until Element Is Visible    ${txtRecipientPostCodeEdit}    5s
+    Clear Text    ${txtRecipientPostCodeEdit}
+    Input Text    ${txtRecipientPostCodeEdit}    ${postalCode}
+
+    Sleep    1s
+    Click Element    ${lblRecepientPostCode}
+    Swipe Up    ${windowScroll}
+
+Edit Delivery Address Suburb My Acc
+    Wait Until Element Is Visible    ${lblRecepientMobile}    15s
+    Swipe Up    ${windowScroll}
+
+    Wait Until Element Is Visible    ${lblAddresOptionMyAccSuburb}    5s
+    Click Element    ${lblAddresOptionMyAccSuburb}
+
+    Sleep    1s
+    Wait Until Element Is Visible    ${lblAddresMyAccSuburb}    5s
+    Click Element    ${lblAddresMyAccSuburb}
+    Swipe Up    ${windowScroll}
+
+Edit Delivery Address My Acc Empty
+    Wait Until Element Is Visible    ${lblRecepientMobile}    15s
+    Swipe Up    ${windowScroll}
+
+    Clear Text    ${txtRecipientNameMyAcc}
+    Clear Text    ${txtRecipientMobileMyAcc}
+    Clear Text    ${txtRecipientSuburbMyAcc}
+    Clear Text    ${txtRecipientCityMyAcc}
+
+    Sleep    1s
+    Click Element    ${lblRecepientPostCode}
+    Swipe Up    ${windowScroll}
+
 Edit Delivery Address Confirm Address
     Wait Until Element Is Visible    ${lblAddresOptionChanged}    15s
     Click Element    ${lblAddresOptionChanged}
+
+Edit Delivery Address Confirm Address My Acc
+    Wait Until Element Is Visible    ${lblAddresOptionMyAcc}    15s
+    Click Element    ${lblAddresOptionMyAcc}
+
+Edit Delivery Address Confirm Address My Acc Suburb
+    Wait Until Element Is Visible    ${lblAddresOptionMyAccGauteng}    15s
+    Click Element    ${lblAddresOptionMyAccGauteng}
 
 Edit Delivery Address Street
     [Arguments]    ${street}

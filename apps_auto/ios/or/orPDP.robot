@@ -42,3 +42,6 @@ ${btnPDPShowAllOffers}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show A
 ${btnPDPShowAllOffersCart}    chain=**/XCUIElementTypeButton[`label == "icon cartButton"`][1]
 
 ${btnPDPShowAllColours}    chain=**/XCUIElementTypeButton[`label == "Show All"`]
+
+${lblPDPExchAndReturn}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "Hassle-Free Exchanges & Returns for 30 Days"`]
+${lblPDPNonrefundable}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "Non-Returnable"`]

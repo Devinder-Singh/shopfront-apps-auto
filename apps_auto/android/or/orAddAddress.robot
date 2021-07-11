@@ -36,3 +36,17 @@ ${lblEditAddressBusiness}      xpath=//*[@text="EDIT"]
 ${txtSearchAddressOnMap}      id=${APP_PACKAGE}:id/address_text_input_auto_complete_map_text
 
 ${lblEditAddressMapLocation}      xpath=//*[@text="USE THIS LOCATION"]
+
+${lblRecepientMobile}      xpath=//*[@text="RECIPIENT MOBILE NUMBER"]
+${txtRecipientPostCodeEdit}      xpath=//*[@text="8005"]
+${lblRecepientPostCode}      xpath=//*[@text="CITY / TOWN"]
+
+${lblAddresOptionMyAcc}      xpath=//*[@text="12 Ridge Way, Green Point, Cape Town, Western Cape, 8007"]
+${lblAddresOptionMyAccMap}      xpath=//*[@text="12 Ridge Way, Pinelands, Cape Town, South Africa"]
+
+${lblAddresOptionMyAccSuburb}      xpath=//*[@text="Western Cape"]
+${lblAddresMyAccSuburb}      xpath=//*[@text="Gauteng"]
+
+${lblAddresOptionMyAccGauteng}      xpath=//*[@text="12 Ridge Way, Green Point, Cape Town, Gauteng, 8007"]
+
+${lblAddresOptionMyAccMapSuburb}      ${EMPTY}

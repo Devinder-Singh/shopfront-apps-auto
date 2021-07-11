@@ -35,3 +35,17 @@ ${lblEditAddressBusiness}      chain=**/XCUIElementTypeStaticText[`label == "EDI
 ${txtSearchAddressOnMap}      chain=**/XCUIElementTypeTextField[`value == "Enter your street address"`]
 
 ${lblEditAddressMapLocation}      chain=**/XCUIElementTypeButton[`label == "USE THIS LOCATION"`]
+
+${lblRecepientMobile}      chain=**/XCUIElementTypeStaticText[`label == "RECIPIENT MOBILE NUMBER"`]
+${txtRecipientPostCodeEdit}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[12]/XCUIElementTypeTextField
+${lblRecepientPostCode}      chain=**/XCUIElementTypeStaticText[`label == "CITY / TOWN"`]
+
+${lblAddresOptionMyAcc}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "12 Ridge Way, Green Point, Cape Town, Western Cape, 8007"`]
+${lblAddresOptionMyAccMap}      chain=**/XCUIElementTypeStaticText[`label == "12 Ridge Way, Pinelands, Cape Town, South Africa"`]
+
+${lblAddresOptionMyAccSuburb}      chain=**/XCUIElementTypeTextField[`value == "Western Cape"`]
+${lblAddresMyAccSuburb}      chain=**/XCUIElementTypeStaticText[`label == "Gauteng"`]
+
+${lblAddresOptionMyAccGauteng}      chain=**/XCUIElementTypeStaticText[`label == "12 Ridge Way, Green Point, Cape Town, Gauteng, 8007"`]
+
+${lblAddresOptionMyAccMapSuburb}      chain=**/XCUIElementTypeStaticText[`label == "13 Caro Road, Robertsham, Johannesburg South, South Africa"`]

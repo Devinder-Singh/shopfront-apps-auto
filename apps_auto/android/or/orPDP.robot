@@ -42,3 +42,6 @@ ${btnPDPShowAllOffers}    xpath=//*[contains(@text, "SHOW ALL OFFERS")]
 ${btnPDPShowAllOffersCart}    id=${APP_PACKAGE}:id/pdp_widget_other_offers_item_add_to_cart
 
 ${btnPDPShowAllColours}    xpath=//*[contains(@text, "SHOW ALL")]
+
+${lblPDPExchAndReturn}    xpath=//*[contains(@text, "Hassle-Free Exchanges & Returns for 30 Days")]
+${lblPDPNonrefundable}    xpath=//*[contains(@text, "Non-Returnable")]

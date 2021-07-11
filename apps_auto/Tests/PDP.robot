@@ -562,3 +562,75 @@ Apps > PDP > Variants > Colour & Size - QA-9595
     Click Product Variant Colour Size From API
     Click Add To Cart
     [Teardown]    Tear Down
+
+Apps > PDP > Policy list > Hassle-free Exchanges and Returns for 30 Days - QA-2015
+    [Tags]    QA-2015
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Speaker
+    Click Product from API
+    Click Exchange And Returns
+    Verify Text On Screen Android    Hassle-Free Exchanges & Returns for 30 Days    5s
+    Verify Text On Screen Android    Returns    1s
+    Verify Text On Screen Android    If you are not completely satisfied, simply return the items to us in their original condition and packaging within 30 days of receipt and we will issue a credit which can be used to place a new order    1s
+    Verify Text On Screen Android    Exchanges (Fashion, sportswear and shoes only)    1s
+    Verify Text On Screen Android    The item must be unworn and unused (other than trials) with the original tags still attached. Packaging should be returned in an undamaged condition with the item    1s
+    Verify Text On Screen Android    When does this policy not apply    1s
+    Verify Text On Screen Android    If the item is    1s
+    Verify Text On Screen Android    older than 30 days    1s
+    Verify Text On Screen Android    opened, unsealed, used or missing any accessories    1s
+    Verify Text On Screen Android    a digital product such as an eBook, electronic voucher, gaming code or other digital downloads    1s
+    Verify Text On Screen Android    an audio or video recording or computer software that has been unsealed    1s
+    Verify Text On Screen Android    a newspaper, periodical or magazine    1s
+    Verify Text On Screen Android    a foodstuff, beverage, or other product intended for everyday consumption    1s
+    Verify Text On Screen Android    a nursing or maternity product that has been unsealed, including (but not limited to) breast pumps, bottles, formula, maternity underwear, nappies and wipes    1s
+    Verify Text On Screen Android    a beauty product or fragrance which has been used    1s
+    Verify Text On Screen Android    a product which has been personalised or made to your specifications    1s
+    Verify Text On Screen Android    Find out more about    1s
+    Verify Text On Screen iOS    Hassle-Free Exchanges & Returns for 30 Days    5s
+    Verify Text On Screen iOS    Returns    1s
+    Verify Text On Screen iOS    If you are not completely satisfied, simply return the items to us in their original condition and packaging within 30 days of receipt and we will issue a credit which can be used to place a new order    1s
+    Verify Text On Screen iOS    Exchanges (Fashion, sportswear and shoes only)    1s
+    Verify Text On Screen iOS    The item must be unworn and unused (other than trials) with the original tags still attached. Packaging should be returned in an undamaged condition with the item    1s
+    Verify Text On Screen iOS    When does this policy not apply    1s
+    Verify Text On Screen iOS    If the item is    1s
+    Verify Text On Screen iOS    older than 30 days    1s
+    Verify Text On Screen iOS    opened, unsealed, used or missing any accessories    1s
+    Verify Text On Screen iOS    a digital product such as an eBook, electronic voucher, gaming code or other digital downloads    1s
+    Verify Text On Screen iOS    an audio or video recording or computer software that has been unsealed    1s
+    Verify Text On Screen iOS    a newspaper, periodical or magazine    1s
+    Verify Text On Screen iOS    a foodstuff, beverage, or other product intended for everyday consumption    1s
+    Verify Text On Screen iOS    a nursing or maternity product that has been unsealed, including (but not limited to) breast pumps, bottles, formula, maternity underwear, nappies and wipes    1s
+    Verify Text On Screen iOS    a beauty product or fragrance which has been used    1s
+    Verify Text On Screen iOS    a product which has been personalised or made to your specifications    1s
+    Verify Text On Screen iOS    Find out more about    1s
+    [Teardown]    Tear Down
+
+Apps > PDP > Policy list > Warranty Types > Non-Returnable - QA-2019
+    [Tags]    QA-2019
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Airtim
+    Click Variant Product from API
+    Verify Element On Screen    ${btnPDPSelectOption}    30s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen Android    Non-Returnable    30s
+    Verify Text On Screen iOS    Non-Returnable    30s
+    Click Search Icon
+    Search Product    Vouche
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen Android    Non-Returnable    30s
+    Verify Text On Screen iOS    Non-Returnable    30s
+    Click Search Icon
+    Search Product    johny wal
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Swipe Up    ${windowScroll}
+    Click Non Refundable
+    Verify Text On Screen Android    No warranty at all, except for delivery damages (if applicable). Digital products will be supported, but no refunds possible    5s
+    Verify Text On Screen iOS    No warranty at all, except for delivery damages (if applicable). Digital products will be supported, but no refunds possible    5s
+    [Teardown]    Tear Down
