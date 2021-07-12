@@ -151,7 +151,6 @@ Click Go To Cart
 
 Click PDP Write Review
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
-    Run Keyword If    ${chkElement}==False    Wait Until Element Is Visible    ${btnPDPSelectOption}    1s
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -167,6 +166,31 @@ Click PDP Write Review
     END
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
     Click Element    ${btnPDPReview}
+
+Scroll To PDP Reviews Auto
+    ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
+    Click Element    ${btnPDPReviewBuyboxTitleButton}
+
+Scroll To PDP Reviews
+    [Arguments]    ${locatorReviewsCard}
+    ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${locatorReviewsCard}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPScrollRoot}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
+
+Click PDP Reviews Show More
+    Wait Until Element Is Visible    ${btnPDPUserReviews}    30s
+    Click Element    ${btnPDPReviewShowMoreButton}
 
 Click Back PDP
     Wait Until Element Is Visible    ${navBackPDP}    30s
