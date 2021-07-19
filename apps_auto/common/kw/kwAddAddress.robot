@@ -3,7 +3,7 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Residential
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${lytAddressType}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnResidential}    15s
     Wait Until Element Is Visible    ${btnResidential}    15s
     Click Element    ${btnResidential}
 

@@ -15,7 +15,7 @@ ${navCartScr}    chain=**/XCUIElementTypeNavigationBar[`name == "Shopping Cart"`
 
 ${btnPDPSellerName}      chain=**/XCUIElementTypeLink[`label == "Sophie Moda"`][1]
 ${lblBlueValue}      chain=**/XCUIElementTypeStaticText[`label == "Blue"`]
-${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write a Review"`]
+${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write Review"`]
 
 ${btnPDPScrollRoot}      chain=**/XCUIElementTypeWindow[1]
 ${btnPDPAddBundleToCart}      chain=**/XCUIElementTypeButton[`label CONTAINS "Add Bundle to Cart"`]
@@ -46,3 +46,9 @@ ${btnPDPShowAllColours}    chain=**/XCUIElementTypeButton[`label == "Show All"`]
 
 ${lblPDPExchAndReturn}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "Hassle-Free Exchanges & Returns for 30 Days"`]
 ${lblPDPNonrefundable}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "Non-Returnable"`]
+
+${btnPDPWhenDoIGet}    chain=**/XCUIElementTypeButton[`label == "When do I get it?"`]
+${btnPDPOnCreditInfoTwo}    chain=**/XCUIElementTypeButton[`label == "icon info"`][2]
+${btnPDPOnCreditInfo}    chain=**/XCUIElementTypeButton[`label == "icon info"`]
+
+${btnPDPPreOrder}    chain=**/XCUIElementTypeButton[`label CONTAINS "Pre-order"`]

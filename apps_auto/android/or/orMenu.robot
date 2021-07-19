@@ -32,3 +32,6 @@ ${btnMenuTakealotGroup}      xpath=//*[@text="Takealot Group"]
 ${btnMenuHelp}      xpath=//*[@text="Help"]
 
 ${mnuGaming}      xpath=//*[@text="Gaming"]
+
+${mnuSuperbalist}      xpath=//*[@text="Superbalist"]
+${mnuMrDFood}      xpath=//*[@text="Mr. D"]

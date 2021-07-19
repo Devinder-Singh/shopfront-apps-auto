@@ -5,33 +5,34 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > PDP > Policy list > Warranty Types > Non-Returnable - QA-2019
-    [Tags]    QA-2019
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    Airtim
-    Click Variant Product from API
-    Verify Element On Screen    ${btnPDPSelectOption}    30s
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen Android    Non-Returnable    30s
-    Verify Text On Screen iOS    Non-Returnable    30s
-    Click Search Icon
-    Search Product    Vouche
-    Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen Android    Non-Returnable    30s
-    Verify Text On Screen iOS    Non-Returnable    30s
-    Click Search Icon
-    Search Product    johny wal
-    Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
-    Swipe Up    ${windowScroll}
-    Click Non Refundable
-    Verify Text On Screen Android    No warranty at all, except for delivery damages (if applicable). Digital products will be supported, but no refunds possible    5s
-    Verify Text On Screen iOS    No warranty at all, except for delivery damages (if applicable). Digital products will be supported, but no refunds possible    5s
-    [Teardown]    Tear Down
+#Apps > PDP > Buy Box > Add to Wishlist - QA-2033
+#    [Tags]    QA-2033
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    Pencil
+#    Click Product from API
+#    Click Add To Cart
+#    Verify Text On Screen iOS    Item added to Cart    30s
+#    Verify Text On Screen iOS    ${query_result_CartProduct}    1s
+#    Verify Text On Screen Android    Item Added to Cart    30s
+#    Verify Text On Screen Android    ${query_result_CartProduct}    1s
+#    Get Product Subtitle from PLID
+#    Verify Text On Screen iOS    ${query_result_CartProductSubTitle}    1s
+#    Verify Text On Screen Android    ${query_result_CartProductSubTitle}    1s
+#    Verify Element On Screen    ${btnGoToCart}    30s
+#    Close Application
+#    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    Dying Light 2
+#    Click Product From Title    Dying Light 2: Stay Human (PS5)
+#    Verify Element On Screen    ${btnPDPPreOrder}    30s
+#    Click Search Icon
+#    Search Product    eBook
+#    Click Product from API
+#    Check Text On Screen Not    Customers Also Bought
+#    [Teardown]    Tear Down
 
 #Apps > PDP > Variants > Sold out - QA-9593
 #    [Tags]    data    QA-9593

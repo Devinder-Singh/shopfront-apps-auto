@@ -100,8 +100,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Ring - Video Doorbel
-    Click Product From Title    Ring - Video Doorbell 3 Faceplate - Silver Metal
+    Search Product    Folding Frame
+    Click Product From Title    Casa Twin Folding Frame - 10 Lines
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
@@ -112,8 +112,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Ring - Video Doorbel
-    Click Product From Title    Ring - Video Doorbell 3 Faceplate - Silver Metal
+    Search Product    Folding Frame
+    Click Product From Title    Casa Twin Folding Frame - 10 Lines
     Click Add Bundle To Cart
     Click Go To Cart
     Wait for Checkout
@@ -128,8 +128,8 @@ Apps > Promotions (Android) Multi-Buys - QA-8411 / QA-7443
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    TOWER Reward Sticker
-    Click Product From Title    TOWER Reward Subject Stickers Value Pack 240 Stickers
+    Search Product    Accessible File
+    Click Product From Title    Treeline Accessible Files Pink Foolscap - Pack of 4
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
@@ -139,10 +139,10 @@ Apps > Promotions (Android) Multi-Buys - QA-8411 / QA-7443
     Start Application
     Click Home
     Click Search Home
-    Search Product    TOWER Reward Sticker
-    Click Product From Title    TOWER Reward Subject Stickers Value Pack 240 Stickers
+    Search Product    Accessible File
+    Click Product From Title    Treeline Accessible Files Pink Foolscap - Pack of 4
     Click Shop The Deal
-    Click Product From Title    Teddy Finger Paint - 4 x 100ml
+    Click Product From Title    Parrot Products Eraser Whiteboard (95*50mm 12 Peel Off Layers)
     Click Add To Cart
     Click Go To Cart
 #    Change Cart Quantity Android    2
@@ -162,7 +162,7 @@ Apps > Promotions (Android) Unboxed & Other Offers - QA-8412 / QA-7443
     Click Home
     Click Search Home
     Search Product    Unboxed Dea
-    Click Product From Title    Redragon 6W Air RGB PC Gaming Speaker Set
+    Click Product From Title    Russell Hobbs - 20 Litre Electronic Microwave
     Click Other Offers Add To Cart
     Click Go To Cart
     Click Checkout
@@ -516,7 +516,8 @@ Apps > PDP - QA-8890
     Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
-    Click Home
+    Click Product Text    ${query_result_CartProduct}
+    Click Product Variant From API
     Click Add To Wishlist Only
     Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
@@ -751,7 +752,7 @@ Apps > Cart (iOS) - QA-8908
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
-    Verify Text On Screen Android    Item(s) moved to list    30s
+#    Verify Text On Screen Android    Item(s) moved to list    30s
 #    Verify Text On Screen iOS    Item added to Wish List    30s
     [Teardown]    Tear Down
 
@@ -822,7 +823,7 @@ Apps > My Account Verifications - QA-5356
 #    Verify Text On Screen Android    Chrome    1s
 #    Click Window Android
     Close Application
-    Start Application
+    Start Application    ${False}
     Click Menu
     Click Menu My Account
     Click Menu Personal Detail
@@ -911,8 +912,8 @@ Apps > My Account Verifications - QA-9567
     Verify Text On Screen    Superbalist    5s
     Click Back Android
     Click Menu Help
-#    Verify Text On Screen Android    Open file with    30s
-#    Verify Text On Screen Android    Chrome    5s
+    Verify Text On Screen Android    Open file with    30s
+    Verify Text On Screen Android    Chrome    5s
     [Teardown]    Tear Down
 
 Apps > Order Tracking 02 - QA-9609
@@ -1114,7 +1115,7 @@ Apps > Cart (Android) 04 - QA-9600 / QA-9605
 
 Cart Update & Cart Notification - TV - QA-8420
     [Tags]    QA-8420
-    [Setup]    Start Application
+    [Setup]    Start Application    ${False}
     Clear Environment
     Click Home
     Click Search Home
@@ -1124,6 +1125,19 @@ Cart Update & Cart Notification - TV - QA-8420
     Click Go To Cart
     Click Checkout
     Click Domestic TV Licence
+    [Teardown]    Tear Down
+
+My Account > Takealot Group > Superbalist & Mr.D Links - QA-9956
+    [Tags]    QA-9956
+    [Setup]    Start Application
+    Click Menu
+    Click Menu My Account Android
+    Click Menu Superbalist
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account Android
+    Click Menu MrD
     [Teardown]    Tear Down
 
 Cart Update & Cart Notification - Liquor - QA-8419

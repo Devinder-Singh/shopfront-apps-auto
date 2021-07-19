@@ -45,3 +45,7 @@ ${btnPDPShowAllColours}    xpath=//*[contains(@text, "SHOW ALL")]
 
 ${lblPDPExchAndReturn}    xpath=//*[contains(@text, "Hassle-Free Exchanges & Returns for 30 Days")]
 ${lblPDPNonrefundable}    xpath=//*[contains(@text, "Non-Returnable")]
+
+${btnPDPOnCreditInfoTwo}    xpath=//*[contains(@text, "On Credit: R")]
+${btnPDPOnCreditInfo}    xpath=//*[contains(@text, "On Credit: R")]
+${btnPDPPreOrder}    xpath=//*[contains(@text, "Pre-order")]

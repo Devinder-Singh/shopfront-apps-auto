@@ -634,3 +634,372 @@ Apps > PDP > Policy list > Warranty Types > Non-Returnable - QA-2019
     Verify Text On Screen Android    No warranty at all, except for delivery damages (if applicable). Digital products will be supported, but no refunds possible    5s
     Verify Text On Screen iOS    No warranty at all, except for delivery damages (if applicable). Digital products will be supported, but no refunds possible    5s
     [Teardown]    Tear Down
+
+Apps > PDP > Sold by - QA-2024
+    [Tags]    QA-2024
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    glass
+    Click First Product from API
+    Click Seller Name
+    Click Product Seller Deals
+    Verify Text On Screen Android    ${query_result_FirstProductBrand}    30s
+    Verify Text On Screen iOS    ${query_result_FirstProductBrand}    30s
+    [Teardown]    Tear Down
+
+Apps > PDP > Main Product Details > Product Title and Sub-title - QA-2040
+    [Tags]    QA-2040
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Get Product Subtitle from PLID
+    Verify Text On Screen Android    ${query_result_CartProductSubTitle}    30s
+    Verify Text On Screen iOS    ${query_result_CartProductSubTitle}    30s
+    Click Search Icon
+    Search Product    book
+    Verify Text On Screen iOS    By    30s
+    Verify Text On Screen Android    by    30s
+    Verify Text On Screen Scroll    et al    5s    ${windowScroll}    ${btnProductSearchFilter}
+    Click Product from API
+    Get Product Subtitle from PLID
+    Verify Text On Screen Android    ${query_result_CartProductSubTitle}    30s
+    Verify Text On Screen iOS    ${query_result_CartProductSubTitle}    30s
+    Get Product Author from PLID
+    Verify Text On Screen Android    ${query_result_CartProductAuthor}    30s
+    Verify Text On Screen iOS    ${query_result_CartProductAuthor}    30s
+    [Teardown]    Tear Down
+
+Apps > PDP > Main Product Details > Product Info - QA-2038
+    [Tags]    QA-2038
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click PDP Description Show More
+    Click PDP Description Show More
+    Click Back Android
+    Click Back iOS    icon cross
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen iOS    Brand    1s
+    Verify Text On Screen iOS    Warranty    1s
+    Verify Text On Screen iOS    What's in the box    1s
+    Verify Text On Screen iOS    Barcode    1s
+    Verify Text On Screen Android    Brand    1s
+    Verify Text On Screen Android    Warranty    1s
+    Verify Text On Screen Android    What's in the box    1s
+    Verify Text On Screen Android    Barcode    1s
+    Click Product Brand from API
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    [Teardown]    Tear Down
+
+Apps > PDP > When Do I get it? > When Do I Get It? Message - QA-2022
+    [Tags]    QA-2022
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Swipe Up    ${windowScroll}
+    Click PDP When Do I Get
+    Verify Text On Screen iOS    When do I get it?    1s
+    Verify Text On Screen iOS    Our picking, packing and delivery is linked to what you order, where you want it delivered and how you choose to pay, so delivery times can vary. Estimates are provided below to help you shop, but always check your order’s Estimated Delivery Date during checkout for the most accurate delivery information    1s
+    Verify Text On Screen iOS    Standard Delivery    1s
+    Verify Text On Screen iOS    Cape Town, Johannesburg, Pretoria    1s
+    Verify Text On Screen iOS    Regional Area    1s
+    Verify Text On Screen iOS    Remote Area    1s
+    Verify Text On Screen iOS    2-5 working days    1s
+    Verify Text On Screen iOS    2-6 working days    1s
+    Verify Text On Screen iOS    3-7 working days    1s
+    Verify Text On Screen iOS    Premium Delivery Options    1s
+    Verify Text On Screen iOS    Same Day Delivery    1s
+    Verify Text On Screen iOS    Express Delivery    1s
+    Verify Text On Screen iOS    Saturday Delivery    1s
+    Verify Text On Screen iOS    Sunday Delivery    1s
+    Verify Text On Screen iOS    Same Day between 3pm - 7pm    1s
+    Verify Text On Screen iOS    Next Working Day between 7am - 7pm    1s
+    Verify Text On Screen iOS    Saturday between 11am - 7pm    1s
+    Verify Text On Screen iOS    Sunday between 11am - 7pm    1s
+    Verify Text On Screen iOS    Pay before 11am weekdays    1s
+    Verify Text On Screen iOS    Pay before 11:59pm previous day    1s
+    Verify Text On Screen iOS    Pay before 11:59pm Friday    1s
+    Verify Text On Screen iOS    Pay before 11:00am Saturday    1s
+    Verify Text On Screen iOS    Collections    1s
+    Verify Text On Screen iOS    Cape Town warehouse    1s
+    Verify Text On Screen iOS    Pickup Point: Cape Town, Johannesburg, Pretoria    1s
+    Verify Text On Screen iOS    Pickup Point: Regional Area    1s
+    Verify Text On Screen iOS    Pickup Point: Remote Area    1s
+    Verify Text On Screen iOS    1-4 working days    1s
+    Verify Text On Screen iOS    2-5 working days    1s
+    Verify Text On Screen iOS    2-6 working days    1s
+    Verify Text On Screen iOS    3-7 working days    1s
+    Verify Text On Screen iOS    Collection times vary, please wait for your Ready to Collect email before visiting the pickup point    1s
+    Verify Text On Screen Android    When do I get it?    1s
+    Verify Text On Screen Android    Our picking, packing and delivery is linked to what you order, where you want it delivered and how you choose to pay, so delivery times can vary. Estimates are provided below to help you shop, but always check your order’s Estimated Delivery Date during checkout for the most accurate delivery information    1s
+    Verify Text On Screen Android    Standard Delivery    1s
+    Verify Text On Screen Android    Cape Town, Johannesburg, Pretoria    1s
+    Verify Text On Screen Android    Regional Area    1s
+    Verify Text On Screen Android    Remote Area    1s
+    Verify Text On Screen Android    2-5 working days    1s
+    Verify Text On Screen Android    2-6 working days    1s
+    Verify Text On Screen Android    3-7 working days    1s
+    Verify Text On Screen Android    Premium Delivery Options    1s
+    Verify Text On Screen Android    Same Day Delivery    1s
+    Verify Text On Screen Android    Express Delivery    1s
+    Verify Text On Screen Android    Saturday Delivery    1s
+    Verify Text On Screen Android    Sunday Delivery    1s
+    Verify Text On Screen Android    Same Day between 3pm - 7pm    1s
+    Verify Text On Screen Android    Next Working Day between 7am - 7pm    1s
+    Verify Text On Screen Android    Saturday between 11am - 7pm    1s
+    Verify Text On Screen Android    Sunday between 11am - 7pm    1s
+    Verify Text On Screen Android    Pay before 11am weekdays    1s
+    Verify Text On Screen Android    Pay before 11:59pm previous day    1s
+    Verify Text On Screen Android    Pay before 11:59pm Friday    1s
+    Verify Text On Screen Android    Pay before 11:00am Saturday    1s
+    Verify Text On Screen Android    Collections    1s
+    Verify Text On Screen Android    Cape Town warehouse    1s
+    Verify Text On Screen Android    Pickup Point: Cape Town, Johannesburg, Pretoria    1s
+    Verify Text On Screen Android    Pickup Point: Regional Area    1s
+    Verify Text On Screen Android    Pickup Point: Remote Area    1s
+    Verify Text On Screen Android    1-4 working days    1s
+    Verify Text On Screen Android    2-5 working days    1s
+    Verify Text On Screen Android    2-6 working days    1s
+    Verify Text On Screen Android    3-7 working days    1s
+    Verify Text On Screen Android    Collection times vary, please wait for your Ready to Collect email before visiting the pickup point    1s
+    Click Back Android
+    Click Back iOS    icon cross
+    Click Search Icon
+    Search Product    Pencil
+    Click Leadtime Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Swipe Up    ${windowScroll}
+    Click PDP When Do I Get
+    Verify Text On Screen iOS    When do I get it?    1s
+    Verify Text On Screen iOS    Our picking, packing and delivery is linked to what you order, where you want it delivered and how you choose to pay, so delivery times can vary. Estimates are provided below to help you shop, but always check your order’s Estimated Delivery Date during checkout for the most accurate delivery information    1s
+    Verify Text On Screen iOS    Standard Delivery    1s
+    Verify Text On Screen iOS    Cape Town, Johannesburg & Pretoria Delivery Time    1s
+    Verify Text On Screen iOS    Regional Area Delivery Time    1s
+    Verify Text On Screen iOS    Remote Area Delivery Time    1s
+    Verify Text On Screen iOS    Shipped in 3-5 working days    1s
+    Verify Text On Screen iOS    Shipped in 5-7 working days    1s
+    Verify Text On Screen iOS    Shipped in 7-10 working days    1s
+    Verify Text On Screen iOS    Shipped in 10-15 working days    1s
+    Verify Text On Screen iOS    Shipped in 15-20 working days    1s
+    Verify Text On Screen iOS    1-2 weeks    1s
+    Verify Text On Screen iOS    2-3 weeks    1s
+    Verify Text On Screen iOS    3-4 weeks    1s
+    Verify Text On Screen iOS    3-5 weeks    1s
+    Verify Text On Screen iOS    2-4 weeks    1s
+    Verify Text On Screen iOS    Collections    1s
+    Verify Text On Screen iOS    Shipped in 3-5 working days    1s
+    Verify Text On Screen iOS    Shipped in 5-7 working days    1s
+    Verify Text On Screen iOS    Shipped in 7-10 working days    1s
+    Verify Text On Screen iOS    Shipped in 10-15 working days    1s
+    Verify Text On Screen iOS    Shipped in 15-20 working days    1s
+    Verify Text On Screen iOS    Shipping time indicates how long it takes a product to reach our warehouse from our supplier    1s
+    Verify Text On Screen iOS    Delivery estimates include shipping times    1s
+    Verify Text On Screen Android    When do I get it?    1s
+    Verify Text On Screen Android    Our picking, packing and delivery is linked to what you order, where you want it delivered and how you choose to pay, so delivery times can vary. Estimates are provided below to help you shop, but always check your order’s Estimated Delivery Date during checkout for the most accurate delivery information    1s
+    Verify Text On Screen Android    Standard Delivery    1s
+    Verify Text On Screen Android    Cape Town, Johannesburg & Pretoria Delivery Time    1s
+    Verify Text On Screen Android    Regional Area Delivery Time    1s
+    Verify Text On Screen Android    Remote Area Delivery Time    1s
+    Verify Text On Screen Android    Shipped in 3-5 working days    1s
+    Verify Text On Screen Android    Shipped in 5-7 working days    1s
+    Verify Text On Screen Android    Shipped in 7-10 working days    1s
+    Verify Text On Screen Android    Shipped in 10-15 working days    1s
+    Verify Text On Screen Android    Shipped in 15-20 working days    1s
+    Verify Text On Screen Android    1-2 weeks    1s
+    Verify Text On Screen Android    2-3 weeks    1s
+    Verify Text On Screen Android    3-4 weeks    1s
+    Verify Text On Screen Android    3-5 weeks    1s
+    Verify Text On Screen Android    2-4 weeks    1s
+    Verify Text On Screen Android    Collections    1s
+    Verify Text On Screen Android    Shipped in 3-5 working days    1s
+    Verify Text On Screen Android    Shipped in 5-7 working days    1s
+    Verify Text On Screen Android    Shipped in 7-10 working days    1s
+    Verify Text On Screen Android    Shipped in 10-15 working days    1s
+    Verify Text On Screen Android    Shipped in 15-20 working days    1s
+    Verify Text On Screen Android    Shipping time indicates how long it takes a product to reach our warehouse from our supplier    1s
+    Verify Text On Screen Android    Delivery estimates include shipping times    1s
+    Click Back Android
+    Click Back iOS    icon cross
+    Click Search Icon
+    Search Product    Vouche
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Swipe Up    ${windowScroll}
+    Click PDP When Do I Get
+    Verify Text On Screen iOS    When do I get it?    1s
+    Verify Text On Screen iOS    Gift vouchers are delivered via email to the recipient as soon as payment has been approved    1s
+    Verify Text On Screen Android    When do I get it?    1s
+    Verify Text On Screen Android    Gift vouchers are delivered via email to the recipient as soon as payment has been approved    1s
+    [Teardown]    Tear Down
+
+Apps > PDP > Buy Box > Price Range - QA-2026
+    [Tags]    QA-2026
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    jeans for w
+    Click Variant Product from API
+    Click Product Variant From API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Text On Screen iOS    Price: R    1s
+    Verify Text On Screen Android    Price: R    1s
+    Click Search Icon
+    Search Product    Shirts
+    Click Variant Product from API
+    Click Product Variant Colour From API
+    Check Text On Screen Not    Price: R
+    Click Product Variant Colour Size From API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Text On Screen iOS    Price: R    1s
+    Verify Text On Screen Android    Price: R    1s
+    [Teardown]    Tear Down
+
+Apps > PDP > Buy Box > MobiCred - QA-2029
+    [Tags]    QA-2029
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Fridg
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Click PDP Credit Info
+    Verify Text On Screen iOS    Can I buy this on credit?    5s
+    Verify Text On Screen iOS    Yes. If you pay with Mobicred, you can repay the full amount in monthly instalments, instead of all at once    1s
+    Verify Text On Screen iOS    The On Credit amount shown is based on 12 monthly repayments (including interest charged at 17.5%* per year and excluding Mobicred's set-up and service fees)    1s
+    Verify Text On Screen iOS    Once you have a Mobicred account, simply select Mobicred as your payment option when you checkout    1s
+    Verify Text On Screen iOS    Don't have a Mobicred account yet?    1s
+    Verify Text On Screen iOS    Before you add an item to your cart, you'll need to apply for a Mobicred account via the Mobicred website    1s
+    Verify Text On Screen iOS    Please note    1s
+    Verify Text On Screen iOS    Your Mobicred application will be processed in 1 business day once all required documents have been submitted    1s
+    Verify Text On Screen iOS    Annual interest subject to change    1s
+    Verify Text On Screen iOS    Apply to Mobicred now    1s
+    Verify Text On Screen Android    Can I buy this on credit?    5s
+    Verify Text On Screen Android    Yes. If you pay with Mobicred, you can repay the full amount in monthly instalments, instead of all at once    1s
+    Verify Text On Screen Android    The On Credit amount shown is based on 12 monthly repayments (including interest charged at 17.5%* per year and excluding Mobicred's set-up and service fees)    1s
+    Verify Text On Screen Android    Once you have a Mobicred account, simply select Mobicred as your payment option when you checkout    1s
+    Verify Text On Screen Android    Don't have a Mobicred account yet?    1s
+    Verify Text On Screen Android    Before you add an item to your cart, you'll need to apply for a Mobicred account via the Mobicred website    1s
+    Verify Text On Screen Android    Please note    1s
+    Verify Text On Screen Android    Your Mobicred application will be processed in 1 business day once all required documents have been submitted    1s
+    Verify Text On Screen Android    Annual interest subject to change    1s
+    Verify Text On Screen Android    Apply to Mobicred now    1s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Jeans for Wo
+    Click Variant Product from API
+    Verify Element On Screen    ${btnPDPSelectOption}    30s
+    Verify Text On Screen iOS    On Credit: R    2s
+    Verify Text On Screen iOS    / month    2s
+    Verify Text On Screen Android    Apply to Mobicred now    2s
+    Verify Text On Screen Android    / month    2s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    airtim
+    Click Variant Product from API
+    Verify Element On Screen    ${btnPDPSelectOption}    30s
+    Check Text On Screen Not    On Credit
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    iphone 12
+    Click Product from API
+    Verify Element On Screen    ${btnPDPSelectOption}    30s
+    Check Text On Screen Not    On Credit
+    [Teardown]    Tear Down
+
+Apps > PDP > Buy Box > Add to Cart - QA-2032
+    [Tags]    QA-2032
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Verify Text On Screen iOS    Item added to Cart    30s
+    Verify Text On Screen iOS    ${query_result_CartProduct}    1s
+    Verify Text On Screen Android    Item Added to Cart    30s
+    Verify Text On Screen Android    ${query_result_CartProduct}    1s
+    Get Product Subtitle from PLID
+    Verify Text On Screen iOS    ${query_result_CartProductSubTitle}    1s
+    Verify Text On Screen Android    ${query_result_CartProductSubTitle}    1s
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Dying Light 2
+    Click Product From Title    Dying Light 2: Stay Human (PS5)
+    Verify Element On Screen    ${btnPDPPreOrder}    30s
+    Click Search Icon
+    Search Product    eBook
+    Click Product from API
+    Check Text On Screen Not    Customers Also Bought
+    [Teardown]    Tear Down
+
+Apps > PDP > Buy Box > Add to Wishlist - QA-2035
+    [Tags]    QA-2035
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    blu-ray disc
+    Click Product From Title    Perfect Storm - (Import Blu-ray Disc)
+    Verify Text On Screen iOS    This Disc requires a Blu-ray player    30s
+    Verify Text On Screen Android    This Disc requires a Blu-ray player    30s
+    Click Search Icon
+    Search Product    walking dead season
+    Click Product From Title    Walking Dead Season 4 - (Region A Import Blu-ray Disc)
+    Verify Text On Screen iOS    This Blu-ray disc requires a suitable Blu-ray player that has the ability to play multi region discs    30s
+    Verify Text On Screen Android    This Blu-ray disc requires a suitable Blu-ray player that has the ability to play multi region discs    30s
+    [Teardown]    Tear Down
+
+Apps > PDP > Notification Banner > Pre - Order , Login , Write A Review - QA-2036
+    [Tags]    QA-2036
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Dying Light 2
+    Click Product From Title    Dying Light 2: Stay Human (PS5)
+    Click Add Pre Order To Cart
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen iOS    Pre-order items must be purchased in separate orders (1 order for each pre-order item)    30s
+    Verify Text On Screen Android    Pre-order items must be purchased in separate orders (1 order for each pre-order item)    30s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test
+    Click Review Submit
+    Verify Text On Screen    Thank you for your review    30s
+    [Teardown]    Tear Down

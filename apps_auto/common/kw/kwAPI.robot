@@ -115,6 +115,29 @@ Get Product to Add To Cart
 
     [return]    ${searchResult}
 
+Get Leadtime Product to Add To Cart
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.stock_availability_summary.is_leadtime
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+    @{results_price}=    Output    $.sections.products.results[*].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].price
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${results_title}[${index}]'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
+        Set Global Variable    ${query_result_CartProductPrice}    ${results_price}[${index}]
+        Exit For Loop If    '${result}'=='True'
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+    Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+
+    [return]    ${searchResult}
+
 Get Product PLID from Title
     [Arguments]    ${title}
 
@@ -139,6 +162,40 @@ Get Product PLID from Title
     Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
 
     [return]    ${results_variant}
+
+Get Product Author from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Author}=    Output    $.core.authors[0].Author
+
+    Set Global Variable    ${query_result_CartProductAuthor}    ${results_Author}
+
+    [return]    ${results_Author}
+
+Get Product Brand from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Brand}=    Output    $.core.brand
+
+    Set Global Variable    ${query_result_CartProductBrand}    ${results_Brand}
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeLink[`label == "${results_Brand}"`][1]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_Brand}']
+
+    [return]    ${searchResult}
+
+Get Product Subtitle from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_SubTitle}=    Output    $.core.subtitle
+
+    Set Global Variable    ${query_result_CartProductSubTitle}    ${results_SubTitle}
+
+    [return]    ${results_SubTitle}
 
 Get Product Display Names from PLID
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop

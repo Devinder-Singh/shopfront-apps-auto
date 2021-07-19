@@ -33,3 +33,6 @@ ${btnMenuTakealotGroup}      id=Takealot.group
 ${btnMenuHelp}      id=Help
 
 ${mnuGaming}      chain=**/XCUIElementTypeStaticText[`label == "Gaming"`]
+
+${mnuSuperbalist}      chain=**/XCUIElementTypeStaticText[`label == "Superbalist.com"`]
+${mnuMrDFood}      chain=**/XCUIElementTypeStaticText[`label == "Mr D Food"`]

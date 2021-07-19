@@ -25,6 +25,11 @@ Click Add To Cart
     Click Element    ${btnAddToCart}
     Sleep    2s
 
+Click Add Pre Order To Cart
+    Wait Until Element Is Visible    ${btnPDPPreOrder}    30s
+    Click Element    ${btnPDPPreOrder}
+    Sleep    2s
+
 Click Exchange And Returns
     Swipe Up    ${windowScroll}
     Wait Until Element Is Visible    ${lblPDPExchAndReturn}    30s
@@ -68,6 +73,16 @@ Click PDP Warehouse OK
     Wait Until Element Is Visible    ${txtPDPWarehouseOK}    3s
     Click Element    ${txtPDPWarehouseOK}
     Sleep    2s
+
+Click PDP When Do I Get
+    Wait Until Element Is Visible    ${btnPDPWhenDoIGet}    3s
+    Click Element    ${btnPDPWhenDoIGet}
+    Sleep    2s
+
+Click PDP Credit Info
+    ${chkElementSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPOnCreditInfoTwo}    3s
+    Run Keyword If    ${chkElementSuccess}==True    Click Element    ${btnPDPOnCreditInfoTwo}
+    Run Keyword If    ${chkElementSuccess}==False    Click Element    ${btnPDPOnCreditInfo}
 
 Click Eligible for Cash on Delivery
     Wait Until Element Is Visible    ${btnAddToCart}    30s
@@ -201,6 +216,7 @@ Click Add Bundle To Cart
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${btnPDPAddBundleToCart}
+    Sleep    2s
 
 Click Add Bundle To Cart No Scroll Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnPDPAddBundleToCart}

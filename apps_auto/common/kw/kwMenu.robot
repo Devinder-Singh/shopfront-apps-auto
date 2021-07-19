@@ -150,6 +150,18 @@ Click Menu Settings
     Wait Until Element Is Visible    ${btnMenuSettings}    10s
     Click Element    ${btnMenuSettings}
 
+Click Menu Superbalist
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenuTakealotGroup}    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuTakealotGroup}
+    Wait Until Element Is Visible    ${mnuSuperbalist}    10s
+    Click Element    ${mnuSuperbalist}
+
+Click Menu MrD
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenuTakealotGroup}    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuTakealotGroup}
+    Wait Until Element Is Visible    ${mnuMrDFood}    10s
+    Click Element    ${mnuMrDFood}
+
 Click Menu Takealot Group
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenuTakealotGroup}    10s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuTakealotGroup}
