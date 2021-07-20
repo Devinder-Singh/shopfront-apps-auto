@@ -49,6 +49,13 @@ Apply Reviews Filter Options
     Wait Until Element Is Visible    ${btnReviewsFilterApplyButton}    30s
     Click Element    ${btnReviewsFilterApplyButton}
 
+Verify Reviews on WriteReivew Text 
+    IF    ${PLATFORM_NAME} == 'android'
+       Verify Text On Screen Android    WRITE REVIEW    30s 
+    ELSE
+       Verify Text On Screen iOS  write a review   30s
+    END
+
 Verify Reviews Upvote Added
     Verify Text On Screen Android    Thank you for your feedback    30s
 

@@ -13,9 +13,9 @@ Apps > Reviews > Review Components > Read Reviews - QA-9166
     Click Search Home
     Search Product    Toothpaste
     Click Product No Reviews
-    Verify Text On Screen Android    WRITE REVIEW    30s
-    Scroll To PDP Reviews    ${btnPDPNoReviewsDescription}
-    Element Should Be Visible    ${btnPDPNoReviewsDescription}
+    Verify Reviews on WriteReivew Text
+    Scroll To PDP Reviews    ${btnNoReviewsDescription}
+    Element Should Be Visible    ${btnNoReviewsDescription}
     Click Element    ${btnPDPReview}
     Verify PDP Screen Element    ${btnReviewSubmit}
     Close Application

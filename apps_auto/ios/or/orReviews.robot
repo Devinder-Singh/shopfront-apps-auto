@@ -4,12 +4,12 @@ ${btnReviewSubmit}      chain=**/XCUIElementTypeButton[`label == "Submit"`]
 
 ${btnReviewStarRating}      chain=**/XCUIElementTypeButton[`label == "icon ratingStar"`][3]
 
-${btnNoReviewsDescription}    ${EMPTY}
-${btnReviewsSummaryOverallRating}    ${EMPTY}
-${btnReviewsSummaryOverallStarRating}    ${EMPTY}
-${btnReviewsSummaryOverallRatingCount}    ${EMPTY}
+${btnNoReviewsDescription}   id=btnNoReviewsDescription 
+${btnReviewsSummaryOverallRating}   id=btnReviewsSummaryOverallRating 
+${btnReviewsSummaryOverallStarRating}    id=btnReviewsSummaryOverallStarRating
+${btnReviewsSummaryOverallRatingCount}   id=btnReviewsSummaryOverallRatingCount 
 
-${btnReviewsContainer}    ${EMPTY}
+${btnReviewsContainer}   id=btnReviewsContainer 
 ${btnReviewsSortButton}    ${EMPTY}
 ${btnReviewsSortOptionMostHelpful}    ${EMPTY}
 ${btnReviewsSortOptionMostRecent}    ${EMPTY}
