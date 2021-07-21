@@ -49,6 +49,9 @@ Apply Reviews Filter Options
     Wait Until Element Is Visible    ${btnReviewsFilterApplyButton}    30s
     Click Element    ${btnReviewsFilterApplyButton}
 
+Apply Reviews Filter Options Rating
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'  Click Element    ${btnReviewsFilterDoneButton}
+
 Verify Reviews on WriteReivew Text 
     IF    ${PLATFORM_NAME} == 'android'
        Verify Text On Screen Android    WRITE REVIEW    30s 
@@ -73,6 +76,7 @@ Verify Reviews Report Review Success Message
 Apply Reviews Filter Option Ratings Filter
     Click Element    ${btnReviewsFilterButton}
     Select Reviews Filter Option Rating
+    Apply Reviews Filter Options Rating
     Apply Reviews Filter Options
 
 Click Reviews Sort Option Most Recent

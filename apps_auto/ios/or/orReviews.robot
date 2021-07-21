@@ -10,14 +10,15 @@ ${btnReviewsSummaryOverallStarRating}    id=btnReviewsSummaryOverallStarRating
 ${btnReviewsSummaryOverallRatingCount}   id=btnReviewsSummaryOverallRatingCount 
 
 ${btnReviewsContainer}   id=btnReviewsContainer 
-${btnReviewsSortButton}    ${EMPTY}
+${btnReviewsSortButton}  chain=**/XCUIElementTypeButton[`label == "Sort"`][1] 
 ${btnReviewsSortOptionMostHelpful}    ${EMPTY}
 ${btnReviewsSortOptionMostRecent}    ${EMPTY}
-${btnReviewsFilterButton}    ${EMPTY}
+${btnReviewsFilterButton}   chain=**/XCUIElementTypeButton[`label == "Filter"`][1] 
 ${btnReviewsFilterClearAllButton}    ${EMPTY}
-${btnReviewsFilterApplyButton}    ${EMPTY}
-${btnReviewsFilterOptionRatings}    ${EMPTY}
-${btnReviewsFilterOptionsRatingsFilter}    ${EMPTY}
+${btnReviewsFilterApplyButton}   chain=**/XCUIElementTypeButton[`label == "Apply"`]
+${btnReviewsFilterDoneButton}   chain=**/XCUIElementTypeButton[`label == "Done"`]  
+${btnReviewsFilterOptionRatings}   id=Ratings 
+${btnReviewsFilterOptionsRatingsFilter}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 ${btnReviewsFilterOptionColour}    ${EMPTY}
 ${btnReviewsFilterOptionsColourFilter}    ${EMPTY}
 ${btnReviewsFilterOptionSize}    ${EMPTY}

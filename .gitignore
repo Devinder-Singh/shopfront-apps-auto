@@ -5,3 +5,6 @@ extension/app/node_modules
 extension/.DS_Store
 results
 .pyc
+app_auto/log.html
+app_auto/output.xml
+app_auto/report.html
