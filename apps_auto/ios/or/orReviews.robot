@@ -11,7 +11,7 @@ ${btnReviewsSummaryOverallRatingCount}   id=btnReviewsSummaryOverallRatingCount
 
 ${btnReviewsContainer}   id=btnReviewsContainer 
 ${btnReviewsSortButton}  chain=**/XCUIElementTypeButton[`label == "Sort"`][1] 
-${btnReviewsSortOptionMostHelpful}   id=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
+${btnReviewsSortOptionMostHelpful}   chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 ${btnReviewsSortOptionMostRecent}    id=Most Recent
 ${btnReviewsFilterButton}   xpath=(//XCUIElementTypeButton[@name="btnReviewsFilterButton"])[1]
 ${btnReviewsFilterClearAllButton}    ${EMPTY}
