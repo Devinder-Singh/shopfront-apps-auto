@@ -113,7 +113,7 @@ Apps > Search Listings > Reviews - QA-8750
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Tear Down
+    Close Application
     Start Application    ${False}
     Click Menu
     Click Menu Register

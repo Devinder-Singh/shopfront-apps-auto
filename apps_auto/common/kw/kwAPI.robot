@@ -103,14 +103,126 @@ Get Product to Add To Cart
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${results_title}[${index}]'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
         Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
         Set Global Variable    ${query_result_CartProductPrice}    ${results_price}[${index}]
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
 
+    ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+    Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+
     [return]    ${searchResult}
+
+Get Leadtime Product to Add To Cart
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.stock_availability_summary.is_leadtime
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+    @{results_price}=    Output    $.sections.products.results[*].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].price
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${results_title}[${index}]'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
+        Set Global Variable    ${query_result_CartProductPrice}    ${results_price}[${index}]
+        Exit For Loop If    '${result}'=='True'
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+    Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+
+    [return]    ${searchResult}
+
+Get Product PLID from Title
+    [Arguments]    ${title}
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.core.title
+    @{results_PLID}=    Output    $.sections.products.results[*].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+
+        Exit For Loop If    '${result}'=='${title}'
+
+        ${results_variant}=    Set Variable    zero
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    Should Be True    '${results_variant}'!='zero'
+    Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+
+    [return]    ${results_variant}
+
+Get Product Author from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Author}=    Output    $.core.authors[0].Author
+
+    Set Global Variable    ${query_result_CartProductAuthor}    ${results_Author}
+
+    [return]    ${results_Author}
+
+Get Product Brand from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Brand}=    Output    $.core.brand
+
+    Set Global Variable    ${query_result_CartProductBrand}    ${results_Brand}
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeLink[`label == "${results_Brand}"`][1]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_Brand}']
+
+    [return]    ${searchResult}
+
+Get Product Subtitle from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_SubTitle}=    Output    $.core.subtitle
+
+    Set Global Variable    ${query_result_CartProductSubTitle}    ${results_SubTitle}
+
+    [return]    ${results_SubTitle}
+
+Get Product Display Names from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_DisplayNames}=    Output    $.other_offers.conditions[0].items[*].seller.display_name
+
+    [return]    @{results_DisplayNames}
+
+Get Product Lead Times from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_LeadTimes}=    Output    $.other_offers.conditions[0].items[*].event_data.documents.product.lead_time
+
+    [return]    @{results_LeadTimes}
+
+Get Product Prices from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_Prices}=    Output    $.other_offers.conditions[0].items[*].event_data.documents.product.purchase_price
+
+    [return]    @{results_Prices}
 
 Get Scroll Product to Add To Cart
 
@@ -278,6 +390,22 @@ Get Price Range Product to Add To Cart
 
     [return]    ${searchResult}
 
+Get Product YAML Detail
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}/frequently-bought-together?platform=desktop&allow_variant=true
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Title}=    Output    $.items[0].core.title
+    ${results_StarRating}=    Output    $.items[0].core.star_rating
+    ${results_Price}=    Output    $.items[0].pretty_price
+
+    Set Global Variable    ${query_result_YMALProductTitle}    ${results_Title}
+    Set Global Variable    ${query_result_YMALProductRating}    ${results_StarRating}
+    Set Global Variable    ${query_result_YMALProductPrice}    ${results_Price}
+
+    [return]
+
 Get Product Variant
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
@@ -316,18 +444,38 @@ Get Product Variant Colour
 
     [return]    ${searchResult}
 
-Get Product Variant Colour Size
+Get Product Variant All Colours
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
     Get    ${search_URL}
     Integer    response status    200
 
-    @{results}=    Output    $.variants.selectors[0].options[*].is_enabled
+    @{results_variant}=    Output    $.variants.selectors[0].options[*].link_data.fields.colour_variant
+
+    [return]    @{results_variant}
+
+Get Product Variant All Size
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_variant}=    Output    $.variants.selectors[0].options[*].link_data.fields.size
+
+    [return]    @{results_variant}
+
+Get Product Variant Colour Size
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop&colour_variant=${query_result_CartProductVariant}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.variants.selectors[1].options[*].is_enabled
     @{results_variant}=    Output    $.variants.selectors[1].options[*].link_data.fields.size
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
@@ -874,7 +1022,7 @@ Get Filter Product to Add To Cart
         ${objVariant}=    Get From Dictionary    ${result}    has_variants
         ${objTitle}=    Get From Dictionary    ${result}    title
 
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${objTitle}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${objTitle}"]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${objTitle}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${objTitle}']
         Set Global Variable    ${query_result_CartFilterProduct}    ${objTitle}
         Exit For Loop If    '${objVariant}'=='False'
 

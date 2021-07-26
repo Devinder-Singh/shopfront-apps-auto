@@ -5,41 +5,67 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > PDP > You Might Also Like - QA-2012
-    [Tags]    QA-2012
-    [Setup]    Start Application
-    Click Menu
-    Click Menu Login
-    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
-    Click Home
-    Click Search Home
-    Search Product    airtim
-    Click First Product from API
-    Verify Text On Screen    eB20 - eB    30s
-    Click Airtime
-    Verify Text On Screen    eB50    30s
-    Tear Down
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Product from API
-    Verify eBucks On Screen
-    Tear Down
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    fridg
-    Click Product from API
-    Verify eBucks On Screen
-    Tear Down
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    johnny
-    Click Product from API
-    Verify eBucks On Screen
-    [Teardown]    Tear Down
+#Apps > PDP > Buy Box > Add to Wishlist - QA-2033
+#    [Tags]    QA-2033
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    Pencil
+#    Click Product from API
+#    Click Add To Cart
+#    Verify Text On Screen iOS    Item added to Cart    30s
+#    Verify Text On Screen iOS    ${query_result_CartProduct}    1s
+#    Verify Text On Screen Android    Item Added to Cart    30s
+#    Verify Text On Screen Android    ${query_result_CartProduct}    1s
+#    Get Product Subtitle from PLID
+#    Verify Text On Screen iOS    ${query_result_CartProductSubTitle}    1s
+#    Verify Text On Screen Android    ${query_result_CartProductSubTitle}    1s
+#    Verify Element On Screen    ${btnGoToCart}    30s
+#    Close Application
+#    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    Dying Light 2
+#    Click Product From Title    Dying Light 2: Stay Human (PS5)
+#    Verify Element On Screen    ${btnPDPPreOrder}    30s
+#    Click Search Icon
+#    Search Product    eBook
+#    Click Product from API
+#    Check Text On Screen Not    Customers Also Bought
+#    [Teardown]    Tear Down
+
+#Apps > PDP > Variants > Sold out - QA-9593
+#    [Tags]    data    QA-9593
+#    [Setup]    Start Application    ${False}
+#    Clear Environment
+#    Click Home
+#    Click Search Home
+#    Search Product    jean
+#    Click Variant Product from API
+#    Verify Text On Screen Android    Select a size    30s
+#    Verify Text On Screen iOS    Select a size    30s
+#    Swipe Up    ${windowScroll}
+#    Verify Product Variant Size From API
+#    Click Product Variant From API
+#    Click Add To Cart
+#    Verify Text On Screen Android    Item Added To Cart    30s
+#    Verify Text On Screen iOS    Item added to Cart    30s
+#    [Teardown]    Tear Down
+
+#Cart Update & Cart Notification - Heavy Good - QA-8421
+#    [Tags]    QA-8421
+#    [Setup]    Start Application
+#    Clear Environment
+#    Click Home
+#    Click Search Home
+#    Search Product    johnny
+#    Click Product from API
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout
+#    Click Select Age
+#    Click Verify Age
+#    [Teardown]    Tear Down
 
 #Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
 #    Install Application

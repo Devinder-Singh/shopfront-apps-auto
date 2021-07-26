@@ -139,3 +139,321 @@ Apps > Personal Details Parity > Update Personal Details - Add/Edit Mobile Numbe
     Update Personal Detail Mobile    0662327661
     Verify Text On Screen    Your mobile number has been successfully updated    30s
     [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Delivery Address (with pre-saved addresses) - QA-5344
+    [Tags]    QA-5344
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Delete Address
+    Verify Text On Screen Android    Address successfully deleted    30s
+    Verify Text On Screen Android    You don't have any addresses saved. Please add a Delivery Address    30s
+    Verify Text On Screen iOS    You don't have any addresses saved. Please add a Delivery Address    30s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Add Business Address > Street Suggestion - QA-5345
+    [Tags]    QA-5345
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc No Name    Tester Residential    0723456778    13 Caro Road
+    Verify Text On Screen Android    Please enter a business name    30s
+    Verify Text On Screen iOS    Please enter a business name    30s
+    Edit Delivery Address Business My Acc    ABC
+    Verify Text On Screen Android    Add Delivery Address    30s
+    Verify Text On Screen Android    Tester Residential    1s
+    Verify Text On Screen Android    BUSINESS    1s
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    Add Delivery Address    30s
+    Verify Text On Screen iOS    Tester Residential    1s
+    Verify Text On Screen iOS    BUSINESS    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen iOS    0723456778    1s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen iOS    0723456778    1s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Add Residential Address > Street Suggestion - QA-5347
+    [Tags]    QA-5347
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address My Acc    Tester Residential    072345677    13 Caro Road
+    Verify Text On Screen Android    Please enter a 10-digit SA phone number without country code, spaces, or special characters    30s
+    Verify Text On Screen iOS    Please enter a 10-digit SA phone number without country code, spaces, or special characters    30s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
+    Verify Text On Screen Android    Add Delivery Address    30s
+    Verify Text On Screen Android    Tester Residential    1s
+    Verify Text On Screen Android    RESIDENTIAL    1s
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    Add Delivery Address    30s
+    Verify Text On Screen iOS    Tester Residential    1s
+    Verify Text On Screen iOS    RESIDENTIAL    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen iOS    0723456778    1s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen iOS    0723456778    1s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Delivery Address (with no saved addresses) - QA-9733
+    [Tags]    QA-9733
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Delete Address
+    Verify Text On Screen Android    Address successfully deleted    30s
+    Verify Text On Screen Android    You don't have any addresses saved. Please add a Delivery Address    30s
+    Verify Text On Screen iOS    You don't have any addresses saved. Please add a Delivery Address    30s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Verify Text On Screen Android    You don't have any addresses saved. Please add a Delivery Address    30s
+    Verify Text On Screen iOS    You don't have any addresses saved. Please add a Delivery Address    30s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Delivery Address > Field Validations - QA-9734 / QA-9735
+    [Tags]    QA-9734    QA-9735
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Delete Address
+    Verify Text On Screen Android    Address successfully deleted    30s
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc No Name    ${EMPTY}    ${EMPTY}    ${EMPTY}
+    Verify Text On Screen    Please enter the recipient's name    5s
+    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    1s
+    Verify Text On Screen    Please enter the street address    1s
+    Verify Text On Screen    Please enter a business name    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Please enter the suburb    1s
+    Verify Text On Screen    Please enter the city    1s
+    Verify Text On Screen    Please select a province    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Please enter a postal code    1s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc No Name    Tester Residential    0723456778    13 Caro Road
+    Verify Text On Screen Android    Please enter a business name    5s
+    Verify Text On Screen iOS    Please enter a business name    5s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Address Business
+    Add Delivery Address Business My Acc    Tester Residential    0723456778    13 Caro Road
+    Verify Text On Screen Android    Add Delivery Address    30s
+    Verify Text On Screen Android    Tester Residential    1s
+    Verify Text On Screen Android    BUSINESS    1s
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    Add Delivery Address    30s
+    Verify Text On Screen iOS    Tester Residential    1s
+    Verify Text On Screen iOS    BUSINESS    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Verify Text On Screen iOS    0723456778    1s
+    Close Application
+    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen iOS    0723456778    1s
+    Click Edit Address Business
+    Edit Delivery Address Business    ${EMPTY}
+    Click Save Address
+    Verify Text On Screen Android    Please enter a business name    5s
+    Verify Text On Screen iOS    Please enter a business name    5s
+    Swipe Down    ${windowScroll}
+    Click Cancel Screen
+    Click Edit Address Business
+    Edit Delivery Address Postal Code    ${EMPTY}
+    Click Save Address
+    Verify Text On Screen Android    Please enter a postal code    5s
+    Verify Text On Screen iOS    Please enter a postal code    5s
+    Swipe Down    ${windowScroll}
+    Click Cancel Screen
+    Click Edit Address Business
+    Edit Delivery Address Postal Code    8007
+    Click Save Address
+    Edit Delivery Address Confirm Address
+    Click Address Got It Thanks
+    Edit Delivery Address On Map    13 Caro Road
+    Verify Text On Screen Android    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 8007    30s
+    Verify Text On Screen Android    0723456778    1s
+    Verify Text On Screen iOS    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 8007    30s
+    Verify Text On Screen iOS    0723456778    1s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Edit Address > Pin On Map (Outside SA) - QA-9736
+    [Tags]    QA-9736
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Edit Address Business
+    Edit Delivery Address Postal Code My Acc    8007
+    Click Save Address
+    Edit Delivery Address Confirm Address My Acc
+    Click Address Got It Thanks
+    Edit Delivery Address On Map My Acc    12 Ridge Way
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Edit Address > Street Corrections (Residential) - QA-5346
+    [Tags]    QA-5346
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Edit Address Business
+    Edit Delivery Address My Acc Empty
+    Click Save Address
+    Verify Text On Screen    Please enter the recipient's name    5s
+    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Please enter the suburb    1s
+    Verify Text On Screen    Please enter the city    1s
+    Click Back Android
+    Click Back iOS    Back
+    Click Edit Address Business
+    Edit Delivery Address Postal Code My Acc    8007
+    Click Save Address
+    Edit Delivery Address Confirm Address My Acc
+    Click Address Got It Thanks
+    Edit Delivery Address On Map My Acc    12 Ridge Way
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    [Teardown]    Tear Down
+
+Apps > My Account > Address Book > Edit Address > Pin On Map - QA-5348
+    [Tags]    QA-5348
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Edit Address Business
+    Edit Delivery Address Postal Code My Acc    8007
+    Click Save Address
+    Edit Delivery Address Confirm Address My Acc
+    Click Address Got It Thanks
+    Edit Delivery Address On Map My Acc    12 Ridge Way
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Edit Address Business
+    Edit Delivery Address Suburb My Acc
+    Click Save Address
+    Edit Delivery Address Confirm Address My Acc Suburb
+    Click Address Got It Thanks
+    Edit Delivery Address On Map My Acc Suburb    13 Caro Road
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Gauteng, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Gauteng, 8007    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Verify Text On Screen Android    12 Ridge Way, Green Point, Cape Town, Gauteng, 8007    30s
+    Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Gauteng, 8007    30s
+    [Teardown]    Tear Down

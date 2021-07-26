@@ -5,7 +5,8 @@ ${btnContinueShopping}    chain=**/XCUIElementTypeButton[`label == "Continue Sho
 ${lblAirtimeValue}    chain=**/XCUIElementTypeStaticText[`label == "R5"`]
 ${lblTenKgValue}    id=10.0 kg
 ${btnGoToCart}    chain=**/XCUIElementTypeButton[`label == "Go to Cart"`]
-${btnPDPSelectOption}    nsp=label == "Select an option" AND name == "Select an option" AND value == "Select an option"
+# ${btnPDPSelectOption}    nsp=label == "Select an option" AND name == "Select an option" AND value == "Select an option"
+${btnPDPSelectOption}    chain=**/XCUIElementTypeButton[`label == "Select an option"`]
 
 ${btnPDPCartItemIncrease}      chain=**/XCUIElementTypeButton[`label == "Button"`][1]
 
@@ -14,7 +15,7 @@ ${navCartScr}    chain=**/XCUIElementTypeNavigationBar[`name == "Shopping Cart"`
 
 ${btnPDPSellerName}      chain=**/XCUIElementTypeLink[`label == "Sophie Moda"`][1]
 ${lblBlueValue}      chain=**/XCUIElementTypeStaticText[`label == "Blue"`]
-${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write a Review"`]
+${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write Review"`]
 
 ${btnPDPScrollRoot}      chain=**/XCUIElementTypeWindow[1]
 ${btnPDPAddBundleToCart}      chain=**/XCUIElementTypeButton[`label CONTAINS "Add Bundle to Cart"`]
@@ -22,3 +23,32 @@ ${btnPDPOtherOfferAddToCart}      chain=**/XCUIElementTypeButton[`label == "icon
 ${lblPDPShopTheDeal}      chain=**/XCUIElementTypeButton[`label == "Shop the Deal"`]
 
 ${lnkPDPShowMore}      chain=**/XCUIElementTypeButton[`label == "Show More Description"`]
+
+${lnkPDPCOD}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "Eligible for Cash on Delivery"`]
+
+${txtPDPJHB}      chain=**/XCUIElementTypeStaticText[`label == "JHB"`]
+${txtPDPCPT}      chain=**/XCUIElementTypeStaticText[`label == "CPT"`]
+${txtPDPWarehouseOK}      chain=**/XCUIElementTypeButton[`label == "Close"`]
+
+${btnPDPListPrice}      chain=**/XCUIElementTypeButton[`label == "icon info"`][1]
+${btnPDPListPriceCancel}      chain=**/XCUIElementTypeButton[`label == "Close"`]
+${lnkPDPShopTheDealTCs}    chain=**/XCUIElementTypeButton[`label CONTAINS "Bundle Deals expire when stock runs out"`]
+
+${lnkPDPWhatIsThis}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "What is this"`]
+${lnkPDPSelectOption}    chain=**/XCUIElementTypeButton[`label == "Select an option"`]
+
+${btnVariantShowMore}    chain=**/XCUIElementTypeButton[`label == "Show All"`]
+
+${btnPDPShowAllOffers}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show All Offers"`]
+${btnPDPShowAllOffersCart}    chain=**/XCUIElementTypeButton[`label == "icon cartButton"`][1]
+
+${btnPDPShowAllColours}    chain=**/XCUIElementTypeButton[`label == "Show All"`]
+
+${lblPDPExchAndReturn}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "Hassle-Free Exchanges & Returns for 30 Days"`]
+${lblPDPNonrefundable}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "Non-Returnable"`]
+
+${btnPDPWhenDoIGet}    chain=**/XCUIElementTypeButton[`label == "When do I get it?"`]
+${btnPDPOnCreditInfoTwo}    chain=**/XCUIElementTypeButton[`label == "icon info"`][2]
+${btnPDPOnCreditInfo}    chain=**/XCUIElementTypeButton[`label == "icon info"`]
+
+${btnPDPPreOrder}    chain=**/XCUIElementTypeButton[`label CONTAINS "Pre-order"`]

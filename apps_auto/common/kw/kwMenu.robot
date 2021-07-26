@@ -11,6 +11,8 @@ Click Menu
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHome}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHome}
 
+    Sleep    2s
+
 Click Menu iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
@@ -109,7 +111,13 @@ Click Menu New To Electronics
 
 Click Menu My Account
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccount}
+
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuMyAccount}    5s
+    Log    ${chkTextSuccess}
+    Run Keyword If    ${chkTextSuccess}==False and '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccountText}
+    Run Keyword If    ${chkTextSuccess}==True and '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccount}
+
+    Sleep    2s
 
 Click Menu My Account Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
@@ -141,6 +149,18 @@ Click Menu Credits Refunds
 Click Menu Settings
     Wait Until Element Is Visible    ${btnMenuSettings}    10s
     Click Element    ${btnMenuSettings}
+
+Click Menu Superbalist
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenuTakealotGroup}    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuTakealotGroup}
+    Wait Until Element Is Visible    ${mnuSuperbalist}    10s
+    Click Element    ${mnuSuperbalist}
+
+Click Menu MrD
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenuTakealotGroup}    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuTakealotGroup}
+    Wait Until Element Is Visible    ${mnuMrDFood}    10s
+    Click Element    ${mnuMrDFood}
 
 Click Menu Takealot Group
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenuTakealotGroup}    10s
@@ -180,4 +200,4 @@ Verify Menu Items
     Wait Until Element Is Visible    ${btnMenuDailyDeals}    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Account
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuShopByDepartment}    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuMyAccount}    1s
+    Verify Text On Screen iOS    My Account    1s
