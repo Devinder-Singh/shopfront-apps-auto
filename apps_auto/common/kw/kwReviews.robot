@@ -35,10 +35,19 @@ Verify Reviews Filter Options All
 Verify Reviews Filter Options Applied
     [Arguments]    ${numberOfFilters}
     Wait Until Element Is Visible    ${btnReviewsFilterButton}    30s
-    IF    ${numberOfFilters} == 0
-        Element Text Should Be    ${btnReviewsFilterButton}    FILTER
-    ELSE
-        Element Text Should Be    ${btnReviewsFilterButton}    FILTER (${numberOfFilters})
+    IF    ${PLATFORM_NAME} == 'android' 
+        IF    ${numberOfFilters} == 0
+            Element Text Should Be    ${btnReviewsFilterButton}    FILTER
+        ELSE
+            Element Text Should Be    ${btnReviewsFilterButton}    FILTER (${numberOfFilters})
+        END
+    ELSE 
+        IF    ${numberOfFilters} == 0
+            Element Text Should Be    ${btnReviewsFilterButton}    Filter
+        ELSE
+            Element Text Should Be    ${btnReviewsFilterButton}    Filter (${numberOfFilters})
+        END
+
     END
 
 Verify Reviews Filter No Reviews Displayed
