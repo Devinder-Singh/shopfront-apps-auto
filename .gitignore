@@ -8,3 +8,4 @@ results
 app_auto/log.html
 app_auto/output.xml
 app_auto/report.html
+*.png
