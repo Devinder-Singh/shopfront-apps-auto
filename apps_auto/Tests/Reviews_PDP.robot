@@ -61,9 +61,9 @@ Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     Click Product Multiple Reviews
     Goto PDP Reviews Section
     Click Element    ${btnReviewsSortButton}
-    # Verify Reviews Sort Option Default
+    Verify Reviews Sort Option Default
     Click Reviews Sort Option Most Recent
-    # Verify Reviews Sort Option Most Recent
+    Verify Reviews Sort Option Most Recent
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
@@ -133,10 +133,12 @@ Apps > Reviews > Read Reviews > Upvote - QA-7950
     Click Product Multiple Reviews
     Goto PDP Reviews Section
     Click Review Upvote Button
+    #devinder-> we need to make sure the message is unvoted before we carry on the process 
     Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
     Verify Reviews Upvote Success Message
     [Teardown]    Tear Down
 
+#need to carry on testing below cases  
 Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
     [Tags]    data    QA-9168
     [Setup]    Start Application

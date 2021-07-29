@@ -72,15 +72,29 @@ Verify Reviews Upvote Added
     Verify Text On Screen Android    Thank you for your feedback    30s
 
 Verify Reviews Upvote Removed
-    Verify Text On Screen Android    Vote removed    30s    
+  IF    ${PLATFORM_NAME} == 'android'
+        Verify Text On Screen Android    Vote removed    30s    
+  ELSE
+        Element Should Contain Text    ${croutonTitle}    Vote removed
+        # Verify Text On Screen    ${croutonTitle}    30s
+    END
 
 Verify Reviews Upvote Success Message
-    ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsUpvoteButton}
-    Run Keyword If    '${checkboxStatus}'=='false'    Verify Reviews Upvote Removed    ELSE    Verify Reviews Upvote Added
-
+    IF    ${PLATFORM_NAME} == 'android'
+        ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsUpvoteButton}
+        Run Keyword If    '${checkboxStatus}'=='false'    Verify Reviews Upvote Removed    ELSE    Verify Reviews Upvote Added
+    ELSE
+        #we need to click away login in sucessfully crouton
+        Click Element     ${croutonTitle} 
+        Element Should Contain Text    ${croutonTitle}    Thank you for your feedback
+    END
 Verify Reviews Report Review Success Message
-    Verify Text On Screen Android    Thank you for reporting    30s
-    Element Should Be Visible    ${btnReviewsReportReviewText}
+    IF    ${PLATFORM_NAME} == 'android'
+         Verify Text On Screen Android    Thank you for reporting    30s
+        Element Should Be Visible    ${btnReviewsReportReviewText}
+    ELSE 
+        Element Should Contain Text    ${croutonTitle}    Your report has been submitted
+    END
 
 Apply Reviews Filter Option Ratings Filter
     Click Element    ${btnReviewsFilterButton}
@@ -125,14 +139,17 @@ Goto PDP Reviews Section
 Select Reviews Filter Option Rating
     Click Element    ${btnReviewsFilterOptionRatings}
     Click Element    ${btnReviewsFilterOptionsRatingsFilter}
+    Apply Reviews Filter Options Rating
 
 Select Reviews Filter Option Colour
     Click Element    ${btnReviewsFilterOptionColour}
     Click Element    ${btnReviewsFilterOptionsColourFilter}
+    Apply Reviews Filter Options Rating
 
 Select Reviews Filter Option Size
     Click Element    ${btnReviewsFilterOptionSize}
     Click Element    ${btnReviewsFilterOptionsSizeFilter}
+    Apply Reviews Filter Options Rating
 
 Click Reviews Filter Clear All Button
     Click Element    ${btnReviewsFilterClearAllButton}
