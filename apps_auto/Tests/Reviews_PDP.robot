@@ -4,7 +4,7 @@ Resource        ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Apps > Reviews > Review Components > Read Reviews - QA-9166
-    [Tags]    data    QA-9166
+    [Tags]    QA-9166
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -51,7 +51,7 @@ Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
     Run Keyword If    '${txtRating}'!='${txtRatingChanged}'    Fail
     [Teardown]    Tear Down
 
-#TODO: cant test in the ios rightnow. we cant find the highlight checkbox in ios
+#TODO:[devinder] cant test in the ios rightnow. we cant find the highlight checkbox in ios
 Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     [Tags]    QA-7938
     [Setup]    Start Application
