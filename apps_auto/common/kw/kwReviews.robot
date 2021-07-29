@@ -93,13 +93,14 @@ Verify Reviews Report Review Success Message
          Verify Text On Screen Android    Thank you for reporting    30s
         Element Should Be Visible    ${btnReviewsReportReviewText}
     ELSE 
+        #we need to click away login in sucessfully crouton
+        Click Element     ${croutonTitle} 
         Element Should Contain Text    ${croutonTitle}    Your report has been submitted
     END
 
 Apply Reviews Filter Option Ratings Filter
     Click Element    ${btnReviewsFilterButton}
     Select Reviews Filter Option Rating
-    Apply Reviews Filter Options Rating
     Apply Reviews Filter Options
 
 Click Reviews Sort Option Most Recent
@@ -118,12 +119,16 @@ Click Review Upvote Button
 
 Click Review Report Review Menu Button
     Click Element    ${btnReviewsMenuButton}
-    Wait Until Element Is Visible    ${btnReviewsReportReviewButton}    30s
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnReviewsReportReviewButton}    30s
+    END
     Click Element    ${btnReviewsReportReviewButton}
 
 Click Review Report Review Dialog Button
-    Wait Until Element Is Visible    ${btnReviewsReportReviewDialogButton}    30s
-    Click Element    ${btnReviewsReportReviewDialogButton}
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnReviewsReportReviewDialogButton}    30s
+        Click Element    ${btnReviewsReportReviewDialogButton}
+    END
 
 Enter Review Message
     [Arguments]    ${msg}

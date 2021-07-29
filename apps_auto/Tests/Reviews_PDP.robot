@@ -138,7 +138,6 @@ Apps > Reviews > Read Reviews > Upvote - QA-7950
     Verify Reviews Upvote Success Message
     [Teardown]    Tear Down
 
-#need to carry on testing below cases  
 Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
     [Tags]    data    QA-9168
     [Setup]    Start Application
