@@ -4,7 +4,7 @@ Resource        ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Apps > Reviews > Review Components > Read Reviews - QA-9166
-    [Tags]    data    QA-9166
+    [Tags]    QA-9166
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -13,9 +13,9 @@ Apps > Reviews > Review Components > Read Reviews - QA-9166
     Click Search Home
     Search Product    Toothpaste
     Click Product No Reviews
-    Verify Text On Screen Android    WRITE REVIEW    30s
-    Scroll To PDP Reviews    ${btnPDPNoReviewsDescription}
-    Element Should Be Visible    ${btnPDPNoReviewsDescription}
+    Verify Reviews on WriteReivew Text
+    Scroll To PDP Reviews    ${btnNoReviewsDescription}
+    Element Should Be Visible    ${btnNoReviewsDescription}
     Click Element    ${btnPDPReview}
     Verify PDP Screen Element    ${btnReviewSubmit}
     Close Application
@@ -51,8 +51,9 @@ Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
     Run Keyword If    '${txtRating}'!='${txtRatingChanged}'    Fail
     [Teardown]    Tear Down
 
+#TODO:[devinder] cant test in the ios rightnow. we cant find the highlight checkbox in ios
 Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
-    [Tags]    data    QA-7938
+    [Tags]    QA-7938
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -66,7 +67,7 @@ Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
-    [Tags]    data    QA-7941
+    [Tags]    QA-7941
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -87,7 +88,7 @@ Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Screen > Filter Options - QA-7943
-    [Tags]    data    QA-7943
+    [Tags]    QA-7943
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -105,7 +106,7 @@ Apps > Reviews > Read Reviews > Review Screen > Filter Options - QA-7943
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QA-7946
-    [Tags]    data    QA-7946
+    [Tags]    QA-7946
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -123,7 +124,7 @@ Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QA-7946
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Upvote - QA-7950
-    [Tags]    data    QA-7950
+    [Tags]    QA-7950
     [Setup]    Start Application
     Click Menu Logout If Logged In
     Click Home
@@ -132,12 +133,13 @@ Apps > Reviews > Read Reviews > Upvote - QA-7950
     Click Product Multiple Reviews
     Goto PDP Reviews Section
     Click Review Upvote Button
+    #TODO: [devinder] we need to make sure the message is unvoted before we carry on the process 
     Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
     Verify Reviews Upvote Success Message
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
-    [Tags]    data    QA-9168
+    [Tags]    QA-9168
     [Setup]    Start Application
     Click Menu Logout If Logged In
     Click Home
@@ -152,7 +154,7 @@ Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
     [Teardown]    Tear Down
 
 Apps > Reviews > Write A Review (Legacy) - QA-9169
-    [Tags]    data    QA-9168
+    [Tags]    QA-9168
     [Setup]    Start Application
     Set SSL Verify    False
     Click Menu

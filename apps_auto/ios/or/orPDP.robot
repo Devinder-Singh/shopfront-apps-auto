@@ -14,11 +14,11 @@ ${navCartScr}    chain=**/XCUIElementTypeNavigationBar[`name == "Shopping Cart"`
 
 ${btnPDPSellerName}      chain=**/XCUIElementTypeLink[`label == "Sophie Moda"`][1]
 ${lblBlueValue}      chain=**/XCUIElementTypeStaticText[`label == "Blue"`]
-${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write a Review"`]
+${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write Review"`]
 ${btnPDPReviewsSummary}    ${EMPTY}
-${btnPDPUserReviews}    ${EMPTY}
-${btnPDPReviewBuyboxTitleButton}    ${EMPTY}
-${btnPDPReviewShowMoreButton}    ${EMPTY}
+${btnPDPUserReviews}    id=btnPDPUserReviews
+${btnPDPReviewBuyboxTitleButton}     id=btnPDPReviewBuyboxTitleButton
+${btnPDPReviewShowMoreButton}    id=btnPDPReviewShowMoreButton
 
 ${btnPDPScrollRoot}      chain=**/XCUIElementTypeWindow[1]
 ${btnPDPAddBundleToCart}      chain=**/XCUIElementTypeButton[`label CONTAINS "Add Bundle to Cart"`]

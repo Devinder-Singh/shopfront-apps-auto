@@ -61,8 +61,8 @@ Click Menu Logout
     Sleep    2s
 
 Click Menu Logout If Logged In
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
+    Wait Until Element Is Visible    ${btnMenu}    30s
+    Click Element    ${btnMenu}
 
     ${chkVisible}=    Run Keyword And Return Status    Page Should Contain Element    ${btnLogout}
     Run Keyword If    '${chkVisible}'=='True'    Click Element    ${btnLogout}

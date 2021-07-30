@@ -35,10 +35,19 @@ Verify Reviews Filter Options All
 Verify Reviews Filter Options Applied
     [Arguments]    ${numberOfFilters}
     Wait Until Element Is Visible    ${btnReviewsFilterButton}    30s
-    IF    ${numberOfFilters} == 0
-        Element Text Should Be    ${btnReviewsFilterButton}    FILTER
-    ELSE
-        Element Text Should Be    ${btnReviewsFilterButton}    FILTER (${numberOfFilters})
+    IF    ${PLATFORM_NAME} == 'android' 
+        IF    ${numberOfFilters} == 0
+            Element Text Should Be    ${btnReviewsFilterButton}    FILTER
+        ELSE
+            Element Text Should Be    ${btnReviewsFilterButton}    FILTER (${numberOfFilters})
+        END
+    ELSE 
+        IF    ${numberOfFilters} == 0
+            Element Text Should Be    ${btnReviewsFilterButton}    Filter
+        ELSE
+            Element Text Should Be    ${btnReviewsFilterButton}    Filter (${numberOfFilters})
+        END
+
     END
 
 Verify Reviews Filter No Reviews Displayed
@@ -49,19 +58,45 @@ Apply Reviews Filter Options
     Wait Until Element Is Visible    ${btnReviewsFilterApplyButton}    30s
     Click Element    ${btnReviewsFilterApplyButton}
 
+Apply Reviews Filter Options Rating
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'  Click Element    ${btnReviewsFilterDoneButton}
+
+Verify Reviews on WriteReivew Text 
+    IF    ${PLATFORM_NAME} == 'android'
+       Verify Text On Screen Android    WRITE REVIEW    30s 
+    ELSE
+       Verify Text On Screen iOS  write a review   30s
+    END
+
 Verify Reviews Upvote Added
     Verify Text On Screen Android    Thank you for your feedback    30s
 
 Verify Reviews Upvote Removed
-    Verify Text On Screen Android    Vote removed    30s    
+  IF    ${PLATFORM_NAME} == 'android'
+        Verify Text On Screen Android    Vote removed    30s    
+  ELSE
+        Element Should Contain Text    ${croutonTitle}    Vote removed
+        # Verify Text On Screen    ${croutonTitle}    30s
+    END
 
 Verify Reviews Upvote Success Message
-    ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsUpvoteButton}
-    Run Keyword If    '${checkboxStatus}'=='false'    Verify Reviews Upvote Removed    ELSE    Verify Reviews Upvote Added
-
+    IF    ${PLATFORM_NAME} == 'android'
+        ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsUpvoteButton}
+        Run Keyword If    '${checkboxStatus}'=='false'    Verify Reviews Upvote Removed    ELSE    Verify Reviews Upvote Added
+    ELSE
+        #we need to click away login in sucessfully crouton
+        Click Element     ${croutonTitle} 
+        Element Should Contain Text    ${croutonTitle}    Thank you for your feedback
+    END
 Verify Reviews Report Review Success Message
-    Verify Text On Screen Android    Thank you for reporting    30s
-    Element Should Be Visible    ${btnReviewsReportReviewText}
+    IF    ${PLATFORM_NAME} == 'android'
+         Verify Text On Screen Android    Thank you for reporting    30s
+        Element Should Be Visible    ${btnReviewsReportReviewText}
+    ELSE 
+        #we need to click away login in sucessfully crouton
+        Click Element     ${croutonTitle} 
+        Element Should Contain Text    ${croutonTitle}    Your report has been submitted
+    END
 
 Apply Reviews Filter Option Ratings Filter
     Click Element    ${btnReviewsFilterButton}
@@ -84,12 +119,16 @@ Click Review Upvote Button
 
 Click Review Report Review Menu Button
     Click Element    ${btnReviewsMenuButton}
-    Wait Until Element Is Visible    ${btnReviewsReportReviewButton}    30s
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnReviewsReportReviewButton}    30s
+    END
     Click Element    ${btnReviewsReportReviewButton}
 
 Click Review Report Review Dialog Button
-    Wait Until Element Is Visible    ${btnReviewsReportReviewDialogButton}    30s
-    Click Element    ${btnReviewsReportReviewDialogButton}
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnReviewsReportReviewDialogButton}    30s
+        Click Element    ${btnReviewsReportReviewDialogButton}
+    END
 
 Enter Review Message
     [Arguments]    ${msg}
@@ -105,14 +144,17 @@ Goto PDP Reviews Section
 Select Reviews Filter Option Rating
     Click Element    ${btnReviewsFilterOptionRatings}
     Click Element    ${btnReviewsFilterOptionsRatingsFilter}
+    Apply Reviews Filter Options Rating
 
 Select Reviews Filter Option Colour
     Click Element    ${btnReviewsFilterOptionColour}
     Click Element    ${btnReviewsFilterOptionsColourFilter}
+    Apply Reviews Filter Options Rating
 
 Select Reviews Filter Option Size
     Click Element    ${btnReviewsFilterOptionSize}
     Click Element    ${btnReviewsFilterOptionsSizeFilter}
+    Apply Reviews Filter Options Rating
 
 Click Reviews Filter Clear All Button
     Click Element    ${btnReviewsFilterClearAllButton}
