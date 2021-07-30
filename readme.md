@@ -2,32 +2,21 @@
 
 # QA System
 
-This repo serves to host a shared Node.js / JS QA-System for integrated testing across the various verticles.
+This repo serves primarily to automate the ui for Shopfront Apps on android and ios. There is also a template for other devisions to start implementing their own app automation
 
 
 ### Features:
 
-- customised nightwatch distro
+- apps_auto for shopfront apps android and ios
 
-- custom Takealot chrome plugin for e2e automation script generation
+- custom Takealot library TalLibrary for app automation
+
+- Automation template for other devisions
 
 
 
 
 ### Getting started
 
-
-
-
-##### Nightwatch
-
-
-
-
-
-##### Extension
-
-> WIP - until the react version is done, basic tryout can be done by installing the extension from ./extension/build/orig
-
-> once initial work is done, extension will be compiled and built in React. 
+Apps automation setup wiki: https://jira.takealot.com/wiki/display/TST/Apps+Automation+Setup+Robot+Framework+and+Appium
 
