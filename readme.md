@@ -1,6 +1,6 @@
 
 
-# QA System
+# SF Apps automation repo
 
 This repo serves primarily to automate the ui for Shopfront Apps on android and ios. There is also a template for other devisions to start implementing their own app automation
 
