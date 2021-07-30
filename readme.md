@@ -2,7 +2,7 @@
 
 # SF Apps automation repo
 
-This repo serves primarily to automate the ui for Shopfront Apps on android and ios. There is also a template for other devisions to start implementing their own app automation
+This repo serves primarily to automate the ui for Shopfront Apps on android and ios. There is also a template for other divisions to start implementing their own app automation
 
 
 ### Features:
