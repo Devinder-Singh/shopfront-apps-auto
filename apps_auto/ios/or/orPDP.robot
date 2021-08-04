@@ -16,9 +16,9 @@ ${btnPDPSellerName}      chain=**/XCUIElementTypeLink[`label == "Sophie Moda"`][
 ${lblBlueValue}      chain=**/XCUIElementTypeStaticText[`label == "Blue"`]
 ${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write Review"`]
 ${btnPDPReviewsSummary}    ${EMPTY}
-${btnPDPUserReviews}    id=btnPDPUserReviews
+${btnPDPUserReviews}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[22]/XCUIElementTypeTable/XCUIElementTypeCell[2]
 ${btnPDPReviewBuyboxTitleButton}     id=btnPDPReviewBuyboxTitleButton
-${btnPDPReviewShowMoreButton}    id=btnPDPReviewShowMoreButton
+${btnPDPReviewShowMoreButton}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show All Reviews"`]
 
 ${btnPDPScrollRoot}      chain=**/XCUIElementTypeWindow[1]
 ${btnPDPAddBundleToCart}      chain=**/XCUIElementTypeButton[`label CONTAINS "Add Bundle to Cart"`]

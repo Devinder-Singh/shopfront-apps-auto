@@ -19,13 +19,13 @@ Verify Reviews Distribution Summary View
 
 Verify Reviews Sort Option Default
     ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostHelpful}
-    Run Keyword If    '${checkboxStatus}'=='false'    Fail
+    Run Keyword If    '${checkboxStatus}'=='false' and '${PLATFORM_NAME}'=='android'    Fail
 
 Verify Reviews Sort Option Most Recent
     Wait Until Element Is Visible    ${btnReviewsSortButton}    30s
     Click Element    ${btnReviewsSortButton}
     ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostRecent}
-    Run Keyword If    '${checkboxStatus}'=='false'    Fail
+    Run Keyword If    '${checkboxStatus}'=='false' and '${PLATFORM_NAME}'=='android'    Fail
 
 Verify Reviews Filter Options All
     Text Should Be Visible    Ratings
@@ -83,11 +83,8 @@ Verify Reviews Upvote Success Message
     IF    ${PLATFORM_NAME} == 'android'
         ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsUpvoteButton}
         Run Keyword If    '${checkboxStatus}'=='false'    Verify Reviews Upvote Removed    ELSE    Verify Reviews Upvote Added
-    ELSE
-        #we need to click away login in sucessfully crouton
-        Click Element     ${croutonTitle} 
-        Element Should Contain Text    ${croutonTitle}    Thank you for your feedback
     END
+
 Verify Reviews Report Review Success Message
     IF    ${PLATFORM_NAME} == 'android'
          Verify Text On Screen Android    Thank you for reporting    30s
@@ -104,7 +101,12 @@ Apply Reviews Filter Option Ratings Filter
     Apply Reviews Filter Options
 
 Click Reviews Sort Option Most Recent
+    Wait Until Element Is Visible    ${btnReviewsSortOptionMostRecent}    10s
     Click Element    ${btnReviewsSortOptionMostRecent}
+
+Click Reviews Sort Option Most Helpful
+    Wait Until Element Is Visible    ${btnReviewsSortOptionMostHelpful}    10s
+    Click Element    ${btnReviewsSortOptionMostHelpful}
 
 Click Review Submit
     Wait Until Element Is Visible    ${btnReviewSubmit}    30s
@@ -136,7 +138,7 @@ Enter Review Message
     Input Text    ${txtReviewMsg}    ${msg}
 
 Goto PDP Reviews Section
-    Scroll To PDP Reviews    ${btnPDPUserReviews}
+    Scroll To PDP Reviews    ${btnReviewsShowAllButton}
     Verify Reviews Card User Reviews Visible
     Click PDP Reviews Show More
     Verify Reviews PDP Section Visible
@@ -158,3 +160,11 @@ Select Reviews Filter Option Size
 
 Click Reviews Filter Clear All Button
     Click Element    ${btnReviewsFilterClearAllButton}
+
+Click Reviews Sort Option Button
+    Wait Until Element Is Visible    ${btnReviewsSortButton}    15s
+    Click Element    ${btnReviewsSortButton}
+
+Click Reviews Show All Button
+    Wait Until Element Is Visible    ${btnReviewsShowAllButton}    15s
+    Click Element    ${btnReviewsShowAllButton}

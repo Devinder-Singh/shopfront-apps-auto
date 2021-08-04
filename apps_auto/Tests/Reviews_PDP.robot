@@ -51,7 +51,6 @@ Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
     Run Keyword If    '${txtRating}'!='${txtRatingChanged}'    Fail
     [Teardown]    Tear Down
 
-#TODO:[devinder] cant test in the ios rightnow. we cant find the highlight checkbox in ios
 Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     [Tags]    QA-7938
     [Setup]    Start Application
@@ -64,6 +63,8 @@ Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     Verify Reviews Sort Option Default
     Click Reviews Sort Option Most Recent
     Verify Reviews Sort Option Most Recent
+    Click Element    ${btnReviewsSortButton}
+    Click Reviews Sort Option Most Helpful
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
@@ -126,16 +127,19 @@ Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QA-7946
 Apps > Reviews > Read Reviews > Upvote - QA-7950
     [Tags]    QA-7950
     [Setup]    Start Application
-    Click Menu Logout If Logged In
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Toothpaste
     Click Product Multiple Reviews
     Goto PDP Reviews Section
-    Click Review Upvote Button
-    #TODO: [devinder] we need to make sure the message is unvoted before we carry on the process 
-    Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
     Verify Reviews Upvote Success Message
+    Click Review Upvote Button
+#    Verify Text On Screen    Thank you for your feedback    15s
+    Click Review Upvote Button
+#    Verify Text On Screen    Vote removed    15s
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
