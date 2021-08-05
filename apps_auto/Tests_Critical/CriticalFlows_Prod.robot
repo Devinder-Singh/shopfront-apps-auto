@@ -25,25 +25,9 @@ Search and Buy Item on Delivery using Credit Card
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    [Teardown]    Tear Down
-
-Buy Daily Deal Item on Delivery using Credit Card
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Click Menu Daily Deals
-    Click Product Daily Deals
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Free Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Payfast and Create new Address
@@ -70,6 +54,9 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Payfast Payment Method
     Click Pay With Payfast
     Verify Payfast Payment Text    Instant EFT
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV
@@ -102,6 +89,9 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Edit Personal Details, Create Address and Buy Item on Delivery
@@ -136,6 +126,9 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Buy Airtime and Pay with Credit Card
@@ -155,6 +148,9 @@ Buy Airtime and Pay with Credit Card
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Delivery
@@ -186,6 +182,9 @@ Buy Airtime along with another Item on Delivery
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Collection
@@ -217,42 +216,7 @@ Buy Airtime along with another Item on Collection
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    [Teardown]    Tear Down
-
-Buy Daily Deals Item and verify no Promotions
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Click Menu Daily Deals
-    Click Product Daily Deals
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Free Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
-    [Teardown]    Tear Down
-
-Buy Daily Deals Item and verify Promotions
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Click Menu Daily Deals
-    Click Product Daily Deals
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Free Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
