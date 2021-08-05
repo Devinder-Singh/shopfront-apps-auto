@@ -33,7 +33,7 @@ Click Product from API
             ...    ${chkProdVisible}==True
             ...    Exit For Loop
 
-        Swipe Up    ${btnProductListView}
+        Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
