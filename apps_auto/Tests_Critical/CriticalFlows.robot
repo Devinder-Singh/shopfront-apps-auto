@@ -30,24 +30,24 @@ Search and Buy Item on Delivery using Credit Card
     Cancel Latest Order
     [Teardown]    Tear Down
 
-Buy Daily Deal Item on Delivery using Credit Card
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Click Menu Daily Deals
-    Click Product Daily Deals
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Free Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
-    [Teardown]    Tear Down
+#Buy Daily Deal Item on Delivery using Credit Card
+#    [Setup]    Start Application
+#    Clear Environment
+#    Click Menu
+#    Click Menu Daily Deals
+#    Click Product Daily Deals
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout
+#    Click Delivery
+#    Click Address
+#    Click Free Delivery
+#    Click Donate No Thanks
+#    Click Change Payment Method
+#    Click Card Payment Method
+#    Click Pay With Credit Card
+#    Verify Card Payment
+#    [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Payfast and Create new Address
     [Setup]    Start Application
@@ -240,40 +240,40 @@ Buy Airtime along with another Item on Collection
     Cancel Latest Order
     [Teardown]    Tear Down
 
-Buy Daily Deals Item and verify no Promotions
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Click Menu Daily Deals
-    Click Product Daily Deals
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Free Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
-    [Teardown]    Tear Down
+#Buy Daily Deals Item and verify no Promotions
+#    [Setup]    Start Application
+#    Clear Environment
+#    Click Menu
+#    Click Menu Daily Deals
+#    Click Product Daily Deals
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout
+#    Click Delivery
+#    Click Address
+#    Click Free Delivery
+#    Click Donate No Thanks
+#    Click Change Payment Method
+#    Click Card Payment Method
+#    Click Pay With Credit Card
+#    Verify Card Payment
+#    [Teardown]    Tear Down
 
-Buy Daily Deals Item and verify Promotions
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Click Menu Daily Deals
-    Click Product Daily Deals
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Free Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
-    [Teardown]    Tear Down
+#Buy Daily Deals Item and verify Promotions
+#    [Setup]    Start Application
+#    Clear Environment
+#    Click Menu
+#    Click Menu Daily Deals
+#    Click Product Daily Deals
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout
+#    Click Delivery
+#    Click Address
+#    Click Free Delivery
+#    Click Donate No Thanks
+#    Click Change Payment Method
+#    Click Card Payment Method
+#    Click Pay With Credit Card
+#    Verify Card Payment
+#    [Teardown]    Tear Down
