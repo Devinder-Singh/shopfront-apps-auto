@@ -229,6 +229,11 @@ Apps > PDP > Other Offers - QA-1974
     Verify Text On Screen Android    This item is in stock in our Cape Town warehouse and can be shipped from there. You can also collect it yourself from our warehouse during the week or over weekends    30s
     Verify Text On Screen Android    CPT    1s
     Verify Text On Screen iOS    This item is in stock in our Cape Town warehouse and can be shipped from there. You can also collect it yourself from our warehouse during the week or over weekends    30s
+    Click Add To Cart
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Text On Screen Android    Item Added To Cart    30s
+    Verify Text On Screen iOS    Item added to Cart    30s
+    Verify Text On Screen    Item added to Cart    30s
     [Teardown]    Tear Down
 
 Apps > PDP > Buy Box > List Price - QA-2025
@@ -1002,4 +1007,239 @@ Apps > PDP > Notification Banner > Pre - Order , Login , Write A Review - QA-203
     Enter Review Message    Auto Test
     Click Review Submit
     Verify Text On Screen    Thank you for your review    30s
+    [Teardown]    Tear Down
+
+Apps > PDP> In Stock > Stock & Stock Status Possibilities ( ALL) - QA-1986
+    [Tags]    QA-1986
+    [Setup]    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click In Stock Product from API
+    Click In Stock JHB
+    Verify Text On Screen    This item is in stock in our Johannesburg warehouse and can be shipped from there    5s
+    Click In Stock Close
+    Click In Stock CPT
+    Verify Text On Screen    This item is in stock in our Cape Town warehouse and can be shipped from there. You can also collect it yourself from our warehouse during the week or over weekends    5s
+    Click In Stock Close
+    Click Search Icon
+    Search Product    Johnny Wal
+    Click In Stock Product from API
+    Click In Stock JHB
+    Verify Text On Screen    This item is in stock in our Johannesburg warehouse and can be shipped from there    5s
+    Click In Stock Close
+    Click In Stock CPT
+    Verify Text On Screen    This item is in stock in our Cape Town warehouse and can be shipped from there. You can also collect it yourself from our warehouse during the week or over weekends    5s
+    Click In Stock Close
+    Click Search Icon
+    Search Product    Pencil
+    Click Leadtime Product from API
+    Verify Text On Screen    Ships in    30s
+    Verify Text On Screen    work days    2s
+    Click Search Icon
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
+    Verify Text On Screen    Available Now    30s
+    Click Search Icon
+    Search Product    Dying Light 2
+    Click Product From Title    Dying Light 2: Stay Human (PS5)
+    Verify Text On Screen    Pre-order: Ships    30s
+    [Teardown]    Tear Down
+
+Apps > PDP > Customers Also Bought - QA-2008
+    [Tags]    QA-2008
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Verify Text On Screen Scroll    Customers Also Bought    30s    ${windowScroll}    ${btnAddToCart}
+    Get Product CABT Detail    0
+    Verify Text On Screen    ${query_result_CABTProductTitle}    5s
+    Verify Text On Screen    ${query_result_CABTProductPrice}    5s
+    Get Product CABT Detail    1
+    Verify Text On Screen    ${query_result_CABTProductTitle}    5s
+    Verify Text On Screen    ${query_result_CABTProductPrice}    5s
+    [Teardown]    Tear Down
+
+Apps > PDP > Policy list > Hassle-free Exchanges and Returns for 30 Days (Not eligible) - QA-9731
+    [Tags]    QA-9731
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    airtim
+    Click Variant Product from API
+    Verify Element On Screen    ${lnkPDPSelectOption}    30s
+    Check Text On Screen Not    Hassle-Free Exchanges & Returns for 30 Days
+    Click Search Icon
+    Search Product    johnny wal
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Check Text On Screen Not    Hassle-Free Exchanges & Returns for 30 Days
+    [Teardown]    Tear Down
+
+Apps > PDP > Policy list > Not For Sale to Persons Under the Age of 18 (Not eligible) - QA-9754
+    [Tags]    QA-9754
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    airtim
+    Click Variant Product from API
+    Verify Element On Screen    ${lnkPDPSelectOption}    30s
+    Check Text On Screen Not    Not For Sale to Persons Under the Age of 18
+    Click Search Icon
+    Search Product    pencil
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Check Text On Screen Not    Not For Sale to Persons Under the Age of 18
+    [Teardown]    Tear Down
+
+Apps > PDP > Notification Banner > Limited Stock - QA-9758
+    [Tags]    QA-9758
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click In Stock Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Change Cart Quantity Android    10
+    Change Cart Quantity Android    14
+    Change Cart Quantity Android    18
+    Change Cart Quantity Android    22
+    Change Cart Quantity Android    26
+    Verify Text On Screen    You've attempted to order more stock than currently available at our warehouse (current stock    10s
+    Verify Text On Screen    The products will need to be ordered from our supplier. If you'd rather not wait for the extra stock to arrive from the supplier, please update the quantity accordingly    1s
+    [Teardown]    Tear Down
+
+Apps > PDP > Policy list > Not Eligible for Cash on Delivery - QA-9298
+    [Tags]    QA-9298
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    airtim
+    Click Variant Product from API
+    Verify Element On Screen    ${lnkPDPSelectOption}    30s
+    Check Text On Screen Not    Eligible for Cash on Delivery
+    Click Search Icon
+    Search Product    iPhone 12 pro ma
+    Click Product from API
+    Verify Element On Screen    ${lnkPDPSelectOption}    30s
+    Check Text On Screen Not    Eligible for Cash on Delivery
+    [Teardown]    Tear Down
+
+Apps > PDP > Variants > Sold out - QA-9593
+    [Tags]    QA-9593
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    shirts for me
+    Click Variant Product from API
+    Verify Text On Screen Android    Select a colour    30s
+    Verify Text On Screen iOS    Select a colour    30s
+    Swipe Up    ${windowScroll}
+    Click Product Variant Colour Size From API
+    Click Product Variant Disabled Colour From API
+    Verify Element On Screen Not    ${btnAddToCart}    2s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    jeans for wo
+    Click Variant Product from API
+    Verify Text On Screen Android    Select a size    30s
+    Verify Text On Screen iOS    Select a size    30s
+    Swipe Up    ${windowScroll}
+    Click Product Variant Disabled Size From API
+    Verify Element On Screen Not    ${btnAddToCart}    2s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    shirts for me
+    Click Variant Product from API
+    Verify Text On Screen Android    Select a colour    30s
+    Verify Text On Screen iOS    Select a colour    30s
+    Click Product Variant Colour From API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    jeans for wo
+    Click Variant Product from API
+    Verify Text On Screen Android    Select a colour    30s
+    Verify Text On Screen iOS    Select a colour    30s
+    Click Product Variant Size From API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    [Teardown]    Tear Down
+
+Apps > PDP > Buy Box > Add to Wishlist - QA-2033
+    [Tags]    QA-2033
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to AutoTestWishlist    10s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Long Press    ${btnAddWishlist}
+    Verify Text On Screen    Add to List    10s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pen
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Long Press    ${btnAddWishlist}
+    Verify Text On Screen    Add to List    10s
+    Click Option Wish List
+    Click Option AutoTestWishlist
+    Click Save Wishlist
+    Verify Text On Screen    Item added to multiple lists    10s
+    Close Application
+    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist Only
+    Click Save Wishlist
+    Verify Text On Screen    Please enter a list name    10s
+    Enter Wishlist Custom Name    AbcdefghijklmnopqrstuvwxyzAbcdefghijklmnopqrstuvwxyz
+    Click Save Wishlist
+    Verify Text On Screen    Maximum 50 characters    10s
+    Enter Wishlist Custom Name    AutoTestWishlist
+    Click Save Wishlist
+    Verify Text On Screen    AutoTestWishlist already exists    10s
+    Close Application
+    Start Application
+    Clear Environment
+    Create Wishlists
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Verify Text On Screen    Limit reached    20s
+    Verify Text On Screen    You can not create more than 25 lists    2s
     [Teardown]    Tear Down

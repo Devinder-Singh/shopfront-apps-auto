@@ -49,3 +49,11 @@ ${lblPDPNonrefundable}    xpath=//*[contains(@text, "Non-Returnable")]
 ${btnPDPOnCreditInfoTwo}    xpath=//*[contains(@text, "On Credit: R")]
 ${btnPDPOnCreditInfo}    xpath=//*[contains(@text, "On Credit: R")]
 ${btnPDPPreOrder}    xpath=//*[contains(@text, "Pre-order")]
+
+${btnPDPInStockJHB}    xpath=//*[@text="JHB"]
+${btnPDPInStockCPT}    xpath=//*[@text="CPT"]
+
+${btnPDPInStockClose}    xpath=//*[@text="Close"]
+
+${lblPDPWishListSave}    xpath=//*[@text="Wish List"]
+${lblPDPAutoTestWishListSave}    xpath=//*[@text="AutoTestWishlist"]

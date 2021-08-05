@@ -25,6 +25,9 @@ Search and Buy Item on Delivery using Credit Card
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Buy Daily Deal Item on Delivery using Credit Card
@@ -56,7 +59,9 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Add To Wishlist
     Click Wishlist
     Click Wishlist Add To Cart
-    Click Cart
+    Click Back iOS    My Lists
+    Click Home Cart
+#    Click Cart
     Click Checkout
     Click Delivery
     Click Add Delivery Address
@@ -67,7 +72,10 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Secure payments by PayFast
+    Verify Payfast Payment Text    Instant EFT
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV
@@ -79,10 +87,12 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Product from API
     Verify Delivery Surcharge    + R 200 Delivery Surcharge
     Click Add To Cart
-    Click Continue Shopping
-    Click Search Icon
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
     Search Product    Televisio
-#    Search Product    Monito
     Click Product from API
     Click Add To Cart
     Click Go To Cart
@@ -98,6 +108,9 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Edit Personal Details, Create Address and Buy Item on Delivery
@@ -116,7 +129,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Back Delivery Android
     Click Back Delivery iOS
     Click Back iOS    My Account
-    Click Back Android
+#    Click Back Android
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -132,6 +145,9 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Buy Airtime and Pay with Credit Card
@@ -140,8 +156,8 @@ Buy Airtime and Pay with Credit Card
     Click Home
     Click Search Home
     Search Product    airtim
-    Click First Product from API
-    Click Airtime
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -151,6 +167,9 @@ Buy Airtime and Pay with Credit Card
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Delivery
@@ -159,14 +178,17 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    airtim
-    Click First Product from API
-    Click Airtime
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
-    Click Continue Shopping
-    Click Search Icon
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
     Search Product    monteg
-    Click First Product from API
-    Click 10 Kg
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -179,6 +201,9 @@ Buy Airtime along with another Item on Delivery
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Collection
@@ -187,14 +212,17 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    airtim
-    Click First Product from API
-    Click Airtime
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
-    Click Continue Shopping
-    Click Search Icon
+    Verify Element On Screen    ${btnGoToCart}    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
     Search Product    monteg
-    Click First Product from API
-    Click 10 Kg
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -207,6 +235,9 @@ Buy Airtime along with another Item on Collection
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
     [Teardown]    Tear Down
 
 Buy Daily Deals Item and verify no Promotions

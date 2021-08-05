@@ -1,6 +1,6 @@
 *** Variables ***
 ${imgProductDeals}      id=${APP_PACKAGE}:id/productListingImage
-${imgProductDealsDept}    xpath=(//android.widget.ImageView[@content-desc="Product Image"])[1]
+${imgProductDealsDept}    id=${APP_PACKAGE}:id/productListingTitle
 
 ${lblProduct}     android=new UiSelector().textContains("$productText")
 
@@ -23,3 +23,4 @@ ${lblRatingNumber}    id=${APP_PACKAGE}:id/productListingNumberOfRatings
 ${btnProductWLSave}      xpath=//*[@text="SAVE"]
 
 ${lblTermsCond}      xpath=//*[contains(@text,"This is our List Price. Find out what this means in our Terms & Conditions")]
+${lblPLPInStock}      xpath=//*[@text="In stock"]

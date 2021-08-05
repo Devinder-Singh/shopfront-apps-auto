@@ -36,10 +36,6 @@ Swipe Up
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
     Sleep  1
 
-Verify Text On Screen
-    [Arguments]    ${verifyText}    ${delay}
-    Wait Until Page Contains    ${verifyText}    ${delay}
-
 Verify eBucks On Screen
     ${result}=    Evaluate    ${query_result_CartProductPrice} * 10
     ${result}=    Convert To String    ${result}
@@ -83,9 +79,14 @@ Verify Price On Screen
     Run Keyword If    ${cnt}==5    Verify Text On Screen Android    ${resultFinal}    ${delay}
     Run Keyword If    ${cnt}==5    Verify Text On Screen iOS    ${resultFinal}    ${delay}
 
+Verify Text On Screen
+    [Arguments]    ${verifyText}    ${delay}
+    Wait Until Page Contains    ${verifyText}    ${delay}
+
 Verify Text On Screen Android
     [Arguments]    ${verifyText}    ${delay}
-    ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    ${delay}
+
+    ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    ${delay}
 
     ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text,"${verifyText}")]
     Run Keyword If    '${PLATFORM_NAME}'=='android' and ${chkProdVisible}==False    Wait Until Page Contains Element    ${checkElement}    1s

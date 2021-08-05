@@ -52,3 +52,11 @@ ${btnPDPOnCreditInfoTwo}    chain=**/XCUIElementTypeButton[`label == "icon info"
 ${btnPDPOnCreditInfo}    chain=**/XCUIElementTypeButton[`label == "icon info"`]
 
 ${btnPDPPreOrder}    chain=**/XCUIElementTypeButton[`label CONTAINS "Pre-order"`]
+
+${btnPDPInStockJHB}    chain=**/XCUIElementTypeStaticText[`label == "JHB"`]
+${btnPDPInStockCPT}    chain=**/XCUIElementTypeStaticText[`label == "CPT"`]
+
+${btnPDPInStockClose}    chain=**/XCUIElementTypeButton[`label == "Close"`]
+
+${lblPDPWishListSave}    chain=**/XCUIElementTypeStaticText[`label == "Wish List"`]
+${lblPDPAutoTestWishListSave}    chain=**/XCUIElementTypeStaticText[`label == "AutoTestWishlist"`]

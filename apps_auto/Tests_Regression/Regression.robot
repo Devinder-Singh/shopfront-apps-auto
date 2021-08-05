@@ -804,7 +804,7 @@ Apps > Order Tracking - QA-5274
     Click Change Payment Method Only
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Secure payments by PayFast
+    Verify Payfast Payment Text    Instant EFT
     [Teardown]    Tear Down
 
 Apps > My Account Verifications - QA-5356
@@ -966,7 +966,7 @@ Apps > Order Tracking 02 - QA-9609
     Click Change Payment Method Only
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Secure payments by PayFast
+    Verify Payfast Payment Text    Instant EFT
     [Teardown]    Tear Down
 
 Apps > Order Tracking 05 - QA-9619
@@ -1019,7 +1019,7 @@ Apps > Order Tracking 05 - QA-9619
     Click Change Payment Method Only
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Secure payments by PayFast
+    Verify Payfast Payment Text    Instant EFT
     [Teardown]    Tear Down
 
 Apps > Cart (Android) - QA-5298 / QA-9606
@@ -1153,4 +1153,43 @@ Cart Update & Cart Notification - Liquor - QA-8419
     Click Checkout
     Click Select Age
     Click Verify Age
+    [Teardown]    Tear Down
+
+Cart Update & Cart Notification - Heavy Good - QA-8421
+    [Tags]    QA-8421
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Add To Cart
+    Click Cart Update Continue Checkout
+    Click Pay With Credit Card
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Add To Cart
+    Click Cart Update Back To Cart
+    Click Checkout
     [Teardown]    Tear Down
