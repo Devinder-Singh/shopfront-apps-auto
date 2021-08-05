@@ -406,6 +406,24 @@ Click Product
     Wait Until Page Contains Element    ${lblProduct}    30s
     Click Element    ${lblProduct}
 
+Click Product No Reviews
+    ${txtProduct}=    Get Product No Reviews
+
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnProductListView}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${txtProduct}
+
 Verify Sorted Products
     [Arguments]    ${sort}
 
