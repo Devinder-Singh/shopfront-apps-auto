@@ -1110,7 +1110,7 @@ Apps > Cart (Android) 04 - QA-9600 / QA-9605
     Click Address
     Click Free Delivery
     Verify Text On Screen Android    Delivery via email to    30s
-    Verify Text On Screen iOS    Delivery via email to    30s
+#    Verify Text On Screen iOS    Delivery via email to    30s
     [Teardown]    Tear Down
 
 Cart Update & Cart Notification - TV - QA-8420
@@ -1173,6 +1173,7 @@ Cart Update & Cart Notification - Heavy Good - QA-8421
     Click Change Payment Method
     Click Card Payment Method
     Add To Cart
+    Click Pay With Credit Card
     Click Cart Update Continue Checkout
     Click Pay With Credit Card
     Close Application
@@ -1190,6 +1191,7 @@ Cart Update & Cart Notification - Heavy Good - QA-8421
     Click Free Delivery
     Click Donate No Thanks
     Add To Cart
+    Click Pay With Credit Card
     Click Cart Update Back To Cart
     Click Checkout
     [Teardown]    Tear Down

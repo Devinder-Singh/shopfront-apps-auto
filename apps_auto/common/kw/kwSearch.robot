@@ -11,6 +11,12 @@ Click Search Home
     ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    15s
     Run Keyword If    ${btnPresentSearchHistory} and ${clearAll}    Click Element    ${btnSearchClearAll}
 
+Click Only Search Home
+    [Arguments]    ${clearAll}=${True}
+
+    Wait Until Element Is Visible    ${btnSearchHome}    10s
+    Click Element    ${btnSearchHome}
+
 Search Product
     [Arguments]    ${search}
 
