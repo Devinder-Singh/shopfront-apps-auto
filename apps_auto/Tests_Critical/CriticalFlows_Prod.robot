@@ -27,7 +27,32 @@ Search and Buy Item on Delivery using Credit Card
     Verify Card Payment
     Close Application
     Start Application    ${False}
-    Cancel Latest Order
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Verify Text On Screen    Last 3 months    30s
+    Click Order Awaiting Payment
+    Verify Text On Screen    ORDER SUMMARY    30s
+    Verify Text On Screen    1 Item    1s
+    Verify Text On Screen    Delivery    1s
+    Verify Text On Screen Android    Order Total    1s
+    Verify Text On Screen Android    To Pay    1s
+    Verify Text On Screen iOS    TO PAY    1s
+    Verify Text On Screen    PAYMENT METHOD    1s
+    Verify Text On Screen    Credit Card    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    DELIVERY METHOD    1s
+    Verify Text On Screen    First Delivery Free - Standard    1s
+    Verify Text On Screen    SHIPPING ADDRESS    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Test    1s
+    Verify Text On Screen    12 Ridge Way    1s
+    Verify Text On Screen    Green Point    1s
+    Verify Text On Screen    Cape Town    1s
+    Verify Text On Screen    8005    1s
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Click Order Cancel
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Payfast and Create new Address
