@@ -11,7 +11,7 @@ ${btnStdDeliveryFee}      chain=**/XCUIElementTypeStaticText[`label == "R 60"`]
 ${scrDeliveryFeeAndroid}      ${EMPTY}
 
 ${btnWhyTheWait}      chain=**/XCUIElementTypeButton[`label == "Why the wait?"`]
-${btnGotItThanks}      id=Got it, thanks!
+${btnGotItThanks}      chain=**/XCUIElementTypeButton[`label == "Got it, thanks!"`]
 ${btnPlusTwo}      id=+ 2
 
 ${imgDelOptionsOne}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[4]/XCUIElementTypeImage

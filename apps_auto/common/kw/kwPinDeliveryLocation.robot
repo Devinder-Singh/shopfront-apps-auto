@@ -2,10 +2,6 @@
 Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
-Click Got It Thanks
-    Wait Until Element Is Visible    ${btnGotItThanks}    30s
-    Click Element    ${btnGotItThanks}
-
 Click Map Address Option
     Wait Until Element Is Visible    ${txtMapAddressOption}    15s
     Click Element    ${txtMapAddressOption}
@@ -13,6 +9,7 @@ Click Map Address Option
 Click Use This Location
     Wait Until Element Is Visible    ${btnUseThisLocation}    30s
     Click Element    ${btnUseThisLocation}
+    Sleep    5s
 
 Add Map Street Address
     [Arguments]    ${street}

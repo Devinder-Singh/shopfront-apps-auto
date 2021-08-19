@@ -3,8 +3,8 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Verify Age
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnVerifyAge}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnVerifyAge}
+    Wait Until Element Is Visible    ${btnVerifyAge}    30s
+    Click Element    ${btnVerifyAge}
 
 Verify Age Text
     [Arguments]    ${verifyText}

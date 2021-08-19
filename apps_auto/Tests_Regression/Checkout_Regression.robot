@@ -13,7 +13,7 @@ Apps - Checkout - Delivery Methods - QA-5227
     Click Home
     Click Search Home
     Search Product    Pencil Case
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -28,8 +28,8 @@ Apps - Checkout - Delivery Methods - Digital Items 02 - QA-9525
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Product
-    Click Airtime
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -44,7 +44,7 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QA-9524
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -61,7 +61,7 @@ Apps - Checkout - Delivery Methods - Liquor Item - QA-9523 / QA-5232
     Click Home
     Click Search Home
     Search Product    johnny
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -78,14 +78,17 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QA-9522
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Product
-    Click Airtime
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
-    Click Continue Shopping
-    Click Search Icon
+    Click Go To Cart
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
     Search Product    montego
-    Click Product
-    Click 10 Kg
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -100,14 +103,17 @@ Checkout - Collect - Add Delivery and Digital Items - QA-5231
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Product
-    Click Airtime
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
-    Click Continue Shopping
-    Click Search Icon
+    Click Go To Cart
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
     Search Product    montego
-    Click Product
-    Click 10 Kg
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -122,8 +128,8 @@ Checkout - Collect - Add Only Delivery Items - QA-5247
     Click Home
     Click Search Home
     Search Product    montego
-    Click Product
-    Click 10 Kg
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -138,7 +144,7 @@ Checkout - Collect - White Goods - QA-5240
     Click Home
     Click Search Home
     Search Product    fridg
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -154,12 +160,10 @@ Checkout - Age Verification - QA-5244
     Click Home
     Click Search Home
     Search Product    johnny
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Verify Age
-    Click Back Delivery
     Click Verify Age
     Verify Age Text    The date of birth you entered indicates that you are under the age of 18. We are not permitted to sell liquor to you. Please remove all liquor items from your cart to proceed
     [Teardown]    Tear Down
@@ -171,7 +175,7 @@ Checkout - Delivery Address - General - QA-5200
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -185,7 +189,7 @@ Checkout - Delivery Address - General 02 - QA-9529
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -204,7 +208,7 @@ Checkout - Delivery Address - General 03 - QA-9530
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -219,14 +223,14 @@ Checkout - Delivery Address - General 04 - QA-9531
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Delivery
     Click Edit Address
     Edit Delivery Address Mobile Number    0897665665
-    swipe by percent    50     50     50    100  1000
+    Swipe Up    ${windowScroll}
     Click Save Address
     Click Address
     [Teardown]    Tear Down
@@ -238,32 +242,44 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Delivery
     Click Edit Address
-    Verify Add Address Text    RECIPIENT NAME
-    Verify Add Address Text    RECIPIENT MOBILE NUMBER
-    Verify Add Address Text    STREET ADDRESS
-    Verify Add Address Text    SUBURB
-    Verify Add Address Text    CITY / TOWN
-    Verify Add Address Text    PROVINCE
-    Verify Add Address Text    POSTAL CODE
-    Verify Add Address Text    COMPLEX / BUILDING (OPTIONAL)
+    Verify Element On Screen    ${btnSaveAddress}    15s
+    Verify Text On Screen iOS    RECIPIENT NAME    2s
+    Verify Text On Screen iOS    RECIPIENT MOBILE NUMBER    2s
+    Verify Text On Screen iOS    STREET ADDRESS    2s
+    Verify Text On Screen iOS    SUBURB    2s
+    Verify Text On Screen iOS    CITY / TOWN    2s
+    Verify Text On Screen iOS    PROVINCE    2s
+    Verify Text On Screen iOS    POSTAL CODE    2s
+    Verify Text On Screen iOS    COMPLEX / BUILDING (OPTIONAL)    2s
+#    Verify Text On Screen Android    Recipient Name    2s
+#    Verify Text On Screen Android    Recipient Mobile Number    2s
+#    Verify Text On Screen Android    Street Address    2s
+#    Verify Text On Screen Android    Suburb    2s
+#    Verify Text On Screen Android    City / Town    2s
+#    Swipe Up    ${windowScroll}
+#    Verify Text On Screen Android    Province    2s
+#    Verify Text On Screen Android    Postal Code    2s
+#    Verify Text On Screen Android    Complex / Building (Optional)    2s
+#    Swipe Down    ${windowScroll}
     Edit Delivery Address Mobile Number    089766566
     Edit Delivery Address Postal Code    101
     Click Save Address
-    Verify Add Address Text    Please enter a 10-digit SA phone number without country code, spaces, or special characters
-    Verify Add Address Text    Please enter a 4 digit postal code
+    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    5s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Please enter a 4 digit postal code    2s
     Close Application
-    Start Application
+    Start Application    ${False}
     Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -283,12 +299,13 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     Click Menu My Account
     Click Menu Address Book
     Click Address
-    Verify Add Address Text    0820000000
-    Verify Add Address Text    12 Ridge Way
-    Verify Add Address Text    Green Point
-    Verify Add Address Text    Cape Town
-    Verify Add Address Text    Western Cape
-    Verify Add Address Text    8006
+    Verify Text On Screen    0820000000    10s
+    Verify Text On Screen    12 Ridge Way    2s
+    Verify Text On Screen    Green Point    2s
+    Verify Text On Screen    Cape Town    2s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Western Cape    2s
+    Verify Text On Screen    8006    2s
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5213
@@ -298,7 +315,7 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -317,21 +334,23 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Click Menu My Account
     Click Menu Address Book
     Click Address
-    Verify Add Address Text    COMPLEX / BUILDING (OPTIONAL)
-    Verify Add Address Text    Complex or Building Name, unit number or floor
+    Verify Text On Screen iOS    COMPLEX / BUILDING (OPTIONAL)    10s
+    Verify Text On Screen Android    Complex / Building (Optional)    10s
+    Verify Text On Screen    Complex or Building Name, unit number or floor    10s
     Click Address Mobile Question
-    Verify Add Address Question Text    Enter the mobile number of the person receiving the delivery, so we can send delivery updates via SMS.
+    Verify Text On Screen    Enter the mobile number of the person receiving the delivery, so we can send delivery updates via SMS    10s
     Click Address Got It Thanks
+    Swipe Up    ${windowScroll}
     Click Address Province
-    Verify Add Address Province Text    Eastern Cape
-    Verify Add Address Province Text    Free State
-    Verify Add Address Province Text    Gauteng
-    Verify Add Address Province Text    KwaZulu-Natal
-    Verify Add Address Province Text    Limpopo
-    Verify Add Address Province Text    Mpumalanga
-    Verify Add Address Province Text    Northern Cape
-    Verify Add Address Province Text    North West
-    Verify Add Address Province Text    Western Cape
+    Verify Text On Screen    Eastern Cape    10s
+    Verify Text On Screen    Free State    2s
+    Verify Text On Screen    Gauteng    2s
+    Verify Text On Screen    KwaZulu-Natal    2s
+    Verify Text On Screen    Limpopo    2s
+    Verify Text On Screen    Mpumalanga    2s
+    Verify Text On Screen    Northern Cape    2s
+    Verify Text On Screen    North West    2s
+    Verify Text On Screen    Western Cape    2s
     Close Application
     Start Application
     Clear Environment
@@ -340,16 +359,17 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    ""    ""    ""
-    Verify Add Address Text    Please enter the recipient's name
-    Verify Add Address Text    Please enter a 10-digit SA phone number without country code, spaces, or special characters
-    Verify Add Address Text    Please enter the street address
-    Verify Add Address Text    Please enter the suburb
-    Verify Add Address Text    Please enter the city
-    Verify Add Address Text    Please select a province
-    Verify Add Address Text    Please enter a postal code
-    Edit Delivery Address Street My Acc    PO Box 3456
-    Verify Add Address Text    PO Box addresses are not allowed
+    Click Save Address
+    Verify Text On Screen    Please enter the recipient's name    10s
+    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    2s
+    Verify Text On Screen    Please enter the street address    2s
+    Verify Text On Screen    Please enter the suburb    2s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Please enter the city    2s
+    Verify Text On Screen    Please select a province    2s
+    Verify Text On Screen    Please enter a postal code    2s
+#    Edit Delivery Address Street My Acc    PO Box 3456
+#    Verify Text On Screen    PO Box addresses are not allowed    10s
     Close Application
     Start Application
     Click Menu
@@ -357,19 +377,28 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    @$    %^    &*
-    Verify Add Address Text    Please enter the recipient's name
-    Verify Add Address Text    Please enter a 10-digit SA phone number without country code, spaces, or special characters
-    Verify Add Address Text    Please enter the street address
+    Add Delivery Address My Acc    ${EMPTY}    %^    &*
+    Verify Text On Screen    Please enter the recipient's name    10s
+    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    2s
+#    Verify Text On Screen    Please enter the street address    2s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Verify Element On Screen    ${btnSaveAddress}    30s
+    Swipe Up    ${windowScroll}
+#    Edit Delivery Address Complex    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Edit Delivery Address City    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    Edit Delivery Address Complex    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Edit Delivery Address Suburb    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Edit Delivery Address Street My Acc    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Click Save Address
-    Verify Add Address Text    Maximum length for street is 64 characters
-    Verify Add Address Text    Maximum length for complex details is 128 characters
-    Verify Add Address Text    Maximum length for city is 64 characters
-    Verify Add Address Text    Maximum length for suburb is 64 characters
+#    Verify Text On Screen    Maximum length for street is 64 characters    10s
+#    Verify Text On Screen    Maximum length for complex details is 128 characters    2s
+#    Verify Text On Screen    Maximum length for city is 64 characters    2s
+#    Verify Text On Screen    Maximum length for suburb is 64 characters    2s
     Close Application
     Start Application
     Click Menu
@@ -377,10 +406,10 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Click Menu Address Book
     Click Add Delivery Address
     Click Address Business
-    Verify Add Address Text    BUSINESS NAME
+    Verify Text On Screen iOS    BUSINESS NAME    10s
     Edit Delivery Address Business My Acc    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Click Save Address
-    Verify Add Address Text    Maximum length for business name is 64 characters
+#    Verify Text On Screen    Maximum length for business name is 64 characters    10s
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Street Suggestion - QA-5238
@@ -390,7 +419,7 @@ Checkout - Delivery Address - Street Suggestion - QA-5238
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -398,12 +427,26 @@ Checkout - Delivery Address - Street Suggestion - QA-5238
     Click Add Delivery Address
     Click Address Business
     Add Delivery Address    Tester Residential    072345677    13 Caro Road
-    Verify Add Address Text    Please enter a 10-digit SA phone number without country code, spaces, or special characters
-    Verify Add Address Text    Please enter a business name
-    Edit Delivery Address Business    AutoBusiness
-    Edit Delivery Address Mobile Number    0723456778
-    Edit Delivery Address Street    13 Caro Road
-    Click Save Address
+    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    10s
+    Verify Text On Screen    Please enter a business name    2s
+#    Edit Delivery Address Business    AutoBusiness
+#    Edit Delivery Address Mobile Number    0723456778
+#    Edit Delivery Address Street    13 Caro Road
+#    Click Save Address
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Add Delivery Address
+    Click Address Business
+    Edit Delivery Address Business My Acc    TestBusiness
+    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Click Free Delivery
     [Teardown]    Tear Down
 
@@ -414,7 +457,7 @@ Checkout - Delivery Address - Pin on Map - QA-5251
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -425,7 +468,7 @@ Checkout - Delivery Address - Pin on Map - QA-5251
     Click Confirmed Address
     Click Got It Thanks
     Add Map Street Address    12 Ridge Way
-    Click Map Address Option
+#    Click Map Address Option
     Click Use This Location
     Close Application
     Start Application
@@ -433,11 +476,12 @@ Checkout - Delivery Address - Pin on Map - QA-5251
     Click Menu My Account
     Click Menu Address Book
     Click Address
-    Verify Edit Address Text    12 Ridge Way
-    Verify Edit Address Text    Green Point
-    Verify Edit Address Text    Cape Town
-    Verify Edit Address Text    Western Cape
-    Verify Edit Address Text    8006
+    Verify Text On Screen    12 Ridge Way    10s
+    Verify Text On Screen    Green Point    2s
+    Verify Text On Screen    Cape Town    2s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Western Cape    2s
+    Verify Text On Screen    8006    2s
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Select Pickup Point button - QA-5256
@@ -447,7 +491,7 @@ Apps > Checkout > Collect > Select Pickup Point button - QA-5256
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -462,33 +506,34 @@ Apps > Checkout > Collect > Pickup Point INFO - QA-5207
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Collect
     Click Pickup Point Info
-    Verify Pickup Point Text    Block B, Montague Park Business Estate, Topaz Boulevard, Montague Gardens, Cape Town, 7441
-    Verify Pickup Point Text    We’ll send you an email once your order is ready for collection
-    Verify Pickup Point Text    Business Hours
-    Verify Pickup Point Text    (Next 7 Days)
-    Verify Pickup Point Text    Thursday
-    Verify Pickup Point Text    Friday
-    Verify Pickup Point Text    Saturday
-    Verify Pickup Point Text    Sunday
-    Verify Pickup Point Text    Monday
-    Verify Pickup Point Text    Tuesday
-    Verify Pickup Point Text    Wednesday
-    Verify Pickup Point Text    08h00 - 18h00
-    Verify Pickup Point Text    08h00 - 13h00
-    Verify Pickup Point Text    08h00 - 15h00
+    Verify Text On Screen    Block B, Montague Park Business Estate, Topaz Boulevard, Montague Gardens, Cape Town, 7441    15s
+    Verify Text On Screen    We’ll send you an email once your order is ready for collection    2s
+    Verify Text On Screen    Business Hours    2s
+    Verify Text On Screen    (Next 7 Days)    2s
+    Verify Text On Screen    Thursday    2s
+    Verify Text On Screen    Friday    2s
+    Verify Text On Screen    Saturday    2s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Sunday    2s
+    Verify Text On Screen    Monday    2s
+    Verify Text On Screen    Tuesday    2s
+    Verify Text On Screen    Wednesday    2s
+    Verify Text On Screen    08h00 - 18h00    2s
+    Verify Text On Screen    08h00 - 13h00    2s
+    Verify Text On Screen    08h00 - 15h00    2s
     Close Application
     Start Application
     Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -496,20 +541,20 @@ Apps > Checkout > Collect > Pickup Point INFO - QA-5207
     Click Filter Province
     Click Gauteng Province
     Click Pickup Point Info
-    Verify Pickup Point Text    Big Bird Petroport, N1 Highway, Midrand, Johannesburg, 1685
-    Verify Pickup Point Text    We’ll send you an SMS or email once your order is ready for collection. You’ll then have 7 days to collect your order
-    Verify Pickup Point Text    Business Hours
-    Verify Pickup Point Text    (Next 7 Days)
-    Verify Pickup Point Text    Thursday
-    Verify Pickup Point Text    Friday
-    Verify Pickup Point Text    Saturday
-    Verify Pickup Point Text    Sunday
-    Verify Pickup Point Text    Monday
-    Verify Pickup Point Text    Tuesday
-    Verify Pickup Point Text    Wednesday
-    Verify Pickup Point Text    06h00 - 18h00
-    Verify Pickup Point Text    08h00 - 13h00
-    Verify Pickup Point Text    08h00 - 15h00
+    Verify Text On Screen    Big Bird Petroport, N1 Highway, Midrand, Johannesburg, 1685    15s
+    Verify Text On Screen    We’ll send you an SMS or email once your order is ready for collection. You’ll then have 7 days to collect your order    2s
+    Verify Text On Screen    Business Hours    2s
+    Verify Text On Screen    (Next 7 Days)    2s
+    Verify Text On Screen    Thursday    2s
+    Verify Text On Screen    Friday    2s
+    Verify Text On Screen    Saturday    2s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Sunday    2s
+    Verify Text On Screen    Monday    2s
+    Verify Text On Screen    Tuesday    2s
+    Verify Text On Screen    Wednesday    2s
+    Verify Text On Screen    10h00 - 17h00    2s
+    Verify Text On Screen    11h00 - 17h00    2s
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Pickup Points List - QA-5237
@@ -519,7 +564,7 @@ Apps > Checkout > Collect > Pickup Points List - QA-5237
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -527,12 +572,20 @@ Apps > Checkout > Collect > Pickup Points List - QA-5237
     Click Filter Province
     Click Gauteng Province
     Verify Pickup Points Gauteng
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
     Click Filter Province
     Click All Available Provinces
     Verify All Pickup Points
-    Verify Pickup Points Gauteng
-    Verify Pickup Point
-    Verify Collect Address Text    LAST USED
+#    Verify Pickup Points Gauteng
+#    Verify Pickup Point
+#    Verify Collect Address Text    LAST USED
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
     Click Filter Province
     Click Western Cape Province
     Click Pickup Point Info
@@ -542,12 +595,15 @@ Apps > Checkout > Collect > Pickup Points List - QA-5237
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     Close Application
     Start Application
     Click Menu
+    Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
     Verify Order Detail Text    Takealot Cape Town Warehouse Pickup Point
     [Teardown]    Tear Down
 
@@ -557,9 +613,9 @@ Apps > Checkout > Collect > Add Only Digital Item - QA-5265
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    airtime
-    Click Product
-    Click Airtime
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -574,13 +630,13 @@ Apps > Checkout > Collect > Shipping Options (Standard) - QA-5243
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Collect
     Click Pickup Point
-    Verify Delivery Options Text    Standard Collect
+    Verify Text On Screen    Standard Collect    30s
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QA-5239
@@ -590,7 +646,7 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QA-5239
     Click Home
     Click Search Home
     Search Product    chair office
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -606,13 +662,13 @@ Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QA-5202
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Collection Fee R25
+#    Click Collection Fee R25
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QA-5258
@@ -622,7 +678,7 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QA-5258
     Click Home
     Click Search Home
     Search Product    chair office
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
