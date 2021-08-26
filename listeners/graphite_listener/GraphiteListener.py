@@ -5,6 +5,8 @@ from robot.api.deco import not_keyword
 from BaseTestFramework.utilities.graphite_utils import default_graphite
 import logging
 
+import listeners.graphite_listener as listener
+
 
 ROBOT_LISTENER_API_VERSION = 2
 
@@ -55,6 +57,7 @@ def end_test(name, attrs):
 
     status = attrs['status']
     tags = attrs['tags']
+    elapsed_time = attrs['elapsedtime']
     
     metric_path = f"{team_name}.{environment}.{platform}.{tags[0].lower()}"
 
@@ -63,6 +66,10 @@ def end_test(name, attrs):
     # format: <required-prefix>.team_name.environment.platform.test_tag.status
     logging.info(f"METRIC PATH: {metric_path}")
     
-    metric = [(metric_path, 1.0, time())]
+    # metric = [(metric_path, 1.0, time())]
+    # metric = [(metric_path, elapsed_time, time())]
 
-    default_graphite.build_metric(metric).send()
+    # default_graphite.build_metric(metric).send()
+    result = listener.send_metrics(metric_path, elapsed_time)
+    print(result)
+    logging.info(f"Response: {result}")
