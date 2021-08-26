@@ -307,6 +307,7 @@ Click Go To Cart
     Wait Until Element Is Visible    ${btnGoToCart}    30s
     Sleep    2s
     Click Element    ${btnGoToCart}
+    Sleep    2s
 
 Click Go To Cart iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Go To Cart

@@ -100,8 +100,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Folding Frame
-    Click Product From Title    Casa Twin Folding Frame - 10 Lines
+    Search Product    GetUp Weight Plate 1
+    Click Product From Title    GetUp Weight Plate - 10kg
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
@@ -112,8 +112,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Folding Frame
-    Click Product From Title    Casa Twin Folding Frame - 10 Lines
+    Search Product    GetUp Weight Plate 1
+    Click Product From Title    GetUp Weight Plate - 10kg
     Click Add Bundle To Cart
     Click Go To Cart
     Wait for Checkout
@@ -162,7 +162,7 @@ Apps > Promotions (Android) Unboxed & Other Offers - QA-8412 / QA-7443
     Click Home
     Click Search Home
     Search Product    Unboxed Dea
-    Click Product From Title    Russell Hobbs - 20 Litre Electronic Microwave
+    Click Product From Title    HP 123 Black Ink Cartridge
     Click Other Offers Add To Cart
     Click Go To Cart
     Click Checkout
