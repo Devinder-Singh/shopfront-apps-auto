@@ -161,3 +161,98 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Stock) - QA-6340
     Click Product Grid View
     Verify Text On Screen Scroll    Ships in 5 - 7 work days    2s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
+
+Apps > Sponsored Ads (PLP) > Product Card Components (Clickable/Tappable areas) - QA-6341
+    [Tags]    QA-6341
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Click Product From Title    Djeco Pencil Case - Nathalie
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Click Back Android
+    Click Back iOS    pencil case
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Click Search Product Wishlist
+    Verify Text On Screen Android    Item added to Wish List    30s
+    Click Product Grid View
+    [Teardown]    Tear Down
+
+Apps > Sponsored Ads (PDP) > Product Card Layout - Liquor - QA-10550
+    [Tags]    QA-10550
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    johnny wal
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Product Search Alcohol Ad Notice
+    [Teardown]    Tear Down
+
+Apps > Sponsored Ads (PLP) > Launching PLP from different screens - QA-6616
+    [Tags]    QA-6616
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    glass
+    Click First Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Click Seller Name
+    Click Product from API
+    [Teardown]    Tear Down
+
+Apps > PDP - QA-8892
+    [Tags]    QA-8892
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test
+    Click Review Submit
+    Verify Text On Screen    Thank you for your review    30s
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test
+    Click Review Submit
+    Verify Text On Screen    You've already submitted a review for this product    30s
+    Click Back Android
+    Click Back iOS    ${query_result_CartProduct}
+    Click PDP Show All Reviews
+    Click Review Sort
+    Click Review Sort Most Helpful
+    Click Review Sort
+    Click Review Sort Most Recent
+    Click Review Helpful
+    Verify Text On Screen    Thank you for your feedback    10s
+    Click Review Filter
+    Click Review Filter Rating
+    Click Review Filter Rating Five
+    Click Review Filter Done
+    Click Review Filter Apply
+    Verify Element On Screen    ${btnReviewFilter}    15s
+    Click Review Icon More
+    Click Review Report
+    Verify Element On Screen    Your report has been submitted    15s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
+    Click PDP Write Review
+    Verify Element On Screen    ${btnLogin}    15s
+    [Teardown]    Tear Down

@@ -5,17 +5,52 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Sponsored Ads (PLP) > Product Card Components (Clickable/Tappable areas) - QA-6341
-    [Tags]    QA-6341
+Search and Buy Item on Delivery using Credit Card
     [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu Login
+    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
-    Verify Text On Screen    In stock    2s
-    Click Product Grid View
-    Verify Text On Screen Scroll    Ships in 5 - 7 work days    2s    ${windowScroll}    ${btnProductSearchFilter}
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment
     [Teardown]    Tear Down
+
+#Apps > Sponsored Ads (PDP) > Product Card Layout - QA-6496
+#    [Tags]    QA-6496
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    glass
+#    Click First Product from API
+#    Verify Element On Screen    ${btnAddToCart}    30s
+#    Click Seller Name
+#    Click Product from API
+#    [Teardown]    Tear Down
+
+#Apps > Sponsored Ads (PDP) > Sponsored Ad product rules - QA-6484
+#    [Tags]    QA-6484
+#    [Setup]    Start Application
+#    Click Home
+#    Click Search Home
+#    Search Product    glass
+#    Click First Product from API
+#    Verify Element On Screen    ${btnAddToCart}    30s
+#    Click Seller Name
+#    Click Product from API
+#    [Teardown]    Tear Down
 
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
 #    [Setup]    Start Application

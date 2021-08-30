@@ -332,6 +332,22 @@ Click PDP Write Review
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
     Click Element    ${btnPDPReview}
 
+Click PDP Show All Reviews
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPShowAllReviews}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPScrollRoot}
+        Sleep    1s
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
+    Click Element    ${btnPDPShowAllReviews}
+
 Click Back PDP
     Wait Until Element Is Visible    ${navBackPDP}    30s
     Click Element    ${navBackPDP}

@@ -57,3 +57,5 @@ ${btnPDPInStockClose}    xpath=//*[@text="Close"]
 
 ${lblPDPWishListSave}    xpath=//*[@text="Wish List"]
 ${lblPDPAutoTestWishListSave}    xpath=//*[@text="AutoTestWishlist"]
+
+${btnPDPShowAllReviews}    xpath=//*[contains(@text, "SHOW ALL REVIEWS")]

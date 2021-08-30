@@ -1068,6 +1068,18 @@ Verify Product Search Daily Deals Image
     Should Be True    ${cnt}>0
     [Return]    ${results}
 
+Verify Product Search Alcohol Ad Notice
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${query_result_DailyDealsSlug}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results}=    Output    $.results.productlines[0].cover.url
+    ${cnt}=    Get length    ${results}
+
+    Should Be True    ${cnt}>0
+    [Return]    ${results}
+
 Verify Product Daily Deals Badge
     Get Product Daily Deals Slug
     Get Product Daily Deals
