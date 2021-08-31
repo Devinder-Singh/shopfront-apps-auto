@@ -62,6 +62,13 @@ Click Menu Logout
     Click Element    ${btnLogout}
     Sleep    2s
 
+Click Menu Logout If Logged In
+    Wait Until Element Is Visible    ${btnMenu}    30s
+    Click Element    ${btnMenu}
+
+    ${chkVisible}=    Run Keyword And Return Status    Page Should Contain Element    ${btnLogout}
+    Run Keyword If    '${chkVisible}'=='True'    Click Element    ${btnLogout}
+
 Click Menu Daily Deals
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuCategories}
     Click Element    ${btnMenuDailyDeals}
