@@ -385,3 +385,25 @@ Apps > Search Listings > Stock > Lead Time - QA-8768
     Search Product    pencil
     Verify Text On Screen Scroll    Ships in 5 - 7 work days    30s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
+
+Apps > Search: Autocomplete > Search icon - QA-5156 - Logged Out
+    [Tags]    QA-5156
+    [Setup]    Start Application    ${False}
+    Click Menu Logout If Logged In
+    Click Home
+    Click Search Home
+    Verify Text On Screen    Trending    5s
+    [Teardown]
+
+Apps > Search: Autocomplete > Search icon - QA-5156 - Logged In
+    [Tags]    QA-5156
+    [Setup]    Start Application    ${False}
+    Click Menu Logout If Logged In
+    Click Home
+    Click Menu
+    Click Menu Login
+    Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Verify Text On Screen    Trending    5s
+    [Teardown]
