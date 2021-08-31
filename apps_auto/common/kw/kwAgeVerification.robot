@@ -11,3 +11,7 @@ Verify Age Text
     Wait Until Element Is Visible    ${btnTryAgainlAge}    10s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+
+Click Select Age
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnSelectAge}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnSelectAge}

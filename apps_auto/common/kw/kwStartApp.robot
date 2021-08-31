@@ -5,6 +5,7 @@ Library    Process
 *** Keywords ***
 Start Application
     [Arguments]    ${autoAlert}=${True}
+    Close All Applications
     &{cap}=    Get Capabilities    ${False}    ${autoAlert}
     Log Many    &{cap}
     Open Application    ${REMOTE_URL}    &{cap}

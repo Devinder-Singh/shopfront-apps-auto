@@ -113,7 +113,7 @@ Apps > Search Listings > Reviews - QA-8750
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Tear Down
+    Close Application
     Start Application    ${False}
     Click Menu
     Click Menu Register
@@ -195,12 +195,12 @@ Apps > Search Listings > Colour Swatches - QA-8757
 
 Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
     [Tags]    data    QA-8758
-    [Setup]    Start Application    ${False}
+    [Setup]    Start Application
     Click Home
     Click Search Home
-    Search Product    rOtrin
-    Verify Product From Title    rOtring Visumax - 0,5mm Black Barrel
-    Verify Text On Screen    2 for R100    5s
+    Search Product    Ring - Video Doorbel
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Product Search App Only Deals Badge
     [Teardown]    Tear Down
 
 Apps > Search Listings > Set Bundle Deals (More than one active) - QA-8760

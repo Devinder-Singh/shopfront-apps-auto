@@ -7,7 +7,8 @@ ${btnMenuRegister}    chain=**/XCUIElementTypeButton[`label == "Register"`]
 ${btnMenuDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Daily Deals"`][1]
 ${mnuShopByDepartment}      chain=**/XCUIElementTypeStaticText[`label == "Shop by Department"`]
 ${mnuSportFitness}      chain=**/XCUIElementTypeStaticText[`label == "Auto"`]
-${mnuMyAccount}      chain=**/XCUIElementTypeStaticText[`label == "My Account"`]
+${mnuMyAccount}      chain=**/XCUIElementTypeButton[`label CONTAINS "My Account"`]
+${mnuMyAccountText}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "My Account"`]
 ${btnMenuAddressBook}      chain=**/XCUIElementTypeStaticText[`label == "Address Book"`]
 ${btnMenuPersonalDetail}      chain=**/XCUIElementTypeStaticText[`label == "Personal Details"`]
 
@@ -32,3 +33,6 @@ ${btnMenuTakealotGroup}      id=Takealot.group
 ${btnMenuHelp}      id=Help
 
 ${mnuGaming}      chain=**/XCUIElementTypeStaticText[`label == "Gaming"`]
+
+${mnuSuperbalist}      chain=**/XCUIElementTypeStaticText[`label == "Superbalist.com"`]
+${mnuMrDFood}      chain=**/XCUIElementTypeStaticText[`label == "Mr D Food"`]

@@ -5,4 +5,4 @@ ${btnSearchClearAll}      chain=**/XCUIElementTypeButton[`label == "Clear All"`]
 ${txtSearch}      ${EMPTY}
 
 ${btnSearchRecent}      id=pencil case
-${btnSearchTrending}      id=rain sim card
+${btnSearchTrending}      id=masks disposable

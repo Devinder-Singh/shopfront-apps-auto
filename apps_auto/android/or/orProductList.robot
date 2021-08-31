@@ -1,6 +1,6 @@
 *** Variables ***
 ${imgProductDeals}      id=${APP_PACKAGE}:id/productListingImage
-${imgProductDealsDept}    xpath=(//android.widget.ImageView[@content-desc="Product Image"])[1]
+${imgProductDealsDept}    id=${APP_PACKAGE}:id/productListingTitle
 
 ${lblProduct}     android=new UiSelector().textContains("$productText")
 
@@ -10,7 +10,7 @@ ${btnProductFilter}      xpath=//*[contains(@text, "FILTER")]
 ${btnProductSearchFilter}      xpath=//*[contains(@text, "FILTER")]
 ${btnProductSearchSort}      xpath=//*[contains(@text, "SORT")]
 
-${btnProductWishlist}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.view.ViewGroup/android.view.ViewGroup[1]
+${btnProductWishlist}      id=${APP_PACKAGE}:id/productListingAddToFavouritesWidget
 
 ${btnProductListView}      id=${APP_PACKAGE}:id/productListingRecyclerView
 ${btnProductGridView}    id=${APP_PACKAGE}:id/product_listing_layout_button
@@ -23,3 +23,4 @@ ${lblRatingNumber}    id=${APP_PACKAGE}:id/productListingNumberOfRatings
 ${btnProductWLSave}      xpath=//*[@text="SAVE"]
 
 ${lblTermsCond}      xpath=//*[contains(@text,"This is our List Price. Find out what this means in our Terms & Conditions")]
+${lblPLPInStock}      xpath=//*[@text="In stock"]

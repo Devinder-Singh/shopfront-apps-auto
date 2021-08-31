@@ -21,6 +21,9 @@ ${address_Body_Business}    { "email": "take2Automation+201905213934@gmail.com",
 ${voucher_URL}    http://tal-test-data-service.test-automation-platform.env/execute_query_voucher_service
 ${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-05-18' and DateUsed is null limit 1" }
 
+${wishlist_URL}    http://tal-test-data-service.master.env/add_customer_wishlists
+${Add_cart_URL}       http://tal-test-data-service.test-automation-platform.env/add_to_cart
+
 ${items_URL}    ${APP_ENVIRONMENT}rest/v-1-10-0/customers/4933405/cart/items
 ${items_Body}    {"products":[{"id":94086375, "quantity":1, "enhancedEcommerceAddToCart":{"ecommerce":{"add":{"products":[{"category":"Office & Stationery/Stationery/Student Supplies/Bags & Cases/Pencil Bags", "dimension2":94086375, "name":"SOKHO Christian Inspired Fur Gifting Pencil Bag", "dimension1":null, "price":159, "variant":null, "id":"PLID69598180", "position":0, "brand":"SOKHO", "quantity":1}]}, "currencyCode":"ZAR"}, "event":"addToCart"}}]}
 ${items_Body_liquor}    {"products":[{"id":52489529,"quantity":1,"enhancedEcommerceAddToCart":{"ecommerce":{"add":{"products":[{"id":"PLID40900528","name":"Johnnie Walker - Black Scotch Whisky - 750ml","brand":"Johnnie Walker","category":"Home & Kitchen/Liquor/Whiskey, Gin & Spirits/Whiskey","price":350,"quantity":1,"position":0,"variant":null,"dimension1":null,"dimension2":52489529}]},"currencyCode":"ZAR"},"event":"addToCart"}}]}
@@ -42,6 +45,12 @@ Clear Environment
     Delete Wishlist
     Clear Wishlist
     Clear Address
+
+Create Wishlists
+    Get Customer ID
+    ${WL_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "count": 25 }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "master", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": 4933518, "count": 25 }
+    Post    ${WL_URL}    ${WL_Body}
+    Integer    response status    200
 
 Get Customer ID
     ${token_URL}=    Set Variable    http://tal-test-data-service.master.env/login/tokens
@@ -79,6 +88,27 @@ Clear Address Business
     Post    ${address_URL}    ${address_Body_Business}
     Integer    response status    200
 
+Get Tokens
+    ${token_URL}=    Set Variable    http://tal-test-data-service.master.env/login/tokens
+    ${token_BODY}=    Set Variable    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "remember_me": true}
+
+    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Post    ${token_URL}    ${token_BODY}
+    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Integer    response status    200
+
+    ${query_result}=    Set Variable    0
+    ${query_result_bearer}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Output    $.access_token
+    ${query_result_csrf}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Output    $.csrf_token
+    Set Global Variable    ${query_customer_bearer}    ${query_result_bearer}
+    Set Global Variable    ${query_customer_csrf}    ${query_result_csrf}
+    [return]    ${query_result}
+
+Add To Cart
+    Get Customer ID
+    Get Tokens
+    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id": 87365581, "quantity": 1}]}
+    Post    ${Add_cart_URL}    ${Add_cart_Body}
+    Integer    response status    200
+
 Get First Search Option
     [Arguments]    ${search}
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/search/autocomplete?query=${search}
@@ -103,14 +133,126 @@ Get Product to Add To Cart
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${results_title}[${index}]'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
         Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
         Set Global Variable    ${query_result_CartProductPrice}    ${results_price}[${index}]
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
 
+    ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+    Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+
     [return]    ${searchResult}
+
+Get Leadtime Product to Add To Cart
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.stock_availability_summary.is_leadtime
+    @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
+    @{results_price}=    Output    $.sections.products.results[*].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].price
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${results_title}[${index}]'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
+        Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
+        Set Global Variable    ${query_result_CartProductPrice}    ${results_price}[${index}]
+        Exit For Loop If    '${result}'=='True'
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+    Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+
+    [return]    ${searchResult}
+
+Get Product PLID from Title
+    [Arguments]    ${title}
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.sections.products.results[*].product_views.core.title
+    @{results_PLID}=    Output    $.sections.products.results[*].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
+
+        Exit For Loop If    '${result}'=='${title}'
+
+        ${results_variant}=    Set Variable    zero
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+    Should Be True    '${results_variant}'!='zero'
+    Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
+
+    [return]    ${results_variant}
+
+Get Product Author from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Author}=    Output    $.core.authors[0].Author
+
+    Set Global Variable    ${query_result_CartProductAuthor}    ${results_Author}
+
+    [return]    ${results_Author}
+
+Get Product Brand from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Brand}=    Output    $.core.brand
+
+    Set Global Variable    ${query_result_CartProductBrand}    ${results_Brand}
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeLink[`label == "${results_Brand}"`][1]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_Brand}']
+
+    [return]    ${searchResult}
+
+Get Product Subtitle from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_SubTitle}=    Output    $.core.subtitle
+
+    Set Global Variable    ${query_result_CartProductSubTitle}    ${results_SubTitle}
+
+    [return]    ${results_SubTitle}
+
+Get Product Display Names from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_DisplayNames}=    Output    $.other_offers.conditions[0].items[*].seller.display_name
+
+    [return]    @{results_DisplayNames}
+
+Get Product Lead Times from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_LeadTimes}=    Output    $.other_offers.conditions[0].items[*].event_data.documents.product.lead_time
+
+    [return]    @{results_LeadTimes}
+
+Get Product Prices from PLID
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_Prices}=    Output    $.other_offers.conditions[0].items[*].event_data.documents.product.purchase_price
+
+    [return]    @{results_Prices}
 
 Get Scroll Product to Add To Cart
 
@@ -222,7 +364,6 @@ Get Product Auto to Add To Cart
 Verify Product Search App Only Deals Badge
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
-    Output    ${search_URL}
     Get    ${search_URL}
     Integer    response status    200
 
@@ -295,6 +436,37 @@ Get Price Range Product to Add To Cart
 
     [return]    ${searchResult}
 
+Get Product YAML Detail
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}/frequently-bought-together?platform=desktop&allow_variant=true
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Title}=    Output    $.items[0].core.title
+    ${results_StarRating}=    Output    $.items[0].core.star_rating
+    ${results_Price}=    Output    $.items[0].pretty_price
+
+    Set Global Variable    ${query_result_YMALProductTitle}    ${results_Title}
+    Set Global Variable    ${query_result_YMALProductRating}    ${results_StarRating}
+    Set Global Variable    ${query_result_YMALProductPrice}    ${results_Price}
+
+    [return]
+
+Get Product CABT Detail
+    [Arguments]    ${index}
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}/customers-also-bought?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Title}=    Output    $.items[${index}].title
+    ${results_Price}=    Output    $.items[${index}].selling_price
+
+    Set Global Variable    ${query_result_CABTProductTitle}    ${results_Title}
+    Set Global Variable    ${query_result_CABTProductPrice}    ${results_Price}
+
+    [return]
+
 Get Product Variant
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
@@ -333,18 +505,95 @@ Get Product Variant Colour
 
     [return]    ${searchResult}
 
-Get Product Variant Colour Size
+Get Product Variant Disabled Colour
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
     Get    ${search_URL}
     Integer    response status    200
 
     @{results}=    Output    $.variants.selectors[0].options[*].is_enabled
-    @{results_variant}=    Output    $.variants.selectors[1].options[*].link_data.fields.size
+    @{results_variant}=    Output    $.variants.selectors[0].options[*].link_data.fields.colour_variant
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
+        Exit For Loop If    '${result}'=='False'
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Set Global Variable    ${query_result_CartProductVariant}    ${results_variant}[${index}]
+
+    [return]    ${searchResult}
+
+Get Product Variant All Colours
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_variant}=    Output    $.variants.selectors[0].options[*].link_data.fields.colour_variant
+
+    [return]    @{results_variant}
+
+Get Product Variant All Size
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_variant}=    Output    $.variants.selectors[0].options[*].link_data.fields.size
+
+    [return]    @{results_variant}
+
+Get Product Variant Disabled Size
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.variants.selectors[1].options[*].is_enabled
+    @{results_variant}=    Output    $.variants.selectors[1].options[*].link_data.fields.size
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
+        Exit For Loop If    '${result}'=='False'
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Set Global Variable    ${query_result_CartProductVariant}    ${results_variant}[${index}]
+
+    [return]    ${searchResult}
+
+Get Product Variant Size
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.variants.selectors[1].options[*].is_enabled
+    @{results_variant}=    Output    $.variants.selectors[1].options[*].link_data.fields.size
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
+        Exit For Loop If    '${result}'=='True'
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Set Global Variable    ${query_result_CartProductVariant}    ${results_variant}[${index}]
+
+    [return]    ${searchResult}
+
+Get Product Variant Colour Size
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop&colour_variant=${query_result_CartProductVariant}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.variants.selectors[1].options[*].is_enabled
+    @{results_variant}=    Output    $.variants.selectors[1].options[*].link_data.fields.size
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
@@ -836,6 +1085,18 @@ Verify Product Search Daily Deals Image
     Should Be True    ${cnt}>0
     [Return]    ${results}
 
+Verify Product Search Alcohol Ad Notice
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-9-0/productlines/search?sort=BestSelling%20Descending&rows=100&daily_deals_rows=100&start=0&detail=listing&filter=Available:true&filter=Promotions:${query_result_DailyDealsSlug}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results}=    Output    $.results.productlines[0].cover.url
+    ${cnt}=    Get length    ${results}
+
+    Should Be True    ${cnt}>0
+    [Return]    ${results}
+
 Verify Product Daily Deals Badge
     Get Product Daily Deals Slug
     Get Product Daily Deals
@@ -891,7 +1152,7 @@ Get Filter Product to Add To Cart
         ${objVariant}=    Get From Dictionary    ${result}    has_variants
         ${objTitle}=    Get From Dictionary    ${result}    title
 
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${objTitle}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${objTitle}"]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${objTitle}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${objTitle}"]
         Set Global Variable    ${query_result_CartFilterProduct}    ${objTitle}
         Exit For Loop If    '${objVariant}'=='False'
 

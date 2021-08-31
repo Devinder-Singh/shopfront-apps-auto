@@ -36,7 +36,7 @@ Apps > Login Validations (Logged-Out User) - QA-8747
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Tear Down
+    Close Application
     Start Application
     Click Home
     Click Search Home
@@ -105,7 +105,7 @@ Apps > Android > Login > Verify Auto-Login works - QA-5316
     Click Menu Login
     Login Takealot    ${G_EMAIL}    t@ke@!ot1234
     Click Home
-    Tear Down
+    Close Application
     Start Application
     Click Menu
     Click Menu My Account

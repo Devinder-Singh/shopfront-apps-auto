@@ -14,6 +14,12 @@ Click Checkout Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCheckout}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckout}
 
+Verify Toolbar iOS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHome}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnCart}    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnWishListIcon}    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuMyAccount}    1s
+
 Wait for Checkout
     Wait Until Element Is Visible    ${btnCheckout}    30s
 
