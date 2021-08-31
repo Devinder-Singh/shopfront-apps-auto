@@ -73,6 +73,10 @@ Click Menu Shop By Department
 Click Menu Sport and Fitness
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}    5s
     Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
+
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}    5s
+    Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}
+
     Wait Until Element Is Visible    ${mnuSportFitness}    5s
     Click Element    ${mnuSportFitness}
     Click Product Widget First View All

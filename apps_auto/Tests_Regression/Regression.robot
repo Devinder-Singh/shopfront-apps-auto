@@ -553,6 +553,41 @@ Apps > PDP - QA-8892
     Enter Review Message    Auto Test
     Click Review Submit
     Verify Text On Screen    Thank you for your review    30s
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test
+    Click Review Submit
+    Verify Text On Screen    You've already submitted a review for this product    30s
+    Click Back Android
+    Click Back iOS    ${query_result_CartProduct}
+    Click PDP Show All Reviews
+    Click Review Sort
+    Click Review Sort Most Helpful
+    Click Review Sort
+    Click Review Sort Most Recent
+    Click Review Helpful
+    Verify Text On Screen    Thank you for your feedback    10s
+    Click Review Filter
+    Click Review Filter Rating
+    Click Review Filter Rating Five
+    Click Review Filter Done
+    Click Review Filter Apply
+    Verify Element On Screen    ${btnReviewFilter}    15s
+    Click Review Icon More
+    Click Review Report
+    Verify Element On Screen    Your report has been submitted    15s
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
+    Click PDP Write Review
+    Verify Element On Screen    ${btnLogin}    15s
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8893

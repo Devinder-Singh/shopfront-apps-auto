@@ -66,7 +66,7 @@ Apps - Checkout - Delivery Methods - Liquor Item - QA-9523 / QA-5232
     Click Go To Cart
     Click Checkout
     Click Verify Age
-    Verify Delivery Text    Sorry, some items in your cart are not eligible for collection.
+    Verify Text On Screen    Sorry, some items in your cart are not eligible for collection    30s
     Click Collect Not Available
     Verify Delivery Text Not    Takealot Pickup Points
     [Teardown]    Tear Down
@@ -168,8 +168,8 @@ Checkout - Age Verification - QA-5244
     Verify Age Text    The date of birth you entered indicates that you are under the age of 18. We are not permitted to sell liquor to you. Please remove all liquor items from your cart to proceed
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - General - QA-5200
-    [Tags]    QA-5200
+Checkout - Delivery Address - General - QA-5200 / QA-9529
+    [Tags]    QA-5200    QA-9529
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -181,11 +181,8 @@ Checkout - Delivery Address - General - QA-5200
     Click Checkout
     Click Delivery
     Click Delete Address
-    [Teardown]    Tear Down
-
-Checkout - Delivery Address - General 02 - QA-9529
-    [Tags]    QA-9529    dependent
-    [Setup]    Start Application
+    Close Application
+    Start Application
     Click Home
     Click Search Home
     Search Product    pencil
@@ -229,7 +226,9 @@ Checkout - Delivery Address - General 04 - QA-9531
     Click Checkout
     Click Delivery
     Click Edit Address
+    Swipe Up    ${windowScroll}
     Edit Delivery Address Mobile Number    0897665665
+    Swipe Up    ${windowScroll}
     Swipe Up    ${windowScroll}
     Click Save Address
     Click Address
@@ -248,6 +247,7 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     Click Checkout
     Click Delivery
     Click Edit Address
+    Swipe Up    ${windowScroll}
     Verify Element On Screen    ${btnSaveAddress}    15s
     Verify Text On Screen iOS    RECIPIENT NAME    2s
     Verify Text On Screen iOS    RECIPIENT MOBILE NUMBER    2s
@@ -268,7 +268,12 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
 #    Verify Text On Screen Android    Complex / Building (Optional)    2s
 #    Swipe Down    ${windowScroll}
     Edit Delivery Address Mobile Number    089766566
+    Click Element    ${txtRecipientStreet}
+    Click Element    ${txtRecipientMobile}
+    Swipe Up    ${windowScroll}
     Edit Delivery Address Postal Code    101
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
     Click Save Address
     Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    5s
     Swipe Up    ${windowScroll}
@@ -285,8 +290,14 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     Click Checkout
     Click Delivery
     Click Edit Address
+    Swipe Up    ${windowScroll}
     Edit Delivery Address Mobile Number    0820000000
+    Click Element    ${txtRecipientStreet}
+    Click Element    ${txtRecipientMobile}
+    Swipe Up    ${windowScroll}
     Edit Delivery Address Postal Code    8006
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
     Click Save Address
     Click Confirmed Address
     Click Got It Thanks
@@ -328,7 +339,7 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5
 
 Checkout - Delivery Address - Address Form Validation - QA-5217
     [Tags]    QA-5217
-    [Setup]    Start Application
+    [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
     Click Menu My Account
@@ -359,6 +370,8 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
     Click Save Address
     Verify Text On Screen    Please enter the recipient's name    10s
     Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    2s
@@ -393,7 +406,8 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
 #    Edit Delivery Address Complex    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Edit Delivery Address City    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Edit Delivery Address Suburb    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    Edit Delivery Address Street My Acc    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    Edit Delivery Address Street My Acc Only    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    Swipe Up    ${windowScroll}
     Click Save Address
 #    Verify Text On Screen    Maximum length for street is 64 characters    10s
 #    Verify Text On Screen    Maximum length for complex details is 128 characters    2s
@@ -445,7 +459,7 @@ Checkout - Delivery Address - Street Suggestion - QA-5238
     Click Delivery
     Click Add Delivery Address
     Click Address Business
-    Edit Delivery Address Business My Acc    TestBusiness
+    Edit Delivery Address Business    TestBusiness
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Click Free Delivery
     [Teardown]    Tear Down
@@ -468,7 +482,7 @@ Checkout - Delivery Address - Pin on Map - QA-5251
     Click Confirmed Address
     Click Got It Thanks
     Add Map Street Address    12 Ridge Way
-#    Click Map Address Option
+    Click Map Address Option
     Click Use This Location
     Close Application
     Start Application

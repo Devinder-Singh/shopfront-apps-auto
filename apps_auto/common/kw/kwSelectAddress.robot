@@ -168,18 +168,22 @@ Verify All Pickup Points
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Bloemfontein Bloemfontein, Free State
     #    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    KWAZULU-NATAL
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Avoca Durban, KwaZulu-Natal
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Ballito Ballito, KwaZulu-Natal
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Ballito Ballito, KwaZulu-Natal
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Mount Edgecombe Durban, KwaZulu-Natal
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    North Beach Durban, KwaZulu-Natal
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Pietermaritzburg Pietermaritzburg, KwaZulu-Natal
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Pietermaritzburg Pietermaritzburg, KwaZulu-Natal
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Pinetown Durban, KwaZulu-Natal
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Richards Bay Richards Bay, KwaZulu-Natal
     #    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    LIMPOPO
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Louis Trichardt Louis Trichardt, Limpopo
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Polokwane Polokwane, Limpopo
     #    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    MPUMALANGA
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    BKB Ermelo Ermelo, Mpumalanga
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    BKB Standerton Standerton, Mpumalanga
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    BKB Ermelo Ermelo, Mpumalanga
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    BKB Standerton Standerton, Mpumalanga
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Middelburg Middelburg, Mpumalanga
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Nelspruit Nelspruit, Mpumalanga
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Secunda Secunda, Mpumalanga

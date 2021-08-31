@@ -72,8 +72,8 @@ Add Delivery Address My Acc
     Sleep    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
 
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='&*'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='&*'    Click Element    ${lblAddresOption}
     Sleep    3s
     Swipe Up    ${windowScroll}
     Click Save Address
@@ -314,6 +314,14 @@ Edit Delivery Address Street My Acc
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
     Swipe Up    ${windowScroll}
     Click Save Address
+
+Edit Delivery Address Street My Acc Only
+    [Arguments]    ${street}
+
+    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    15s
+    Clear Text    ${txtRecipientStreetMyAcc}
+    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Click Element    ${txtRecipientMobileMyAcc}
 
 Edit Delivery Address Suburb
     [Arguments]    ${suburb}
