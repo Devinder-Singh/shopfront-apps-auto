@@ -600,6 +600,7 @@ Apps > Checkout > Collect > Pickup Points List - QA-5237
     Swipe Down    ${windowScroll}
     Swipe Down    ${windowScroll}
     Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
     Click Filter Province
     Click Western Cape Province
     Click Pickup Point Info

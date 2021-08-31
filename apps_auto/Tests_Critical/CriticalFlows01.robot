@@ -5,55 +5,20 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Checkout > Collect > Pickup Points List - QA-5237
-    [Tags]    QA-5237
+Apps > Checkout > Collect > Add Only Digital Item - QA-5265
+    [Tags]    QA-5265
     [Setup]    Start Application
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    pencil
-    Click Product from API
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Collect
-    Click Filter Province
-    Click Gauteng Province
-    Verify Pickup Points Gauteng
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Click Filter Province
-    Click All Available Provinces
-    Verify All Pickup Points
-#    Verify Pickup Points Gauteng
-#    Verify Pickup Point
-#    Verify Collect Address Text    LAST USED
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Click Filter Province
-    Click Western Cape Province
-    Click Pickup Point Info
-    Click Select Pickup Point
-    Click Free Delivery
+    Click Continue Digital Item
     Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
-    Close Application
-    Start Application
-    Click Menu
-    Click Menu My Account
-    Click Menu Orders
-    Click Order Awaiting Payment
-    Swipe Up    ${windowScroll}
-    Swipe Up    ${windowScroll}
-    Verify Order Detail Text    Takealot Cape Town Warehouse Pickup Point
     [Teardown]    Tear Down
 
 #Apps > Sponsored Ads (PDP) > Product Card Layout - QA-6496
