@@ -1,6 +1,6 @@
 *** Settings ***
 Default Tags      critical
-Suite Setup    Install Application
+#Suite Setup    Install Application
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
@@ -32,7 +32,8 @@ Buy Daily Deal Item on Delivery using Credit Card
     Clear Environment
     Click Menu
     Click Menu Daily Deals
-    Click Product Daily Deals
+    Click Daily Deals Product from API
+#    Click Product Daily Deals
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -224,7 +225,7 @@ Buy Daily Deals Item and verify no Promotions
     Clear Environment
     Click Menu
     Click Menu Daily Deals
-    Click Product Daily Deals
+    Click Daily Deals Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -243,7 +244,7 @@ Buy Daily Deals Item and verify Promotions
     Clear Environment
     Click Menu
     Click Menu Daily Deals
-    Click Product Daily Deals
+    Click Daily Deals Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout

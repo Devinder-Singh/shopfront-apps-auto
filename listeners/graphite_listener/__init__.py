@@ -15,7 +15,7 @@ register_request(
     },
 )
 
-def send_metrics(metric_path: str, metric_value: (int, float)) -> dict:
+def send_metrics(metric_path: str, metric_value: float) -> dict:
     req = APIRequest(
         'master.env',
         'send_metrics',

@@ -11,6 +11,7 @@ ${txtPDPwd}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.Line
 
 ${lblPersonalDetailMobile}      id=${APP_PACKAGE}:id/accountPersonalDetailsMobile
 ${txtPDMobile}      id=${APP_PACKAGE}:id/validation_input_mobile_number
+${txtPDMobileEx}      id=${APP_PACKAGE}:id/validation_input_mobile_number
 
 ${lblPersonalDetailPwd}      id=${APP_PACKAGE}:id/accountPersonalDetailsPassword
 ${txtCurrentPwd}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText

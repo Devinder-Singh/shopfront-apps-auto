@@ -100,8 +100,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    GetUp Weight Plate 1
-    Click Product From Title    GetUp Weight Plate - 10kg
+    Search Product    Abstinence
+    Click Product From Title    Abstinence Cape Fynbos distilled spirit non-alcoholic 750ml
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
@@ -109,11 +109,11 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Verify Text On Screen iOS    View Bundle    1s
     Close Application
     Start Application
-    Clear Environment
+#    Clear Environment
     Click Home
     Click Search Home
-    Search Product    GetUp Weight Plate 1
-    Click Product From Title    GetUp Weight Plate - 10kg
+    Search Product    Abstinence
+    Click Product From Title    Abstinence Cape Fynbos distilled spirit non-alcoholic 750ml
     Click Add Bundle To Cart
     Click Go To Cart
     Wait for Checkout
@@ -207,7 +207,8 @@ Apps > Verify Home Screen - QA-8876
     Click Menu
     Click Menu Shop By Department
     Verify Text On Screen    Daily Deals    30s
-    Verify Text On Screen    App Only Deals    1s
+    Verify Text On Screen Android    App Only Deals    1s
+    Verify Text On Screen iOS    App Only    1s
 #    Verify Text On Screen    Gaming    1s
 #    Verify Text On Screen    Health & Personal Care    1s
 #    Verify Text On Screen    Essential Campsite Supplies    1s
@@ -710,51 +711,52 @@ Apps > Wishlist (iOS) - QA-5361
     Verify Text On Screen Android    Your Shopping Cart is Empty    30s
     [Teardown]    Tear Down
 
-Apps > Cart (iOS) - QA-8908
-    [Tags]    QA-8908
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Click Menu Shop By Department
-    Click Menu Sport and Fitness
-    Click Product Auto from API
-    Click Add To Wishlist
-    Click Wishlist
-    Click Wishlist Add To Cart
-    Click Back Android
-    Click Back iOS    My Lists
-    Click Home Cart
-    Click Checkout
-    Close Application
-    Start Application
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Search Product Wishlist
-    Verify Text On Screen Android    Item added to Wish List    30s
-    Close Application
-    Start Application    ${False}
-    Click Home
-    Click Wishlist Nav Bar
-    Click Wishlist Default
-    Click Wishlist Edit
-    Select Wishlist Item
-    Click Wishlist Delete Items
-    Verify Text On Screen    This list is empty!    30s
-    Close Application
-    Start Application
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout Move To Wishlist First Item
-#    Verify Text On Screen Android    Item(s) moved to list    30s
-#    Verify Text On Screen iOS    Item added to Wish List    30s
-    [Teardown]    Tear Down
+#Wishlist icon on PLP screen is not unique
+#Apps > Cart (iOS) - QA-8908
+#    [Tags]    QA-8908
+#    [Setup]    Start Application
+#    Clear Environment
+#    Click Menu
+#    Click Menu Shop By Department
+#    Click Menu Sport and Fitness
+#    Click Product Auto from API
+#    Click Add To Wishlist
+#    Click Wishlist
+#    Click Wishlist Add To Cart
+#    Click Back Android
+#    Click Back iOS    My Lists
+#    Click Home Cart
+#    Click Checkout
+#    Close Application
+#    Start Application
+#    Clear Environment
+#    Click Home
+#    Click Search Home
+#    Search Product    Pencil
+#    Click Search Product Wishlist
+#    Verify Text On Screen Android    Item added to Wish List    30s
+#    Close Application
+#    Start Application    ${False}
+#    Click Home
+#    Click Wishlist Nav Bar
+#    Click Wishlist Default
+#    Click Wishlist Edit
+#    Select Wishlist Item
+#    Click Wishlist Delete Items
+#    Verify Text On Screen    This list is empty!    30s
+#    Close Application
+#    Start Application
+#    Clear Environment
+#    Click Home
+#    Click Search Home
+#    Search Product    Pencil
+#    Click Product from API
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout Move To Wishlist First Item
+##    Verify Text On Screen Android    Item(s) moved to list    30s
+##    Verify Text On Screen iOS    Item added to Wish List    30s
+#    [Teardown]    Tear Down
 
 Apps > Order Tracking - QA-5274
     [Tags]    QA-5274
@@ -859,7 +861,6 @@ Apps > My Account Verifications - QA-5356
     Verify Text On Screen Android    Address successfully deleted    30s
     Close Application
     Start Application
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -868,7 +869,7 @@ Apps > My Account Verifications - QA-5356
     Click Go To Cart
     Click Checkout
     Click Delivery
-    Verify Text On Screen    12 Ridge Way, Green Point, Cape Town, Western Cape, 8005    30s
+    Verify Text On Screen    13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
     [Teardown]    Tear Down
 
 Apps > My Account Verifications - QA-9567

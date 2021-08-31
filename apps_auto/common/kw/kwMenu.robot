@@ -80,7 +80,7 @@ Click Menu Sport and Fitness
 Click Menu Department
     [Arguments]    ${dept}
 
-    ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${dept}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${dept}')]
+    ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${dept}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${dept}']
 
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
     Run Keyword If    ${chkTextSuccess}==False    Swipe Up    ${windowScroll}

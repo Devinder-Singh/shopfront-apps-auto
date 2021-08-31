@@ -14,7 +14,7 @@ Click Pickup Point
     Wait Until Element Is Visible    ${txtFilterProvince}    30s
 
     ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    20
+    FOR    ${index}    IN RANGE    25
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
 
         Run Keyword If

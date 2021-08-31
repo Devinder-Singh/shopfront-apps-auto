@@ -45,6 +45,10 @@ Click Product Widget Banner
     Wait Until Element Is Visible    ${btnBannerWidget}    15s
     Sleep    5s
     Click Element    ${btnBannerWidget}
+    Sleep    5s
+
+    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnBannerWidget}    2s
+    Run Keyword If    ${chkElementExists}==True    Click Element    ${btnBannerWidget}
 
 Click Product Widget Product
     ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductWidget}    10s
@@ -67,6 +71,10 @@ Click Product Widget Image
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnImageWidget}    15s
     Sleep    5s
     Click Element    ${btnImageWidget}
+    Sleep    5s
+
+    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnImageWidget}    2s
+    Run Keyword If    ${chkElementExists}==True    Click Element    ${btnImageWidget}
 
 Click Product Widget Context
     ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnContextWidget}    5s

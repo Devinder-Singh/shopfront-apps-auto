@@ -17,7 +17,7 @@ ${btnHomeClearCancelRecent}      chain=**/XCUIElementTypeButton[`label == "Cance
 ${btnHomeClearRecent}      id=Clear
 
 ${btnHomeDeptDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Daily Deals"`]
-${btnHomeDeptAppOnlyDeals}      id=App Only Deals
+${btnHomeDeptAppOnlyDeals}      id=App Only
 ${btnHomeDeptHomeCook}      chain=**/XCUIElementTypeStaticText[`label == "Gaming & Tech "`]
 ${btnHomeDeptHealthCare}      id=Health & Personal Care
 ${btnHomeBack}      id=Back

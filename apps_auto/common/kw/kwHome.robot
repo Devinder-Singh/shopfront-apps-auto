@@ -86,9 +86,30 @@ Click Clear All Recently Viewed
     END
     Click Element    ${btnHomeClearAllRecent}
 
+Click Clear All Recently Viewed Android
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnSearchHome}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnHomeClearAllRecent}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Run Keyword If
+            ...    ${PLATFORM_NAME}=='android'
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHomeClearAllRecent}
+
 Click Cancel Clear All Recently Viewed
-    Wait Until Element Is Visible    ${btnHomeClearCancelRecent}    30s
-    Click Element    ${btnHomeClearCancelRecent}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHomeClearCancelRecent}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHomeClearCancelRecent}
 
 Confirm Clear All Recently Viewed
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHomeClearRecent}    30s
