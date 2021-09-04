@@ -393,7 +393,7 @@ Apps > Search: Autocomplete > Search icon - QA-5156 - Logged Out
     Click Home
     Click Search Home
     Verify Text On Screen    Trending    5s
-    [Teardown]
+    [Teardown]    Tear Down
 
 Apps > Search: Autocomplete > Search icon - QA-5156 - Logged In
     [Tags]    QA-5156
@@ -406,4 +406,4 @@ Apps > Search: Autocomplete > Search icon - QA-5156 - Logged In
     Click Home
     Click Search Home
     Verify Text On Screen    Trending    5s
-    [Teardown]
+    [Teardown]    Tear Down

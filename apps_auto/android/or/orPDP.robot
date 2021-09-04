@@ -14,7 +14,7 @@ ${navCartScr}    ${EMPTY}
 
 ${btnPDPSellerName}      id=${APP_PACKAGE}:id/pdp_widget_buy_box_sub_title_action_button
 ${lblBlueValue}      xpath=//*[@text="Blue"]
-${btnPDPReview}      id=${APP_PACKAGE}:id/write_reviews_button
+${btnPDPReview}      xpath=//*[contains(@text, "WRITE REVIEW")]
 ${btnPDPReviewsSummary}    id=${APP_PACKAGE}:id/pdp_reviews_distribution_summary
 ${btnPDPUserReviews}    id=${APP_PACKAGE}:id/pdp_reviews_user_reviews_container
 ${btnPDPReviewBuyboxTitleButton}    id=${APP_PACKAGE}:id/pdp_widget_buy_box_title_review_reviews
@@ -63,3 +63,6 @@ ${lblPDPWishListSave}    xpath=//*[@text="Wish List"]
 ${lblPDPAutoTestWishListSave}    xpath=//*[@text="AutoTestWishlist"]
 
 ${btnPDPShowAllReviews}    xpath=//*[contains(@text, "SHOW ALL REVIEWS")]
+
+${lblPDPRelatedProdSponsored}    xpath=//*[@text="Sponsored"]
+${lblPDPRelatedProdSponsoredOK}    xpath=//*[@text="OK"]

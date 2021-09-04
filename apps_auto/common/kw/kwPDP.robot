@@ -194,6 +194,14 @@ Click Continue Shopping
     Wait Until Element Is Visible    ${btnContinueShopping}    30s
     Click Element    ${btnContinueShopping}
 
+Click Related Products Sponsored
+    Wait Until Element Is Visible    ${lblPDPRelatedProdSponsored}    30s
+    Click Element    ${lblPDPRelatedProdSponsored}
+
+Click Related Products Sponsored OK
+    Wait Until Element Is Visible    ${lblPDPRelatedProdSponsoredOK}    30s
+    Click Element    ${lblPDPRelatedProdSponsoredOK}
+
 Click Continue Shopping iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnContinueShopping}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnContinueShopping}
@@ -315,6 +323,7 @@ Click Go To Cart iOS
 
 Click PDP Write Review
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
+    Run Keyword If    ${chkElement}==False    Wait Until Element Is Visible    ${btnPDPSelectOption}    1s
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -331,7 +340,6 @@ Click PDP Write Review
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
     Click Element    ${btnPDPReview}
 
-<<<<<<< HEAD
 Scroll To PDP Reviews Auto
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnPDPReviewBuyboxTitleButton}
@@ -343,33 +351,32 @@ Scroll To PDP Reviews
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${locatorReviewsCard}
-=======
+
 Click PDP Show All Reviews
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPShowAllReviews}
->>>>>>> origin/extension
 
         Run Keyword If
             ...    ${chkProdVisible}==True
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
-<<<<<<< HEAD
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
-
-Click PDP Reviews Show More
-    Wait Until Element Is Visible    ${btnPDPUserReviews}    30s
-    Click Element    ${btnPDPReviewShowMoreButton}
-=======
         Sleep    1s
         ${index}=    Evaluate    ${index} + 1
     END
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
     Click Element    ${btnPDPShowAllReviews}
->>>>>>> origin/extension
+
+Click PDP Reviews Show More
+    Wait Until Element Is Visible    ${btnPDPUserReviews}    30s
+    Click Element    ${btnPDPReviewShowMoreButton}
+
+        Sleep    1s
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
+    Click Element    ${btnPDPShowAllReviews}
 
 Click Back PDP
     Wait Until Element Is Visible    ${navBackPDP}    30s
