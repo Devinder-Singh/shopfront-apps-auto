@@ -105,8 +105,9 @@ Click PDP When Do I Get
     Sleep    2s
 
 Click PDP Credit Info
-    Wait Until Element Is Visible    ${btnPDPOnCreditInfo}    3s
-    Click Element    ${btnPDPOnCreditInfo}
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPOnCreditInfo}    3s
+    Run Keyword If    ${chkTextSuccess}==True    Click Element    ${btnPDPOnCreditInfo}
+    Run Keyword If    ${chkTextSuccess}==False    Click Element    ${btnPDPOnCreditInfoTwo}
 
 Click Eligible for Cash on Delivery
     Wait Until Element Is Visible    ${btnAddToCart}    30s
