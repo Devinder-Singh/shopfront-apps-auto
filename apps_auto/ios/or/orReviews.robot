@@ -42,5 +42,3 @@ ${btnReviewsMenuButton}    xpath=(//XCUIElementTypeButton[@name="icon more"])[1]
 ${btnReviewsReportReviewButton}   id=Report Review 
 ${btnReviewsReportReviewText}    ${EMPTY}
 ${btnReviewsReportReviewDialogButton}    ${EMPTY}
-
-${btnReviewsShowAllButton}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show All Reviews"`]

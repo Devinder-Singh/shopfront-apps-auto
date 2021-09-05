@@ -84,15 +84,15 @@ Click PDP List Price Cancel
 
 Click PDP JHB
     Wait Until Element Is Visible    ${btnAddToCart}    30s
-    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtPDPJHB}
+    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPInStockJHB}
     Run Keyword If    ${chkProdVisible}==False    Swipe Up    ${windowScroll}
-    Click Element    ${txtPDPJHB}
+    Click Element    ${btnPDPInStockJHB}
 
 Click PDP CPT
     Wait Until Element Is Visible    ${btnAddToCart}    30s
-    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtPDPCPT}
+    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPInStockCPT}
     Run Keyword If    ${chkProdVisible}==False    Swipe Up    ${windowScroll}
-    Click Element    ${txtPDPCPT}
+    Click Element    ${btnPDPInStockCPT}
 
 Click PDP Warehouse OK
     Wait Until Element Is Visible    ${txtPDPWarehouseOK}    3s
@@ -105,9 +105,8 @@ Click PDP When Do I Get
     Sleep    2s
 
 Click PDP Credit Info
-    ${chkElementSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPOnCreditInfoTwo}    3s
-    Run Keyword If    ${chkElementSuccess}==True    Click Element    ${btnPDPOnCreditInfoTwo}
-    Run Keyword If    ${chkElementSuccess}==False    Click Element    ${btnPDPOnCreditInfo}
+    Wait Until Element Is Visible    ${btnPDPOnCreditInfo}    3s
+    Click Element    ${btnPDPOnCreditInfo}
 
 Click Eligible for Cash on Delivery
     Wait Until Element Is Visible    ${btnAddToCart}    30s
@@ -371,12 +370,6 @@ Click PDP Show All Reviews
 Click PDP Reviews Show More
     Wait Until Element Is Visible    ${btnPDPUserReviews}    30s
     Click Element    ${btnPDPReviewShowMoreButton}
-
-        Sleep    1s
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
-    Click Element    ${btnPDPShowAllReviews}
 
 Click Back PDP
     Wait Until Element Is Visible    ${navBackPDP}    30s

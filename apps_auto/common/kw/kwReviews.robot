@@ -138,7 +138,7 @@ Enter Review Message
     Input Text    ${txtReviewMsg}    ${msg}
 
 Goto PDP Reviews Section
-    Scroll To PDP Reviews    ${btnReviewsShowAllButton}
+    Scroll To PDP Reviews    ${btnPDPShowAllReviews}
     Verify Reviews Card User Reviews Visible
     Click PDP Reviews Show More
     Verify Reviews PDP Section Visible
@@ -166,8 +166,8 @@ Click Reviews Sort Option Button
     Click Element    ${btnReviewsSortButton}
 
 Click Reviews Show All Button
-    Wait Until Element Is Visible    ${btnReviewsShowAllButton}    15s
-    Click Element    ${btnReviewsShowAllButton}
+    Wait Until Element Is Visible    ${btnPDPShowAllReviews}    15s
+    Click Element    ${btnPDPShowAllReviews}
 
 Click Review Sort
     Wait Until Element Is Visible    ${btnReviewSort}    30s

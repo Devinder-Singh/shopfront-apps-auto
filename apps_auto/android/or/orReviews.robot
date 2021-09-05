@@ -41,5 +41,3 @@ ${btnReviewsMenuButton}    xpath=//androidx.recyclerview.widget.RecyclerView[con
 ${btnReviewsReportReviewButton}    id=${APP_PACKAGE}:id/title
 ${btnReviewsReportReviewText}    id=${APP_PACKAGE}:id/review_reported_success_message
 ${btnReviewsReportReviewDialogButton}    id=android:id/button1
-
-${btnReviewsShowAllButton}    xpath=//*[contains(@text, "Show All Reviews")]

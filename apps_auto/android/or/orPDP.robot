@@ -29,8 +29,6 @@ ${lblPDPShopTheDeal}      xpath=//*[@text="SHOP THE DEAL"]
 ${lnkPDPShowMore}      xpath=//*[@text="SHOW MORE"]
 ${lnkPDPCOD}    xpath=//*[contains(@text, "Eligible for Cash on Delivery")]
 
-${txtPDPJHB}      xpath=//*[@text="JHB"]
-${txtPDPCPT}      xpath=//*[@text="CPT"]
 ${txtPDPWarehouseOK}      xpath=//*[@text="OK"]
 
 ${btnPDPListPrice}      id=${APP_PACKAGE}:id/pdp_widget_buy_box_price_price_previous
@@ -50,8 +48,10 @@ ${btnPDPShowAllColours}    xpath=//*[contains(@text, "SHOW ALL")]
 ${lblPDPExchAndReturn}    xpath=//*[contains(@text, "Hassle-Free Exchanges & Returns for 30 Days")]
 ${lblPDPNonrefundable}    xpath=//*[contains(@text, "Non-Returnable")]
 
+${btnPDPWhenDoIGet}    xpath=//*[@text="When do I get it?"]
 ${btnPDPOnCreditInfoTwo}    xpath=//*[contains(@text, "On Credit: R")]
 ${btnPDPOnCreditInfo}    xpath=//*[contains(@text, "On Credit: R")]
+
 ${btnPDPPreOrder}    xpath=//*[contains(@text, "Pre-order")]
 
 ${btnPDPInStockJHB}    xpath=//*[@text="JHB"]
