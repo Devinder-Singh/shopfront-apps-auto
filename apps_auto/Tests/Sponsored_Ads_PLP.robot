@@ -200,3 +200,35 @@ Apps > Sponsored Ads (PLP) > Launching PLP from different screens - QA-6616
     Click Seller Name
     Click Product from API
     [Teardown]    Tear Down
+
+Apps > Sponsored Ads (PDP) > Product Card Layout - QA-6496
+    [Tags]    QA-6496
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    disposable mas
+    Click First Product from API
+    Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
+    Click Related Products Sponsored
+    Verify Text On Screen    You're seeing these ads based on the product's relevance to your product query    5s
+    Click Related Products Sponsored OK
+    Check Text On Screen Not    You're seeing these ads based on the product's relevance to your product query
+    [Teardown]    Tear Down
+
+Apps > Sponsored Ads (PDP) > Sponsored Ad product rules - QA-6484
+    [Tags]    QA-6484
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    disposable mas
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Text On Screen    Sponsored    2s
+    Verify Text On Screen    % OFF    2s
+    Verify Text On Screen    In stock    2s
+    Check Text On Screen Not    4.0
+    Verify Text On Screen    R 155    2s
+    Verify Text On Screen    R  196    2s
+    Click First Product from API
+    Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen    Sponsored    5s
+    [Teardown]    Tear Down

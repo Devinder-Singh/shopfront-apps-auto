@@ -61,7 +61,7 @@ Apply Reviews Filter Options
 Apply Reviews Filter Options Rating
     Run Keyword If    '${PLATFORM_NAME}'=='ios'  Click Element    ${btnReviewsFilterDoneButton}
 
-Verify Reviews on WriteReivew Text 
+Verify Reviews on WriteReivew Text
     IF    ${PLATFORM_NAME} == 'android'
        Verify Text On Screen Android    WRITE REVIEW    30s 
     ELSE
@@ -77,7 +77,7 @@ Verify Reviews Upvote Removed
   ELSE
         Element Should Contain Text    ${croutonTitle}    Vote removed
         # Verify Text On Screen    ${croutonTitle}    30s
-    END
+  END
 
 Verify Reviews Upvote Success Message
     IF    ${PLATFORM_NAME} == 'android'
@@ -138,7 +138,7 @@ Enter Review Message
     Input Text    ${txtReviewMsg}    ${msg}
 
 Goto PDP Reviews Section
-    Scroll To PDP Reviews    ${btnReviewsShowAllButton}
+    Scroll To PDP Reviews    ${btnPDPShowAllReviews}
     Verify Reviews Card User Reviews Visible
     Click PDP Reviews Show More
     Verify Reviews PDP Section Visible
@@ -166,5 +166,49 @@ Click Reviews Sort Option Button
     Click Element    ${btnReviewsSortButton}
 
 Click Reviews Show All Button
-    Wait Until Element Is Visible    ${btnReviewsShowAllButton}    15s
-    Click Element    ${btnReviewsShowAllButton}
+    Wait Until Element Is Visible    ${btnPDPShowAllReviews}    15s
+    Click Element    ${btnPDPShowAllReviews}
+
+Click Review Sort
+    Wait Until Element Is Visible    ${btnReviewSort}    30s
+    Click Element    ${btnReviewSort}
+
+Click Review Sort Most Helpful
+    Wait Until Element Is Visible    ${lblReviewSortHelpful}    30s
+    Click Element    ${lblReviewSortHelpful}
+
+Click Review Sort Most Recent
+    Wait Until Element Is Visible    ${lblReviewRecent}    30s
+    Click Element    ${lblReviewRecent}
+
+Click Review Helpful
+    Wait Until Element Is Visible    ${lblReviewHelpful}    30s
+    Click Element    ${lblReviewHelpful}
+
+Click Review Filter
+    Wait Until Element Is Visible    ${btnReviewFilter}    30s
+    Click Element    ${btnReviewFilter}
+
+Click Review Filter Rating
+    Wait Until Element Is Visible    ${lblReviewFilterRating}    30s
+    Click Element    ${lblReviewFilterRating}
+
+Click Review Filter Rating Five
+    Wait Until Element Is Visible    ${lblReviewFilterFive}    30s
+    Click Element    ${lblReviewFilterFive}
+
+Click Review Filter Done
+    Wait Until Element Is Visible    ${btnReviewFilterDone}    30s
+    Click Element    ${btnReviewFilterDone}
+
+Click Review Filter Apply
+    Wait Until Element Is Visible    ${btnReviewFilterApply}    30s
+    Click Element    ${btnReviewFilterApply}
+
+Click Review Icon More
+    Wait Until Element Is Visible    ${lblReviewMore}    30s
+    Click Element    ${lblReviewMore}
+
+Click Review Report
+    Wait Until Element Is Visible    ${lblReviewReport}    30s
+    Click Element    ${lblReviewReport}
