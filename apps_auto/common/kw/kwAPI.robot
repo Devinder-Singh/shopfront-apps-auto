@@ -5,24 +5,25 @@ Library           REST
 Library           String
 
 *** Variables ***
-${cart_URL}       http://tal-test-data-service.test-automation-platform.env/remove_products_in_cart
+#    test-automation-platform
+${cart_URL}       http://tal-test-data-service.master.env/remove_products_in_cart
 ${cart_Body}      { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "4933518", "env": "master.env" }
 
-${wishlist_URL}    http://tal-test-data-service.test-automation-platform.env/clear_customer_wishlists
+${wishlist_URL}    http://tal-test-data-service.master.env/clear_customer_wishlists
 ${wishlist_Body}    { "namespace": "master", "customer_id":4933518, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
 
-${wishlist_Del_URL}    http://tal-test-data-service.test-automation-platform.env/delete_customer_wishlists
+${wishlist_Del_URL}    http://tal-test-data-service.master.env/delete_customer_wishlists
 ${wishlist_Del_Body}    { "namespace": "master", "customer_id":7974729, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
 
-${address_URL}    http://tal-test-data-service.test-automation-platform.env/clear_add_customer_addresses
+${address_URL}    http://tal-test-data-service.master.env/clear_add_customer_addresses
 ${address_Body}    { "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
 ${address_Body_Business}    { "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "business", "city": "Cape Town", "contact_number": "0820000001", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
 
-${voucher_URL}    http://tal-test-data-service.test-automation-platform.env/execute_query_voucher_service
+${voucher_URL}    http://tal-test-data-service.master.env/execute_query_voucher_service
 ${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-05-18' and DateUsed is null limit 1" }
 
 ${wishlist_URL}    http://tal-test-data-service.master.env/add_customer_wishlists
-${Add_cart_URL}       http://tal-test-data-service.test-automation-platform.env/add_to_cart
+${Add_cart_URL}       http://tal-test-data-service.master.env/add_to_cart
 
 ${items_URL}    ${APP_ENVIRONMENT}rest/v-1-10-0/customers/4933405/cart/items
 ${items_Body}    {"products":[{"id":94086375, "quantity":1, "enhancedEcommerceAddToCart":{"ecommerce":{"add":{"products":[{"category":"Office & Stationery/Stationery/Student Supplies/Bags & Cases/Pencil Bags", "dimension2":94086375, "name":"SOKHO Christian Inspired Fur Gifting Pencil Bag", "dimension1":null, "price":159, "variant":null, "id":"PLID69598180", "position":0, "brand":"SOKHO", "quantity":1}]}, "currencyCode":"ZAR"}, "event":"addToCart"}}]}
