@@ -71,6 +71,9 @@ def end_test(name, attrs):
     # metric = [(metric_path, elapsed_time, time())]
 
     # default_graphite.build_metric(metric).send()
-    result = listener.send_metrics(metric_path, elapsed_time)
+    
+    result = listener.send_metrics(metric_path, 1)
+    result = listener.send_metrics(f"{metric_path}.elapsed_time", elapsed_time)
+    
     print(result)
     logging.info(f"Response: {result}")
