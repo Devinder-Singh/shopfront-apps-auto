@@ -1,12 +1,11 @@
 *** Settings ***
 Default Tags      critical_prod
-#Suite Setup    Install Application
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Production1
-    [Setup]    Start Application
+    [Setup]    Install Application
     Clear Environment
     Click Menu
     Click Menu Login
