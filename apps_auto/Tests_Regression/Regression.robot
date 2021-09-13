@@ -95,7 +95,7 @@ Apps > Promotions (Android) Other Promo tabs - QA-8410 / QA-7443
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
-    [Tags]    data    QA-8367    QA-7443
+    [Tags]    QA-8367    QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -123,7 +123,7 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Multi-Buys - QA-8411 / QA-7443
-    [Tags]    data    QA-8411    QA-7443
+    [Tags]    QA-8411    QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -156,7 +156,7 @@ Apps > Promotions (Android) Multi-Buys - QA-8411 / QA-7443
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Unboxed & Other Offers - QA-8412 / QA-7443
-    [Tags]    data    QA-8412    QA-7443
+    [Tags]    QA-8412    QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -697,7 +697,7 @@ Apps > Wishlist (Android) - QA-5367
     [Teardown]    Tear Down
 
 Apps > Wishlist (Android) > Delete List - QA-8906
-    [Tags]    android    QA-8906
+    [Tags]    QA-8906
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -728,7 +728,7 @@ Apps > Wishlist (Android) > Delete List - QA-8906
     [Teardown]    Tear Down
 
 Apps > Wishlist (Android) > Bottom Navigation - QA-8907
-    [Tags]    android    QA-8907
+    [Tags]    QA-8907
     [Setup]    Start Application
     Clear Environment
     Click Home
