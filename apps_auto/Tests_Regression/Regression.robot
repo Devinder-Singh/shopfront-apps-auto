@@ -504,6 +504,23 @@ Apps > PDP - QA-5307
     Click Product Text    ${query_result_CartProduct}
     Click Add To Wishlist Only
     Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    disposable mas
+    Get Sponsored Product Detail
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Text On Screen    Sponsored    2s
+    Verify Text On Screen    % OFF    2s
+    Verify Text On Screen    ${query_result_adProductStatus}    2s
+#    Verify Text On Screen    ${query_result_adProductRating}
+    Verify Text On Screen    ${query_result_adProductPrice}    2s
+#    Verify Text On Screen    ${query_result_adProductListPrice}    2s
+    Verify Text On Screen    ${query_result_adProductBrand}    2s
+    Click Product From Title    ${query_result_adProductTitle}
+    Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen    Sponsored    5s
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8890

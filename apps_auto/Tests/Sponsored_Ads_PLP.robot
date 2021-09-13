@@ -12,7 +12,7 @@ Apps > Sponsored Ads (PLP) > Sponsored Ad product rules - QA-6295
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     Verify Text On Screen    Sponsored    2s
     Verify Text On Screen    % OFF    2s
-    Verify Text On Screen    In stock    2s
+#    Verify Text On Screen    In stock    2s
     Close Application
     Start Application
     Click Home
@@ -54,11 +54,12 @@ Apps > Sponsored Ads (PLP) > Product Card Components - QA-6324
     Click Home
     Click Search Home
     Search Product    Pencil
+    Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     Verify Text On Screen    Sponsored    2s
     Verify Text On Screen    % OFF    2s
-    Verify Text On Screen    In stock    2s
-    Check Text On Screen Not    4.0
+    Verify Text On Screen    ${query_result_adProductStatus}    2s
+#    Verify Text On Screen    ${query_result_adProductRating}
     Close Application
     Start Application
     Click Menu
@@ -71,7 +72,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components - QA-6324
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product From Title    Djeco Pencil Case - Nathalie
+    Get Sponsored Product Detail
+    Click Product From Title    ${query_result_adProductTitle}
     Click PDP Write Review
     Click Review Rating
     Enter Review Message    Auto Test
@@ -82,13 +84,14 @@ Apps > Sponsored Ads (PLP) > Product Card Components - QA-6324
     Click Home
     Click Search Home
     Search Product    Pencil
+    Get Sponsored Product Detail
     Verify Text On Screen    Sponsored    30s
-    Verify Text On Screen    4.0    2s
+#    Verify Text On Screen    ${query_result_adProductRating}
     Click Product Grid View
     Verify Text On Screen    Sponsored    2s
-    Verify Text On Screen    4.0    2s
+#    Verify Text On Screen    ${query_result_adProductRating}
     Verify Text On Screen    % OFF    2s
-    Verify Text On Screen    In stock    2s
+    Verify Text On Screen    ${query_result_adProductStatus}    2s
     [Teardown]    Tear Down
 
 Apps > Sponsored Ads (PLP) > Product Card Components (Price/Price Range) - QA-6335
@@ -97,10 +100,12 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Price/Price Range) - QA-63
     Click Home
     Click Search Home
     Search Product    Pencil
+    Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     Verify Text On Screen    Sponsored    2s
-    Verify Text On Screen    R 155    2s
-    Verify Text On Screen    R  196    2s
+    Verify Text On Screen    ${query_result_adProductPrice}    2s    
+#    Verify Text On Screen    ${query_result_adProductListPrice}    2s
+#    Click Product From Title    ${query_result_adProductTitle}
     Click PDP List Price
     Verify Text On Screen Android    This is our List Price. Find out what this means in our Terms & Conditions    30s
     Verify Text On Screen Android    Our List Price    1s
@@ -115,14 +120,13 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Price/Price Range) - QA-63
     Verify Text On Screen    Sponsored    2s
     Click Product Grid View
     Verify Text On Screen    Sponsored    2s
-    Verify Text On Screen    R 155    2s
-    Verify Text On Screen    R  196    2s
+    Verify Text On Screen    ${query_result_adProductPrice}    2s    
+#    Verify Text On Screen    ${query_result_adProductListPrice}    2s
     Click PDP List Price
     Verify Text On Screen Android    This is our List Price. Find out what this means in our Terms & Conditions    30s
     Verify Text On Screen Android    Our List Price    1s
     Verify Text On Screen iOS    This is our List Price. Find out what this means in our Terms & Conditions    30s
     Verify Text On Screen iOS    Our List Price    1s
-    Click PDP List Price Cancel
     [Teardown]    Tear Down
 
 Apps > Sponsored Ads (PLP) > Product Card Components (Add to Wishlist button) - QA-6336
@@ -143,11 +147,13 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Colour Swatches) - QA-6338
     Click Home
     Click Search Home
     Search Product    Pencil
+    Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     Click Search Product Wishlist
     Verify Text On Screen Android    Item added to Wish List    30s
     Click Product Grid View
-    Check Text On Screen Not    More Colours
+    Get Sponsored Product Detail
+    Verify Text On Screen    ${query_result_adProductTitle}    2s
     [Teardown]    Tear Down
 
 Apps > Sponsored Ads (PLP) > Product Card Components (Stock) - QA-6340
@@ -156,10 +162,11 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Stock) - QA-6340
     Click Home
     Click Search Home
     Search Product    Pencil
+    Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    30s
-    Verify Text On Screen    In stock    2s
+    Verify Text On Screen    ${query_result_adProductStatus}    2s
     Click Product Grid View
-    Verify Text On Screen Scroll    Ships in 5 - 7 work days    2s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Text On Screen    ${query_result_adProductStatus}    2s
     [Teardown]    Tear Down
 
 Apps > Sponsored Ads (PLP) > Product Card Components (Clickable/Tappable areas) - QA-6341
@@ -168,8 +175,9 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Clickable/Tappable areas) 
     Click Home
     Click Search Home
     Search Product    Pencil
+    Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    30s
-    Click Product From Title    Djeco Pencil Case - Nathalie
+    Click Product From Title    ${query_result_adProductTitle}
     Verify Element On Screen    ${btnAddToCart}    30s
     Click Back Android
     Click Back iOS    pencil case
@@ -195,8 +203,46 @@ Apps > Sponsored Ads (PLP) > Launching PLP from different screens - QA-6616
     Click Home
     Click Search Home
     Search Product    glass
-    Click First Product from API
+    Get Sponsored Product Detail
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Click Product From Title    ${query_result_adProductTitle}
     Verify Element On Screen    ${btnAddToCart}    30s
     Click Seller Name
-    Click Product from API
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Click Product From Title    ${query_result_adProductTitle}
+    [Teardown]    Tear Down
+
+Apps > Sponsored Ads (PDP) > Product Card Layout - QA-6496
+    [Tags]    QA-6496
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    disposable mas
+    Get Sponsored Product Detail
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Click Product From Title    ${query_result_adProductTitle}
+    Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
+    Click Related Products Sponsored
+    Verify Text On Screen    You're seeing these ads based on the product's relevance to your product query    5s
+    Click Related Products Sponsored OK
+    Check Text On Screen Not    You're seeing these ads based on the product's relevance to your product query
+    [Teardown]    Tear Down
+
+Apps > Sponsored Ads (PDP) > Sponsored Ad product rules - QA-6484
+    [Tags]    QA-6484
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    disposable mas
+    Get Sponsored Product Detail
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Text On Screen    Sponsored    2s
+    Verify Text On Screen    % OFF    2s
+    Verify Text On Screen    ${query_result_adProductStatus}    2s
+#    Verify Text On Screen    ${query_result_adProductRating}
+    Verify Text On Screen    ${query_result_adProductPrice}    2s
+#    Verify Text On Screen    ${query_result_adProductListPrice}    2s
+    Click Product From Title    ${query_result_adProductTitle}
+    Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen    Sponsored    5s
     [Teardown]    Tear Down

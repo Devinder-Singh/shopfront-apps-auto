@@ -16,13 +16,10 @@ ${navCartScr}    chain=**/XCUIElementTypeNavigationBar[`name == "Shopping Cart"`
 ${btnPDPSellerName}      chain=**/XCUIElementTypeLink[`label == "Sophie Moda"`][1]
 ${lblBlueValue}      chain=**/XCUIElementTypeStaticText[`label == "Blue"`]
 ${btnPDPReview}      chain=**/XCUIElementTypeButton[`label == "Write Review"`]
-<<<<<<< HEAD
 ${btnPDPReviewsSummary}    ${EMPTY}
 ${btnPDPUserReviews}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[22]/XCUIElementTypeTable/XCUIElementTypeCell[2]
 ${btnPDPReviewBuyboxTitleButton}     id=btnPDPReviewBuyboxTitleButton
 ${btnPDPReviewShowMoreButton}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show All Reviews"`]
-=======
->>>>>>> origin/extension
 
 ${btnPDPScrollRoot}      chain=**/XCUIElementTypeWindow[1]
 ${btnPDPAddBundleToCart}      chain=**/XCUIElementTypeButton[`label CONTAINS "Add Bundle to Cart"`]
@@ -33,8 +30,6 @@ ${lnkPDPShowMore}      chain=**/XCUIElementTypeButton[`label == "Show More Descr
 
 ${lnkPDPCOD}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "Eligible for Cash on Delivery"`]
 
-${txtPDPJHB}      chain=**/XCUIElementTypeStaticText[`label == "JHB"`]
-${txtPDPCPT}      chain=**/XCUIElementTypeStaticText[`label == "CPT"`]
 ${txtPDPWarehouseOK}      chain=**/XCUIElementTypeButton[`label == "Close"`]
 
 ${btnPDPListPrice}      chain=**/XCUIElementTypeButton[`label == "icon info"`][1]
@@ -69,3 +64,6 @@ ${lblPDPWishListSave}    chain=**/XCUIElementTypeStaticText[`label == "Wish List
 ${lblPDPAutoTestWishListSave}    chain=**/XCUIElementTypeStaticText[`label == "AutoTestWishlist"`]
 
 ${btnPDPShowAllReviews}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show All Reviews"`]
+
+${lblPDPRelatedProdSponsored}    chain=**/XCUIElementTypeStaticText[`label == "Sponsored"`]
+${lblPDPRelatedProdSponsoredOK}    chain=**/XCUIElementTypeStaticText[`label == "OK"`]

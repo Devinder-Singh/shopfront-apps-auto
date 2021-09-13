@@ -5,46 +5,6 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Checkout > Collect > Add Only Digital Item - QA-5265
-    [Tags]    QA-5265
-    [Setup]    Start Application
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    airtim
-    Click Variant Product from API
-    Click Product Variant From API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Continue Digital Item
-    Click Donate No Thanks
-    [Teardown]    Tear Down
-
-#Apps > Sponsored Ads (PDP) > Product Card Layout - QA-6496
-#    [Tags]    QA-6496
-#    [Setup]    Start Application
-#    Click Home
-#    Click Search Home
-#    Search Product    glass
-#    Click First Product from API
-#    Verify Element On Screen    ${btnAddToCart}    30s
-#    Click Seller Name
-#    Click Product from API
-#    [Teardown]    Tear Down
-
-#Apps > Sponsored Ads (PDP) > Sponsored Ad product rules - QA-6484
-#    [Tags]    QA-6484
-#    [Setup]    Start Application
-#    Click Home
-#    Click Search Home
-#    Search Product    glass
-#    Click First Product from API
-#    Verify Element On Screen    ${btnAddToCart}    30s
-#    Click Seller Name
-#    Click Product from API
-#    [Teardown]    Tear Down
-
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
 #    [Setup]    Start Application
 #    Add To Cart Takealot API
