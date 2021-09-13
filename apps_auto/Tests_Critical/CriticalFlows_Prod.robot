@@ -1,10 +1,11 @@
 *** Settings ***
-Default Tags      critical
-Suite Setup    Install Application
+Default Tags      critical_prod
+#Suite Setup    Install Application
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Search and Buy Item on Delivery using Credit Card
+    [Tags]    Production1
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -56,6 +57,7 @@ Search and Buy Item on Delivery using Credit Card
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Payfast and Create new Address
+    [Tags]    Production2
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -85,6 +87,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV
+    [Tags]    Production3
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -120,6 +123,7 @@ Search and Buy Heavy Item on Delivery along with TV
     [Teardown]    Tear Down
 
 Edit Personal Details, Create Address and Buy Item on Delivery
+    [Tags]    Production4
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -157,6 +161,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     [Teardown]    Tear Down
 
 Buy Airtime and Pay with Credit Card
+    [Tags]    Production5
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -179,6 +184,7 @@ Buy Airtime and Pay with Credit Card
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Delivery
+    [Tags]    Production6
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -213,6 +219,7 @@ Buy Airtime along with another Item on Delivery
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Collection
+    [Tags]    Production7
     [Setup]    Start Application
     Clear Environment
     Click Home

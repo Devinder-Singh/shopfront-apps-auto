@@ -75,7 +75,8 @@ Click PDP Shop The Deal TCs
     Click Element    ${lnkPDPShopTheDealTCs}
 
 Click PDP List Price
-    Wait Until Element Is Visible    ${btnAddToCart}    30s
+#    Wait Until Element Is Visible    ${btnAddToCart}    30s
+    Wait Until Element Is Visible    ${btnPDPListPrice}    30s
     Click Element    ${btnPDPListPrice}
 
 Click PDP List Price Cancel
