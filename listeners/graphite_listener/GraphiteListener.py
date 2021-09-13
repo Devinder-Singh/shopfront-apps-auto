@@ -31,7 +31,7 @@ def _get_environment():
     elif 'master' in environment_url:
         environment = 'master'
     else:
-        environment = 'staging'
+        environment = 'development'
       
     return environment
 
