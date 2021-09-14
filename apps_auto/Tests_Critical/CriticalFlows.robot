@@ -5,7 +5,8 @@ Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Search and Buy Item on Delivery using Credit Card
-    [Setup]    Start Application
+    [Tags]    Master1
+    [Setup]    Install Application
     Clear Environment
     Click Menu
     Click Menu Login
@@ -28,6 +29,7 @@ Search and Buy Item on Delivery using Credit Card
     [Teardown]    Tear Down
 
 Buy Daily Deal Item on Delivery using Credit Card
+    [Tags]    Master2
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -48,6 +50,7 @@ Buy Daily Deal Item on Delivery using Credit Card
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Payfast and Create new Address
+    [Tags]    Master3
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -74,6 +77,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV
+    [Tags]    Master4
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -106,6 +110,7 @@ Search and Buy Heavy Item on Delivery along with TV
     [Teardown]    Tear Down
 
 Edit Personal Details, Create Address and Buy Item on Delivery
+    [Tags]    Master5
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -140,6 +145,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     [Teardown]    Tear Down
 
 Buy Airtime and Pay with Credit Card
+    [Tags]    Master6
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -159,6 +165,7 @@ Buy Airtime and Pay with Credit Card
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Delivery
+    [Tags]    Master7
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -190,6 +197,7 @@ Buy Airtime along with another Item on Delivery
     [Teardown]    Tear Down
 
 Buy Airtime along with another Item on Collection
+    [Tags]    Master8
     [Setup]    Start Application
     Clear Environment
     Click Home
@@ -221,6 +229,7 @@ Buy Airtime along with another Item on Collection
     [Teardown]    Tear Down
 
 Buy Daily Deals Item and verify no Promotions
+    [Tags]    Master9
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -240,6 +249,7 @@ Buy Daily Deals Item and verify no Promotions
     [Teardown]    Tear Down
 
 Buy Daily Deals Item and verify Promotions
+    [Tags]    Master10
     [Setup]    Start Application
     Clear Environment
     Click Menu
