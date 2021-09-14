@@ -8,6 +8,9 @@ Apps - Checkout - Delivery Methods - QA-5227
     [Setup]    Start Application
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu Login
     Login Takealot    ${G_EMAIL}    t@ke@!ot1234
     Click Home
@@ -25,6 +28,8 @@ Apps - Checkout - Delivery Methods - Digital Items 02 - QA-9525
     [Tags]    QA-9525
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -41,6 +46,8 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QA-9524
     [Tags]    QA-9524
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -58,6 +65,8 @@ Apps - Checkout - Delivery Methods - Liquor Item - QA-9523 / QA-5232
     [Tags]    QA-9523    QA-5232
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    johnny
@@ -75,6 +84,8 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QA-9522
     [Tags]    QA-9522
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -100,6 +111,8 @@ Checkout - Collect - Add Delivery and Digital Items - QA-5231
     [Tags]    QA-5231
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -125,6 +138,8 @@ Checkout - Collect - Add Only Delivery Items - QA-5247
     [Tags]    QA-5247
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    montego
@@ -141,6 +156,8 @@ Checkout - Collect - White Goods - QA-5240
     [Tags]    QA-5240
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    fridg
@@ -157,6 +174,8 @@ Checkout - Age Verification - QA-5244
     [Tags]    QA-5244
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    johnny
@@ -172,6 +191,8 @@ Checkout - Delivery Address - General - QA-5200 / QA-9529
     [Tags]    QA-5200    QA-9529
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -202,6 +223,8 @@ Checkout - Delivery Address - General 03 - QA-9530
     [Tags]    QA-9530
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -217,6 +240,8 @@ Checkout - Delivery Address - General 04 - QA-9531
     [Tags]    QA-9531
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -238,6 +263,8 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     [Tags]    QA-5206
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -323,6 +350,8 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5
     [Tags]    QA-5213
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -341,6 +370,9 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     [Tags]    QA-5217
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Address Book
@@ -430,6 +462,8 @@ Checkout - Delivery Address - Street Suggestion - QA-5238
     [Tags]    QA-5238
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -468,6 +502,8 @@ Checkout - Delivery Address - Pin on Map - QA-5251
     [Tags]    QA-5251
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -502,6 +538,8 @@ Apps > Checkout > Collect > Select Pickup Point button - QA-5256
     [Tags]    QA-5256
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -517,6 +555,8 @@ Apps > Checkout > Collect > Pickup Point INFO - QA-5207
     [Tags]    QA-5207
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -575,6 +615,8 @@ Apps > Checkout > Collect > Pickup Points List - QA-5237
     [Tags]    QA-5237
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -626,6 +668,8 @@ Apps > Checkout > Collect > Add Only Digital Item - QA-5265
     [Tags]    QA-5265
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -642,6 +686,8 @@ Apps > Checkout > Collect > Shipping Options (Standard) - QA-5243
     [Tags]    QA-5243
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -658,6 +704,8 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QA-5239
     [Tags]    QA-5239
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    chair office
@@ -674,6 +722,8 @@ Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QA-5202
     [Tags]    QA-5202
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -690,6 +740,8 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QA-5258
     [Tags]    QA-5258
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    chair office
@@ -706,6 +758,8 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QA-5223
     [Tags]    QA-5223
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    zagg slim book
@@ -733,6 +787,8 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QA-5252
     [Tags]    QA-5252
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    zagg slim book
@@ -756,6 +812,8 @@ Apps > Checkout > Collect > Change Pickup point - QA-5250
     [Tags]    QA-5250
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    zagg slim book
@@ -777,6 +835,8 @@ Apps > Checkout > Order Review - QA-5230
     [Tags]    QA-5230
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtime
@@ -834,6 +894,8 @@ Apps > Checkout > Payment > Earn eBucks - QA-5211
     [Tags]    QA-5211
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -868,6 +930,8 @@ Apps > Checkout > Payment > Gift Msg - QA-5203
     [Tags]    QA-5203
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -888,6 +952,8 @@ Apps > Checkout > Payment > Gift Msg 02 - QA-9533
     [Tags]    QA-9533
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Airtime
@@ -905,6 +971,8 @@ Apps > Checkout > Payment > Payment Method Availability - QA-5209
     [Tags]    QA-5209
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -936,6 +1004,8 @@ Apps > Checkout > Payment > Payment Method Availability 02 - QA-9535
     [Tags]    QA-9535
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -955,6 +1025,8 @@ Apps > Checkout > Payment > Payment Method Availability 03 - QA-9534
     [Tags]    QA-9534
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtime
@@ -977,6 +1049,8 @@ Apps > Checkout > Payment > Post-Order Creation - QA-5279
     [Tags]    QA-5279
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1005,6 +1079,8 @@ Apps > Checkout > Payment > Donation - QA-5198
     [Tags]    QA-5198
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1038,6 +1114,8 @@ Apps > Checkout > Payment > Donation 02 - QA-9550
     [Tags]    QA-9550
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1064,6 +1142,8 @@ Apps > Checkout > Payment > Confirmation - QA-5269
     [Tags]    QA-5269
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1097,6 +1177,8 @@ Apps > Checkout > Payment > Confirmation 02 - QA-9536
     [Tags]    QA-9536
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1120,6 +1202,8 @@ Apps > Checkout > Payment > Pay with PayFast - QA-5282
     [Tags]    QA-5282
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1151,6 +1235,8 @@ Apps > Checkout > Payment > Credit Card - PayU - QA-5285
     [Tags]    QA-5285
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1172,6 +1258,8 @@ Apps > Checkout > Payment > COD - QA-5286
     [Tags]    QA-5286
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1193,6 +1281,8 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QA-52
     [Tags]    QA-5287
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1224,6 +1314,8 @@ Apps > Checkout > Payment > Pay with Ozow - QA-5288
     [Tags]    QA-5288
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1253,6 +1345,8 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QA-
     [Tags]    QA-5289
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1281,6 +1375,8 @@ Apps > Checkout > Payment > Mobicred - QA-5295
     [Tags]    QA-5295
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1302,6 +1398,8 @@ Apps > Checkout > TV Licence Verification - QA-6692
     [Tags]    QA-6692
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Television
@@ -1326,6 +1424,8 @@ Apps > Checkout > TV Licence Verification 02 - QA-9537
     [Tags]    QA-9537
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Television
@@ -1347,6 +1447,8 @@ Apps > Checkout > Delivery Options > Promise Date - QA-5205
     [Tags]    QA-5205
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1423,6 +1525,8 @@ Apps > Checkout > Collect Options > Promise Date - QA-5210
     [Tags]    QA-5210
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1487,6 +1591,8 @@ Apps > Checkout > Payment > Pay with eBucks - QA-5283
     [Tags]    QA-5283
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1512,6 +1618,8 @@ Apps > Checkout > Payment > Credits (Voucher) - QA-5284
     [Tags]    QA-5284
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1539,6 +1647,8 @@ Apps > Checkout > Delivery Options > General Test Case - QA-5215
     [Tags]    QA-5215
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtime
@@ -1557,6 +1667,8 @@ Apps > Checkout > Delivery Options > General Test Case 02 - QA-9539
     [Tags]    QA-9539
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtime
@@ -1582,6 +1694,8 @@ Apps > Checkout > Delivery Options > General Test Case 03 - QA-9540
     [Tags]    QA-9540
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1597,6 +1711,8 @@ Apps > Checkout > Delivery Options > General Test Case 04 - QA-9541
     [Tags]    QA-9541
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1616,6 +1732,8 @@ Apps > Checkout > Delivery Options > General Test Case 05 - QA-9542
     [Tags]    QA-9542
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1635,6 +1753,8 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QA-9543
     [Tags]    QA-9543
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1675,6 +1795,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient - QA-7850
     [Tags]    QA-7850
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Gift Vouch
@@ -1693,6 +1815,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QA-9544
     [Tags]    QA-9544
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Airtime
@@ -1711,6 +1835,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 03 - QA-9545
     [Tags]    QA-9545
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    eBook
@@ -1722,6 +1848,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QA-9546
     [Tags]    QA-9546
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1739,6 +1867,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QA-9547
     [Tags]    QA-9547
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1756,6 +1886,8 @@ Apps > Checkout > Payment > Mobicred - QA-5266
     [Tags]    QA-5266
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil

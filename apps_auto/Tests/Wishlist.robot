@@ -25,6 +25,8 @@ Apps > Wishlist > Add to List > PDP - QA-5371
     [Tags]    QA-5371
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -48,6 +50,8 @@ Apps > Wishlist > Add to List > Create List - QA-5372 / QA-5374
     [Tags]    QA-5372    QA-5374
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Wishlist Nav Bar
     Click Create Wishlist Only
@@ -76,6 +80,8 @@ Apps > Wishlist > Cart and Search Listings - QA-5299
     [Tags]    QA-5299
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -101,6 +107,8 @@ Apps > Wishlist > List Limitations(25 Lists) - QA-5386
     [Setup]    Start Application
     Clear Environment
     Create Wishlists
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Wishlist Nav Bar
     Click Create Wishlist

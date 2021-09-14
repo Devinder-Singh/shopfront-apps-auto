@@ -61,6 +61,9 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     [Setup]    Start Application
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu Shop By Department
     Click Menu Sport and Fitness
     Click Product Department
@@ -90,6 +93,8 @@ Search and Buy Heavy Item on Delivery along with TV
     [Tags]    Production3
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Fridg
@@ -126,6 +131,9 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     [Tags]    Production4
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Personal Detail
@@ -164,6 +172,8 @@ Buy Airtime and Pay with Credit Card
     [Tags]    Production5
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -187,6 +197,8 @@ Buy Airtime along with another Item on Delivery
     [Tags]    Production6
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -222,6 +234,8 @@ Buy Airtime along with another Item on Collection
     [Tags]    Production7
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim

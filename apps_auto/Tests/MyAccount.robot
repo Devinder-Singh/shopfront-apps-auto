@@ -22,6 +22,9 @@ Apps > Personal Details Parity > Update Personal Details - Edit First & Last Nam
     [Tags]    QA-5341
     [Setup]    Start Application
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu My Account
     Click Menu Personal Detail
     Update Personal Detail Name    AutoTester
@@ -40,6 +43,9 @@ Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-53
     [Tags]    QA-5342
     [Setup]    Start Application
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu My Account
     Click Menu Personal Detail
     Update Personal Detail Mobile    662327661
@@ -51,6 +57,9 @@ Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-53
 Apps > Personal Details Parity > Update Personal Details - Password and Reset Password - QA-5335
     [Tags]    QA-5335
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Personal Detail
@@ -70,6 +79,9 @@ Apps > Personal Details Parity > Update Personal Details - Business Details - QA
     [Tags]    QA-5336
     [Setup]    Start Application    ${False}
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu My Account
     Click Menu Personal Detail
     Click Why Add Personal Detail Business Detail
@@ -81,6 +93,9 @@ Apps > Personal Details Parity > Update Personal Details - Business Details - QA
 Apps > Personal Details Parity > Update Personal Details - Email Address - QA-5337
     [Tags]    QA-5337
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Personal Detail
@@ -97,6 +112,9 @@ Apps > Personal Details Parity > Update Personal Details - Add/Edit Business Nam
     [Tags]    QA-5338
     [Setup]    Start Application
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu My Account
     Click Menu Personal Detail
     Update Personal Detail Business    TestBusiness    12345
@@ -106,6 +124,9 @@ Apps > Personal Details Parity > Update Personal Details - Add/Edit Business Nam
 Apps > Personal Details Parity > Update Personal Details - Email Address Field Validation - QA-5339
     [Tags]    QA-5339
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Personal Detail
@@ -120,6 +141,9 @@ Apps > Personal Details Parity > Update Personal Details - Email Address Field V
 Apps > Personal Details Parity > Update Personal Details - Add/Edit Mobile Number - QA-5340
     [Tags]    QA-5340
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Personal Detail
@@ -145,6 +169,9 @@ Apps > My Account > Address Book > Delivery Address (with pre-saved addresses) -
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu My Account
     Click Menu Address Book
     Click Delete Address
@@ -157,6 +184,9 @@ Apps > My Account > Address Book > Add Business Address > Street Suggestion - QA
     [Tags]    QA-5345
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Address Book
@@ -196,6 +226,9 @@ Apps > My Account > Address Book > Add Residential Address > Street Suggestion -
     [Tags]    QA-5347
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Address Book
@@ -243,6 +276,9 @@ Apps > My Account > Address Book > Delivery Address (with no saved addresses) - 
     [Setup]    Start Application
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu My Account
     Click Menu Address Book
     Click Delete Address
@@ -262,6 +298,9 @@ Apps > My Account > Address Book > Delivery Address > Field Validations - QA-973
     [Tags]    QA-9734    QA-9735
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Address Book
@@ -353,6 +392,9 @@ Apps > My Account > Address Book > Edit Address > Pin On Map (Outside SA) - QA-9
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu My Account
     Click Menu Address Book
     Click Edit Address Business
@@ -381,6 +423,9 @@ Apps > My Account > Address Book > Edit Address > Street Corrections (Residentia
     [Tags]    QA-5346
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Address Book
@@ -420,6 +465,9 @@ Apps > My Account > Address Book > Edit Address > Pin On Map - QA-5348
     [Tags]    QA-5348
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Address Book
