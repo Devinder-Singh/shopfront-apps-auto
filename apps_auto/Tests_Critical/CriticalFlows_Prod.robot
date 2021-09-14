@@ -1,5 +1,6 @@
 *** Settings ***
 Default Tags      critical_prod
+#Suite Setup    Install Application
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
