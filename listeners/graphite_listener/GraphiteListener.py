@@ -19,7 +19,8 @@ def _get_environment():
 
     Returns: The environment being used
     """
-    environment_url = os.getenv('APP_ENVIRONMENT')
+    #environment_url = os.getenv('APP_ENVIRONMENT')
+    environment_url = BuiltIn().get_variable_value('${APP_ENVIRONMENT}')
     environment = ""
     if environment_url == None:
         raise Exception(
@@ -31,8 +32,8 @@ def _get_environment():
     elif 'master' in environment_url:
         environment = 'master'
     else:
-        environment = 'development'
-      
+        environment = 'staging'
+    print("Env:"+environment)
     return environment
 
 @not_keyword
@@ -54,7 +55,8 @@ def end_test(name, attrs):
 
     team_name = os.getenv('TEAM_NAME', 'shopfront_apps')
     environment = _get_environment()
-    platform = os.getenv('PLATFORM_NAME', 'android')
+    #platform = os.getenv('PLATFORM_NAME', 'android')
+    platform = BuiltIn().get_variable_value('${PLATFORM_NAME}')
 
     status = attrs['status']
     tags = attrs['tags']
@@ -73,7 +75,8 @@ def end_test(name, attrs):
     # default_graphite.build_metric(metric).send()
     
     result = listener.send_metrics(metric_path, 1)
+    print(result)
+    logging.info(f"Response: {result}")
     result = listener.send_metrics(f"{metric_path}.elapsed_time", elapsed_time)
-    
     print(result)
     logging.info(f"Response: {result}")
