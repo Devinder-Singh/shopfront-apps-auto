@@ -34,6 +34,8 @@ Apps > Reviews > Review Components > Read Reviews - QA-9166
 Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
     [Tags]    data    QA-7937
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Toothpaste
@@ -54,6 +56,8 @@ Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
 Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     [Tags]    QA-7938
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Toothpaste
@@ -70,6 +74,8 @@ Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
 Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
     [Tags]    QA-7941
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Toothpaste
@@ -91,6 +97,8 @@ Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
 Apps > Reviews > Read Reviews > Review Screen > Filter Options - QA-7943
     [Tags]    QA-7943
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Mens Shoes
@@ -109,6 +117,8 @@ Apps > Reviews > Read Reviews > Review Screen > Filter Options - QA-7943
 Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QA-7946
     [Tags]    QA-7946
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Mens Shoes

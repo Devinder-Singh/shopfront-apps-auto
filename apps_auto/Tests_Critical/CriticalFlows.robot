@@ -33,6 +33,9 @@ Buy Daily Deal Item on Delivery using Credit Card
     [Setup]    Start Application
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu Daily Deals
     Click Daily Deals Product from API
 #    Click Product Daily Deals
@@ -53,6 +56,9 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     [Tags]    Master3
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu Shop By Department
     Click Menu Sport and Fitness
@@ -80,6 +86,8 @@ Search and Buy Heavy Item on Delivery along with TV
     [Tags]    Master4
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Fridg
@@ -113,6 +121,9 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     [Tags]    Master5
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Personal Detail
@@ -148,6 +159,8 @@ Buy Airtime and Pay with Credit Card
     [Tags]    Master6
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -168,6 +181,8 @@ Buy Airtime along with another Item on Delivery
     [Tags]    Master7
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -200,6 +215,8 @@ Buy Airtime along with another Item on Collection
     [Tags]    Master8
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -233,6 +250,9 @@ Buy Daily Deals Item and verify no Promotions
     [Setup]    Start Application
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu Daily Deals
     Click Daily Deals Product from API
     Click Add To Cart
@@ -252,6 +272,9 @@ Buy Daily Deals Item and verify Promotions
     [Tags]    Master10
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu Daily Deals
     Click Daily Deals Product from API

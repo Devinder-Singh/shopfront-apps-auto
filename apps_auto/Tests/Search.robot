@@ -168,6 +168,8 @@ Apps > Search Listings > Call to Action Buttons > Add To Wishlist - QA-8754
     [Tags]    QA-8754
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil

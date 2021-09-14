@@ -132,6 +132,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Price/Price Range) - QA-63
 Apps > Sponsored Ads (PLP) > Product Card Components (Add to Wishlist button) - QA-6336
     [Tags]    QA-6336
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -144,6 +146,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Add to Wishlist button) - 
 Apps > Sponsored Ads (PLP) > Product Card Components (Colour Swatches) - QA-6338
     [Tags]    QA-6338
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -172,6 +176,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Stock) - QA-6340
 Apps > Sponsored Ads (PLP) > Product Card Components (Clickable/Tappable areas) - QA-6341
     [Tags]    QA-6341
     [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil

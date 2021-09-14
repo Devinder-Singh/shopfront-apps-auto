@@ -32,6 +32,16 @@ Click Menu Login
     Click Element    ${btnMenuLogin}
     Sleep    2s
 
+Log In If Not Logged In
+    [Arguments]    ${email}    ${password}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${cntMenuAccountScroll}
+
+    ${chkLoginElement}=    Run Keyword And Return Status    Page Should Contain Element    ${btnMenuLogin}
+    Run Keyword If    ${chkLoginElement}==True    Login Takealot    ${email}    ${password}
+
 Click Menu Register
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}

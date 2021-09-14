@@ -56,6 +56,9 @@ Apps > Promotions (Android) App Only Deals - QA-8409 / QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu Daily Deals
     Click App Only Deals
     Verify Product Image
@@ -78,6 +81,9 @@ Apps > Promotions (Android) Other Promo tabs - QA-8410 / QA-7443
     [Setup]    Start Application
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu Daily Deals
     Select Third Deals From API
     Verify Product Image
@@ -98,6 +104,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     [Tags]    QA-8367    QA-7443
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Abstinence
@@ -126,6 +134,8 @@ Apps > Promotions (Android) Multi-Buys - QA-8411 / QA-7443
     [Tags]    QA-8411    QA-7443
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Accessible File
@@ -159,6 +169,8 @@ Apps > Promotions (Android) Unboxed & Other Offers - QA-8412 / QA-7443
     [Tags]    QA-8412    QA-7443
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Unboxed Dea
@@ -250,6 +262,8 @@ Apps > Verify Home Screen - QA-8878
     [Tags]    QA-8878
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -283,6 +297,9 @@ Apps > PLP - QA-5360
     [Tags]    QA-5360
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu Daily Deals
     Click Daily Deals Product from API
@@ -495,6 +512,8 @@ Apps > PDP - QA-5307
     [Tags]    QA-5307
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    pencil
@@ -527,6 +546,8 @@ Apps > PDP - QA-8890
     [Tags]    QA-8890
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -611,6 +632,8 @@ Apps > PDP - QA-8893
     [Tags]    QA-8893
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    jean
@@ -685,6 +708,8 @@ Apps > Wishlist (Android) - QA-5367
     [Tags]    android    QA-5367
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Wishlist Nav Bar
     Verify Text On Screen Android    Wish List    30s
@@ -700,6 +725,8 @@ Apps > Wishlist (Android) > Delete List - QA-8906
     [Tags]    QA-8906
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -731,6 +758,8 @@ Apps > Wishlist (Android) > Bottom Navigation - QA-8907
     [Tags]    QA-8907
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -753,6 +782,9 @@ Apps > Wishlist (iOS) - QA-5361
     [Setup]    Start Application
     Clear Environment
     Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
     Click Menu Daily Deals
     Click Daily Deals Product from API
     Click Add To Cart
@@ -768,6 +800,9 @@ Apps > Wishlist (iOS) - QA-5361
 #    [Tags]    QA-8908
 #    [Setup]    Start Application
 #    Clear Environment
+#    Click Menu
+#    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+#    Click Home
 #    Click Menu
 #    Click Menu Shop By Department
 #    Click Menu Sport and Fitness
@@ -814,6 +849,8 @@ Apps > Order Tracking - QA-5274
     [Tags]    QA-5274
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -865,6 +902,9 @@ Apps > My Account Verifications - QA-5356
     [Tags]    QA-5356
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Orders
@@ -973,6 +1013,8 @@ Apps > Order Tracking 02 - QA-9609
     [Tags]    QA-9609
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1026,6 +1068,8 @@ Apps > Order Tracking 05 - QA-9619
     [Tags]    QA-9619
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Fridg
@@ -1079,6 +1123,8 @@ Apps > Cart (Android) - QA-5298 / QA-9606
     [Tags]    android    QA-5298    QA-9606
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1095,6 +1141,8 @@ Apps > Cart (Android) 02 - QA-9599
     [Tags]    QA-9599
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1127,6 +1175,8 @@ Apps > Cart (Android) 04 - QA-9600 / QA-9605
     [Tags]    QA-9600    QA-9605
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    airtim
@@ -1170,6 +1220,8 @@ Cart Update & Cart Notification - TV - QA-8420
     [Tags]    QA-8420
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Televisio
@@ -1197,6 +1249,8 @@ Cart Update & Cart Notification - Liquor - QA-8419
     [Tags]    QA-8419
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    johnny
@@ -1212,6 +1266,8 @@ Cart Update & Cart Notification - Heavy Good - QA-8421
     [Tags]    QA-8421
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil

@@ -298,6 +298,8 @@ Apps > PDP > Bundle Deals > Set Bundle (Same product) - QA-1976
     [Tags]    data    QA-1976
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Ring - Video Doorbel
@@ -318,6 +320,8 @@ Apps > PDP > Bundle Deals > “Show All Deals” Screen - QA-1982
     [Tags]    data    QA-1982
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Maybelline Fit Me Matte Poreles
@@ -337,6 +341,8 @@ Apps > PDP > Bundle Deals > Set Bundle (Different products) - QA-9259
     [Tags]    data    QA-9259
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Ring - Video Doorbel
@@ -357,6 +363,8 @@ Apps > PDP > Unboxed Deals > Primary Unboxed - QA-1983
     [Tags]    data    QA-1983
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Keychron K8 Walnu
@@ -389,6 +397,8 @@ Apps > PDP > Unboxed Deals > Unboxed Offers - QA-1984
     [Tags]    data    QA-1984
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Unboxed Dea
@@ -426,6 +436,8 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QA-1985
     [Tags]    data    QA-1985
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Dog Days Cherries Sweatshir
@@ -464,6 +476,8 @@ Apps > PDP > Variants > Colour > No show all link - QA-9594
     [Tags]    data    QA-9594
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Retro Filter Coffee Machine
@@ -495,6 +509,8 @@ Apps > PDP > Other Offers > More than one offer - QA-5166
     [Tags]    data    QA-5166
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Samsung Galaxy A02
@@ -514,6 +530,8 @@ Apps > PDP > Variants > Colour - QA-1977
     [Tags]    data    QA-1977    QA-9771
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Luxurious suede microfibre fleece
@@ -534,6 +552,8 @@ Apps > PDP > Variants > Size - QA-9592
     [Tags]    data    QA-9592
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    jean
@@ -552,6 +572,8 @@ Apps > PDP > Variants > Colour & Size - QA-9595
     [Tags]    data    QA-9595
     [Setup]    Start Application    ${False}
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    shirts for me
@@ -1099,6 +1121,8 @@ Apps > PDP > Notification Banner > Limited Stock - QA-9758
     [Tags]    QA-9758
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1134,6 +1158,8 @@ Apps > PDP > Variants > Sold out - QA-9593
     [Tags]    QA-9593
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    shirts for me
@@ -1181,6 +1207,8 @@ Apps > PDP > Buy Box > Add to Wishlist - QA-2033
     [Tags]    QA-2033
     [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
