@@ -1,4 +1,4 @@
-.vscode
+#.vscode
 .sonarlint
 extension/app/node_modules
 .DS_Store

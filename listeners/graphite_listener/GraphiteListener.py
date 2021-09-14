@@ -54,7 +54,8 @@ def end_test(name, attrs):
 
     team_name = os.getenv('TEAM_NAME', 'shopfront_apps')
     environment = _get_environment()
-    platform = os.getenv('PLATFORM_NAME', 'android')
+#    platform = os.getenv('PLATFORM_NAME', 'android')
+    platform = BuiltIn().get_variable_value("${PLATFORM_NAME}")
 
     status = attrs['status']
     tags = attrs['tags']

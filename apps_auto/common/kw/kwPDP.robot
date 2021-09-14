@@ -33,6 +33,11 @@ Click Add To Cart
     Click Element    ${btnAddToCart}
     Sleep    2s
 
+Click Wishlist Change
+    Wait Until Element Is Visible    ${lblPDPWishlistChange}    30s
+    Click Element    ${lblPDPWishlistChange}
+    Sleep    2s
+
 Click In Stock Close
     Wait Until Element Is Visible    ${btnPDPInStockClose}    5s
     Click Element    ${btnPDPInStockClose}
@@ -412,6 +417,28 @@ Click Product Size
 Click Product Variant From API
 
     ${txtProduct}=    Get Product Variant
+
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${btnPDPSelectOption}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${txtProduct}
+    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
+
+Click Product Disabled Variant From API
+
+    ${txtProduct}=    Get Product Variant Disabled
 
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
 
