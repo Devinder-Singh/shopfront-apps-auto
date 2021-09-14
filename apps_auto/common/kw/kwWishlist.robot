@@ -18,6 +18,10 @@ Click Wishlist Edit iOS
     Wait Until Element Is Visible    ${btnWishlistEdit}    30s
     Click Element    ${btnWishlistEdit}
 
+Verify Wishlist Checked
+    ${checkboxStatus}=    Get Checkbox Status    ${chkWishlist}
+    Run Keyword If    '${checkboxStatus}'=='False' and '${PLATFORM_NAME}'=='android'    Fail    'Wishlist Checkbox was not selected or not found'
+
 Select Wishlist Item
     Wait Until Element Is Visible    ${btnWishlistItemSelect}    30s
     Click Element    ${btnWishlistItemSelect}
