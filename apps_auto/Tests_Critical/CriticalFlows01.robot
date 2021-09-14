@@ -5,6 +5,33 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
+Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QA-8939
+    [Tags]    QA-8939
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
+    Click Product Variant From API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
+    Click Product Disabled Variant From API
+    Verify Text On Screen    Add to List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddWishlist}    30s
+    [Teardown]    Tear Down
+
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
 #    [Setup]    Start Application
 #    Add To Cart Takealot API

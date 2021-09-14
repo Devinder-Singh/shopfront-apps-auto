@@ -1248,3 +1248,40 @@ Cart Update & Cart Notification - Heavy Good - QA-8421
     Click Cart Update Back To Cart
     Click Checkout
     [Teardown]    Tear Down
+
+CLONE - PDP - Brand Links - QA-10389
+    [Tags]    QA-10389
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddWishlist}    2s
+    Verify Text On Screen    ${query_result_CartProduct}    2s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Get Sponsored Product Detail
+    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Text On Screen    Sponsored    2s
+    Verify Text On Screen    % OFF    2s
+    Verify Text On Screen    ${query_result_adProductStatus}    2s
+    Click Product From Title    ${query_result_adProductTitle}
+    Verify Element On Screen    ${btnAddToCart}    30s
+    [Teardown]    Tear Down
+
+PDP - Brand Links - QA-10390
+    [Tags]    QA-10390
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    glass
+    Click First Product from API
+    Click Seller Name
+    Click Back Android
+    Click Back iOS    ${query_result_FirstProduct}
+    Verify Element On Screen    ${btnAddToCart}    10s
+    [Teardown]    Tear Down

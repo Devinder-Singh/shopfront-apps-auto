@@ -511,6 +511,25 @@ Get Product Variant
 
     [return]    ${searchResult}
 
+Get Product Variant Disabled
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results}=    Output    $.variants.selectors[0].options[*].is_enabled
+    @{results_variant}=    Output    $.variants.selectors[0].options[*].link_data.fields.size
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results}
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
+        Exit For Loop If    '${result}'=='False'
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Set Global Variable    ${query_result_CartProductVariant}    ${results_variant}[${index}]
+
+    [return]    ${searchResult}
+
 Get Product Variant Colour
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop

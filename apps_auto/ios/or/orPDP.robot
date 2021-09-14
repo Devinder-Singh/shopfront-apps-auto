@@ -67,3 +67,5 @@ ${btnPDPShowAllReviews}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show 
 
 ${lblPDPRelatedProdSponsored}    chain=**/XCUIElementTypeStaticText[`label == "Sponsored"`]
 ${lblPDPRelatedProdSponsoredOK}    chain=**/XCUIElementTypeStaticText[`label == "OK"`]
+
+${lblPDPWishlistChange}    chain=**/XCUIElementTypeStaticText[`label == "CHANGE"`]

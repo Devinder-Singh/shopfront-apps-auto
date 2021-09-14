@@ -66,3 +66,5 @@ ${btnPDPShowAllReviews}    xpath=//*[contains(@text, "SHOW ALL REVIEWS")]
 
 ${lblPDPRelatedProdSponsored}    xpath=//*[@text="Sponsored"]
 ${lblPDPRelatedProdSponsoredOK}    xpath=//*[@text="OK"]
+
+${lblPDPWishlistChange}    xpath=//*[@text="CHANGE"]

@@ -6,3 +6,5 @@ ${btnWishlistItemSelect}      chain=**/XCUIElementTypeButton[`label == "Select A
 ${btnWishlistDelete}      chain=**/XCUIElementTypeButton[`label == "Delete"`]
 
 ${btnDeleteWishlist}      ${EMPTY}
+
+${chkWishlist}      ${EMPTY}
