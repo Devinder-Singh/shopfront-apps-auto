@@ -530,6 +530,8 @@ Get Product Disabled Variant
 
     [return]    ${searchResult}
 
+=======
+>>>>>>> 506cdc9a8d7a685402e79c169ba8001e4abb1aff
 Get Product Variant Colour
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
