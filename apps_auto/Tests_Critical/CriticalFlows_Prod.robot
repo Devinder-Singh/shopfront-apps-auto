@@ -4,16 +4,11 @@ Default Tags      critical_prod
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Setup
-    [Tags]    Setup
+Search and Buy Item on Delivery using Credit Card
+    [Tags]    Production1
     [Setup]    Install Application
     Close All Applications
     Start Application
-    [Teardown]    Tear Down
-
-Search and Buy Item on Delivery using Credit Card
-    [Tags]    Production1
-    [Setup]    Start Application
     Clear Environment
     Click Menu
     Click Menu Login
