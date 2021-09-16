@@ -266,3 +266,16 @@ Buy Airtime along with another Item on Collection
     Start Application    ${False}
     Cancel Latest Order
     [Teardown]    Tear Down
+
+Register User
+    [Tags]    Production8
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    [Teardown]    Tear Down
