@@ -108,8 +108,8 @@ Click Clear All Recently Viewed Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHomeClearAllRecent}
 
 Click Cancel Clear All Recently Viewed
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHomeClearCancelRecent}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHomeClearCancelRecent}
+    Wait Until Element Is Visible    ${btnHomeClearCancelRecent}    30s
+    Click Element    ${btnHomeClearCancelRecent}
 
 Confirm Clear All Recently Viewed
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHomeClearRecent}    30s
