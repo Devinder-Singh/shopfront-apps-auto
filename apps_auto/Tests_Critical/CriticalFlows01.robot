@@ -5,15 +5,6 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Search and Buy Item on Delivery using Payfast and Create new Address
-    [Tags]    Production2
-    [Setup]    Start Application
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Click Home
-    Click Menu
-    [Teardown]    Tear Down
-
 #Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QA-8939
 #    [Tags]    QA-8939
 #    [Setup]    Start Application

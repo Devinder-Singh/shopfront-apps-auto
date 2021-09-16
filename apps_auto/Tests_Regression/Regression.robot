@@ -96,7 +96,7 @@ Apps > Promotions (Android) Other Promo tabs - QA-8410 / QA-7443
     Change Cart Quantity Android    5
     Click Item Promotion Text
     Verify Text On Screen    5 x R    10s
-    Verify Element On Screen    ${query_result_DealsName}    2s
+    Verify Element On Screen    ${query_result_CartFilterProduct}    2s
     Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
@@ -108,8 +108,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    Abstinence
-    Click Product From Title    Abstinence Cape Fynbos distilled spirit non-alcoholic 750ml
+    Search Product    Shea Butter
+    Click Product From Title    Shea Butter - Raw Organic Unrefined
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
@@ -117,11 +117,11 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Verify Text On Screen iOS    View Bundle    1s
     Close Application
     Start Application
-#    Clear Environment
+    Clear Environment
     Click Home
     Click Search Home
-    Search Product    Abstinence
-    Click Product From Title    Abstinence Cape Fynbos distilled spirit non-alcoholic 750ml
+    Search Product    Shea Butter
+    Click Product From Title    Shea Butter - Raw Organic Unrefined
     Click Add Bundle To Cart
     Click Go To Cart
     Wait for Checkout
@@ -527,10 +527,11 @@ Apps > PDP - QA-5307
     Start Application
     Click Home
     Click Search Home
-    Search Product    disposable mas
+    Search Product    pen
     Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    30s
-    Verify Text On Screen    Sponsored    2s
+    Verify Text On Screen Android    Sponsored    2s
+    Verify Text On Screen iOS    Sponsored    2s
     Verify Text On Screen    % OFF    2s
     Verify Text On Screen    ${query_result_adProductStatus}    2s
 #    Verify Text On Screen    ${query_result_adProductRating}

@@ -8,13 +8,13 @@ ${btnReviewSort}      chain=**/XCUIElementTypeButton[`label == "Sort"`][1]
 ${lblReviewSortHelpful}      chain=**/XCUIElementTypeStaticText[`label == "Most Helpful"`]
 ${lblReviewRecent}      chain=**/XCUIElementTypeStaticText[`label == "Most Recent"`]
 
-${btnReviewFilter}      chain=**/XCUIElementTypeButton[`label == "Filter"`][1]
+${btnReviewFilter}      chain=**/XCUIElementTypeButton[`label CONTAINS "Filter"`]
 ${lblReviewFilterRating}      chain=**/XCUIElementTypeStaticText[`label == "Ratings"`]
 ${lblReviewFilterFive}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "5"`]
 ${btnReviewFilterDone}      chain=**/XCUIElementTypeButton[`label == "Done"`]
 ${btnReviewFilterApply}      chain=**/XCUIElementTypeButton[`label == "Apply"`]
 
-${lblReviewHelpful}      chain=**/XCUIElementTypeButton[`label CONTAINS "Helpful"`]
+${lblReviewHelpful}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "Helpful"`]
 ${lblReviewMore}      chain=**/XCUIElementTypeButton[`label == "icon more"`]
 ${lblReviewReport}      chain=**/XCUIElementTypeButton[`label == "Report Review"`]
 
