@@ -10,7 +10,7 @@ Get New Email Address
     ${newEmailAddress}=    Set Variable    ''
     ${date}=      Get Current Date    exclude_millis=True
     ${convert}=      Convert Date      ${date}      result_format=%Y%m%d%H%M%S
-    ${newEmailAddress}=    Set Variable    take2+${convert}@gmail.com
+    ${newEmailAddress}=    Set Variable    take2+apps${convert}@gmaill.com
     Set Global Variable    ${new_email_address}    ${newEmailAddress}
     [Return]    ${newEmailAddress}
 
