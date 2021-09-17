@@ -4,16 +4,11 @@ Default Tags      critical
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Setup
-    [Tags]    Setup
-    [Setup]    Start Application
-    Close All Applications
-    Start Application
-    [Teardown]    Tear Down
-
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Master1
-    [Setup]    Start Application
+    [Setup]    Install Application
+    Close All Applications
+    Start Application
     Clear Environment
     Click Menu
     Click Menu Login
