@@ -161,3 +161,49 @@ Apps > Wishlist > Add to List > PDP > Tablet/iPad - QA-8934
     Verify Element On Screen    ${btnAddToCart}    30s
     Verify Element On Screen    ${btnAddWishlist}    30s
     [Teardown]    Tear Down
+
+Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QA-8939
+    [Tags]    QA-8939
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Search Home
+    Search Product    Pen
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Long Press    ${btnAddWishlist}
+    Verify Text On Screen    Add to List    10s
+    Click Option Wish List
+    Click Option AutoTestWishlist
+    Click Save Wishlist
+    Verify Text On Screen    Item added to multiple lists    10s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Search Product Wishlist
+    Verify Text On Screen    Item added to Wish List    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > PDP Add to List > Add to List(Change Recent List) - QA-8941
+    [Tags]    QA-8941
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    [Teardown]    Tear Down
