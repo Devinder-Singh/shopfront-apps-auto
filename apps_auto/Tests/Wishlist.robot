@@ -207,3 +207,31 @@ Apps > Wishlist > PDP Add to List > Add to List(Change Recent List) - QA-8941
     Click Add To Wishlist Only
     Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
+
+Apps > Wishlist > List Limitations(250 items) > PDP - QA-8949
+    [Tags]    QA-8949
+    [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL_Wishlists}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Limit reached    20s
+    Verify Text On Screen    You can not add more than 250 items to this list    2s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > My Lists > Default List - QA-8951
+    [Tags]    QA-8951
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Click More Options Menu Android
+    Check Text On Screen Not Android    Rename List
+    Check Text On Screen Not Android    Delete List
+    [Teardown]    Tear Down
