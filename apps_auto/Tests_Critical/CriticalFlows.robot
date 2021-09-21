@@ -4,6 +4,19 @@ Default Tags      critical
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
+Register User
+    [Tags]    Master0
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    [Teardown]    Tear Down
+
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Master1
     [Setup]    Install Application Master
