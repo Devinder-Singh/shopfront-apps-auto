@@ -6,7 +6,7 @@ Resource          ../common/config/defaultConfig.robot
 *** Test Cases ***
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Master1
-    [Setup]    Install Application
+    [Setup]    Install Application Master
     Close All Applications
     Start Application
     Clear Environment
