@@ -6,7 +6,13 @@ Register Takealot
     [Arguments]    ${name}    ${surname}    ${email}    ${password}
 
     Get New Email Address
-    ${G_EMAIL}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
+    IF    '${email}' == '?'
+        Set Global Variable    ${G_EMAIL}    ${new_email_address}
+    ELSE
+        Set Global Variable    ${G_EMAIL}    ${email}
+    END
+
+#    ${G_EMAIL}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
     ${email}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
 
     Wait Until Element Is Visible    ${txtRegFirstName}    30s
