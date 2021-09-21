@@ -24,8 +24,9 @@ Install Application
     Open Application    ${REMOTE_URL}    &{cap}
 
 Install Application Master
-    ${APP_PATH}=    Set Variable    /Users/jenkins/qa_build_master/apk_files/master/debug-3.3.0.apk
-    ${APP_ENVIRONMENT}=    Set Variable    http://api.master.env/
+#    ${APP_PATH}=    Set Variable    /Users/jenkins/qa_build_master/apk_files/master/debug-3.3.0.apk
+#    ${APP_ENVIRONMENT}=    Set Variable    http://api.master.env/
 
-#    Set Global Variable    ${APP_ENVIRONMENT}    http://api.master.env/
+    Set Global Variable    ${APP_PATH}    /Users/jenkins/qa_build_master/apk_files/master/debug-3.3.0.apk
+    Set Global Variable    ${APP_ENVIRONMENT}    http://api.master.env/
     Install Application
