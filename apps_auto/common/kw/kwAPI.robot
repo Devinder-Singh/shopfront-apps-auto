@@ -40,8 +40,8 @@ ${envProd}    https://api.takealot.com
 
 
 *** Keywords ***
-Clear Environment    
-    Get Customer ID
+Clear Environment
+    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
     Clear Cart
     Delete Wishlist
     Clear Wishlist
