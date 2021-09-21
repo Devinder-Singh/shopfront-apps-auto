@@ -40,7 +40,7 @@ ${envProd}    https://api.takealot.com
 
 
 *** Keywords ***
-Clear Environment
+Clear Environment    
     Get Customer ID
     Clear Cart
     Delete Wishlist
@@ -60,8 +60,10 @@ Get Customer ID
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Post    ${token_URL}    ${token_BODY}
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Integer    response status    200
 
+    ${result_ID}=    Output    $.customer_id
+
     ${query_result}=    Set Variable    0
-    ${query_result}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Output    $.customer_id
+    ${query_result}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    ${result_ID}
     Set Global Variable    ${query_customer_id}    ${query_result}
     [return]    ${query_result}
 

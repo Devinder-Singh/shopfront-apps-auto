@@ -5,6 +5,19 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
+#Register User
+#    [Tags]    Master0
+#    [Setup]    Start Application
+#    Click Menu
+#    Click Menu Login
+#    Close Application
+#    Start Application
+#    Click Menu
+#    Click Menu Register
+#    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+#    Click Home
+#    [Teardown]    Tear Down
+
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
 #    [Setup]    Start Application
 #    Add To Cart Takealot API
