@@ -5,6 +5,25 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
+Register User
+    [Tags]    Master0
+    [Setup]    Install Application Master
+    Close All Applications
+    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    [Teardown]    Tear Down
+
+Search and Buy Item on Delivery using Credit Card
+    [Tags]    Master1
+    Clear Environment
+
 #Register User
 #    [Tags]    Master0
 #    [Setup]    Start Application
