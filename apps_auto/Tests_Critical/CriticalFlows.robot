@@ -6,7 +6,9 @@ Resource          ../common/config/defaultConfig.robot
 *** Test Cases ***
 Register User
     [Tags]    Master0
-    [Setup]    Start Application
+    [Setup]    Install Application Master
+    Close All Applications
+    Start Application
     Click Menu
     Click Menu Login
     Close Application
@@ -19,9 +21,7 @@ Register User
 
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Master1
-    [Setup]    Install Application Master
-    Close All Applications
-    Start Application
+    [Setup]    Start Application
     Clear Environment
     Click Menu
     Click Menu Login
