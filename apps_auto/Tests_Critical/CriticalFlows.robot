@@ -12,7 +12,7 @@ Register User
     Click Menu
     Click Menu Login
     Close Application
-    Start Application    ${False}
+    Start Application
     Click Menu
     Click Menu Register
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
