@@ -28,6 +28,11 @@ Click Option AutoTestWishlist
     Wait Until Element Is Visible    ${lblPDPAutoTestWishListSave}    5s
     Click Element    ${lblPDPAutoTestWishListSave}
 
+Click Close Ad
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPCloseAd}    30s
+    Run Keyword If    ${chkTextSuccess}==True and '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPCloseAd}
+    Sleep    2s
+
 Click Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}

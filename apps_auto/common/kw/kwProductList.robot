@@ -19,6 +19,7 @@ Click Variant Product from API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Product from API
     ${txtProduct}=    Get Product to Add To Cart
@@ -37,6 +38,7 @@ Click Product from API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click In Stock Product from API
     Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
@@ -53,6 +55,7 @@ Click In Stock Product from API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${lblPLPInStock}
+    Click Close Ad
 
 Click Leadtime Product from API
     ${txtProduct}=    Get Leadtime Product to Add To Cart
@@ -71,6 +74,7 @@ Click Leadtime Product from API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Product Brand from API
     ${txtProduct}=    Get Product Brand from PLID
@@ -120,6 +124,7 @@ Click Product from API Scroll
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Verify Price Range Product from API
     ${txtProduct}=    Get Price Range Product to Add To Cart
@@ -164,6 +169,7 @@ Click Listing Product from API
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeButton[`label CONTAINS "${result_f}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text,"${result_f}")]
 
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Product Auto from API
     ${txtProduct}=    Get Product Auto to Add To Cart
@@ -182,6 +188,7 @@ Click Product Auto from API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Filter Product from API
     ${txtProduct}=    Get Filter Product to Add To Cart
@@ -199,6 +206,7 @@ Click Filter Product from API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Daily Deals Product from API
     Get Product Daily Deals Slug
@@ -217,6 +225,7 @@ Click Daily Deals Product from API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Third Tab Product from API
     Get Product Deals Third Tab Slug
@@ -235,6 +244,7 @@ Click Third Tab Product from API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click App Only Deals Product from API
     Get Product App Only Deals Slug
@@ -253,17 +263,20 @@ Click App Only Deals Product from API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click First Product from API
     ${txtProduct}=    Get First Product From API
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Product Daily Deals
     Wait Until Element Is Visible    ${btnProductFilter}    30s
     Sleep    5s
     Wait Until Element Is Visible    ${imgProductDeals}    5s
     Click Element    ${imgProductDeals}
+    Click Close Ad
 
 Click Product Seller Deals
     Wait Until Element Is Visible    ${btnProductFilter}    30s
@@ -273,12 +286,14 @@ Click Product Seller Deals
 
     Wait Until Element Is Visible    ${txtProduct}    5s
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Product Department
     Wait Until Element Is Visible    ${btnProductFilter}    30s
     Sleep    1s
     Wait Until Element Is Visible    ${imgProductDealsDept}    5s
     Click Element    ${imgProductDealsDept}
+    Click Close Ad
 
 Click Product From Title
     [Arguments]    ${title}
@@ -299,6 +314,7 @@ Click Product From Title
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${lblProdTitle}
+    Click Close Ad
 
 Click YMAL Product From Title
     [Arguments]    ${title}
@@ -308,6 +324,7 @@ Click YMAL Product From Title
     Verify Text On Screen    You Might Also Like    30s
 
     Click Element    ${lblProdTitle}
+    Click Close Ad
 
 Click Product Text
     [Arguments]    ${title}
@@ -317,6 +334,7 @@ Click Product Text
     Wait Until Element Is Visible    ${lblProdTitle}    30s
 
     Click Element    ${lblProdTitle}
+    Click Close Ad
 
 Verify Product From Title
     [Arguments]    ${title}
@@ -381,21 +399,25 @@ Click Product available in JHB only
     ${txtProduct}=    Get Product in JHB only
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Product available in CPT only
     ${txtProduct}=    Get Product in CPT only
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Product available in JHB and CPT
     ${txtProduct}=    Get Product in JHB and CPT
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Product in Leadtime
     ${txtProduct}=    Get Product with Leadtime
     Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Verify Product Image
     Verify Daily Deals Image
@@ -405,6 +427,7 @@ Click Product
     ${lblProduct}=    Replace String    ${lblProduct}    $productText    ${productText}
     Wait Until Page Contains Element    ${lblProduct}    30s
     Click Element    ${lblProduct}
+    Click Close Ad
 
 Click Product No Reviews
     ${txtProduct}=    Get Product No Reviews
@@ -423,6 +446,7 @@ Click Product No Reviews
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Click Product Multiple Reviews
     ${txtProduct}=    Get Product Review Count Multiple
@@ -441,6 +465,7 @@ Click Product Multiple Reviews
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
+    Click Close Ad
 
 Verify Sorted Products
     [Arguments]    ${sort}
