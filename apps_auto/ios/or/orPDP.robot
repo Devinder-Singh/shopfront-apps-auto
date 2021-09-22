@@ -69,3 +69,5 @@ ${lblPDPRelatedProdSponsored}    chain=**/XCUIElementTypeStaticText[`label == "S
 ${lblPDPRelatedProdSponsoredOK}    chain=**/XCUIElementTypeStaticText[`label == "OK"`]
 
 ${lblPDPWishlistChange}    chain=**/XCUIElementTypeStaticText[`label == "CHANGE"`]
+
+${btnPDPCloseAd}    id=close_button

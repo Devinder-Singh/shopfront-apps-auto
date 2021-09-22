@@ -68,3 +68,5 @@ ${lblPDPRelatedProdSponsored}    xpath=//*[@text="Sponsored"]
 ${lblPDPRelatedProdSponsoredOK}    xpath=//*[@text="OK"]
 
 ${lblPDPWishlistChange}    xpath=//*[@text="CHANGE"]
+
+${btnPDPCloseAd}    ${EMPTY}
