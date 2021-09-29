@@ -1,6 +1,6 @@
 *** Variables ***
 ${btnWishlistItems}    chain=**/XCUIElementTypeStaticText[`label == "DEFAULT"`]
-${btnWishlistAuto}    ${EMPTY}
+${btnWishlistAuto}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "AutoTestWishlist"`]
 
 ${btnWishListScreen}      ${EMPTY}
 ${btnWishlistCreate}    chain=**/XCUIElementTypeNavigationBar[`name == "My Lists"`]/XCUIElementTypeButton[2]

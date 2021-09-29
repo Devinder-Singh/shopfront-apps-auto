@@ -314,3 +314,53 @@ Apps > Wishlist > PDP Add to List > List Manager - QA-5370
     Click Save Wishlists
     Verify Text On Screen    Item removed from Wish List    30s
     [Teardown]    Tear Down
+
+Apps > Wishlist > My Lists > Pagination - QA-5369
+    [Tags]    QA-5369
+    [Setup]    Start Application
+    Clear Environment
+    Create Wishlists
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Verify Text On Screen Scroll    Test-Wishlist-8570800-0    2s    ${windowScroll}    ${btnWishlistCreate}
+    Clear Environment
+    Clear Environment
+    Clear Environment
+    [Teardown]    Tear Down
+
+Apps > Wishlist > My Lists > Landing Page > Create List Tutorial - QA-5375
+    [Tags]    QA-5375
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Delete List - QA-5376
+    [Tags]    QA-5376
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Verify Text On Screen    List Created    20s
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Click More Options Menu Android
+    Click Delete Wishlist Only
+    Click Delete Wishlist Cancel
+    Click Delete Wishlist
+    [Teardown]    Tear Down

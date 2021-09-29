@@ -31,8 +31,8 @@ Click More Options Menu
     Click Element    ${btnMoreOptions}
 
 Click More Options Menu Android
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMoreOptions}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
+    Wait Until Element Is Visible    ${btnMoreOptions}    30s
+    Click Element    ${btnMoreOptions}
 
 Click Options Menu Home
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionHome}    30s
