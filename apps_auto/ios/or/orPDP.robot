@@ -61,7 +61,7 @@ ${btnPDPInStockCPT}    chain=**/XCUIElementTypeStaticText[`label == "CPT"`]
 ${btnPDPInStockClose}    chain=**/XCUIElementTypeButton[`label == "Close"`]
 
 ${lblPDPWishListSave}    chain=**/XCUIElementTypeStaticText[`label == "Wish List"`]
-${lblPDPAutoTestWishListSave}    chain=**/XCUIElementTypeStaticText[`label == "AutoTestWishlist"`]
+${lblPDPAutoTestWishListSave}    chain=**/XCUIElementTypeStaticText[`label == "'AutoTestWishlist'"`]
 
 ${btnPDPShowAllReviews}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show All Reviews"`]
 
@@ -71,3 +71,5 @@ ${lblPDPRelatedProdSponsoredOK}    chain=**/XCUIElementTypeStaticText[`label == 
 ${lblPDPWishlistChange}    chain=**/XCUIElementTypeStaticText[`label == "CHANGE"`]
 
 ${btnPDPCloseAd}    id=close_button
+
+${btnPDPWishListSave}    chain=**/XCUIElementTypeButton[`label == "Save"`]

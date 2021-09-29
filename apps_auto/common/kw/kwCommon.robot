@@ -322,7 +322,7 @@ Click Window Android
 Click Back iOS
     [Arguments]    ${elementID}
 
-    ${backiOS}=    Set Variable    chain=**/XCUIElementTypeButton[`label == "${elementID}"`]
+    ${backiOS}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${elementID}"`]
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${backiOS}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${backiOS}
 

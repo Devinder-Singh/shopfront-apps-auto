@@ -505,7 +505,7 @@ Get Product Variant
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_variant}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_variant}[${index}]']
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
@@ -532,8 +532,6 @@ Get Product Disabled Variant
 
     [return]    ${searchResult}
 
-=======
->>>>>>> 506cdc9a8d7a685402e79c169ba8001e4abb1aff
 Get Product Variant Colour
 
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
@@ -550,6 +548,7 @@ Get Product Variant Colour
         ${index}=    Evaluate    ${index} + 1
     END
     Set Global Variable    ${query_result_CartProductVariant}    ${results_variant}[${index}]
+    Set Global Variable    ${query_result_CartProductVariantColor}    ${results_variant}[${index}]
 
     [return]    ${searchResult}
 
@@ -817,7 +816,7 @@ Get First Sort Product
     Return From Keyword If    ${cnt} < 1    0
 
     @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
-    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[0]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[0]"]        
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_title}[0]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[0]"]
 
     [Return]    ${searchResult}
 
@@ -834,7 +833,7 @@ Get Third Sort Product
     Return From Keyword If    ${cnt} < 2    0
 
     @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
-    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    id=${results_title}[1]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[1]"]
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_title}[1]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[1]"]
 
     [Return]    ${searchResult}
 

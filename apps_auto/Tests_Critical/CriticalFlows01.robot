@@ -5,24 +5,25 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Register User
-    [Tags]    Master0
-    [Setup]    Install Application Master
-    Close All Applications
-    Start Application
-    Click Menu
-    Click Menu Login
-    Close Application
-    Start Application
-    Click Menu
-    Click Menu Register
-    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
-    Click Home
-    [Teardown]    Tear Down
-
-Search and Buy Item on Delivery using Credit Card
-    [Tags]    Master1
+Apps > Wishlist > My Lists > Pagination - QA-5369
+    [Tags]    QA-5369
+    [Setup]    Start Application
     Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Click Add To Wishlist Only
+    Click Option Wish List
+    Verify Text On Screen    Add to List    2s
+    Verify Element On Screen    ${btnWishlistAdd}    2s
+    Click Save Wishlists
+    Verify Text On Screen    Item removed from Wish List    30s
+    [Teardown]    Tear Down
 
 #Register User
 #    [Tags]    Master0

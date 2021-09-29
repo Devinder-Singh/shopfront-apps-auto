@@ -108,8 +108,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    Shea Butter
-    Click Product From Title    Shea Butter - Raw Organic Unrefined
+    Search Product    Blower Cordless
+    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
@@ -120,8 +120,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Shea Butter
-    Click Product From Title    Shea Butter - Raw Organic Unrefined
+    Search Product    Blower Cordless
+    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
     Click Add Bundle To Cart
     Click Go To Cart
     Wait for Checkout
@@ -527,7 +527,7 @@ Apps > PDP - QA-5307
     Start Application
     Click Home
     Click Search Home
-    Search Product    pen
+    Search Product    Drone
     Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     Verify Text On Screen Android    Sponsored    2s
@@ -540,7 +540,8 @@ Apps > PDP - QA-5307
     Verify Text On Screen    ${query_result_adProductBrand}    2s
     Click Product From Title    ${query_result_adProductTitle}
     Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen    Sponsored    5s
+    Verify Text On Screen Android    Sponsored    2s
+    Verify Text On Screen iOS    Sponsored    2s
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8890
@@ -567,7 +568,7 @@ Apps > PDP - QA-8891
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Search Product    jean
+    Search Product    shirt
     Click Variant Product from API
     Verify PDP Screen Element Not Exists    ${btnAddToCart}
     Verify PDP Screen Element Not Exists    ${btnAddWishlist}
@@ -592,6 +593,10 @@ Apps > PDP - QA-8892
     Enter Review Message    Auto Test
     Click Review Submit
     Verify Text On Screen    Thank you for your review    30s
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
     Click PDP Write Review
     Click Review Rating
     Enter Review Message    Auto Test
@@ -614,7 +619,7 @@ Apps > PDP - QA-8892
     Verify Element On Screen    ${btnReviewFilter}    15s
     Click Review Icon More
     Click Review Report
-    Verify Element On Screen    Your report has been submitted    15s
+    Verify Text On Screen    Your report has been submitted    15s
     Close Application
     Start Application
     Click Menu
@@ -637,7 +642,7 @@ Apps > PDP - QA-8893
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    jean
+    Search Product    tshirt
     Click Variant Product from API
     Verify PDP Screen Element Not Exists    ${btnAddToCart}
     Click Product Variant From API

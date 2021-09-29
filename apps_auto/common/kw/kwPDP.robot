@@ -28,6 +28,10 @@ Click Option AutoTestWishlist
     Wait Until Element Is Visible    ${lblPDPAutoTestWishListSave}    5s
     Click Element    ${lblPDPAutoTestWishListSave}
 
+Click Save Wishlists
+    Wait Until Element Is Visible    ${btnPDPWishListSave}    5s
+    Click Element    ${btnPDPWishListSave}
+
 Click Close Ad
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPCloseAd}    30s
     Run Keyword If    ${chkTextSuccess}==True and '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPCloseAd}

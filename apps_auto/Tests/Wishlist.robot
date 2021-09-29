@@ -235,3 +235,82 @@ Apps > Wishlist > My Lists > Default List - QA-8951
     Check Text On Screen Not Android    Rename List
     Check Text On Screen Not Android    Delete List
     [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Edit > Move to list - QA-9171
+    [Tags]    QA-9171
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to 'AutoTestWishlist'    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Home WishList
+    Click Wishlist Edit
+    Select Wishlist Item
+    Click Wishlist Move Items
+    Click Option Wish List
+    Click Wishlist Move Items
+    Verify Text On Screen    Item moved to Wish List    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > PDP Add to List > List Manager (Remove from multiple lists) - QA-10747
+    [Tags]    QA-10747
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to 'AutoTestWishlist'    30s
+    Click Add To Wishlist Only
+    Click Option Wish List
+    Click Save Wishlists
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Click Option Wish List
+    Click Option AutoTestWishlist
+    Click Save Wishlists
+    Verify Text On Screen    Item removed from multiple lists    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > PDP Add to List > List Manager - QA-5370
+    [Tags]    QA-5370
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Click Add To Wishlist Only
+    Click Option Wish List
+    Verify Text On Screen    Add to List    2s
+    Verify Element On Screen    ${btnWishlistAdd}    2s
+    Click Save Wishlists
+    Verify Text On Screen    Item removed from Wish List    30s
+    [Teardown]    Tear Down
