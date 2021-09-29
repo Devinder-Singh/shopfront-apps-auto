@@ -70,3 +70,5 @@ ${lblPDPRelatedProdSponsoredOK}    xpath=//*[@text="OK"]
 ${lblPDPWishlistChange}    xpath=//*[@text="CHANGE"]
 
 ${btnPDPCloseAd}    ${EMPTY}
+
+${btnPDPWishListSave}    chain=**/XCUIElementTypeButton[`label == "Save"`]

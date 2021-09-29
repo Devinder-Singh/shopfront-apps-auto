@@ -8,3 +8,7 @@ ${btnDeleteWishlist}      xpath=//*[@text="Delete List"]
 ${btnDeleteWishlistConfirm}      xpath=//*[@text="DELETE"]
 
 ${chkWishlist}      id=${APP_PACKAGE}:id/talWidgetMultiSelectItemCheckbox
+
+${btnWishlistMove}      xpath=//*[@text="Move"]
+
+${btnWishlistAdd}      xpath=//*[@text="icon plus"]

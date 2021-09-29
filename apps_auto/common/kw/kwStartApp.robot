@@ -32,4 +32,4 @@ Install Application Master
 
     Set Global Variable    ${APP_ENVIRONMENT}    http://api.master.env/
 
-    Install Application
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Install Application
