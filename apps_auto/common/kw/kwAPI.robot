@@ -48,9 +48,9 @@ Clear Environment
     Clear Address
 
 Create Wishlists
-    Get Customer ID
-    ${WL_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "count": 25 }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "master", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": 4933518, "count": 25 }
-    Post    ${WL_URL}    ${WL_Body}
+    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
+    ${WL_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "count": 25 }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": 4933518, "count": 24 }
+    Post    ${wishlist_URL}    ${WL_Body}
     Integer    response status    200
 
 Get Customer ID

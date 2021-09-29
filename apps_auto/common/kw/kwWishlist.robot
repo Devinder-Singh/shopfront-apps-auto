@@ -39,7 +39,15 @@ Click Wishlist Move Items
     Click Element    ${btnWishlistDelete}
 
 Click Delete Wishlist
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnDeleteWishlist}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnDeleteWishlist}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnDeleteWishlistConfirm}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnDeleteWishlistConfirm}
+    Wait Until Element Is Visible    ${btnDeleteWishlist}    30s
+    Click Element    ${btnDeleteWishlist}
+    Wait Until Element Is Visible    ${btnDeleteWishlistConfirm}    10s
+    Click Element    ${btnDeleteWishlistConfirm}
+
+Click Delete Wishlist Only
+    Wait Until Element Is Visible    ${btnDeleteWishlist}    30s
+    Click Element    ${btnDeleteWishlist}
+
+Click Delete Wishlist Cancel
+    Wait Until Element Is Visible    ${btnDeleteWishlistCancel}    10s
+    Click Element    ${btnDeleteWishlistCancel}
