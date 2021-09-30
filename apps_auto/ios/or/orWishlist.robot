@@ -14,3 +14,5 @@ ${chkWishlist}      ${EMPTY}
 ${btnWishlistMove}      chain=**/XCUIElementTypeButton[`label == "Move"`]
 
 ${btnWishlistAdd}      chain=**/XCUIElementTypeButton[`label == "icon plus"`]
+
+${btnWishlistContinueShop}      chain=**/XCUIElementTypeButton[`label == "Start Shopping"`]

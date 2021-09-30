@@ -364,3 +364,43 @@ Apps > Wishlist > List Details > Delete List - QA-5376
     Click Delete Wishlist Cancel
     Click Delete Wishlist
     [Teardown]    Tear Down
+
+Apps > Wishlist > My Lists > Swipe Gestures > Onboarding - QA-5378
+    [Tags]    QA-5378
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Verify Text On Screen    List Created    20s
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Click More Options Menu Android
+    Click Delete Wishlist
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Empty List - QA-5379
+    [Tags]    QA-5379
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Home WishList
+    Verify Text On Screen    This list is empty    30s
+    Click Wishlist Continue Shopping
+    Click Search Home
+    Close Application
+    Start Application
+    Click Home
+    Click Home WishList
+    Verify Text On Screen    Trending on Takealot    30s
+    Click Product Trending
+    Verify Element On Screen    ${btnAddToCart}    30s
+    Click Back Android
+    Click Back iOS    Wish List
+    Verify Text On Screen    Trending on Takealot    10s
+    [Teardown]    Tear Down

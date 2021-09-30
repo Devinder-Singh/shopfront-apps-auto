@@ -5,6 +5,25 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
+Apps > Wishlist > List Details > Pagination - QA-5380
+    [Tags]    QA-5380
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Home WishList
+    Verify Text On Screen    This list is empty    30s
+    Click Wishlist Continue Shopping
+    Click Search Home
+    Close Application
+    Start Application
+    Click Home
+    Click Home WishList
+    Verify Text On Screen    Trending on Takealot    30s
+    Click Product Trending
+    Verify Text On Screen    Trending on Takealot    10s
+    [Teardown]    Tear Down
 
 #Register User
 #    [Tags]    Master0
