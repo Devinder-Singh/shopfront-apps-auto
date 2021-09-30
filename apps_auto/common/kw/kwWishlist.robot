@@ -51,3 +51,7 @@ Click Delete Wishlist Only
 Click Delete Wishlist Cancel
     Wait Until Element Is Visible    ${btnDeleteWishlistCancel}    10s
     Click Element    ${btnDeleteWishlistCancel}
+
+Click Wishlist Continue Shopping
+    Wait Until Element Is Visible    ${btnWishlistContinueShop}    30s
+    Click Element    ${btnWishlistContinueShop}

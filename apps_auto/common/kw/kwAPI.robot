@@ -220,6 +220,18 @@ Get Product PLID from Title
 
     [return]    ${results_variant}
 
+Get Product Trending
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/recommend/wishlist?platform=desktop&limit=10
+    Get    ${search_URL}
+    Integer    response status    200
+
+    ${results_Trending}=    Output    $.items[0].title
+
+    Set Global Variable    ${query_result_ProductTrending}    ${results_Trending}
+    ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${results_Trending}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_Trending}']
+
+    [return]    ${searchResult}
+
 Get Product Author from PLID
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${query_result_CartProductPLID}?platform=desktop
     Get    ${search_URL}

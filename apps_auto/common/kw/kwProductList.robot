@@ -21,6 +21,15 @@ Click Variant Product from API
     Click Element    ${txtProduct}
     Click Close Ad
 
+Click Product Trending
+    ${txtProduct}=    Get Product Trending
+
+    Verify Text On Screen    Trending on Takealot    30s
+
+    Element Should Be Visible    ${txtProduct}
+    Click Element    ${txtProduct}
+    Click Close Ad
+
 Click Product from API
     ${txtProduct}=    Get Product to Add To Cart
 
