@@ -77,3 +77,39 @@ Swipe To Empty State Step 2
 
     Swipe    ${startPositionX}    ${startPositionY}    ${endPositionX}    ${endPositionY}
     Sleep    5s
+
+Click Returns Call To Action Button
+    Wait Until Element Is Visible    ${btnReturnsCallToAction}    30s
+    Click Element    ${btnReturnsCallToAction}
+
+Verify Returns Order History Filter Option View Visible
+    Wait Until Element Is Visible    ${returnsOrderHistoryFilterOptionContainer}    30s
+
+Verify Returns Order History Filter Option Button Title
+    Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    30s
+    Element Text Should Be    ${btnReturnsOrderHistoryFilterOptionChange}    CHANGE
+
+Click Returns Order History Filter Option Button
+    Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    30s
+    Click Element    ${btnReturnsOrderHistoryFilterOptionChange}
+
+Verify Returns Order History Filter Options
+    Verify Text On Screen    Last 3 months    30s
+    Verify Text On Screen    Last 6 months    30s
+
+Verify Returns Order History Item Visible
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItem}    30s
+
+Verify Returns Order History Item Title
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemTitle}    30s
+    Element Should Contain Text    ${cardReturnsOrderHistoryItemTitle}    Order #
+
+Verify Returns Order History Item Subtitle
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemSubtitle}    30s
+    Element Should Contain Text    ${cardReturnsOrderHistoryItemSubtitle}    Ordered
+
+Verify Returns Order History Item Image Container
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemImageContainer}    30s
+
+Click Returns Order History Item
+    Click Element    ${cardReturnsOrderHistoryItem}

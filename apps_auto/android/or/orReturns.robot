@@ -10,4 +10,12 @@ ${cardReturnsHistoryItemStatus}    xpath=//androidx.recyclerview.widget.Recycler
 ${cardReturnsHistoryItemImage}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returnsHistoryContainer')]//android.widget.FrameLayout[contains(@index, '0')]//android.view.ViewGroup[contains(@resource-id, 'returnsHistoryItemContainer')]//android.widget.ImageView[@content-desc="return history item product image"]
 ${cardReturnsHistoryPolicyItem}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returnsHistoryContainer')]//android.widget.TextView[contains(@resource-id, 'returns_order_history_item_policy')]
 
+${returnsOrderHistoryFilterOptionContainer}    id=${APP_PACKAGE}:id/orderHistoryParentFilterOption
+${btnReturnsOrderHistoryFilterOptionChange}    id=${APP_PACKAGE}:id/filter_option_button
+
+${cardReturnsOrderHistoryItem}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]
+${cardReturnsOrderHistoryItemTitle}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]//android.widget.TextView[contains(@resource-id, 'returns_order_history_item_title')]
+${cardReturnsOrderHistoryItemSubtitle}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]//android.widget.TextView[contains(@resource-id, 'returns_order_history_item_subtitle')]
+${cardReturnsOrderHistoryItemImageContainer}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_image_container')]
+
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption

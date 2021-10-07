@@ -40,3 +40,34 @@ Apps > SS Returns > Returns UI (User with Returns History) > QA-9256
     Scoll To Returns History Policy
     Verify Returns History Policy Title    Learn more about our Return Policy or visit our Help Page.
     [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Select Order > QA-5429
+    [Tags]    data    QA-5429
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Verify Returns Call To Action Title    LOG RETURN
+    Click Returns Call To Action Button
+    Verify Toolbar Title    Select Order to Return Items
+    Verify Returns Order History Filter Option View Visible
+    Verify Returns Order History Filter Option Button Title
+    Click Returns Order History Filter Option Button
+    Verify Toolbar Title    Filter orders placed in:
+    Verify Returns Order History Filter Options
+    Click Back Screen
+    Verify Toolbar Title    Select Order to Return Items
+    Verify Returns Order History Item Visible
+    Verify Returns Order History Item Title
+    Verify Returns Order History Item Subtitle
+    Verify Returns Order History Item Image Container
+    Click Returns Order History Item
+    Verify Toolbar Title    Select Return Item
+    Click Back Screen
+    Verify Toolbar Title    Select Order to Return Items
+    Click Back Screen
+    Verify Toolbar Title    Returns
+    [Teardown]    Tear Down

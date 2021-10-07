@@ -10,4 +10,12 @@ ${cardReturnsHistoryItemStatus}    ${EMPTY}
 ${cardReturnsHistoryPolicyItem}    ${EMPTY}
 ${cardReturnsHistoryItemImage}    ${EMPTY}
 
+${returnsOrderHistoryFilterOptionContainer}    ${EMPTY}
+${btnReturnsOrderHistoryFilterOptionChange}    ${EMPTY}
+
+${cardReturnsOrderHistoryItem}    ${EMPTY}
+${cardReturnsOrderHistoryItemTitle}    ${EMPTY}
+${cardReturnsOrderHistoryItemSubtitle}    ${EMPTY}
+${cardReturnsOrderHistoryItemImageContainer}    ${EMPTY}
+
 ${btnReturnsCallToAction}    ${EMPTY}
