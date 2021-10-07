@@ -5,24 +5,71 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Wishlist > List Details > Pagination - QA-5380
-    [Tags]    QA-5380
+Apps > Wishlist > My Lists > List Component - QA-8952
+    [Tags]    QA-8952
     [Setup]    Start Application
     Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
-    Click Home WishList
-    Verify Text On Screen    This list is empty    30s
-    Click Wishlist Continue Shopping
     Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pen
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Toothpaste
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Humidifier
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Camera
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Torch
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Lighter
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
     Close Application
     Start Application
     Click Home
     Click Home WishList
-    Verify Text On Screen    Trending on Takealot    30s
-    Click Product Trending
-    Verify Text On Screen    Trending on Takealot    10s
+
     [Teardown]    Tear Down
 
 #Register User

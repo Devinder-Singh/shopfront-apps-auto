@@ -37,7 +37,7 @@ Log In If Not Logged In
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
 
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${cntMenuAccountScroll}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${windowScroll}
 
     ${chkLoginElement}=    Run Keyword And Return Status    Page Should Contain Element    ${btnMenuLogin}
     Run Keyword If    ${chkLoginElement}==True    Click Element    ${btnMenuLogin}
