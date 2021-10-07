@@ -5,6 +5,7 @@ Resource          ../config/defaultConfig.robot
 Click Home
     Wait Until Element Is Visible    ${btnHome}    30s
     Click Element    ${btnHome}
+    Sleep    2s
 
 Click Home iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHome}    30s
@@ -139,6 +140,11 @@ Click Home Back
 Click Home WishList Only
     Wait Until Element Is Visible    ${btnWishListIcon}    30s
     Click Element    ${btnWishListIcon}
+
+Click Home Wishlist Icon
+    Wait Until Element Is Visible    ${btnHomeWishListIcon}    30s
+    Click Element    ${btnHomeWishListIcon}
+    Sleep    1s
 
 Click Home WishList
     Wait Until Element Is Visible    ${btnWishListIcon}    30s

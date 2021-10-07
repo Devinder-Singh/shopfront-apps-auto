@@ -24,3 +24,5 @@ ${btnHomeBack}      accessibility_id=Navigate up
 
 ${btnHomeWishlist}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListSingleItemAddToList
 ${btnWishListIcon}      accessibility_id=Lists
+
+${btnHomeWishListIcon}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListItemAddToList

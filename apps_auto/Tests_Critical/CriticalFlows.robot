@@ -94,7 +94,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
+    Verify Payfast Payment Text
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV

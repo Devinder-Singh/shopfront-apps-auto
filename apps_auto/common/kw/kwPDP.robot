@@ -40,7 +40,7 @@ Click Close Ad
 Click Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}
-    Sleep    2s
+    Sleep    5s
 
 Click Wishlist Change
     Wait Until Element Is Visible    ${lblPDPWishlistChange}    30s
