@@ -297,8 +297,6 @@ Verify Element On Screen Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains Element    ${verifyElement}    ${delay}
 
 Click Back Screen
-    [Arguments]    ${elementID}
-
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${navBack}
 
