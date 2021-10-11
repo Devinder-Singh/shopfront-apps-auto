@@ -38,4 +38,18 @@ ${returnsOrderDetailWarrantyDialogButton}    id=android:id/button1
 
 ${containerReturnsHOrderDetail}    id=${APP_PACKAGE}:id/product_consignment_container
 
+${containerReturnsReason}    id=${APP_PACKAGE}:id/returns_reason_scroll_container
+
+${returnReasonReasonSelector}    id=${APP_PACKAGE}:id/returns_reason_reason_selector
+${returnReasonReasonSelectorText}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_reason_reason_selector')]//android.widget.EditText[contains(@resource-id, 'optionSelectorTitleEditText')]
+${returnReasonReasonSelectorErrorText}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_reason_reason_selector')]//android.widget.TextView[contains(@resource-id, 'textinput_error')]
+${returnReasonReasonItemNonExchange}    id=${APP_PACKAGE}:id/talWidgetSingleSelectItemRadioButton
+
+${returnReasonTextArea}    id=${APP_PACKAGE}:id/returns_reason_text_area
+${returnReasonTextAreaText}    xpath=//android.view.ViewGroup[contains(@resource-id, 'returns_reason_text_area')]//android.widget.EditText
+${returnReasonTextAreaErrorMessage}    xpath=//android.view.ViewGroup[contains(@resource-id, 'returns_reason_text_area')]//android.widget.TextView[contains(@resource-id, 'textinput_error')]
+
+${returnReasonPreferredOutcomeSelector}    id=${APP_PACKAGE}:id/returns_reason_preferred_outcome
+${returnReasonPreferredOutcomeErrorMessage}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_reason_preferred_outcome')]//android.widget.TextView[contains(@resource-id, 'textinput_error')]
+
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption

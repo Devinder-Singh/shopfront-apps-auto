@@ -182,3 +182,41 @@ Scroll To First Non Returnable Reason
         Swipe Up    ${containerReturnsHOrderDetail}
         ${index}=    Evaluate    ${index} + 1
     END
+
+Verify Return Reason Reason Selector Visible
+    Wait Until Element Is Visible    ${returnReasonReasonSelector}    30s
+
+Verify Return Reason Reason Selector Text
+    [Arguments]    ${expectedText}
+    Element Text Should Be    ${returnReasonReasonSelectorText}    ${expectedText}
+
+Verify Return Reason Reason Selector Error Message
+    Wait Until Element Is Visible    ${returnReasonReasonSelectorErrorText}    30s
+    Element Text Should Be    ${returnReasonReasonSelectorErrorText}    Please select a reason for return
+
+Click Return Reason Reason Selector
+    Click Element    ${returnReasonReasonSelector}
+
+Click Return Reason Reason Non-Exchange Item
+    Click Element    ${returnReasonReasonItemNonExchange}
+
+Scroll To Return Reason Text Area
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    20
+        ${isTextAreaVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${returnReasonTextArea}
+        Run Keyword If    ${isTextAreaVisible}==True    Exit For Loop
+        
+        Swipe Up    ${containerReturnsReason}
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+Verify Return Reason Text Area Error Message
+    Wait Until Element Is Visible    ${returnReasonTextArea}    30s
+    Element Text Should Be    ${returnReasonTextAreaErrorMessage}    Please describe the problem
+
+Verify Return Reason Preferred Outcome Visible
+    Wait Until Element Is Visible    ${returnReasonPreferredOutcomeSelector}    30s
+
+Verify Return Reason Preferred Outcome Error Message
+    Wait Until Element Is Visible    ${returnReasonPreferredOutcomeSelector}    30s
+    Element Text Should Be    ${returnReasonPreferredOutcomeErrorMessage}    Please select a preferred outcome

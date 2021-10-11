@@ -107,3 +107,44 @@ Apps > SS Returns > Request a Return > Select Return Item > QA-5430
     Click Back Screen
     Verify Toolbar Title    Select Order to Return Items
     [Teardown]    Tear Down
+
+Apps > SS Returns > Return Reason > Form Validation > QA-8339
+    [Tags]    data    QA-5430
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Verify Returns Order History Item Visible
+    Click Returns Order History Item
+    Click Returns Order Detail Returnable Item
+    Verify Toolbar Title    Return Reason
+    Click Returns Call To Action Button
+    Verify Return Reason Reason Selector Visible
+    Verify Return Reason Reason Selector Error Message
+    Click Return Reason Reason Selector
+    Verify Toolbar Title    Reason for Return
+    Click Return Reason Reason Non-Exchange Item
+    Verify Toolbar Title    Return Reason
+    Click Returns Call To Action Button
+    Scroll To Return Reason Text Area
+    Verify Return Reason Text Area Error Message
+    Click Returns Call To Action Button
+    Verify Return Reason Preferred Outcome Visible
+    Verify Return Reason Preferred Outcome Error Message
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Verify Returns Order History Item Visible
+    Click Returns Order History Item
+    Click Returns Order Detail Returnable Item
+    [Teardown]    Tear Down
