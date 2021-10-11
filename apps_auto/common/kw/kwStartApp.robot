@@ -20,8 +20,8 @@ Install Application
     [Arguments]    ${autoAlert}=${True}
 
     &{cap}=    Get Capabilities    ${True}    ${autoAlert}
-    Log Many    &{cap}
-    Open Application    ${REMOTE_URL}    &{cap}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Log Many    &{cap}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Open Application    ${REMOTE_URL}    &{cap}
 
 Install Application Master
 #    ${APP_PATH}=    Set Variable    /Users/jenkins/qa_build_master/apk_files/master/debug-3.3.0.apk

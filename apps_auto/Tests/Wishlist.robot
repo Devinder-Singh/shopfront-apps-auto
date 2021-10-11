@@ -678,3 +678,137 @@ Apps > Wishlist > My Lists > Trending Now Widgets - QA-8954
     Verify Text On Screen    Trending on Takealot    30s
     Verify Text On Screen    This list is empty    30s
     [Teardown]    Tear Down
+
+Apps > Wishlist > My Lists > List Component - QA-8952
+    [Tags]    QA-8952
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Home WishList Only
+    Verify Text On Screen    DEFAULT    30s
+    Verify Text On Screen    Wish List    30s
+    Verify Text On Screen    1 item    30s
+    Navigate to Wishlist
+    Verify Text On Screen    ${query_result_CartProduct}    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Product Card - QA-5373
+    [Tags]    QA-5373
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Home WishList
+    Verify Text On Screen    ${query_result_CartProduct}    30s
+    Verify Text On Screen    ${query_result_CartProductPrice}    2s
+    Verify Text On Screen    Ships in 5 - 7 work days    2s
+    Click Wishlist Add To Cart
+    Verify Text On Screen    ${query_result_CartProduct}    2s
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    book
+    Click Product from API
+    Get Product Author from PLID
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Click Wishlist
+    Verify Text On Screen    ${query_result_CartProduct}    30s
+    Verify Text On Screen    ${query_result_CartProductAuthor}    2s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Delete List > Tablet - QA-5384
+    [Tags]    QA-5384
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Verify Text On Screen    List Created    20s
+    Navigate to Wishlist Auto
+    Click More Options Menu Android
+    Verify Text On Screen Android    Delete List    1s
+    Click Delete Wishlist
+    Verify Text On Screen    Wish List    20s
+    [Teardown]    Tear Down
+
+Apps > Cart > Promotions > Missed Promotions - QA-5311
+    [Tags]    QA-5311
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Accessible File
+    Click Product From Title    Treeline Accessible Files Pink Foolscap - Pack of 4
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    Missed promotion    30s
+    Click Missed Promotion Text
+    Click Shop The Deal
+    Click Product From Title    Parrot Products Eraser Whiteboard (95*50mm 12 Peel Off Layers)
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    2 FOR R    30s
+    Close Application
+    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Blower Cordless
+    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    Missed promotion    30s
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Blower Cordless
+    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
+    Click Add Bundle To Cart
+    Click Go To Cart
+    Wait for Checkout
+    Check Text On Screen Not    Missed promotion
+    [Teardown]    Tear Down
+
+Apps > Cart > Promotions > Promotion Low Stock - QA-5312
+    [Tags]    QA-5312
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu Daily Deals
+    Verify Text On Screen Scroll    left    1s    ${windowScroll}    ${btnProductSearchFilter}
+    Click Left Product from API
+    Verify Text On Screen    LEFT AT    30s
+    [Teardown]    Tear Down

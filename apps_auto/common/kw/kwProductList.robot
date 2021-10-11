@@ -66,6 +66,23 @@ Click In Stock Product from API
     Click Element    ${lblPLPInStock}
     Click Close Ad
 
+Click Left Product from API
+#    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnProductLeft}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==True
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${btnProductLeft}
+    Click Close Ad
+
 Click Leadtime Product from API
     ${txtProduct}=    Get Leadtime Product to Add To Cart
 

@@ -5,71 +5,48 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Wishlist > My Lists > List Component - QA-8952
-    [Tags]    QA-8952
+Apps > Cart > Empty Cart - QA-5308
+    [Tags]    QA-5308
     [Setup]    Start Application
     Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Search Product    Accessible File
+    Click Product From Title    Treeline Accessible Files Pink Foolscap - Pack of 4
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    Missed promotion    30s
+    Click Missed Promotion Text
+    Click Shop The Deal
+    Click Product From Title    Parrot Products Eraser Whiteboard (95*50mm 12 Peel Off Layers)
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    2 FOR R    30s
     Close Application
     Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    Pen
-    Click Product from API
-    Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Search Product    Blower Cordless
+    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    Missed promotion    30s
     Close Application
     Start Application
+    Clear Environment
     Click Home
     Click Search Home
-    Search Product    Toothpaste
-    Click Product from API
-    Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
-    Close Application
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    Humidifier
-    Click Product from API
-    Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
-    Close Application
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    Camera
-    Click Product from API
-    Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
-    Close Application
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    Torch
-    Click Product from API
-    Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
-    Close Application
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    Lighter
-    Click Product from API
-    Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
-    Close Application
-    Start Application
-    Click Home
-    Click Home WishList
-
+    Search Product    Blower Cordless
+    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
+    Click Add Bundle To Cart
+    Click Go To Cart
+    Wait for Checkout
+    Check Text On Screen Not    Missed promotion
     [Teardown]    Tear Down
 
 #Register User

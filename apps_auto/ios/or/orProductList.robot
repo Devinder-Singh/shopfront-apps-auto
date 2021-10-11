@@ -27,3 +27,5 @@ ${btnProductWLSave}      chain=**/XCUIElementTypeButton[`label == "Save"`]
 
 ${lblTermsCond}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "This is our List Price. Find out what this means in our T&C"`]
 ${lblPLPInStock}      chain=**/XCUIElementTypeStaticText[`label == "In stock"`][1]
+
+${btnProductLeft}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "left"`]
