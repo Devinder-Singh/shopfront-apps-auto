@@ -6,6 +6,10 @@ Click Item Promotion Text
     Wait Until Element Is Visible    ${btnItemPromotion}    30s
     Click Element    ${btnItemPromotion}
 
+Click Missed Promotion Text
+    Wait Until Element Is Visible    ${lblCheckoutMissedPromotion}    30s
+    Click Element    ${lblCheckoutMissedPromotion}
+
 Click Checkout
     Wait Until Element Is Visible    ${btnCheckout}    30s
     Click Element    ${btnCheckout}

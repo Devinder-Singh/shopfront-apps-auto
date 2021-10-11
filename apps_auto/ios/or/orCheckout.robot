@@ -16,3 +16,5 @@ ${btnCartContinueShopping}      ${EMPTY}
 
 ${btnCartQtyRoot}    chain=**/XCUIElementTypeNavigationBar[`name == "Shopping Cart"`]
 ${btnCartAddPromoItems}    chain=**/XCUIElementTypeButton[`label == "Add 1 item to qualify"`]
+
+${lblCheckoutMissedPromotion}      chain=**/XCUIElementTypeStaticText[`label == "ADD 1 ITEM TO QUALIFY"`]
