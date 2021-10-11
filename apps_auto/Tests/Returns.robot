@@ -71,3 +71,39 @@ Apps > SS Returns > Request a Return > Select Order > QA-5429
     Click Back Screen
     Verify Toolbar Title    Returns
     [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Select Return Item > QA-5430
+    [Tags]    data    QA-5430
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Verify Returns Order History Item Visible
+    Click Returns Order History Item
+    Verify Toolbar Title    Select Return Item
+    Verify Returns Order Detail Returnable Section
+    Verify Returns Order Detail Non-Returnable Section
+    Verify Returns Order Detail Item Image
+    Verify Returns Order Detail Item Title
+    Verify Returns Order Detail Item Price And Qty
+    Verify Returns Order Detail Item Warranty Title
+    Verify Returns Order Detail Item Warranty Subtitle
+    Click Returns Order Detail Item Warranty Title
+    Verify Returns Order Detail Item Warranty Dialog Title
+    Verify Returns Order Detail Item Warranty Dialog Message
+    Verify Returns Order Detail Item Warranty Dialog Button
+    Close Returns Order Detail Item Warranty Dialog
+    Click Returns Order Detail Returnable Item
+    Verify Toolbar Title    Return Reason
+    Click Back Screen
+    Verify Toolbar Title    Select Return Item
+    Scroll To First Non Returnable Reason
+    Click Returns Order Detail Non Returnable Item
+    Verify Toolbar Title    Select Return Item
+    Click Back Screen
+    Verify Toolbar Title    Select Order to Return Items
+    [Teardown]    Tear Down

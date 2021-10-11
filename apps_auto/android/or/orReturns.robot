@@ -18,4 +18,24 @@ ${cardReturnsOrderHistoryItemTitle}    xpath=//android.widget.LinearLayout[conta
 ${cardReturnsOrderHistoryItemSubtitle}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]//android.widget.TextView[contains(@resource-id, 'returns_order_history_item_subtitle')]
 ${cardReturnsOrderHistoryItemImageContainer}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_image_container')]
 
+${returnOrderDetailReturnableSectionTitle}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'product_consignment_container')]//android.widget.TextView[contains(@text, 'Returnable Items')]
+${returnOrderDetailNonReturnableSectionTitle}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'product_consignment_container')]//android.widget.TextView[contains(@text, 'Non-Returnable Items')]
+
+${cardReturnsOrderDetailItemImage}    xpath=//android.widget.ImageView[contains(@content-desc, 'Product')]
+${cardReturnsOrderDetailItemTitle}    xpath=//android.widget.TextView[contains(@resource-id, 'widgetProductConsignmentItemTitle')]
+${cardReturnsOrderDetailItemPriceAndQty}    xpath=//android.widget.TextView[contains(@resource-id, 'widgetProductConsignmentItemPriceAndQuantity')]
+${cardReturnsOrderDetailItemWarrantyTitle}    xpath=//android.widget.TextView[contains(@resource-id, 'widgetProductConsignmentItemWarrantyTitle')]
+${cardReturnsOrderDetailItemWarrantySubtitle}    xpath=//android.widget.TextView[contains(@resource-id, 'widgetProductConsignmentItemWarrantyDescription')]
+
+${cardReturnsOrderDetailReturnableItem}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Returnable Item')]
+${cardReturnsOrderDetailNonReturnableItem}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Non Returnable Item')]
+
+${cardReturnsOrderDetailItemNonReturnableReasonTitle}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Non Returnable Item')]//android.widget.TextView[contains(@resource-id, 'error_message_content')]
+
+${returnsOrderDetailWarrantyDialogTitle}    id=${APP_PACKAGE}:id/alertTitle
+${returnsOrderDetailWarrantyDialogMessage}    id=android:id/message
+${returnsOrderDetailWarrantyDialogButton}    id=android:id/button1
+
+${containerReturnsHOrderDetail}    id=${APP_PACKAGE}:id/product_consignment_container
+
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption

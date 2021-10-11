@@ -112,4 +112,73 @@ Verify Returns Order History Item Image Container
     Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemImageContainer}    30s
 
 Click Returns Order History Item
+    Sleep    5s
     Click Element    ${cardReturnsOrderHistoryItem}
+
+Verify Returns Order Detail Returnable Section
+    Wait Until Element Is Visible    ${returnOrderDetailReturnableSectionTitle}    30s
+
+Verify Returns Order Detail Non-Returnable Section
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    20
+        ${isNonReturnableSectionVisisble}=    Run Keyword And Return Status    Element Should Be Visible    ${returnOrderDetailNonReturnableSectionTitle}
+        Run Keyword If    ${isNonReturnableSectionVisisble}==True    Exit For Loop
+        
+        Swipe Up    ${containerReturnsHOrderDetail}
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+Verify Returns Order Detail Item Image
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    30s
+
+Verify Returns Order Detail Item Title
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemTitle}    30s
+
+Verify Returns Order Detail Item Price And Qty
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemPriceAndQty}    30s
+    Element Should Contain Text    ${cardReturnsOrderDetailItemPriceAndQty}    R
+    Element Should Contain Text    ${cardReturnsOrderDetailItemPriceAndQty}    Qty
+
+Verify Returns Order Detail Item Warranty Title
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWarrantyTitle}    30s
+    ${hasValidWarranty}=    Run Keyword And Return Status    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantyTitle}    Warranty
+    Run Keyword And Return If    ${hasValidWarranty}==False    Element Should Contain Text   ${cardReturnsOrderDetailItemWarrantyTitle}    Non-Returnable 
+
+Verify Returns Order Detail Item Warranty Subtitle
+    ${hasValidWarranty}=    Run Keyword And Return Status    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantyTitle}    Warranty
+    Run Keyword And Return If    ${hasValidWarranty}==True    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWarrantySubtitle}    30s
+    Run Keyword And Return If    ${hasValidWarranty}==True    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantySubtitle}    Warranty Expires
+
+Click Returns Order Detail Item Warranty Title
+    Click Element    ${cardReturnsOrderDetailItemWarrantyTitle} 
+
+Verify Returns Order Detail Item Warranty Dialog Title
+    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogTitle}    30s
+    Element Should Contain Text    ${returnsOrderDetailWarrantyDialogTitle}    Limited Warranty
+
+Verify Returns Order Detail Item Warranty Dialog Message
+    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogMessage}    30s
+    Element Should Contain Text    ${returnsOrderDetailWarrantyDialogMessage}    Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details.
+
+Verify Returns Order Detail Item Warranty Dialog Button
+    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogButton}    30s
+    Element Should Contain Text    ${returnsOrderDetailWarrantyDialogButton}    OK
+
+Close Returns Order Detail Item Warranty Dialog
+    Click Element    ${returnsOrderDetailWarrantyDialogButton}
+
+Click Returns Order Detail Returnable Item
+    Click Element    ${cardReturnsOrderDetailReturnableItem}
+
+Click Returns Order Detail Non Returnable Item
+    Click Element    ${cardReturnsOrderDetailNonReturnableItem}
+
+Scroll To First Non Returnable Reason
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    20
+        ${isNonReturnableReasonVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${cardReturnsOrderDetailItemNonReturnableReasonTitle}
+        Run Keyword If    ${isNonReturnableReasonVisible}==True    Exit For Loop
+        
+        Swipe Up    ${containerReturnsHOrderDetail}
+        ${index}=    Evaluate    ${index} + 1
+    END
