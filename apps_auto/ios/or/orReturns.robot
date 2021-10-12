@@ -38,4 +38,18 @@ ${returnsOrderDetailWarrantyDialogButton}    ${EMPTY}
 
 ${containerReturnsHOrderDetail}    ${EMPTY}
 
+${containerReturnsReason}    ${EMPTY}
+
+${returnReasonReasonSelector}    ${EMPTY}
+${returnReasonReasonSelectorText}    ${EMPTY}
+${returnReasonReasonSelectorErrorText}    ${EMPTY}
+${returnReasonReasonItemNonExchange}    ${EMPTY}
+
+${returnReasonTextArea}    ${EMPTY}
+${returnReasonTextAreaText}    ${EMPTY}
+${returnReasonTextAreaErrorMessage}    ${EMPTY}
+
+${returnReasonPreferredOutcomeSelector}    ${EMPTY}
+${returnReasonPreferredOutcomeErrorMessage}    ${EMPTY}
+
 ${btnReturnsCallToAction}    ${EMPTY}

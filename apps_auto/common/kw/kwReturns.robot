@@ -11,17 +11,7 @@ Verify Returns Screen header
     Verify Toolbar Title    Returns
 
 Verify Returns Empty State Visible
-    ${index}=    Set Variable    0
-    
-    FOR    ${index}    IN RANGE    10
-        ${isEmptyStateVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${containerReturnsEmptyState}
-        Run Keyword If    ${isEmptyStateVisible}==True    Exit For Loop
-
-        Swipe Up    ${containerReturnsHistory}
-        Sleep    1s
-        
-        ${index}=    Evaluate    ${index} + 1
-    END
+    Scroll To Element In Container    ${containerReturnsEmptyState}    ${containerReturnsHistory}    10
 
 Verify Returns Empty State Step Visible
     [Arguments]    ${stepTitle}    ${stepSubtitle}
@@ -52,14 +42,7 @@ Verify Returns Call To Action Title
     Element Text Should Be    ${btnReturnsCallToAction}    ${expectedTitle}
 
 Scoll To Returns History Policy
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    20
-        ${isPolicyVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${cardReturnsHistoryPolicyItem}
-        Run Keyword If    ${isPolicyVisible}==True    Exit For Loop
-        
-        Swipe Up    ${containerReturnsHistory}
-        ${index}=    Evaluate    ${index} + 1
-    END
+    Scroll To Element In Container    ${cardReturnsHistoryPolicyItem}    ${containerReturnsHistory}    20
 
 Verify Returns History Policy Title
     [Arguments]    ${expectedTitle}
@@ -119,14 +102,7 @@ Verify Returns Order Detail Returnable Section
     Wait Until Element Is Visible    ${returnOrderDetailReturnableSectionTitle}    30s
 
 Verify Returns Order Detail Non-Returnable Section
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    20
-        ${isNonReturnableSectionVisisble}=    Run Keyword And Return Status    Element Should Be Visible    ${returnOrderDetailNonReturnableSectionTitle}
-        Run Keyword If    ${isNonReturnableSectionVisisble}==True    Exit For Loop
-        
-        Swipe Up    ${containerReturnsHOrderDetail}
-        ${index}=    Evaluate    ${index} + 1
-    END
+    Scroll To Element In Container    ${returnOrderDetailNonReturnableSectionTitle}    ${containerReturnsHOrderDetail}    20
 
 Verify Returns Order Detail Item Image
     Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    30s
@@ -174,14 +150,7 @@ Click Returns Order Detail Non Returnable Item
     Click Element    ${cardReturnsOrderDetailNonReturnableItem}
 
 Scroll To First Non Returnable Reason
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    20
-        ${isNonReturnableReasonVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${cardReturnsOrderDetailItemNonReturnableReasonTitle}
-        Run Keyword If    ${isNonReturnableReasonVisible}==True    Exit For Loop
-        
-        Swipe Up    ${containerReturnsHOrderDetail}
-        ${index}=    Evaluate    ${index} + 1
-    END
+    Scroll To Element In Container    ${cardReturnsOrderDetailItemNonReturnableReasonTitle}    ${containerReturnsHOrderDetail}    20
 
 Verify Return Reason Reason Selector Visible
     Wait Until Element Is Visible    ${returnReasonReasonSelector}    30s
@@ -195,20 +164,15 @@ Verify Return Reason Reason Selector Error Message
     Element Text Should Be    ${returnReasonReasonSelectorErrorText}    Please select a reason for return
 
 Click Return Reason Reason Selector
+    Wait Until Element Is Visible    ${returnReasonReasonSelector}    30s
     Click Element    ${returnReasonReasonSelector}
 
 Click Return Reason Reason Non-Exchange Item
+    Wait Until Element Is Visible    ${returnReasonReasonItemNonExchange}    30s
     Click Element    ${returnReasonReasonItemNonExchange}
 
 Scroll To Return Reason Text Area
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    20
-        ${isTextAreaVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${returnReasonTextArea}
-        Run Keyword If    ${isTextAreaVisible}==True    Exit For Loop
-        
-        Swipe Up    ${containerReturnsReason}
-        ${index}=    Evaluate    ${index} + 1
-    END
+    Scroll To Element In Container    ${returnReasonTextArea}   ${containerReturnsReason}    20
 
 Verify Return Reason Text Area Error Message
     Wait Until Element Is Visible    ${returnReasonTextArea}    30s
@@ -220,3 +184,111 @@ Verify Return Reason Preferred Outcome Visible
 Verify Return Reason Preferred Outcome Error Message
     Wait Until Element Is Visible    ${returnReasonPreferredOutcomeSelector}    30s
     Element Text Should Be    ${returnReasonPreferredOutcomeErrorMessage}    Please select a preferred outcome
+
+Click Returns Order History Item With Multiple Quantity
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemWithMutlipleQuantity}    30s
+    Click Element    ${cardReturnsOrderHistoryItemWithMutlipleQuantity}
+
+Scroll To Returns Order Detail Item With Multiple Quantity
+    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithMultipleQuantity}    ${containerReturnsHOrderDetail}    20
+
+Click Returns Order Detail Item With Multiple Quantity
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWithMultipleQuantity}    30s
+    Click Element    ${cardReturnsOrderDetailItemWithMultipleQuantity}
+
+Verify Returns Reason Quantity Visible
+    Wait Until Element Is Visible    ${returnReasonQuantitySelector}    30s
+
+Verify Returns Reason Quantity Error Message
+    Wait Until Element Is Visible    ${returnReasonQuantitySelector}    30s
+    Element Text Should Be    ${returnReasonQuantityErrorMessage}    Please select a quantity to return
+
+Scroll To Returns Order History Item With Variant Size
+    Scroll To Element In Container    ${cardReturnsOrderHistoryItemWithSizeVariantOption}    ${containerReturnsOrderHistory}    20
+
+Click Returns Order History Item With Variant Size
+    Click Element    ${cardReturnsOrderHistoryItemWithSizeVariantOption}
+
+Scroll To Returns Order Detail Item With Variant Size
+    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithVariantSize}    ${containerReturnsHOrderDetail}    20
+
+Click Returns Order Detail Item With Variant Size
+    Click Element    ${cardReturnsOrderDetailItemWithVariantSize}
+
+Click Returns Reason Reason Item Exchange
+    Click Element    ${returnReasonReasonItemExchange}
+
+Scroll To Returns Reason Variant Size Error Message
+    Scroll To Element In Container    ${returnReasonVariantSizeSelectorErrorMessage}   ${containerReturnsReason}    20
+
+Verify Returns Reason Variant Size Error Message
+    Element Text Should Be    ${returnReasonVariantSizeSelectorErrorMessage}    Please select a size
+
+Scroll To Returns Order History Item With Variant Colour
+    Sleep    5s
+    Scroll To Element In Container    ${cardReturnsOrderHistoryItemWithColourVariantOption}    ${containerReturnsOrderHistory}    20
+
+Click Returns Order History Item With Variant Colour
+    Click Element    ${cardReturnsOrderHistoryItemWithColourVariantOption}
+
+Scroll To Returns Order Detail Item With Variant Colour
+    Sleep    5s
+    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithVariantColour}    ${containerReturnsHOrderDetail}    20
+
+Click Returns Order Detail Item With Variant Colour
+    Click Element    ${cardReturnsOrderDetailItemWithVariantColour}
+
+Scroll To Returns Reason Variant Colour Error Message
+    Scroll To Element In Container    ${returnReasonVariantColourSelectorErrorMessage}   ${containerReturnsReason}    20
+
+Verify Returns Reason Variant Colour Error Message
+    Element Text Should Be    ${returnReasonVariantColourSelectorErrorMessage}    Please select a colour
+
+Scroll To Return Reason Preferred Outcome Selector
+    Scroll To Element In Container    ${returnReasonPreferredOutcomeSelector}   ${containerReturnsReason}    20
+
+Click Return Reason Preferred Outcome Selector
+    Click Element    ${returnReasonPreferredOutcomeSelector}
+
+Click Return Reason Preferred Outcome Item
+    Click Element    ${returnReasonPreferredOutcomeItem}
+
+Input Return Reason Text Area Text
+    [Arguments]    ${inputText}
+
+    Input Text    ${returnReasonTextAreaText}    ${inputText}
+
+Verify Returns Request Cart Header
+    Wait Until Element Is Visible    ${returnRequestReturnItemsHeader}    30s
+
+Verify Returns Request Item Image
+    Wait Until Element Is Visible    ${cardReturnsRequestItemImage}    30s
+
+Verify Returns Request Item Title
+    [Arguments]    ${expectedTitle}
+    Wait Until Element Is Visible    ${cardReturnsRequestItemTitle}    30s
+    Element Should Contain Text    ${cardReturnsRequestItemTitle}    ${expectedTitle}
+
+Verify Returns Request Item Price And Qty
+    Wait Until Element Is Visible    ${cardReturnsRequestItemPriceAndQty}    30s
+    Element Should Contain Text    ${cardReturnsRequestItemPriceAndQty}    R
+    Element Should Contain Text    ${cardReturnsRequestItemPriceAndQty}    Return Qty:
+
+Verify Returns Request Item Reason Title
+    Wait Until Element Is Visible    ${cardReturnsRequestItemReasonTitle}    30s
+    Element Should Contain Text    ${cardReturnsRequestItemReasonTitle}    Reason for Return:
+
+Verify Returns Request Item Preferred Outcome Title
+    Wait Until Element Is Visible    ${cardReturnsRequestItemPreferredOutcomeTitle}    30s
+    Element Should Contain Text    ${cardReturnsRequestItemPreferredOutcomeTitle}    Preferred Outcome:
+
+Swipe Returns Request Item For Delete
+    ${cardItemSize}=    Get Element Size    ${cardReturnsRequestItem}
+    ${cardItemLocation}=    Get Element Location    ${cardReturnsRequestItem}
+    ${startPositionX}=    Evaluate    ${cardItemLocation['x']} + (${cardItemSize['width']} * 0.5)
+    ${startPositionY}=    Evaluate    ${cardItemLocation['y']} + 0
+    ${endPositionX}=    Evaluate    ${startPositionX} - (${cardItemSize['width']} * 0.5)
+    ${endPositionY}=    Evaluate    ${cardItemLocation['y']} + 0
+
+    Swipe    ${startPositionX}    ${startPositionY}    ${endPositionX}    ${endPositionY}
+    Sleep    5s

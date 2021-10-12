@@ -108,8 +108,8 @@ Apps > SS Returns > Request a Return > Select Return Item > QA-5430
     Verify Toolbar Title    Select Order to Return Items
     [Teardown]    Tear Down
 
-Apps > SS Returns > Return Reason > Form Validation > QA-8339
-    [Tags]    data    QA-5430
+Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Steps 1,2 and 3
+    [Tags]    data    QA-8339_Steps_1_2_3
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -135,8 +135,11 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339
     Click Returns Call To Action Button
     Verify Return Reason Preferred Outcome Visible
     Verify Return Reason Preferred Outcome Error Message
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 4
+    [Tags]    data    QA-8339_Step_4
+    [Setup]    Start Application
     Click Menu
     Click Menu Login
     Login Takealot    dev+431155@take2.co.za    test
@@ -145,6 +148,85 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339
     Click Menu Exchanges And Returns
     Click Returns Call To Action Button
     Verify Returns Order History Item Visible
+    Click Returns Order History Item With Multiple Quantity
+    Scroll To Returns Order Detail Item With Multiple Quantity
+    Click Returns Order Detail Item With Multiple Quantity
+    Verify Toolbar Title    Return Reason
+    Click Returns Call To Action Button
+    Verify Returns Reason Quantity Visible
+    Verify Returns Reason Quantity Error Message
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 5
+    [Tags]    data    QA-8339_Step_5
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+7165882@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Verify Returns Order History Item Visible
+    Scroll To Returns Order History Item With Variant Size
+    Click Returns Order History Item With Variant Size
+    Scroll To Returns Order Detail Item With Variant Size
+    Click Returns Order Detail Item With Variant Size
+    Click Return Reason Reason Selector
+    Click Returns Reason Reason Item Exchange
+    Click Returns Call To Action Button
+    Scroll To Returns Reason Variant Size Error Message
+    Verify Returns Reason Variant Size Error Message
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 6
+    [Tags]    data    QA-8339_Step_6
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+3741820@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Verify Returns Order History Item Visible
+    Scroll To Returns Order History Item With Variant Colour
+    Click Returns Order History Item With Variant Colour
+    Scroll To Returns Order Detail Item With Variant Colour
+    Click Returns Order Detail Item With Variant Colour
+    Click Return Reason Reason Selector
+    Click Returns Reason Reason Item Exchange
+    Click Returns Call To Action Button
+    Scroll To Returns Reason Variant Colour Error Message
+    Verify Returns Reason Variant Colour Error Message
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Log Return Request > QA-5432
+    [Tags]    data    QA-5432
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
     Click Returns Order History Item
     Click Returns Order Detail Returnable Item
+    Click Return Reason Reason Selector
+    Click Return Reason Reason Non-Exchange Item
+    Scroll To Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Item
+    Scroll To Return Reason Text Area
+    Input Return Reason Text Area Text    Test Description
+    Click Returns Call To Action Button
+    Verify Toolbar Title    Log Return Request
+    Verify Returns Request Cart Header
+    Verify Returns Request Item Image
+    Verify Returns Request Item Title    Stealth Gaming Headset & Stand Bundle - Referee Edition
+    Verify Returns Request Item Price And Qty
+    Verify Returns Request Item Reason Title
+    Verify Returns Request Item Preferred Outcome Title
+    Swipe Returns Request Item For Delete
     [Teardown]    Tear Down

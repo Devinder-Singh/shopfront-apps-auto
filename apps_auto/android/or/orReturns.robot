@@ -13,10 +13,16 @@ ${cardReturnsHistoryPolicyItem}    xpath=//androidx.recyclerview.widget.Recycler
 ${returnsOrderHistoryFilterOptionContainer}    id=${APP_PACKAGE}:id/orderHistoryParentFilterOption
 ${btnReturnsOrderHistoryFilterOptionChange}    id=${APP_PACKAGE}:id/filter_option_button
 
+${containerReturnsOrderHistory}    id=${APP_PACKAGE}:id/orderHistoryParentContainer
+
 ${cardReturnsOrderHistoryItem}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]
 ${cardReturnsOrderHistoryItemTitle}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]//android.widget.TextView[contains(@resource-id, 'returns_order_history_item_title')]
 ${cardReturnsOrderHistoryItemSubtitle}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]//android.widget.TextView[contains(@resource-id, 'returns_order_history_item_subtitle')]
 ${cardReturnsOrderHistoryItemImageContainer}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_container_root')]//android.widget.LinearLayout[contains(@resource-id, 'returns_order_history_item_image_container')]
+
+${cardReturnsOrderHistoryItemWithMutlipleQuantity}    xpath=//*[contains(@text, 'Order #91818963')]
+${cardReturnsOrderHistoryItemWithSizeVariantOption}    xpath=//*[contains(@text, 'Order #92998356')]
+${cardReturnsOrderHistoryItemWithColourVariantOption}    xpath=//*[contains(@text, 'Order #94155963')]
 
 ${returnOrderDetailReturnableSectionTitle}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'product_consignment_container')]//android.widget.TextView[contains(@text, 'Returnable Items')]
 ${returnOrderDetailNonReturnableSectionTitle}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'product_consignment_container')]//android.widget.TextView[contains(@text, 'Non-Returnable Items')]
@@ -26,6 +32,10 @@ ${cardReturnsOrderDetailItemTitle}    xpath=//android.widget.TextView[contains(@
 ${cardReturnsOrderDetailItemPriceAndQty}    xpath=//android.widget.TextView[contains(@resource-id, 'widgetProductConsignmentItemPriceAndQuantity')]
 ${cardReturnsOrderDetailItemWarrantyTitle}    xpath=//android.widget.TextView[contains(@resource-id, 'widgetProductConsignmentItemWarrantyTitle')]
 ${cardReturnsOrderDetailItemWarrantySubtitle}    xpath=//android.widget.TextView[contains(@resource-id, 'widgetProductConsignmentItemWarrantyDescription')]
+
+${cardReturnsOrderDetailItemWithMultipleQuantity}    xpath=//*[contains(@text, 'Pokemon Sword & Shield 4: Vivid Voltage - Booster')]
+${cardReturnsOrderDetailItemWithVariantSize}    xpath=//*[contains(@text, "Nike Women's Miler Long Sleeve Running Top - Black - S")]
+${cardReturnsOrderDetailItemWithVariantColour}    xpath=//*[contains(@text, "Nike Hyperfuel 500ml Water Bottle - Black/White")]
 
 ${cardReturnsOrderDetailReturnableItem}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Returnable Item')]
 ${cardReturnsOrderDetailNonReturnableItem}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Non Returnable Item')]
@@ -44,6 +54,7 @@ ${returnReasonReasonSelector}    id=${APP_PACKAGE}:id/returns_reason_reason_sele
 ${returnReasonReasonSelectorText}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_reason_reason_selector')]//android.widget.EditText[contains(@resource-id, 'optionSelectorTitleEditText')]
 ${returnReasonReasonSelectorErrorText}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_reason_reason_selector')]//android.widget.TextView[contains(@resource-id, 'textinput_error')]
 ${returnReasonReasonItemNonExchange}    id=${APP_PACKAGE}:id/talWidgetSingleSelectItemRadioButton
+${returnReasonReasonItemExchange}    xpath=//*[contains(@text, 'I want to exchange it for different size/colour')]
 
 ${returnReasonTextArea}    id=${APP_PACKAGE}:id/returns_reason_text_area
 ${returnReasonTextAreaText}    xpath=//android.view.ViewGroup[contains(@resource-id, 'returns_reason_text_area')]//android.widget.EditText
@@ -51,5 +62,20 @@ ${returnReasonTextAreaErrorMessage}    xpath=//android.view.ViewGroup[contains(@
 
 ${returnReasonPreferredOutcomeSelector}    id=${APP_PACKAGE}:id/returns_reason_preferred_outcome
 ${returnReasonPreferredOutcomeErrorMessage}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_reason_preferred_outcome')]//android.widget.TextView[contains(@resource-id, 'textinput_error')]
+${returnReasonPreferredOutcomeItem}    id=${APP_PACKAGE}:id/talWidgetSingleSelectItemRadioButton
+
+${returnReasonQuantitySelector}    id=${APP_PACKAGE}:id/returns_reason_quantity_selector
+${returnReasonQuantityErrorMessage}    xpath=//android.widget.LinearLayout[contains(@resource-id, 'returns_reason_quantity_selector')]//android.widget.TextView[contains(@resource-id, 'textinput_error')]
+
+${returnReasonVariantSizeSelectorErrorMessage}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Size')]//android.widget.TextView[contains(@resource-id, 'variantSelectorValidationErrorMessage')]
+${returnReasonVariantColourSelectorErrorMessage}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Colour')]//android.widget.TextView[contains(@resource-id, 'variantSelectorValidationErrorMessage')]
+
+${returnRequestReturnItemsHeader}    xpath=//android.widget.TextView[contains(@text, 'Return Items')]
+${cardReturnsRequestItem}    id=${APP_PACKAGE}:id/returns_request_cart_item_root
+${cardReturnsRequestItemImage}    id=${APP_PACKAGE}:id/returns_request_cart_item_image
+${cardReturnsRequestItemTitle}    id=${APP_PACKAGE}:id/returns_request_cart_item_title
+${cardReturnsRequestItemPriceAndQty}    id=${APP_PACKAGE}:id/returns_request_cart_item_price_quantity
+${cardReturnsRequestItemReasonTitle}    id=${APP_PACKAGE}:id/returns_request_cart_item_reason_for_return
+${cardReturnsRequestItemPreferredOutcomeTitle}    id=${APP_PACKAGE}:id/returns_request_cart_item_preferred_outcome
 
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption

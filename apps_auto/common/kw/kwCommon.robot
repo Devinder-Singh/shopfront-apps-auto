@@ -334,3 +334,16 @@ Click Cancel Screen
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBack}
 
     Sleep    2s
+
+Scroll To Element In Container
+    [Arguments]    ${elementLocator}    ${scrollContainerLocator}    ${retryCount}
+    ${index}=    Set Variable    0
+    
+    FOR    ${index}    IN RANGE    ${retryCount}
+        ${isElementVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${elementLocator}
+        Run Keyword If    ${isElementVisible}==True    Exit For Loop
+
+        Swipe Up    ${scrollContainerLocator}
+        ${index}=    Evaluate    ${index} + 1
+    END
+
