@@ -5,48 +5,23 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Cart > Empty Cart - QA-5308
-    [Tags]    QA-5308
+Apps > Cart > Note Notification - QA-5305
+    [Tags]    QA-5305
     [Setup]    Start Application
-    Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL_Cart}    test2
     Click Home
     Click Search Home
-    Search Product    Accessible File
-    Click Product From Title    Treeline Accessible Files Pink Foolscap - Pack of 4
+    Search Product    Pencil
+    Click Product from API
     Click Add To Cart
-    Click Go To Cart
-    Verify Text On Screen    Missed promotion    30s
-    Click Missed Promotion Text
-    Click Shop The Deal
-    Click Product From Title    Parrot Products Eraser Whiteboard (95*50mm 12 Peel Off Layers)
-    Click Add To Cart
-    Click Go To Cart
-    Verify Text On Screen    2 FOR R    30s
+    Verify Text On Screen    Your shopping cart is full. To make space either purchase the items in your cart now or move some items to your wishlist.    30s
     Close Application
     Start Application
-    Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
-    Click Search Home
-    Search Product    Blower Cordless
-    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
-    Click Add To Cart
-    Click Go To Cart
-    Verify Text On Screen    Missed promotion    30s
-    Close Application
-    Start Application
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    Blower Cordless
-    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
-    Click Add Bundle To Cart
-    Click Go To Cart
-    Wait for Checkout
-    Check Text On Screen Not    Missed promotion
+    Click Home Cart
+    Change Cart Quantity Android    2
+    Click Checkout
     [Teardown]    Tear Down
 
 #Register User
