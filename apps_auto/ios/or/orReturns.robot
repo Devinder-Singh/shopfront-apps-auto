@@ -13,10 +13,16 @@ ${cardReturnsHistoryItemImage}    ${EMPTY}
 ${returnsOrderHistoryFilterOptionContainer}    ${EMPTY}
 ${btnReturnsOrderHistoryFilterOptionChange}    ${EMPTY}
 
+${containerReturnsOrderHistory}    ${EMPTY}
+
 ${cardReturnsOrderHistoryItem}    ${EMPTY}
 ${cardReturnsOrderHistoryItemTitle}    ${EMPTY}
 ${cardReturnsOrderHistoryItemSubtitle}    ${EMPTY}
 ${cardReturnsOrderHistoryItemImageContainer}    ${EMPTY}
+
+${cardReturnsOrderHistoryItemWithMutlipleQuantity}    ${EMPTY}
+${cardReturnsOrderHistoryItemWithSizeVariantOption}    ${EMPTY}
+${cardReturnsOrderHistoryItemWithColourVariantOption}    ${EMPTY}
 
 ${returnOrderDetailReturnableSectionTitle}    ${EMPTY}
 ${returnOrderDetailNonReturnableSectionTitle}    ${EMPTY}
@@ -26,6 +32,10 @@ ${cardReturnsOrderDetailItemTitle}    ${EMPTY}
 ${cardReturnsOrderDetailItemPriceAndQty}    ${EMPTY}
 ${cardReturnsOrderDetailItemWarrantyTitle}    ${EMPTY}
 ${cardReturnsOrderDetailItemWarrantySubtitle}    ${EMPTY}
+
+${cardReturnsOrderDetailItemWithMultipleQuantity}    ${EMPTY}
+${cardReturnsOrderDetailItemWithVariantSize}    ${EMPTY}
+${cardReturnsOrderDetailItemWithVariantColour}    ${EMPTY}
 
 ${cardReturnsOrderDetailReturnableItem}    ${EMPTY}
 ${cardReturnsOrderDetailNonReturnableItem}    ${EMPTY}
@@ -51,5 +61,32 @@ ${returnReasonTextAreaErrorMessage}    ${EMPTY}
 
 ${returnReasonPreferredOutcomeSelector}    ${EMPTY}
 ${returnReasonPreferredOutcomeErrorMessage}    ${EMPTY}
+${returnReasonPreferredOutcomeItem}    ${EMPTY}
+
+${returnReasonQuantitySelector}    ${EMPTY}
+${returnReasonQuantityErrorMessage}    ${EMPTY}
+
+${returnReasonVariantSizeSelectorErrorMessage}    ${EMPTY}
+${returnReasonVariantColourSelectorErrorMessage}    ${EMPTY}
+
+${returnRequestReturnItemsHeader}    ${EMPTY}
+${cardReturnsRequestItem}    ${EMPTY}
+${cardReturnsRequestItemImage}    ${EMPTY}
+${cardReturnsRequestItemTitle}    ${EMPTY}
+${cardReturnsRequestItemPriceAndQty}    ${EMPTY}
+${cardReturnsRequestItemReasonTitle}    ${EMPTY}
+${cardReturnsRequestItemPreferredOutcomeTitle}    ${EMPTY}
+
+${returnsRequestDialogTitle}    ${EMPTY}
+${returnsRequestDialogMessage}    ${EMPTY}
+${returnsRequestDialogNegativeActionButton}    ${EMPTY}
+${returnsRequestDialogPositiveActionButton}    ${EMPTY}
+
+${returnReasonToolbarDeleteIcon}    ${EMPTY}
+
+${returnReasonDialogTitle}    ${EMPTY}
+${returnReasonDialogMessage}    ${EMPTY}
+${returnReasonDialogNegativeActionButton}    ${EMPTY}
+${returnReasonDialogPositiveActionButton}    ${EMPTY}
 
 ${btnReturnsCallToAction}    ${EMPTY}

@@ -292,3 +292,38 @@ Swipe Returns Request Item For Delete
 
     Swipe    ${startPositionX}    ${startPositionY}    ${endPositionX}    ${endPositionY}
     Sleep    5s
+
+Verify Returns Request Dialog
+    [Arguments]    ${expectedTitle}    ${expectedMessage}    ${negativeButton}    ${positiveButton}
+    Element Text Should Be    ${returnsRequestDialogTitle}    ${expectedTitle}
+    Element Text Should Be    ${returnsRequestDialogMessage}    ${expectedMessage}
+    Element Text Should Be    ${returnsRequestDialogNegativeActionButton}     ${negativeButton}
+    Element Text Should Be    ${returnsRequestDialogPositiveActionButton}       ${positiveButton}
+
+Click Returns Request Delete Dialog Keep Option
+    Click Element    ${returnsRequestDialogNegativeActionButton}
+
+Click Returns Request Delete Dialog Remove Option
+    Click Element    ${returnsRequestDialogPositiveActionButton}
+
+Click Returns Request Cart Item
+    Click Element    ${cardReturnsRequestItem}
+
+Verify Return Reason Toolbar Delete Icon
+    Wait Until Element Is Visible    ${returnReasonToolbarDeleteIcon}
+
+Click Return Reason Toolbar Delete Icon
+    Click Element    ${returnReasonToolbarDeleteIcon}
+
+Verify Return Reason Dialog
+    [Arguments]    ${expectedTitle}    ${expectedMessage}    ${negativeButton}    ${positiveButton}
+    Element Text Should Be    ${returnReasonDialogTitle}    ${expectedTitle}
+    Element Text Should Be    ${returnReasonDialogMessage}    ${expectedMessage}
+    Element Text Should Be    ${returnReasonDialogNegativeActionButton}     ${negativeButton}
+    Element Text Should Be    ${returnReasonDialogPositiveActionButton}       ${positiveButton}
+
+Click Return Reason Delete Dialog Keep Option
+    Click Element    ${returnReasonDialogNegativeActionButton}
+
+Click Return Reason Delete Dialog Remove Option
+    Click Element    ${returnReasonDialogPositiveActionButton}

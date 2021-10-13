@@ -229,4 +229,36 @@ Apps > SS Returns > Request a Return > Log Return Request > QA-5432
     Verify Returns Request Item Reason Title
     Verify Returns Request Item Preferred Outcome Title
     Swipe Returns Request Item For Delete
+    Verify Returns Request Dialog    Remove Item    Remove item from return request?    KEEP    REMOVE
+    Click Returns Request Delete Dialog Keep Option
+    Verify Returns Request Item Title    Stealth Gaming Headset & Stand Bundle - Referee Edition
+    Click Returns Request Cart Item
+    Verify Toolbar Title    Return Reason
+    Verify Return Reason Toolbar Delete Icon
+    Click Return Reason Toolbar Delete Icon
+    Verify Return Reason Dialog    Remove Item    Remove item from return request?    KEEP    REMOVE
+    Click Return Reason Delete Dialog Keep Option
+    Verify Returns Call To Action Title    SAVE
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Log Return Request > QA-8407
+    [Tags]    data    QA-8407
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Click Returns Order History Item
+    Click Returns Order Detail Returnable Item
+    Click Return Reason Reason Selector
+    Click Return Reason Reason Non-Exchange Item
+    Scroll To Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Item
+    Scroll To Return Reason Text Area
+    Input Return Reason Text Area Text    Test Description
+    Click Returns Call To Action Button
     [Teardown]    Tear Down

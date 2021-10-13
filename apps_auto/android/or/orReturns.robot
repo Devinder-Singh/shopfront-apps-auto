@@ -78,4 +78,16 @@ ${cardReturnsRequestItemPriceAndQty}    id=${APP_PACKAGE}:id/returns_request_car
 ${cardReturnsRequestItemReasonTitle}    id=${APP_PACKAGE}:id/returns_request_cart_item_reason_for_return
 ${cardReturnsRequestItemPreferredOutcomeTitle}    id=${APP_PACKAGE}:id/returns_request_cart_item_preferred_outcome
 
+${returnsRequestDialogTitle}    id=${APP_PACKAGE}:id/alertTitle
+${returnsRequestDialogMessage}    id=android:id/message
+${returnsRequestDialogNegativeActionButton}    id=android:id/button2
+${returnsRequestDialogPositiveActionButton}    id=android:id/button1
+
+${returnReasonToolbarDeleteIcon}    xpath=//android.widget.TextView[@content-desc="Remove Item"]
+
+${returnReasonDialogTitle}    id=${APP_PACKAGE}:id/alertTitle
+${returnReasonDialogMessage}    id=android:id/message
+${returnReasonDialogNegativeActionButton}    id=android:id/button2
+${returnReasonDialogPositiveActionButton}    id=android:id/button1
+
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption
