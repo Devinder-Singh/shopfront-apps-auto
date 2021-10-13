@@ -17,6 +17,12 @@ Register User
     Click Menu Register
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
     Click Home
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
+    Wait Until Page Contains    Tester Residential    10s
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Credit Card
