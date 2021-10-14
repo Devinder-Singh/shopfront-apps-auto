@@ -310,7 +310,7 @@ Click Returns Request Cart Item
     Click Element    ${cardReturnsRequestItem}
 
 Verify Return Reason Toolbar Delete Icon
-    Wait Until Element Is Visible    ${returnReasonToolbarDeleteIcon}
+    Wait Until Element Is Visible    ${returnReasonToolbarDeleteIcon}    30s
 
 Click Return Reason Toolbar Delete Icon
     Click Element    ${returnReasonToolbarDeleteIcon}
@@ -327,3 +327,86 @@ Click Return Reason Delete Dialog Keep Option
 
 Click Return Reason Delete Dialog Remove Option
     Click Element    ${returnReasonDialogPositiveActionButton}
+
+Click Returns Request Add Another Item
+    Click Element    ${returnRequestAddAnotherItemButton}
+
+Click Returns Order Detail Returnable Item 2
+    Click Element    ${cardReturnsOrderDetailReturnableItem2}
+
+Click Return Select Return Method Address
+    Click Element    ${returnSelectReturnMethodCollect}
+
+Click Return Select Address Item
+    Wait Until Element Is Visible    ${returnSelectAddressItemName}    30s
+    Click Element    ${returnSelectAddressItem}
+    Sleep    10s
+
+Scroll To Return Request Return Method Section
+    Scroll To Element In Container    ${returnRequestReturnMethodHeader}    ${containerReturnRequest}    20
+
+Scroll To Return Request Delivery Method Selector
+    Scroll To Element In Container    ${returnRequestDeliveryMethodSelector}     ${containerReturnRequest}    20
+
+Verify Return Request Delivery Method Selector
+    Element Should Be Visible    ${returnRequestDeliveryMethodSelectorTitle}
+    Element Should Be Visible    ${returnRequestDeliveryMethodSelectorButton}
+    
+    Element Text Should Be    ${returnRequestDeliveryMethodSelectorTitle}    Takealot to collect from my address
+    Element Text Should Be    ${returnRequestDeliveryMethodSelectorButton}    CHANGE
+
+Scroll To Return Request Delivery Method Address
+    Scroll To Element In Container    ${returnRequestDeliveryMethodAddress}     ${containerReturnRequest}    20
+
+Verify Return Request Delivery Method Address Title
+    Element Should Be Visible    ${returnRequestDeliveryMethodAddressTitle}
+    Element Text Should Be    ${returnRequestDeliveryMethodAddressTitle}    Collection Address
+
+Scroll To Return Request Contact Detail Section
+    Scroll To Element In Container    ${returnRequestContactDetailSelector}    ${containerReturnRequest}    20
+
+Verify Return Request Contact Details Section
+    Element Should Be Visible    ${returnRequestContactDetailSelectorTitle}
+    Element Should Be Visible    ${returnRequestContactDetailSelectorButton}
+    
+    Element Text Should Be    ${returnRequestContactDetailSelectorTitle}    SMS notification for this return will be sent to:
+    Element Text Should Be    ${returnRequestContactDetailSelectorButton}    CHANGE
+
+Verify Return Request Loading State Not Visible
+    Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    30s
+
+Scroll To Return Request Cart Item
+    Scroll To Element In Container    ${cardReturnsRequestItem}     ${containerReturnRequest}    20
+
+Verify Return Request Empty State
+    Wait Until Element Is Visible    ${returnRequestEmptyState}    30s
+
+Click Return Request Empty State Call To Action
+    Click Element    ${returnRequestEmptyStateCallToAction}
+
+# Setup Keyword for getting a product in returns request
+Add Return Item to Return Request
+    Click Returns Call To Action Button
+    Click Returns Order History Item
+    Click Returns Order Detail Returnable Item
+    Click Return Reason Reason Selector
+    Click Return Reason Reason Non-Exchange Item
+    Scroll To Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Item
+    Scroll To Return Reason Text Area
+    Input Return Reason Text Area Text    Test Description
+    Click Returns Call To Action Button
+    Verify Toolbar Title    Log Return Request
+    Click Returns Request Add Another Item
+    Verify Toolbar Title    Select Return Item
+    Click Returns Order Detail Returnable Item 2
+    Click Return Reason Reason Selector
+    Click Return Reason Reason Non-Exchange Item
+    Scroll To Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Item
+    Scroll To Return Reason Text Area
+    Input Return Reason Text Area Text    Test Description
+    Click Returns Call To Action Button
+    Verify Return Request Loading State Not Visible

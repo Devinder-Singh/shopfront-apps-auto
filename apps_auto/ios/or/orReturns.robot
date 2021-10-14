@@ -38,6 +38,7 @@ ${cardReturnsOrderDetailItemWithVariantSize}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithVariantColour}    ${EMPTY}
 
 ${cardReturnsOrderDetailReturnableItem}    ${EMPTY}
+${cardReturnsOrderDetailReturnableItem2}    ${EMPTY}
 ${cardReturnsOrderDetailNonReturnableItem}    ${EMPTY}
 
 ${cardReturnsOrderDetailItemNonReturnableReasonTitle}    ${EMPTY}
@@ -69,7 +70,11 @@ ${returnReasonQuantityErrorMessage}    ${EMPTY}
 ${returnReasonVariantSizeSelectorErrorMessage}    ${EMPTY}
 ${returnReasonVariantColourSelectorErrorMessage}    ${EMPTY}
 
+${containerReturnRequest}    ${EMPTY}
+
+
 ${returnRequestReturnItemsHeader}    ${EMPTY}
+${returnRequestReturnMethodHeader}    ${EMPTY}
 ${cardReturnsRequestItem}    ${EMPTY}
 ${cardReturnsRequestItemImage}    ${EMPTY}
 ${cardReturnsRequestItemTitle}    ${EMPTY}
@@ -88,5 +93,28 @@ ${returnReasonDialogTitle}    ${EMPTY}
 ${returnReasonDialogMessage}    ${EMPTY}
 ${returnReasonDialogNegativeActionButton}    ${EMPTY}
 ${returnReasonDialogPositiveActionButton}    ${EMPTY}
+
+${returnRequestAddAnotherItemButton}    ${EMPTY}
+${returnRequestShimmer}    ${EMPTY}
+
+${returnRequestDeliveryMethodSelector}    ${EMPTY}
+${returnRequestDeliveryMethodSelectorTitle}    ${EMPTY}
+${returnRequestDeliveryMethodSelectorButton}    ${EMPTY}
+
+${returnRequestDeliveryMethodAddress}    ${EMPTY}
+${returnRequestDeliveryMethodAddressTitle}    ${EMPTY}
+
+${returnRequestContactDetailSelector}    ${EMPTY}
+${returnRequestContactDetailSelectorTitle}    ${EMPTY}
+${returnRequestContactDetailSelectorButton}    ${EMPTY}
+
+${returnRequestEmptyState}    ${EMPTY}
+${returnRequestEmptyStateCallToAction}    ${EMPTY}
+
+${returnSelectReturnMethodPickupPoint}    ${EMPTY}
+${returnSelectReturnMethodCollect}    ${EMPTY}
+
+${returnSelectAddressItem}    ${EMPTY}
+${returnSelectAddressItemName}    ${EMPTY}
 
 ${btnReturnsCallToAction}    ${EMPTY}

@@ -38,6 +38,7 @@ ${cardReturnsOrderDetailItemWithVariantSize}    xpath=//*[contains(@text, "Nike 
 ${cardReturnsOrderDetailItemWithVariantColour}    xpath=//*[contains(@text, "Nike Hyperfuel 500ml Water Bottle - Black/White")]
 
 ${cardReturnsOrderDetailReturnableItem}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Returnable Item')]
+${cardReturnsOrderDetailReturnableItem2}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Returnable Item')][2]
 ${cardReturnsOrderDetailNonReturnableItem}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Non Returnable Item')]
 
 ${cardReturnsOrderDetailItemNonReturnableReasonTitle}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Non Returnable Item')]//android.widget.TextView[contains(@resource-id, 'error_message_content')]
@@ -70,7 +71,10 @@ ${returnReasonQuantityErrorMessage}    xpath=//android.widget.LinearLayout[conta
 ${returnReasonVariantSizeSelectorErrorMessage}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Size')]//android.widget.TextView[contains(@resource-id, 'variantSelectorValidationErrorMessage')]
 ${returnReasonVariantColourSelectorErrorMessage}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Colour')]//android.widget.TextView[contains(@resource-id, 'variantSelectorValidationErrorMessage')]
 
+${containerReturnRequest}    id=${APP_PACKAGE}:id/returns_request_container
+
 ${returnRequestReturnItemsHeader}    xpath=//android.widget.TextView[contains(@text, 'Return Items')]
+${returnRequestReturnMethodHeader}    xpath=//android.widget.TextView[contains(@text, 'Return Method')]
 ${cardReturnsRequestItem}    id=${APP_PACKAGE}:id/returns_request_cart_item_root
 ${cardReturnsRequestItemImage}    id=${APP_PACKAGE}:id/returns_request_cart_item_image
 ${cardReturnsRequestItemTitle}    id=${APP_PACKAGE}:id/returns_request_cart_item_title
@@ -89,5 +93,28 @@ ${returnReasonDialogTitle}    id=${APP_PACKAGE}:id/alertTitle
 ${returnReasonDialogMessage}    id=android:id/message
 ${returnReasonDialogNegativeActionButton}    id=android:id/button2
 ${returnReasonDialogPositiveActionButton}    id=android:id/button1
+
+${returnRequestAddAnotherItemButton}    id=${APP_PACKAGE}:id/returnsAddAnotherItemButton
+${returnRequestShimmer}    id=${APP_PACKAGE}:id/returns_request_shimmer
+
+${returnRequestDeliveryMethodSelector}    id=${APP_PACKAGE}:id/returnMethodSelector
+${returnRequestDeliveryMethodSelectorTitle}    xpath=//*[contains(@resource-id, 'returnMethodSelector')]//android.widget.TextView[contains(@resource-id, 'returns_return_method_selector_title')]
+${returnRequestDeliveryMethodSelectorButton}    xpath=//*[contains(@resource-id, 'returnMethodSelector')]//android.widget.Button[contains(@resource-id, 'returns_return_method_selector_action_option')]
+
+${returnRequestDeliveryMethodAddress}    id=${APP_PACKAGE}:id/returnMethodAddress
+${returnRequestDeliveryMethodAddressTitle}    id=${APP_PACKAGE}:id/returns_return_method_address_title
+
+${returnRequestContactDetailSelector}    id=${APP_PACKAGE}:id/returnMethodContactDetails
+${returnRequestContactDetailSelectorTitle}    xpath=//*[contains(@resource-id, 'returnMethodContactDetails')]//android.widget.TextView[contains(@resource-id, 'returns_return_method_selector_title')]
+${returnRequestContactDetailSelectorButton}    xpath=//*[contains(@resource-id, 'returnMethodContactDetails')]//android.widget.Button[contains(@resource-id, 'returns_return_method_selector_action_option')]
+
+${returnRequestEmptyState}    xpath=//android.widget.ImageView[@content-desc="empty return items"]
+${returnRequestEmptyStateCallToAction}    id=${APP_PACKAGE}:id/tal_material_button
+
+${returnSelectReturnMethodPickupPoint}    xpath=//android.view.ViewGroup[@content-desc="Pickup Point"]
+${returnSelectReturnMethodCollect}    xpath=//android.view.ViewGroup[@content-desc="Collect Address"]
+
+${returnSelectAddressItem}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returns_address_item_container')]//android.view.ViewGroup
+${returnSelectAddressItemName}    id=${APP_PACKAGE}:id/returns_address_item_name
 
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption

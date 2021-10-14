@@ -250,15 +250,29 @@ Apps > SS Returns > Request a Return > Log Return Request > QA-8407
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
+    Add Return Item to Return Request
     Click Returns Call To Action Button
-    Click Returns Order History Item
-    Click Returns Order Detail Returnable Item
-    Click Return Reason Reason Selector
-    Click Return Reason Reason Non-Exchange Item
-    Scroll To Return Reason Preferred Outcome Selector
-    Click Return Reason Preferred Outcome Selector
-    Click Return Reason Preferred Outcome Item
-    Scroll To Return Reason Text Area
-    Input Return Reason Text Area Text    Test Description
-    Click Returns Call To Action Button
+    Verify Toolbar Title    Select Return Method
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    Click Return Select Address Item
+    Verify Toolbar Title    Log Return Request
+    Verify Return Request Loading State Not Visible
+    Scroll To Return Request Return Method Section
+    Scroll To Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector
+    Scroll To Return Request Delivery Method Address
+    Verify Return Request Delivery Method Address Title
+    Scroll To Return Request Contact Detail Section
+    Verify Return Request Contact Details Section
+    Scroll To Return Request Cart Item
+    Swipe Returns Request Item For Delete
+    Click Returns Request Delete Dialog Remove Option
+    Verify Return Request Loading State Not Visible
+    Scroll To Return Request Cart Item
+    Swipe Returns Request Item For Delete
+    Click Returns Request Delete Dialog Remove Option
+    Verify Return Request Empty State
+    Click Return Request Empty State Call To Action
+    Verify Toolbar Title    Select Order to Return Items
     [Teardown]    Tear Down
