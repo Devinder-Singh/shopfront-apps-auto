@@ -103,6 +103,9 @@ ${returnRequestDeliveryMethodSelectorButton}    ${EMPTY}
 
 ${returnRequestDeliveryMethodAddress}    ${EMPTY}
 ${returnRequestDeliveryMethodAddressTitle}    ${EMPTY}
+${returnRequestDeliveryMethodAddressTypePill}    ${EMPTY}
+${returnRequestDeliveryMethodAddressRecipientName}    ${EMPTY}
+${returnRequestDeliveryMethodAddressDetailText}    ${EMPTY}
 
 ${returnRequestContactDetailSelector}    ${EMPTY}
 ${returnRequestContactDetailSelectorTitle}    ${EMPTY}

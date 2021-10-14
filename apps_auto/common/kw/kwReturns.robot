@@ -384,8 +384,23 @@ Verify Return Request Empty State
 Click Return Request Empty State Call To Action
     Click Element    ${returnRequestEmptyStateCallToAction}
 
+Click Return Request Delivery Method Selector
+    Click Element    ${returnRequestDeliveryMethodSelector}
+
+Verify Return Request Delivery Method Address Type Pill
+    Element Should Be Visible    ${returnRequestDeliveryMethodAddressTypePill}
+
+Verify Return Request Delivery Method Address Recipient Name
+    Element Should Be Visible    ${returnRequestDeliveryMethodAddressRecipientName}
+
+Verify Return Request Delivery Method Address Detail
+    Element Should Be Visible    ${returnRequestDeliveryMethodAddressDetailText}
+
+Click Return Request Contact Details Selector
+    Click Element    ${returnRequestContactDetailSelector}
+
 # Setup Keyword for getting a product in returns request
-Add Return Item to Return Request
+Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Click Returns Order History Item
     Click Returns Order Detail Returnable Item
@@ -398,6 +413,9 @@ Add Return Item to Return Request
     Input Return Reason Text Area Text    Test Description
     Click Returns Call To Action Button
     Verify Toolbar Title    Log Return Request
+
+Add Two Return Items to Return Request
+    Add Single Return Item To Return Request
     Click Returns Request Add Another Item
     Verify Toolbar Title    Select Return Item
     Click Returns Order Detail Returnable Item 2

@@ -103,6 +103,9 @@ ${returnRequestDeliveryMethodSelectorButton}    xpath=//*[contains(@resource-id,
 
 ${returnRequestDeliveryMethodAddress}    id=${APP_PACKAGE}:id/returnMethodAddress
 ${returnRequestDeliveryMethodAddressTitle}    id=${APP_PACKAGE}:id/returns_return_method_address_title
+${returnRequestDeliveryMethodAddressTypePill}    id=${APP_PACKAGE}:id/returns_return_method_address_pill
+${returnRequestDeliveryMethodAddressRecipientName}    id=${APP_PACKAGE}:id/returns_return_method_address_subtitle
+${returnRequestDeliveryMethodAddressDetailText}    id=${APP_PACKAGE}:id/returns_return_method_address_address
 
 ${returnRequestContactDetailSelector}    id=${APP_PACKAGE}:id/returnMethodContactDetails
 ${returnRequestContactDetailSelectorTitle}    xpath=//*[contains(@resource-id, 'returnMethodContactDetails')]//android.widget.TextView[contains(@resource-id, 'returns_return_method_selector_title')]

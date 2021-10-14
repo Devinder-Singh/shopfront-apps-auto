@@ -250,7 +250,7 @@ Apps > SS Returns > Request a Return > Log Return Request > QA-8407
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
-    Add Return Item to Return Request
+    Add Two Return Items to Return Request
     Click Returns Call To Action Button
     Verify Toolbar Title    Select Return Method
     Click Return Select Return Method Address
@@ -275,4 +275,47 @@ Apps > SS Returns > Request a Return > Log Return Request > QA-8407
     Verify Return Request Empty State
     Click Return Request Empty State Call To Action
     Verify Toolbar Title    Select Order to Return Items
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Log Return Request > Collect > QA-5436
+    [Tags]    data    QA-5436
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+1@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Verify Toolbar Title    Select Return Method
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    Click Return Select Address Item
+    Verify Toolbar Title    Log Return Request
+    Verify Return Request Loading State Not Visible
+    Scroll To Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector
+    Click Return Request Delivery Method Selector
+    Verify Toolbar Title    Select Return Method
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    Click Return Select Address Item
+    Verify Toolbar Title    Log Return Request
+    Scroll To Return Request Delivery Method Address
+    Verify Return Request Delivery Method Address Title
+    Verify Return Request Delivery Method Address Type Pill
+    Verify Return Request Delivery Method Address Recipient Name
+    Verify Return Request Delivery Method Address Detail
+    Scroll To Return Request Contact Detail Section
+    Verify Return Request Contact Details Section
+    Click Return Request Contact Details Selector
+    Verify Toolbar Title    Contact Details
+    Click Back Screen
+    Verify Toolbar Title    Log Return Request
+    Verify Return Request Loading State Not Visible
+    Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
+    Click Returns Call To Action Button
+    Verify Return Request Loading State Not Visible
+    Verify Toolbar Title    Return Request Submitted
     [Teardown]    Tear Down
