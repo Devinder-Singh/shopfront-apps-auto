@@ -120,4 +120,8 @@ ${returnSelectReturnMethodCollect}    xpath=//android.view.ViewGroup[@content-de
 ${returnSelectAddressItem}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returns_address_item_container')]//android.view.ViewGroup
 ${returnSelectAddressItemName}    id=${APP_PACKAGE}:id/returns_address_item_name
 
+${returnSelectPickupPointItemTitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_title
+${returnSelectPickupPointItemSubtitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_subtitle
+${returnSelectPickupPointItemInfoButton}    id=${APP_PACKAGE}:id/returns_pickup_point_item_info
+
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption

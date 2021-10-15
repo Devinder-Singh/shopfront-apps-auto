@@ -260,7 +260,7 @@ Apps > SS Returns > Request a Return > Log Return Request > QA-8407
     Verify Return Request Loading State Not Visible
     Scroll To Return Request Return Method Section
     Scroll To Return Request Delivery Method Selector
-    Verify Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector    Takealot to collect from my address
     Scroll To Return Request Delivery Method Address
     Verify Return Request Delivery Method Address Title
     Scroll To Return Request Contact Detail Section
@@ -295,7 +295,7 @@ Apps > SS Returns > Log Return Request > Collect > QA-5436
     Verify Toolbar Title    Log Return Request
     Verify Return Request Loading State Not Visible
     Scroll To Return Request Delivery Method Selector
-    Verify Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector    Takealot to collect from my address
     Click Return Request Delivery Method Selector
     Verify Toolbar Title    Select Return Method
     Click Return Select Return Method Address
@@ -315,7 +315,43 @@ Apps > SS Returns > Log Return Request > Collect > QA-5436
     Verify Toolbar Title    Log Return Request
     Verify Return Request Loading State Not Visible
     Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
+    # Click Returns Call To Action Button
+    # Verify Return Request Loading State Not Visible
+    # Verify Toolbar Title    Return Request Submitted
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Log Return Request > Drop-off > QA-5435
+    [Tags]    data    QA-5436
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+1@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
     Click Returns Call To Action Button
+    Verify Toolbar Title    Select Return Method
+    Verify Return Select Delivery Method Pickup Point Option
+    Verify Return Select Delivery Method Collect Option
+    Click Return Select Delivery Method Pickup Point Option
+    Verify Return Select Delivery Method Pickup Point Item Title
+    Verify Return Select Delivery Method Pickup Point Item Subtitle
+    Verify Return Select Delivery Method Pickup Point Item Info Button
+    Click Return Select Delivery Method Pickup Point Item
+    Verify Toolbar Title    Log Return Request
     Verify Return Request Loading State Not Visible
-    Verify Toolbar Title    Return Request Submitted
+    Scroll To Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
+    Click Return Request Delivery Method Selector
+    Verify Toolbar Title    Select Return Method
+    Click Return Select Delivery Method Pickup Point Option
+    Click Return Select Delivery Method Pickup Point Item
+    Verify Toolbar Title    Log Return Request
+    Verify Return Request Loading State Not Visible
+    Verify Returns Request Cart Header
+    Scroll To Return Request Return Method Section
+    Verify Return Request Return Method Header
+    Scroll To Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
     [Teardown]    Tear Down

@@ -261,6 +261,9 @@ Input Return Reason Text Area Text
 Verify Returns Request Cart Header
     Wait Until Element Is Visible    ${returnRequestReturnItemsHeader}    30s
 
+Verify Return Request Return Method Header
+    Wait Until Element Is Visible    ${returnRequestReturnItemsHeader}    30s
+
 Verify Returns Request Item Image
     Wait Until Element Is Visible    ${cardReturnsRequestItemImage}    30s
 
@@ -349,10 +352,12 @@ Scroll To Return Request Delivery Method Selector
     Scroll To Element In Container    ${returnRequestDeliveryMethodSelector}     ${containerReturnRequest}    20
 
 Verify Return Request Delivery Method Selector
+    [Arguments]    ${expectedTitle}
+    
     Element Should Be Visible    ${returnRequestDeliveryMethodSelectorTitle}
     Element Should Be Visible    ${returnRequestDeliveryMethodSelectorButton}
     
-    Element Text Should Be    ${returnRequestDeliveryMethodSelectorTitle}    Takealot to collect from my address
+    Element Text Should Be    ${returnRequestDeliveryMethodSelectorTitle}    ${expectedTitle}
     Element Text Should Be    ${returnRequestDeliveryMethodSelectorButton}    CHANGE
 
 Scroll To Return Request Delivery Method Address
@@ -398,6 +403,28 @@ Verify Return Request Delivery Method Address Detail
 
 Click Return Request Contact Details Selector
     Click Element    ${returnRequestContactDetailSelector}
+
+Verify Return Select Delivery Method Pickup Point Option
+    Element Should Be Visible    ${returnSelectReturnMethodPickupPoint}
+
+Verify Return Select Delivery Method Collect Option
+    Element Should Be Visible    ${returnSelectReturnMethodCollect}
+
+Click Return Select Delivery Method Pickup Point Option
+    Click Element    ${returnSelectReturnMethodPickupPoint}
+
+Verify Return Select Delivery Method Pickup Point Item Title
+    Wait Until Element Is Visible    ${returnSelectPickupPointItemTitle}    30s
+
+Verify Return Select Delivery Method Pickup Point Item Subtitle
+    Wait Until Element Is Visible    ${returnSelectPickupPointItemSubtitle}    30s
+
+Verify Return Select Delivery Method Pickup Point Item Info Button
+    Wait Until Element Is Visible    ${returnSelectPickupPointItemInfoButton}    30s
+    Element Text Should Be    ${returnSelectPickupPointItemInfoButton}    INFO
+
+Click Return Select Delivery Method Pickup Point Item
+    Click Element    ${returnSelectPickupPointItemTitle}
 
 # Setup Keyword for getting a product in returns request
 Add Single Return Item To Return Request

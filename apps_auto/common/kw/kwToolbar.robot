@@ -5,7 +5,6 @@ Resource          ../config/defaultConfig.robot
 Verify Toolbar Title
     [Arguments]    ${expectedTitle}
 
-    ${toolbarTitleLocator}=    Set Variable If    '${PLATFORM_NAME}'=='android'    ${txtToolbarTitle}    ''
-    Wait Until Page Contains Element    ${toolbarTitleLocator}    30s
-    Element Should Be Visible    ${toolbarTitleLocator}
-    Element Text Should Be    ${toolbarTitleLocator}    ${expectedTitle}
+    Wait Until Page Contains Element    ${txtToolbarTitle}    30s
+    Element Should Be Visible    ${txtToolbarTitle}
+    Element Text Should Be    ${txtToolbarTitle}    ${expectedTitle}

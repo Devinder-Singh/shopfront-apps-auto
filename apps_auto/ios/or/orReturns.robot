@@ -120,4 +120,8 @@ ${returnSelectReturnMethodCollect}    ${EMPTY}
 ${returnSelectAddressItem}    ${EMPTY}
 ${returnSelectAddressItemName}    ${EMPTY}
 
+${returnSelectPickupPointItemTitle}    ${EMPTY}
+${returnSelectPickupPointItemSubtitle}    ${EMPTY}
+${returnSelectPickupPointItemInfoButton}    ${EMPTY}
+
 ${btnReturnsCallToAction}    ${EMPTY}
