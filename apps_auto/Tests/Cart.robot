@@ -320,3 +320,58 @@ Apps > Cart > Limitations - QA-5302
     Change Cart Quantity Android    2
     Click Checkout
     [Teardown]    Tear Down
+
+Apps > Cart > Note Notification - QA-5305
+    [Tags]    QA-5305
+    [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL_Cart}    test2
+    Click Home
+    Click Search Home
+    Search Product    vouche
+    Click Product from API
+    Click Add To Cart    
+    Click Go To Cart
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
+    Click Add To Cart    
+    Click Go To Cart
+    Verify Text On Screen Android    The gift voucher will be delivered via email to the recipient    30s
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen Android    The prepaid code will be delivered to you via email    1s
+    Click Checkout
+    Verify Text On Screen iOS    Delivery via email to    30s
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    iPhone
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click COD Payment Info
+    Verify Text On Screen    Cash on Delivery is not available for this order    5s
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Unboxed Dea
+    Click Product from API
+    Verify Text On Screen    Unboxed Deals    30s
+    Click Other Offers Add To Cart
+    Click Go To Cart
+    [Teardown]    Tear Down
