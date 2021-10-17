@@ -16,7 +16,8 @@ ${btnWishlist}    id=${APP_PACKAGE}:id/app_root_lists
 ${btnCart}        xpath=//android.widget.ImageView[@content-desc="Cart"]
 
 ${btnMenuOrders}    id=${APP_PACKAGE}:id/accountOrdersSelector
-${btnMenuExchReturns}    id=${APP_PACKAGE}:id/accountExchangesAndReturnsSelector
+${btnMenuExchReturns}    id=${APP_PACKAGE}:id/accountReturnsItemSelector
+${btnMenuExchReturnsTitle}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.ScrollView/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.TextView
 ${btnMenuGiftVoucher}    id=${APP_PACKAGE}:id/accountLoadGiftVoucherSelector
 ${btnMenuCreditRefunds}    id=${APP_PACKAGE}:id/accountCreditRefundsSelector
 
