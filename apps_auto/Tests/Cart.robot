@@ -303,10 +303,12 @@ Apps > Cart > Stock Status - QA-5309
     [Teardown]    Tear Down
 
 Apps > Cart > Limitations - QA-5302
-    [Tags]    QA-5302
+    [Tags]    master    QA-5302
     [Setup]    Start Application
+    Clear Environment
+    Add Items To Cart Full
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL_Cart}    test2
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Pencil
