@@ -5,7 +5,7 @@ Library    OperatingSystem
 
 *** Test Cases ***
 Apps > PDP > Main Product Details > Description - QA-2037
-    [Tags]    data    QA-2037
+    [Tags]    QA-2037
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -20,7 +20,7 @@ Apps > PDP > Main Product Details > Description - QA-2037
     [Teardown]    Tear Down
 
 Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QA-9293
-    [Tags]    data    QA-9293
+    [Tags]    QA-9293
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -54,7 +54,7 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QA-9293
     [Teardown]    Tear Down
 
 Apps > PDP > Buy Box > Select an Option - QA-2031
-    [Tags]    data    QA-2031
+    [Tags]    QA-2031
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -214,7 +214,7 @@ Apps > PDP > Policy list > Free Delivery Available - QA-2014
     [Teardown]    Tear Down
 
 Apps > PDP > Other Offers - QA-1974
-    [Tags]    data    QA-1974
+    [Tags]    QA-1974
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -295,7 +295,7 @@ Apps > PDP > Unboxed Deals & New > Primary Unboxed > Variant - QA-9252
     [Teardown]    Tear Down
 
 Apps > PDP > Bundle Deals > Set Bundle (Same product) - QA-1976
-    [Tags]    data    QA-1976
+    [Tags]    QA-1976
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -317,7 +317,7 @@ Apps > PDP > Bundle Deals > Set Bundle (Same product) - QA-1976
     [Teardown]    Tear Down
 
 Apps > PDP > Bundle Deals > “Show All Deals” Screen - QA-1982
-    [Tags]    data    QA-1982
+    [Tags]    QA-1982
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -338,7 +338,7 @@ Apps > PDP > Bundle Deals > “Show All Deals” Screen - QA-1982
     [Teardown]    Tear Down
 
 Apps > PDP > Bundle Deals > Set Bundle (Different products) - QA-9259
-    [Tags]    data    QA-9259
+    [Tags]    QA-9259
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -360,7 +360,7 @@ Apps > PDP > Bundle Deals > Set Bundle (Different products) - QA-9259
     [Teardown]    Tear Down
 
 Apps > PDP > Unboxed Deals > Primary Unboxed - QA-1983
-    [Tags]    data    QA-1983
+    [Tags]    QA-1983
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -394,7 +394,7 @@ Apps > PDP > Unboxed Deals > Primary Unboxed - QA-1983
     [Teardown]    Tear Down
 
 Apps > PDP > Unboxed Deals > Unboxed Offers - QA-1984
-    [Tags]    data    QA-1984
+    [Tags]    QA-1984
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -433,7 +433,7 @@ Apps > PDP > Unboxed Deals > Unboxed Offers - QA-1984
     [Teardown]    Tear Down
 
 Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QA-1985
-    [Tags]    data    QA-1985
+    [Tags]    QA-1985
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -473,7 +473,7 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QA-1985
     [Teardown]    Tear Down
 
 Apps > PDP > Variants > Colour > No show all link - QA-9594
-    [Tags]    data    QA-9594
+    [Tags]    QA-9594
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -486,7 +486,7 @@ Apps > PDP > Variants > Colour > No show all link - QA-9594
     [Teardown]    Tear Down
 
 Apps > PDP >Bundle Deals > Multi-buy Bundle - QA-1978
-    [Tags]    data    QA-1978
+    [Tags]    QA-1978
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -506,7 +506,7 @@ Apps > PDP >Bundle Deals > Multi-buy Bundle - QA-1978
     [Teardown]    Tear Down
 
 Apps > PDP > Other Offers > More than one offer - QA-5166
-    [Tags]    data    QA-5166
+    [Tags]    QA-5166
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -527,7 +527,7 @@ Apps > PDP > Other Offers > More than one offer - QA-5166
     [Teardown]    Tear Down
 
 Apps > PDP > Variants > Colour - QA-1977
-    [Tags]    data    QA-1977    QA-9771
+    [Tags]    QA-1977    QA-9771
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -549,7 +549,7 @@ Apps > PDP > Variants > Colour - QA-1977
     [Teardown]    Tear Down
 
 Apps > PDP > Variants > Size - QA-9592
-    [Tags]    data    QA-9592
+    [Tags]    QA-9592
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -569,7 +569,7 @@ Apps > PDP > Variants > Size - QA-9592
     [Teardown]    Tear Down
 
 Apps > PDP > Variants > Colour & Size - QA-9595
-    [Tags]    data    QA-9595
+    [Tags]    QA-9595
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
