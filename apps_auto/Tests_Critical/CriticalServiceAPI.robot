@@ -33,7 +33,7 @@ Check Clear Address API
         Run Keyword And Continue On Failure    Clear Address
     END
 
- Check Delete Wishlist API
+Check Delete Wishlist API
     [Documentation]    The purpose of this test is to verify that the delete wishlist API is running.
 
     Log    API environment set as '${APP_ENVIRONMENT}'
