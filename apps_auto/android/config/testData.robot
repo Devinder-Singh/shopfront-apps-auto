@@ -1,5 +1,5 @@
 *** Variables ***
-${G_EMAIL}      take2+20210819180749@gmail.com
+${G_EMAIL}      takealot.qa.apps.20211018164544@gmaill.com
 ${G_PASSWORD}      ${EMPTY}
 
 ${G_EMAIL_Wishlists}      take2+20210830160841@gmail.com

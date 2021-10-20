@@ -196,7 +196,7 @@ Apps > Search Listings > Colour Swatches - QA-8757
     [Teardown]    Tear Down
 
 Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
-    [Tags]    data    QA-8758
+    [Tags]    QA-8758
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -206,7 +206,7 @@ Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
     [Teardown]    Tear Down
 
 Apps > Search Listings > Set Bundle Deals (More than one active) - QA-8760
-    [Tags]    data    QA-8760
+    [Tags]    QA-8760
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -215,7 +215,7 @@ Apps > Search Listings > Set Bundle Deals (More than one active) - QA-8760
     [Teardown]    Tear Down
 
 Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy) - QA-8761
-    [Tags]    data    QA-8761
+    [Tags]    QA-8761
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -224,7 +224,7 @@ Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy)
     [Teardown]    Tear Down
 
 Apps > Search Listings > Multi-Buy Deals (One active) - QA-8763
-    [Tags]    data    QA-8763
+    [Tags]    QA-8763
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -233,7 +233,7 @@ Apps > Search Listings > Multi-Buy Deals (One active) - QA-8763
     [Teardown]    Tear Down
 
 Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QA-8764
-    [Tags]    data    QA-8764
+    [Tags]    QA-8764
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -242,7 +242,7 @@ Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QA-8764
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Supplier Out of Stock - QA-8769
-    [Tags]    data    QA-8769
+    [Tags]    QA-8769
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -251,7 +251,7 @@ Apps > Search Listings > Stock > Supplier Out of Stock - QA-8769
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Available Now - QA-8770
-    [Tags]    data    QA-8770
+    [Tags]    QA-8770
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -271,7 +271,7 @@ Apps > Search Listings > Stock > Pre-Order - QA-8771
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Currently Unavailable - QA-8773
-    [Tags]    data    QA-8773
+    [Tags]    QA-8773
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
