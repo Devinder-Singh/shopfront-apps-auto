@@ -355,3 +355,20 @@ Apps > SS Returns > Log Return Request > Drop-off > QA-5435
     Scroll To Return Request Delivery Method Selector
     Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
     [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Log Return Request (Not eligible for Drop-Off) > QA-9640
+    [Tags]    data    QA-9640
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+4982402@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Verify Toolbar Title    Select Return Method
+    Verify Return Select Delivery Method Pickup Point Option Is Not Active
+    Click Back Screen
+    Verify Toolbar Title    Log Return Request
+    [Teardown]    Tear Down

@@ -426,6 +426,10 @@ Verify Return Select Delivery Method Pickup Point Item Info Button
 Click Return Select Delivery Method Pickup Point Item
     Click Element    ${returnSelectPickupPointItemTitle}
 
+Verify Return Select Delivery Method Pickup Point Option Is Not Active
+    Click Return Select Delivery Method Pickup Point Option
+    Verify Toolbar Title    Select Return Method
+
 # Setup Keyword for getting a product in returns request
 Add Single Return Item To Return Request
     Click Returns Call To Action Button
