@@ -8,3 +8,5 @@ ${CHROME_VERSION}    Latest
 ${APP_PATH}    /Users/jenkins/qa_build_iOS/takealot.ipa/takealot.ipa
 ${DEVICE_NAME}    iPhone 11
 ${APP_ENVIRONMENT}    https://api.takealot.com/
+#${APP_ENVIRONMENT}    http://api.master.env/
+
