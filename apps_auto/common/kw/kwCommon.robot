@@ -89,14 +89,14 @@ Verify Text On Screen Android
     ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    ${delay}
 
     ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text,"${verifyText}")]
-    Run Keyword If    '${PLATFORM_NAME}'=='android' and ${chkProdVisible}==False    Wait Until Page Contains Element    ${checkElement}    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android' and ${chkProdVisible}==${False}    Wait Until Page Contains Element    ${checkElement}    1s
 
 Verify Text On Screen iOS
     [Arguments]    ${verifyText}    ${delay}
     ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    ${delay}
 
     ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${verifyText}'`]
-    Run Keyword If    '${PLATFORM_NAME}'=='ios' and ${chkProdVisible}==False    Wait Until Page Contains Element    ${checkElement}    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and ${chkProdVisible}==${False}    Wait Until Page Contains Element    ${checkElement}    1s
 
 Verify Text Element On Screen iOS
     [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
@@ -109,7 +109,7 @@ Verify Text Element On Screen iOS
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${checkElement}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -131,7 +131,7 @@ Verify Text On Screen Scroll
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${scrollElement}
@@ -149,7 +149,7 @@ Verify Text On Screen Scroll Android
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -171,7 +171,7 @@ Verify Text On Screen Scroll iOS
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -193,7 +193,7 @@ Verify Element On Screen Scroll
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${scrollElement}
@@ -211,7 +211,7 @@ Verify Element On Screen Scroll Android
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -233,7 +233,7 @@ Verify Element On Screen Scroll iOS
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -257,7 +257,7 @@ Verify Product Review iOS
         ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen iOS    ${txtProduct}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -286,7 +286,7 @@ Verify Element On Screen Not
     [Arguments]    ${verifyElement}    ${delay}
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${verifyElement}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${verifyElement}']
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${delay}
-    Should Be True    ${chkTextSuccess}==False
+    Should Be True    ${chkTextSuccess}==${False}
 
 Verify Element On Screen iOS
     [Arguments]    ${verifyElement}    ${delay}

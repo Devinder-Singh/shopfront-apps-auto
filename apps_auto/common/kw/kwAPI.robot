@@ -969,7 +969,7 @@ Get Product Deals Third Tab Slug
         ${chkTextSuccess}=    Run Keyword And Return Status    Output    $.response[${index}].slug
 
         ${results_title}=    Set Variable    ''
-        ${results_title}=    Set Variable If    '${result}'=='4' and ${chkTextSuccess}==True    ${result}
+        ${results_title}=    Set Variable If    '${result}'=='4' and ${chkTextSuccess}==${True}    ${result}
         ${searchResult}=    Run Keyword If    '${results_title}'=='4'    Output    $.response[${index}].promotion_id
 
         Run Keyword If
@@ -996,7 +996,7 @@ Get Product Deals Third Tab Name
         ${chkTextSuccess}=    Run Keyword And Return Status    Output    $.response[${index}].slug
 
         ${results_title}=    Set Variable    ''
-        ${results_title}=    Set Variable If    '${result}'=='4' and ${chkTextSuccess}==True    ${result}
+        ${results_title}=    Set Variable If    '${result}'=='4' and ${chkTextSuccess}==${True}    ${result}
         ${searchResult}=    Run Keyword If    '${results_title}'=='4'    Output    $.response[${index}].display_name
 
         Run Keyword If

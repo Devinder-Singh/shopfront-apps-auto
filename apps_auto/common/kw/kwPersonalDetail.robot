@@ -60,8 +60,8 @@ Update Personal Detail Mobile
     Sleep    2s
 
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtPDMobile}    5s
-    Run Keyword If    ${chkTextSuccess}==True    Input Text    ${txtPDMobile}    ${mobile}
-    Run Keyword If    ${chkTextSuccess}==False    Input Text    ${txtPDMobileEx}    ${mobile}
+    Run Keyword If    ${chkTextSuccess}==${True}    Input Text    ${txtPDMobile}    ${mobile}
+    Run Keyword If    ${chkTextSuccess}==${False}    Input Text    ${txtPDMobileEx}    ${mobile}
 
     Click Element    ${btnSaveDetail}
 
