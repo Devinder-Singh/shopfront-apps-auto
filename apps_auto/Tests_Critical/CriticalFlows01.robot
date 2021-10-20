@@ -5,7 +5,6 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-
 #Register User
 #    [Tags]    Master0
 #    [Setup]    Start Application

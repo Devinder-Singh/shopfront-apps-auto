@@ -20,7 +20,7 @@ Apps > SS Returns > Returns UI (User without Returns History) > QA-5438
     [Teardown]    Tear Down
 
 Apps > SS Returns > Returns UI (User with Returns History) > QA-9256
-    [Tags]    data    QA-9256
+    [Tags]    data    master    QA-9256
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -42,7 +42,7 @@ Apps > SS Returns > Returns UI (User with Returns History) > QA-9256
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Order > QA-5429
-    [Tags]    data    QA-5429
+    [Tags]    data    master    QA-5429
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -73,7 +73,7 @@ Apps > SS Returns > Request a Return > Select Order > QA-5429
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Return Item > QA-5430
-    [Tags]    data    QA-5430
+    [Tags]    data    master    QA-5430
     [Setup]    Start Application
     Click Menu
     Click Menu Login

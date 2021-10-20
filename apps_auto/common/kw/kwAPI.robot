@@ -111,6 +111,42 @@ Add To Cart
     Post    ${Add_cart_URL}    ${Add_cart_Body}
     Integer    response status    200
 
+Add Items To Cart Full
+    [Arguments]    ${search}
+
+    Get Customer ID
+    Get Tokens
+
+    Add Multiple Items To Cart    pencil+case
+    Add Multiple Items To Cart    pen
+    Add Multiple Items To Cart    humidifier
+    Add Multiple Items To Cart    toothpaste
+    Add Multiple Items To Cart    soap
+    Add Multiple Items To Cart    camera
+    Add Multiple Items To Cart    headset
+    Add Multiple Items To Cart    pointer
+
+Add Multiple Items To Cart
+    [Arguments]    ${search}
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_id}=    Output    $.sections.products.results[*].product_views.buybox_summary.product_id
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results_id}
+        Add Item To Cart    ${result}
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+Add Item To Cart
+    [Arguments]    ${result_id}
+    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id": ${result_id}, "quantity": 1}]}
+    Post    ${Add_cart_URL}    ${Add_cart_Body}
+    Integer    response status    200
+
 Get First Search Option
     [Arguments]    ${search}
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/search/autocomplete?query=${search}
