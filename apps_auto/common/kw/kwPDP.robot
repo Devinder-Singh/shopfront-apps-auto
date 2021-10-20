@@ -367,6 +367,7 @@ Scroll To PDP Reviews
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${locatorReviewsCard}
+    END
 
 Click PDP Show All Reviews
     ${index}=    Set Variable    0
