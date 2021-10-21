@@ -18,7 +18,7 @@ Click Pickup Point
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -27,7 +27,7 @@ Click Pickup Point
     Click Element    ${btnPickupPoint}
     Sleep    3s
     ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
-    Run Keyword If    ${chkProdVisible}==True    Click Element    ${btnPickupPoint}
+    Run Keyword If    ${chkProdVisible}==${True}    Click Element    ${btnPickupPoint}
 
 Click Pickup Point Brackenfell
     Wait Until Element Is Visible    ${btnPickupPointBrackenfell}    30s
@@ -51,8 +51,8 @@ Display WC Province Pickup Points
     Wait Until Element Is Visible    ${txtFilterProvince}    30s
 
     ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Western Cape    2s
-    Run Keyword If    ${chkTextSuccess}==False    Click Filter Province
-    Run Keyword If    ${chkTextSuccess}==False    Click Western Cape Province
+    Run Keyword If    ${chkTextSuccess}==${False}    Click Filter Province
+    Run Keyword If    ${chkTextSuccess}==${False}    Click Western Cape Province
 
 Click Filter Province
     Wait Until Element Is Visible    ${txtFilterProvince}    30s

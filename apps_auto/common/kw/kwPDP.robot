@@ -34,7 +34,7 @@ Click Save Wishlists
 
 Click Close Ad
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPCloseAd}    30s
-    Run Keyword If    ${chkTextSuccess}==True and '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPCloseAd}
+    Run Keyword If    ${chkTextSuccess}==${True} and '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPCloseAd}
     Sleep    2s
 
 Click Add To Cart
@@ -101,13 +101,13 @@ Click PDP List Price Cancel
 Click PDP JHB
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPInStockJHB}
-    Run Keyword If    ${chkProdVisible}==False    Swipe Up    ${windowScroll}
+    Run Keyword If    ${chkProdVisible}==${False}    Swipe Up    ${windowScroll}
     Click Element    ${btnPDPInStockJHB}
 
 Click PDP CPT
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPInStockCPT}
-    Run Keyword If    ${chkProdVisible}==False    Swipe Up    ${windowScroll}
+    Run Keyword If    ${chkProdVisible}==${False}    Swipe Up    ${windowScroll}
     Click Element    ${btnPDPInStockCPT}
 
 Click PDP Warehouse OK
@@ -122,8 +122,8 @@ Click PDP When Do I Get
 
 Click PDP Credit Info
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPOnCreditInfo}    3s
-    Run Keyword If    ${chkTextSuccess}==True    Click Element    ${btnPDPOnCreditInfo}
-    Run Keyword If    ${chkTextSuccess}==False    Click Element    ${btnPDPOnCreditInfoTwo}
+    Run Keyword If    ${chkTextSuccess}==${True}    Click Element    ${btnPDPOnCreditInfo}
+    Run Keyword If    ${chkTextSuccess}==${False}    Click Element    ${btnPDPOnCreditInfoTwo}
 
 Click Eligible for Cash on Delivery
     Wait Until Element Is Visible    ${btnAddToCart}    30s
@@ -139,7 +139,7 @@ Click PDP Description Show More
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lnkPDPShowMore}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
@@ -155,7 +155,7 @@ Click PDP What Is This
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lnkPDPWhatIsThis}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -171,7 +171,7 @@ Click PDP Show All Offers
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPShowAllOffers}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -224,7 +224,7 @@ Click Continue Shopping iOS
 
 Click Continue Shopping Ignore Error
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnContinueShopping}    10s
-    Run Keyword If    ${chkElement}==True    Click Element    ${btnContinueShopping}
+    Run Keyword If    ${chkElement}==${True}    Click Element    ${btnContinueShopping}
     Sleep    3s
 
 Click Airtime
@@ -242,7 +242,7 @@ Click 10 Kg
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblTenKgValue}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -258,7 +258,7 @@ Click Add Bundle To Cart
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPAddBundleToCart}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
@@ -285,7 +285,7 @@ Click Other Offers Add To Cart
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPOtherOfferAddToCart}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
@@ -312,7 +312,7 @@ Click Shop The Deal
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblPDPShopTheDeal}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
@@ -339,14 +339,14 @@ Click Go To Cart iOS
 
 Click PDP Write Review
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
-    Run Keyword If    ${chkElement}==False    Wait Until Element Is Visible    ${btnPDPSelectOption}    1s
+    Run Keyword If    ${chkElement}==${False}    Wait Until Element Is Visible    ${btnPDPSelectOption}    1s
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPReview}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
@@ -375,7 +375,7 @@ Click PDP Show All Reviews
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPShowAllReviews}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
@@ -417,7 +417,7 @@ Click Product Size
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -436,7 +436,7 @@ Click Product Variant From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -458,7 +458,7 @@ Click Product Disabled Variant From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -480,7 +480,7 @@ Click Product Variant Colour From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -502,7 +502,7 @@ Click Product Variant Disabled Colour From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -522,7 +522,7 @@ Click Product Variant Colour With ShowAll From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -554,7 +554,7 @@ Verify Product Variant Colour With ShowAll From API
     FOR    ${result}    IN    @{txtProductColours}
 
         ${chkProdVisible}=    Run Keyword And Return Status    Page Should Contain Text    ${result} 
-            Run Keyword If    ${chkProdVisible}==False    Swipe Up    ${windowScroll}
+            Run Keyword If    ${chkProdVisible}==${False}    Swipe Up    ${windowScroll}
 
         Verify Text On Screen Android    ${result}    5s
         Verify Text On Screen iOS    ${result}    5s    
@@ -587,7 +587,7 @@ Click Product Variant From Name
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblProdVariant}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -606,7 +606,7 @@ Click Product Variant Colour Size From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -628,7 +628,7 @@ Click Product Variant Disabled Size From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -650,7 +650,7 @@ Click Product Variant Size From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -672,7 +672,7 @@ Click Product Disabled Variant Colour From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}
@@ -692,7 +692,7 @@ Click Product Disabled Variant Colour Size From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPSelectOption}

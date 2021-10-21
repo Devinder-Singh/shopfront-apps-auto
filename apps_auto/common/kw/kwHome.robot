@@ -68,7 +68,7 @@ Click View All Daily Deals
 
 Click View All Daily Deals If Present
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnHomeViewAllDailyDeals}    10s
-    Run Keyword If    ${chkElement}==True    Click Element    ${btnHomeViewAllDailyDeals}
+    Run Keyword If    ${chkElement}==${True}    Click Element    ${btnHomeViewAllDailyDeals}
 
 Click Clear All Recently Viewed
 
@@ -79,7 +79,7 @@ Click Clear All Recently Viewed
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnHomeClearAllRecent}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -96,7 +96,7 @@ Click Clear All Recently Viewed Android
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnHomeClearAllRecent}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
