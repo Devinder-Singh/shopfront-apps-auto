@@ -7,13 +7,13 @@ Library           String
 *** Variables ***
 #    test-automation-platform
 ${cart_URL}       http://tal-test-data-service.master.env/remove_products_in_cart
-${cart_Body}      { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "4933518", "env": "master.env" }
+${cart_Body}      { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": "4933518", "env": "master.env" }
 
 ${wishlist_URL}    http://tal-test-data-service.master.env/clear_customer_wishlists
-${wishlist_Body}    { "namespace": "master", "customer_id":4933518, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
+${wishlist_Body}    { "namespace": "master", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
 
 ${wishlist_Del_URL}    http://tal-test-data-service.master.env/delete_customer_wishlists
-${wishlist_Del_Body}    { "namespace": "master", "customer_id":7974729, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
+${wishlist_Del_Body}    { "namespace": "master", "customer_id":7974729, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
 
 ${address_URL}    http://tal-test-data-service.master.env/clear_add_customer_addresses
 ${address_Body}    { "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
@@ -34,7 +34,6 @@ ${items_Body_tv}    {"products":[{"id":87365581,"quantity":1,"enhancedEcommerceA
 ${items_URL_Delete}    ${APP_ENVIRONMENT}rest/v-1-10-0/customers/4933405/cart/items
 ${items_Body_Delete_any}    {"products":[{"id":94086375}]}
 
-
 ${envMaster}    http://api.master.env
 ${envProd}    https://api.takealot.com
 
@@ -49,13 +48,13 @@ Clear Environment
 
 Create Wishlists
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
-    ${WL_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "count": 25 }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": 4933518, "count": 24 }
+    ${WL_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "count": 25 }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": 4933518, "count": 24 }
     Post    ${wishlist_URL}    ${WL_Body}
     Integer    response status    200
 
 Get Customer ID
     ${token_URL}=    Set Variable    http://tal-test-data-service.master.env/login/tokens
-    ${token_BODY}=    Set Variable    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "remember_me": true}
+    ${token_BODY}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "remember_me": true}
 
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Post    ${token_URL}    ${token_BODY}
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Integer    response status    200
@@ -68,22 +67,22 @@ Get Customer ID
     [return]    ${query_result}
 
 Clear Cart
-    ${cart_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "${query_customer_id}", "env": "master.env" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "4933518", "env": "takealot.com" }
+    ${cart_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": "${query_customer_id}", "env": "master.env" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "4933518", "env": "takealot.com" }
     Post    ${cart_URL}    ${cart_Body}
     Integer    response status    200
 
 Clear Wishlist
-    ${wishlist_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
+    ${wishlist_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
     Post    ${wishlist_URL}    ${wishlist_Body}
     Integer    response status    200
 
 Delete Wishlist
-    ${wishlist_Del_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "t@ke@!ot1234" }
+    ${wishlist_Del_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
     Post    ${wishlist_Del_URL}    ${wishlist_Del_Body}
     Integer    response status    200
 
 Clear Address
-    ${address_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id":${query_customer_id}, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "takealot", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
+    ${address_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id":${query_customer_id}, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "takealot", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
     Post    ${address_URL}    ${address_Body}
     Integer    response status    200
 
@@ -93,7 +92,7 @@ Clear Address Business
 
 Get Tokens
     ${token_URL}=    Set Variable    http://tal-test-data-service.master.env/login/tokens
-    ${token_BODY}=    Set Variable    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "remember_me": true}
+    ${token_BODY}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "remember_me": true}
 
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Post    ${token_URL}    ${token_BODY}
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Integer    response status    200
@@ -108,7 +107,43 @@ Get Tokens
 Add To Cart
     Get Customer ID
     Get Tokens
-    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id": 87365581, "quantity": 1}]}
+    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id": 87365581, "quantity": 1}]}
+    Post    ${Add_cart_URL}    ${Add_cart_Body}
+    Integer    response status    200
+
+Add Items To Cart Full
+    [Arguments]    ${search}
+
+    Get Customer ID
+    Get Tokens
+
+    Add Multiple Items To Cart    pencil+case
+    Add Multiple Items To Cart    pen
+    Add Multiple Items To Cart    humidifier
+    Add Multiple Items To Cart    toothpaste
+    Add Multiple Items To Cart    soap
+    Add Multiple Items To Cart    camera
+    Add Multiple Items To Cart    headset
+    Add Multiple Items To Cart    pointer
+
+Add Multiple Items To Cart
+    [Arguments]    ${search}
+
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${search}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_id}=    Output    $.sections.products.results[*].product_views.buybox_summary.product_id
+
+    ${index}=    Set Variable    0
+    FOR    ${result}    IN    @{results_id}
+        Add Item To Cart    ${result}
+        ${index}=    Evaluate    ${index} + 1
+    END
+
+Add Item To Cart
+    [Arguments]    ${result_id}
+    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id": ${result_id}, "quantity": 1}]}
     Post    ${Add_cart_URL}    ${Add_cart_Body}
     Integer    response status    200
 
@@ -934,7 +969,7 @@ Get Product Deals Third Tab Slug
         ${chkTextSuccess}=    Run Keyword And Return Status    Output    $.response[${index}].slug
 
         ${results_title}=    Set Variable    ''
-        ${results_title}=    Set Variable If    '${result}'=='4' and ${chkTextSuccess}==True    ${result}
+        ${results_title}=    Set Variable If    '${result}'=='4' and ${chkTextSuccess}==${True}    ${result}
         ${searchResult}=    Run Keyword If    '${results_title}'=='4'    Output    $.response[${index}].promotion_id
 
         Run Keyword If
@@ -961,7 +996,7 @@ Get Product Deals Third Tab Name
         ${chkTextSuccess}=    Run Keyword And Return Status    Output    $.response[${index}].slug
 
         ${results_title}=    Set Variable    ''
-        ${results_title}=    Set Variable If    '${result}'=='4' and ${chkTextSuccess}==True    ${result}
+        ${results_title}=    Set Variable If    '${result}'=='4' and ${chkTextSuccess}==${True}    ${result}
         ${searchResult}=    Run Keyword If    '${results_title}'=='4'    Output    $.response[${index}].display_name
 
         Run Keyword If

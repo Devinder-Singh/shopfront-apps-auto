@@ -22,7 +22,7 @@ Select Daily Deals Filter Option From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtFilterOpt}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -41,7 +41,7 @@ Select App Only Deals Filter Option From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtFilterOpt}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScrolliOS}
@@ -60,7 +60,7 @@ Select Third Deals Filter Option From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtFilterOpt}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -78,7 +78,7 @@ Select Third Deals From API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${dealName}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}

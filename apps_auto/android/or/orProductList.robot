@@ -24,3 +24,5 @@ ${btnProductWLSave}      xpath=//*[@text="SAVE"]
 
 ${lblTermsCond}      xpath=//*[contains(@text,"This is our List Price. Find out what this means in our Terms & Conditions")]
 ${lblPLPInStock}      xpath=//*[@text="In stock"]
+
+${btnProductLeft}      xpath=//*[contains(@text, "left")]

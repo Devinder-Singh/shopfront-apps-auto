@@ -672,7 +672,7 @@ Merchandised Landing Pages (CMS Widgets) - Banner Pair Widget - QA-8901
     [Teardown]    Tear Down
 
 Apps > Merchandised Landing Pages (CMS Widgets) - QA-8902
-    [Tags]    data    QA-8902
+    [Tags]    QA-8902
     [Setup]    Start Application
     Click Home
     Click Search Home

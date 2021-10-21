@@ -332,12 +332,15 @@ Apps > Wishlist > My Lists > Pagination - QA-5369
 
 Apps > Wishlist > My Lists > Landing Page > Create List Tutorial - QA-5375
     [Tags]    QA-5375
-    [Setup]    Start Application
+    [Setup]    Install Application
+    Close All Applications
+    Start Application
     Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Wishlist Nav Bar
+    Verify Text On Screen    Create a New List    15s
     Click Create Wishlist
     Click Home
     Click Search Home
@@ -403,4 +406,351 @@ Apps > Wishlist > List Details > Empty List - QA-5379
     Click Back Android
     Click Back iOS    Wish List
     Verify Text On Screen    Trending on Takealot    10s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Pagination - QA-5380
+    [Tags]    QA-5380
+    [Setup]    Start Application
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL_Wishlists}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Verify Text On Screen Scroll    Gosh Donoderm Moisture Gel    1s    ${windowScroll}    ${btnWishlistCart}
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Swipe Gestures - QA-5381
+    [Tags]    QA-5381
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Close Application
+    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Verify Element On Screen    ${btnWishlistCart}    30s
+    Click Wishlist Edit
+    Select Wishlist Item
+    Click Wishlist Move to List
+    Verify Text On Screen    Move to List    10s
+    Verify Text On Screen    Wish List    1s
+    Verify Element On Screen    ${btnWishlistSAVE}    1s
+    Verify Element On Screen    ${btnWishlistPlusIcon}    1s
+    Close Application
+    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Verify Element On Screen    ${btnWishlistCart}    30s
+    Click Wishlist Edit
+    Select Wishlist Item
+    Click Wishlist Delete Items
+    Click Wishlist Delete Items Undo
+    Close Application
+    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Click Wishlist Add To Cart
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Edit > Delete - QA-5383
+    [Tags]    QA-5383
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Close Application
+    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Verify Element On Screen    ${btnWishlistCart}    30s
+    Click Wishlist Edit
+    Click Back Android
+    Click Delete Wishlist Items Cancel iOS
+    Click Wishlist Edit
+    Select Wishlist Item
+    Verify Element On Screen    ${btnWishlistMoveToList}    10s
+    Verify Element On Screen    ${btnWishlistDelete}    2s
+    Click Wishlist Delete Items
+    Click Wishlist Delete Items Undo
+    Verify Element On Screen    ${btnWishlistCart}    15s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Rename List - QA-5387
+    [Tags]    QA-5387
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Wishlist Nav Bar
+    Navigate to Wishlist Auto
+    Click More Options Menu Android
+    Click Rename Wishlist
+    Edit and Save Wishlist
+    Verify Text On Screen    AutoTestNow    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist (iOS) > My Lists > My Lists Landing Page - QA-5388
+    [Tags]    QA-5388
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Wishlist Nav Bar
+    Verify Text On Screen    AutoTestWishlist    30s
+    Verify Text On Screen    Wish List    2s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Limitations(250 items) > Move item - QA-9190
+    [Tags]    QA-9190
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to 'AutoTestWishlist'    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Home WishList
+    Click Wishlist Edit
+    Select Wishlist Item
+    Click Wishlist Move Items
+    Click Option Wish List
+    Click Wishlist Move Items
+    Verify Text On Screen    Limit reached    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Limitations(250 items) > PLP - QA-9191
+    [Tags]    QA-9191
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Limit reached    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Product Card > out off stock - QA-9193
+    [Tags]    QA-9193
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    shirt
+    Click Product from API
+    Verify Element On Screen Not    ${btnAddToCart}    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Onboarding - QA-9194
+    [Tags]    QA-9194
+    [Setup]    Install Application
+    Close All Applications
+    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Verify Text On Screen    Create a New List    15s
+    Close Application
+    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Check Text On Screen Not    Create a New List
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    ${G_EMAIL_Wishlists}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Check Text On Screen Not    Create a New List
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu Login
+    [Teardown]    Tear Down
+
+Apps > Wishlist > Logged out user tests - QA-8940
+    [Tags]    QA-8940
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application
+    Click Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Element On Screen    ${btnLogin}    30s
+    Close Application
+    Start Application
+    Click Home
+    Search Product    Pencil
+    Click Search Product Wishlist
+    Verify Element On Screen    ${btnLogin}    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Home Wishlist Icon
+    Verify Element On Screen    ${btnLogin}    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > My Lists > Recommended For You - QA-8953
+    [Tags]    QA-8953
+    [Setup]    Start Application
+    Clear Environment
+    Create Wishlists
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Verify Text On Screen    DEFAULT    30s
+    Verify Text On Screen Scroll    Recommended for You    1s    ${windowScroll}    ${btnWishlistItems}
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application
+    Click Menu
+    Login Takealot    ${G_EMAIL_Wishlists}    t@ke@!ot1234
+    Click Home
+    Click Home Wishlist
+    Verify Text On Screen Scroll    Recommended for You    1s    ${windowScroll}    ${btnMoreOptions}
+    [Teardown]    Tear Down
+
+Apps > Wishlist > My Lists > Trending Now Widgets - QA-8954
+    [Tags]    QA-8954
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Verify Text On Screen    DEFAULT    30s
+    Verify Text On Screen    Trending on Takealot    30s
+    Navigate to Wishlist Auto
+    Verify Text On Screen    Trending on Takealot    30s
+    Verify Text On Screen    This list is empty    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > My Lists > List Component - QA-8952
+    [Tags]    QA-8952
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Home WishList Only
+    Verify Text On Screen    DEFAULT    30s
+    Verify Text On Screen    Wish List    30s
+    Verify Text On Screen    1 item    30s
+    Navigate to Wishlist
+    Verify Text On Screen    ${query_result_CartProduct}    30s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Product Card - QA-5373
+    [Tags]    QA-5373
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Home WishList
+    Verify Text On Screen    ${query_result_CartProduct}    30s
+    Verify Text On Screen    ${query_result_CartProductPrice}    2s
+    Verify Text On Screen    Ships in 5 - 7 work days    2s
+    Click Wishlist Add To Cart
+    Verify Text On Screen    ${query_result_CartProduct}    2s
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    book
+    Click Product from API
+    Get Product Author from PLID
+    Click Add To Wishlist Only
+    Verify Text On Screen    Item added to Wish List    30s
+    Click Wishlist
+    Verify Text On Screen    ${query_result_CartProduct}    30s
+    Verify Text On Screen    ${query_result_CartProductAuthor}    2s
+    [Teardown]    Tear Down
+
+Apps > Wishlist > List Details > Delete List > Tablet - QA-5384
+    [Tags]    QA-5384
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Verify Text On Screen    List Created    20s
+    Navigate to Wishlist Auto
+    Click More Options Menu Android
+    Verify Text On Screen Android    Delete List    1s
+    Click Delete Wishlist
+    Verify Text On Screen    Wish List    20s
     [Teardown]    Tear Down

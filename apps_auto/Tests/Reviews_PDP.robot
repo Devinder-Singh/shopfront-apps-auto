@@ -32,7 +32,7 @@ Apps > Reviews > Review Components > Read Reviews - QA-9166
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
-    [Tags]    data    QA-7937
+    [Tags]    QA-7937
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234

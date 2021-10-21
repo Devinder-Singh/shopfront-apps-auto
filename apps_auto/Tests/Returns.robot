@@ -4,7 +4,7 @@ Resource        ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Apps > SS Returns > Returns UI (User without Returns History) > QA-5438
-    [Tags]    data    QA-5438
+    [Tags]    QA-5438
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -20,7 +20,7 @@ Apps > SS Returns > Returns UI (User without Returns History) > QA-5438
     [Teardown]    Tear Down
 
 Apps > SS Returns > Returns UI (User with Returns History) > QA-9256
-    [Tags]    data    QA-9256
+    [Tags]    QA-9256
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -42,7 +42,7 @@ Apps > SS Returns > Returns UI (User with Returns History) > QA-9256
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Order > QA-5429
-    [Tags]    data    QA-5429
+    [Tags]    QA-5429
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -73,7 +73,7 @@ Apps > SS Returns > Request a Return > Select Order > QA-5429
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Return Item > QA-5430
-    [Tags]    data    QA-5430
+    [Tags]    QA-5430
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -109,7 +109,7 @@ Apps > SS Returns > Request a Return > Select Return Item > QA-5430
     [Teardown]    Tear Down
 
 Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Steps 1,2 and 3
-    [Tags]    data    QA-8339_Steps_1_2_3
+    [Tags]    QA-8339
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -138,7 +138,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Steps 1,2 and 3
     [Teardown]    Tear Down
 
 Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 4
-    [Tags]    data    QA-8339_Step_4
+    [Tags]    QA-8339
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -158,7 +158,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 4
     [Teardown]    Tear Down
 
 Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 5
-    [Tags]    data    QA-8339_Step_5
+    [Tags]    QA-8339
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -180,7 +180,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 5
     [Teardown]    Tear Down
 
 Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 6
-    [Tags]    data    QA-8339_Step_6
+    [Tags]    QA-8339
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -202,7 +202,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 6
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Log Return Request > QA-5432
-    [Tags]    data    QA-5432
+    [Tags]    QA-5432
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -242,7 +242,7 @@ Apps > SS Returns > Request a Return > Log Return Request > QA-5432
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Log Return Request > QA-8407
-    [Tags]    data    QA-8407
+    [Tags]    QA-8407
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -278,7 +278,7 @@ Apps > SS Returns > Request a Return > Log Return Request > QA-8407
     [Teardown]    Tear Down
 
 Apps > SS Returns > Log Return Request > Collect > QA-5436
-    [Tags]    data    QA-5436
+    [Tags]    QA-5436
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -321,7 +321,7 @@ Apps > SS Returns > Log Return Request > Collect > QA-5436
     [Teardown]    Tear Down
 
 Apps > SS Returns > Log Return Request > Drop-off > QA-5435
-    [Tags]    data    QA-5436
+    [Tags]    QA-5436
     [Setup]    Start Application
     Click Menu
     Click Menu Login

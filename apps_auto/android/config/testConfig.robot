@@ -8,3 +8,4 @@ ${CHROME_VERSION}    Latest
 ${APP_PATH}    /Users/jenkins/qa_build/apk_files/master/debug-3.3.0.apk
 ${DEVICE_NAME}    android
 ${APP_ENVIRONMENT}    https://api.takealot.com/
+#${APP_ENVIRONMENT}    http://api.master.env/

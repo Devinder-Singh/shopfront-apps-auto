@@ -5,24 +5,33 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Wishlist > List Details > Pagination - QA-5380
-    [Tags]    QA-5380
+Apps > Checkout > Delivery > Address > Incomplete Address - QASA-592
+    [Tags]    QASA-592
     [Setup]    Start Application
     Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
-    Click Home WishList
-    Verify Text On Screen    This list is empty    30s
-    Click Wishlist Continue Shopping
     Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
     Close Application
     Start Application
     Click Home
-    Click Home WishList
-    Verify Text On Screen    Trending on Takealot    30s
-    Click Product Trending
-    Verify Text On Screen    Trending on Takealot    10s
+    Click Search Home
+    Search Product    Pen
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Verify Text On Screen    12 Ridge Way    30s
     [Teardown]    Tear Down
 
 #Register User

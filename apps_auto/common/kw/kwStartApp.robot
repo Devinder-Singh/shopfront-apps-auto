@@ -18,18 +18,7 @@ Tear Down
 
 Install Application
     [Arguments]    ${autoAlert}=${True}
-
+    Log    ${APP_PATH}
     &{cap}=    Get Capabilities    ${True}    ${autoAlert}
-    Log Many    &{cap}
-    Open Application    ${REMOTE_URL}    &{cap}
-
-Install Application Master
-#    ${APP_PATH}=    Set Variable    /Users/jenkins/qa_build_master/apk_files/master/debug-3.3.0.apk
-#    ${APP_ENVIRONMENT}=    Set Variable    http://api.master.env/
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Set Global Variable    ${APP_PATH}    /Users/jenkins/qa_build_master/apk_files/master/debug-3.3.0.apk
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Set Global Variable    ${PLATFORM_VERSION}    14.4
-
-    Set Global Variable    ${APP_ENVIRONMENT}    http://api.master.env/
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Install Application
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Log Many    &{cap}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Open Application    ${REMOTE_URL}    &{cap}

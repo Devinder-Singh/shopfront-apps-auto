@@ -1,12 +1,12 @@
 *** Settings ***
 Default Tags      critical
-#Suite Setup    Install Application
+#Suite Setup    Install Application  
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Register User
     [Tags]    Master0
-    [Setup]    Install Application Master
+    [Setup]    Install Application
     Close All Applications
     Start Application
     Click Menu
@@ -17,6 +17,12 @@ Register User
     Click Menu Register
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
     Click Home
+    Click Menu My Account
+    Click Menu Address Book
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
+    Wait Until Page Contains    Tester Residential    10s
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Credit Card
@@ -94,7 +100,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
+    Verify Payfast Payment Text
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV

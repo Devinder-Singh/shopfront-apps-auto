@@ -12,7 +12,7 @@ Click Variant Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -40,7 +40,7 @@ Click Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -57,13 +57,30 @@ Click In Stock Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblPLPInStock}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${lblPLPInStock}
+    Click Close Ad
+
+Click Left Product from API
+#    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    10
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnProductLeft}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==${True}
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${btnProductLeft}
     Click Close Ad
 
 Click Leadtime Product from API
@@ -76,7 +93,7 @@ Click Leadtime Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -126,7 +143,7 @@ Click Product from API Scroll
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -145,7 +162,7 @@ Verify Price Range Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -166,7 +183,7 @@ Click Listing Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -190,7 +207,7 @@ Click Product Auto from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -208,7 +225,7 @@ Click Filter Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -227,7 +244,7 @@ Click Daily Deals Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -246,7 +263,7 @@ Click Third Tab Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -265,7 +282,7 @@ Click App Only Deals Product from API
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -316,7 +333,7 @@ Click Product From Title
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblProdTitle}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${windowScroll}
@@ -357,7 +374,7 @@ Verify Product From Title
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblProdTitle}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -448,7 +465,7 @@ Click Product No Reviews
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -467,7 +484,7 @@ Click Product Multiple Reviews
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -484,12 +501,12 @@ Verify Sorted Products
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    30s
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    We could not find results    30s
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -507,12 +524,12 @@ Verify Sorted Products
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    30s
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    We could not find results    30s
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -528,7 +545,7 @@ Verify Filtered Products
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    30s
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}
@@ -541,7 +558,7 @@ Verify Filtered Products
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    30s
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${btnProductListView}

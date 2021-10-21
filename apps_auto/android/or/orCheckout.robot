@@ -17,3 +17,5 @@ ${btnCartContinueShopping}      xpath=//*[@text="CONTINUE SHOPPING"]
 
 ${btnCartQtyRoot}    id=${APP_PACKAGE}:id/cartQuantityItemsRv
 ${btnCartAddPromoItems}    ${EMPTY}
+
+${lblCheckoutMissedPromotion}      xpath=//*[contains(@text, "ADD 1 ITEM TO QUALIFY")]
