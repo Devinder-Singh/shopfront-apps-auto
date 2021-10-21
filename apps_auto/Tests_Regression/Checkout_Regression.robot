@@ -1,5 +1,5 @@
 *** Settings ***
-Default Tags      checkout
+Default Tags      checkout_regression
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***

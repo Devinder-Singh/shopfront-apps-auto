@@ -5,6 +5,35 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
+Apps > Checkout > Delivery > Address > Incomplete Address - QASA-592
+    [Tags]    QASA-592
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pen
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Verify Text On Screen    12 Ridge Way    30s
+    [Teardown]    Tear Down
+
 #Register User
 #    [Tags]    Master0
 #    [Setup]    Start Application
