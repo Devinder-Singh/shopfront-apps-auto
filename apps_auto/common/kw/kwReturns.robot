@@ -405,10 +405,16 @@ Click Return Request Contact Details Selector
     Click Element    ${returnRequestContactDetailSelector}
 
 Verify Return Select Delivery Method Pickup Point Option
+    [Arguments]    ${expectedTitle}
+
     Element Should Be Visible    ${returnSelectReturnMethodPickupPoint}
+    Element Text Should Be    ${returnSelectReturnMethodPickupPointTitle}   ${expectedTitle}
 
 Verify Return Select Delivery Method Collect Option
+    [Arguments]    ${expectedTitle}
+
     Element Should Be Visible    ${returnSelectReturnMethodCollect}
+    Element Text Should Be    ${returnSelectReturnMethodCollectTitle}   ${expectedTitle}
 
 Click Return Select Delivery Method Pickup Point Option
     Click Element    ${returnSelectReturnMethodPickupPoint}
@@ -427,8 +433,28 @@ Click Return Select Delivery Method Pickup Point Item
     Click Element    ${returnSelectPickupPointItemTitle}
 
 Verify Return Select Delivery Method Pickup Point Option Is Not Active
+    [Arguments]    ${expectedTitle}
+
+    Verify Return Select Delivery Method Pickup Point Option    ${expectedTitle}
     Click Return Select Delivery Method Pickup Point Option
     Verify Toolbar Title    Select Return Method
+
+Add Liquor Return Item To Return Request
+    Click Returns Call To Action Button
+    Sleep    5s
+    Scroll To Element In Container    ${cardReturnsOrderHistoryItemWithLiquorOption}    ${containerReturnsOrderHistory}    20
+    Click Element    ${cardReturnsOrderHistoryItemWithLiquorOption}
+    Sleep    5s
+    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithLiquor}    ${containerReturnsHOrderDetail}    20
+    Click Element    ${cardReturnsOrderDetailItemWithLiquor}
+    Click Return Reason Reason Selector
+    Click Return Reason Reason Non-Exchange Item
+    Scroll To Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Item
+    Scroll To Return Reason Text Area
+    Input Return Reason Text Area Text    Test Description
+    Click Returns Call To Action Button
 
 # Setup Keyword for getting a product in returns request
 Add Single Return Item To Return Request

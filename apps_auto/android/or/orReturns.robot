@@ -23,6 +23,7 @@ ${cardReturnsOrderHistoryItemImageContainer}    xpath=//android.widget.LinearLay
 ${cardReturnsOrderHistoryItemWithMutlipleQuantity}    xpath=//*[contains(@text, 'Order #91818963')]
 ${cardReturnsOrderHistoryItemWithSizeVariantOption}    xpath=//*[contains(@text, 'Order #92998356')]
 ${cardReturnsOrderHistoryItemWithColourVariantOption}    xpath=//*[contains(@text, 'Order #94155963')]
+${cardReturnsOrderHistoryItemWithLiquorOption}    xpath=//*[contains(@text, 'Order #95203168')]
 
 ${returnOrderDetailReturnableSectionTitle}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'product_consignment_container')]//android.widget.TextView[contains(@text, 'Returnable Items')]
 ${returnOrderDetailNonReturnableSectionTitle}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'product_consignment_container')]//android.widget.TextView[contains(@text, 'Non-Returnable Items')]
@@ -36,6 +37,7 @@ ${cardReturnsOrderDetailItemWarrantySubtitle}    xpath=//android.widget.TextView
 ${cardReturnsOrderDetailItemWithMultipleQuantity}    xpath=//*[contains(@text, 'Pokemon Sword & Shield 4: Vivid Voltage - Booster')]
 ${cardReturnsOrderDetailItemWithVariantSize}    xpath=//*[contains(@text, "Nike Women's Miler Long Sleeve Running Top - Black - S")]
 ${cardReturnsOrderDetailItemWithVariantColour}    xpath=//*[contains(@text, "Nike Hyperfuel 500ml Water Bottle - Black/White")]
+${cardReturnsOrderDetailItemWithLiquor}    xpath=//*[contains(@text, "Mixed Case of Top End Wines for the Avid Entertainer 12 x 750ml")]
 
 ${cardReturnsOrderDetailReturnableItem}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Returnable Item')]
 ${cardReturnsOrderDetailReturnableItem2}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Returnable Item')][2]
@@ -115,7 +117,9 @@ ${returnRequestEmptyState}    xpath=//android.widget.ImageView[@content-desc="em
 ${returnRequestEmptyStateCallToAction}    id=${APP_PACKAGE}:id/tal_material_button
 
 ${returnSelectReturnMethodPickupPoint}    xpath=//android.view.ViewGroup[@content-desc="Pickup Point"]
+${returnSelectReturnMethodPickupPointTitle}    xpath=//android.view.ViewGroup[@content-desc="Pickup Point"]//android.widget.TextView[contains(@resource-id, 'navigation_widget_title')]
 ${returnSelectReturnMethodCollect}    xpath=//android.view.ViewGroup[@content-desc="Collect Address"]
+${returnSelectReturnMethodCollectTitle}    xpath=//android.view.ViewGroup[@content-desc="Collect Address"]//android.widget.TextView[contains(@resource-id, 'navigation_widget_title')]
 
 ${returnSelectAddressItem}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returns_address_item_container')]//android.view.ViewGroup
 ${returnSelectAddressItemName}    id=${APP_PACKAGE}:id/returns_address_item_name

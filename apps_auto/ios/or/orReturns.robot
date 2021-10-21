@@ -23,6 +23,7 @@ ${cardReturnsOrderHistoryItemImageContainer}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithMutlipleQuantity}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithSizeVariantOption}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithColourVariantOption}    ${EMPTY}
+${cardReturnsOrderHistoryItemWithLiquorOption}    ${EMPTY}
 
 ${returnOrderDetailReturnableSectionTitle}    ${EMPTY}
 ${returnOrderDetailNonReturnableSectionTitle}    ${EMPTY}
@@ -36,6 +37,7 @@ ${cardReturnsOrderDetailItemWarrantySubtitle}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithMultipleQuantity}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithVariantSize}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithVariantColour}    ${EMPTY}
+${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
 
 ${cardReturnsOrderDetailReturnableItem}    ${EMPTY}
 ${cardReturnsOrderDetailReturnableItem2}    ${EMPTY}
@@ -115,7 +117,9 @@ ${returnRequestEmptyState}    ${EMPTY}
 ${returnRequestEmptyStateCallToAction}    ${EMPTY}
 
 ${returnSelectReturnMethodPickupPoint}    ${EMPTY}
+${returnSelectReturnMethodPickupPointTitle}    ${EMPTY}
 ${returnSelectReturnMethodCollect}    ${EMPTY}
+${returnSelectReturnMethodCollectTitle}    ${EMPTY}
 
 ${returnSelectAddressItem}    ${EMPTY}
 ${returnSelectAddressItemName}    ${EMPTY}
