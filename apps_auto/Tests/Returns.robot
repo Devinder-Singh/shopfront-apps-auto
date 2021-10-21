@@ -474,3 +474,40 @@ Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT av
     Click Back Screen
     Verify Toolbar Title    Log Return Request
     [Teardown]    Tear Down
+
+Apps > SS Returns > Select Return Method > Collect > QASA-415 > Liquor
+    [Tags]    data    QASA-416
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+4704435@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Add Liquor Return Item To Return Request
+    Verify Return Request Loading State Not Visible
+    Click Returns Call To Action Button
+    Verify Toolbar Title    Select Return Method
+    Verify Return Select Delivery Method Collect Option    Collect from my address
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    [Teardown]    Tear Down
+
+
+Apps > SS Returns > Select Return Method > Collect > QASA-415 > White good
+    [Tags]    data    QASA-416
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+4982402@take2.co.za    test
+    Click Menu My Account
+    Verify Returns Menu Item
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Verify Return Request Loading State Not Visible
+    Click Returns Call To Action Button
+    Verify Toolbar Title    Select Return Method
+    Verify Return Select Delivery Method Collect Option    Collect from my address
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    [Teardown]    Tear Down
