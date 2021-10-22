@@ -511,3 +511,42 @@ Apps > SS Returns > Select Return Method > Collect > QASA-415 > White good
     Click Return Select Return Method Address
     Verify Toolbar Title    Select Address
     [Teardown]    Tear Down
+
+Apps > SS Returns > Select Return Method > Return Method Invalid (Add item) > QASA-93
+    [Tags]    data    QASA-93
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+4704435@take2.co.za    test
+    Click Menu My Account
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Verify Return Request Loading State Not Visible
+    Click Returns Call To Action Button
+    Click Return Select Delivery Method Pickup Point Option
+    Click Return Select Delivery Method Pickup Point Item
+    Verify Toolbar Title    Log Return Request
+    Verify Return Request Loading State Not Visible
+    Scroll To Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
+    Click Returns Request Add Another Item
+    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithLiquor}    ${containerReturnsHOrderDetail}    20
+    Click Element    ${cardReturnsOrderDetailItemWithLiquor}
+    Click Return Reason Reason Selector
+    Click Return Reason Reason Non-Exchange Item
+    Scroll To Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Item
+    Scroll To Return Reason Text Area
+    Input Return Reason Text Area Text    Test Description
+    Click Returns Call To Action Button
+    Verify Toolbar Title    Log Return Request
+    Verify Return Request Loading State Not Visible
+    Verify Return Request Return Method Header Is Not Present
+    Swipe Returns Request Item For Delete
+    Click Returns Request Delete Dialog Remove Option
+    Verify Return Request Loading State Not Visible
+    Swipe Returns Request Item For Delete
+    Click Returns Request Delete Dialog Remove Option
+    Verify Return Request Loading State Not Visible
+    [Teardown]    Tear Down

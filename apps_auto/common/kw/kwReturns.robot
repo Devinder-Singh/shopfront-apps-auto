@@ -439,6 +439,9 @@ Verify Return Select Delivery Method Pickup Point Option Is Not Active
     Click Return Select Delivery Method Pickup Point Option
     Verify Toolbar Title    Select Return Method
 
+Verify Return Request Return Method Header Is Not Present
+    Wait Until Page Does Not Contain Element    ${returnRequestReturnMethodHeader}    30s
+
 Add Liquor Return Item To Return Request
     Click Returns Call To Action Button
     Sleep    5s
