@@ -6,9 +6,9 @@ Resource          ../common/config/defaultConfig.robot
 *** Test Cases ***
 Register User
     [Tags]    Master0
-#    [Setup]    Install Application
-#    Close All Applications
-    [Setup]    Start Application
+    [Setup]    Install Application
+    Close All Applications
+    Start Application
     Click Menu
     Click Menu Login
     Close Application
