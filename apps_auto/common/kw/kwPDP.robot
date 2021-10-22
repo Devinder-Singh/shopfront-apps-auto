@@ -8,7 +8,7 @@ Click Increase Cart Quantity
     Wait Until Element Is Visible    ${btnPDPCartItemIncrease}    30s
     FOR    ${i}    IN RANGE    ${qty}
         Click Element    ${btnPDPCartItemIncrease}
-        Sleep    3s
+        Sleep    2s
     END
 
 Click Increase Cart Quantity iOS
@@ -17,7 +17,7 @@ Click Increase Cart Quantity iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnPDPCartItemIncrease}    30s
     FOR    ${i}    IN RANGE    ${qty}
         Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPCartItemIncrease}
-        Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    3s
+        Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    2s
     END
 
 Click Option Wish List
@@ -35,51 +35,51 @@ Click Save Wishlists
 Click Close Ad
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPCloseAd}    30s
     Run Keyword If    ${chkTextSuccess}==${True} and '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPCloseAd}
-    Sleep    2s
+#    Sleep    2s
 
 Click Add To Cart
     [Arguments]    ${seconds}=0s
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Click Element    ${btnAddToCart}
-    Sleep    ${seconds}
+#    Sleep    ${seconds}
 
 Click Wishlist Change
     Wait Until Element Is Visible    ${lblPDPWishlistChange}    30s
     Click Element    ${lblPDPWishlistChange}
-    Sleep    2s
+#    Sleep    2s
 
 Click In Stock Close
     Wait Until Element Is Visible    ${btnPDPInStockClose}    5s
     Click Element    ${btnPDPInStockClose}
-    Sleep    2s
+#    Sleep    2s
 
 Click In Stock JHB
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Wait Until Element Is Visible    ${btnPDPInStockJHB}    5s
     Click Element    ${btnPDPInStockJHB}
-    Sleep    2s
+#    Sleep    2s
 
 Click In Stock CPT
     Wait Until Element Is Visible    ${btnAddToCart}    30s
     Wait Until Element Is Visible    ${btnPDPInStockCPT}    5s
     Click Element    ${btnPDPInStockCPT}
-    Sleep    2s
+#    Sleep    2s
 
 Click Add Pre Order To Cart
     Wait Until Element Is Visible    ${btnPDPPreOrder}    30s
     Click Element    ${btnPDPPreOrder}
-    Sleep    2s
+#    Sleep    2s
 
 Click Exchange And Returns
     Swipe Up    ${windowScroll}
     Wait Until Element Is Visible    ${lblPDPExchAndReturn}    30s
     Click Element    ${lblPDPExchAndReturn}
-    Sleep    2s
+#    Sleep    2s
 
 Click Non Refundable
     Wait Until Element Is Visible    ${lblPDPNonrefundable}    30s
     Click Element    ${lblPDPNonrefundable}
-    Sleep    2s
+#    Sleep    2s
 
 Click Show All Colours
     Wait Until Element Is Visible    ${btnPDPShowAllColours}    30s
@@ -113,12 +113,12 @@ Click PDP CPT
 Click PDP Warehouse OK
     Wait Until Element Is Visible    ${txtPDPWarehouseOK}    3s
     Click Element    ${txtPDPWarehouseOK}
-    Sleep    2s
+#    Sleep    2s
 
 Click PDP When Do I Get
     Wait Until Element Is Visible    ${btnPDPWhenDoIGet}    3s
     Click Element    ${btnPDPWhenDoIGet}
-    Sleep    2s
+#    Sleep    2s
 
 Click PDP Credit Info
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPOnCreditInfo}    3s
@@ -178,12 +178,12 @@ Click PDP Show All Offers
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${btnPDPShowAllOffers}
-    Sleep    2s
+#    Sleep    2s
 
 Click PDP Show All Offers No Scroll
     Wait Until Element Is Visible    ${btnPDPShowAllOffers}    5s
     Click Element    ${btnPDPShowAllOffers}
-    Sleep    2s
+#    Sleep    2s
 
 Click PDP What Is This No Scroll Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${lnkPDPWhatIsThis}    30s
@@ -225,7 +225,7 @@ Click Continue Shopping iOS
 Click Continue Shopping Ignore Error
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnContinueShopping}    10s
     Run Keyword If    ${chkElement}==${True}    Click Element    ${btnContinueShopping}
-    Sleep    3s
+#    Sleep    3s
 
 Click Airtime
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
@@ -265,7 +265,7 @@ Click Add Bundle To Cart
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${btnPDPAddBundleToCart}
-    Sleep    2s
+#    Sleep    2s
 
 Click Add Bundle To Cart No Scroll Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnPDPAddBundleToCart}
@@ -316,7 +316,7 @@ Click Shop The Deal
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
-        Sleep    1s
+#        Sleep    1s
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${lblPDPShopTheDeal}
@@ -329,13 +329,13 @@ Click Blue Colour Option
 
 Click Go To Cart
     Wait Until Element Is Visible    ${btnGoToCart}    30s
-    Sleep    2s
+    Sleep    1s
     Click Element    ${btnGoToCart}
-    Sleep    2s
+#    Sleep    2s
 
 Click Go To Cart iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Go To Cart
-    Sleep    2s
+#    Sleep    2s
 
 Click PDP Write Review
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    30s
@@ -350,7 +350,7 @@ Click PDP Write Review
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
-        Sleep    1s
+#        Sleep    1s
         ${index}=    Evaluate    ${index} + 1
     END
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
@@ -379,7 +379,7 @@ Click PDP Show All Reviews
             ...    Exit For Loop
 
         Swipe Up    ${btnPDPScrollRoot}
-        Sleep    1s
+#        Sleep    1s
         ${index}=    Evaluate    ${index} + 1
     END
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${btnPDPScrollRoot}
@@ -443,8 +443,8 @@ Click Product Variant From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+#    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}    10s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API
@@ -465,8 +465,8 @@ Click Product Disabled Variant From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+#    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Colour From API
@@ -487,8 +487,8 @@ Click Product Variant Colour From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+#    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Disabled Colour From API
@@ -509,8 +509,8 @@ Click Product Variant Disabled Colour From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+#    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Colour With ShowAll From API
@@ -529,8 +529,8 @@ Click Product Variant Colour With ShowAll From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+#    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 
@@ -613,8 +613,8 @@ Click Product Variant Colour Size From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+#    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Disabled Size From API
@@ -635,8 +635,8 @@ Click Product Variant Disabled Size From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+#    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Size From API
@@ -657,8 +657,8 @@ Click Product Variant Size From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}
+#    Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Disabled Variant Colour From API
@@ -679,7 +679,7 @@ Click Product Disabled Variant Colour From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
+#    Sleep    2s
 
 Click Product Disabled Variant Colour Size From API
 
@@ -699,7 +699,7 @@ Click Product Disabled Variant Colour Size From API
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtProduct}
-    Sleep    2s
+#    Sleep    2s
 
 Verify Product YAML from API
     Get Product YAML Detail

@@ -4,8 +4,12 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Click Free Delivery
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    30s
-    Wait Until Element Is Visible    ${btnFree}    30s
-    Click Element    ${btnFree}
+
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnFree}    30s
+    Run Keyword If    ${chkTextSuccess}==${True}    Click Element    ${btnFree}
+    Run Keyword If    ${chkTextSuccess}==${False}    Click Surcharge Delivery
+#    Wait Until Element Is Visible    ${btnFree}    30s
+#    Click Element    ${btnFree}
 
 Click Free Delivery Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    30s

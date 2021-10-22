@@ -5,8 +5,8 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
-Apps > Checkout > Delivery > Address > Incomplete Address - QASA-592
-    [Tags]    QASA-592
+Apps > Cart > Product Card Actions > Remove & Move to Wishlist - QASA-521
+    [Tags]    QASA-521
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -18,20 +18,8 @@ Apps > Checkout > Delivery > Address > Incomplete Address - QASA-592
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Delivery
-    Click Address
-    Close Application
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    Pen
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Verify Text On Screen    12 Ridge Way    30s
+    Verify Text On Screen Android    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
+    Verify Text On Screen iOS    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
     [Teardown]    Tear Down
 
 #Register User
