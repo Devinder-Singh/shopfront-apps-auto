@@ -113,8 +113,8 @@ Apps > Promotions (Android) Set Bundle - QA-8367 / QA-7443
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
-    Verify Text On Screen Android    VIEW BUNDLE    1s
-    Verify Text On Screen iOS    View Bundle    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    VIEW BUNDLE    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    View Bundle    1s
     Close Application
     Start Application
     Clear Environment
@@ -143,8 +143,8 @@ Apps > Promotions (Android) Multi-Buys - QA-8411 / QA-7443
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    30s
-    Verify Text On Screen Android    ADD 1 ITEM TO QUALIFY    1s
-    Verify Text On Screen iOS    Add 1 item to qualify    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ADD 1 ITEM TO QUALIFY    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Add 1 item to qualify    1s
     Close Application
     Start Application
     Click Home
@@ -219,8 +219,8 @@ Apps > Verify Home Screen - QA-8876
     Click Menu
     Click Menu Shop By Department
     Verify Text On Screen    Daily Deals    30s
-    Verify Text On Screen Android    App Only Deals    1s
-    Verify Text On Screen iOS    App Only    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    App Only Deals    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    App Only    1s
 #    Verify Text On Screen    Gaming    1s
 #    Verify Text On Screen    Health & Personal Care    1s
 #    Verify Text On Screen    Essential Campsite Supplies    1s
@@ -277,7 +277,7 @@ Apps > Verify Home Screen - QA-8878
     Click Wishlist Edit
     Select Wishlist Item
     Click Wishlist Delete Items
-    Verify Text On Screen Android    This list is empty    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This list is empty    30s
     [Teardown]    Tear Down
 
 Apps > Search - QA-5358
@@ -494,8 +494,8 @@ Apps > PLP > Overflow Menus - QA-8341
     Click Options Menu Lists
     Click Back iOS    pencil case
     Click Back iOS    Back
-    Verify Text On Screen Android    Wish List    30s
-    Verify Text On Screen ios    My Lists    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    My Lists    30s
     Click Home
     Click Search Home
     Search Product    pencil
@@ -505,7 +505,7 @@ Apps > PLP > Overflow Menus - QA-8341
     Click Options Menu Account
     Click Back iOS    pencil case
     Click Back iOS    Back
-    Verify Text On Screen Android    Personal Details    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Personal Details    30s
     [Teardown]    Tear Down
 
 Apps > PDP - QA-5307
@@ -530,8 +530,8 @@ Apps > PDP - QA-5307
     Search Product    Drone
     Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    30s
-    Verify Text On Screen Android    Sponsored    2s
-    Verify Text On Screen iOS    Sponsored    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Sponsored    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Sponsored    2s
     Verify Text On Screen    % OFF    2s
     Verify Text On Screen    ${query_result_adProductStatus}    2s
 #    Verify Text On Screen    ${query_result_adProductRating}
@@ -540,8 +540,8 @@ Apps > PDP - QA-5307
     Verify Text On Screen    ${query_result_adProductBrand}    2s
     Click Product From Title    ${query_result_adProductTitle}
     Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Android    Sponsored    2s
-    Verify Text On Screen iOS    Sponsored    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Sponsored    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Sponsored    2s
     [Teardown]    Tear Down
 
 Apps > PDP - QA-8890
@@ -718,12 +718,12 @@ Apps > Wishlist (Android) - QA-5367
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen Android    Wish List    30s
-    Verify Text On Screen Android    Trending on Takealot    1s
-    Verify Text On Screen Android    DEFAULT    1s
-    Verify Text On Screen iOS    Wish List    30s
-    Verify Text On Screen iOS    Trending on Takealot    1s
-    Verify Text On Screen iOS    DEFAULT    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Trending on Takealot    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    DEFAULT    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Trending on Takealot    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DEFAULT    1s
     Click Create Wishlist
     [Teardown]    Tear Down
 
@@ -755,8 +755,8 @@ Apps > Wishlist (Android) > Delete List - QA-8906
     Click Create Wishlist
     Navigate to Wishlist Auto
     Click More Options Menu Android
-    Verify Text On Screen Android    Rename List    30s
-    Verify Text On Screen Android    Delete List    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Rename List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delete List    1s
     Click Delete Wishlist
     [Teardown]    Tear Down
 
@@ -778,8 +778,8 @@ Apps > Wishlist (Android) > Bottom Navigation - QA-8907
     Click Wishlist Default
     Click Wishlist Add To Cart
     Click More Options Menu
-    Verify Text On Screen Android    Share List    30s
-    Verify Text On Screen iOS    Share    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Share List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Share    30s
     Verify Text On Screen    Edit    1s
     [Teardown]    Tear Down
 
@@ -797,8 +797,8 @@ Apps > Wishlist (iOS) - QA-5361
     Click Go To Cart
     Change Cart Quantity Android    2
     Click Checkout Delete First Item
-    Verify Text On Screen iOS    No items    30s
-    Verify Text On Screen Android    Your Shopping Cart is Empty    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No items    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Your Shopping Cart is Empty    30s
     [Teardown]    Tear Down
 
 #Wishlist icon on PLP screen is not unique
@@ -827,7 +827,7 @@ Apps > Wishlist (iOS) - QA-5361
 #    Click Search Home
 #    Search Product    Pencil
 #    Click Search Product Wishlist
-#    Verify Text On Screen Android    Item added to Wish List    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    30s
 #    Close Application
 #    Start Application    ${False}
 #    Click Home
@@ -847,8 +847,8 @@ Apps > Wishlist (iOS) - QA-5361
 #    Click Add To Cart
 #    Click Go To Cart
 #    Click Checkout Move To Wishlist First Item
-##    Verify Text On Screen Android    Item(s) moved to list    30s
-##    Verify Text On Screen iOS    Item added to Wish List    30s
+##    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    30s
+##    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    30s
 #    [Teardown]    Tear Down
 
 Apps > Order Tracking - QA-5274
@@ -881,9 +881,9 @@ Apps > Order Tracking - QA-5274
     Verify Text On Screen    ORDER SUMMARY    30s
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
-    Verify Text On Screen Android    Order Total    1s
-    Verify Text On Screen Android    To Pay    1s
-    Verify Text On Screen iOS    TO PAY    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
     Verify Text On Screen    PAYMENT METHOD    1s
     Verify Text On Screen    Credit Card    1s
     Swipe Up    ${windowScroll}
@@ -919,8 +919,8 @@ Apps > My Account Verifications - QA-5356
     Click Back iOS    My Account
     Click Menu Exchanges And Returns
     Verify Element On Screen    ${btnMenuExchReturns}    30s
-#    Verify Text On Screen Android    Open file with    30s
-#    Verify Text On Screen Android    Chrome    1s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    1s
 #    Click Window Android
     Close Application
     Start Application    ${False}
@@ -945,18 +945,18 @@ Apps > My Account Verifications - QA-5356
     Click Add Delivery Address
     Click Residential
     Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
-    Verify Text On Screen iOS    DELETE    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    30s
     Click Back Delivery Android
     Click Back iOS    My Account
     Click Menu Address Book
     Click Edit Address
     Edit Delivery Address Street My Acc    13 Caro Roa
-    Verify Text On Screen iOS    DELETE    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    30s
     Click Back Delivery Android
     Click Back iOS    My Account
     Click Menu Address Book
     Click Delete Address
-    Verify Text On Screen Android    Address successfully deleted    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Address successfully deleted    30s
     Close Application
     Start Application
     Click Home
@@ -985,8 +985,8 @@ Apps > My Account Verifications - QA-9567
     Click Menu Credits Refunds
     Verify Text On Screen    Credit will be automatically applied to your next purchase    30s
     Verify Text On Screen    Refund History    1s
-    Verify Text On Screen Android    REDEEM GIFT VOUCHER    1s
-    Verify Text On Screen iOS    Redeem Gift Voucher    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    REDEEM GIFT VOUCHER    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Redeem Gift Voucher    1s
     Click Menu Credit History
     Verify Text On Screen    Available Credit    30s
 #    Verify Text On Screen    Gift Voucher:    1s
@@ -1005,14 +1005,14 @@ Apps > My Account Verifications - QA-9567
     Click Back iOS    Back
     Click Menu iOS
     Click Menu Takealot Group
-    Verify Text On Screen iOS    Takealot.group    30s
-    Verify Text On Screen Android    Mr. D    30s
-    Verify Text On Screen iOS    Mr D    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Takealot.group    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Mr. D    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Mr D    30s
     Verify Text On Screen    Superbalist    5s
     Click Back Android
     Click Menu Help
-    Verify Text On Screen Android    Open file with    30s
-    Verify Text On Screen Android    Chrome    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    5s
     [Teardown]    Tear Down
 
 Apps > Order Tracking 02 - QA-9609
@@ -1046,9 +1046,9 @@ Apps > Order Tracking 02 - QA-9609
     Verify Text On Screen    ORDER SUMMARY    30s
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
-    Verify Text On Screen Android    Order Total    1s
-    Verify Text On Screen Android    To Pay    1s
-    Verify Text On Screen iOS    TO PAY    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
     Verify Text On Screen    PAYMENT METHOD    1s
     Verify Text On Screen    Credit Card    1s
     Swipe Up    ${windowScroll}
@@ -1102,9 +1102,9 @@ Apps > Order Tracking 05 - QA-9619
     Verify Text On Screen    ORDER SUMMARY    30s
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
-    Verify Text On Screen Android    Order Total    1s
-    Verify Text On Screen Android    To Pay    1s
-    Verify Text On Screen iOS    TO PAY    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
     Swipe Up    ${windowScroll}
     Verify Text On Screen    PAYMENT METHOD    1s
     Verify Text On Screen    Credit Card    1s
@@ -1156,11 +1156,11 @@ Apps > Cart (Android) 02 - QA-9599
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
-#    Verify Text On Screen Android    Item(s) moved to list    30s
-    Verify Text On Screen Android    Your Shopping Cart is Empty    5s
-    Verify Text On Screen Android    Trending on Takealot    5s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Your Shopping Cart is Empty    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Trending on Takealot    5s
     Verify Element On Screen Android    ${btnCartContinueShopping}    1s
-#    Verify Text On Screen iOS    Item added to Wish List    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    30s
     Add To Cart Trending First Item
     Click Checkout
     Close Application
@@ -1207,19 +1207,19 @@ Apps > Cart (Android) 04 - QA-9600 / QA-9605
     Click Add To Cart
     Click Go To Cart
     Verify Element On Screen    ${btnWishListIcon}    30s
-    Verify Text On Screen Android    The gift voucher will be delivered via email to the recipient    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The gift voucher will be delivered via email to the recipient    30s
 #    Verify Text On Screen    The eBook will be added to your Digital Library, ready for you to download    1s
     Swipe Up    ${windowScroll}
     Swipe Up    ${windowScroll}
-    Verify Text On Screen Android    The prepaid code will be delivered to you via email    1s
-    Verify Text On Screen Android    This product is not eligible for Cash on Delivery (COD)    1s
-    Verify Text On Screen Android    Cart    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The prepaid code will be delivered to you via email    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This product is not eligible for Cash on Delivery (COD)    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Cart    1s
     Click Checkout
     Click Delivery
     Click Address
     Click Free Delivery
-    Verify Text On Screen Android    Delivery via email to    30s
-#    Verify Text On Screen iOS    Delivery via email to    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delivery via email to    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Delivery via email to    30s
     [Teardown]    Tear Down
 
 Cart Update & Cart Notification - TV - QA-8420

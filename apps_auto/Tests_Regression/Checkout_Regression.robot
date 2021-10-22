@@ -276,23 +276,23 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     Click Edit Address
     Swipe Up    ${windowScroll}
     Verify Element On Screen    ${btnSaveAddress}    15s
-    Verify Text On Screen iOS    RECIPIENT NAME    2s
-    Verify Text On Screen iOS    RECIPIENT MOBILE NUMBER    2s
-    Verify Text On Screen iOS    STREET ADDRESS    2s
-    Verify Text On Screen iOS    SUBURB    2s
-    Verify Text On Screen iOS    CITY / TOWN    2s
-    Verify Text On Screen iOS    PROVINCE    2s
-    Verify Text On Screen iOS    POSTAL CODE    2s
-    Verify Text On Screen iOS    COMPLEX / BUILDING (OPTIONAL)    2s
-#    Verify Text On Screen Android    Recipient Name    2s
-#    Verify Text On Screen Android    Recipient Mobile Number    2s
-#    Verify Text On Screen Android    Street Address    2s
-#    Verify Text On Screen Android    Suburb    2s
-#    Verify Text On Screen Android    City / Town    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    RECIPIENT NAME    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    RECIPIENT MOBILE NUMBER    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    STREET ADDRESS    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    SUBURB    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    CITY / TOWN    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    PROVINCE    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    POSTAL CODE    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    COMPLEX / BUILDING (OPTIONAL)    2s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Recipient Name    2s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Recipient Mobile Number    2s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Street Address    2s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Suburb    2s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    City / Town    2s
 #    Swipe Up    ${windowScroll}
-#    Verify Text On Screen Android    Province    2s
-#    Verify Text On Screen Android    Postal Code    2s
-#    Verify Text On Screen Android    Complex / Building (Optional)    2s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Province    2s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Postal Code    2s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Complex / Building (Optional)    2s
 #    Swipe Down    ${windowScroll}
     Edit Delivery Address Mobile Number    089766566
     Click Element    ${txtRecipientStreet}
@@ -377,8 +377,8 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Click Menu My Account
     Click Menu Address Book
     Click Address
-    Verify Text On Screen iOS    COMPLEX / BUILDING (OPTIONAL)    10s
-    Verify Text On Screen Android    Complex / Building (Optional)    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    COMPLEX / BUILDING (OPTIONAL)    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Complex / Building (Optional)    10s
     Verify Text On Screen    Complex or Building Name, unit number or floor    10s
     Click Address Mobile Question
     Verify Text On Screen    Enter the mobile number of the person receiving the delivery, so we can send delivery updates via SMS    10s
@@ -452,7 +452,7 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Click Menu Address Book
     Click Add Delivery Address
     Click Address Business
-    Verify Text On Screen iOS    BUSINESS NAME    10s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    BUSINESS NAME    10s
     Edit Delivery Address Business My Acc    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Click Save Address
 #    Verify Text On Screen    Maximum length for business name is 64 characters    10s
