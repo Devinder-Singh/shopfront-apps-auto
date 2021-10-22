@@ -3,13 +3,13 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Verify Card Payment
-    ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    10s
-    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Card number    10s
+    ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    60s
+    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Card number    1s
 
 Verify Payfast Payment Text
     [Arguments]    ${verifyText}='Instant EFT'
-    ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    10s
-    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Secure payments by PayFast    10s
+    ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    60s
+    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Secure payments by PayFast    1s
 
 Click Pay with Credit Card Back
     Wait Until Element Is Visible    ${navPayCreditCardBack}    30s
