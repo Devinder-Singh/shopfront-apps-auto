@@ -11,12 +11,12 @@ Click Menu
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHome}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHome}
 
-    Sleep    2s
+#    Sleep    2s
 
 Click Menu iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
-    Sleep    1s
+#    Sleep    1s
 
 Click Menu Login
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
@@ -30,7 +30,7 @@ Click Menu Login
     Run Keyword If    '${PLATFORM_NAME}'=='ios' and ${chkLoginElement}==${False}    Click Element    ${btnMenu}
 
     Click Element    ${btnMenuLogin}
-    Sleep    2s
+#    Sleep    1s
 
 Log In If Not Logged In
     [Arguments]    ${email}    ${password}
@@ -41,7 +41,7 @@ Log In If Not Logged In
 
     ${chkLoginElement}=    Run Keyword And Return Status    Page Should Contain Element    ${btnMenuLogin}
     Run Keyword If    ${chkLoginElement}==${True}    Click Element    ${btnMenuLogin}
-    Sleep    2s
+#    Sleep    2s
     Run Keyword If    ${chkLoginElement}==${True}    Login Takealot    ${email}    ${password}
 
 Click Menu Register
@@ -72,7 +72,7 @@ Click Menu Logout
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
     Click Element    ${btnLogout}
-    Sleep    2s
+#    Sleep    2s
 
 Click Menu Logout If Logged In
     Wait Until Element Is Visible    ${btnMenu}    30s
@@ -117,7 +117,7 @@ Click Menu Department
     Wait Until Element Is Visible    ${txtProduct}    5s
     Click Element    ${txtProduct}
 
-    Sleep    3s
+#    Sleep    3s
 
 Click Menu Gaming
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
@@ -140,7 +140,7 @@ Click Menu My Account
     Run Keyword If    ${chkTextSuccess}==${False} and '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccountText}
     Run Keyword If    ${chkTextSuccess}==${True} and '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccount}
 
-    Sleep    2s
+#    Sleep    2s
 
 Click Menu My Account Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}

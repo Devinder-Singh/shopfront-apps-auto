@@ -176,7 +176,7 @@ Click Review Sort
 Click Review Sort Most Helpful
     Wait Until Element Is Visible    ${lblReviewSortHelpful}    30s
     Click Element    ${lblReviewSortHelpful}
-    Sleep    2s
+#    Sleep    2s
 
 Click Review Sort Most Recent
     Wait Until Element Is Visible    ${lblReviewRecent}    30s

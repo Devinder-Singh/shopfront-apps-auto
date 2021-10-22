@@ -299,14 +299,14 @@ Click First Product from API
 
 Click Product Daily Deals
     Wait Until Element Is Visible    ${btnProductFilter}    30s
-    Sleep    5s
+#    Sleep    5s
     Wait Until Element Is Visible    ${imgProductDeals}    5s
     Click Element    ${imgProductDeals}
     Click Close Ad
 
 Click Product Seller Deals
     Wait Until Element Is Visible    ${btnProductFilter}    30s
-    Sleep    1s
+#    Sleep    1s
 
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${query_result_FirstProductBrand}"`][2]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${query_result_FirstProductBrand}']
 
@@ -316,7 +316,7 @@ Click Product Seller Deals
 
 Click Product Department
     Wait Until Element Is Visible    ${btnProductFilter}    30s
-    Sleep    1s
+#    Sleep    1s
     Wait Until Element Is Visible    ${imgProductDealsDept}    5s
     Click Element    ${imgProductDealsDept}
     Click Close Ad
@@ -392,7 +392,7 @@ Click Wine Club Deals
 
 Click Product Filter
     Wait Until Element Is Visible    ${btnProductFilter}    30s
-    Sleep    2s
+#    Sleep    2s
     Click Element    ${btnProductFilter}
 
 Click Product Grid View
@@ -414,12 +414,12 @@ Click Search Product Sort
 Click Search Product Wishlist
     Wait Until Element Is Visible    ${btnProductSearchSort}    30s
     Click Element    ${btnProductWishlist}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
 
 Click Search Product Wishlist iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnProductSearchSort}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnProductWishlist}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
 
 Click Product available in JHB only
     ${txtProduct}=    Get Product in JHB only

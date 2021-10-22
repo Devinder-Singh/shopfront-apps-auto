@@ -233,7 +233,7 @@ Edit Delivery Address Postal Code
     Clear Text    ${txtRecipientPostCode}
     Input Text    ${txtRecipientPostCode}    ${postalCode}
 
-    Sleep    1s
+#    Sleep    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Back iOS    Close
     Swipe Up    ${windowScroll}
 
@@ -246,7 +246,7 @@ Edit Delivery Address Postal Code My Acc
     Clear Text    ${txtRecipientPostCodeEdit}
     Input Text    ${txtRecipientPostCodeEdit}    ${postalCode}
 
-    Sleep    1s
+#    Sleep    1s
     Click Element    ${lblRecepientPostCode}
     Swipe Up    ${windowScroll}
 
@@ -257,7 +257,7 @@ Edit Delivery Address Suburb My Acc
     Wait Until Element Is Visible    ${lblAddresOptionMyAccSuburb}    5s
     Click Element    ${lblAddresOptionMyAccSuburb}
 
-    Sleep    1s
+#    Sleep    1s
     Wait Until Element Is Visible    ${lblAddresMyAccSuburb}    5s
     Click Element    ${lblAddresMyAccSuburb}
     Swipe Up    ${windowScroll}
@@ -271,7 +271,7 @@ Edit Delivery Address My Acc Empty
     Clear Text    ${txtRecipientSuburbMyAcc}
     Clear Text    ${txtRecipientCityMyAcc}
 
-    Sleep    1s
+#    Sleep    1s
     Click Element    ${lblRecepientPostCode}
     Swipe Up    ${windowScroll}
 
@@ -347,7 +347,7 @@ Edit Delivery Address Business
     Clear Text    ${txtBusinessName}
     Input Text    ${txtBusinessName}    ${business}
 
-    Sleep    1s
+#    Sleep    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Back iOS    Close
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Swipe Up    ${windowScroll}
 

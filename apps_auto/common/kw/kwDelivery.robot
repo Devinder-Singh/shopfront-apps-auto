@@ -26,7 +26,7 @@ Click Collect Not Available
     Click Element    ${btnCollectNotAvailable}
 
 Click Add Delivery Address
-    Wait Until Element Is Visible    ${btnDeliveryAddress}    30s
+    Wait Until Keyword Succeeds    3    3s    Wait Until Element Is Visible    ${btnDeliveryAddress}    30s
     Click Element    ${btnDeliveryAddress}
 
 Click Back Delivery
@@ -35,7 +35,7 @@ Click Back Delivery
 
 Click Back Delivery Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnDeliveryAddress}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    1s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnBackDelivery}
 
 Verify Delivery Text

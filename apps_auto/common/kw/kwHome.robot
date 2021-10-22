@@ -5,19 +5,22 @@ Resource          ../config/defaultConfig.robot
 Click Home
     Wait Until Element Is Visible    ${btnHome}    30s
     Click Element    ${btnHome}
-    Sleep    2s
+#    Sleep    2s
 
 Click Home iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHome}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnHome}
-    Sleep    2s
+#    Sleep    2s
 
 Click Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    30s
     Click Element    ${btnAddWishlist}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen Android    Item added to Wish List    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen iOS    Item added to Wish List    30s
-    Sleep    5s
+
+#    Sleep    5s
+    Check Text On Screen Not    Item added to Wish List
+
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
     Click Continue Shopping Ignore Error
@@ -25,7 +28,7 @@ Click Add To Wishlist
 Click Add To Wishlist Only
     Wait Until Element Is Visible    ${btnAddWishlist}    30s
     Click Element    ${btnAddWishlist}
-    Sleep    1s
+#    Sleep    1s
 
 Click More Options Menu
     Wait Until Element Is Visible    ${btnMoreOptions}    30s
@@ -144,7 +147,7 @@ Click Home WishList Only
 Click Home Wishlist Icon
     Wait Until Element Is Visible    ${btnHomeWishListIcon}    30s
     Click Element    ${btnHomeWishListIcon}
-    Sleep    1s
+#    Sleep    1s
 
 Click Home WishList
     Wait Until Element Is Visible    ${btnWishListIcon}    30s

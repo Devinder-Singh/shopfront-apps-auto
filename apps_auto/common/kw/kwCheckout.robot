@@ -52,7 +52,7 @@ Change Cart Quantity Android
     Wait Until Element Is Visible    ${txtCartQty}    1s
     Click Element    ${txtCartQty}
 
-    Sleep    3s
+#    Sleep    3s
 
 Click Add Items to Qualify iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnCartAddPromoItems}    30s

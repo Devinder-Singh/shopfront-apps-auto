@@ -23,7 +23,7 @@ Swipe Down
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.7)
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
-    Sleep  1
+#    Sleep  1
 
 Swipe Up
     [Arguments]       ${locator}
@@ -34,7 +34,7 @@ Swipe Up
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.3)
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
-    Sleep  1
+#    Sleep  1
 
 Verify eBucks On Screen
     ${result}=    Evaluate    ${query_result_CartProductPrice} * 10
@@ -303,19 +303,19 @@ Click Back Screen
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${navBack}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBack}
 
-    Sleep    2s
+    Sleep    1s
 
 Click Back Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${navBack}
 
-    Sleep    2s
+    Sleep    1s
 
 Click Window Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${windowScroll}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${windowScroll}
 
-    Sleep    2s
+#    Sleep    2s
 
 Click Back iOS
     [Arguments]    ${elementID}
@@ -324,7 +324,7 @@ Click Back iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${backiOS}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${backiOS}
 
-    Sleep    2s
+    Sleep    1s
 
 Click Cancel Screen
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
@@ -333,7 +333,7 @@ Click Cancel Screen
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${navBack}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBack}
 
-    Sleep    2s
+    Sleep    1s
 
 Scroll To Element In Container
     [Arguments]    ${elementLocator}    ${scrollContainerLocator}    ${retryCount}
