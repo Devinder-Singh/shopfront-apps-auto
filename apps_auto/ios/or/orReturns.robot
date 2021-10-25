@@ -121,8 +121,15 @@ ${returnSelectReturnMethodPickupPointTitle}    ${EMPTY}
 ${returnSelectReturnMethodCollect}    ${EMPTY}
 ${returnSelectReturnMethodCollectTitle}    ${EMPTY}
 
+${returnSelectAddressAddAddress}    ${EMPTY}
 ${returnSelectAddressItem}    ${EMPTY}
 ${returnSelectAddressItemName}    ${EMPTY}
+${returnSelectAddressItemEditButton}    ${EMPTY}
+${returnSelectAddressItemDeleteButton}    ${EMPTY}
+
+${returnSelectAddressDeleteDialogTitle}    ${EMPTY}
+${returnSelectAddressDeleteDialogMessage}    ${EMPTY}
+${returnSelectAddressDeleteDialogConfirmationButton}    ${EMPTY}
 
 ${returnSelectPickupPointItemTitle}    ${EMPTY}
 ${returnSelectPickupPointItemSubtitle}    ${EMPTY}

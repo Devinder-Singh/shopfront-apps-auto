@@ -345,6 +345,9 @@ Click Return Select Address Item
     Click Element    ${returnSelectAddressItem}
 #    Sleep    10s
 
+Verify Return Select Address Item
+    Wait Until Element Is Visible    ${returnSelectAddressItemName}    30s
+
 Scroll To Return Request Return Method Section
     Scroll To Element In Container    ${returnRequestReturnMethodHeader}    ${containerReturnRequest}    20
 
@@ -441,6 +444,24 @@ Verify Return Select Delivery Method Pickup Point Option Is Not Active
 
 Verify Return Request Return Method Header Is Not Present
     Wait Until Page Does Not Contain Element    ${returnRequestReturnMethodHeader}    30s
+
+Click Return Address Item Edit
+    Click Element    ${returnSelectAddressItemEditButton}
+
+Click Return Address Item Delete
+    Click Element    ${returnSelectAddressItemDeleteButton}
+
+Confirm Return Address Item Delete Dialog
+    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogTitle}    30s
+    Element Text Should Be    ${returnSelectAddressDeleteDialogTitle}     Delete Address
+
+    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogMessage}    30s
+    Element Text Should Be    ${returnSelectAddressDeleteDialogMessage}    Are you sure you want to delete this address?
+
+    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogConfirmationButton}    30s
+    Element Text Should Be    ${returnSelectAddressDeleteDialogConfirmationButton}    DELETE
+
+    Click Element    ${returnSelectAddressDeleteDialogConfirmationButton}
 
 Add Liquor Return Item To Return Request
     Click Returns Call To Action Button

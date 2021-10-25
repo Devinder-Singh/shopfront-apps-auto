@@ -121,8 +121,15 @@ ${returnSelectReturnMethodPickupPointTitle}    xpath=//android.view.ViewGroup[@c
 ${returnSelectReturnMethodCollect}    xpath=//android.view.ViewGroup[@content-desc="Collect Address"]
 ${returnSelectReturnMethodCollectTitle}    xpath=//android.view.ViewGroup[@content-desc="Collect Address"]//android.widget.TextView[contains(@resource-id, 'navigation_widget_title')]
 
+${returnSelectAddressAddAddress}    id=${APP_PACKAGE}:id/returns_return_method_selector_action_option
 ${returnSelectAddressItem}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returns_address_item_container')]//android.view.ViewGroup
 ${returnSelectAddressItemName}    id=${APP_PACKAGE}:id/returns_address_item_name
+${returnSelectAddressItemEditButton}    id=${APP_PACKAGE}:id/returns_address_item_address_left_action
+${returnSelectAddressItemDeleteButton}    id=${APP_PACKAGE}:id/returns_address_item_address_right_action
+
+${returnSelectAddressDeleteDialogTitle}    id=${APP_PACKAGE}:id/alertTitle
+${returnSelectAddressDeleteDialogMessage}    id=android:id/message
+${returnSelectAddressDeleteDialogConfirmationButton}    id=android:id/button1
 
 ${returnSelectPickupPointItemTitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_title
 ${returnSelectPickupPointItemSubtitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_subtitle

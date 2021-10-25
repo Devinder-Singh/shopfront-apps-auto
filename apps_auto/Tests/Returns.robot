@@ -589,3 +589,58 @@ Apps > SS Returns > Select Return Method > Return Method Invalid (Remove Item) >
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Loading State Not Visible
     [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Select Address > QASA-409 > User with saved addresses
+    [Tags]    data    QASA-409
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    Verify Return Select Address Item
+    Click Back Screen
+    Verify Toolbar Title   Select Return Method
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Select Address > QASA-409 > Edit Address
+    [Tags]    data    QASA-409
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    Verify Return Select Address Item
+    Click Return Address Item Edit
+    Verify Toolbar Title    Edit Delivery Address
+    Edit Delivery Address Mobile Number    0744484494
+    Click Save Address
+    Verify Toolbar Title    Select Address
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Select Address > QASA-409 > Delete Address
+    [Tags]    data    QASA-409
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    Verify Return Select Address Item
+    Click Return Address Item Delete
+    Confirm Return Address Item Delete Dialog
+    Verify Toolbar Title    Select Address
+    [Teardown]    Tear Down
