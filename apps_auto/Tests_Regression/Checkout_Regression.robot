@@ -364,6 +364,7 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Click Free Delivery
+    Get Address Coordinates
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Address Form Validation - QA-5217

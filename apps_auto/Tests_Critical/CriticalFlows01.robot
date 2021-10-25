@@ -1,26 +1,10 @@
 *** Settings ***
-Default Tags      critical
+Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Variables ***
 
 *** Test Cases ***
-Apps > Cart > Product Card Actions > Remove & Move to Wishlist - QASA-521
-    [Tags]    QASA-521
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Verify Text On Screen Android    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
-    Verify Text On Screen iOS    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
-    [Teardown]    Tear Down
 
 #Register User
 #    [Tags]    Master0

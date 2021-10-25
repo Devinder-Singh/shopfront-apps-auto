@@ -377,3 +377,65 @@ Apps > Cart > Note Notification - QA-5305
     Click Other Offers Add To Cart
     Click Go To Cart
     [Teardown]    Tear Down
+
+Apps > Cart > Product Card Actions > Remove & Move to Wishlist - QASA-521
+    [Tags]    QASA-521
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout Delete First Item
+    Click Checkout Cart Undo
+    Verify Text On Screen    ${query_result_CartProduct}    15s
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Wishlist Nav Bar
+    Click Create Wishlist
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout Move To Wishlist Swipe
+
+    Verify Text On Screen Android    Item(s) moved to list    30s
+    Verify Text On Screen iOS    Item added to Wish List    30s
+
+    [Teardown]    Tear Down
+
+Apps> Cart > Cart Page Features - QASA-541
+    [Tags]    QASA-541
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Verify Text On Screen    Spend R450 or more to get FREE DELIVERY or FREE COLLECTION    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Fridg
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Check Text On Screen Not    Spend R450 or more to get FREE DELIVERY or FREE COLLECTION
+    Verify Text On Screen    Placing an item in your shopping cart does not reserve that item or price. We only reserve stock for your order once payment is received    30s
+    Verify Text On Screen    Customers Also Bought    1s
+    Click CAB Add To Cart
+    Verify Text On Screen Android    Item added to cart    30s
+    [Teardown]    Tear Down
