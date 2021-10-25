@@ -63,17 +63,17 @@ Apply Reviews Filter Options Rating
 
 Verify Reviews on WriteReivew Text
     IF    ${PLATFORM_NAME} == 'android'
-       Verify Text On Screen Android    WRITE REVIEW    30s 
+       Verify Text On Screen    WRITE REVIEW    30s 
     ELSE
-       Verify Text On Screen iOS  write a review   30s
+       Verify Text On Screen  write a review   30s
     END
 
 Verify Reviews Upvote Added
-    Verify Text On Screen Android    Thank you for your feedback    30s
+    Verify Text On Screen    Thank you for your feedback    30s
 
 Verify Reviews Upvote Removed
   IF    ${PLATFORM_NAME} == 'android'
-        Verify Text On Screen Android    Vote removed    30s    
+        Verify Text On Screen    Vote removed    30s    
   ELSE
         Element Should Contain Text    ${croutonTitle}    Vote removed
         # Verify Text On Screen    ${croutonTitle}    30s
@@ -87,7 +87,7 @@ Verify Reviews Upvote Success Message
 
 Verify Reviews Report Review Success Message
     IF    ${PLATFORM_NAME} == 'android'
-         Verify Text On Screen Android    Thank you for reporting    30s
+         Verify Text On Screen    Thank you for reporting    30s
         Element Should Be Visible    ${btnReviewsReportReviewText}
     ELSE 
         #we need to click away login in sucessfully crouton

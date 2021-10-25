@@ -60,8 +60,8 @@ Apps > Search Listings > Attributes 02 - QA-9552
     Click Home
     Click Search Home
     Search Product    Book
-    Verify Text On Screen iOS    By    30s
-    Verify Text On Screen Android    by    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    By    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    by    30s
     Verify Text On Screen Scroll    et al    5s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
@@ -185,8 +185,8 @@ Apps > Search Listings > Colour Swatches - QA-8757
     Click Home
     Click Search Home
     Search Product    shirt
-    Verify Text On Screen Android    More colours    30s
-    Verify Text On Screen iOS    More Colours    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    More colours    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    More Colours    30s
     Click Back Android
     Click Back iOS    Back
     Click Search Home

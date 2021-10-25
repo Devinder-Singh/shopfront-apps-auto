@@ -426,26 +426,10 @@ Click Product Size
     Click Element    ${txtProduct}
 
 Click Product Variant From API
-
     ${txtProduct}=    Get Product Variant
-
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${btnPDPSelectOption}
-        ${index}=    Evaluate    ${index} + 1
-    END
+    Click Element    ${btnPDPSelectOption}
     Click Element    ${txtProduct}
-#    Sleep    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${txtProduct}    10s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API
 
@@ -542,8 +526,7 @@ Verify Product Variant Colour From API
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{txtProductColours}
-        Verify Text On Screen Android    ${result}    5s
-        Verify Text On Screen iOS    ${result}    5s
+        Verify Text On Screen    ${result}    5s
     END
 
 Verify Product Variant Colour With ShowAll From API
@@ -556,8 +539,7 @@ Verify Product Variant Colour With ShowAll From API
         ${chkProdVisible}=    Run Keyword And Return Status    Page Should Contain Text    ${result} 
             Run Keyword If    ${chkProdVisible}==${False}    Swipe Up    ${windowScroll}
 
-        Verify Text On Screen Android    ${result}    5s
-        Verify Text On Screen iOS    ${result}    5s    
+        Verify Text On Screen    ${result}    5s  
  
         ${index}=    Evaluate    ${index} + 1
     END
@@ -570,8 +552,7 @@ Verify Product Variant Size From API
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{txtProductSize}
-        Verify Text On Screen Android    ${result}    5s
-        Verify Text On Screen iOS    ${result}    5s
+        Verify Text On Screen    ${result}    5s
     END
 
 Click Product Variant From Name
@@ -704,11 +685,9 @@ Click Product Disabled Variant Colour Size From API
 Verify Product YAML from API
     Get Product YAML Detail
 
-    Verify Text On Screen Android    You Might Also Like    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You Might Also Like    30s    ELSE
     Verify Text Element On Screen iOS    You Might Also Like    30s    ${windowScroll}    ${btnAddToCart}
-
     ${txtProductRating}=    Convert To String    ${query_result_YMALProductRating}
-
 #    Verify Text On Screen    ${txtProductRating}    30s
 
     ${txtProductPrice}=    Get Substring    ${query_result_YMALProductPrice}    2
