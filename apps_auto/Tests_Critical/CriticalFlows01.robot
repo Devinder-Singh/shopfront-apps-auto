@@ -5,6 +5,22 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 
 *** Test Cases ***
+Apps > Cart > Product Card Actions > Remove & Move to Wishlist - QASA-521
+    [Tags]    QASA-521
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
+    [Teardown]    Tear Down
 
 #Register User
 #    [Tags]    Master0

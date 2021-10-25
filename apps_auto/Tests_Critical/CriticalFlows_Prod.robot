@@ -38,9 +38,9 @@ Search and Buy Item on Delivery using Credit Card
     Verify Text On Screen    ORDER SUMMARY    30s
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
-    Verify Text On Screen Android    Order Total    1s
-    Verify Text On Screen Android    To Pay    1s
-    Verify Text On Screen iOS    TO PAY    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
     Verify Text On Screen    PAYMENT METHOD    1s
     Verify Text On Screen    Credit Card    1s
     Swipe Up    ${windowScroll}

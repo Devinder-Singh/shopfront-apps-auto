@@ -223,4 +223,4 @@ Verify Menu Items
     Wait Until Element Is Visible    ${btnMenuDailyDeals}    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Account
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuShopByDepartment}    1s
-    Verify Text On Screen iOS    My Account    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    My Account    1s

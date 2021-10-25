@@ -21,8 +21,7 @@ Click Order Cancel
     Click Element    ${btnOrdersCancel}
     Wait Until Element Is Visible    ${btnOrdersCancelConfirm}    5s
     Click Element    ${btnOrdersCancelConfirm}
-    Verify Text On Screen Android    Cancelled Item(s)    30s
-    Verify Text On Screen iOS    Your order has been cancelled    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Cancelled Item(s)    30s    ELSE    Verify Text On Screen    Your order has been cancelled    30s
 
 Cancel Latest Order
     Click Menu
