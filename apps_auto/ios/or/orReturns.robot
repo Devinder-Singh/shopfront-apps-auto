@@ -127,6 +127,10 @@ ${returnSelectAddressItemName}    ${EMPTY}
 ${returnSelectAddressItemEditButton}    ${EMPTY}
 ${returnSelectAddressItemDeleteButton}    ${EMPTY}
 
+${returnSelectAddressEmptyState}    ${EMPTY}
+${returnSelectAddressEmptyStateTitle}    ${EMPTY}
+${returnSelectAddressEmptyStateMessage}    ${EMPTY}
+
 ${returnSelectAddressDeleteDialogTitle}    ${EMPTY}
 ${returnSelectAddressDeleteDialogMessage}    ${EMPTY}
 ${returnSelectAddressDeleteDialogConfirmationButton}    ${EMPTY}

@@ -95,7 +95,7 @@ Verify Returns Order History Item Image Container
     Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemImageContainer}    30s
 
 Click Returns Order History Item
-#    Sleep    5s
+    Sleep    5s
     Click Element    ${cardReturnsOrderHistoryItem}
 
 Verify Returns Order Detail Returnable Section
@@ -370,6 +370,18 @@ Verify Return Request Delivery Method Address Title
     Element Should Be Visible    ${returnRequestDeliveryMethodAddressTitle}
     Element Text Should Be    ${returnRequestDeliveryMethodAddressTitle}    Collection Address
 
+Verify Return Request Delivery Method Address Details
+    [Arguments]    ${expectedPillTitle}    ${expectedRecipientName}    ${expectedAddressDetail}
+    
+    Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressTypePill}    30s
+    Element Text Should Be    ${returnRequestDeliveryMethodAddressTypePill}    ${expectedPillTitle}
+
+    Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressRecipientName}    30s
+    Element Text Should Be    ${returnRequestDeliveryMethodAddressRecipientName}    ${expectedRecipientName}
+
+    Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressDetailText}    30s
+    Element Text Should Be    ${returnRequestDeliveryMethodAddressDetailText}    ${expectedAddressDetail}
+
 Scroll To Return Request Contact Detail Section
     Scroll To Element In Container    ${returnRequestContactDetailSelector}    ${containerReturnRequest}    20
 
@@ -462,6 +474,22 @@ Confirm Return Address Item Delete Dialog
     Element Text Should Be    ${returnSelectAddressDeleteDialogConfirmationButton}    DELETE
 
     Click Element    ${returnSelectAddressDeleteDialogConfirmationButton}
+
+Click Return Address Add Option
+    Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s
+    Click Element    ${returnSelectAddressAddAddress}
+
+Verify Return Address Empty State
+    Wait Until Element Is Visible    ${returnSelectAddressEmptyState}    30s
+
+    Wait Until Element Is Visible    ${returnSelectAddressEmptyStateTitle}    30s
+    Element Text Should Be    ${returnSelectAddressEmptyStateTitle}    You don't have any addresses saved.
+
+    Wait Until Element Is Visible    ${returnSelectAddressEmptyStateMessage}    30s
+    Element Text Should Be    ${returnSelectAddressEmptyStateMessage}    Please add a Delivery Address.
+
+Verify Return Address Add Option
+    Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s
 
 Add Liquor Return Item To Return Request
     Click Returns Call To Action Button

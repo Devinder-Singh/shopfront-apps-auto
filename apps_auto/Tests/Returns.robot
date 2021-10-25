@@ -607,6 +607,50 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > User with sav
     Verify Toolbar Title   Select Return Method
     [Teardown]    Tear Down
 
+Apps > SS Returns > Request a Return > Select Address > QASA-409 > User with no saved addresses
+    [Tags]    data    QASA-409
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+102@take2.co.za    test
+    Click Menu My Account
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    Verify Return Address Empty State
+    Verify Return Address Add Option
+    Click Back Screen
+    Verify Toolbar Title    Select Return Method
+    [Teardown]    Tear Down
+
+
+Apps > SS Returns > Request a Return > Select Address > QASA-409 > Add Address
+    [Tags]    data    QASA-409
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+431155@take2.co.za    test
+    Click Menu My Account
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    Click Return Address Add Option
+    Click Residential
+    Add Delivery Address My Acc    Tester Residential    0744404494    13 Caro Road
+    Sleep    5s
+    Verify Toolbar Title    Log Return Request
+    Scroll To Return Request Return Method Section
+    Scroll To Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector    Takealot to collect from my address
+    Scroll To Return Request Delivery Method Address
+    Verify Return Request Delivery Method Address Title
+    Verify Return Request Delivery Method Address Details    RESIDENTIAL    Tester Residential    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091
+    [Teardown]    Tear Down
+
 Apps > SS Returns > Request a Return > Select Address > QASA-409 > Edit Address
     [Tags]    data    QASA-409
     [Setup]    Start Application
@@ -624,6 +668,7 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Edit Address
     Verify Toolbar Title    Edit Delivery Address
     Edit Delivery Address Mobile Number    0744484494
     Click Save Address
+    Sleep    2s
     Verify Toolbar Title    Select Address
     [Teardown]    Tear Down
 
