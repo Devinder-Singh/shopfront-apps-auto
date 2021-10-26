@@ -1,12 +1,12 @@
 *** Settings ***
-Default Tags      critical
+Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Variables ***
 
 *** Test Cases ***
-Apps > Cart > Product Card Actions > Remove & Move to Wishlist - QASA-521
-    [Tags]    QASA-521
+Apps > Cart > Product Card Actions > Update Quantity - QASA-3
+    [Tags]    QASA-3
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -14,26 +14,25 @@ Apps > Cart > Product Card Actions > Remove & Move to Wishlist - QASA-521
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product from API
+    Click In Stock Product from API
+#    Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Click Checkout
-    Verify Text On Screen Android    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
-    Verify Text On Screen iOS    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
+    Change Cart Quantity Android    10
+    Verify Text On Screen    You've attempted to order more stock than currently available at our warehouse    30s
+    Verify Text On Screen    The products will need to be ordered from our supplier. If you'd rather not wait for the extra stock to arrive from the supplier, please update the quantity accordingly    1s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Leadtime Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Change Cart Quantity Android    10
+    Verify Text On Screen    You asked for 10 but we only have    30s
+    Verify Text On Screen    available    1s
     [Teardown]    Tear Down
-
-#Register User
-#    [Tags]    Master0
-#    [Setup]    Start Application
-#    Click Menu
-#    Click Menu Login
-#    Close Application
-#    Start Application
-#    Click Menu
-#    Click Menu Register
-#    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
-#    Click Home
-#    [Teardown]    Tear Down
 
 #Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
 #    [Setup]    Start Application

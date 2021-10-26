@@ -107,10 +107,10 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Price/Price Range) - QA-63
 #    Verify Text On Screen    ${query_result_adProductListPrice}    2s
 #    Click Product From Title    ${query_result_adProductTitle}
     Click PDP List Price
-    Verify Text On Screen Android    This is our List Price. Find out what this means in our Terms & Conditions    30s
-    Verify Text On Screen Android    Our List Price    1s
-    Verify Text On Screen iOS    This is our List Price. Find out what this means in our Terms & Conditions    30s
-    Verify Text On Screen iOS    Our List Price    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Our List Price    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Our List Price    1s
     Click PDP List Price Cancel
     Click Search Product Filter
     Click Filter Category
@@ -123,10 +123,10 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Price/Price Range) - QA-63
     Verify Text On Screen    ${query_result_adProductPrice}    2s    
 #    Verify Text On Screen    ${query_result_adProductListPrice}    2s
     Click PDP List Price
-    Verify Text On Screen Android    This is our List Price. Find out what this means in our Terms & Conditions    30s
-    Verify Text On Screen Android    Our List Price    1s
-    Verify Text On Screen iOS    This is our List Price. Find out what this means in our Terms & Conditions    30s
-    Verify Text On Screen iOS    Our List Price    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Our List Price    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Our List Price    1s
     [Teardown]    Tear Down
 
 Apps > Sponsored Ads (PLP) > Product Card Components (Add to Wishlist button) - QA-6336
@@ -139,7 +139,7 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Add to Wishlist button) - 
     Search Product    Pencil
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     Click Search Product Wishlist
-    Verify Text On Screen Android    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    30s
     Click Product Grid View
     [Teardown]    Tear Down
 
@@ -154,7 +154,7 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Colour Swatches) - QA-6338
     Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     Click Search Product Wishlist
-    Verify Text On Screen Android    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    30s
     Click Product Grid View
     Get Sponsored Product Detail
     Verify Text On Screen    ${query_result_adProductTitle}    2s
@@ -189,7 +189,7 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Clickable/Tappable areas) 
     Click Back iOS    pencil case
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     Click Search Product Wishlist
-    Verify Text On Screen Android    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    30s
     Click Product Grid View
     [Teardown]    Tear Down
 

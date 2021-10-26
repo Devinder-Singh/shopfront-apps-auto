@@ -17,7 +17,7 @@ Apps > Wishlist > PDP Add to List > Add to List(Default List) - QA-5368
     Verify Element On Screen    ${btnAddToCart}    30s
     Click Add To Wishlist Only
     Click Wishlist Change
-    Verify Text On Screen iOS    Wish List    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Wish List    2s
     Verify Wishlist Checked
     [Teardown]    Tear Down
 
@@ -71,8 +71,8 @@ Apps > Wishlist > Add to List > Create List - QA-5372 / QA-5374
     Verify Text On Screen    List Created    20s
     Navigate to Wishlist Auto
     Click More Options Menu Android
-    Verify Text On Screen Android    Rename List    30s
-    Verify Text On Screen Android    Delete List    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Rename List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delete List    1s
     Click Delete Wishlist
     [Teardown]    Tear Down
 
@@ -89,8 +89,8 @@ Apps > Wishlist > Cart and Search Listings - QA-5299
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
-    Verify Text On Screen Android    Item(s) moved to list    30s
-    Verify Text On Screen iOS    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    30s
     Close Application
     Start Application
     Clear Environment
@@ -98,8 +98,8 @@ Apps > Wishlist > Cart and Search Listings - QA-5299
     Click Search Home
     Search Product    pencil
     Click Search Product Wishlist
-    Verify Text On Screen Android    Item added to Wish List    30s
-    Verify Text On Screen iOS    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
 
 Apps > Wishlist > List Limitations(25 Lists) - QA-5386
@@ -750,7 +750,7 @@ Apps > Wishlist > List Details > Delete List > Tablet - QA-5384
     Verify Text On Screen    List Created    20s
     Navigate to Wishlist Auto
     Click More Options Menu Android
-    Verify Text On Screen Android    Delete List    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delete List    1s
     Click Delete Wishlist
     Verify Text On Screen    Wish List    20s
     [Teardown]    Tear Down
