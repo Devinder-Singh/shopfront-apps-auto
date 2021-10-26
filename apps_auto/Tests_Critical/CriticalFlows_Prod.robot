@@ -4,9 +4,42 @@ Default Tags      critical_prod
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Search and Buy Item on Delivery using Credit Card
+Search and Buy Item on Delivery using Payfast and Create new Address
     [Tags]    Production1
     [Setup]    Install Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu Shop By Department
+    Click Menu Sport and Fitness
+    Click Product Department
+    Click Add To Wishlist
+    Click Wishlist
+    Click Wishlist Add To Cart
+    Click Back iOS    My Lists
+    Click Home Cart
+#    Click Cart
+    Click Checkout
+    Click Delivery
+    Click Add Delivery Address
+    Click Residential
+    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Payfast Payment Method
+    Click Pay With Payfast
+    Verify Payfast Payment Text    Instant EFT
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
+    [Teardown]    Tear Down
+
+Search and Buy Item on Delivery using Credit Card
+    [Tags]    Production2
+    [Setup]    Start Application
     Close All Applications
     Start Application
     Clear Environment
@@ -56,39 +89,6 @@ Search and Buy Item on Delivery using Credit Card
     Swipe Down    ${windowScroll}
     Swipe Down    ${windowScroll}
     Click Order Cancel
-    [Teardown]    Tear Down
-
-Search and Buy Item on Delivery using Payfast and Create new Address
-    [Tags]    Production2
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Click Home
-    Click Menu
-    Click Menu Shop By Department
-    Click Menu Sport and Fitness
-    Click Product Department
-    Click Add To Wishlist
-    Click Wishlist
-    Click Wishlist Add To Cart
-    Click Back iOS    My Lists
-    Click Home Cart
-#    Click Cart
-    Click Checkout
-    Click Delivery
-    Click Add Delivery Address
-    Click Residential
-    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Payfast Payment Method
-    Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
-    Close Application
-    Start Application    ${False}
-    Cancel Latest Order
     [Teardown]    Tear Down
 
 Search and Buy Heavy Item on Delivery along with TV
