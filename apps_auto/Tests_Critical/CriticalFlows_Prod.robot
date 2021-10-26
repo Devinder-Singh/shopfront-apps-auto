@@ -180,7 +180,7 @@ Buy Airtime and Pay with Credit Card
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Click Product Variant From API
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Product Variant From API    2    ELSE    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -214,7 +214,7 @@ Buy Airtime along with another Item on Delivery
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Product Variant From API    2    ELSE    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -251,7 +251,7 @@ Buy Airtime along with another Item on Collection
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Product Variant From API    2    ELSE    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
