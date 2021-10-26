@@ -18,6 +18,22 @@ Click CAB Add To Cart
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCartCustomersAlsoBought}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartCustomersAlsoBought}
 
+Click CAB Add To Cart Scroll
+    Wait Until Element Is Visible    ${btnCheckout}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    50
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnCartCustomersAlsoBought}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==${True}
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${btnCartCustomersAlsoBought}
+
 Click Checkout Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCheckout}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckout}

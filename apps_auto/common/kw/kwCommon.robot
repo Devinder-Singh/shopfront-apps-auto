@@ -36,6 +36,17 @@ Swipe Up
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
 #    Sleep  1
 
+Swipe Right
+    [Arguments]       ${locator}
+    ${element_size}=    Get Element Size    ${locator}
+    ${element_location}=    Get Element Location    ${locator}
+    ${start_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 0.3)
+    ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
+    ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.7)
+    ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
+    Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
+#    Sleep  1
+
 Verify eBucks On Screen
     ${result}=    Evaluate    ${query_result_CartProductPrice} * 10
     ${result}=    Convert To String    ${result}

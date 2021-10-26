@@ -314,7 +314,7 @@ Apps > Cart > Limitations - QA-5302
     Search Product    Pencil
     Click Product from API
     Click Add To Cart
-    Verify Text On Screen    Your shopping cart is full. To make space either purchase the items in your cart now or move some items to your wishlist.    30s
+    Verify Text On Screen    Your shopping cart is full. To make space either purchase the items in your cart now or move some items to your wishlist    30s
     Close Application
     Start Application
     Click Home
@@ -406,6 +406,7 @@ Apps > Cart > Product Card Actions > Remove & Move to Wishlist - QASA-521
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist Swipe
+    Swipe Right    ${btnCartItemContainer}
 
     Verify Text On Screen Android    Item(s) moved to list    30s
     Verify Text On Screen iOS    Item added to Wish List    30s
@@ -436,6 +437,71 @@ Apps> Cart > Cart Page Features - QASA-541
     Check Text On Screen Not    Spend R450 or more to get FREE DELIVERY or FREE COLLECTION
     Verify Text On Screen    Placing an item in your shopping cart does not reserve that item or price. We only reserve stock for your order once payment is received    30s
     Verify Text On Screen    Customers Also Bought    1s
-    Click CAB Add To Cart
-    Verify Text On Screen Android    Item added to cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click CAB Add To Cart
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to cart    30s
+    [Teardown]    Tear Down
+
+Apps > Product Card Actions > Cart Limit & Other areas - QASA-1
+    [Tags]    QASA-1
+    [Setup]    Start Application
+    Clear Environment
+    Add Items To Cart Full
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Verify Text On Screen    Your shopping cart is full. To make space either purchase the items in your cart now or move some items to your wishlist    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist
+    Close Application
+    Start Application
+    Click Home
+    Click Wishlist Nav Bar
+    Click Wishlist Default
+    Click Wishlist Add To Cart    ${False}
+    Verify Text On Screen    Your shopping cart is full. To make space either purchase the items in your cart now or move some items to your wishlist    30s
+    Close Application
+    Start Application
+    Click Home
+    Click Home Cart
+    Verify Element On Screen    ${btnCheckout}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click CAB Add To Cart Scroll
+    Verify Text On Screen    Your shopping cart is full. To make space either purchase the items in your cart now or move some items to your wishlist    30s
+    [Teardown]    Tear Down
+
+Apps > Product Card Actions > Stock Check - QASA-2
+    [Tags]    QASA-2
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click In Stock Product from API
+#    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Change Cart Quantity Android    10
+    Verify Text On Screen    You've attempted to order more stock than currently available at our warehouse    30s
+    Verify Text On Screen    The products will need to be ordered from our supplier. If you'd rather not wait for the extra stock to arrive from the supplier, please update the quantity accordingly    1s
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Leadtime Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Change Cart Quantity Android    10
+    Verify Text On Screen    You asked for 10 but we only have    30s
+    Verify Text On Screen    available    1s
     [Teardown]    Tear Down

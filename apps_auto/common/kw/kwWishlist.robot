@@ -3,9 +3,10 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Wishlist Add To Cart
+    [Arguments]    ${checkText}=${True}
     Wait Until Element Is Visible    ${btnWishlistCart}    30s
     Click Element    ${btnWishlistCart}
-    Verify Text On Screen    Item added to your cart    30s
+    Run Keyword If    ${checkText}==${True}    Verify Text On Screen    Item added to your cart    30s
 #    Sleep    5s
 
 Click Wishlist Edit
