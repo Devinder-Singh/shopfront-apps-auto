@@ -88,26 +88,6 @@ Verify Text On Screen
     [Arguments]    ${verifyText}    ${delay}
     Wait Until Page Contains    ${verifyText}    ${delay}
 
-Verify Text On Screen Android
-    [Arguments]    ${verifyText}    ${delay}
-
-    IF    ${PLATFORM_NAME} == 'android'
-        ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    ${delay}
-
-        ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text,"${verifyText}")]
-        Run Keyword If    '${PLATFORM_NAME}'=='android' and ${chkProdVisible}==${False}    Wait Until Page Contains Element    ${checkElement}    1s
-    END
-
-Verify Text On Screen iOS
-    [Arguments]    ${verifyText}    ${delay}
-
-    IF    ${PLATFORM_NAME} == 'ios'
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    ${delay}
-
-        ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${verifyText}'`]
-        Run Keyword If    '${PLATFORM_NAME}'=='ios' and ${chkProdVisible}==${False}    Wait Until Page Contains Element    ${checkElement}    1s
-    END
-
 Verify Text Element On Screen iOS
     [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
 

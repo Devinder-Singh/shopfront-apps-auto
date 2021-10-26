@@ -33,7 +33,7 @@ Click Save Wishlists
     Click Element    ${btnPDPWishListSave}
 
 Click Close Ad
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPCloseAd}    ${MIN_TIMEOUT}
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPCloseAd}    5s
     Run Keyword If    ${chkTextSuccess}==${True} and '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPCloseAd}
 #    Sleep    2s
 
@@ -203,8 +203,7 @@ Click Seller Name
 
 Verify Delivery Surcharge
     [Arguments]    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblDeliverySurcharge}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Contain Text    ${lblDeliverySurcharge}    ${verifyText}
+    Verify Text On Screen    ${verifyText}    ${MIN_TIMEOUT}
 
 Click Continue Shopping
     Wait Until Element Is Visible    ${btnContinueShopping}    ${MIN_TIMEOUT}
@@ -426,9 +425,12 @@ Click Product Size
     Click Element    ${txtProduct}
 
 Click Product Variant From API
+    [Arguments]    ${index}=0
     ${txtProduct}=    Get Product Variant
-    Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
+    ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
+    Wait Until Element Is Visible    ${btnPDPSelectOption}     ${MIN_TIMEOUT}
     Click Element    ${btnPDPSelectOption}
+    Wait Until Page Contains Element    ${txtProduct}     ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API
