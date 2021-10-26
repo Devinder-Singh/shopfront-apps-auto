@@ -60,8 +60,8 @@ Apps > Search Listings > Attributes 02 - QASA-94
     Click Home
     Click Search Home
     Search Product    Book
-    Verify Text On Screen iOS    By    30s
-    Verify Text On Screen Android    by    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    By    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    by    30s
     Verify Text On Screen Scroll    et al    5s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
@@ -185,8 +185,8 @@ Apps > Search Listings > Colour Swatches - QASA-194
     Click Home
     Click Search Home
     Search Product    shirt
-    Verify Text On Screen Android    More colours    30s
-    Verify Text On Screen iOS    More Colours    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    More colours    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    More Colours    30s
     Click Back Android
     Click Back iOS    Back
     Click Search Home
@@ -196,7 +196,7 @@ Apps > Search Listings > Colour Swatches - QASA-194
     [Teardown]    Tear Down
 
 Apps > Search Listings > Set Bundle Deals (One active) - QASA-193
-    [Tags]    data    QASA-193
+    [Tags]    QASA-193
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -206,7 +206,7 @@ Apps > Search Listings > Set Bundle Deals (One active) - QASA-193
     [Teardown]    Tear Down
 
 Apps > Search Listings > Set Bundle Deals (More than one active) - QASA-192
-    [Tags]    data    QASA-192
+    [Tags]    QASA-192
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -215,7 +215,7 @@ Apps > Search Listings > Set Bundle Deals (More than one active) - QASA-192
     [Teardown]    Tear Down
 
 Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy) - QASA-191
-    [Tags]    data    QASA-191
+    [Tags]    QASA-191
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -224,7 +224,7 @@ Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy)
     [Teardown]    Tear Down
 
 Apps > Search Listings > Multi-Buy Deals (One active) - QASA-190
-    [Tags]    data    QASA-190
+    [Tags]    QASA-190
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -233,7 +233,7 @@ Apps > Search Listings > Multi-Buy Deals (One active) - QASA-190
     [Teardown]    Tear Down
 
 Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QASA-189
-    [Tags]    data    QASA-189
+    [Tags]    QASA-189
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -242,7 +242,7 @@ Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QASA-189
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Supplier Out of Stock - QASA-186
-    [Tags]    data    QASA-186
+    [Tags]    QASA-186
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -251,7 +251,7 @@ Apps > Search Listings > Stock > Supplier Out of Stock - QASA-186
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Available Now - QASA-185
-    [Tags]    data    QASA-185
+    [Tags]    QASA-185
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -271,7 +271,7 @@ Apps > Search Listings > Stock > Pre-Order - QASA-184
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Currently Unavailable - QASA-183
-    [Tags]    data    QASA-183
+    [Tags]    QASA-183
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home

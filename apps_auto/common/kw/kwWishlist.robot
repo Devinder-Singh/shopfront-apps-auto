@@ -3,16 +3,17 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Wishlist Add To Cart
+    [Arguments]    ${checkText}=${True}
     Wait Until Element Is Visible    ${btnWishlistCart}    30s
     Click Element    ${btnWishlistCart}
-    Verify Text On Screen    Item added to your cart    30s
-    Sleep    5s
+    Run Keyword If    ${checkText}==${True}    Verify Text On Screen    Item added to your cart    30s
+#    Sleep    5s
 
 Click Wishlist Edit
     Click More Options Menu
     Wait Until Element Is Visible    ${btnWishlistEdit}    30s
     Click Element    ${btnWishlistEdit}
-    Sleep    2s
+#    Sleep    2s
 
 Click Wishlist Edit iOS
     Wait Until Element Is Visible    ${btnWishlistEdit}    30s

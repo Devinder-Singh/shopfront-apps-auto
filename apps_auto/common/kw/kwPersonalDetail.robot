@@ -57,11 +57,11 @@ Update Personal Detail Mobile
     [Arguments]    ${mobile}
     Wait Until Element Is Visible    ${lblPersonalDetailMobile}    5s
     Click Element    ${lblPersonalDetailMobile}
-    Sleep    2s
+#    Sleep    2s
 
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtPDMobile}    5s
-    Run Keyword If    ${chkTextSuccess}==True    Input Text    ${txtPDMobile}    ${mobile}
-    Run Keyword If    ${chkTextSuccess}==False    Input Text    ${txtPDMobileEx}    ${mobile}
+    Run Keyword If    ${chkTextSuccess}==${True}    Input Text    ${txtPDMobile}    ${mobile}
+    Run Keyword If    ${chkTextSuccess}==${False}    Input Text    ${txtPDMobileEx}    ${mobile}
 
     Click Element    ${btnSaveDetail}
 
@@ -71,11 +71,13 @@ Update Personal Detail Mobile Country Code
     Click Element    ${lblPersonalDetailMobile}
 
     Click Element    ${lblPersonalDetailMobileCC}
-    Sleep    1s
+#    Sleep    1s
 #    Verify Text On Screen    Afghanistan    5s
+    Wait Until Element Is Visible    ${lblPersonalDetailCCAfghanistan}    5s
     Click Element    ${lblPersonalDetailCCAfghanistan}
-    Sleep    2s
+#    Sleep    2s
 
+    Wait Until Element Is Visible    ${txtPDMobile}    5s
     Input Text    ${txtPDMobile}    ${mobile}
     Click Element    ${btnSaveDetail}
 

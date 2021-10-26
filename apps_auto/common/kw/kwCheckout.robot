@@ -14,6 +14,26 @@ Click Checkout
     Wait Until Element Is Visible    ${btnCheckout}    30s
     Click Element    ${btnCheckout}
 
+Click CAB Add To Cart
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCartCustomersAlsoBought}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartCustomersAlsoBought}
+
+Click CAB Add To Cart Scroll
+    Wait Until Element Is Visible    ${btnCheckout}    30s
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    50
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnCartCustomersAlsoBought}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==${True}
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${btnCartCustomersAlsoBought}
+
 Click Checkout Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCheckout}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckout}
@@ -41,6 +61,18 @@ Click Checkout Move To Wishlist First Item
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutSelect}
     Click Element    ${btnCheckoutMoveToWishlist}
 
+Click Checkout Move To Wishlist Swipe
+    Wait Until Element Is Visible    ${btnCheckout}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartItemContainer}
+
+Verify Checkout Delete And Wishlist
+    Wait Until Element Is Visible    ${btnCheckout}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutEdit}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCheckoutSelect}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutSelect}
+    Verify Element On Screen    ${btnCheckoutDelete}    5s
+    Verify Element On Screen    ${btnCheckoutMoveToWishlist}    1s
+
 Change Cart Quantity Android
     [Arguments]    ${qty}
 
@@ -52,7 +84,7 @@ Change Cart Quantity Android
     Wait Until Element Is Visible    ${txtCartQty}    1s
     Click Element    ${txtCartQty}
 
-    Sleep    3s
+#    Sleep    3s
 
 Click Add Items to Qualify iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnCartAddPromoItems}    30s

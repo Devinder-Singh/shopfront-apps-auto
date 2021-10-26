@@ -23,7 +23,7 @@ Swipe Down
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.7)
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
-    Sleep  1
+#    Sleep  1
 
 Swipe Up
     [Arguments]       ${locator}
@@ -33,8 +33,19 @@ Swipe Up
     ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.7)
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.3)
-    Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
-    Sleep  1
+    Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
+#    Sleep  1
+
+Swipe Right
+    [Arguments]       ${locator}
+    ${element_size}=    Get Element Size    ${locator}
+    ${element_location}=    Get Element Location    ${locator}
+    ${start_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 0.3)
+    ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
+    ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.7)
+    ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
+    Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
+#    Sleep  1
 
 Verify eBucks On Screen
     ${result}=    Evaluate    ${query_result_CartProductPrice} * 10
@@ -42,20 +53,17 @@ Verify eBucks On Screen
     ${cnt}=    Get length    ${result}
 
     ${resultFinal}=    Set Variable    ${result}
-    Run Keyword If    ${cnt}<4    Verify Text On Screen Android    eB${resultFinal}    30s
-    Run Keyword If    ${cnt}<4    Verify Text On Screen iOS    eB${resultFinal}    30s
+    Run Keyword If    ${cnt}<4    Verify Text On Screen    eB${resultFinal}    30s
 
     ${resultLeft}=    Run Keyword If    ${cnt}==4    Get Substring    ${result}    0    1
     ${resultRight}=    Run Keyword If    ${cnt}==4    Get Substring    ${result}    1    4
     ${resultFinal}=    Set Variable If    '${resultLeft}'!='None'    ${resultLeft},${resultRight}
-    Run Keyword If    ${cnt}==4    Verify Text On Screen Android    eB${resultFinal}    30s
-    Run Keyword If    ${cnt}==4    Verify Text On Screen iOS    eB${resultFinal}    30s
+    Run Keyword If    ${cnt}==4    Verify Text On Screen    eB${resultFinal}    30s
 
     ${resultLeft}=    Run Keyword If    ${cnt}==5    Get Substring    ${result}    0    2
     ${resultRight}=    Run Keyword If    ${cnt}==5    Get Substring    ${result}    2    5
     ${resultFinal}=    Set Variable If    '${resultLeft}'!='None'    ${resultLeft},${resultRight}
-    Run Keyword If    ${cnt}==5    Verify Text On Screen Android    eB${resultFinal}    30s
-    Run Keyword If    ${cnt}==5    Verify Text On Screen iOS    eB${resultFinal}    30s
+    Run Keyword If    ${cnt}==5    Verify Text On Screen    eB${resultFinal}    30s
 
 Verify Price On Screen
     [Arguments]    ${title}    ${delay}
@@ -64,20 +72,17 @@ Verify Price On Screen
     ${cnt}=    Get length    ${result}
 
     ${resultFinal}=    Set Variable    ${result}
-    Run Keyword If    ${cnt}<4    Verify Text On Screen Android    ${resultFinal}    ${delay}
-    Run Keyword If    ${cnt}<4    Verify Text On Screen iOS    ${resultFinal}    ${delay}
+    Run Keyword If    ${cnt}<4    Verify Text On Screen    ${resultFinal}    ${delay}
 
     ${resultLeft}=    Run Keyword If    ${cnt}==4    Get Substring    ${result}    0    1
     ${resultRight}=    Run Keyword If    ${cnt}==4    Get Substring    ${result}    1    4
     ${resultFinal}=    Set Variable If    '${resultLeft}'!='None'    ${resultLeft},${resultRight}
-    Run Keyword If    ${cnt}==4    Verify Text On Screen Android    ${resultFinal}    ${delay}
-    Run Keyword If    ${cnt}==4    Verify Text On Screen iOS    ${resultFinal}    ${delay}
+    Run Keyword If    ${cnt}==4    Verify Text On Screen    ${resultFinal}    ${delay}
 
     ${resultLeft}=    Run Keyword If    ${cnt}==5    Get Substring    ${result}    0    2
     ${resultRight}=    Run Keyword If    ${cnt}==5    Get Substring    ${result}    2    5
     ${resultFinal}=    Set Variable If    '${resultLeft}'!='None'    ${resultLeft},${resultRight}
-    Run Keyword If    ${cnt}==5    Verify Text On Screen Android    ${resultFinal}    ${delay}
-    Run Keyword If    ${cnt}==5    Verify Text On Screen iOS    ${resultFinal}    ${delay}
+    Run Keyword If    ${cnt}==5    Verify Text On Screen    ${resultFinal}    ${delay}
 
 Verify Text On Screen
     [Arguments]    ${verifyText}    ${delay}
@@ -86,17 +91,22 @@ Verify Text On Screen
 Verify Text On Screen Android
     [Arguments]    ${verifyText}    ${delay}
 
-    ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    ${delay}
+    IF    ${PLATFORM_NAME} == 'android'
+        ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    ${delay}
 
-    ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text,"${verifyText}")]
-    Run Keyword If    '${PLATFORM_NAME}'=='android' and ${chkProdVisible}==False    Wait Until Page Contains Element    ${checkElement}    1s
+        ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text,"${verifyText}")]
+        Run Keyword If    '${PLATFORM_NAME}'=='android' and ${chkProdVisible}==${False}    Wait Until Page Contains Element    ${checkElement}    1s
+    END
 
 Verify Text On Screen iOS
     [Arguments]    ${verifyText}    ${delay}
-    ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    ${delay}
 
-    ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${verifyText}'`]
-    Run Keyword If    '${PLATFORM_NAME}'=='ios' and ${chkProdVisible}==False    Wait Until Page Contains Element    ${checkElement}    1s
+    IF    ${PLATFORM_NAME} == 'ios'
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    ${delay}
+
+        ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${verifyText}'`]
+        Run Keyword If    '${PLATFORM_NAME}'=='ios' and ${chkProdVisible}==${False}    Wait Until Page Contains Element    ${checkElement}    1s
+    END
 
 Verify Text Element On Screen iOS
     [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
@@ -109,7 +119,7 @@ Verify Text Element On Screen iOS
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${checkElement}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -131,7 +141,7 @@ Verify Text On Screen Scroll
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${scrollElement}
@@ -149,7 +159,7 @@ Verify Text On Screen Scroll Android
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -171,7 +181,7 @@ Verify Text On Screen Scroll iOS
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -193,7 +203,7 @@ Verify Element On Screen Scroll
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Swipe Up    ${scrollElement}
@@ -211,7 +221,7 @@ Verify Element On Screen Scroll Android
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -233,7 +243,7 @@ Verify Element On Screen Scroll iOS
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -254,10 +264,10 @@ Verify Product Review iOS
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen iOS    ${txtProduct}    1s
+        ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    ${txtProduct}    1s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         Run Keyword If
@@ -267,8 +277,8 @@ Verify Product Review iOS
         Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen iOS    ${txtProduct}    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen iOS    (${query_result_Review})    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${txtProduct}    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    (${query_result_Review})    1s
 
 Check Text On Screen Not
     [Arguments]    ${verifyText}
@@ -286,7 +296,7 @@ Verify Element On Screen Not
     [Arguments]    ${verifyElement}    ${delay}
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${verifyElement}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${verifyElement}']
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${delay}
-    Should Be True    ${chkTextSuccess}==False
+    Should Be True    ${chkTextSuccess}==${False}
 
 Verify Element On Screen iOS
     [Arguments]    ${verifyElement}    ${delay}
@@ -303,19 +313,19 @@ Click Back Screen
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${navBack}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBack}
 
-    Sleep    2s
+    Sleep    1s
 
 Click Back Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${navBack}
 
-    Sleep    2s
+    Sleep    1s
 
 Click Window Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${windowScroll}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${windowScroll}
 
-    Sleep    2s
+#    Sleep    2s
 
 Click Back iOS
     [Arguments]    ${elementID}
@@ -324,7 +334,7 @@ Click Back iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${backiOS}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${backiOS}
 
-    Sleep    2s
+    Sleep    1s
 
 Click Cancel Screen
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${navBack}    30s
@@ -333,7 +343,7 @@ Click Cancel Screen
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${navBack}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBack}
 
-    Sleep    2s
+    Sleep    1s
 
 Scroll To Element In Container
     [Arguments]    ${elementLocator}    ${scrollContainerLocator}    ${retryCount}
@@ -346,4 +356,3 @@ Scroll To Element In Container
         Swipe Up    ${scrollContainerLocator}
         ${index}=    Evaluate    ${index} + 1
     END
-

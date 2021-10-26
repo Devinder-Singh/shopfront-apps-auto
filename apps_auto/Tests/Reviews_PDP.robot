@@ -32,7 +32,7 @@ Apps > Reviews > Review Components > Read Reviews - QASA-145
     [Teardown]    Tear Down
 
 Apps > Reviews > Read Reviews > Review Distribution Summary - QASA-283
-    [Tags]    data    QASA-283
+    [Tags]    QASA-283
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234

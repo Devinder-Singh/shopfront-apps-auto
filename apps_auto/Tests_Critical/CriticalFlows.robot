@@ -1,12 +1,12 @@
 *** Settings ***
 Default Tags      critical
-#Suite Setup    Install Application
+#Suite Setup    Install Application  
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Register User
     [Tags]    Master0
-    [Setup]    Install Application Master
+    [Setup]    Install Application
     Close All Applications
     Start Application
     Click Menu
@@ -113,7 +113,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Search Home
     Search Product    Fridg
     Click Product from API
-    Verify Delivery Surcharge    + R 200 Delivery Surcharge
+    Verify Delivery Surcharge    + R 100 Delivery Surcharge
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    30s
     Close Application

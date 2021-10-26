@@ -27,8 +27,8 @@ Apps > Login Validations - QASA-505
     Verify Text On Screen    Please enter your email address    30s
     Verify Text On Screen    Please enter your password    1s
     Login Takealot Only    take2@yahoo.com    t@ke@!ot1234
-    Verify Text On Screen Android    Invalid email or password. Please try again    30s
-    Verify Text On Screen iOS    EMAIL ADDRESS    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Invalid email or password. Please try again    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    EMAIL ADDRESS    30s
     [Teardown]    Tear Down
 
 Apps > Login Validations (Logged-Out User) - QASA-202
@@ -62,16 +62,16 @@ Android > Register New User > Existing user validation - QASA-441
     Click Menu
     Click Menu Register
     Register Takealot Unverify    ${EMPTY}    ${EMPTY}    ${EMPTY}    ${EMPTY}
-    Verify Text On Screen Android    Please enter your first name    30s
-    Verify Text On Screen Android    Please enter your surname    1s
-    Verify Text On Screen Android    Please enter your email address    1s
-    Verify Text On Screen Android    Please enter your password    1s
-    Verify Text On Screen Android    Please confirm your password    1s
-    Verify Text On Screen iOS    Please provide your first name    30s
-    Verify Text On Screen iOS    Please provide your last name    1s
-    Verify Text On Screen iOS    Please enter your email address    1s
-    Verify Text On Screen iOS    Please provide password    1s
-    Verify Text On Screen iOS    Please confirm your password    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter your first name    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter your surname    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter your email address    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter your password    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please confirm your password    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please provide your first name    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please provide your last name    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please enter your email address    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please provide password    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please confirm your password    1s
     Click Back Android
     Click Back iOS    Cancel
     Click Menu Register
@@ -93,8 +93,8 @@ Apps > Login > Forgot Password - QASA-508
 #    Login Takealot Forgot Password    take2@yahoo.com
 #    Verify Text On Screen    We're sorry. We weren't able to identify you given the information provided    30s
     Login Takealot Forgot Password    ${G_EMAIL}
-    Verify Text On Screen Android    An email has been sent to your email address with further instructions    30s
-    Verify Text On Screen iOS    Reset instructions have been sent to the entered email address    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    An email has been sent to your email address with further instructions    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Reset instructions have been sent to the entered email address    30s
     [Teardown]    Tear Down
 
 Apps > Android > Login > Verify Auto-Login works - QASA-511
@@ -115,11 +115,11 @@ Apps > Android > Login > Verify Auto-Login works - QASA-511
     Click Back iOS    My Account
     Click Home
     Click Home WishList Only
-    Verify Text On Screen Android    My Lists    30s
-    Verify Text On Screen iOS    DEFAULT    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    My Lists    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DEFAULT    30s
     Click Home Cart
-    Verify Text On Screen Android    Cart    30s
-    Verify Text On Screen iOS    No items    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No items    30s
     [Teardown]    Tear Down
 
 Apps > Android > Register New User - QASA-200
@@ -132,8 +132,8 @@ Apps > Android > Register New User - QASA-200
     Click Cancel Screen
     Click Menu Register
     Register Takealot Unverify    AutoTest    ${EMPTY}    InvalidEmail@gmail.com    t@ke@!ot1234
-    Verify Text On Screen Android    Please enter your surname    5s
-    Verify Text On Screen iOS    Please provide your last name    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter your surname    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please provide your last name    5s
     Click Cancel Screen
     Click Menu Register
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234

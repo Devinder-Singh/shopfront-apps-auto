@@ -9,7 +9,7 @@ Click Map Address Option
 Click Use This Location
     Wait Until Element Is Visible    ${btnUseThisLocation}    30s
     Click Element    ${btnUseThisLocation}
-    Sleep    5s
+#    Sleep    5s
 
 Add Map Street Address
     [Arguments]    ${street}

@@ -27,12 +27,12 @@ Click Filter Apply Button
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    2s
 
         Run Keyword If
-            ...    ${chkProdVisible}==True
+            ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
         ${chkProdVisible}=    Run Keyword And Return Status    Click Element    ${btnProductFilterApply}
         Run Keyword If
-            ...    ${chkProdVisible}==False
+            ...    ${chkProdVisible}==${False}
             ...    Exit For Loop
 
         ${index}=    Evaluate    ${index} + 1

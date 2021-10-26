@@ -59,7 +59,7 @@ Swipe To Empty State Step 2
     ${endPositionY}=    Evaluate    ${emptyStateItemLocation['y']} + 0
 
     Swipe    ${startPositionX}    ${startPositionY}    ${endPositionX}    ${endPositionY}
-    Sleep    5s
+#    Sleep    5s
 
 Click Returns Call To Action Button
     Wait Until Element Is Visible    ${btnReturnsCallToAction}    30s
@@ -95,7 +95,7 @@ Verify Returns Order History Item Image Container
     Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemImageContainer}    30s
 
 Click Returns Order History Item
-    Sleep    5s
+#    Sleep    5s
     Click Element    ${cardReturnsOrderHistoryItem}
 
 Verify Returns Order Detail Returnable Section
@@ -225,14 +225,14 @@ Verify Returns Reason Variant Size Error Message
     Element Text Should Be    ${returnReasonVariantSizeSelectorErrorMessage}    Please select a size
 
 Scroll To Returns Order History Item With Variant Colour
-    Sleep    5s
+#    Sleep    5s
     Scroll To Element In Container    ${cardReturnsOrderHistoryItemWithColourVariantOption}    ${containerReturnsOrderHistory}    20
 
 Click Returns Order History Item With Variant Colour
     Click Element    ${cardReturnsOrderHistoryItemWithColourVariantOption}
 
 Scroll To Returns Order Detail Item With Variant Colour
-    Sleep    5s
+#    Sleep    5s
     Scroll To Element In Container    ${cardReturnsOrderDetailItemWithVariantColour}    ${containerReturnsHOrderDetail}    20
 
 Click Returns Order Detail Item With Variant Colour
@@ -294,7 +294,7 @@ Swipe Returns Request Item For Delete
     ${endPositionY}=    Evaluate    ${cardItemLocation['y']} + 0
 
     Swipe    ${startPositionX}    ${startPositionY}    ${endPositionX}    ${endPositionY}
-    Sleep    5s
+#    Sleep    5s
 
 Verify Returns Request Dialog
     [Arguments]    ${expectedTitle}    ${expectedMessage}    ${negativeButton}    ${positiveButton}
@@ -343,7 +343,7 @@ Click Return Select Return Method Address
 Click Return Select Address Item
     Wait Until Element Is Visible    ${returnSelectAddressItemName}    30s
     Click Element    ${returnSelectAddressItem}
-    Sleep    10s
+#    Sleep    10s
 
 Scroll To Return Request Return Method Section
     Scroll To Element In Container    ${returnRequestReturnMethodHeader}    ${containerReturnRequest}    20
