@@ -431,7 +431,7 @@ Click Product Variant From API
     ${txtProduct}=    Get Product Variant
     ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
-    Click Element    ${btnPDPSelectOption}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPSelectOption}
     Wait Until Page Contains Element    ${txtProduct}    15s
     Click Element    ${txtProduct}
 
