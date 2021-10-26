@@ -33,9 +33,9 @@ Search and Buy Item on Delivery using Credit Card
     Click Menu
     Click Menu My Account
     Click Menu Orders
-    Verify Text On Screen    Last 3 months    30s
+    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
     Click Order Awaiting Payment
-    Verify Text On Screen    ORDER SUMMARY    30s
+    Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
@@ -103,7 +103,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Product from API
     Verify Delivery Surcharge    + R 100 Delivery Surcharge
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -207,7 +207,7 @@ Buy Airtime along with another Item on Delivery
     Click Variant Product from API
     Click Product Variant From API
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -244,7 +244,7 @@ Buy Airtime along with another Item on Collection
     Click Variant Product from API
     Click Product Variant From API
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home

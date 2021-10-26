@@ -20,17 +20,17 @@ Verify Returns Empty State Step Visible
     Verify Text On Screen    ${stepSubtitle}     5s
 
 Verify Returns History Item Visible
-    Wait Until Element Is Visible    ${cardReturnsHistoryItem}    30s
+    Wait Until Element Is Visible    ${cardReturnsHistoryItem}    ${MIN_TIMEOUT}
     
 Verify Returns History Item Contains RRN
-    Wait Until Element Is Visible    ${cardReturnsHistoryItemTitle}    30s
+    Wait Until Element Is Visible    ${cardReturnsHistoryItemTitle}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsHistoryItemTitle}    RRN
 
 Verify Returns History Item Contains Status
-    Wait Until Element Is Visible    ${cardReturnsHistoryItemStatus}    30s
+    Wait Until Element Is Visible    ${cardReturnsHistoryItemStatus}    ${MIN_TIMEOUT}
 
 Verify Returns History Item Contains Image
-    Wait Until Element Is Visible    ${cardReturnsHistoryItemImage}    30s
+    Wait Until Element Is Visible    ${cardReturnsHistoryItemImage}    ${MIN_TIMEOUT}
 
 Click Returns History Item
     Click Element    ${cardReturnsHistoryItem}
@@ -38,7 +38,7 @@ Click Returns History Item
 Verify Returns Call To Action Title
     [Arguments]    ${expectedTitle}
 
-    Wait Until Element Is Visible    ${btnReturnsCallToAction}    30s
+    Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
     Element Text Should Be    ${btnReturnsCallToAction}    ${expectedTitle}
 
 Scoll To Returns History Policy
@@ -47,7 +47,7 @@ Scoll To Returns History Policy
 Verify Returns History Policy Title
     [Arguments]    ${expectedTitle}
 
-    Wait Until Element Is Visible    ${cardReturnsHistoryPolicyItem}    30s
+    Wait Until Element Is Visible    ${cardReturnsHistoryPolicyItem}    ${MIN_TIMEOUT}
     Element Text Should Be    ${cardReturnsHistoryPolicyItem}    ${expectedTitle}
 
 Swipe To Empty State Step 2
@@ -62,82 +62,82 @@ Swipe To Empty State Step 2
 #    Sleep    5s
 
 Click Returns Call To Action Button
-    Wait Until Element Is Visible    ${btnReturnsCallToAction}    30s
+    Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
     Click Element    ${btnReturnsCallToAction}
 
 Verify Returns Order History Filter Option View Visible
-    Wait Until Element Is Visible    ${returnsOrderHistoryFilterOptionContainer}    30s
+    Wait Until Element Is Visible    ${returnsOrderHistoryFilterOptionContainer}    ${MIN_TIMEOUT}
 
 Verify Returns Order History Filter Option Button Title
-    Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    30s
+    Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    ${MIN_TIMEOUT}
     Element Text Should Be    ${btnReturnsOrderHistoryFilterOptionChange}    CHANGE
 
 Click Returns Order History Filter Option Button
-    Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    30s
+    Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    ${MIN_TIMEOUT}
     Click Element    ${btnReturnsOrderHistoryFilterOptionChange}
 
 Verify Returns Order History Filter Options
-    Verify Text On Screen    Last 3 months    30s
-    Verify Text On Screen    Last 6 months    30s
+    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
+    Verify Text On Screen    Last 6 months    ${MIN_TIMEOUT}
 
 Verify Returns Order History Item Visible
-    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItem}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItem}    ${MIN_TIMEOUT}
 
 Verify Returns Order History Item Title
-    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemTitle}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemTitle}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsOrderHistoryItemTitle}    Order #
 
 Verify Returns Order History Item Subtitle
-    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemSubtitle}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemSubtitle}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsOrderHistoryItemSubtitle}    Ordered
 
 Verify Returns Order History Item Image Container
-    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemImageContainer}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemImageContainer}    ${MIN_TIMEOUT}
 
 Click Returns Order History Item
 #    Sleep    5s
     Click Element    ${cardReturnsOrderHistoryItem}
 
 Verify Returns Order Detail Returnable Section
-    Wait Until Element Is Visible    ${returnOrderDetailReturnableSectionTitle}    30s
+    Wait Until Element Is Visible    ${returnOrderDetailReturnableSectionTitle}    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Non-Returnable Section
     Scroll To Element In Container    ${returnOrderDetailNonReturnableSectionTitle}    ${containerReturnsHOrderDetail}    20
 
 Verify Returns Order Detail Item Image
-    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Title
-    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemTitle}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemTitle}    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Price And Qty
-    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemPriceAndQty}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemPriceAndQty}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsOrderDetailItemPriceAndQty}    R
     Element Should Contain Text    ${cardReturnsOrderDetailItemPriceAndQty}    Qty
 
 Verify Returns Order Detail Item Warranty Title
-    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWarrantyTitle}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWarrantyTitle}    ${MIN_TIMEOUT}
     ${hasValidWarranty}=    Run Keyword And Return Status    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantyTitle}    Warranty
     Run Keyword And Return If    ${hasValidWarranty}==False    Element Should Contain Text   ${cardReturnsOrderDetailItemWarrantyTitle}    Non-Returnable 
 
 Verify Returns Order Detail Item Warranty Subtitle
     ${hasValidWarranty}=    Run Keyword And Return Status    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantyTitle}    Warranty
-    Run Keyword And Return If    ${hasValidWarranty}==True    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWarrantySubtitle}    30s
+    Run Keyword And Return If    ${hasValidWarranty}==True    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWarrantySubtitle}    ${MIN_TIMEOUT}
     Run Keyword And Return If    ${hasValidWarranty}==True    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantySubtitle}    Warranty Expires
 
 Click Returns Order Detail Item Warranty Title
     Click Element    ${cardReturnsOrderDetailItemWarrantyTitle} 
 
 Verify Returns Order Detail Item Warranty Dialog Title
-    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogTitle}    30s
+    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogTitle}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${returnsOrderDetailWarrantyDialogTitle}    Limited Warranty
 
 Verify Returns Order Detail Item Warranty Dialog Message
-    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogMessage}    30s
+    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogMessage}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${returnsOrderDetailWarrantyDialogMessage}    Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details.
 
 Verify Returns Order Detail Item Warranty Dialog Button
-    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogButton}    30s
+    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogButton}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${returnsOrderDetailWarrantyDialogButton}    OK
 
 Close Returns Order Detail Item Warranty Dialog
@@ -153,54 +153,54 @@ Scroll To First Non Returnable Reason
     Scroll To Element In Container    ${cardReturnsOrderDetailItemNonReturnableReasonTitle}    ${containerReturnsHOrderDetail}    20
 
 Verify Return Reason Reason Selector Visible
-    Wait Until Element Is Visible    ${returnReasonReasonSelector}    30s
+    Wait Until Element Is Visible    ${returnReasonReasonSelector}    ${MIN_TIMEOUT}
 
 Verify Return Reason Reason Selector Text
     [Arguments]    ${expectedText}
     Element Text Should Be    ${returnReasonReasonSelectorText}    ${expectedText}
 
 Verify Return Reason Reason Selector Error Message
-    Wait Until Element Is Visible    ${returnReasonReasonSelectorErrorText}    30s
+    Wait Until Element Is Visible    ${returnReasonReasonSelectorErrorText}    ${MIN_TIMEOUT}
     Element Text Should Be    ${returnReasonReasonSelectorErrorText}    Please select a reason for return
 
 Click Return Reason Reason Selector
-    Wait Until Element Is Visible    ${returnReasonReasonSelector}    30s
+    Wait Until Element Is Visible    ${returnReasonReasonSelector}    ${MIN_TIMEOUT}
     Click Element    ${returnReasonReasonSelector}
 
 Click Return Reason Reason Non-Exchange Item
-    Wait Until Element Is Visible    ${returnReasonReasonItemNonExchange}    30s
+    Wait Until Element Is Visible    ${returnReasonReasonItemNonExchange}    ${MIN_TIMEOUT}
     Click Element    ${returnReasonReasonItemNonExchange}
 
 Scroll To Return Reason Text Area
     Scroll To Element In Container    ${returnReasonTextArea}   ${containerReturnsReason}    20
 
 Verify Return Reason Text Area Error Message
-    Wait Until Element Is Visible    ${returnReasonTextArea}    30s
+    Wait Until Element Is Visible    ${returnReasonTextArea}    ${MIN_TIMEOUT}
     Element Text Should Be    ${returnReasonTextAreaErrorMessage}    Please describe the problem
 
 Verify Return Reason Preferred Outcome Visible
-    Wait Until Element Is Visible    ${returnReasonPreferredOutcomeSelector}    30s
+    Wait Until Element Is Visible    ${returnReasonPreferredOutcomeSelector}    ${MIN_TIMEOUT}
 
 Verify Return Reason Preferred Outcome Error Message
-    Wait Until Element Is Visible    ${returnReasonPreferredOutcomeSelector}    30s
+    Wait Until Element Is Visible    ${returnReasonPreferredOutcomeSelector}    ${MIN_TIMEOUT}
     Element Text Should Be    ${returnReasonPreferredOutcomeErrorMessage}    Please select a preferred outcome
 
 Click Returns Order History Item With Multiple Quantity
-    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemWithMutlipleQuantity}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemWithMutlipleQuantity}    ${MIN_TIMEOUT}
     Click Element    ${cardReturnsOrderHistoryItemWithMutlipleQuantity}
 
 Scroll To Returns Order Detail Item With Multiple Quantity
     Scroll To Element In Container    ${cardReturnsOrderDetailItemWithMultipleQuantity}    ${containerReturnsHOrderDetail}    20
 
 Click Returns Order Detail Item With Multiple Quantity
-    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWithMultipleQuantity}    30s
+    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWithMultipleQuantity}    ${MIN_TIMEOUT}
     Click Element    ${cardReturnsOrderDetailItemWithMultipleQuantity}
 
 Verify Returns Reason Quantity Visible
-    Wait Until Element Is Visible    ${returnReasonQuantitySelector}    30s
+    Wait Until Element Is Visible    ${returnReasonQuantitySelector}    ${MIN_TIMEOUT}
 
 Verify Returns Reason Quantity Error Message
-    Wait Until Element Is Visible    ${returnReasonQuantitySelector}    30s
+    Wait Until Element Is Visible    ${returnReasonQuantitySelector}    ${MIN_TIMEOUT}
     Element Text Should Be    ${returnReasonQuantityErrorMessage}    Please select a quantity to return
 
 Scroll To Returns Order History Item With Variant Size
@@ -259,30 +259,30 @@ Input Return Reason Text Area Text
     Input Text    ${returnReasonTextAreaText}    ${inputText}
 
 Verify Returns Request Cart Header
-    Wait Until Element Is Visible    ${returnRequestReturnItemsHeader}    30s
+    Wait Until Element Is Visible    ${returnRequestReturnItemsHeader}    ${MIN_TIMEOUT}
 
 Verify Return Request Return Method Header
-    Wait Until Element Is Visible    ${returnRequestReturnItemsHeader}    30s
+    Wait Until Element Is Visible    ${returnRequestReturnItemsHeader}    ${MIN_TIMEOUT}
 
 Verify Returns Request Item Image
-    Wait Until Element Is Visible    ${cardReturnsRequestItemImage}    30s
+    Wait Until Element Is Visible    ${cardReturnsRequestItemImage}    ${MIN_TIMEOUT}
 
 Verify Returns Request Item Title
     [Arguments]    ${expectedTitle}
-    Wait Until Element Is Visible    ${cardReturnsRequestItemTitle}    30s
+    Wait Until Element Is Visible    ${cardReturnsRequestItemTitle}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsRequestItemTitle}    ${expectedTitle}
 
 Verify Returns Request Item Price And Qty
-    Wait Until Element Is Visible    ${cardReturnsRequestItemPriceAndQty}    30s
+    Wait Until Element Is Visible    ${cardReturnsRequestItemPriceAndQty}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsRequestItemPriceAndQty}    R
     Element Should Contain Text    ${cardReturnsRequestItemPriceAndQty}    Return Qty:
 
 Verify Returns Request Item Reason Title
-    Wait Until Element Is Visible    ${cardReturnsRequestItemReasonTitle}    30s
+    Wait Until Element Is Visible    ${cardReturnsRequestItemReasonTitle}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsRequestItemReasonTitle}    Reason for Return:
 
 Verify Returns Request Item Preferred Outcome Title
-    Wait Until Element Is Visible    ${cardReturnsRequestItemPreferredOutcomeTitle}    30s
+    Wait Until Element Is Visible    ${cardReturnsRequestItemPreferredOutcomeTitle}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsRequestItemPreferredOutcomeTitle}    Preferred Outcome:
 
 Swipe Returns Request Item For Delete
@@ -313,7 +313,7 @@ Click Returns Request Cart Item
     Click Element    ${cardReturnsRequestItem}
 
 Verify Return Reason Toolbar Delete Icon
-    Wait Until Element Is Visible    ${returnReasonToolbarDeleteIcon}    30s
+    Wait Until Element Is Visible    ${returnReasonToolbarDeleteIcon}    ${MIN_TIMEOUT}
 
 Click Return Reason Toolbar Delete Icon
     Click Element    ${returnReasonToolbarDeleteIcon}
@@ -341,7 +341,7 @@ Click Return Select Return Method Address
     Click Element    ${returnSelectReturnMethodCollect}
 
 Click Return Select Address Item
-    Wait Until Element Is Visible    ${returnSelectAddressItemName}    30s
+    Wait Until Element Is Visible    ${returnSelectAddressItemName}    ${MIN_TIMEOUT}
     Click Element    ${returnSelectAddressItem}
 #    Sleep    10s
 
@@ -378,13 +378,13 @@ Verify Return Request Contact Details Section
     Element Text Should Be    ${returnRequestContactDetailSelectorButton}    CHANGE
 
 Verify Return Request Loading State Not Visible
-    Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    30s
+    Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    ${MIN_TIMEOUT}
 
 Scroll To Return Request Cart Item
     Scroll To Element In Container    ${cardReturnsRequestItem}     ${containerReturnRequest}    20
 
 Verify Return Request Empty State
-    Wait Until Element Is Visible    ${returnRequestEmptyState}    30s
+    Wait Until Element Is Visible    ${returnRequestEmptyState}    ${MIN_TIMEOUT}
 
 Click Return Request Empty State Call To Action
     Click Element    ${returnRequestEmptyStateCallToAction}
@@ -414,13 +414,13 @@ Click Return Select Delivery Method Pickup Point Option
     Click Element    ${returnSelectReturnMethodPickupPoint}
 
 Verify Return Select Delivery Method Pickup Point Item Title
-    Wait Until Element Is Visible    ${returnSelectPickupPointItemTitle}    30s
+    Wait Until Element Is Visible    ${returnSelectPickupPointItemTitle}    ${MIN_TIMEOUT}
 
 Verify Return Select Delivery Method Pickup Point Item Subtitle
-    Wait Until Element Is Visible    ${returnSelectPickupPointItemSubtitle}    30s
+    Wait Until Element Is Visible    ${returnSelectPickupPointItemSubtitle}    ${MIN_TIMEOUT}
 
 Verify Return Select Delivery Method Pickup Point Item Info Button
-    Wait Until Element Is Visible    ${returnSelectPickupPointItemInfoButton}    30s
+    Wait Until Element Is Visible    ${returnSelectPickupPointItemInfoButton}    ${MIN_TIMEOUT}
     Element Text Should Be    ${returnSelectPickupPointItemInfoButton}    INFO
 
 Click Return Select Delivery Method Pickup Point Item

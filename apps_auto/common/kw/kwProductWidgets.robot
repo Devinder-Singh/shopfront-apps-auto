@@ -3,11 +3,11 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Product Widget First View All
-    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductViwAllFirst}    30s
+    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductViwAllFirst}    ${MIN_TIMEOUT}
     Run Keyword If    ${chkElementExists}==${True}    Click Element    ${btnProductViwAllFirst}
 
 Click Product Widget Top Pre Orders
-    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductPreOrder}    30s
+    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductPreOrder}    ${MIN_TIMEOUT}
     Run Keyword If    ${chkElementExists}==${False}    Swipe Up    ${windowScroll}
     ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductPreOrder}    5s
     Run Keyword If    ${chkElementExists}==${False}    Swipe Up    ${windowScroll}
@@ -102,5 +102,5 @@ Click Product Widget Context
     Click Element    ${btnContextWidget}
 
 Verify Product Widget Navigation
-    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Run Keyword If    ${chkElementExists}==${False}    Wait Until Element Is Visible    ${btnAddToCart}    5s

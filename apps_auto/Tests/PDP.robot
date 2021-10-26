@@ -11,11 +11,11 @@ Apps > PDP > Main Product Details > Description - QASA-749
     Click Search Home
     Search Product    dog food
     Click Product From Title    Enerpets - Enerdog Economy 25kg dry dog food
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click PDP Description Show More
     Click Back Android
     Click Back iOS    icon cross
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click PDP Description Show More
     [Teardown]    Tear Down
 
@@ -27,7 +27,7 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QASA-124
     Search Product    jean
     Click Variant Product from API
     Click Product Disabled Variant From API
-    Verify Element On Screen Not    ${btnAddToCart}    30s
+    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Product Variant From API
     Click Add To Cart
     Close Application
@@ -37,7 +37,7 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QASA-124
     Search Product    shoes f
     Click Variant Product from API
     Click Product Disabled Variant Colour From API
-    Verify Element On Screen Not    ${btnAddToCart}    30s
+    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Product Variant Colour From API
     Click Add To Cart
     Close Application
@@ -47,7 +47,7 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QASA-124
     Search Product    shirt
     Click Variant Product from API
     Click Product Disabled Variant Colour Size From API
-    Verify Element On Screen Not    ${btnAddToCart}    30s
+    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Product Variant Colour From API
     Click Product Variant Colour Size From API
     Click Add To Cart
@@ -60,10 +60,10 @@ Apps > PDP > Buy Box > Select an Option - QASA-754
     Click Search Home
     Search Product    jean
     Click Variant Product from API
-    Verify Element On Screen Not    ${btnAddToCart}    30s
+    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
     Verify Element On Screen Not    ${btnAddWishlist}    1s
     Click Product Variant From API
-    Verify Element On Screen    ${btnAddWishlist}    30s
+    Verify Element On Screen    ${btnAddWishlist}    ${MIN_TIMEOUT}
     Click Add To Cart
     Close Application
     Start Application
@@ -71,10 +71,10 @@ Apps > PDP > Buy Box > Select an Option - QASA-754
     Click Search Home
     Search Product    shoes f
     Click Variant Product from API
-    Verify Element On Screen Not    ${btnAddToCart}    30s
+    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
     Verify Element On Screen Not    ${btnAddWishlist}    1s
     Click Product Variant Colour From API
-    Verify Element On Screen    ${btnAddWishlist}    30s
+    Verify Element On Screen    ${btnAddWishlist}    ${MIN_TIMEOUT}
     Click Add To Cart
     Close Application
     Start Application
@@ -82,11 +82,11 @@ Apps > PDP > Buy Box > Select an Option - QASA-754
     Click Search Home
     Search Product    shirt
     Click Variant Product from API
-    Verify Element On Screen Not    ${btnAddToCart}    30s
+    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
     Verify Element On Screen Not    ${btnAddWishlist}    1s
     Click Product Variant Colour From API
     Click Product Variant Colour Size From API
-    Verify Element On Screen    ${btnAddWishlist}    30s
+    Verify Element On Screen    ${btnAddWishlist}    ${MIN_TIMEOUT}
     Click Add To Cart
     [Teardown]    Tear Down
 
@@ -104,16 +104,16 @@ Apps > PDP > Buy Box > Delivery Cost - QASA-757
     Click Search Home
     Search Product    drone
     Click Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    FREE DELIVERY    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    FREE DELIVERY    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    FREE DELIVERY    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    FREE DELIVERY    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    fridg
     Click Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    + R 200 Delivery Surcharge    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    + R 200 Delivery Surcharge    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    + R 200 Delivery Surcharge    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    + R 200 Delivery Surcharge    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Buy Box > eBucks - QASA-756
@@ -123,9 +123,9 @@ Apps > PDP > Buy Box > eBucks - QASA-756
     Click Search Home
     Search Product    airtim
     Click First Product from API
-    Verify Text On Screen    eB20 - eB    30s
+    Verify Text On Screen    eB20 - eB    ${MIN_TIMEOUT}
     Click Airtime
-    Verify Text On Screen    eB50    30s
+    Verify Text On Screen    eB50    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -156,7 +156,7 @@ Apps > PDP > You Might Also Like - QASA-769
     Click Search Home
     Search Product    pencil
     Click Product from API
-    Verify Text On Screen Scroll    You Might Also Like    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll    You Might Also Like    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Verify Product YAML from API
     [Teardown]    Tear Down
 
@@ -168,7 +168,7 @@ Apps > PDP > Policy list > Eligible for Cash on Delivery - QASA-768
     Search Product    pencil
     Click Product from API
     Click Eligible for Cash on Delivery
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What does this mean?    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What does this mean?    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You can pay for this item with cash when your driver delivers your order    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    How does it work?    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select Cash On Delivery (COD) as your payment option when you checkout. Have the exact amount of cash ready for our friendly delivery driver when he arrives    1s
@@ -180,7 +180,7 @@ Apps > PDP > Policy list > Eligible for Cash on Delivery - QASA-768
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Orders being collected from Takealot pickup points    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delivery addresses falling outside of our Takealot Delivery Team area    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    If your order is eligible for COD, it will be displayed as a payment option at checkout    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    What does this mean?    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    What does this mean?    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You can pay for this item with cash when your driver delivers your order    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    How does it work?    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select Cash On Delivery (COD) as your payment option when you checkout. Have the exact amount of cash ready for our friendly delivery driver when he arrives    1s
@@ -209,8 +209,8 @@ Apps > PDP > Policy list > Free Delivery Available - QASA-767
     Click Search Icon
     Search Product    drone
     Click Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    FREE DELIVERY    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    FREE DELIVERY    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    FREE DELIVERY    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    FREE DELIVERY    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Other Offers - QASA-781
@@ -221,19 +221,19 @@ Apps > PDP > Other Offers - QASA-781
     Search Product    Unboxed Dea
     Click Product From Title    Xiaomi Mi Lite Smartwatch
     Click PDP JHB
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This item is in stock in our Johannesburg warehouse and can be shipped from there    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This item is in stock in our Johannesburg warehouse and can be shipped from there    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    JHB    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This item is in stock in our Johannesburg warehouse and can be shipped from there    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This item is in stock in our Johannesburg warehouse and can be shipped from there    ${MIN_TIMEOUT}
     Click PDP Warehouse OK
     Click PDP CPT
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This item is in stock in our Cape Town warehouse and can be shipped from there. You can also collect it yourself from our warehouse during the week or over weekends    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This item is in stock in our Cape Town warehouse and can be shipped from there. You can also collect it yourself from our warehouse during the week or over weekends    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    CPT    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This item is in stock in our Cape Town warehouse and can be shipped from there. You can also collect it yourself from our warehouse during the week or over weekends    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This item is in stock in our Cape Town warehouse and can be shipped from there. You can also collect it yourself from our warehouse during the week or over weekends    ${MIN_TIMEOUT}
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    30s
-    Verify Text On Screen    Item added to Cart    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    ${MIN_TIMEOUT}
+    Verify Text On Screen    Item added to Cart    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Buy Box > List Price - QASA-759
@@ -244,9 +244,9 @@ Apps > PDP > Buy Box > List Price - QASA-759
     Search Product    sale
     Click Product from API
     Click PDP List Price
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Our List Price    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Our List Price    1s
     Click PDP List Price Cancel
     Click Search Icon
@@ -254,9 +254,9 @@ Apps > PDP > Buy Box > List Price - QASA-759
     Click Variant Product from API
     Click Product Variant From API
     Click PDP List Price
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Our List Price    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This is our List Price. Find out what this means in our Terms & Conditions    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Our List Price    1s
     [Teardown]    Tear Down
 
@@ -271,27 +271,27 @@ Apps > PDP > Unboxed Deals & New > Primary Unboxed > Variant - QASA-132
     Click Search Home
     Search Product    unboxed dea
     Click Product from API
-    Verify Text On Screen Scroll Android    Fulfilled by Takealot    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll Android    Fulfilled by Takealot    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Unboxed Deals    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    WHAT IS THIS?    1s
-#    Verify Text On Screen Scroll iOS    Fulfilled by Takealot    30s    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Unboxed Deals    30s    ${windowScroll}    ${btnAddToCart}
+#    Verify Text On Screen Scroll iOS    Fulfilled by Takealot    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll iOS    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Unboxed Deal    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    What is this?    1s
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProduct}    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProduct}    1s
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Click Back Android
     Click Go To Cart iOS
     Click Home iOS
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart No Scroll iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    30s
-#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Bundle Deals > Set Bundle (Same product) - QASA-780
@@ -304,15 +304,15 @@ Apps > PDP > Bundle Deals > Set Bundle (Same product) - QASA-780
     Click Search Home
     Search Product    Ring - Video Doorbel
     Click Product From Title    Ring - Video Doorbell 3 Faceplate - Night Sky
-    Verify Text On Screen Scroll Android    SAVE R    30s    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    SAVE R    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll Android    SAVE R    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll iOS    SAVE R    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Swipe Up    ${windowScroll}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Bundle Price    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Bundle Price    1s
     Click Add Bundle To Cart No Scroll Android
     Click Add Bundle To Cart iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Items Added To Cart    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    items added to Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Items Added To Cart    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    items added to Cart    ${MIN_TIMEOUT}
     Verify Element On Screen    ${btnGoToCart}    1s
     [Teardown]    Tear Down
 
@@ -326,8 +326,8 @@ Apps > PDP > Bundle Deals > “Show All Deals” Screen - QASA-777
     Click Search Home
     Search Product    Maybelline Fit Me Matte Poreles
     Click Product From Title    Maybelline Fit Me Matte Poreless 356 Warm Coconut
-    Verify Text On Screen Scroll Android    Bundle Deals expire when stock runs out    30s    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Bundle Deals expire when stock runs out    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll Android    Bundle Deals expire when stock runs out    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll iOS    Bundle Deals expire when stock runs out    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Mix and match any    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    eligible products for    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Mix and match any    1s
@@ -347,15 +347,15 @@ Apps > PDP > Bundle Deals > Set Bundle (Different products) - QASA-128
     Click Search Home
     Search Product    Ring - Video Doorbel
     Click Product From Title    Ring - Video Doorbell 3 Faceplate - Night Sky
-    Verify Text On Screen Scroll Android    SAVE R    30s    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    SAVE R    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll Android    SAVE R    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll iOS    SAVE R    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Swipe Up    ${windowScroll}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Bundle Price    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Bundle Price    1s
     Click Add Bundle To Cart No Scroll Android
     Click Add Bundle To Cart iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Items Added To Cart    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    items added to Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Items Added To Cart    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    items added to Cart    ${MIN_TIMEOUT}
     Verify Element On Screen    ${btnGoToCart}    1s
     [Teardown]    Tear Down
 
@@ -369,28 +369,28 @@ Apps > PDP > Unboxed Deals > Primary Unboxed - QASA-776
     Click Search Home
     Search Product    Keychron K8 Walnu
     Click Product From Title    Keychron K8 Walnut Wood Keyboard Palm Rest
-    Verify Text On Screen Scroll Android    No extended supplier warranty    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll Android    No extended supplier warranty    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Returned & shop soiled products    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Quality checked by Takealot    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    UNBOXED DEAL    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Unboxed stock available    1s
-    Verify Text On Screen Scroll iOS    No extended supplier warranty    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll iOS    No extended supplier warranty    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Returned & shop soiled products    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Quality checked by Takealot    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    UNBOXED DEAL    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Unboxed stock available    1s
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    1s
     Click Back Android
     Click Go To Cart iOS
     Click Home iOS
     Click Add To Cart
-#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    30s
-#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Unboxed Deals > Unboxed Offers - QASA-775
@@ -403,8 +403,8 @@ Apps > PDP > Unboxed Deals > Unboxed Offers - QASA-775
     Click Search Home
     Search Product    Unboxed Dea
     Click Product from API
-    Verify Text On Screen Scroll Android    Unboxed Deals    30s    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Unboxed Deals    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll Android    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll iOS    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Click PDP What Is This No Scroll Android
     Click PDP What Is This iOS
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Returned & shop soiled products    5s
@@ -412,7 +412,7 @@ Apps > PDP > Unboxed Deals > Unboxed Offers - QASA-775
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    No extended supplier warranty    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What is this?    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Returned & shop soiled products    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Returned & shop soiled products    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Quality checked by Takealot    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No extended supplier warranty    1s
@@ -420,7 +420,7 @@ Apps > PDP > Unboxed Deals > Unboxed Offers - QASA-775
     Click PDP Warehouse OK
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart No Scroll iOS
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    1s
     Click Back Android
@@ -428,8 +428,8 @@ Apps > PDP > Unboxed Deals > Unboxed Offers - QASA-775
     Click Home iOS
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart No Scroll iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QASA-774
@@ -443,8 +443,8 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QASA-774
     Search Product    Dog Days Cherries Sweatshir
     Click Product From Title    Dog Days Crowns Sweatshirts Blue
     Click Product Variant From Name    S
-    Verify Text On Screen Scroll Android    Unboxed Deals    30s    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Unboxed Deals    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll Android    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll iOS    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Click PDP What Is This No Scroll Android
     Click PDP What Is This iOS
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Returned & shop soiled products    5s
@@ -452,7 +452,7 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QASA-774
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    No extended supplier warranty    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What is this?    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Returned & shop soiled products    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Returned & shop soiled products    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Quality checked by Takealot    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No extended supplier warranty    1s
@@ -460,7 +460,7 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QASA-774
     Click PDP Warehouse OK
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart No Scroll iOS
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    1s
     Click Back Android
@@ -468,8 +468,8 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QASA-774
     Click Home iOS
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart No Scroll iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Variants > Colour > No show all link - QASA-86
@@ -492,8 +492,8 @@ Apps > PDP >Bundle Deals > Multi-buy Bundle - QASA-778
     Click Search Home
     Search Product    Maybelline Fit Me Matte Poreles
     Click Product From Title    Maybelline Fit Me Matte Poreless 356 Warm Coconut
-    Verify Text On Screen Scroll Android    Bundle Deals expire when stock runs out    30s    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Bundle Deals expire when stock runs out    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll Android    Bundle Deals expire when stock runs out    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll iOS    Bundle Deals expire when stock runs out    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Mix and match any    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    eligible products for    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Mix and match any    1s
@@ -521,8 +521,8 @@ Apps > PDP > Other Offers > More than one offer - QASA-634
     Click Back iOS    icon cross
     Click PDP Show All Offers No Scroll
     Click Other Offer Sellers Add To Cart
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    ${MIN_TIMEOUT}
     Verify Element On Screen    ${btnGoToCart}    5s
     [Teardown]    Tear Down
 
@@ -536,16 +536,16 @@ Apps > PDP > Variants > Colour - QASA-779
     Click Search Home
     Search Product    Luxurious suede microfibre fleece
     Click Variant Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Click Show All Colours
     Verify Product Variant Colour With ShowAll From API
     Swipe Down    ${windowScroll}
     Click Product Variant Colour with ShowAll From API
     Click Add To Cart
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Variants > Size - QASA-88
@@ -558,14 +558,14 @@ Apps > PDP > Variants > Size - QASA-88
     Click Search Home
     Search Product    jean
     Click Variant Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a size    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a size    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a size    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a size    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Verify Product Variant Size From API
     Click Product Variant From API
     Click Add To Cart
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Variants > Colour & Size - QASA-85
@@ -578,11 +578,11 @@ Apps > PDP > Variants > Colour & Size - QASA-85
     Click Search Home
     Search Product    shirts for me
     Click Variant Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a size    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a size    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a size    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a size    ${MIN_TIMEOUT}
     Click Product Variant Colour From API
     Verify Element On Screen Not    ${btnAddToCart}    2s
     Verify Element On Screen Not    ${btnAddWishlist}    2s
@@ -641,21 +641,21 @@ Apps > PDP > Policy list > Warranty Types > Non-Returnable - QASA-764
     Click Search Home
     Search Product    Airtim
     Click Variant Product from API
-    Verify Element On Screen    ${btnPDPSelectOption}    30s
+    Verify Element On Screen    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Non-Returnable    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Non-Returnable    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Non-Returnable    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Non-Returnable    ${MIN_TIMEOUT}
     Click Search Icon
     Search Product    Vouche
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Non-Returnable    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Non-Returnable    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Non-Returnable    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Non-Returnable    ${MIN_TIMEOUT}
     Click Search Icon
     Search Product    johny wal
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Click Non Refundable
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    No warranty at all, except for delivery damages (if applicable). Digital products will be supported, but no refunds possible    5s
@@ -671,8 +671,8 @@ Apps > PDP > Sold by - QASA-760
     Click First Product from API
     Click Seller Name
     Click Product Seller Deals
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_FirstProductBrand}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_FirstProductBrand}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_FirstProductBrand}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_FirstProductBrand}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Main Product Details > Product Title and Sub-title - QASA-746
@@ -683,20 +683,20 @@ Apps > PDP > Main Product Details > Product Title and Sub-title - QASA-746
     Search Product    Pencil
     Click Product from API
     Get Product Subtitle from PLID
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProductSubTitle}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProductSubTitle}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProductSubTitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProductSubTitle}    ${MIN_TIMEOUT}
     Click Search Icon
     Search Product    book
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    By    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    by    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    By    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    by    ${MIN_TIMEOUT}
     Verify Text On Screen Scroll    et al    5s    ${windowScroll}    ${btnProductSearchFilter}
     Click Product from API
     Get Product Subtitle from PLID
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProductSubTitle}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProductSubTitle}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProductSubTitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProductSubTitle}    ${MIN_TIMEOUT}
     Get Product Author from PLID
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProductAuthor}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProductAuthor}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProductAuthor}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProductAuthor}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Main Product Details > Product Info - QASA-748
@@ -720,7 +720,7 @@ Apps > PDP > Main Product Details > Product Info - QASA-748
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What's in the box    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Barcode    1s
     Click Product Brand from API
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > When Do I get it? > When Do I Get It? Message - QASA-762
@@ -730,7 +730,7 @@ Apps > PDP > When Do I get it? > When Do I Get It? Message - QASA-762
     Click Search Home
     Search Product    Pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Click PDP When Do I Get
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    When do I get it?    1s
@@ -802,7 +802,7 @@ Apps > PDP > When Do I get it? > When Do I Get It? Message - QASA-762
     Click Search Icon
     Search Product    Pencil
     Click Leadtime Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Click PDP When Do I Get
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    When do I get it?    1s
@@ -858,7 +858,7 @@ Apps > PDP > When Do I get it? > When Do I Get It? Message - QASA-762
     Click Search Icon
     Search Product    Vouche
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Click PDP When Do I Get
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    When do I get it?    1s
@@ -875,7 +875,7 @@ Apps > PDP > Buy Box > Price Range - QASA-758
     Search Product    jeans for w
     Click Variant Product from API
     Click Product Variant From API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Price: R    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Price: R    1s
     Click Search Icon
@@ -884,7 +884,7 @@ Apps > PDP > Buy Box > Price Range - QASA-758
     Click Product Variant Colour From API
     Check Text On Screen Not    Price: R
     Click Product Variant Colour Size From API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Price: R    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Price: R    1s
     [Teardown]    Tear Down
@@ -896,7 +896,7 @@ Apps > PDP > Buy Box > MobiCred - QASA-755
     Click Search Home
     Search Product    Fridg
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click PDP Credit Info
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Can I buy this on credit?    5s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Yes. If you pay with Mobicred, you can repay the full amount in monthly instalments, instead of all at once    1s
@@ -924,7 +924,7 @@ Apps > PDP > Buy Box > MobiCred - QASA-755
     Click Search Home
     Search Product    Jeans for Wo
     Click Variant Product from API
-    Verify Element On Screen    ${btnPDPSelectOption}    30s
+    Verify Element On Screen    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    On Credit: R    2s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    / month    2s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Apply to Mobicred now    2s
@@ -935,7 +935,7 @@ Apps > PDP > Buy Box > MobiCred - QASA-755
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Verify Element On Screen    ${btnPDPSelectOption}    30s
+    Verify Element On Screen    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Check Text On Screen Not    On Credit
     Close Application
     Start Application
@@ -943,7 +943,7 @@ Apps > PDP > Buy Box > MobiCred - QASA-755
     Click Search Home
     Search Product    iphone 12
     Click Product from API
-    Verify Element On Screen    ${btnPDPSelectOption}    30s
+    Verify Element On Screen    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Check Text On Screen Not    On Credit
     [Teardown]    Tear Down
 
@@ -955,21 +955,21 @@ Apps > PDP > Buy Box > Add to Cart - QASA-753
     Search Product    Pencil
     Click Product from API
     Click Add To Cart
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProduct}    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added to Cart    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added to Cart    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProduct}    1s
     Get Product Subtitle from PLID
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProductSubTitle}    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProductSubTitle}    1s
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    Dying Light 2
     Click Product From Title    Dying Light 2: Stay Human (PS5)
-    Verify Element On Screen    ${btnPDPPreOrder}    30s
+    Verify Element On Screen    ${btnPDPPreOrder}    ${MIN_TIMEOUT}
     Click Search Icon
     Search Product    eBook
     Click Product from API
@@ -983,13 +983,13 @@ Apps > PDP > Buy Box > Add to Wishlist - QA-2035
     Click Search Home
     Search Product    blu-ray disc
     Click Product From Title    Perfect Storm - (Import Blu-ray Disc)
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This Disc requires a Blu-ray player    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This Disc requires a Blu-ray player    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This Disc requires a Blu-ray player    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This Disc requires a Blu-ray player    ${MIN_TIMEOUT}
     Click Search Icon
     Search Product    walking dead season
     Click Product From Title    Walking Dead Season 4 - (Region A Import Blu-ray Disc)
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This Blu-ray disc requires a suitable Blu-ray player that has the ability to play multi region discs    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This Blu-ray disc requires a suitable Blu-ray player that has the ability to play multi region discs    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    This Blu-ray disc requires a suitable Blu-ray player that has the ability to play multi region discs    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This Blu-ray disc requires a suitable Blu-ray player that has the ability to play multi region discs    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Notification Banner > Pre - Order , Login , Write A Review - QASA-750
@@ -1000,7 +1000,7 @@ Apps > PDP > Notification Banner > Pre - Order , Login , Write A Review - QASA-7
     Search Product    Dying Light 2
     Click Product From Title    Dying Light 2: Stay Human (PS5)
     Click Add Pre Order To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -1009,8 +1009,8 @@ Apps > PDP > Notification Banner > Pre - Order , Login , Write A Review - QASA-7
     Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Pre-order items must be purchased in separate orders (1 order for each pre-order item)    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Pre-order items must be purchased in separate orders (1 order for each pre-order item)    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Pre-order items must be purchased in separate orders (1 order for each pre-order item)    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Pre-order items must be purchased in separate orders (1 order for each pre-order item)    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Menu
@@ -1028,7 +1028,7 @@ Apps > PDP > Notification Banner > Pre - Order , Login , Write A Review - QASA-7
     Click Review Rating
     Enter Review Message    Auto Test
     Click Review Submit
-    Verify Text On Screen    Thank you for your review    30s
+    Verify Text On Screen    Thank you for your review    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP> In Stock > Stock & Stock Status Possibilities ( ALL) - QASA-773
@@ -1056,17 +1056,17 @@ Apps > PDP> In Stock > Stock & Stock Status Possibilities ( ALL) - QASA-773
     Click Search Icon
     Search Product    Pencil
     Click Leadtime Product from API
-    Verify Text On Screen    Ships in    30s
+    Verify Text On Screen    Ships in    ${MIN_TIMEOUT}
     Verify Text On Screen    work days    2s
     Click Search Icon
     Search Product    airtim
     Click Variant Product from API
     Click Product Variant From API
-    Verify Text On Screen    Available Now    30s
+    Verify Text On Screen    Available Now    ${MIN_TIMEOUT}
     Click Search Icon
     Search Product    Dying Light 2
     Click Product From Title    Dying Light 2: Stay Human (PS5)
-    Verify Text On Screen    Pre-order: Ships    30s
+    Verify Text On Screen    Pre-order: Ships    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Customers Also Bought - QASA-772
@@ -1076,7 +1076,7 @@ Apps > PDP > Customers Also Bought - QASA-772
     Click Search Home
     Search Product    Pencil
     Click Product from API
-    Verify Text On Screen Scroll    Customers Also Bought    30s    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen Scroll    Customers Also Bought    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
     Get Product CABT Detail    0
     Verify Text On Screen    ${query_result_CABTProductTitle}    5s
     Verify Text On Screen    ${query_result_CABTProductPrice}    5s
@@ -1092,12 +1092,12 @@ Apps > PDP > Policy list > Hassle-free Exchanges and Returns for 30 Days (Not el
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Verify Element On Screen    ${lnkPDPSelectOption}    30s
+    Verify Element On Screen    ${lnkPDPSelectOption}    ${MIN_TIMEOUT}
     Check Text On Screen Not    Hassle-Free Exchanges & Returns for 30 Days
     Click Search Icon
     Search Product    johnny wal
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Check Text On Screen Not    Hassle-Free Exchanges & Returns for 30 Days
     [Teardown]    Tear Down
 
@@ -1108,12 +1108,12 @@ Apps > PDP > Policy list > Not For Sale to Persons Under the Age of 18 (Not elig
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Verify Element On Screen    ${lnkPDPSelectOption}    30s
+    Verify Element On Screen    ${lnkPDPSelectOption}    ${MIN_TIMEOUT}
     Check Text On Screen Not    Not For Sale to Persons Under the Age of 18
     Click Search Icon
     Search Product    pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Check Text On Screen Not    Not For Sale to Persons Under the Age of 18
     [Teardown]    Tear Down
 
@@ -1145,12 +1145,12 @@ Apps > PDP > Policy list > Not Eligible for Cash on Delivery - QASA-122
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Verify Element On Screen    ${lnkPDPSelectOption}    30s
+    Verify Element On Screen    ${lnkPDPSelectOption}    ${MIN_TIMEOUT}
     Check Text On Screen Not    Eligible for Cash on Delivery
     Click Search Icon
     Search Product    iPhone 12 pro ma
     Click Product from API
-    Verify Element On Screen    ${lnkPDPSelectOption}    30s
+    Verify Element On Screen    ${lnkPDPSelectOption}    ${MIN_TIMEOUT}
     Check Text On Screen Not    Eligible for Cash on Delivery
     [Teardown]    Tear Down
 
@@ -1164,8 +1164,8 @@ Apps > PDP > Variants > Sold out - QASA-87
     Click Search Home
     Search Product    shirts for me
     Click Variant Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Click Product Variant Colour Size From API
     Click Product Variant Disabled Colour From API
@@ -1176,8 +1176,8 @@ Apps > PDP > Variants > Sold out - QASA-87
     Click Search Home
     Search Product    jeans for wo
     Click Variant Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a size    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a size    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a size    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a size    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Click Product Variant Disabled Size From API
     Verify Element On Screen Not    ${btnAddToCart}    2s
@@ -1187,20 +1187,20 @@ Apps > PDP > Variants > Sold out - QASA-87
     Click Search Home
     Search Product    shirts for me
     Click Variant Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
     Click Product Variant Colour From API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    jeans for wo
     Click Variant Product from API
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a colour    ${MIN_TIMEOUT}
     Click Product Variant Size From API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Buy Box > Add to Wishlist - QASA-752
@@ -1232,7 +1232,7 @@ Apps > PDP > Buy Box > Add to Wishlist - QASA-752
     Click Search Home
     Search Product    Pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Long Press    ${btnAddWishlist}
     Verify Text On Screen    Add to List    10s
     Close Application
@@ -1241,7 +1241,7 @@ Apps > PDP > Buy Box > Add to Wishlist - QASA-752
     Click Search Home
     Search Product    Pen
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Long Press    ${btnAddWishlist}
     Verify Text On Screen    Add to List    10s
     Click Option Wish List

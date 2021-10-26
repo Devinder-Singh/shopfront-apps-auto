@@ -51,7 +51,7 @@ Apps > Search Listings > Attributes - QASA-210
     Click Home
     Click Search Home
     Search Product    Hisense
-    Verify Text On Screen    Hisense    30s
+    Verify Text On Screen    Hisense    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Attributes 02 - QASA-94
@@ -60,8 +60,8 @@ Apps > Search Listings > Attributes 02 - QASA-94
     Click Home
     Click Search Home
     Search Product    Book
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    By    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    by    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    By    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    by    ${MIN_TIMEOUT}
     Verify Text On Screen Scroll    et al    5s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
@@ -71,7 +71,7 @@ Apps | Search Listings | Section below header - QASA-711
     Click Home
     Click Search Home
     Search Product    Pencil
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Verify Text On Screen    items    5s
     Click Search Product Sort
     Verify Text On Screen    Relevance    10s
@@ -93,9 +93,9 @@ Apps > Search Listings > UI Checks - QASA-177
     Click Home
     Click Search Home
     Search Product    Pencil
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Verify Text On Screen    items    5s
-    Verify Element On Screen    ${btnProductSearchSort}    30s
+    Verify Element On Screen    ${btnProductSearchSort}    ${MIN_TIMEOUT}
     Click Product Grid View
     [Teardown]    Tear Down
 
@@ -121,8 +121,8 @@ Apps > Search Listings > Reviews - QASA-199
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Element On Screen Scroll Android    ${lblRatingText}    30s    ${windowScroll}    ${btnProductSearchFilter}
-    Verify Element On Screen Scroll Android    ${lblRatingNumber}    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Element On Screen Scroll Android    ${lblRatingText}    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Element On Screen Scroll Android    ${lblRatingNumber}    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
     Verify Product Review iOS
     Click Back Android
     Click Back iOS    Back
@@ -133,7 +133,7 @@ Apps > Search Listings > Reviews - QASA-199
     Click Review Rating
     Enter Review Message    Auto Test
     Click Review Submit
-    Verify Text On Screen    Thank you for your review    30s
+    Verify Text On Screen    Thank you for your review    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Price (List Price) - QASA-198
@@ -174,7 +174,7 @@ Apps > Search Listings > Call to Action Buttons > Add To Wishlist - QASA-195
     Click Search Home
     Search Product    pencil
     Click Search Product Wishlist
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Click Search Product Wishlist
     Verify Element On Screen    ${btnProductWLSave}    5s
     [Teardown]    Tear Down
@@ -185,8 +185,8 @@ Apps > Search Listings > Colour Swatches - QASA-194
     Click Home
     Click Search Home
     Search Product    shirt
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    More colours    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    More Colours    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    More colours    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    More Colours    ${MIN_TIMEOUT}
     Click Back Android
     Click Back iOS    Back
     Click Search Home
@@ -201,7 +201,7 @@ Apps > Search Listings > Set Bundle Deals (One active) - QASA-193
     Click Home
     Click Search Home
     Search Product    Ring - Video Doorbel
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Verify Product Search App Only Deals Badge
     [Teardown]    Tear Down
 
@@ -211,7 +211,7 @@ Apps > Search Listings > Set Bundle Deals (More than one active) - QASA-192
     Click Home
     Click Search Home
     Search Product    ring video doorbel
-    Verify Text On Screen    Save with Bundle Deals    30s
+    Verify Text On Screen    Save with Bundle Deals    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy) - QASA-191
@@ -220,7 +220,7 @@ Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy)
     Click Home
     Click Search Home
     Search Product    ring video doorbel
-    Verify Text On Screen    Save with Bundle Deals    30s
+    Verify Text On Screen    Save with Bundle Deals    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Multi-Buy Deals (One active) - QASA-190
@@ -229,7 +229,7 @@ Apps > Search Listings > Multi-Buy Deals (One active) - QASA-190
     Click Home
     Click Search Home
     Search Product    nature box
-    Verify Text On Screen    Nature Box Buy 2 For    30s
+    Verify Text On Screen    Nature Box Buy 2 For    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QASA-189
@@ -238,7 +238,7 @@ Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QASA-189
     Click Home
     Click Search Home
     Search Product    ring video doorbel
-    Verify Text On Screen    Save with Bundle Deals    30s
+    Verify Text On Screen    Save with Bundle Deals    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Supplier Out of Stock - QASA-186
@@ -247,7 +247,7 @@ Apps > Search Listings > Stock > Supplier Out of Stock - QASA-186
     Click Home
     Click Search Home
     Search Product    ring video doorbel
-    Verify Text On Screen    Supplier out of stock    30s
+    Verify Text On Screen    Supplier out of stock    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Available Now - QASA-185
@@ -256,7 +256,7 @@ Apps > Search Listings > Stock > Available Now - QASA-185
     Click Home
     Click Search Home
     Search Product    eboo
-    Verify Text On Screen Scroll    Available Now    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Text On Screen Scroll    Available Now    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Pre-Order - QASA-184
@@ -267,7 +267,7 @@ Apps > Search Listings > Stock > Pre-Order - QASA-184
     Click Menu Shop By Department
     Click Menu Gaming
     Click Product Widget Top Pre Orders
-    Verify Text On Screen    Pre-order: Ships    30s
+    Verify Text On Screen    Pre-order: Ships    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Currently Unavailable - QASA-183
@@ -276,7 +276,7 @@ Apps > Search Listings > Stock > Currently Unavailable - QASA-183
     Click Home
     Click Search Home
     Search Product    eboo
-    Verify Text On Screen Scroll    Currently Unavailable    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Text On Screen Scroll    Currently Unavailable    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Filters - QASA-182
@@ -290,26 +290,26 @@ Apps > Search Listings > Filters - QASA-182
     Click Filter Office Stationery
     Click Filter Select Button
     Click Filter Apply Button
-    Verify Text On Screen    In stock    30s
+    Verify Text On Screen    In stock    ${MIN_TIMEOUT}
     Click Search Product Filter
     Click Filter Availability
     Click Filter In Stock
     Click Filter Select Button iOS
     Click Filter Apply Button
-    Verify Text On Screen    In stock    30s
+    Verify Text On Screen    In stock    ${MIN_TIMEOUT}
     Click Search Product Filter
     Click Filter Brand
     Click Filter Brand Name
     Click Filter Select Button
     Click Filter Apply Button
-    Verify Text On Screen    In stock    30s
+    Verify Text On Screen    In stock    ${MIN_TIMEOUT}
     Click Search Product Filter
     Click Filter Clear All
-    Verify Text On Screen    In stock    30s
+    Verify Text On Screen    In stock    ${MIN_TIMEOUT}
     Click Search Product Filter
     Click Back iOS    icon close
     Click Back Android
-    Verify Text On Screen    In stock    30s
+    Verify Text On Screen    In stock    ${MIN_TIMEOUT}
     Click Product from API
     [Teardown]    Tear Down
 
@@ -319,7 +319,7 @@ Apps > Search Listings > No Search Results - QASA-181
     Click Home
     Click Search Home
     Search and Press Enter    ghhjgjkhkuyiuy
-    Verify Text On Screen    We could not find results for    30s
+    Verify Text On Screen    We could not find results for    ${MIN_TIMEOUT}
     Verify Text On Screen    Please check your spelling or try a more generic search term    1s
     [Teardown]    Tear Down
 
@@ -330,14 +330,14 @@ Apps > Search Listings > Sorting - QASA-180
     Click Search Home
     Search Product    pencil
     Click Search Product Sort
-    Verify Text On Screen    Relevance    30s
+    Verify Text On Screen    Relevance    ${MIN_TIMEOUT}
     Verify Text On Screen    Price: High to Low    1s
     Verify Text On Screen    Price: Low to High    1s
     Verify Text On Screen    Top Rated    1s
     Verify Text On Screen    Newest Arrivals    1s
     Click Back iOS    icon close
     Click Back Android
-    Verify Text On Screen    In stock    30s
+    Verify Text On Screen    In stock    ${MIN_TIMEOUT}
     Click Search Product Sort
     Click Sort High To Low
     Verify Sorted Products    Price+Descending
@@ -353,9 +353,9 @@ Apps > Search Listings > Related Search - QASA-179
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Text On Screen Scroll Android    Related Searches    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Text On Screen Scroll Android    Related Searches    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
     Click Product from API Scroll
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Pagination - QASA-178
@@ -365,7 +365,7 @@ Apps > Search Listings > Pagination - QASA-178
     Click Search Home
     Search Product    pencil
     Click Product from API Scroll
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > In Stock - QASA-188
@@ -374,7 +374,7 @@ Apps > Search Listings > Stock > In Stock - QASA-188
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Text On Screen Scroll    In stock    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Text On Screen Scroll    In stock    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
     Verify Text On Screen Scroll    JHB    1s    ${windowScroll}    ${btnProductSearchFilter}
     Verify Text On Screen Scroll    CPT    1s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
@@ -385,7 +385,7 @@ Apps > Search Listings > Stock > Lead Time - QASA-187
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Text On Screen Scroll    Ships in 5 - 7 work days    30s    ${windowScroll}    ${btnProductSearchFilter}
+    Verify Text On Screen Scroll    Ships in 5 - 7 work days    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
 Apps > Search: Autocomplete > Search icon - QA-5156 - Logged Out

@@ -112,7 +112,7 @@ Apps > Promotions (Android) Set Bundle - QASA-260 / QA-7443
     Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
     Click Add To Cart
     Click Go To Cart
-    Verify Text On Screen    Missed promotion    30s
+    Verify Text On Screen    Missed promotion    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    VIEW BUNDLE    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    View Bundle    1s
     Close Application
@@ -142,7 +142,7 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 / QA-7443
     Click Product From Title    Treeline Accessible Files Pink Foolscap - Pack of 4
     Click Add To Cart
     Click Go To Cart
-    Verify Text On Screen    Missed promotion    30s
+    Verify Text On Screen    Missed promotion    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ADD 1 ITEM TO QUALIFY    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Add 1 item to qualify    1s
     Close Application
@@ -184,7 +184,7 @@ Apps > Verify Home Screen - QASA-478
     [Tags]    QASA-478
     [Setup]    Start Application
     Click Home
-    Verify Text On Screen    Daily Deals    30s
+    Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
     Click View All Daily Deals
     Click Daily Deals Product from API
     [Teardown]    Tear Down
@@ -218,7 +218,7 @@ Apps > Verify Home Screen - QASA-175
     Check Text On Screen Not    Recently Viewed
     Click Menu
     Click Menu Shop By Department
-    Verify Text On Screen    Daily Deals    30s
+    Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    App Only Deals    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    App Only    1s
 #    Verify Text On Screen    Gaming    1s
@@ -226,22 +226,22 @@ Apps > Verify Home Screen - QASA-175
 #    Verify Text On Screen    Essential Campsite Supplies    1s
     Click Icon Daily Deals
     Click Daily Deals Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Back Android
-    Verify Element On Screen Android    ${btnProductSearchFilter}    30s
+    Verify Element On Screen Android    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Back Android
     Click Back iOS    Deals
-    Verify Element On Screen iOS    ${btnProductSearchFilter}    30s
+    Verify Element On Screen iOS    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Back iOS    Back
     Click Icon App Only Deals
     Click App Only Deals Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Back Android
     Swipe Down    ${windowScroll}
-    Verify Element On Screen Android    ${btnProductSearchFilter}    30s
+    Verify Element On Screen Android    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Back Android
     Click Back iOS    Deals
-    Verify Element On Screen iOS    ${btnProductSearchFilter}    30s
+    Verify Element On Screen iOS    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Back iOS    Back
     Click Icon Daily Deals
     Select Third Deals From API
@@ -255,7 +255,7 @@ Apps > Verify Home Screen - QASA-174
     [Setup]    Start Application
     Click Home
     Click Home Cart
-    Verify Text On Screen    Cart    30s
+    Verify Text On Screen    Cart    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Verify Home Screen - QASA-173
@@ -277,7 +277,7 @@ Apps > Verify Home Screen - QASA-173
     Click Wishlist Edit
     Select Wishlist Item
     Click Wishlist Delete Items
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This list is empty    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This list is empty    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search - QASA-475
@@ -305,7 +305,7 @@ Apps > PLP - QASA-473
     Click Daily Deals Product from API
     Verify Add To Wishlist
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -313,7 +313,7 @@ Apps > PLP - QASA-473
     Search Product    toy
     Click Product from API
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -321,7 +321,7 @@ Apps > PLP - QASA-473
     Search Product    pencil
     Click Product from API
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -329,7 +329,7 @@ Apps > PLP - QASA-473
     Search Product    johnnie wal
     Click Product from API
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    30s
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -452,7 +452,7 @@ Apps > PLP > Overflow Menus - QASA-264
     Click Search Home
     Search Product    pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Back Android
     Click Back Android
     Click Back iOS    pencil case
@@ -461,7 +461,7 @@ Apps > PLP > Overflow Menus - QASA-264
     Click Search Home
     Search Product    pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click More Options Menu Android
     Click Options Menu Home
     Click Back iOS    pencil case
@@ -470,17 +470,17 @@ Apps > PLP > Overflow Menus - QASA-264
     Click Search Home
     Search Product    pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click More Options Menu Android
     Click Options Menu Categories
     Click Back iOS    pencil case
     Click Back iOS    Back
-    Verify Text On Screen    Daily Deals    30s
+    Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
     Click Home
     Click Search Home
     Search Product    pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click More Options Menu Android
     Click Options Menu Deals
     Click Back iOS    pencil case
@@ -489,23 +489,23 @@ Apps > PLP > Overflow Menus - QASA-264
     Click Search Home
     Search Product    pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click More Options Menu Android
     Click Options Menu Lists
     Click Back iOS    pencil case
     Click Back iOS    Back
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Wish List    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    My Lists    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Wish List    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    My Lists    ${MIN_TIMEOUT}
     Click Home
     Click Search Home
     Search Product    pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click More Options Menu Android
     Click Options Menu Account
     Click Back iOS    pencil case
     Click Back iOS    Back
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Personal Details    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Personal Details    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP - QASA-519
@@ -522,14 +522,14 @@ Apps > PDP - QASA-519
     Click Go To Cart
     Click Product Text    ${query_result_CartProduct}
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    Drone
     Get Sponsored Product Detail
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Sponsored    2s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Sponsored    2s
     Verify Text On Screen    % OFF    2s
@@ -560,7 +560,7 @@ Apps > PDP - QASA-170
     Click Product Text    ${query_result_CartProduct}
     Click Product Variant From API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP - QASA-169
@@ -592,7 +592,7 @@ Apps > PDP - QASA-168
     Click Review Rating
     Enter Review Message    Auto Test
     Click Review Submit
-    Verify Text On Screen    Thank you for your review    30s
+    Verify Text On Screen    Thank you for your review    ${MIN_TIMEOUT}
     Swipe Down    ${windowScroll}
     Swipe Down    ${windowScroll}
     Swipe Down    ${windowScroll}
@@ -601,7 +601,7 @@ Apps > PDP - QASA-168
     Click Review Rating
     Enter Review Message    Auto Test
     Click Review Submit
-    Verify Text On Screen    You've already submitted a review for this product    30s
+    Verify Text On Screen    You've already submitted a review for this product    ${MIN_TIMEOUT}
     Click Back Android
     Click Back iOS    ${query_result_CartProduct}
     Click PDP Show All Reviews
@@ -647,7 +647,7 @@ Apps > PDP - QASA-167
     Verify PDP Screen Element Not Exists    ${btnAddToCart}
     Click Product Variant From API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Click Add To Cart
     [Teardown]    Tear Down
 
@@ -676,7 +676,7 @@ Apps > Merchandised Landing Pages (CMS Widgets) - QASA-165
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Verify Text On Screen    Trending    30s
+    Verify Text On Screen    Trending    ${MIN_TIMEOUT}
     Click Search Trending
     [Teardown]    Tear Down
 
@@ -718,10 +718,10 @@ Apps > Wishlist (Android) - QASA-466
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Wishlist Nav Bar
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Wish List    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Trending on Takealot    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    DEFAULT    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Wish List    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Trending on Takealot    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DEFAULT    1s
     Click Create Wishlist
@@ -755,7 +755,7 @@ Apps > Wishlist (Android) > Delete List - QASA-161
     Click Create Wishlist
     Navigate to Wishlist Auto
     Click More Options Menu Android
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Rename List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Rename List    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delete List    1s
     Click Delete Wishlist
     [Teardown]    Tear Down
@@ -778,8 +778,8 @@ Apps > Wishlist (Android) > Bottom Navigation - QASA-160
     Click Wishlist Default
     Click Wishlist Add To Cart
     Click More Options Menu
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Share List    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Share    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Share List    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Share    ${MIN_TIMEOUT}
     Verify Text On Screen    Edit    1s
     [Teardown]    Tear Down
 
@@ -797,8 +797,8 @@ Apps > Wishlist (iOS) - QASA-472
     Click Go To Cart
     Change Cart Quantity Android    2
     Click Checkout Delete First Item
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No items    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Your Shopping Cart is Empty    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No items    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Your Shopping Cart is Empty    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 #Wishlist icon on PLP screen is not unique
@@ -827,7 +827,7 @@ Apps > Wishlist (iOS) - QASA-472
 #    Click Search Home
 #    Search Product    Pencil
 #    Click Search Product Wishlist
-#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
 #    Close Application
 #    Start Application    ${False}
 #    Click Home
@@ -836,7 +836,7 @@ Apps > Wishlist (iOS) - QASA-472
 #    Click Wishlist Edit
 #    Select Wishlist Item
 #    Click Wishlist Delete Items
-#    Verify Text On Screen    This list is empty!    30s
+#    Verify Text On Screen    This list is empty!    ${MIN_TIMEOUT}
 #    Close Application
 #    Start Application
 #    Clear Environment
@@ -847,8 +847,8 @@ Apps > Wishlist (iOS) - QASA-472
 #    Click Add To Cart
 #    Click Go To Cart
 #    Click Checkout Move To Wishlist First Item
-##    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    30s
-##    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    30s
+##    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    ${MIN_TIMEOUT}
+##    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
 #    [Teardown]    Tear Down
 
 Apps > Order Tracking - QASA-547
@@ -878,7 +878,7 @@ Apps > Order Tracking - QASA-547
     Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
-    Verify Text On Screen    ORDER SUMMARY    30s
+    Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
@@ -914,12 +914,12 @@ Apps > My Account Verifications - QASA-477
     Click Menu
     Click Menu My Account
     Click Menu Orders
-    Verify Text On Screen    Last 3 months    30s
+    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
     Click Back Android
     Click Back iOS    My Account
     Click Menu Exchanges And Returns
-    Verify Element On Screen    ${btnMenuExchReturns}    30s
-#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    30s
+    Verify Element On Screen    ${btnMenuExchReturns}    ${MIN_TIMEOUT}
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    ${MIN_TIMEOUT}
 #    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    1s
 #    Click Window Android
     Close Application
@@ -928,35 +928,35 @@ Apps > My Account Verifications - QASA-477
     Click Menu My Account
     Click Menu Personal Detail
     Update Personal Detail Name    AutoTester
-    Verify Text On Screen    Your name has been successfully updated    30s
+    Verify Text On Screen    Your name has been successfully updated    ${MIN_TIMEOUT}
     Update Personal Detail Email    ?    t@ke@!ot1234
     Update Personal Detail Email    ${G_EMAIL}    t@ke@!ot1234
-    Verify Text On Screen    Your email address has been successfully updated    30s
+    Verify Text On Screen    Your email address has been successfully updated    ${MIN_TIMEOUT}
     Update Personal Detail Mobile    0789896556
-    Verify Text On Screen    Your mobile number has been successfully updated    30s
+    Verify Text On Screen    Your mobile number has been successfully updated    ${MIN_TIMEOUT}
     Update Personal Detail Password    t@ke@!ot1234    Abcd2200
     Update Personal Detail Password    Abcd2200    t@ke@!ot1234
-    Verify Text On Screen    Your password has been successfully updated    30s
+    Verify Text On Screen    Your password has been successfully updated    ${MIN_TIMEOUT}
     Update Personal Detail Business    Automation    12345
-    Verify Text On Screen    Your business details have been successfully updated    30s
+    Verify Text On Screen    Your business details have been successfully updated    ${MIN_TIMEOUT}
     Click Back Android
     Click Back iOS    My Account
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
     Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
     Click Back Delivery Android
     Click Back iOS    My Account
     Click Menu Address Book
     Click Edit Address
     Edit Delivery Address Street My Acc    13 Caro Roa
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
     Click Back Delivery Android
     Click Back iOS    My Account
     Click Menu Address Book
     Click Delete Address
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Address successfully deleted    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Address successfully deleted    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -967,7 +967,7 @@ Apps > My Account Verifications - QASA-477
     Click Go To Cart
     Click Checkout
     Click Delivery
-    Verify Text On Screen    13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    30s
+    Verify Text On Screen    13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > My Account Verifications - QASA-89
@@ -981,37 +981,37 @@ Apps > My Account Verifications - QASA-89
     Start Application
     Click Menu
     Click Menu My Account
-    Verify Text On Screen    Available Credit: R    30s
+    Verify Text On Screen    Available Credit: R    ${MIN_TIMEOUT}
     Click Menu Credits Refunds
-    Verify Text On Screen    Credit will be automatically applied to your next purchase    30s
+    Verify Text On Screen    Credit will be automatically applied to your next purchase    ${MIN_TIMEOUT}
     Verify Text On Screen    Refund History    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    REDEEM GIFT VOUCHER    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Redeem Gift Voucher    1s
     Click Menu Credit History
-    Verify Text On Screen    Available Credit    30s
+    Verify Text On Screen    Available Credit    ${MIN_TIMEOUT}
 #    Verify Text On Screen    Gift Voucher:    1s
     Click Back Android
     Click Back iOS    Credit & Refunds
     Click Menu Refund History
-    Verify Text On Screen    You have no refund history    30s
+    Verify Text On Screen    You have no refund history    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Menu
     Click Menu My Account Android
     Click Menu Settings
-    Verify Text On Screen    Notifications    30s
+    Verify Text On Screen    Notifications    ${MIN_TIMEOUT}
     Verify Text On Screen    Login and Security    5s
     Click Back Android
     Click Back iOS    Back
     Click Menu iOS
     Click Menu Takealot Group
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Takealot.group    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Mr. D    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Mr D    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Takealot.group    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Mr. D    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Mr D    ${MIN_TIMEOUT}
     Verify Text On Screen    Superbalist    5s
     Click Back Android
     Click Menu Help
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    5s
     [Teardown]    Tear Down
 
@@ -1043,7 +1043,7 @@ Apps > Order Tracking 02 - QASA-80
     Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
-    Verify Text On Screen    ORDER SUMMARY    30s
+    Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
@@ -1099,7 +1099,7 @@ Apps > Order Tracking 05 - QASA-79
     Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
-    Verify Text On Screen    ORDER SUMMARY    30s
+    Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
     Verify Text On Screen    1 Item    1s
     Verify Text On Screen    Delivery    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
@@ -1156,11 +1156,11 @@ Apps > Cart (Android) 02 - QASA-84
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
-#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Your Shopping Cart is Empty    5s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Trending on Takealot    5s
     Verify Element On Screen Android    ${btnCartContinueShopping}    1s
-#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Add To Cart Trending First Item
     Click Checkout
     Close Application
@@ -1206,8 +1206,8 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Verify Element On Screen    ${btnWishListIcon}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The gift voucher will be delivered via email to the recipient    30s
+    Verify Element On Screen    ${btnWishListIcon}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The gift voucher will be delivered via email to the recipient    ${MIN_TIMEOUT}
 #    Verify Text On Screen    The eBook will be added to your Digital Library, ready for you to download    1s
     Swipe Up    ${windowScroll}
     Swipe Up    ${windowScroll}
@@ -1218,8 +1218,8 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Click Delivery
     Click Address
     Click Free Delivery
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delivery via email to    30s
-#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Delivery via email to    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delivery via email to    ${MIN_TIMEOUT}
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Delivery via email to    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Cart Update & Cart Notification - TV - QASA-248
@@ -1318,7 +1318,7 @@ CLONE - PDP - Brand Links - QASA-29
     Click Search Home
     Search Product    Pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Verify Element On Screen    ${btnAddWishlist}    2s
     Verify Text On Screen    ${query_result_CartProduct}    2s
     Close Application
@@ -1327,12 +1327,12 @@ CLONE - PDP - Brand Links - QASA-29
     Click Search Home
     Search Product    Pencil
     Get Sponsored Product Detail
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Verify Text On Screen    Sponsored    2s
     Verify Text On Screen    % OFF    2s
     Verify Text On Screen    ${query_result_adProductStatus}    2s
     Click Product From Title    ${query_result_adProductTitle}
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 PDP - Brand Links - QASA-28

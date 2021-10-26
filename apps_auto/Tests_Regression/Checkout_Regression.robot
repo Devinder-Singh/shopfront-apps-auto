@@ -75,7 +75,7 @@ Apps - Checkout - Delivery Methods - Liquor Item - QASA-116 / QA-5232
     Click Go To Cart
     Click Checkout
     Click Verify Age
-    Verify Text On Screen    Sorry, some items in your cart are not eligible for collection    30s
+    Verify Text On Screen    Sorry, some items in your cart are not eligible for collection    ${MIN_TIMEOUT}
     Click Collect Not Available
     Verify Delivery Text Not    Takealot Pickup Points
     [Teardown]    Tear Down
@@ -434,7 +434,7 @@ Checkout - Delivery Address - Address Form Validation - QASA-600
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Verify Element On Screen    ${btnSaveAddress}    30s
+    Verify Element On Screen    ${btnSaveAddress}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
 #    Edit Delivery Address Complex    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Edit Delivery Address City    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -698,7 +698,7 @@ Apps > Checkout > Collect > Shipping Options (Standard) - QASA-577
     Click Checkout
     Click Collect
     Click Pickup Point
-    Verify Text On Screen    Standard Collect    30s
+    Verify Text On Screen    Standard Collect    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
@@ -1903,6 +1903,6 @@ Apps > Checkout > Payment > Mobicred - QASA-555
     Click Change Payment Method
     Click Mobicred Payment Method
     Click Pay With Mobi
-    Verify Text On Screen    Mobicred Username    60s
-    Verify Text On Screen    Mobicred Password    60s
+    Verify Text On Screen    Mobicred Username    ${MAX_TIMEOUT}
+    Verify Text On Screen    Mobicred Password    ${MAX_TIMEOUT}
     [Teardown]    Tear Down

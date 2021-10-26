@@ -158,7 +158,7 @@ Get First Search Option
     [return]    ${searchResult}
 
 Verify Product Added to Cart
-    Verify Text On Screen    ${query_result_CartProduct}    30s
+    Verify Text On Screen    ${query_result_CartProduct}    ${MIN_TIMEOUT}
 
 Get Address Coordinates
     ${address_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id":${query_customer_id}, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "takealot", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }

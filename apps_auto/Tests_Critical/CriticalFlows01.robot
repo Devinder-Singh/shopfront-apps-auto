@@ -19,7 +19,7 @@ Apps > Cart > Product Card Actions > Update Quantity - QASA-3
     Click Add To Cart
     Click Go To Cart
     Change Cart Quantity Android    10
-    Verify Text On Screen    You've attempted to order more stock than currently available at our warehouse    30s
+    Verify Text On Screen    You've attempted to order more stock than currently available at our warehouse    ${MIN_TIMEOUT}
     Verify Text On Screen    The products will need to be ordered from our supplier. If you'd rather not wait for the extra stock to arrive from the supplier, please update the quantity accordingly    1s
     Close Application
     Start Application
@@ -30,7 +30,7 @@ Apps > Cart > Product Card Actions > Update Quantity - QASA-3
     Click Add To Cart
     Click Go To Cart
     Change Cart Quantity Android    10
-    Verify Text On Screen    You asked for 10 but we only have    30s
+    Verify Text On Screen    You asked for 10 but we only have    ${MIN_TIMEOUT}
     Verify Text On Screen    available    1s
     [Teardown]    Tear Down
 

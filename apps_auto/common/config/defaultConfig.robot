@@ -100,3 +100,6 @@ Library           String
 *** Variables ***
 ${PLATFORM_NAME}    ios
 ${PATH}           /users/jenkins/desktop/shopfront-apps-auto/apps_auto
+${MIN_TIMEOUT}    30s
+${MAX_TIMEOUT}    60s
+

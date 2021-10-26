@@ -182,5 +182,5 @@ Apps > Reviews > Write A Review (Legacy) - QA-9169
     Click Review Rating
     Enter Review Message    Auto Test
     Click Review Submit
-    Verify Text On Screen    Thank you for your review    30s
+    Verify Text On Screen    Thank you for your review    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
