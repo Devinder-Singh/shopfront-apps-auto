@@ -7,6 +7,8 @@ Resource          ../common/config/defaultConfig.robot
 Search and Buy Item on Delivery using Payfast and Create new Address
     [Tags]    Production1
     [Setup]    Install Application
+    Close All Applications
+    Start Application
     Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -40,8 +42,6 @@ Search and Buy Item on Delivery using Payfast and Create new Address
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Production2
     [Setup]    Start Application
-    Close All Applications
-    Start Application
     Clear Environment
     Click Menu
     Click Menu Login
