@@ -430,6 +430,8 @@ Click Product Variant From API
     ${txtProduct}=    Get Product Variant
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
     Click Element    ${btnPDPSelectOption}
+
+    Wait Until Keyword Succeeds    3    3s    Wait Until Element Is Visible    ${txtProduct}    30s
     Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API
