@@ -9,6 +9,7 @@ Click Variant Product from API
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
+        Set Implicitly Wait    1
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 
         Run Keyword If
@@ -18,6 +19,7 @@ Click Variant Product from API
         Swipe Up    ${btnProductListView}
         ${index}=    Evaluate    ${index} + 1
     END
+    Set Implicitly Wait    5
     Click Element    ${txtProduct}
     Click Close Ad
 
@@ -118,19 +120,16 @@ Verify Product Other Offers from API
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{txtProductNames}
         ${txtProductResult}=    Run Keyword    Convert To Upper Case    ${result}
-        Verify Text On Screen Android    ${txtProductResult}    5s
-        Verify Text On Screen iOS    ${result}    5s
+        Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${txtProductResult}    5s    ELSE    Verify Text On Screen    ${result}    5s
         Verify Price On Screen    ${txtProductPrices}[${index}]    5s
 
         ${resultLeft}=    Run Keyword    Get Substring    ${txtProductLeadTimes}[${index}]    0    8
         ${resultFinal}=    Set Variable If    '${resultLeft}'=='In stock'    ${resultLeft}
-        Run Keyword If    '${resultLeft}'=='In stock'    Verify Text On Screen Android    ${resultFinal}    5s
-        Run Keyword If    '${resultLeft}'=='In stock'    Verify Text On Screen iOS    ${resultFinal}    5s
+        Run Keyword If    '${resultLeft}'=='In stock'    Verify Text On Screen    ${resultFinal}    5s
 
         ${resultTwo}=    Run Keyword    Replace String    ${txtProductLeadTimes}[${index}]    working    work
         ${resultFinal}=    Set Variable If    '${resultLeft}'!='In stock'    ${resultTwo}
-        Run Keyword If    '${resultLeft}'!='In stock'    Verify Text On Screen Android    ${resultFinal}    5s
-        Run Keyword If    '${resultLeft}'!='In stock'    Verify Text On Screen iOS    ${resultFinal}    5s
+        Run Keyword If    '${resultLeft}'!='In stock'    Verify Text On Screen    ${resultFinal}    5s
     END
 
 Click Product from API Scroll

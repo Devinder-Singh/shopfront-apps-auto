@@ -19,3 +19,6 @@ ${btnCartQtyRoot}    id=${APP_PACKAGE}:id/cartQuantityItemsRv
 ${btnCartAddPromoItems}    ${EMPTY}
 
 ${lblCheckoutMissedPromotion}      xpath=//*[contains(@text, "ADD 1 ITEM TO QUALIFY")]
+
+${btnCartCustomersAlsoBought}    id=${APP_PACKAGE}:id/widgetProductListItemAddToCart
+${btnCartItemContainer}    id=${APP_PACKAGE}:id/cartProductItemContainer

@@ -1,5 +1,5 @@
 *** Settings ***
-Default Tags      critical
+Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Variables ***
@@ -18,8 +18,8 @@ Apps > Cart > Product Card Actions > Remove & Move to Wishlist - QASA-521
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Verify Text On Screen Android    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
-    Verify Text On Screen iOS    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
     [Teardown]    Tear Down
 
 #Register User

@@ -15,8 +15,8 @@ Click Home iOS
 Click Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    30s
     Click Element    ${btnAddWishlist}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen Android    Item added to Wish List    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen iOS    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    30s
 
 #    Sleep    5s
     Check Text On Screen Not    Item added to Wish List
