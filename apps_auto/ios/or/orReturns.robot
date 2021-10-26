@@ -123,9 +123,12 @@ ${returnSelectReturnMethodCollectTitle}    ${EMPTY}
 
 ${returnSelectAddressAddAddress}    ${EMPTY}
 ${returnSelectAddressItem}    ${EMPTY}
+${returnSelectAddressIncompleteItem}    ${EMPTY}
 ${returnSelectAddressItemName}    ${EMPTY}
 ${returnSelectAddressItemEditButton}    ${EMPTY}
 ${returnSelectAddressItemDeleteButton}    ${EMPTY}
+
+${returnSelectAddressInputNotification}    ${EMPTY}
 
 ${returnSelectAddressEmptyState}    ${EMPTY}
 ${returnSelectAddressEmptyStateTitle}    ${EMPTY}

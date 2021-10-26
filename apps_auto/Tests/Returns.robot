@@ -689,3 +689,28 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Delete Addres
     Confirm Return Address Item Delete Dialog
     Verify Toolbar Title    Select Address
     [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Select Address > Incomplete Address > QASA-408
+    [Tags]    data    QASA-408
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+101@take2.co.za    test
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Return Method Address
+    Verify Toolbar Title    Select Address
+    Click Return Address Incomplete Item
+    Verify Toolbar Title    Edit Delivery Address
+    Update Incomplete Address    Tester Residential    0744404494    13 Caro Road
+    Sleep    5s
+    Verify Toolbar Title    Select Address
+    Click Return Address Incomplete Item
+    Sleep    5s
+    Scroll To Return Request Return Method Section
+    Scroll To Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector    Takealot to collect from my address
+    Scroll To Return Request Delivery Method Address
+    Verify Return Request Delivery Method Address Title
+    [Teardown]    Tear Down

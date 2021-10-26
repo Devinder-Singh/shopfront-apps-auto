@@ -491,6 +491,41 @@ Verify Return Address Empty State
 Verify Return Address Add Option
     Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s
 
+Click Return Address Incomplete Item
+    Sleep    2s
+    Click Element    ${returnSelectAddressIncompleteItem}
+
+Update Incomplete Address
+    [Arguments]    ${name}    ${mobile}    ${street}
+    Clear Text    ${txtRecipientNameMyAcc}
+    Input Text    ${txtRecipientNameMyAcc}    ${name}
+    Clear Text    ${txtRecipientMobileMyAcc}
+    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
+    Swipe Up    ${windowScroll}    
+    Clear Text    ${txtRecipientComplexMyAcc}
+    Input Text    ${txtRecipientComplexMyAcc}    ABC
+    Swipe Up    ${windowScroll}
+    Clear Text    ${txtRecipientStreetMyAcc}
+    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Sleep    10s
+    Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='""'    Swipe Up    ${windowScroll}
+    Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='&*'    Swipe Up    ${windowScroll}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='&*'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='&*'    Click Element    ${lblAddresOption}
+    Sleep    3s
+    Swipe Up    ${windowScroll}
+    Click Save Address
+
 Add Liquor Return Item To Return Request
     Click Returns Call To Action Button
     Sleep    5s

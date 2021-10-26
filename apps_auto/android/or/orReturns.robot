@@ -123,9 +123,12 @@ ${returnSelectReturnMethodCollectTitle}    xpath=//android.view.ViewGroup[@conte
 
 ${returnSelectAddressAddAddress}    id=${APP_PACKAGE}:id/returns_return_method_selector_action_option
 ${returnSelectAddressItem}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returns_address_item_container')]//android.view.ViewGroup
+${returnSelectAddressIncompleteItem}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returns_address_item_container')]//android.view.ViewGroup[contains(@index, '0')]
 ${returnSelectAddressItemName}    id=${APP_PACKAGE}:id/returns_address_item_name
 ${returnSelectAddressItemEditButton}    id=${APP_PACKAGE}:id/returns_address_item_address_left_action
 ${returnSelectAddressItemDeleteButton}    id=${APP_PACKAGE}:id/returns_address_item_address_right_action
+
+${returnSelectAddressInputNotification}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout
 
 ${returnSelectAddressEmptyState}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout
 ${returnSelectAddressEmptyStateTitle}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView[1]
