@@ -432,7 +432,7 @@ Click Product Variant From API
     ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
     Click Element    ${btnPDPSelectOption}
-    Wait Until Element Is Visible    ${txtProduct}    10s
+    Wait Until Page Contains Element    ${txtProduct}    15s
     Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API
