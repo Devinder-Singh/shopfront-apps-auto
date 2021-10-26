@@ -203,8 +203,9 @@ Click Seller Name
 
 Verify Delivery Surcharge
     [Arguments]    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblDeliverySurcharge}    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Contain Text    ${lblDeliverySurcharge}    ${verifyText}
+    Verify Text On Screen    ${verifyText}    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblDeliverySurcharge}    30s
+#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Contain Text    ${lblDeliverySurcharge}    ${verifyText}
 
 Click Continue Shopping
     Wait Until Element Is Visible    ${btnContinueShopping}    30s
