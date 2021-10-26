@@ -4,22 +4,22 @@ Library    DateTime
 
 *** Keywords ***
 Click Menu
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
     ${btnPresentNotificationsNo}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnDealsNotification}    5s
     Run Keyword If    ${btnPresentNotificationsNo}    Click Element    ${btnDealsNotification}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHome}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHome}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHome}
 
 #    Sleep    2s
 
 Click Menu iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
 #    Sleep    1s
 
 Click Menu Login
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
 
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${cntMenuAccountScroll}
@@ -34,7 +34,7 @@ Click Menu Login
 
 Log In If Not Logged In
     [Arguments]    ${email}    ${password}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
 
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${windowScroll}
@@ -45,7 +45,7 @@ Log In If Not Logged In
     Run Keyword If    ${chkLoginElement}==${True}    Login Takealot    ${email}    ${password}
 
 Click Menu Register
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
 
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${windowScroll}
@@ -58,7 +58,7 @@ Click Menu Register
     Click Element    ${btnMenuRegister}
 
 Click Menu Register Android
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
 
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${windowScroll}
@@ -69,13 +69,13 @@ Click Menu Register Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuRegister}
 
 Click Menu Logout
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
     Click Element    ${btnLogout}
 #    Sleep    2s
 
 Click Menu Logout If Logged In
-    Wait Until Element Is Visible    ${btnMenu}    30s
+    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Click Element    ${btnMenu}
 
     ${chkVisible}=    Run Keyword And Return Status    Page Should Contain Element    ${btnLogout}
@@ -194,7 +194,7 @@ Click Menu Help
     Click Element    ${btnMenuHelp}
 
 Click Back Delivery iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnBackMyAcc}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnBackMyAcc}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnBackMyAcc}
 
 Click Wishlist Nav Bar
@@ -204,7 +204,7 @@ Click Wishlist Nav Bar
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Home WishList Only
 
 Click Wishlist
-    Wait Until Element Is Visible    ${btnWishlist}    30s
+    Wait Until Element Is Visible    ${btnWishlist}    ${MIN_TIMEOUT}
     Click Element    ${btnWishlist}
     Navigate to Wishlist
 

@@ -3,15 +3,15 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Address
-    Wait Until Element Is Visible    ${btnAddress}    30s
+    Wait Until Element Is Visible    ${btnAddress}    ${MIN_TIMEOUT}
     Click Element    ${btnAddress}
 
 Click Address Android
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnAddress}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnAddress}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnAddress}
 
 Click Pickup Point
-    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    25
@@ -30,68 +30,68 @@ Click Pickup Point
 #    Run Keyword If    ${chkProdVisible}==${True}    Click Element    ${btnPickupPoint}
 
 Click Pickup Point Brackenfell
-    Wait Until Element Is Visible    ${btnPickupPointBrackenfell}    30s
+    Wait Until Element Is Visible    ${btnPickupPointBrackenfell}    ${MIN_TIMEOUT}
     Click Element    ${btnPickupPointBrackenfell}
 
 Click Pickup Point Info
-    Wait Until Element Is Visible    ${txtInfoAddress}    30s
+    Wait Until Element Is Visible    ${txtInfoAddress}    ${MIN_TIMEOUT}
     Click Element    ${txtInfoAddress}
 
 Click Delete Address
-    Wait Until Element Is Visible    ${btnDeleteAddress}    30s
+    Wait Until Element Is Visible    ${btnDeleteAddress}    ${MIN_TIMEOUT}
     Click Element    ${btnDeleteAddress}
     Wait Until Element Is Visible    ${btnConfDeleteAddress}    5s
     Click Element    ${btnConfDeleteAddress}
 
 Click Edit Address
-    Wait Until Element Is Visible    ${btnEditAddress}    30s
+    Wait Until Element Is Visible    ${btnEditAddress}    ${MIN_TIMEOUT}
     Click Element    ${btnEditAddress}
 
 Display WC Province Pickup Points
-    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
 
     ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Western Cape    2s
     Run Keyword If    ${chkTextSuccess}==${False}    Click Filter Province
     Run Keyword If    ${chkTextSuccess}==${False}    Click Western Cape Province
 
 Click Filter Province
-    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
     Click Element    ${txtFilterProvince}
 
 Click Gauteng Province
-    Wait Until Element Is Visible    ${txtGautengProvinceAddress}    30s
+    Wait Until Element Is Visible    ${txtGautengProvinceAddress}    ${MIN_TIMEOUT}
     Click Element    ${txtGautengProvinceAddress}
 
 Click Western Cape Province
-    Wait Until Element Is Visible    ${txtWCProvinceAddress}    30s
+    Wait Until Element Is Visible    ${txtWCProvinceAddress}    ${MIN_TIMEOUT}
     Click Element    ${txtWCProvinceAddress}
 
 Click All Available Provinces
-    Wait Until Element Is Visible    ${txtAllProvinceAddress}    30s
+    Wait Until Element Is Visible    ${txtAllProvinceAddress}    ${MIN_TIMEOUT}
     Click Element    ${txtAllProvinceAddress}
 
 Click Delivery Address Back
-    Wait Until Element Is Visible    ${btnEditAddress}    30s
+    Wait Until Element Is Visible    ${btnEditAddress}    ${MIN_TIMEOUT}
     Click Element    ${navDeliveryAddressBack}
 
 Click Collect Address Back
-    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
     Click Element    ${navCollectAddressBack}
 
 Verify Delivery Address Text
     [Arguments]    ${verifyText}
-    Wait Until Element Is Visible    ${btnDeliveryAddress}    30s
+    Wait Until Element Is Visible    ${btnDeliveryAddress}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
 
 Verify Collect Address Text
     [Arguments]    ${verifyText}
-    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
 
 Verify Pickup Point
-    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
     #    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    WESTERN CAPE
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Takealot Cape Town Warehouse Cape Town, Western Cape
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Brackenfell Cape Town, Western Cape
@@ -136,7 +136,7 @@ Verify Pickup Point
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Woodstock
 
 Verify Pickup Points Gauteng
-    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
     #    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    GAUTENG
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Midrand (N1 Bridge) Johannesburg, Gauteng
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Alberton Alberton, Gauteng
@@ -157,7 +157,7 @@ Verify Pickup Points Gauteng
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Bryanston
 
 Verify All Pickup Points
-    Wait Until Element Is Visible    ${txtFilterProvince}    30s
+    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    EASTERN CAPE
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Berea East London, Eastern Cape
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    Grahamstown Grahamstown, Eastern Cape

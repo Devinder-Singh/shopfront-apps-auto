@@ -65,7 +65,7 @@ Apps > Checkout > Delivery Address > Last Used Address - QASA-604
     Click Checkout
     Click Delivery
     Click Address
-    Verify Text On Screen    12 Ridge Way    30s
+    Verify Text On Screen    12 Ridge Way    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery > Address > Incomplete Address - QASA-592
@@ -85,7 +85,7 @@ Apps > Checkout > Delivery > Address > Incomplete Address - QASA-592
     Click Add Delivery Address
     Click Address Business
     Add Delivery Address Business My Acc No Name    Tester Residential    0723456778    13 Caro Road
-    Verify Text On Screen    Please enter a business name    30s
+    Verify Text On Screen    Please enter a business name    ${MIN_TIMEOUT}
     Edit Delivery Address Business My Acc    ABC
     Verify Text On Screen    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
     [Teardown]    Tear Down
@@ -103,5 +103,5 @@ Apps > Checkout > Collect > Subtitle change - QASA-596
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Verify Text On Screen    70+ Takealot Pickup Points nationwide. Open 6 days a week    30s
+    Verify Text On Screen    70+ Takealot Pickup Points nationwide. Open 6 days a week    ${MIN_TIMEOUT}
     [Teardown]    Tear Down

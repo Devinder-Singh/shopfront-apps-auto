@@ -5,6 +5,6 @@ Resource          ../config/defaultConfig.robot
 Verify Toolbar Title
     [Arguments]    ${expectedTitle}
 
-    Wait Until Page Contains Element    ${txtToolbarTitle}    30s
+    Wait Until Page Contains Element    ${txtToolbarTitle}    ${MIN_TIMEOUT}
     Element Should Be Visible    ${txtToolbarTitle}
     Element Text Should Be    ${txtToolbarTitle}    ${expectedTitle}

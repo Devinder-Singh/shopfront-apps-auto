@@ -3,8 +3,8 @@ Default Tags      checkout_regression
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps - Checkout - Delivery Methods - QA-5227
-    [Tags]    QA-5227
+Apps - Checkout - Delivery Methods - QASA-593
+    [Tags]    QASA-593
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -24,8 +24,8 @@ Apps - Checkout - Delivery Methods - QA-5227
     Verify Delivery Text    50+ Takealot Pickup Points nationwide. Open 6 days a week
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital Items 02 - QA-9525
-    [Tags]    QA-9525
+Apps - Checkout - Delivery Methods - Digital Items 02 - QASA-114
+    [Tags]    QASA-114
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -42,8 +42,8 @@ Apps - Checkout - Delivery Methods - Digital Items 02 - QA-9525
     Click Donate No Thanks
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital Items 03 - QA-9524
-    [Tags]    QA-9524
+Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
+    [Tags]    QASA-115
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -61,8 +61,8 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QA-9524
     Click Pickup Point
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Liquor Item - QA-9523 / QA-5232
-    [Tags]    QA-9523    QA-5232
+Apps > Checkout > Collect > Liquor Item - QASA-588
+    [Tags]    QASA-588
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -75,13 +75,13 @@ Apps - Checkout - Delivery Methods - Liquor Item - QA-9523 / QA-5232
     Click Go To Cart
     Click Checkout
     Click Verify Age
-    Verify Text On Screen    Sorry, some items in your cart are not eligible for collection    30s
+    Verify Text On Screen    Sorry, some items in your cart are not eligible for collection    ${MIN_TIMEOUT}
     Click Collect Not Available
     Verify Delivery Text Not    Takealot Pickup Points
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QA-9522
-    [Tags]    QA-9522
+Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QASA-117
+    [Tags]    QASA-117
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -107,8 +107,8 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QA-9522
     Click Pickup Point
     [Teardown]    Tear Down
 
-Checkout - Collect - Add Delivery and Digital Items - QA-5231
-    [Tags]    QA-5231
+Checkout - Collect - Add Delivery and Digital Items - QASA-589
+    [Tags]    QASA-589
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -134,8 +134,8 @@ Checkout - Collect - Add Delivery and Digital Items - QA-5231
     Verify Pickup Point
     [Teardown]    Tear Down
 
-Checkout - Collect - Add Only Delivery Items - QA-5247
-    [Tags]    QA-5247
+Checkout - Collect - Add Only Delivery Items - QASA-574
+    [Tags]    QASA-574
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -152,8 +152,8 @@ Checkout - Collect - Add Only Delivery Items - QA-5247
     Verify Pickup Point
     [Teardown]    Tear Down
 
-Checkout - Collect - White Goods - QA-5240
-    [Tags]    QA-5240
+Checkout - Collect - White Goods - QASA-580
+    [Tags]    QASA-580
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -170,8 +170,8 @@ Checkout - Collect - White Goods - QA-5240
     Verify Delivery Text Not    Takealot Pickup Points
     [Teardown]    Tear Down
 
-Checkout - Age Verification - QA-5244
-    [Tags]    QA-5244
+Checkout - Age Verification - QASA-576
+    [Tags]    QASA-576
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -187,8 +187,8 @@ Checkout - Age Verification - QA-5244
     Verify Age Text    The date of birth you entered indicates that you are under the age of 18. We are not permitted to sell liquor to you. Please remove all liquor items from your cart to proceed
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - General - QA-5200 / QA-9529
-    [Tags]    QA-5200    QA-9529
+Checkout > Delivery Address > Saved Addresses - QASA-616 
+    [Tags]    QASA-616
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -219,8 +219,8 @@ Checkout - Delivery Address - General - QA-5200 / QA-9529
     Click Free Delivery
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - General 03 - QA-9530
-    [Tags]    QA-9530
+Checkout - Delivery Address - General 03 - QASA-112
+    [Tags]    QASA-112
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -236,8 +236,8 @@ Checkout - Delivery Address - General 03 - QA-9530
     Click Address
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - General 04 - QA-9531
-    [Tags]    QA-9531
+Checkout - Delivery Address - General 04 - QASA-111
+    [Tags]    QASA-111
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -259,8 +259,8 @@ Checkout - Delivery Address - General 04 - QA-9531
     Click Address
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
-    [Tags]    QA-5206
+Checkout - Delivery Address - Edit Address - Street Correction - QASA-610
+    [Tags]    QASA-610
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -346,8 +346,8 @@ Checkout - Delivery Address - Edit Address - Street Correction - QA-5206
     Verify Text On Screen    8006    2s
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5213
-    [Tags]    QA-5213
+Checkout - Delivery Address - Add Residential Address - Street Suggestion - QASA-603
+    [Tags]    QASA-603
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -367,8 +367,8 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QA-5
     Get Address Coordinates
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - Address Form Validation - QA-5217
-    [Tags]    QA-5217
+Checkout - Delivery Address - Address Form Validation - QASA-600
+    [Tags]    QASA-600
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -434,7 +434,7 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Verify Element On Screen    ${btnSaveAddress}    30s
+    Verify Element On Screen    ${btnSaveAddress}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
 #    Edit Delivery Address Complex    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Edit Delivery Address City    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -459,8 +459,8 @@ Checkout - Delivery Address - Address Form Validation - QA-5217
 #    Verify Text On Screen    Maximum length for business name is 64 characters    10s
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - Street Suggestion - QA-5238
-    [Tags]    QA-5238
+Checkout - Delivery Address - Street Suggestion - QASA-582
+    [Tags]    QASA-582
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -499,8 +499,8 @@ Checkout - Delivery Address - Street Suggestion - QA-5238
     Click Free Delivery
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - Pin on Map - QA-5251
-    [Tags]    QA-5251
+Checkout - Delivery Address - Pin on Map - QASA-570
+    [Tags]    QASA-570
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -535,8 +535,8 @@ Checkout - Delivery Address - Pin on Map - QA-5251
     Verify Text On Screen    8006    2s
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Select Pickup Point button - QA-5256
-    [Tags]    QA-5256
+Apps > Checkout > Collect > Select Pickup Point button - QASA-565
+    [Tags]    QASA-565
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -552,8 +552,8 @@ Apps > Checkout > Collect > Select Pickup Point button - QA-5256
     Click Pickup Point
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Pickup Point INFO - QA-5207
-    [Tags]    QA-5207
+Apps > Checkout > Collect > Pickup Point INFO - QASA-609
+    [Tags]    QASA-609
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -612,8 +612,8 @@ Apps > Checkout > Collect > Pickup Point INFO - QA-5207
     Verify Text On Screen    11h00 - 17h00    2s
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Pickup Points List - QA-5237
-    [Tags]    QA-5237
+Apps > Checkout > Collect > Pickup Points List - QASA-583
+    [Tags]    QASA-583
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -665,8 +665,8 @@ Apps > Checkout > Collect > Pickup Points List - QA-5237
     Verify Order Detail Text    Takealot Cape Town Warehouse Pickup Point
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Add Only Digital Item - QA-5265
-    [Tags]    QA-5265
+Apps > Checkout > Collect > Add Only Digital Item - QASA-556
+    [Tags]    QASA-556
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -683,8 +683,8 @@ Apps > Checkout > Collect > Add Only Digital Item - QA-5265
     Click Donate No Thanks
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Shipping Options (Standard) - QA-5243
-    [Tags]    QA-5243
+Apps > Checkout > Collect > Shipping Options (Standard) - QASA-577
+    [Tags]    QASA-577
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -698,11 +698,11 @@ Apps > Checkout > Collect > Shipping Options (Standard) - QA-5243
     Click Checkout
     Click Collect
     Click Pickup Point
-    Verify Text On Screen    Standard Collect    30s
+    Verify Text On Screen    Standard Collect    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QA-5239
-    [Tags]    QA-5239
+Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
+    [Tags]    QASA-581
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -719,8 +719,8 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QA-5239
     Click Free Delivery
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QA-5202
-    [Tags]    QA-5202
+Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
+    [Tags]    QASA-614
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -737,8 +737,8 @@ Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QA-5202
 #    Click Collection Fee R25
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QA-5258
-    [Tags]    QA-5258
+Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
+    [Tags]    QASA-563
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -755,8 +755,8 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QA-5258
     Click Free Delivery
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Delivery Options (Collect Options) - QA-5223
-    [Tags]    QA-5223
+Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
+    [Tags]    QASA-597
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -784,8 +784,8 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QA-5223
     Click Collect
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Tablet > Change Delivery Method - QA-5252
-    [Tags]    QA-5252
+Apps > Checkout > Collect > Tablet > Change Delivery Method - QASA-569
+    [Tags]    QASA-569
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -809,8 +809,8 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QA-5252
     Click Collect
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Change Pickup point - QA-5250
-    [Tags]    QA-5250
+Apps > Checkout > Collect > Change Pickup point - QASA-571
+    [Tags]    QASA-571
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -832,8 +832,8 @@ Apps > Checkout > Collect > Change Pickup point - QA-5250
     Click Free Delivery
     [Teardown]    Tear Down
 
-Apps > Checkout > Order Review - QA-5230
-    [Tags]    QA-5230
+Apps > Checkout > Order Review - QASA-590
+    [Tags]    QASA-590
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -865,8 +865,8 @@ Apps > Checkout > Order Review - QA-5230
     Verify Payment Options Text    Mobicred
     [Teardown]    Tear Down
 
-Apps > Checkout > Order Review 02 - QA-9532
-    [Tags]    QA-9532
+Apps > Checkout > Order Review 02 - QASA-110
+    [Tags]    QASA-110
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -891,8 +891,8 @@ Apps > Checkout > Order Review 02 - QA-9532
     Verify Payment Text    ORDER REVIEW
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Earn eBucks - QA-5211
-    [Tags]    QA-5211
+Apps > Checkout > Payment > Earn eBucks - QASA-605
+    [Tags]    QASA-605
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -927,8 +927,8 @@ Apps > Checkout > Payment > Earn eBucks - QA-5211
     Click eBucks Payment Method
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Gift Msg - QA-5203
-    [Tags]    QA-5203
+Apps > Checkout > Payment > Gift Msg - QASA-613
+    [Tags]    QASA-613
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -949,8 +949,8 @@ Apps > Checkout > Payment > Gift Msg - QA-5203
     Verify Gift Text    Hi Test, Enjoy your gift! From AutoTest Tester
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Gift Msg 02 - QA-9533
-    [Tags]    QA-9533
+Apps > Checkout > Payment > Gift Msg 02 - QASA-109
+    [Tags]    QASA-109
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -968,8 +968,8 @@ Apps > Checkout > Payment > Gift Msg 02 - QA-9533
     Verify Payment Text Not    Is this a gift? Add a gift message
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Payment Method Availability - QA-5209
-    [Tags]    QA-5209
+Apps > Checkout > Payment > Payment Method Availability - QASA-607
+    [Tags]    QASA-607
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1001,8 +1001,8 @@ Apps > Checkout > Payment > Payment Method Availability - QA-5209
     Verify Payfast Payment    Secure payments by PayFast
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Payment Method Availability 02 - QA-9535
-    [Tags]    QA-9535
+Apps > Checkout > Payment > Payment Method Availability 02 - QASA-107
+    [Tags]    QASA-107
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1022,8 +1022,8 @@ Apps > Checkout > Payment > Payment Method Availability 02 - QA-9535
     Verify Payfast Payment    Secure payments by PayFast
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Payment Method Availability 03 - QA-9534
-    [Tags]    QA-9534
+Apps > Checkout > Payment > Payment Method Availability 03 - QASA-108
+    [Tags]    QASA-108
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1046,8 +1046,8 @@ Apps > Checkout > Payment > Payment Method Availability 03 - QA-9534
     Verify COD Payment Info
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Post-Order Creation - QA-5279
-    [Tags]    QA-5279
+Apps > Checkout > Payment > Post-Order Creation - QASA-542
+    [Tags]    QASA-542
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1076,8 +1076,8 @@ Apps > Checkout > Payment > Post-Order Creation - QA-5279
     Verify Payment Element Not Exists    ${txtGiftAdd}
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Donation - QA-5198
-    [Tags]    QA-5198
+Apps > Checkout > Payment > Donation - QASA-618
+    [Tags]    QASA-618
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1111,8 +1111,8 @@ Apps > Checkout > Payment > Donation - QA-5198
     Click Card Payment Method
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Donation 02 - QA-9550
-    [Tags]    QA-9550
+Apps > Checkout > Payment > Donation 02 - QASA-95
+    [Tags]    QASA-95
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1139,8 +1139,8 @@ Apps > Checkout > Payment > Donation 02 - QA-9550
     Click Donate No Thanks
    [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Confirmation - QA-5269
-    [Tags]    QA-5269
+Apps > Checkout > Payment > Confirmation - QASA-552
+    [Tags]    QASA-552
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1174,8 +1174,8 @@ Apps > Checkout > Payment > Confirmation - QA-5269
 #    Verify Confirmation Element Exists    ${lblShareAndWin}
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Confirmation 02 - QA-9536
-    [Tags]    QA-9536
+Apps > Checkout > Payment > Confirmation 02 - QASA-106
+    [Tags]    QASA-106
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1199,8 +1199,8 @@ Apps > Checkout > Payment > Confirmation 02 - QA-9536
     Verify Card Payment Text    Please enter a valid credit card number
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Pay with PayFast - QA-5282
-    [Tags]    QA-5282
+Apps > Checkout > Payment > Pay with PayFast - QASA-539
+    [Tags]    QASA-539
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1232,8 +1232,8 @@ Apps > Checkout > Payment > Pay with PayFast - QA-5282
     Click Change Payment Method
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Credit Card - PayU - QA-5285
-    [Tags]    QA-5285
+Apps > Checkout > Payment > Credit Card - PayU - QASA-536
+    [Tags]    QASA-536
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1255,8 +1255,8 @@ Apps > Checkout > Payment > Credit Card - PayU - QA-5285
     Verify Card Payment    Card Number
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > COD - QA-5286
-    [Tags]    QA-5286
+Apps > Checkout > Payment > COD - QASA-535
+    [Tags]    QASA-535
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1278,8 +1278,8 @@ Apps > Checkout > Payment > COD - QA-5286
     Verify Confirmation Text    You have chosen to pay with Cash on Delivery. Please have your cash ready for the driver
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QA-5287
-    [Tags]    QA-5287
+Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QASA-534
+    [Tags]    QASA-534
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1311,8 +1311,8 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QA-52
     Click Change Payment Method
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Pay with Ozow - QA-5288
-    [Tags]    QA-5288
+Apps > Checkout > Payment > Pay with Ozow - QASA-533
+    [Tags]    QASA-533
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1342,8 +1342,8 @@ Apps > Checkout > Payment > Pay with Ozow - QA-5288
     Click Pay With Ozow
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QA-5289
-    [Tags]    QA-5289
+Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QASA-532
+    [Tags]    QASA-532
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1372,8 +1372,8 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QA-
     Click Pay With Credit Card
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Mobicred - QA-5295
-    [Tags]    QA-5295
+Apps > Checkout > Payment > Mobicred - QASA-527
+    [Tags]    QASA-527
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1395,8 +1395,8 @@ Apps > Checkout > Payment > Mobicred - QA-5295
     Verify Payment Mobi Text    Please log in to your Mobicred account
     [Teardown]    Tear Down
 
-Apps > Checkout > TV Licence Verification - QA-6692
-    [Tags]    QA-6692
+Apps > Checkout > TV Licence Verification - QASA-307
+    [Tags]    QASA-307
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1421,8 +1421,8 @@ Apps > Checkout > TV Licence Verification - QA-6692
     Click Delivery
     [Teardown]    Tear Down
 
-Apps > Checkout > TV Licence Verification 02 - QA-9537
-    [Tags]    QA-9537
+Apps > Checkout > TV Licence Verification 02 - QASA-105
+    [Tags]    QASA-105
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1444,8 +1444,8 @@ Apps > Checkout > TV Licence Verification 02 - QA-9537
     Verify Tv Licence Element Exists    ${navTvLicVerification}
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > Promise Date - QA-5205
-    [Tags]    QA-5205
+Apps > Checkout > Delivery Options > Promise Date - QASA-611
+    [Tags]    QASA-611
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1522,8 +1522,8 @@ Apps > Checkout > Delivery Options > Promise Date - QA-5205
     Verify Order Detail Text    ORDER SUMMARY
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect Options > Promise Date - QA-5210
-    [Tags]    QA-5210
+Apps > Checkout > Collect Options > Promise Date - QASA-606
+    [Tags]    QASA-606
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1588,8 +1588,8 @@ Apps > Checkout > Collect Options > Promise Date - QA-5210
     Verify Order Detail Text    ORDER SUMMARY
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Pay with eBucks - QA-5283
-    [Tags]    QA-5283
+Apps > Checkout > Payment > Pay with eBucks - QASA-538
+    [Tags]    QASA-538
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1615,8 +1615,8 @@ Apps > Checkout > Payment > Pay with eBucks - QA-5283
     Verify Payment EBucks Text    Invalid OTP
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Credits (Voucher) - QA-5284
-    [Tags]    QA-5284
+Apps > Checkout > Payment > Credits (Voucher) - QASA-537
+    [Tags]    QASA-537
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1644,8 +1644,8 @@ Apps > Checkout > Payment > Credits (Voucher) - QA-5284
     Click Payment Confirm Order
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > General Test Case - QA-5215
-    [Tags]    QA-5215
+Apps > Checkout > Delivery Options > General Test Case - QASA-601
+    [Tags]    QASA-601
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1664,8 +1664,8 @@ Apps > Checkout > Delivery Options > General Test Case - QA-5215
     Click Donate No Thanks
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > General Test Case 02 - QA-9539
-    [Tags]    QA-9539
+Apps > Checkout > Delivery Options > General Test Case 02 - QASA-104
+    [Tags]    QASA-104
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1691,8 +1691,8 @@ Apps > Checkout > Delivery Options > General Test Case 02 - QA-9539
     Click Donate No Thanks
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > General Test Case 03 - QA-9540
-    [Tags]    QA-9540
+Apps > Checkout > Delivery Options > General Test Case 03 - QASA-103
+    [Tags]    QASA-103
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1708,8 +1708,8 @@ Apps > Checkout > Delivery Options > General Test Case 03 - QA-9540
     Click Address
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > General Test Case 04 - QA-9541
-    [Tags]    QA-9541
+Apps > Checkout > Delivery Options > General Test Case 04 - QASA-102
+    [Tags]    QASA-102
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1729,8 +1729,8 @@ Apps > Checkout > Delivery Options > General Test Case 04 - QA-9541
     Click Got It Thanks
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > General Test Case 05 - QA-9542
-    [Tags]    QA-9542
+Apps > Checkout > Delivery Options > General Test Case 05 - QASA-101
+    [Tags]    QASA-101
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1750,8 +1750,8 @@ Apps > Checkout > Delivery Options > General Test Case 05 - QA-9542
     Click Got It Thanks
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > General Test Case 06 - QA-9543
-    [Tags]    QA-9543
+Apps > Checkout > Delivery Options > General Test Case 06 - QASA-100
+    [Tags]    QASA-100
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1792,8 +1792,8 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QA-9543
     Verify Delivery Options Thimbnail Images
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > Add Gift Recipient - QA-7850
-    [Tags]    QA-7850
+Apps > Checkout > Delivery Options > Add Gift Recipient - QASA-298
+    [Tags]    QASA-298
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1812,8 +1812,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient - QA-7850
     Click Gift Message Save Button
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QA-9544
-    [Tags]    QA-9544
+Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QASA-99
+    [Tags]    QASA-99
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1832,8 +1832,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QA-9544
     Verify Continue Digital Item Text    Sent upon payment
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > Add Gift Recipient 03 - QA-9545
-    [Tags]    QA-9545
+Apps > Checkout > Delivery Options > Add Gift Recipient 03 - QASA-98
+    [Tags]    QASA-98
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1845,8 +1845,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 03 - QA-9545
     Verify PDP Screen Text    This is an electronic book (eBook). In order to read this eBook you need to: (1) have a compatible device; (2) register for an Adobe ID; (3) download the correct eReader software
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QA-9546
-    [Tags]    QA-9546
+Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QASA-97
+    [Tags]    QASA-97
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1864,8 +1864,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QA-9546
     Verify Delivery Options Text    When would you like it delivered?
     [Teardown]    Tear Down
 
-Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QA-9547
-    [Tags]    QA-9547
+Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QASA-96
+    [Tags]    QASA-96
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1883,8 +1883,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QA-9547
     Verify Delivery Options Text    Estimated collection from:
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Mobicred - QA-5266
-    [Tags]    QA-5266
+Apps > Checkout > Payment > Mobicred - QASA-555
+    [Tags]    QASA-555
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1903,6 +1903,6 @@ Apps > Checkout > Payment > Mobicred - QA-5266
     Click Change Payment Method
     Click Mobicred Payment Method
     Click Pay With Mobi
-    Verify Text On Screen    Mobicred Username    60s
-    Verify Text On Screen    Mobicred Password    60s
+    Verify Text On Screen    Mobicred Username    ${MAX_TIMEOUT}
+    Verify Text On Screen    Mobicred Password    ${MAX_TIMEOUT}
     [Teardown]    Tear Down
