@@ -33,7 +33,7 @@ Click Save Wishlists
     Click Element    ${btnPDPWishListSave}
 
 Click Close Ad
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPCloseAd}    30s
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnPDPCloseAd}    5s
     Run Keyword If    ${chkTextSuccess}==${True} and '${PLATFORM_NAME}'=='ios'    Click Element    ${btnPDPCloseAd}
 #    Sleep    2s
 
@@ -427,11 +427,12 @@ Click Product Size
     Click Element    ${txtProduct}
 
 Click Product Variant From API
+    [Arguments]    ${index}=0
     ${txtProduct}=    Get Product Variant
+    ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
     Wait Until Element Is Visible    ${btnPDPSelectOption}    30s
     Click Element    ${btnPDPSelectOption}
-
-    Wait Until Keyword Succeeds    3    3s    Wait Until Element Is Visible    ${txtProduct}    30s
+    Wait Until Element Is Visible    ${txtProduct}    10s
     Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API
