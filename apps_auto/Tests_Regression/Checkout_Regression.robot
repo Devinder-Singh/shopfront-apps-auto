@@ -61,8 +61,8 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
     Click Pickup Point
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Liquor Item - QASA-116 / QA-5232
-    [Tags]    QASA-116    QA-5232
+Apps > Checkout > Collect > Liquor Item - QASA-588
+    [Tags]    QASA-588
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -187,8 +187,8 @@ Checkout - Age Verification - QASA-576
     Verify Age Text    The date of birth you entered indicates that you are under the age of 18. We are not permitted to sell liquor to you. Please remove all liquor items from your cart to proceed
     [Teardown]    Tear Down
 
-Checkout - Delivery Address - General - QA-5200 / QASA-113
-    [Tags]    QA-5200    QASA-113
+Checkout > Delivery Address > Saved Addresses - QASA-616 
+    [Tags]    QASA-616
     [Setup]    Start Application
     Clear Environment
     Click Menu

@@ -60,8 +60,8 @@ Apps > Cart > Product Details > Non-Variant - QASA-512
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Cart > Product Details > Unboxed - QA-9935
-    [Tags]    QA-9935
+Apps > Cart > Product Details > Unboxed - QASA-48
+    [Tags]    QASA-48
     [Setup]    Start Application
     Clear Environment
     Click Menu

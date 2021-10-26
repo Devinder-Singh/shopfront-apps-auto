@@ -96,6 +96,8 @@ Resource          ../kw/kwToolbar.robot
 Resource          ../kw/kwReturns.robot
 Library           TalLibrary
 Library           String
+Library           Collections
+Library           REST
 
 *** Variables ***
 ${PLATFORM_NAME}    ios

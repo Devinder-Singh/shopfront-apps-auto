@@ -27,8 +27,8 @@ Apps > Register & Login - QASA-498
     Click Menu Logout
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Daily Deals - QASA-476 / QA-7443
-    [Tags]    QASA-476    QA-7443
+Apps > Promotions (Android) Daily Deals - QASA-476 - QASA-306
+    [Tags]    QASA-476    QASA-306
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -51,8 +51,8 @@ Apps > Promotions (Android) Daily Deals - QASA-476 / QA-7443
     Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) App Only Deals - QASA-256 / QA-7443
-    [Tags]    QASA-256    QA-7443
+Apps > Promotions (Android) App Only Deals - QASA-256 - QASA-306
+    [Tags]    QASA-256    QASA-306
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -76,8 +76,8 @@ Apps > Promotions (Android) App Only Deals - QASA-256 / QA-7443
     Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Other Promo tabs - QASA-255 / QA-7443
-    [Tags]    QASA-255    QA-7443
+Apps > Promotions (Android) Other Promo tabs - QASA-255 - QASA-306
+    [Tags]    QASA-255    QASA-306
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -100,8 +100,8 @@ Apps > Promotions (Android) Other Promo tabs - QASA-255 / QA-7443
     Verify Text On Screen    Item Total    1s
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Set Bundle - QASA-260 / QA-7443
-    [Tags]    QASA-260    QA-7443
+Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
+    [Tags]    QASA-260    QASA-306
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -130,8 +130,8 @@ Apps > Promotions (Android) Set Bundle - QASA-260 / QA-7443
     Check Text On Screen Not    View Bundle
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Multi-Buys - QASA-254 / QA-7443
-    [Tags]    QASA-254    QA-7443
+Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
+    [Tags]    QASA-254    QASA-306
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -165,8 +165,8 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 / QA-7443
     Check Text On Screen Not    Add 1 item to qualify
     [Teardown]    Tear Down
 
-Apps > Promotions (Android) Unboxed & Other Offers - QASA-253 / QA-7443
-    [Tags]    QASA-253    QA-7443
+Apps > Promotions (Android) Unboxed & Other Offers - QASA-253 - QASA-306
+    [Tags]    QASA-253    QASA-306
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -363,8 +363,8 @@ Apps > PLP > Sort - QASA-171
     Verify Sorted Products    ReleaseDate+Descending
     [Teardown]    Tear Down
 
-Apps > PLP > Mulit-Filter - QA-8340
-    [Tags]    QA-8340
+Apps > PLP > Mulit-Filter - QASA-265
+    [Tags]    QASA-265
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -376,8 +376,8 @@ Apps > PLP > Mulit-Filter - QA-8340
     Click Filter Apply Button
     [Teardown]    Tear Down
 
-#Apps > PLP > Mulit-Filter 02 - QA-8340
-#    [Tags]    QA-8340
+#Apps > PLP > Mulit-Filter 02 - QASA-265
+#    [Tags]    QASA-265
 #    [Setup]    Start Application
 #    Click Home
 #    Click Search Home
@@ -390,8 +390,8 @@ Apps > PLP > Mulit-Filter - QA-8340
 #    Verify Filtered Products    Availability:0.0-0.0
 #    [Teardown]    Tear Down
 
-#Apps > PLP > Mulit-Filter 03 - QA-8340
-#    [Tags]    QA-8340
+#Apps > PLP > Mulit-Filter 03 - QASA-265
+#    [Tags]    QASA-265
 #    [Setup]    Start Application
 #    Click Home
 #    Click Search Home
@@ -404,8 +404,8 @@ Apps > PLP > Mulit-Filter - QA-8340
 #    Verify Filtered Products    Brand:Meeco
 #    [Teardown]    Tear Down
 
-#Apps > PLP > Mulit-Filter 04 - QA-8340 / QASA-158
-#    [Tags]    QA-8340    QASA-158
+#Apps > PLP > Mulit-Filter 04 - QASA-265 / QASA-158
+#    [Tags]    QASA-265    QASA-158
 #    [Setup]    Start Application
 #    Click Home
 #    Click Search Home
@@ -418,8 +418,8 @@ Apps > PLP > Mulit-Filter - QA-8340
 #    Verify Filtered Products    BasicColours:Blue
 #    [Teardown]    Tear Down
 
-#Apps > PLP > Mulit-Filter 05 - QA-8340
-#    [Tags]    QA-8340
+#Apps > PLP > Mulit-Filter 05 - QASA-265
+#    [Tags]    QASA-265
 #    [Setup]    Start Application
 #    Click Home
 #    Click Search Home
@@ -432,8 +432,8 @@ Apps > PLP > Mulit-Filter - QA-8340
 #    Verify Filtered Products    ASMaterials:Nylon
 #    [Teardown]    Tear Down
 
-#Apps > PLP > Mulit-Filter 06 - QA-8340 / QASA-158
-#   [Tags]    QA-8340    QASA-158
+#Apps > PLP > Mulit-Filter 06 - QASA-265 / QASA-158
+#   [Tags]    QASA-265    QASA-158
 #    [Setup]    Start Application
 #    Click Home
 #    Click Search Home
@@ -1125,8 +1125,8 @@ Apps > Order Tracking 05 - QASA-79
     Verify Payfast Payment Text    Instant EFT
     [Teardown]    Tear Down
 
-Apps > Cart (Android) - QA-5298 / QA-9606
-    [Tags]    android    QA-5298    QA-9606
+Apps > Cart (Android) > QASA-524 - QASA-81
+    [Tags]    QASA-524    QASA-81
     [Setup]    Start Application
     Clear Environment
     Click Menu

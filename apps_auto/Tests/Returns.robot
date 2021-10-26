@@ -201,8 +201,8 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 6
     Verify Returns Reason Variant Colour Error Message
     [Teardown]    Tear Down
 
-Apps > SS Returns > Request a Return > Log Return Request > QA-5432
-    [Tags]    QA-5432
+Apps > SS Returns > Request a Return > Log Return Request > QASA-78
+    [Tags]    QASA-78
     [Setup]    Start Application
     Click Menu
     Click Menu Login

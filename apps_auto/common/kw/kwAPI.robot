@@ -1,8 +1,5 @@
 *** Settings ***
 Resource          ../config/defaultConfig.robot
-Library           Collections
-Library           REST
-Library           String
 
 *** Variables ***
 #    test-automation-platform

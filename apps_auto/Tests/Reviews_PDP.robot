@@ -152,8 +152,8 @@ Apps > Reviews > Read Reviews > Upvote - QASA-274
 #    Verify Text On Screen    Vote removed    15s
     [Teardown]    Tear Down
 
-Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
-    [Tags]    QA-9168
+Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QASA-143
+    [Tags]    QASA-143
     [Setup]    Start Application
     Click Menu Logout If Logged In
     Click Home
@@ -167,8 +167,8 @@ Apps > Reviews > Read Reviews > Report Abuse (Logged-out user) - QA-9168
     Verify Reviews Report Review Success Message
     [Teardown]    Tear Down
 
-Apps > Reviews > Write A Review (Legacy) - QA-9169
-    [Tags]    QA-9168
+Apps > Reviews > Write A Review (Legacy) - QASA-142
+    [Tags]    QASA-142
     [Setup]    Start Application
     Set SSL Verify    False
     Click Menu

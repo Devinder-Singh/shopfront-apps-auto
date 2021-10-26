@@ -388,8 +388,8 @@ Apps > Search Listings > Stock > Lead Time - QASA-187
     Verify Text On Screen Scroll    Ships in 5 - 7 work days    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
-Apps > Search: Autocomplete > Search icon - QA-5156 - Logged Out
-    [Tags]    QA-5156
+Apps > Search: Autocomplete > Search icon - Logged Out - QASA-643
+    [Tags]    QASA-643
     [Setup]    Start Application    ${False}
     Click Menu Logout If Logged In
     Click Home
@@ -397,8 +397,8 @@ Apps > Search: Autocomplete > Search icon - QA-5156 - Logged Out
     Verify Text On Screen    Trending    5s
     [Teardown]    Tear Down
 
-Apps > Search: Autocomplete > Search icon - QA-5156 - Logged In
-    [Tags]    QA-5156
+Apps > Search: Autocomplete > Search icon - Logged In - QASA-26
+    [Tags]    QASA-26
     [Setup]    Start Application    ${False}
     Click Menu Logout If Logged In
     Click Home

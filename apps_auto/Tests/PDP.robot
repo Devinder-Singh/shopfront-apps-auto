@@ -976,8 +976,8 @@ Apps > PDP > Buy Box > Add to Cart - QASA-753
     Check Text On Screen Not    Customers Also Bought
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > Add to Wishlist - QA-2035
-    [Tags]    QA-2035
+Apps > PDP > Buy Box > Add to Wishlist - QASA-752
+    [Tags]    QASA-752
     [Setup]    Start Application
     Click Home
     Click Search Home
