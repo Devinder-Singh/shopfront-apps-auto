@@ -4,8 +4,8 @@ Resource          ../common/config/defaultConfig.robot
 Library    OperatingSystem
 
 *** Test Cases ***
-Apps > PDP > Main Product Details > Description - QA-2037
-    [Tags]    data    QA-2037
+Apps > PDP > Main Product Details > Description - QASA-749
+    [Tags]    data    QASA-749
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -19,8 +19,8 @@ Apps > PDP > Main Product Details > Description - QA-2037
     Click PDP Description Show More
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QA-9293
-    [Tags]    data    QA-9293
+Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QASA-124
+    [Tags]    data    QASA-124
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -53,8 +53,8 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QA-9293
     Click Add To Cart
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > Select an Option - QA-2031
-    [Tags]    data    QA-2031
+Apps > PDP > Buy Box > Select an Option - QASA-754
+    [Tags]    data    QASA-754
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -90,8 +90,8 @@ Apps > PDP > Buy Box > Select an Option - QA-2031
     Click Add To Cart
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > Delivery Cost - QA-2027
-    [Tags]    QA-2027
+Apps > PDP > Buy Box > Delivery Cost - QASA-757
+    [Tags]    QASA-757
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -116,8 +116,8 @@ Apps > PDP > Buy Box > Delivery Cost - QA-2027
     Verify Text On Screen iOS    + R 200 Delivery Surcharge    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > eBucks - QA-2028
-    [Tags]    QA-2028
+Apps > PDP > Buy Box > eBucks - QASA-756
+    [Tags]    QASA-756
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -149,8 +149,8 @@ Apps > PDP > Buy Box > eBucks - QA-2028
     Verify eBucks On Screen
     [Teardown]    Tear Down
 
-Apps > PDP > You Might Also Like - QA-2012
-    [Tags]    QA-2012
+Apps > PDP > You Might Also Like - QASA-769
+    [Tags]    QASA-769
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -160,8 +160,8 @@ Apps > PDP > You Might Also Like - QA-2012
     Verify Product YAML from API
     [Teardown]    Tear Down
 
-Apps > PDP > Policy list > Eligible for Cash on Delivery - QA-2013
-    [Tags]    QA-2013
+Apps > PDP > Policy list > Eligible for Cash on Delivery - QASA-768
+    [Tags]    QASA-768
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -194,8 +194,8 @@ Apps > PDP > Policy list > Eligible for Cash on Delivery - QA-2013
     Verify Text On Screen iOS    If your order is eligible for COD, it will be displayed as a payment option at checkout    1s
     [Teardown]    Tear Down
 
-Apps > PDP > Policy list > Free Delivery Available - QA-2014
-    [Tags]    QA-2014
+Apps > PDP > Policy list > Free Delivery Available - QASA-767
+    [Tags]    QASA-767
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -213,8 +213,8 @@ Apps > PDP > Policy list > Free Delivery Available - QA-2014
     Verify Text On Screen iOS    FREE DELIVERY    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Other Offers - QA-1974
-    [Tags]    data    QA-1974
+Apps > PDP > Other Offers - QASA-781
+    [Tags]    data    QASA-781
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -236,8 +236,8 @@ Apps > PDP > Other Offers - QA-1974
     Verify Text On Screen    Item added to Cart    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > List Price - QA-2025
-    [Tags]    QA-2025
+Apps > PDP > Buy Box > List Price - QASA-759
+    [Tags]    QASA-759
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -260,8 +260,8 @@ Apps > PDP > Buy Box > List Price - QA-2025
     Verify Text On Screen iOS    Our List Price    1s
     [Teardown]    Tear Down
 
-Apps > PDP > Unboxed Deals & New > Primary Unboxed > Variant - QA-9252
-    [Tags]    QA-9252
+Apps > PDP > Unboxed Deals & New > Primary Unboxed > Variant - QASA-132
+    [Tags]    QASA-132
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -294,8 +294,8 @@ Apps > PDP > Unboxed Deals & New > Primary Unboxed > Variant - QA-9252
 #    Verify Text On Screen iOS    You asked for 2 but we only have 1 available    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Bundle Deals > Set Bundle (Same product) - QA-1976
-    [Tags]    data    QA-1976
+Apps > PDP > Bundle Deals > Set Bundle (Same product) - QASA-780
+    [Tags]    data    QASA-780
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -316,8 +316,8 @@ Apps > PDP > Bundle Deals > Set Bundle (Same product) - QA-1976
     Verify Element On Screen    ${btnGoToCart}    1s
     [Teardown]    Tear Down
 
-Apps > PDP > Bundle Deals > “Show All Deals” Screen - QA-1982
-    [Tags]    data    QA-1982
+Apps > PDP > Bundle Deals > “Show All Deals” Screen - QASA-777
+    [Tags]    data    QASA-777
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -337,8 +337,8 @@ Apps > PDP > Bundle Deals > “Show All Deals” Screen - QA-1982
     Click PDP Shop The Deal TCs
     [Teardown]    Tear Down
 
-Apps > PDP > Bundle Deals > Set Bundle (Different products) - QA-9259
-    [Tags]    data    QA-9259
+Apps > PDP > Bundle Deals > Set Bundle (Different products) - QASA-128
+    [Tags]    data    QASA-128
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -359,8 +359,8 @@ Apps > PDP > Bundle Deals > Set Bundle (Different products) - QA-9259
     Verify Element On Screen    ${btnGoToCart}    1s
     [Teardown]    Tear Down
 
-Apps > PDP > Unboxed Deals > Primary Unboxed - QA-1983
-    [Tags]    data    QA-1983
+Apps > PDP > Unboxed Deals > Primary Unboxed - QASA-776
+    [Tags]    data    QASA-776
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -393,8 +393,8 @@ Apps > PDP > Unboxed Deals > Primary Unboxed - QA-1983
 #    Verify Text On Screen iOS    You asked for 2 but we only have 1 available    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Unboxed Deals > Unboxed Offers - QA-1984
-    [Tags]    data    QA-1984
+Apps > PDP > Unboxed Deals > Unboxed Offers - QASA-775
+    [Tags]    data    QASA-775
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -432,8 +432,8 @@ Apps > PDP > Unboxed Deals > Unboxed Offers - QA-1984
     Verify Text On Screen iOS    You asked for 2 but we only have 1 available    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QA-1985
-    [Tags]    data    QA-1985
+Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QASA-774
+    [Tags]    data    QASA-774
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -472,8 +472,8 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QA-1985
     Verify Text On Screen iOS    You asked for 2 but we only have 1 available    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Variants > Colour > No show all link - QA-9594
-    [Tags]    data    QA-9594
+Apps > PDP > Variants > Colour > No show all link - QASA-86
+    [Tags]    data    QASA-86
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -485,8 +485,8 @@ Apps > PDP > Variants > Colour > No show all link - QA-9594
     Verify PDP Screen Element Not Exists    ${btnVariantShowMore}
     [Teardown]    Tear Down
 
-Apps > PDP >Bundle Deals > Multi-buy Bundle - QA-1978
-    [Tags]    data    QA-1978
+Apps > PDP >Bundle Deals > Multi-buy Bundle - QASA-778
+    [Tags]    data    QASA-778
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -505,8 +505,8 @@ Apps > PDP >Bundle Deals > Multi-buy Bundle - QA-1978
     Click Product From Title    Teddy Finger Paint - 4 x 100ml
     [Teardown]    Tear Down
 
-Apps > PDP > Other Offers > More than one offer - QA-5166
-    [Tags]    data    QA-5166
+Apps > PDP > Other Offers > More than one offer - QASA-634
+    [Tags]    data    QASA-634
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -526,8 +526,8 @@ Apps > PDP > Other Offers > More than one offer - QA-5166
     Verify Element On Screen    ${btnGoToCart}    5s
     [Teardown]    Tear Down
 
-Apps > PDP > Variants > Colour - QA-1977
-    [Tags]    data    QA-1977    QA-9771
+Apps > PDP > Variants > Colour - QASA-779
+    [Tags]    data    QASA-779
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -548,8 +548,8 @@ Apps > PDP > Variants > Colour - QA-1977
     Verify Text On Screen iOS    Item added to Cart    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Variants > Size - QA-9592
-    [Tags]    data    QA-9592
+Apps > PDP > Variants > Size - QASA-88
+    [Tags]    data    QASA-88
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -568,8 +568,8 @@ Apps > PDP > Variants > Size - QA-9592
     Verify Text On Screen iOS    Item added to Cart    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Variants > Colour & Size - QA-9595
-    [Tags]    data    QA-9595
+Apps > PDP > Variants > Colour & Size - QASA-85
+    [Tags]    data    QASA-85
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -590,8 +590,8 @@ Apps > PDP > Variants > Colour & Size - QA-9595
     Click Add To Cart
     [Teardown]    Tear Down
 
-Apps > PDP > Policy list > Hassle-free Exchanges and Returns for 30 Days - QA-2015
-    [Tags]    QA-2015
+Apps > PDP > Policy list > Hassle-free Exchanges and Returns for 30 Days - QASA-766
+    [Tags]    QASA-766
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -634,8 +634,8 @@ Apps > PDP > Policy list > Hassle-free Exchanges and Returns for 30 Days - QA-20
     Verify Text On Screen iOS    Find out more about    1s
     [Teardown]    Tear Down
 
-Apps > PDP > Policy list > Warranty Types > Non-Returnable - QA-2019
-    [Tags]    QA-2019
+Apps > PDP > Policy list > Warranty Types > Non-Returnable - QASA-764
+    [Tags]    QASA-764
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -662,8 +662,8 @@ Apps > PDP > Policy list > Warranty Types > Non-Returnable - QA-2019
     Verify Text On Screen iOS    No warranty at all, except for delivery damages (if applicable). Digital products will be supported, but no refunds possible    5s
     [Teardown]    Tear Down
 
-Apps > PDP > Sold by - QA-2024
-    [Tags]    QA-2024
+Apps > PDP > Sold by - QASA-760
+    [Tags]    QASA-760
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -675,8 +675,8 @@ Apps > PDP > Sold by - QA-2024
     Verify Text On Screen iOS    ${query_result_FirstProductBrand}    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Main Product Details > Product Title and Sub-title - QA-2040
-    [Tags]    QA-2040
+Apps > PDP > Main Product Details > Product Title and Sub-title - QASA-746
+    [Tags]    QASA-746
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -699,8 +699,8 @@ Apps > PDP > Main Product Details > Product Title and Sub-title - QA-2040
     Verify Text On Screen iOS    ${query_result_CartProductAuthor}    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Main Product Details > Product Info - QA-2038
-    [Tags]    QA-2038
+Apps > PDP > Main Product Details > Product Info - QASA-748
+    [Tags]    QASA-748
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -723,8 +723,8 @@ Apps > PDP > Main Product Details > Product Info - QA-2038
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     [Teardown]    Tear Down
 
-Apps > PDP > When Do I get it? > When Do I Get It? Message - QA-2022
-    [Tags]    QA-2022
+Apps > PDP > When Do I get it? > When Do I Get It? Message - QASA-762
+    [Tags]    QASA-762
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -867,8 +867,8 @@ Apps > PDP > When Do I get it? > When Do I Get It? Message - QA-2022
     Verify Text On Screen Android    Gift vouchers are delivered via email to the recipient as soon as payment has been approved    1s
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > Price Range - QA-2026
-    [Tags]    QA-2026
+Apps > PDP > Buy Box > Price Range - QASA-758
+    [Tags]    QASA-758
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -889,8 +889,8 @@ Apps > PDP > Buy Box > Price Range - QA-2026
     Verify Text On Screen Android    Price: R    1s
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > MobiCred - QA-2029
-    [Tags]    QA-2029
+Apps > PDP > Buy Box > MobiCred - QASA-755
+    [Tags]    QASA-755
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -947,8 +947,8 @@ Apps > PDP > Buy Box > MobiCred - QA-2029
     Check Text On Screen Not    On Credit
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > Add to Cart - QA-2032
-    [Tags]    QA-2032
+Apps > PDP > Buy Box > Add to Cart - QASA-753
+    [Tags]    QASA-753
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -992,8 +992,8 @@ Apps > PDP > Buy Box > Add to Wishlist - QA-2035
     Verify Text On Screen Android    This Blu-ray disc requires a suitable Blu-ray player that has the ability to play multi region discs    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Notification Banner > Pre - Order , Login , Write A Review - QA-2036
-    [Tags]    QA-2036
+Apps > PDP > Notification Banner > Pre - Order , Login , Write A Review - QASA-750
+    [Tags]    QASA-750 
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -1031,8 +1031,8 @@ Apps > PDP > Notification Banner > Pre - Order , Login , Write A Review - QA-203
     Verify Text On Screen    Thank you for your review    30s
     [Teardown]    Tear Down
 
-Apps > PDP> In Stock > Stock & Stock Status Possibilities ( ALL) - QA-1986
-    [Tags]    QA-1986
+Apps > PDP> In Stock > Stock & Stock Status Possibilities ( ALL) - QASA-773
+    [Tags]    QASA-773
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -1069,8 +1069,8 @@ Apps > PDP> In Stock > Stock & Stock Status Possibilities ( ALL) - QA-1986
     Verify Text On Screen    Pre-order: Ships    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Customers Also Bought - QA-2008
-    [Tags]    QA-2008
+Apps > PDP > Customers Also Bought - QASA-772
+    [Tags]    QASA-772
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -1085,8 +1085,8 @@ Apps > PDP > Customers Also Bought - QA-2008
     Verify Text On Screen    ${query_result_CABTProductPrice}    5s
     [Teardown]    Tear Down
 
-Apps > PDP > Policy list > Hassle-free Exchanges and Returns for 30 Days (Not eligible) - QA-9731
-    [Tags]    QA-9731
+Apps > PDP > Policy list > Hassle-free Exchanges and Returns for 30 Days (Not eligible) - QASA-63
+    [Tags]    QASA-63
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -1101,8 +1101,8 @@ Apps > PDP > Policy list > Hassle-free Exchanges and Returns for 30 Days (Not el
     Check Text On Screen Not    Hassle-Free Exchanges & Returns for 30 Days
     [Teardown]    Tear Down
 
-Apps > PDP > Policy list > Not For Sale to Persons Under the Age of 18 (Not eligible) - QA-9754
-    [Tags]    QA-9754
+Apps > PDP > Policy list > Not For Sale to Persons Under the Age of 18 (Not eligible) - QASA-58
+    [Tags]    QASA-58
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -1117,8 +1117,8 @@ Apps > PDP > Policy list > Not For Sale to Persons Under the Age of 18 (Not elig
     Check Text On Screen Not    Not For Sale to Persons Under the Age of 18
     [Teardown]    Tear Down
 
-Apps > PDP > Notification Banner > Limited Stock - QA-9758
-    [Tags]    QA-9758
+Apps > PDP > Notification Banner > Limited Stock - QASA-54
+    [Tags]    QASA-54
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1138,8 +1138,8 @@ Apps > PDP > Notification Banner > Limited Stock - QA-9758
     Verify Text On Screen    The products will need to be ordered from our supplier. If you'd rather not wait for the extra stock to arrive from the supplier, please update the quantity accordingly    1s
     [Teardown]    Tear Down
 
-Apps > PDP > Policy list > Not Eligible for Cash on Delivery - QA-9298
-    [Tags]    QA-9298
+Apps > PDP > Policy list > Not Eligible for Cash on Delivery - QASA-122
+    [Tags]    QASA-122
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -1154,8 +1154,8 @@ Apps > PDP > Policy list > Not Eligible for Cash on Delivery - QA-9298
     Check Text On Screen Not    Eligible for Cash on Delivery
     [Teardown]    Tear Down
 
-Apps > PDP > Variants > Sold out - QA-9593
-    [Tags]    QA-9593
+Apps > PDP > Variants > Sold out - QASA-87
+    [Tags]    QASA-87
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1203,8 +1203,8 @@ Apps > PDP > Variants > Sold out - QA-9593
     Verify Element On Screen    ${btnAddToCart}    30s
     [Teardown]    Tear Down
 
-Apps > PDP > Buy Box > Add to Wishlist - QA-2033
-    [Tags]    QA-2033
+Apps > PDP > Buy Box > Add to Wishlist - QASA-752
+    [Tags]    QASA-752
     [Setup]    Start Application
     Clear Environment
     Click Menu

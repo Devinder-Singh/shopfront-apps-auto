@@ -3,8 +3,8 @@ Default Tags      search_autocomplete
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Search: Autocomplete > Recent Searches(Search history) - QA-10012
-    [Tags]    QA-10012
+Apps > Search: Autocomplete > Recent Searches(Search history) - QASA-41
+    [Tags]    QASA-41
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -22,8 +22,8 @@ Apps > Search: Autocomplete > Recent Searches(Search history) - QA-10012
     Verify Text On Screen    Trending    2s
     [Teardown]    Tear Down
 
-Apps > Search: Autocomplete > Trending Model - QA-5158
-    [Tags]    QA-5158
+Apps > Search: Autocomplete > Trending Model - QASA-641
+    [Tags]    QASA-641
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -45,8 +45,8 @@ Apps > Search: Autocomplete > Trending Model - QA-5158
     Verify Text On Screen    Trending    2s
     [Teardown]    Tear Down
 
-Apps > Search: Autocomplete > Auto-complete Model - QA-5154
-    [Tags]    QA-5154
+Apps > Search: Autocomplete > Auto-complete Model - QASA-645
+    [Tags]    QASA-645
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -66,8 +66,8 @@ Apps > Search: Autocomplete > Auto-complete Model - QA-5154
     Verify Element On Screen    ${btnProductSearchFilter}    30s
     [Teardown]    Tear Down
 
-Apps > Search: Autocomplete > Recent Searches(New User) - QA-5155
-    [Tags]    QA-5155
+Apps > Search: Autocomplete > Recent Searches(New User) - QASA-644
+    [Tags]    QASA-644
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -100,8 +100,8 @@ Apps > Search: Autocomplete > Recent Searches(New User) - QA-5155
     Verify Text On Screen    ${query_result_search}    2s
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Sort, Filtering, Paging and Recalling - QA-6320
-    [Tags]    QA-6320
+Apps > Sponsored Ads (PLP) > Sort, Filtering, Paging and Recalling - QASA-331
+    [Tags]    QASA-331
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -118,8 +118,8 @@ Apps > Sponsored Ads (PLP) > Sort, Filtering, Paging and Recalling - QA-6320
     Check Text On Screen Not    Sponsored
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Product Card Components (UI) - QA-6322
-    [Tags]    QA-6322
+Apps > Sponsored Ads (PLP) > Product Card Components (UI) - QASA-330
+    [Tags]    QASA-330
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -146,8 +146,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components (UI) - QA-6322
     Verify Element On Screen    ${btnAddToCart}    2s
     [Teardown]    Tear Down
 
-Uploaded image for project Quality Assurance - Engineering Quality Assurance - Engineering - QA-6323
-    [Tags]    QA-6323
+Uploaded image for project Quality Assurance - Engineering Quality Assurance - Engineering - QASA-329
+    [Tags]    QASA-329
     [Setup]    Start Application
     Click Home
     Click Search Home

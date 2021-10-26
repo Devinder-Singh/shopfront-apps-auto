@@ -3,8 +3,8 @@ Default Tags      search
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Search Listings > Image - QA-8738
-    [Tags]    QA-8738
+Apps > Search Listings > Image - QASA-209
+    [Tags]    QASA-209
     [Setup]    Start Application    ${False}
     Click Menu
     Click Menu Login
@@ -15,38 +15,38 @@ Apps > Search Listings > Image - QA-8738
     Click Product Daily Deals
     [Teardown]    Tear Down
 
-Apps > Search Listings > Badges (Daily Deal) - QA-8739
-    [Tags]    QA-8739
+Apps > Search Listings > Badges (Daily Deal) - QASA-208
+    [Tags]    QASA-208
     [Setup]    Start Application
     Verify Product Daily Deals Badge
     [Teardown]    Tear Down
 
-Apps > Search Listings > Badges (Daily Deal) - QA-8740
-    [Tags]    QA-8740
+Apps > Search Listings > Badges (Daily Deal) - QASA-207
+    [Tags]    QASA-207
     [Setup]    Start Application
     Verify Product Percent Off Badge
     [Teardown]    Tear Down
 
-Apps > Search Listings > Badges (Up to <% discount> off) - QA-8741
-    [Tags]    QA-8741
+Apps > Search Listings > Badges (Up to <% discount> off) - QASA-206
+    [Tags]    QASA-206
     [Setup]    Start Application
     Verify Product Percent Off Badge
     [Teardown]    Tear Down
 
-Apps > Search Listings > Badges (Sale / Image) - QA-8742
-    [Tags]    QA-8742
+Apps > Search Listings > Badges (Sale / Image) - QASA-205
+    [Tags]    QASA-205
     [Setup]    Start Application
     Verify Sales Badge
     [Teardown]    Tear Down
 
-Apps > Search Listings > Badges (App Only Deal) - QA-8745
-    [Tags]    QA-8745
+Apps > Search Listings > Badges (App Only Deal) - QASA-204
+    [Tags]    QASA-204
     [Setup]    Start Application
     Verify App Only Badge
     [Teardown]    Tear Down
 
-Apps > Search Listings > Attributes - QA-8737
-    [Tags]    QA-8737
+Apps > Search Listings > Attributes - QASA-210
+    [Tags]    QASA-210
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -54,8 +54,8 @@ Apps > Search Listings > Attributes - QA-8737
     Verify Text On Screen    Hisense    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Attributes 02 - QA-9552
-    [Tags]    QA-9552
+Apps > Search Listings > Attributes 02 - QASA-94
+    [Tags]    QASA-94
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -65,8 +65,8 @@ Apps > Search Listings > Attributes 02 - QA-9552
     Verify Text On Screen Scroll    et al    5s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
-Apps | Search Listings | Section below header - QA-3417
-    [Tags]    QA-3417
+Apps | Search Listings | Section below header - QASA-711
+    [Tags]    QASA-711
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -87,8 +87,8 @@ Apps | Search Listings | Section below header - QA-3417
     Click Product Grid View
     [Teardown]    Tear Down
 
-Apps > Search Listings > UI Checks - QA-8841
-    [Tags]    QA-8841
+Apps > Search Listings > UI Checks - QASA-177
+    [Tags]    QASA-177
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -99,8 +99,8 @@ Apps > Search Listings > UI Checks - QA-8841
     Click Product Grid View
     [Teardown]    Tear Down
 
-Apps > Search Listings > Product Title - QA-8748
-    [Tags]    QA-8748
+Apps > Search Listings > Product Title - QASA-201
+    [Tags]    QASA-201
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -108,8 +108,8 @@ Apps > Search Listings > Product Title - QA-8748
     Click Product from API
     [Teardown]    Tear Down
 
-Apps > Search Listings > Reviews - QA-8750
-    [Tags]    QA-8750
+Apps > Search Listings > Reviews - QASA-199
+    [Tags]    QASA-199
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -136,8 +136,8 @@ Apps > Search Listings > Reviews - QA-8750
     Verify Text On Screen    Thank you for your review    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Price (List Price) - QA-8751
-    [Tags]    QA-8751
+Apps > Search Listings > Price (List Price) - QASA-198
+    [Tags]    QASA-198
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -146,8 +146,8 @@ Apps > Search Listings > Price (List Price) - QA-8751
     Verify Element On Screen    ${lblTermsCond}    5s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Price Range - QA-8752
-    [Tags]    QA-8752
+Apps > Search Listings > Price Range - QASA-197
+    [Tags]    QASA-197
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -155,8 +155,8 @@ Apps > Search Listings > Price Range - QA-8752
     Verify Price Range Product from API
     [Teardown]    Tear Down
 
-Apps > Search Listings > Call to Action Buttons > Add To Cart - QA-8753
-    [Tags]    QA-8753
+Apps > Search Listings > Call to Action Buttons > Add To Cart - QASA-196
+    [Tags]    QASA-196
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -164,8 +164,8 @@ Apps > Search Listings > Call to Action Buttons > Add To Cart - QA-8753
     Check Text On Screen Not    Add To Cart
     [Teardown]    Tear Down
 
-Apps > Search Listings > Call to Action Buttons > Add To Wishlist - QA-8754
-    [Tags]    QA-8754
+Apps > Search Listings > Call to Action Buttons > Add To Wishlist - QASA-195
+    [Tags]    QASA-195
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -179,8 +179,8 @@ Apps > Search Listings > Call to Action Buttons > Add To Wishlist - QA-8754
     Verify Element On Screen    ${btnProductWLSave}    5s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Colour Swatches - QA-8757
-    [Tags]    QA-8757
+Apps > Search Listings > Colour Swatches - QASA-194
+    [Tags]    QASA-194
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -195,8 +195,8 @@ Apps > Search Listings > Colour Swatches - QA-8757
     Check Text On Screen Not    More colours
     [Teardown]    Tear Down
 
-Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
-    [Tags]    data    QA-8758
+Apps > Search Listings > Set Bundle Deals (One active) - QASA-193
+    [Tags]    data    QASA-193
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -205,8 +205,8 @@ Apps > Search Listings > Set Bundle Deals (One active) - QA-8758
     Verify Product Search App Only Deals Badge
     [Teardown]    Tear Down
 
-Apps > Search Listings > Set Bundle Deals (More than one active) - QA-8760
-    [Tags]    data    QA-8760
+Apps > Search Listings > Set Bundle Deals (More than one active) - QASA-192
+    [Tags]    data    QASA-192
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -214,8 +214,8 @@ Apps > Search Listings > Set Bundle Deals (More than one active) - QA-8760
     Verify Text On Screen    Save with Bundle Deals    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy) - QA-8761
-    [Tags]    data    QA-8761
+Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy) - QASA-191
+    [Tags]    data    QASA-191
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -223,8 +223,8 @@ Apps > Search Listings > Bundle Deals (1 active Set bundle + 1 active Multi-Buy)
     Verify Text On Screen    Save with Bundle Deals    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Multi-Buy Deals (One active) - QA-8763
-    [Tags]    data    QA-8763
+Apps > Search Listings > Multi-Buy Deals (One active) - QASA-190
+    [Tags]    data    QASA-190
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -232,8 +232,8 @@ Apps > Search Listings > Multi-Buy Deals (One active) - QA-8763
     Verify Text On Screen    Nature Box Buy 2 For    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QA-8764
-    [Tags]    data    QA-8764
+Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QASA-189
+    [Tags]    data    QASA-189
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -241,8 +241,8 @@ Apps > Search Listings > Multi-Buy Deals (More than 1 active) - QA-8764
     Verify Text On Screen    Save with Bundle Deals    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Stock > Supplier Out of Stock - QA-8769
-    [Tags]    data    QA-8769
+Apps > Search Listings > Stock > Supplier Out of Stock - QASA-186
+    [Tags]    data    QASA-186
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -250,8 +250,8 @@ Apps > Search Listings > Stock > Supplier Out of Stock - QA-8769
     Verify Text On Screen    Supplier out of stock    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Stock > Available Now - QA-8770
-    [Tags]    data    QA-8770
+Apps > Search Listings > Stock > Available Now - QASA-185
+    [Tags]    data    QASA-185
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -259,8 +259,8 @@ Apps > Search Listings > Stock > Available Now - QA-8770
     Verify Text On Screen Scroll    Available Now    30s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
-Apps > Search Listings > Stock > Pre-Order - QA-8771
-    [Tags]    QA-8771
+Apps > Search Listings > Stock > Pre-Order - QASA-184
+    [Tags]    QASA-184
     [Setup]    Start Application
     Click Menu
     Verify Menu Items
@@ -270,8 +270,8 @@ Apps > Search Listings > Stock > Pre-Order - QA-8771
     Verify Text On Screen    Pre-order: Ships    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Stock > Currently Unavailable - QA-8773
-    [Tags]    data    QA-8773
+Apps > Search Listings > Stock > Currently Unavailable - QASA-183
+    [Tags]    data    QASA-183
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -279,8 +279,8 @@ Apps > Search Listings > Stock > Currently Unavailable - QA-8773
     Verify Text On Screen Scroll    Currently Unavailable    30s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
-Apps > Search Listings > Filters - QA-8833
-    [Tags]    QA-8833
+Apps > Search Listings > Filters - QASA-182
+    [Tags]    QASA-182
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -313,8 +313,8 @@ Apps > Search Listings > Filters - QA-8833
     Click Product from API
     [Teardown]    Tear Down
 
-Apps > Search Listings > No Search Results - QA-8835
-    [Tags]    QA-8835
+Apps > Search Listings > No Search Results - QASA-181
+    [Tags]    QASA-181
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -323,8 +323,8 @@ Apps > Search Listings > No Search Results - QA-8835
     Verify Text On Screen    Please check your spelling or try a more generic search term    1s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Sorting - QA-8836
-    [Tags]    QA-8836
+Apps > Search Listings > Sorting - QASA-180
+    [Tags]    QASA-180
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -347,8 +347,8 @@ Apps > Search Listings > Sorting - QA-8836
     Verify Sorted Products    Rating+Descending
     [Teardown]    Tear Down
 
-Apps > Search Listings > Related Search - QA-8839
-    [Tags]    QA-8839
+Apps > Search Listings > Related Search - QASA-179
+    [Tags]    QASA-179
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -358,8 +358,8 @@ Apps > Search Listings > Related Search - QA-8839
     Verify Element On Screen    ${btnAddToCart}    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Pagination - QA-8840
-    [Tags]    QA-8840
+Apps > Search Listings > Pagination - QASA-178
+    [Tags]    QASA-178
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -368,8 +368,8 @@ Apps > Search Listings > Pagination - QA-8840
     Verify Element On Screen    ${btnAddToCart}    30s
     [Teardown]    Tear Down
 
-Apps > Search Listings > Stock > In Stock - QA-8765
-    [Tags]    QA-8765
+Apps > Search Listings > Stock > In Stock - QASA-188
+    [Tags]    QASA-188
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home
@@ -379,8 +379,8 @@ Apps > Search Listings > Stock > In Stock - QA-8765
     Verify Text On Screen Scroll    CPT    1s    ${windowScroll}    ${btnProductSearchFilter}
     [Teardown]    Tear Down
 
-Apps > Search Listings > Stock > Lead Time - QA-8768
-    [Tags]    QA-8768
+Apps > Search Listings > Stock > Lead Time - QASA-187
+    [Tags]    QASA-187
     [Setup]    Start Application    ${False}
     Click Home
     Click Search Home

@@ -3,8 +3,8 @@ Default Tags      login
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Login > Success - QA-5320
-    [Tags]    QA-5320
+Apps > Login > Success - QASA-507
+    [Tags]    QASA-507
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -12,8 +12,8 @@ Apps > Login > Success - QA-5320
     Verify Element On Screen    ${btnLogout}    5s
     [Teardown]    Tear Down
 
-Apps > Login Validations - QA-5322
-    [Tags]    QA-5322
+Apps > Login Validations - QASA-505
+    [Tags]    QASA-505
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -31,8 +31,8 @@ Apps > Login Validations - QA-5322
     Verify Text On Screen iOS    EMAIL ADDRESS    30s
     [Teardown]    Tear Down
 
-Apps > Login Validations (Logged-Out User) - QA-8747
-    [Tags]    QA-8747
+Apps > Login Validations (Logged-Out User) - QASA-202
+    [Tags]    QASA-202
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -50,8 +50,8 @@ Apps > Login Validations (Logged-Out User) - QA-8747
     Verify Element On Screen    ${btnLogin}    30s
     [Teardown]    Tear Down
 
-Android > Register New User > Existing user validation - QA-5395
-    [Tags]    QA-5395
+Android > Register New User > Existing user validation - QASA-441
+    [Tags]    QASA-441
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -79,8 +79,8 @@ Android > Register New User > Existing user validation - QA-5395
 #    Verify Text On Screen    The email address is already registered on takealot    30s
     [Teardown]    Tear Down
 
-Apps > Login > Forgot Password - QA-5319
-    [Tags]    QA-5319
+Apps > Login > Forgot Password - QASA-508
+    [Tags]    QASA-508
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -97,8 +97,8 @@ Apps > Login > Forgot Password - QA-5319
     Verify Text On Screen iOS    Reset instructions have been sent to the entered email address    30s
     [Teardown]    Tear Down
 
-Apps > Android > Login > Verify Auto-Login works - QA-5316
-    [Tags]    QA-5316
+Apps > Android > Login > Verify Auto-Login works - QASA-511
+    [Tags]    QASA-511
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -122,8 +122,8 @@ Apps > Android > Login > Verify Auto-Login works - QA-5316
     Verify Text On Screen iOS    No items    30s
     [Teardown]    Tear Down
 
-Apps > Android > Register New User - QA-8749
-    [Tags]    QA-8749
+Apps > Android > Register New User - QASA-200
+    [Tags]    QASA-200
     [Setup]    Start Application
     Click Menu
     Click Menu Register

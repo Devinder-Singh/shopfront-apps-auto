@@ -241,8 +241,8 @@ Apps > SS Returns > Request a Return > Log Return Request > QA-5432
     Verify Returns Call To Action Title    SAVE
     [Teardown]    Tear Down
 
-Apps > SS Returns > Request a Return > Log Return Request > QA-8407
-    [Tags]    data    QA-8407
+Apps > SS Returns > Request a Return > Log Return Request > QASA-257
+    [Tags]    data    QASA-257
     [Setup]    Start Application
     Click Menu
     Click Menu Login

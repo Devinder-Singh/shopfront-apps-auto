@@ -3,8 +3,8 @@ Default Tags    reviews
 Resource        ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Reviews > Review Components > Read Reviews - QA-9166
-    [Tags]    QA-9166
+Apps > Reviews > Review Components > Read Reviews - QASA-145
+    [Tags]    QASA-145
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -31,8 +31,8 @@ Apps > Reviews > Review Components > Read Reviews - QA-9166
     Verify Reviews PDP Section Visible
     [Teardown]    Tear Down
 
-Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
-    [Tags]    data    QA-7937
+Apps > Reviews > Read Reviews > Review Distribution Summary - QASA-283
+    [Tags]    data    QASA-283
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -53,8 +53,8 @@ Apps > Reviews > Read Reviews > Review Distribution Summary - QA-7937
     Run Keyword If    '${txtRating}'!='${txtRatingChanged}'    Fail
     [Teardown]    Tear Down
 
-Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
-    [Tags]    QA-7938
+Apps > Reviews > Read Reviews > Review Screen > Sort - QASA-282
+    [Tags]    QASA-282
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -71,8 +71,8 @@ Apps > Reviews > Read Reviews > Review Screen > Sort - QA-7938
     Click Reviews Sort Option Most Helpful
     [Teardown]    Tear Down
 
-Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
-    [Tags]    QA-7941
+Apps > Reviews > Read Reviews > Review Screen > Filters - QASA-281
+    [Tags]    QASA-281
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -94,8 +94,8 @@ Apps > Reviews > Read Reviews > Review Screen > Filters - QA-7941
     Verify Reviews Filter Options All
     [Teardown]    Tear Down
 
-Apps > Reviews > Read Reviews > Review Screen > Filter Options - QA-7943
-    [Tags]    QA-7943
+Apps > Reviews > Read Reviews > Review Screen > Filter Options - QASA-279
+    [Tags]    QASA-279
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -114,8 +114,8 @@ Apps > Reviews > Read Reviews > Review Screen > Filter Options - QA-7943
     Verify Reviews Filter Options Applied    0
     [Teardown]    Tear Down
 
-Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QA-7946
-    [Tags]    QA-7946
+Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QASA-276
+    [Tags]    QASA-276
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -134,8 +134,8 @@ Apps > Reviews > Read Reviews > Review Screen > Apply Filter - QA-7946
     Verify Reviews Filter No Reviews Displayed
     [Teardown]    Tear Down
 
-Apps > Reviews > Read Reviews > Upvote - QA-7950
-    [Tags]    QA-7950
+Apps > Reviews > Read Reviews > Upvote - QASA-274
+    [Tags]    QASA-274
     [Setup]    Start Application
     Click Menu
     Click Menu Register

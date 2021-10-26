@@ -3,8 +3,8 @@ Default Tags      wishlist
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Wishlist > PDP Add to List > Add to List(Default List) - QA-5368
-    [Tags]    QA-5368
+Apps > Wishlist > PDP Add to List > Add to List(Default List) - QASA-465
+    [Tags]    QASA-465
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -21,8 +21,8 @@ Apps > Wishlist > PDP Add to List > Add to List(Default List) - QA-5368
     Verify Wishlist Checked
     [Teardown]    Tear Down
 
-Apps > Wishlist > Add to List > PDP - QA-5371
-    [Tags]    QA-5371
+Apps > Wishlist > Add to List > PDP - QASA-462
+    [Tags]    QASA-462
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -46,8 +46,8 @@ Apps > Wishlist > Add to List > PDP - QA-5371
     Verify Element On Screen    ${btnAddWishlist}    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > Add to List > Create List - QA-5372 / QA-5374
-    [Tags]    QA-5372    QA-5374
+Apps > Wishlist > Add to List > Create List - QASA-461 / QASA-459
+    [Tags]    QASA-461    QASA-459
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -76,8 +76,8 @@ Apps > Wishlist > Add to List > Create List - QA-5372 / QA-5374
     Click Delete Wishlist
     [Teardown]    Tear Down
 
-Apps > Wishlist > Cart and Search Listings - QA-5299
-    [Tags]    QA-5299
+Apps > Wishlist > Cart and Search Listings - QASA-523
+    [Tags]    QASA-523
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -102,8 +102,8 @@ Apps > Wishlist > Cart and Search Listings - QA-5299
     Verify Text On Screen iOS    Item added to Wish List    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Limitations(25 Lists) - QA-5386
-    [Tags]    QA-5386
+Apps > Wishlist > List Limitations(25 Lists) - QASA-447
+    [Tags]    QASA-447
     [Setup]    Start Application
     Clear Environment
     Create Wishlists
@@ -116,8 +116,8 @@ Apps > Wishlist > List Limitations(25 Lists) - QA-5386
     Verify Text On Screen    You can not create more than 25 lists    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > Add to List > PDP > Out of stock - QA-8933
-    [Tags]    QA-8933
+Apps > Wishlist > Add to List > PDP > Out of stock - QASA-157
+    [Tags]    QASA-157
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -135,8 +135,8 @@ Apps > Wishlist > Add to List > PDP > Out of stock - QA-8933
     Verify Text On Screen    Add to List    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > Add to List > PDP > Tablet/iPad - QA-8934
-    [Tags]    QA-8934
+Apps > Wishlist > Add to List > PDP > Tablet/iPad - QASA-156
+    [Tags]    QASA-156
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -162,8 +162,8 @@ Apps > Wishlist > Add to List > PDP > Tablet/iPad - QA-8934
     Verify Element On Screen    ${btnAddWishlist}    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QA-8939
-    [Tags]    QA-8939
+Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QASA-154
+    [Tags]    QASA-154
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -191,8 +191,8 @@ Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QA-8939
     Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > PDP Add to List > Add to List(Change Recent List) - QA-8941
-    [Tags]    QA-8941
+Apps > Wishlist > PDP Add to List > Add to List(Change Recent List) - QASA-152
+    [Tags]    QASA-152
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -208,8 +208,8 @@ Apps > Wishlist > PDP Add to List > Add to List(Change Recent List) - QA-8941
     Verify Text On Screen    Item added to Wish List    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Limitations(250 items) > PDP - QA-8949
-    [Tags]    QA-8949
+Apps > Wishlist > List Limitations(250 items) > PDP - QASA-151
+    [Tags]    QASA-151
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL_Wishlists}    t@ke@!ot1234
@@ -222,8 +222,8 @@ Apps > Wishlist > List Limitations(250 items) > PDP - QA-8949
     Verify Text On Screen    You can not add more than 250 items to this list    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Default List - QA-8951
-    [Tags]    QA-8951
+Apps > Wishlist > My Lists > Default List - QASA-150
+    [Tags]    QASA-150
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -236,8 +236,8 @@ Apps > Wishlist > My Lists > Default List - QA-8951
     Check Text On Screen Not Android    Delete List
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Edit > Move to list - QA-9171
-    [Tags]    QA-9171
+Apps > Wishlist > List Details > Edit > Move to list - QASA-140
+    [Tags]    QASA-140
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -263,8 +263,8 @@ Apps > Wishlist > List Details > Edit > Move to list - QA-9171
     Verify Text On Screen    Item moved to Wish List    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > PDP Add to List > List Manager (Remove from multiple lists) - QA-10747
-    [Tags]    QA-10747
+Apps > Wishlist > PDP Add to List > List Manager (Remove from multiple lists) - QASA-20
+    [Tags]    QASA-20
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -295,8 +295,8 @@ Apps > Wishlist > PDP Add to List > List Manager (Remove from multiple lists) - 
     Verify Text On Screen    Item removed from multiple lists    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > PDP Add to List > List Manager - QA-5370
-    [Tags]    QA-5370
+Apps > Wishlist > PDP Add to List > List Manager - QASA-463
+    [Tags]    QASA-463
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -315,8 +315,8 @@ Apps > Wishlist > PDP Add to List > List Manager - QA-5370
     Verify Text On Screen    Item removed from Wish List    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Pagination - QA-5369
-    [Tags]    QA-5369
+Apps > Wishlist > My Lists > Pagination - QASA-464
+    [Tags]    QASA-464
     [Setup]    Start Application
     Clear Environment
     Create Wishlists
@@ -330,8 +330,8 @@ Apps > Wishlist > My Lists > Pagination - QA-5369
     Clear Environment
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Landing Page > Create List Tutorial - QA-5375
-    [Tags]    QA-5375
+Apps > Wishlist > My Lists > Landing Page > Create List Tutorial - QASA-458
+    [Tags]    QASA-458
     [Setup]    Install Application
     Close All Applications
     Start Application
@@ -349,8 +349,8 @@ Apps > Wishlist > My Lists > Landing Page > Create List Tutorial - QA-5375
     Click Add To Wishlist Only
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Delete List - QA-5376
-    [Tags]    QA-5376
+Apps > Wishlist > List Details > Delete List - QASA-457
+    [Tags]    QASA-457
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -368,8 +368,8 @@ Apps > Wishlist > List Details > Delete List - QA-5376
     Click Delete Wishlist
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Swipe Gestures > Onboarding - QA-5378
-    [Tags]    QA-5378
+Apps > Wishlist > My Lists > Swipe Gestures > Onboarding - QASA-455
+    [Tags]    QASA-455
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -385,8 +385,8 @@ Apps > Wishlist > My Lists > Swipe Gestures > Onboarding - QA-5378
     Click Delete Wishlist
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Empty List - QA-5379
-    [Tags]    QA-5379
+Apps > Wishlist > List Details > Empty List - QASA-454
+    [Tags]    QASA-454
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -408,8 +408,8 @@ Apps > Wishlist > List Details > Empty List - QA-5379
     Verify Text On Screen    Trending on Takealot    10s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Pagination - QA-5380
-    [Tags]    QA-5380
+Apps > Wishlist > List Details > Pagination - QASA-453
+    [Tags]    QASA-453
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL_Wishlists}    t@ke@!ot1234
@@ -419,8 +419,8 @@ Apps > Wishlist > List Details > Pagination - QA-5380
     Verify Text On Screen Scroll    Gosh Donoderm Moisture Gel    1s    ${windowScroll}    ${btnWishlistCart}
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Swipe Gestures - QA-5381
-    [Tags]    QA-5381
+Apps > Wishlist > List Details > Swipe Gestures - QASA-452
+    [Tags]    QASA-452
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -461,8 +461,8 @@ Apps > Wishlist > List Details > Swipe Gestures - QA-5381
     Click Wishlist Add To Cart
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Edit > Delete - QA-5383
-    [Tags]    QA-5383
+Apps > Wishlist > List Details > Edit > Delete - QASA-450
+    [Tags]    QASA-450
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -490,8 +490,8 @@ Apps > Wishlist > List Details > Edit > Delete - QA-5383
     Verify Element On Screen    ${btnWishlistCart}    15s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Rename List - QA-5387
-    [Tags]    QA-5387
+Apps > Wishlist > List Details > Rename List - QASA-446
+    [Tags]    QASA-446
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -508,8 +508,8 @@ Apps > Wishlist > List Details > Rename List - QA-5387
     Verify Text On Screen    AutoTestNow    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist (iOS) > My Lists > My Lists Landing Page - QA-5388
-    [Tags]    QA-5388
+Apps > Wishlist (iOS) > My Lists > My Lists Landing Page - QASA-445
+    [Tags]    QASA-445
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -523,8 +523,8 @@ Apps > Wishlist (iOS) > My Lists > My Lists Landing Page - QA-5388
     Verify Text On Screen    Wish List    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Limitations(250 items) > Move item - QA-9190
-    [Tags]    QA-9190
+Apps > Wishlist > List Limitations(250 items) > Move item - QASA-137
+    [Tags]    QASA-137
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -550,8 +550,8 @@ Apps > Wishlist > List Limitations(250 items) > Move item - QA-9190
     Verify Text On Screen    Limit reached    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Limitations(250 items) > PLP - QA-9191
-    [Tags]    QA-9191
+Apps > Wishlist > List Limitations(250 items) > PLP - QASA-136
+    [Tags]    QASA-136
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -564,8 +564,8 @@ Apps > Wishlist > List Limitations(250 items) > PLP - QA-9191
     Verify Text On Screen    Limit reached    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Product Card > out off stock - QA-9193
-    [Tags]    QA-9193
+Apps > Wishlist > List Details > Product Card > out off stock - QASA-134
+    [Tags]    QASA-134
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -577,8 +577,8 @@ Apps > Wishlist > List Details > Product Card > out off stock - QA-9193
     Verify Element On Screen Not    ${btnAddToCart}    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Onboarding - QA-9194
-    [Tags]    QA-9194
+Apps > Wishlist > List Details > Onboarding - QASA-133
+    [Tags]    QASA-133
     [Setup]    Install Application
     Close All Applications
     Start Application
@@ -607,8 +607,8 @@ Apps > Wishlist > List Details > Onboarding - QA-9194
     Click Menu Login
     [Teardown]    Tear Down
 
-Apps > Wishlist > Logged out user tests - QA-8940
-    [Tags]    QA-8940
+Apps > Wishlist > Logged out user tests - QASA-153
+    [Tags]    QASA-153
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -632,8 +632,8 @@ Apps > Wishlist > Logged out user tests - QA-8940
     Verify Element On Screen    ${btnLogin}    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Recommended For You - QA-8953
-    [Tags]    QA-8953
+Apps > Wishlist > My Lists > Recommended For You - QASA-148
+    [Tags]    QASA-148
     [Setup]    Start Application
     Clear Environment
     Create Wishlists
@@ -664,8 +664,8 @@ Apps > Wishlist > My Lists > Recommended For You - QA-8953
     Verify Text On Screen Scroll    Recommended for You    1s    ${windowScroll}    ${btnMoreOptions}
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Trending Now Widgets - QA-8954
-    [Tags]    QA-8954
+Apps > Wishlist > My Lists > Trending Now Widgets - QASA-147
+    [Tags]    QASA-147
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -679,8 +679,8 @@ Apps > Wishlist > My Lists > Trending Now Widgets - QA-8954
     Verify Text On Screen    This list is empty    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > List Component - QA-8952
-    [Tags]    QA-8952
+Apps > Wishlist > My Lists > List Component - QASA-149
+    [Tags]    QASA-149
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -702,8 +702,8 @@ Apps > Wishlist > My Lists > List Component - QA-8952
     Verify Text On Screen    ${query_result_CartProduct}    30s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Product Card - QA-5373
-    [Tags]    QA-5373
+Apps > Wishlist > List Details > Product Card - QASA-460
+    [Tags]    QASA-460
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -738,8 +738,8 @@ Apps > Wishlist > List Details > Product Card - QA-5373
     Verify Text On Screen    ${query_result_CartProductAuthor}    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Delete List > Tablet - QA-5384
-    [Tags]    QA-5384
+Apps > Wishlist > List Details > Delete List > Tablet - QASA-449
+    [Tags]    QASA-449
     [Setup]    Start Application
     Clear Environment
     Click Menu

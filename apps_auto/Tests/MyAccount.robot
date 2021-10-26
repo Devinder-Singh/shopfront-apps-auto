@@ -3,8 +3,8 @@ Default Tags      myaccount
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-8462
-    [Tags]    QA-8462
+Apps > Personal Details Parity > Update Personal Details - Mobile Number - QASA-239
+    [Tags]    QASA-239
     [Setup]    Start Application    ${False}
     Click Menu
     Click Menu Register
@@ -18,8 +18,8 @@ Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-84
     Verify Text On Screen    We will use this number to provide order status notifications via SMS    5s
     [Teardown]    Tear Down
 
-Apps > Personal Details Parity > Update Personal Details - Edit First & Last Name - QA-5341
-    [Tags]    QA-5341
+Apps > Personal Details Parity > Update Personal Details - Edit First & Last Name - QASA-486
+    [Tags]    QASA-486
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -39,8 +39,8 @@ Apps > Personal Details Parity > Update Personal Details - Edit First & Last Nam
     Verify Text On Screen    Please enter your last name    1s
     [Teardown]    Tear Down
 
-Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-5342
-    [Tags]    QA-5342
+Apps > Personal Details Parity > Update Personal Details - Mobile Number - QASA-485
+    [Tags]    QASA-485
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -54,8 +54,8 @@ Apps > Personal Details Parity > Update Personal Details - Mobile Number - QA-53
     Verify Text On Screen    Please enter a valid mobile number    5s
     [Teardown]    Tear Down
 
-Apps > Personal Details Parity > Update Personal Details - Password and Reset Password - QA-5335
-    [Tags]    QA-5335
+Apps > Personal Details Parity > Update Personal Details - Password and Reset Password - QASA-492
+    [Tags]    QASA-492
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -75,8 +75,8 @@ Apps > Personal Details Parity > Update Personal Details - Password and Reset Pa
     Verify Text On Screen    Your password has been successfully updated    30s
     [Teardown]    Tear Down
 
-Apps > Personal Details Parity > Update Personal Details - Business Details - QA-5336
-    [Tags]    QA-5336
+Apps > Personal Details Parity > Update Personal Details - Business Details - QASA-491
+    [Tags]    QASA-491
     [Setup]    Start Application    ${False}
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -90,8 +90,8 @@ Apps > Personal Details Parity > Update Personal Details - Business Details - QA
     Verify Text On Screen    Your business name and VAT number will be added to order invoices    1s
     [Teardown]    Tear Down
 
-Apps > Personal Details Parity > Update Personal Details - Email Address - QA-5337
-    [Tags]    QA-5337
+Apps > Personal Details Parity > Update Personal Details - Email Address - QASA-490
+    [Tags]    QASA-490
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -108,8 +108,8 @@ Apps > Personal Details Parity > Update Personal Details - Email Address - QA-53
     Verify Text On Screen    Your email address has been successfully updated    30s
     [Teardown]    Tear Down
 
-Apps > Personal Details Parity > Update Personal Details - Add/Edit Business Name & VAT - QA-5338
-    [Tags]    QA-5338
+Apps > Personal Details Parity > Update Personal Details - Add/Edit Business Name & VAT - QASA-489
+    [Tags]    QASA-489
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -121,8 +121,8 @@ Apps > Personal Details Parity > Update Personal Details - Add/Edit Business Nam
     Verify Text On Screen    Your business details have been successfully updated    30s
     [Teardown]    Tear Down
 
-Apps > Personal Details Parity > Update Personal Details - Email Address Field Validation - QA-5339
-    [Tags]    QA-5339
+Apps > Personal Details Parity > Update Personal Details - Email Address Field Validation - QASA-488
+    [Tags]    QASA-488
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -138,8 +138,8 @@ Apps > Personal Details Parity > Update Personal Details - Email Address Field V
     Verify Text On Screen    Email addresses do not match    30s
     [Teardown]    Tear Down
 
-Apps > Personal Details Parity > Update Personal Details - Add/Edit Mobile Number - QA-5340
-    [Tags]    QA-5340
+Apps > Personal Details Parity > Update Personal Details - Add/Edit Mobile Number - QASA-487
+    [Tags]    QASA-487
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -164,8 +164,8 @@ Apps > Personal Details Parity > Update Personal Details - Add/Edit Mobile Numbe
     Verify Text On Screen    Your mobile number has been successfully updated    30s
     [Teardown]    Tear Down
 
-Apps > My Account > Address Book > Delivery Address (with pre-saved addresses) - QA-5344
-    [Tags]    QA-5344
+Apps > My Account > Address Book > Delivery Address (with pre-saved addresses) - QASA-484
+    [Tags]    QASA-484
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -180,8 +180,8 @@ Apps > My Account > Address Book > Delivery Address (with pre-saved addresses) -
     Verify Text On Screen iOS    You don't have any addresses saved. Please add a Delivery Address    30s
     [Teardown]    Tear Down
 
-Apps > My Account > Address Book > Add Business Address > Street Suggestion - QA-5345
-    [Tags]    QA-5345
+Apps > My Account > Address Book > Add Business Address > Street Suggestion - QASA-483
+    [Tags]    QASA-483
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -222,8 +222,8 @@ Apps > My Account > Address Book > Add Business Address > Street Suggestion - QA
     Verify Text On Screen iOS    0723456778    1s
     [Teardown]    Tear Down
 
-Apps > My Account > Address Book > Add Residential Address > Street Suggestion - QA-5347
-    [Tags]    QA-5347
+Apps > My Account > Address Book > Add Residential Address > Street Suggestion - QASA-481
+    [Tags]    QASA-481
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -271,8 +271,8 @@ Apps > My Account > Address Book > Add Residential Address > Street Suggestion -
     Verify Text On Screen iOS    0723456778    1s
     [Teardown]    Tear Down
 
-Apps > My Account > Address Book > Delivery Address (with no saved addresses) - QA-9733
-    [Tags]    QA-9733
+Apps > My Account > Address Book > Delivery Address (with no saved addresses) - QASA-62
+    [Tags]    QASA-62
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -294,8 +294,8 @@ Apps > My Account > Address Book > Delivery Address (with no saved addresses) - 
     Verify Text On Screen iOS    You don't have any addresses saved. Please add a Delivery Address    30s
     [Teardown]    Tear Down
 
-Apps > My Account > Address Book > Delivery Address > Field Validations - QA-9734 / QA-9735
-    [Tags]    QA-9734    QA-9735
+Apps > My Account > Address Book > Delivery Address > Field Validations - QASA-61 / QASA-60
+    [Tags]    QASA-61    QASA-60
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -387,8 +387,8 @@ Apps > My Account > Address Book > Delivery Address > Field Validations - QA-973
     Verify Text On Screen iOS    0723456778    1s
     [Teardown]    Tear Down
 
-Apps > My Account > Address Book > Edit Address > Pin On Map (Outside SA) - QA-9736
-    [Tags]    QA-9736
+Apps > My Account > Address Book > Edit Address > Pin On Map (Outside SA) - QASA-59
+    [Tags]    QASA-59
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -419,8 +419,8 @@ Apps > My Account > Address Book > Edit Address > Pin On Map (Outside SA) - QA-9
     Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
     [Teardown]    Tear Down
 
-Apps > My Account > Address Book > Edit Address > Street Corrections (Residential) - QA-5346
-    [Tags]    QA-5346
+Apps > My Account > Address Book > Edit Address > Street Corrections (Residential) - QASA-482
+    [Tags]    QASA-482
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
@@ -461,8 +461,8 @@ Apps > My Account > Address Book > Edit Address > Street Corrections (Residentia
     Verify Text On Screen iOS    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    30s
     [Teardown]    Tear Down
 
-Apps > My Account > Address Book > Edit Address > Pin On Map - QA-5348
-    [Tags]    QA-5348
+Apps > My Account > Address Book > Edit Address > Pin On Map - QASA-480
+    [Tags]    QASA-480
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu

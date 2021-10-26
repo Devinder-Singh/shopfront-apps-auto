@@ -3,8 +3,8 @@ Default Tags      sponsored_ads_plp
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Sponsored Ads (PLP) > Sponsored Ad product rules - QA-6295
-    [Tags]    QA-6295
+Apps > Sponsored Ads (PLP) > Sponsored Ad product rules - QASA-338
+    [Tags]    QASA-338
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -48,8 +48,8 @@ Apps > Sponsored Ads (PLP) > Sponsored Ad product rules - QA-6295
     Verify Text On Screen    Sponsored    2s
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Product Card Components - QA-6324
-    [Tags]    QA-6324
+Apps > Sponsored Ads (PLP) > Product Card Components - QASA-328
+    [Tags]    QASA-328
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -94,8 +94,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components - QA-6324
     Verify Text On Screen    ${query_result_adProductStatus}    2s
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Product Card Components (Price/Price Range) - QA-6335
-    [Tags]    QA-6335
+Apps > Sponsored Ads (PLP) > Product Card Components (Price/Price Range) - QASA-327
+    [Tags]    QASA-327
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -129,8 +129,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Price/Price Range) - QA-63
     Verify Text On Screen iOS    Our List Price    1s
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Product Card Components (Add to Wishlist button) - QA-6336
-    [Tags]    QA-6336
+Apps > Sponsored Ads (PLP) > Product Card Components (Add to Wishlist button) - QASA-326
+    [Tags]    QASA-326
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -143,8 +143,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Add to Wishlist button) - 
     Click Product Grid View
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Product Card Components (Colour Swatches) - QA-6338
-    [Tags]    QA-6338
+Apps > Sponsored Ads (PLP) > Product Card Components (Colour Swatches) - QASA-324
+    [Tags]    QASA-324
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -160,8 +160,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Colour Swatches) - QA-6338
     Verify Text On Screen    ${query_result_adProductTitle}    2s
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Product Card Components (Stock) - QA-6340
-    [Tags]    QA-6340
+Apps > Sponsored Ads (PLP) > Product Card Components (Stock) - QASA-322
+    [Tags]    QASA-322
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -173,8 +173,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Stock) - QA-6340
     Verify Text On Screen    ${query_result_adProductStatus}    2s
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Product Card Components (Clickable/Tappable areas) - QA-6341
-    [Tags]    QA-6341
+Apps > Sponsored Ads (PLP) > Product Card Components (Clickable/Tappable areas) - QASA-321
+    [Tags]    QASA-321
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
@@ -193,8 +193,8 @@ Apps > Sponsored Ads (PLP) > Product Card Components (Clickable/Tappable areas) 
     Click Product Grid View
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PDP) > Product Card Layout - Liquor - QA-10550
-    [Tags]    QA-10550
+Apps > Sponsored Ads (PDP) > Product Card Layout - Liquor - QASA-23
+    [Tags]    QASA-23
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -203,8 +203,8 @@ Apps > Sponsored Ads (PDP) > Product Card Layout - Liquor - QA-10550
     Verify Product Search Alcohol Ad Notice
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Launching PLP from different screens - QA-6616
-    [Tags]    QA-6616
+Apps > Sponsored Ads (PLP) > Launching PLP from different screens - QASA-308
+    [Tags]    QASA-308
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -218,8 +218,8 @@ Apps > Sponsored Ads (PLP) > Launching PLP from different screens - QA-6616
     Click Product From Title    ${query_result_adProductTitle}
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PDP) > Product Card Layout - QA-6496
-    [Tags]    QA-6496
+Apps > Sponsored Ads (PDP) > Product Card Layout - QASA-315
+    [Tags]    QASA-315
     [Setup]    Start Application
     Click Home
     Click Search Home
@@ -234,8 +234,8 @@ Apps > Sponsored Ads (PDP) > Product Card Layout - QA-6496
     Check Text On Screen Not    You're seeing these ads based on the product's relevance to your product query
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PDP) > Sponsored Ad product rules - QA-6484
-    [Tags]    QA-6484
+Apps > Sponsored Ads (PDP) > Sponsored Ad product rules - QASA-319
+    [Tags]    QASA-319
     [Setup]    Start Application
     Click Home
     Click Search Home

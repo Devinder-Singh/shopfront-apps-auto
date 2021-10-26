@@ -3,8 +3,8 @@ Default Tags      cart
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Cart > Product Details > Variants - QA-5313
-    [Tags]    QA-5313
+Apps > Cart > Product Details > Variants - QASA-514
+    [Tags]    QASA-514
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -41,8 +41,8 @@ Apps > Cart > Product Details > Variants - QA-5313
     Verify Text On Screen    ${query_result_CartProductVariant}    30s
     [Teardown]    Tear Down
 
-Apps > Cart > Product Details > Non-Variant - QA-5315
-    [Tags]    QA-5315
+Apps > Cart > Product Details > Non-Variant - QASA-512
+    [Tags]    QASA-512
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -76,8 +76,8 @@ Apps > Cart > Product Details > Unboxed - QA-9935
     Verify Text On Screen    Takealot Unboxed Deal    30s
     [Teardown]    Tear Down
 
-Apps > Cart > Product Details > Pre-Orders, Voucher & Airtime - QA-9936
-    [Tags]    QA-9936
+Apps > Cart > Product Details > Pre-Orders, Voucher & Airtime - QASA-47
+    [Tags]    QASA-47
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -121,8 +121,8 @@ Apps > Cart > Product Details > Pre-Orders, Voucher & Airtime - QA-9936
     Verify Text On Screen Android    Pre-order: Ships    30s
     [Teardown]    Tear Down
 
-Apps > Cart > Product Details > COD Eligibility - QA-9937
-    [Tags]    QA-9937
+Apps > Cart > Product Details > COD Eligibility - QASA-46
+    [Tags]    QASA-46
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -157,8 +157,8 @@ Apps > Cart > Product Details > COD Eligibility - QA-9937
     Verify Text On Screen Android    This product is not eligible for Cash on Delivery (COD)    30s
     [Teardown]    Tear Down
 
-Apps > Cart > Promotions > Missed Promotions - QA-5311
-    [Tags]    QA-5311
+Apps > Cart > Promotions > Missed Promotions - QASA-516
+    [Tags]    QASA-516
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -201,8 +201,8 @@ Apps > Cart > Promotions > Missed Promotions - QA-5311
     Check Text On Screen Not    Missed promotion
     [Teardown]    Tear Down
 
-Apps > Cart > Promotions > Promotion Low Stock - QA-5312
-    [Tags]    QA-5312
+Apps > Cart > Promotions > Promotion Low Stock - QASA-515
+    [Tags]    QASA-515
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -215,8 +215,8 @@ Apps > Cart > Promotions > Promotion Low Stock - QA-5312
     Verify Text On Screen    LEFT AT    30s
     [Teardown]    Tear Down
 
-Apps > Cart > Empty Cart - QA-5308
-    [Tags]    QA-5308
+Apps > Cart > Empty Cart - QASA-518
+    [Tags]    QASA-518
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -241,8 +241,8 @@ Apps > Cart > Empty Cart - QA-5308
     Verify Element On Screen    ${btnCartContinueShopping}    2s
     [Teardown]    Tear Down
 
-Apps > Cart > Stock Status - QA-5309
-    [Tags]    QA-5309
+Apps > Cart > Stock Status - QASA-517
+    [Tags]    QASA-517
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -302,8 +302,8 @@ Apps > Cart > Stock Status - QA-5309
     Verify Text On Screen    Ships in 5 - 7 work days    2s
     [Teardown]    Tear Down
 
-Apps > Cart > Limitations - QA-5302
-    [Tags]    master    QA-5302
+Apps > Cart > Limitations - QASA-522
+    [Tags]    master    QASA-522
     [Setup]    Start Application
     Clear Environment
     Add Items To Cart Full
@@ -323,8 +323,8 @@ Apps > Cart > Limitations - QA-5302
     Click Checkout
     [Teardown]    Tear Down
 
-Apps > Cart > Note Notification - QA-5305
-    [Tags]    QA-5305
+Apps > Cart > Note Notification - QASA-520
+    [Tags]    QASA-520
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL_Cart}    test2
