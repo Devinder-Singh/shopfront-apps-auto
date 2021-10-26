@@ -20,15 +20,15 @@ Click Save Address
     Click Element    ${btnSaveAddress}
 
 Click Address Mobile Question
-    Wait Until Element Is Visible    ${btnAddressMobileQuestion}    30s
+    Wait Until Element Is Visible    ${btnAddressMobileQuestion}    ${MIN_TIMEOUT}
     Click Element    ${btnAddressMobileQuestion}
 
 Click Address Got It Thanks
-    Wait Until Element Is Visible    ${btnAddressGotItThanks}    30s
+    Wait Until Element Is Visible    ${btnAddressGotItThanks}    ${MIN_TIMEOUT}
     Click Element    ${btnAddressGotItThanks}
 
 Click Address Province
-    Wait Until Element Is Visible    ${txtAddressProvince}    30s
+    Wait Until Element Is Visible    ${txtAddressProvince}    ${MIN_TIMEOUT}
     Click Element    ${txtAddressProvince}
 
 Add Delivery Address
@@ -136,7 +136,7 @@ Add Delivery Address Business My Acc
 
 Edit Delivery Address On Map
     [Arguments]    ${street}
-    Wait Until Element Is Visible    ${txtSearchAddressOnMap}    30s
+    Wait Until Element Is Visible    ${txtSearchAddressOnMap}    ${MIN_TIMEOUT}
     Click Element    ${txtSearchAddressOnMap}
     Clear Text    ${txtSearchAddressOnMap}
     Input Text    ${txtSearchAddressOnMap}    ${street}
@@ -156,12 +156,12 @@ Edit Delivery Address On Map
     Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Click Element    ${lblAddresOption}
     Sleep    3s
 
-    Wait Until Element Is Visible    ${lblEditAddressMapLocation}    30s
+    Wait Until Element Is Visible    ${lblEditAddressMapLocation}    ${MIN_TIMEOUT}
     Click Element    ${lblEditAddressMapLocation}
 
 Edit Delivery Address On Map My Acc
     [Arguments]    ${street}
-    Wait Until Element Is Visible    ${txtSearchAddressOnMap}    30s
+    Wait Until Element Is Visible    ${txtSearchAddressOnMap}    ${MIN_TIMEOUT}
     Click Element    ${txtSearchAddressOnMap}
     Clear Text    ${txtSearchAddressOnMap}
     Input Text    ${txtSearchAddressOnMap}    ${street}
@@ -181,12 +181,12 @@ Edit Delivery Address On Map My Acc
     Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Click Element    ${lblAddresOptionMyAccMap}
     Sleep    3s
 
-    Wait Until Element Is Visible    ${lblEditAddressMapLocation}    30s
+    Wait Until Element Is Visible    ${lblEditAddressMapLocation}    ${MIN_TIMEOUT}
     Click Element    ${lblEditAddressMapLocation}
 
 Edit Delivery Address On Map My Acc Suburb
     [Arguments]    ${street}
-    Wait Until Element Is Visible    ${txtSearchAddressOnMap}    30s
+    Wait Until Element Is Visible    ${txtSearchAddressOnMap}    ${MIN_TIMEOUT}
     Click Element    ${txtSearchAddressOnMap}
     Clear Text    ${txtSearchAddressOnMap}
     Input Text    ${txtSearchAddressOnMap}    ${street}
@@ -206,7 +206,7 @@ Edit Delivery Address On Map My Acc Suburb
     Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='""'    Click Element    ${lblAddresOptionMyAccMapSuburb}
     Sleep    3s
 
-    Wait Until Element Is Visible    ${lblEditAddressMapLocation}    30s
+    Wait Until Element Is Visible    ${lblEditAddressMapLocation}    ${MIN_TIMEOUT}
     Click Element    ${lblEditAddressMapLocation}
 
 Edit Delivery Address Mobile Number
@@ -360,22 +360,22 @@ Edit Delivery Address Business My Acc
 
 Verify Edit Address Text
     [Arguments]    ${verifyText}
-    Wait Until Element Is Visible    ${lblEditAddress}    30s
-    Wait Until Page Contains    ${verifyText}    30s
+    Wait Until Element Is Visible    ${lblEditAddress}    ${MIN_TIMEOUT}
+    Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
 
 Verify Add Address Text
     [Arguments]    ${verifyText}
-    Wait Until Element Is Visible    ${lblAddAddress}    30s
-    Wait Until Page Contains    ${verifyText}    30s
+    Wait Until Element Is Visible    ${lblAddAddress}    ${MIN_TIMEOUT}
+    Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
 
 Verify Add Address Question Text
     [Arguments]    ${verifyText}
-    Wait Until Element Is Visible    ${btnAddressGotItThanks}    30s
+    Wait Until Element Is Visible    ${btnAddressGotItThanks}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
 
 Verify Add Address Province Text
     [Arguments]    ${verifyText}
-    Wait Until Element Is Visible    ${navAddressProvince}    30s
+    Wait Until Element Is Visible    ${navAddressProvince}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s

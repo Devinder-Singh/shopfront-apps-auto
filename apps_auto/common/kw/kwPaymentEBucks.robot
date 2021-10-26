@@ -3,7 +3,7 @@ Library           TalLibrary
 
 *** Keywords ***
 Fill In EBucks Credentials
-    Wait Until Element Is Visible    ${btnEBucksProceed}    30s
+    Wait Until Element Is Visible    ${btnEBucksProceed}    ${MIN_TIMEOUT}
 
     Clear Text    ${txtEBucksRSAID}
     Input Text    ${txtEBucksRSAID}    7301255232964
@@ -14,13 +14,13 @@ Fill In EBucks Credentials
     Click Element    ${btnEBucksProceed}
 
 Click EBucks Balance
-    Wait Until Element Is Visible    ${btnEBucksBalance}    30s
+    Wait Until Element Is Visible    ${btnEBucksBalance}    ${MIN_TIMEOUT}
     Click Element    ${btnEBucksBalance}
 
 Fill In EBucks Amount Form
     [Arguments]    ${amount}
 
-    Wait Until Element Is Visible    ${txtEBucksAmt}    30s
+    Wait Until Element Is Visible    ${txtEBucksAmt}    ${MIN_TIMEOUT}
 
     Clear Text    ${txtEBucksAmt}
     Input Text    ${txtEBucksAmt}    ${amount}
@@ -28,7 +28,7 @@ Fill In EBucks Amount Form
 
 Fill In EBUcks OTP Form
 
-    Wait Until Element Is Visible    ${txtEBucksOTP}    30s
+    Wait Until Element Is Visible    ${txtEBucksOTP}    ${MIN_TIMEOUT}
 
     Clear Text    ${txtEBucksOTP}
     Input Text    ${txtEBucksOTP}    1110

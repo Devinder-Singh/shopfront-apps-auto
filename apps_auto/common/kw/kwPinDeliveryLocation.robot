@@ -7,7 +7,7 @@ Click Map Address Option
     Click Element    ${txtMapAddressOption}
 
 Click Use This Location
-    Wait Until Element Is Visible    ${btnUseThisLocation}    30s
+    Wait Until Element Is Visible    ${btnUseThisLocation}    ${MIN_TIMEOUT}
     Click Element    ${btnUseThisLocation}
 #    Sleep    5s
 

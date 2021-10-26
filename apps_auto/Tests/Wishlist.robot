@@ -3,8 +3,8 @@ Default Tags      wishlist
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Wishlist > PDP Add to List > Add to List(Default List) - QA-5368
-    [Tags]    QA-5368
+Apps > Wishlist > PDP Add to List > Add to List(Default List) - QASA-465
+    [Tags]    QASA-465
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -14,15 +14,15 @@ Apps > Wishlist > PDP Add to List > Add to List(Default List) - QA-5368
     Click Search Home
     Search Product    Pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Add To Wishlist Only
     Click Wishlist Change
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Wish List    2s
     Verify Wishlist Checked
     [Teardown]    Tear Down
 
-Apps > Wishlist > Add to List > PDP - QA-5371
-    [Tags]    QA-5371
+Apps > Wishlist > Add to List > PDP - QASA-462
+    [Tags]    QASA-462
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -31,7 +31,7 @@ Apps > Wishlist > Add to List > PDP - QA-5371
     Click Search Home
     Search Product    Pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Verify Element On Screen    ${btnAddWishlist}    2s
     Close Application
     Start Application
@@ -39,15 +39,15 @@ Apps > Wishlist > Add to List > PDP - QA-5371
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Verify Element On Screen    ${btnPDPSelectOption}    30s
+    Verify Element On Screen    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Verify Element On Screen Not    ${btnAddWishlist}    2s
     Click Product Variant From API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Verify Element On Screen    ${btnAddWishlist}    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > Add to List > Create List - QA-5372 / QA-5374
-    [Tags]    QA-5372    QA-5374
+Apps > Wishlist > Add to List > Create List - QASA-461 / QASA-459
+    [Tags]    QASA-461    QASA-459
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -71,13 +71,13 @@ Apps > Wishlist > Add to List > Create List - QA-5372 / QA-5374
     Verify Text On Screen    List Created    20s
     Navigate to Wishlist Auto
     Click More Options Menu Android
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Rename List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Rename List    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delete List    1s
     Click Delete Wishlist
     [Teardown]    Tear Down
 
-Apps > Wishlist > Cart and Search Listings - QA-5299
-    [Tags]    QA-5299
+Apps > Wishlist > Cart and Search Listings - QASA-523
+    [Tags]    QASA-523
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -89,8 +89,8 @@ Apps > Wishlist > Cart and Search Listings - QA-5299
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Clear Environment
@@ -98,12 +98,12 @@ Apps > Wishlist > Cart and Search Listings - QA-5299
     Click Search Home
     Search Product    pencil
     Click Search Product Wishlist
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Limitations(25 Lists) - QA-5386
-    [Tags]    QA-5386
+Apps > Wishlist > List Limitations(25 Lists) - QASA-447
+    [Tags]    QASA-447
     [Setup]    Start Application
     Clear Environment
     Create Wishlists
@@ -116,15 +116,15 @@ Apps > Wishlist > List Limitations(25 Lists) - QA-5386
     Verify Text On Screen    You can not create more than 25 lists    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > Add to List > PDP > Out of stock - QA-8933
-    [Tags]    QA-8933
+Apps > Wishlist > Add to List > PDP > Out of stock - QASA-157
+    [Tags]    QASA-157
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    jean
     Click Variant Product from API
     Click Product Variant From API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -132,18 +132,18 @@ Apps > Wishlist > Add to List > PDP > Out of stock - QA-8933
     Search Product    jean
     Click Variant Product from API
     Click Product Disabled Variant From API
-    Verify Text On Screen    Add to List    30s
+    Verify Text On Screen    Add to List    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > Add to List > PDP > Tablet/iPad - QA-8934
-    [Tags]    QA-8934
+Apps > Wishlist > Add to List > PDP > Tablet/iPad - QASA-156
+    [Tags]    QASA-156
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    jean
     Click Variant Product from API
     Click Product Variant From API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -151,19 +151,19 @@ Apps > Wishlist > Add to List > PDP > Tablet/iPad - QA-8934
     Search Product    jean
     Click Variant Product from API
     Click Product Disabled Variant From API
-    Verify Text On Screen    Add to List    30s
+    Verify Text On Screen    Add to List    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    pencil
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
-    Verify Element On Screen    ${btnAddWishlist}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${btnAddWishlist}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QA-8939
-    [Tags]    QA-8939
+Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QASA-154
+    [Tags]    QASA-154
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -175,7 +175,7 @@ Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QA-8939
     Click Search Home
     Search Product    Pen
     Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Long Press    ${btnAddWishlist}
     Verify Text On Screen    Add to List    10s
     Click Option Wish List
@@ -188,11 +188,11 @@ Apps > Wishlist > PDP Add to List > Add to List(More than one list) - QA-8939
     Click Search Home
     Search Product    pencil
     Click Search Product Wishlist
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > PDP Add to List > Add to List(Change Recent List) - QA-8941
-    [Tags]    QA-8941
+Apps > Wishlist > PDP Add to List > Add to List(Change Recent List) - QASA-152
+    [Tags]    QASA-152
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -205,11 +205,11 @@ Apps > Wishlist > PDP Add to List > Add to List(Change Recent List) - QA-8941
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Limitations(250 items) > PDP - QA-8949
-    [Tags]    QA-8949
+Apps > Wishlist > List Limitations(250 items) > PDP - QASA-151
+    [Tags]    QASA-151
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL_Wishlists}    t@ke@!ot1234
@@ -222,8 +222,8 @@ Apps > Wishlist > List Limitations(250 items) > PDP - QA-8949
     Verify Text On Screen    You can not add more than 250 items to this list    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Default List - QA-8951
-    [Tags]    QA-8951
+Apps > Wishlist > My Lists > Default List - QASA-150
+    [Tags]    QASA-150
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -236,8 +236,8 @@ Apps > Wishlist > My Lists > Default List - QA-8951
     Check Text On Screen Not Android    Delete List
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Edit > Move to list - QA-9171
-    [Tags]    QA-9171
+Apps > Wishlist > List Details > Edit > Move to list - QASA-140
+    [Tags]    QASA-140
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -250,7 +250,7 @@ Apps > Wishlist > List Details > Edit > Move to list - QA-9171
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to 'AutoTestWishlist'    30s
+    Verify Text On Screen    Item added to 'AutoTestWishlist'    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -260,11 +260,11 @@ Apps > Wishlist > List Details > Edit > Move to list - QA-9171
     Click Wishlist Move Items
     Click Option Wish List
     Click Wishlist Move Items
-    Verify Text On Screen    Item moved to Wish List    30s
+    Verify Text On Screen    Item moved to Wish List    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > PDP Add to List > List Manager (Remove from multiple lists) - QA-10747
-    [Tags]    QA-10747
+Apps > Wishlist > PDP Add to List > List Manager (Remove from multiple lists) - QASA-20
+    [Tags]    QASA-20
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -277,11 +277,11 @@ Apps > Wishlist > PDP Add to List > List Manager (Remove from multiple lists) - 
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to 'AutoTestWishlist'    30s
+    Verify Text On Screen    Item added to 'AutoTestWishlist'    ${MIN_TIMEOUT}
     Click Add To Wishlist Only
     Click Option Wish List
     Click Save Wishlists
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -292,11 +292,11 @@ Apps > Wishlist > PDP Add to List > List Manager (Remove from multiple lists) - 
     Click Option Wish List
     Click Option AutoTestWishlist
     Click Save Wishlists
-    Verify Text On Screen    Item removed from multiple lists    30s
+    Verify Text On Screen    Item removed from multiple lists    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > PDP Add to List > List Manager - QA-5370
-    [Tags]    QA-5370
+Apps > Wishlist > PDP Add to List > List Manager - QASA-463
+    [Tags]    QASA-463
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -306,17 +306,17 @@ Apps > Wishlist > PDP Add to List > List Manager - QA-5370
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Click Add To Wishlist Only
     Click Option Wish List
     Verify Text On Screen    Add to List    2s
     Verify Element On Screen    ${btnWishlistAdd}    2s
     Click Save Wishlists
-    Verify Text On Screen    Item removed from Wish List    30s
+    Verify Text On Screen    Item removed from Wish List    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Pagination - QA-5369
-    [Tags]    QA-5369
+Apps > Wishlist > My Lists > Pagination - QASA-464
+    [Tags]    QASA-464
     [Setup]    Start Application
     Clear Environment
     Create Wishlists
@@ -330,8 +330,8 @@ Apps > Wishlist > My Lists > Pagination - QA-5369
     Clear Environment
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Landing Page > Create List Tutorial - QA-5375
-    [Tags]    QA-5375
+Apps > Wishlist > My Lists > Landing Page > Create List Tutorial - QASA-458
+    [Tags]    QASA-458
     [Setup]    Install Application
     Close All Applications
     Start Application
@@ -349,8 +349,8 @@ Apps > Wishlist > My Lists > Landing Page > Create List Tutorial - QA-5375
     Click Add To Wishlist Only
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Delete List - QA-5376
-    [Tags]    QA-5376
+Apps > Wishlist > List Details > Delete List - QASA-457
+    [Tags]    QASA-457
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -368,8 +368,8 @@ Apps > Wishlist > List Details > Delete List - QA-5376
     Click Delete Wishlist
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Swipe Gestures > Onboarding - QA-5378
-    [Tags]    QA-5378
+Apps > Wishlist > My Lists > Swipe Gestures > Onboarding - QASA-455
+    [Tags]    QASA-455
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -385,31 +385,31 @@ Apps > Wishlist > My Lists > Swipe Gestures > Onboarding - QA-5378
     Click Delete Wishlist
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Empty List - QA-5379
-    [Tags]    QA-5379
+Apps > Wishlist > List Details > Empty List - QASA-454
+    [Tags]    QASA-454
     [Setup]    Start Application
     Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Home WishList
-    Verify Text On Screen    This list is empty    30s
+    Verify Text On Screen    This list is empty    ${MIN_TIMEOUT}
     Click Wishlist Continue Shopping
     Click Search Home
     Close Application
     Start Application
     Click Home
     Click Home WishList
-    Verify Text On Screen    Trending on Takealot    30s
+    Verify Text On Screen    Trending on Takealot    ${MIN_TIMEOUT}
     Click Product Trending
-    Verify Element On Screen    ${btnAddToCart}    30s
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Back Android
     Click Back iOS    Wish List
     Verify Text On Screen    Trending on Takealot    10s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Pagination - QA-5380
-    [Tags]    QA-5380
+Apps > Wishlist > List Details > Pagination - QASA-453
+    [Tags]    QASA-453
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL_Wishlists}    t@ke@!ot1234
@@ -419,8 +419,8 @@ Apps > Wishlist > List Details > Pagination - QA-5380
     Verify Text On Screen Scroll    Gosh Donoderm Moisture Gel    1s    ${windowScroll}    ${btnWishlistCart}
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Swipe Gestures - QA-5381
-    [Tags]    QA-5381
+Apps > Wishlist > List Details > Swipe Gestures - QASA-452
+    [Tags]    QASA-452
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -435,7 +435,7 @@ Apps > Wishlist > List Details > Swipe Gestures - QA-5381
     Click Home
     Click Wishlist Nav Bar
     Navigate to Wishlist Auto
-    Verify Element On Screen    ${btnWishlistCart}    30s
+    Verify Element On Screen    ${btnWishlistCart}    ${MIN_TIMEOUT}
     Click Wishlist Edit
     Select Wishlist Item
     Click Wishlist Move to List
@@ -448,7 +448,7 @@ Apps > Wishlist > List Details > Swipe Gestures - QA-5381
     Click Home
     Click Wishlist Nav Bar
     Navigate to Wishlist Auto
-    Verify Element On Screen    ${btnWishlistCart}    30s
+    Verify Element On Screen    ${btnWishlistCart}    ${MIN_TIMEOUT}
     Click Wishlist Edit
     Select Wishlist Item
     Click Wishlist Delete Items
@@ -461,8 +461,8 @@ Apps > Wishlist > List Details > Swipe Gestures - QA-5381
     Click Wishlist Add To Cart
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Edit > Delete - QA-5383
-    [Tags]    QA-5383
+Apps > Wishlist > List Details > Edit > Delete - QASA-450
+    [Tags]    QASA-450
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -477,7 +477,7 @@ Apps > Wishlist > List Details > Edit > Delete - QA-5383
     Click Home
     Click Wishlist Nav Bar
     Navigate to Wishlist Auto
-    Verify Element On Screen    ${btnWishlistCart}    30s
+    Verify Element On Screen    ${btnWishlistCart}    ${MIN_TIMEOUT}
     Click Wishlist Edit
     Click Back Android
     Click Delete Wishlist Items Cancel iOS
@@ -490,8 +490,8 @@ Apps > Wishlist > List Details > Edit > Delete - QA-5383
     Verify Element On Screen    ${btnWishlistCart}    15s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Rename List - QA-5387
-    [Tags]    QA-5387
+Apps > Wishlist > List Details > Rename List - QASA-446
+    [Tags]    QASA-446
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -505,11 +505,11 @@ Apps > Wishlist > List Details > Rename List - QA-5387
     Click More Options Menu Android
     Click Rename Wishlist
     Edit and Save Wishlist
-    Verify Text On Screen    AutoTestNow    30s
+    Verify Text On Screen    AutoTestNow    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist (iOS) > My Lists > My Lists Landing Page - QA-5388
-    [Tags]    QA-5388
+Apps > Wishlist (iOS) > My Lists > My Lists Landing Page - QASA-445
+    [Tags]    QASA-445
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -519,12 +519,12 @@ Apps > Wishlist (iOS) > My Lists > My Lists Landing Page - QA-5388
     Click Create Wishlist
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen    AutoTestWishlist    30s
+    Verify Text On Screen    AutoTestWishlist    ${MIN_TIMEOUT}
     Verify Text On Screen    Wish List    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Limitations(250 items) > Move item - QA-9190
-    [Tags]    QA-9190
+Apps > Wishlist > List Limitations(250 items) > Move item - QASA-137
+    [Tags]    QASA-137
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -537,7 +537,7 @@ Apps > Wishlist > List Limitations(250 items) > Move item - QA-9190
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to 'AutoTestWishlist'    30s
+    Verify Text On Screen    Item added to 'AutoTestWishlist'    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -547,11 +547,11 @@ Apps > Wishlist > List Limitations(250 items) > Move item - QA-9190
     Click Wishlist Move Items
     Click Option Wish List
     Click Wishlist Move Items
-    Verify Text On Screen    Limit reached    30s
+    Verify Text On Screen    Limit reached    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Limitations(250 items) > PLP - QA-9191
-    [Tags]    QA-9191
+Apps > Wishlist > List Limitations(250 items) > PLP - QASA-136
+    [Tags]    QASA-136
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -561,11 +561,11 @@ Apps > Wishlist > List Limitations(250 items) > PLP - QA-9191
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Text On Screen    Limit reached    30s
+    Verify Text On Screen    Limit reached    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Product Card > out off stock - QA-9193
-    [Tags]    QA-9193
+Apps > Wishlist > List Details > Product Card > out off stock - QASA-134
+    [Tags]    QASA-134
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -574,11 +574,11 @@ Apps > Wishlist > List Details > Product Card > out off stock - QA-9193
     Click Search Home
     Search Product    shirt
     Click Product from API
-    Verify Element On Screen Not    ${btnAddToCart}    30s
+    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Onboarding - QA-9194
-    [Tags]    QA-9194
+Apps > Wishlist > List Details > Onboarding - QASA-133
+    [Tags]    QASA-133
     [Setup]    Install Application
     Close All Applications
     Start Application
@@ -607,8 +607,8 @@ Apps > Wishlist > List Details > Onboarding - QA-9194
     Click Menu Login
     [Teardown]    Tear Down
 
-Apps > Wishlist > Logged out user tests - QA-8940
-    [Tags]    QA-8940
+Apps > Wishlist > Logged out user tests - QASA-153
+    [Tags]    QASA-153
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -618,22 +618,22 @@ Apps > Wishlist > Logged out user tests - QA-8940
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Element On Screen    ${btnLogin}    30s
+    Verify Element On Screen    ${btnLogin}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Search Product    Pencil
     Click Search Product Wishlist
-    Verify Element On Screen    ${btnLogin}    30s
+    Verify Element On Screen    ${btnLogin}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Home Wishlist Icon
-    Verify Element On Screen    ${btnLogin}    30s
+    Verify Element On Screen    ${btnLogin}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Recommended For You - QA-8953
-    [Tags]    QA-8953
+Apps > Wishlist > My Lists > Recommended For You - QASA-148
+    [Tags]    QASA-148
     [Setup]    Start Application
     Clear Environment
     Create Wishlists
@@ -644,12 +644,12 @@ Apps > Wishlist > My Lists > Recommended For You - QA-8953
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to    30s
+    Verify Text On Screen    Item added to    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen    DEFAULT    30s
+    Verify Text On Screen    DEFAULT    ${MIN_TIMEOUT}
     Verify Text On Screen Scroll    Recommended for You    1s    ${windowScroll}    ${btnWishlistItems}
     Close Application
     Start Application
@@ -664,23 +664,23 @@ Apps > Wishlist > My Lists > Recommended For You - QA-8953
     Verify Text On Screen Scroll    Recommended for You    1s    ${windowScroll}    ${btnMoreOptions}
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > Trending Now Widgets - QA-8954
-    [Tags]    QA-8954
+Apps > Wishlist > My Lists > Trending Now Widgets - QASA-147
+    [Tags]    QASA-147
     [Setup]    Start Application
     Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen    DEFAULT    30s
-    Verify Text On Screen    Trending on Takealot    30s
+    Verify Text On Screen    DEFAULT    ${MIN_TIMEOUT}
+    Verify Text On Screen    Trending on Takealot    ${MIN_TIMEOUT}
     Navigate to Wishlist Auto
-    Verify Text On Screen    Trending on Takealot    30s
-    Verify Text On Screen    This list is empty    30s
+    Verify Text On Screen    Trending on Takealot    ${MIN_TIMEOUT}
+    Verify Text On Screen    This list is empty    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > My Lists > List Component - QA-8952
-    [Tags]    QA-8952
+Apps > Wishlist > My Lists > List Component - QASA-149
+    [Tags]    QASA-149
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -690,20 +690,20 @@ Apps > Wishlist > My Lists > List Component - QA-8952
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Home WishList Only
-    Verify Text On Screen    DEFAULT    30s
-    Verify Text On Screen    Wish List    30s
-    Verify Text On Screen    1 item    30s
+    Verify Text On Screen    DEFAULT    ${MIN_TIMEOUT}
+    Verify Text On Screen    Wish List    ${MIN_TIMEOUT}
+    Verify Text On Screen    1 item    ${MIN_TIMEOUT}
     Navigate to Wishlist
-    Verify Text On Screen    ${query_result_CartProduct}    30s
+    Verify Text On Screen    ${query_result_CartProduct}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Product Card - QA-5373
-    [Tags]    QA-5373
+Apps > Wishlist > List Details > Product Card - QASA-460
+    [Tags]    QASA-460
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -713,12 +713,12 @@ Apps > Wishlist > List Details > Product Card - QA-5373
     Search Product    Pencil
     Click Product from API
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Home WishList
-    Verify Text On Screen    ${query_result_CartProduct}    30s
+    Verify Text On Screen    ${query_result_CartProduct}    ${MIN_TIMEOUT}
     Verify Text On Screen    ${query_result_CartProductPrice}    2s
     Verify Text On Screen    Ships in 5 - 7 work days    2s
     Click Wishlist Add To Cart
@@ -732,14 +732,14 @@ Apps > Wishlist > List Details > Product Card - QA-5373
     Click Product from API
     Get Product Author from PLID
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    30s
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Click Wishlist
-    Verify Text On Screen    ${query_result_CartProduct}    30s
+    Verify Text On Screen    ${query_result_CartProduct}    ${MIN_TIMEOUT}
     Verify Text On Screen    ${query_result_CartProductAuthor}    2s
     [Teardown]    Tear Down
 
-Apps > Wishlist > List Details > Delete List > Tablet - QA-5384
-    [Tags]    QA-5384
+Apps > Wishlist > List Details > Delete List > Tablet - QASA-449
+    [Tags]    QASA-449
     [Setup]    Start Application
     Clear Environment
     Click Menu
