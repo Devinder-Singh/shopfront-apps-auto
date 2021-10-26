@@ -40,9 +40,9 @@ Search and Press Enter
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${searchiOS}
 
 Click Search Recent
-    Wait Until Element Is Visible    ${btnSearchRecent}    30s
+    Wait Until Element Is Visible    ${btnSearchRecent}    ${MIN_TIMEOUT}
     Click Element    ${btnSearchRecent}
 
 Click Search Trending
-    Wait Until Element Is Visible    ${btnSearchTrending}    30s
+    Wait Until Element Is Visible    ${btnSearchTrending}    ${MIN_TIMEOUT}
     Click Element    ${btnSearchTrending}
