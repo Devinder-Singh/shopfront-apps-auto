@@ -142,6 +142,16 @@ ${returnSelectAddressDeleteDialogConfirmationButton}    ${EMPTY}
 ${returnSelectPickupPointItemTitle}    ${EMPTY}
 ${returnSelectPickupPointItemSubtitle}    ${EMPTY}
 ${returnSelectPickupPointItemInfoButton}    ${EMPTY}
+${returnSelectPickupPointFilterChangeButton}    ${EMPTY}
+${returnSelectPickupPointProvinceTitle}    ${EMPTY}
+
+${returnSelectPickupPointInfoMap}    ${EMPTY}
+${returnSelectPickupPointInfoTPPName}    ${EMPTY}
+${returnSelectPickupPointInfoTPPProvince}    ${EMPTY}
+${returnSelectPickupPointInfoTPPAddress}    ${EMPTY}
+${returnSelectPickupPointInfoBusinessHourContainer}    ${EMPTY}
+${returnSelectPickupPointInfoNotification}    ${EMPTY}
+${returnSelectPickupPointCallToAction}    ${EMPTY}
 
 ${returnContactDetailsNameField}    ${EMPTY}
 ${returnContactDetailsMobileNumberField}    ${EMPTY}
