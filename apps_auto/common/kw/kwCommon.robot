@@ -85,7 +85,7 @@ Verify Price On Screen
     Run Keyword If    ${cnt}==5    Verify Text On Screen    ${resultFinal}    ${delay}
 
 Verify Text On Screen
-    [Arguments]    ${verifyText}    ${delay}
+    [Arguments]    ${verifyText}    ${delay}=5s
     Wait Until Page Contains    ${verifyText}    ${delay}
 
 Verify Text Element On Screen iOS
@@ -273,15 +273,17 @@ Verify Element On Screen
     Wait Until Page Contains Element    ${verifyElement}    ${delay}
 
 Verify Element On Screen Not
-    [Arguments]    ${verifyElement}    ${delay}
+    [Arguments]    ${verifyElement}    ${delay}=5s
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${verifyElement}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${verifyElement}']
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${delay}
     Should Be True    ${chkTextSuccess}==${False}
 
+#TODO Make 1 keyword
 Verify Element On Screen iOS
     [Arguments]    ${verifyElement}    ${delay}
     Run Keyword If    '${PLATFORM_NAME}'=='iOS'    Wait Until Page Contains Element    ${verifyElement}    ${delay}
 
+#TODO Make 1 keyword
 Verify Element On Screen Android
     [Arguments]    ${verifyElement}    ${delay}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains Element    ${verifyElement}    ${delay}
@@ -304,8 +306,6 @@ Click Back Android
 Click Window Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${windowScroll}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${windowScroll}
-
-#    Sleep    2s
 
 Click Back iOS
     [Arguments]    ${elementID}
