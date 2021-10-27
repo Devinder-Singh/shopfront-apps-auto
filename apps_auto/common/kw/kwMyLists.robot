@@ -6,6 +6,7 @@ Navigate to Wishlist
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishListScreen}
+    Wait Until Element Is Visible    ${btnWishlistItems}
     Click Element    ${btnWishlistItems}
 
 Click Create Wishlist
