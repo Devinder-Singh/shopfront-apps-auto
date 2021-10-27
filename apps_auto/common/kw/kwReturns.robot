@@ -392,6 +392,17 @@ Verify Return Request Contact Details Section
     Element Text Should Be    ${returnRequestContactDetailSelectorTitle}    SMS notification for this return will be sent to:
     Element Text Should Be    ${returnRequestContactDetailSelectorButton}    CHANGE
 
+Verify Return Contact Details Input Fields
+    [Arguments]    ${expectedFullName}    ${expectedMobileNumber}
+
+    Element Text Should Be    ${returnContactDetailsNameField}    ${expectedFullName}
+    Element Text Should Be    ${returnContactDetailsMobileNumberField}    ${expectedMobileNumber}
+
+Verify Return Request Contact Details Info
+    [Arguments]    ${expectedContactDetailInfo}
+
+    Element Text Should Be    ${returnRequestContactDetailSelectorSubtitle}    ${expectedContactDetailInfo}
+
 Verify Return Request Loading State Not Visible
     Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    30s
 
@@ -525,6 +536,23 @@ Update Incomplete Address
     Sleep    3s
     Swipe Up    ${windowScroll}
     Click Save Address
+
+Clear Return Contact Details Input Fields
+    Clear Text    ${returnContactDetailsNameField}
+    Clear Text    ${returnContactDetailsMobileNumberField}
+
+Verify Return Contact Details Input Field Validation
+    [Arguments]    ${expectedNameValidation}    ${expectedMobileNumberValidation}
+
+    Verify Text On Screen    ${expectedNameValidation}    30s
+    Verify Text On Screen    ${expectedMobileNumberValidation}    30s
+
+Edit Return Contact Details Input
+    [Arguments]    ${expectedName}    ${expectedMobileNumber}
+
+    Clear Return Contact Details Input Fields
+    Input Text    ${returnContactDetailsNameField}    ${expectedName}
+    Input Text    ${returnContactDetailsMobileNumberField}    ${expectedMobileNumber}
 
 Add Liquor Return Item To Return Request
     Click Returns Call To Action Button

@@ -111,6 +111,7 @@ ${returnRequestDeliveryMethodAddressDetailText}    ${EMPTY}
 
 ${returnRequestContactDetailSelector}    ${EMPTY}
 ${returnRequestContactDetailSelectorTitle}    ${EMPTY}
+${returnRequestContactDetailSelectorSubtitle}    ${EMPTY}
 ${returnRequestContactDetailSelectorButton}    ${EMPTY}
 
 ${returnRequestEmptyState}    ${EMPTY}
@@ -141,5 +142,8 @@ ${returnSelectAddressDeleteDialogConfirmationButton}    ${EMPTY}
 ${returnSelectPickupPointItemTitle}    ${EMPTY}
 ${returnSelectPickupPointItemSubtitle}    ${EMPTY}
 ${returnSelectPickupPointItemInfoButton}    ${EMPTY}
+
+${returnContactDetailsNameField}    ${EMPTY}
+${returnContactDetailsMobileNumberField}    ${EMPTY}
 
 ${btnReturnsCallToAction}    ${EMPTY}

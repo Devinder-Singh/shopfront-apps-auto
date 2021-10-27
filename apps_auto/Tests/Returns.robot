@@ -714,3 +714,34 @@ Apps > SS Returns > Request a Return > Select Address > Incomplete Address > QAS
     Scroll To Return Request Delivery Method Address
     Verify Return Request Delivery Method Address Title
     [Teardown]    Tear Down
+
+Apps > SS Returns > SMS Contact Details (Collect) > QASA-258
+    [Tags]    data    QASA-258
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+3164561@take2.co.za    test
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Return Method Address
+    Click Return Select Address Item
+    Verify Return Request Loading State Not Visible
+    Scroll To Return Request Contact Detail Section
+    Verify Return Request Contact Details Section
+    Verify Return Request Contact Details Info    Dedrick: +27 79 739 0806
+    Click Return Request Contact Details Selector
+    Verify Toolbar Title    Contact Details
+    Verify Return Contact Details Input Fields    Dedrick    797390806
+    Clear Return Contact Details Input Fields
+    Click Returns Call To Action Button
+    Verify Return Contact Details Input Field Validation    Please enter a Full Name    Please enter a valid Mobile Number
+    Edit Return Contact Details Input    Tester Residential    744404494
+    Click Returns Call To Action Button
+    Sleep    5s
+    Verify Toolbar Title    Log Return Request
+    Verify Return Request Loading State Not Visible
+    Scroll To Return Request Contact Detail Section
+    Verify Return Request Contact Details Section
+    Verify Return Request Contact Details Info    Tester Residential: +27 74 440 4494
+    [Teardown]    Tear Down

@@ -111,6 +111,7 @@ ${returnRequestDeliveryMethodAddressDetailText}    id=${APP_PACKAGE}:id/returns_
 
 ${returnRequestContactDetailSelector}    id=${APP_PACKAGE}:id/returnMethodContactDetails
 ${returnRequestContactDetailSelectorTitle}    xpath=//*[contains(@resource-id, 'returnMethodContactDetails')]//android.widget.TextView[contains(@resource-id, 'returns_return_method_selector_title')]
+${returnRequestContactDetailSelectorSubtitle}    xpath=//*[contains(@resource-id, 'returnMethodContactDetails')]//android.widget.TextView[contains(@resource-id, 'returns_return_method_selector_subtitle')]
 ${returnRequestContactDetailSelectorButton}    xpath=//*[contains(@resource-id, 'returnMethodContactDetails')]//android.widget.Button[contains(@resource-id, 'returns_return_method_selector_action_option')]
 
 ${returnRequestEmptyState}    xpath=//android.widget.ImageView[@content-desc="empty return items"]
@@ -141,5 +142,8 @@ ${returnSelectAddressDeleteDialogConfirmationButton}    id=android:id/button1
 ${returnSelectPickupPointItemTitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_title
 ${returnSelectPickupPointItemSubtitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_subtitle
 ${returnSelectPickupPointItemInfoButton}    id=${APP_PACKAGE}:id/returns_pickup_point_item_info
+
+${returnContactDetailsNameField}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${returnContactDetailsMobileNumberField}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption
