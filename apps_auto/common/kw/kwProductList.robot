@@ -33,7 +33,8 @@ Click Product Trending
     Click Close Ad
 
 Click Product from API
-    ${txtProduct}=    Get Product to Add To Cart
+    [Arguments]    ${itemIndex}=1
+    ${txtProduct}=    Get Product to Add To Cart    ${itemIndex}
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 

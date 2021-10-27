@@ -169,6 +169,7 @@ Get Address Coordinates
     Should Be True    '${results_latitude}'=='-33.9379687'
 
 Get Product to Add To Cart
+    [Arguments]    ${itemIndex}
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
@@ -182,13 +183,14 @@ Get Product to Add To Cart
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${results_title}[${index}]'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
         Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
         Set Global Variable    ${query_result_CartProductPrice}    ${results_price}[${index}]
-        Exit For Loop If    '${result}'=='True'
+        Exit For Loop If    '${result}'=='True' and ${itemIndex}==1
+        IF    '${result}'=='True'
+            ${itemIndex}=    Evaluate    ${itemIndex} - 1
+        END   
         ${index}=    Evaluate    ${index} + 1
     END
-
     ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
     Set Global Variable    ${query_result_CartProductPLID}    ${results_variant}
-
     [return]    ${searchResult}
 
 Get Sponsored Product Detail

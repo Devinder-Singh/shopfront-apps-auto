@@ -121,7 +121,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Home
     Click Search Home
     Search Product    Televisio
-    Click Product from API
+    Click Product from API    3
     Click Add To Cart
     Click Go To Cart
     Click Checkout
