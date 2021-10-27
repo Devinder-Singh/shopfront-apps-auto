@@ -46,7 +46,3 @@ Click Back Screen
 
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${navBackiOS}    30s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${navBackiOS}
-
-Verify Element On Screen Android
-    [Arguments]    ${verifyElement}    ${delay}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains Element    ${verifyElement}    ${delay}
