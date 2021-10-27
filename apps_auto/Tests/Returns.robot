@@ -747,7 +747,7 @@ Apps > SS Returns > SMS Contact Details (Collect) > QASA-258
     [Teardown]    Tear Down
 
 Apps > SS Returns > SMS Contact Details (Drop-Off) > QASA-65
-    [Tags]    data    QASA-258
+    [Tags]    data    QASA-65
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -763,7 +763,7 @@ Apps > SS Returns > SMS Contact Details (Drop-Off) > QASA-65
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Takealot Pickup Point > QASA-410
-    [Tags]    data    QASA-258
+    [Tags]    data    QASA-410
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -796,4 +796,37 @@ Apps > SS Returns > Request a Return > Select Takealot Pickup Point > QASA-410
     Scroll To Return Request Delivery Method Selector
     Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
     Verify Returns Call To Action Title    ADD CONTACT DETAILS
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Return Request Submitted > Success (Drop Off) > QASA-407
+    [Tags]    data    QASA-407
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+738292@take2.co.za    test
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Delivery Method Pickup Point Option
+    Click Return Select Delivery Method Pickup Point Item
+    Click Returns Call To Action Button
+    Edit Return Contact Details Input    Tester Residential    744404494
+    Click Returns Call To Action Button
+    Sleep    5s
+    Verify Return Success Flow From Return Request
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Return Request Submitted > Success (Collect) > QASA-263
+    [Tags]    data    QASA-263
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+738292@take2.co.za    test
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Return Method Address
+    Click Return Select Address Item
+    Sleep    5s
+    Verify Return Success Flow From Return Request
     [Teardown]    Tear Down

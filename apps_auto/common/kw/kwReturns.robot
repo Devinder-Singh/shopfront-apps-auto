@@ -591,6 +591,34 @@ Edit Return Contact Details Input
     Input Text    ${returnContactDetailsNameField}    ${expectedName}
     Input Text    ${returnContactDetailsMobileNumberField}    ${expectedMobileNumber}
 
+Verify Return Success Details
+    Wait Until Element Is Visible    ${returnSuccessIcon}    ${MIN_TIMEOUT}
+
+    Wait Until Element Is Visible    ${returnSuccessTitle}    ${MIN_TIMEOUT}
+    Element Text Should Be    ${returnSuccessTitle}    Return Request Submitted
+
+    Wait Until Element Is Visible    ${returnSuccessSubtitle}    ${MIN_TIMEOUT}
+    Element Should Contain Text    ${returnSuccessSubtitle}    Reference: MRRN
+
+    Wait Until Element Is Visible    ${returnSuccessImageContainer}    ${MIN_TIMEOUT}
+
+    Wait Until Element Is Visible    ${returnSuccessTrackButton}    ${MIN_TIMEOUT}
+    Element Text Should Be    ${returnSuccessTrackButton}    TRACK RETURN
+
+Click Return Success Track
+    Click Element    ${returnSuccessTrackButton}
+
+Verify Return Success Flow From Return Request
+    Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
+    Click Returns Call To Action Button
+    Sleep    5s
+    Verify Toolbar Title    Return Request Submitted
+    Verify Return Success Details
+    Click Return Success Track
+    Sleep    1s
+    Verify Toolbar Title    Returns
+
+
 Add Liquor Return Item To Return Request
     Click Returns Call To Action Button
     Sleep    5s

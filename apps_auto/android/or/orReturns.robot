@@ -156,4 +156,10 @@ ${returnSelectPickupPointCallToAction}    id=${APP_PACKAGE}:id/checkout_select_c
 ${returnContactDetailsNameField}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 ${returnContactDetailsMobileNumberField}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 
+${returnSuccessIcon}    id=${APP_PACKAGE}:id/returns_success_image
+${returnSuccessTitle}    id=${APP_PACKAGE}:id/returns_success_title
+${returnSuccessSubtitle}    id=${APP_PACKAGE}:id/returns_success_subtitle
+${returnSuccessImageContainer}    id=${APP_PACKAGE}:id/returns_success_image_container
+${returnSuccessTrackButton}    id=${APP_PACKAGE}:id/return_success_track_btn
+
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption

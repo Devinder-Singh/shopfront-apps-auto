@@ -156,4 +156,10 @@ ${returnSelectPickupPointCallToAction}    ${EMPTY}
 ${returnContactDetailsNameField}    ${EMPTY}
 ${returnContactDetailsMobileNumberField}    ${EMPTY}
 
+${returnSuccessIcon}    ${EMPTY}
+${returnSuccessTitle}    ${EMPTY}
+${returnSuccessSubtitle}    ${EMPTY}
+${returnSuccessImageContainer}    ${EMPTY}
+${returnSuccessTrackButton}    ${EMPTY}
+
 ${btnReturnsCallToAction}    ${EMPTY}
