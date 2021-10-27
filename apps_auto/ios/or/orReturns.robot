@@ -23,6 +23,7 @@ ${cardReturnsOrderHistoryItemImageContainer}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithMutlipleQuantity}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithSizeVariantOption}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithColourVariantOption}    ${EMPTY}
+${cardReturnsOrderHistoryItemWithLiquorOption}    ${EMPTY}
 
 ${returnOrderDetailReturnableSectionTitle}    ${EMPTY}
 ${returnOrderDetailNonReturnableSectionTitle}    ${EMPTY}
@@ -36,6 +37,7 @@ ${cardReturnsOrderDetailItemWarrantySubtitle}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithMultipleQuantity}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithVariantSize}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithVariantColour}    ${EMPTY}
+${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
 
 ${cardReturnsOrderDetailReturnableItem}    ${EMPTY}
 ${cardReturnsOrderDetailReturnableItem2}    ${EMPTY}
@@ -109,19 +111,55 @@ ${returnRequestDeliveryMethodAddressDetailText}    ${EMPTY}
 
 ${returnRequestContactDetailSelector}    ${EMPTY}
 ${returnRequestContactDetailSelectorTitle}    ${EMPTY}
+${returnRequestContactDetailSelectorSubtitle}    ${EMPTY}
 ${returnRequestContactDetailSelectorButton}    ${EMPTY}
 
 ${returnRequestEmptyState}    ${EMPTY}
 ${returnRequestEmptyStateCallToAction}    ${EMPTY}
 
 ${returnSelectReturnMethodPickupPoint}    ${EMPTY}
+${returnSelectReturnMethodPickupPointTitle}    ${EMPTY}
 ${returnSelectReturnMethodCollect}    ${EMPTY}
+${returnSelectReturnMethodCollectTitle}    ${EMPTY}
 
+${returnSelectAddressAddAddress}    ${EMPTY}
 ${returnSelectAddressItem}    ${EMPTY}
+${returnSelectAddressIncompleteItem}    ${EMPTY}
 ${returnSelectAddressItemName}    ${EMPTY}
+${returnSelectAddressItemEditButton}    ${EMPTY}
+${returnSelectAddressItemDeleteButton}    ${EMPTY}
+
+${returnSelectAddressInputNotification}    ${EMPTY}
+
+${returnSelectAddressEmptyState}    ${EMPTY}
+${returnSelectAddressEmptyStateTitle}    ${EMPTY}
+${returnSelectAddressEmptyStateMessage}    ${EMPTY}
+
+${returnSelectAddressDeleteDialogTitle}    ${EMPTY}
+${returnSelectAddressDeleteDialogMessage}    ${EMPTY}
+${returnSelectAddressDeleteDialogConfirmationButton}    ${EMPTY}
 
 ${returnSelectPickupPointItemTitle}    ${EMPTY}
 ${returnSelectPickupPointItemSubtitle}    ${EMPTY}
 ${returnSelectPickupPointItemInfoButton}    ${EMPTY}
+${returnSelectPickupPointFilterChangeButton}    ${EMPTY}
+${returnSelectPickupPointProvinceTitle}    ${EMPTY}
+
+${returnSelectPickupPointInfoMap}    ${EMPTY}
+${returnSelectPickupPointInfoTPPName}    ${EMPTY}
+${returnSelectPickupPointInfoTPPProvince}    ${EMPTY}
+${returnSelectPickupPointInfoTPPAddress}    ${EMPTY}
+${returnSelectPickupPointInfoBusinessHourContainer}    ${EMPTY}
+${returnSelectPickupPointInfoNotification}    ${EMPTY}
+${returnSelectPickupPointCallToAction}    ${EMPTY}
+
+${returnContactDetailsNameField}    ${EMPTY}
+${returnContactDetailsMobileNumberField}    ${EMPTY}
+
+${returnSuccessIcon}    ${EMPTY}
+${returnSuccessTitle}    ${EMPTY}
+${returnSuccessSubtitle}    ${EMPTY}
+${returnSuccessImageContainer}    ${EMPTY}
+${returnSuccessTrackButton}    ${EMPTY}
 
 ${btnReturnsCallToAction}    ${EMPTY}
