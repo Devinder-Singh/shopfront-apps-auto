@@ -745,3 +745,55 @@ Apps > SS Returns > SMS Contact Details (Collect) > QASA-258
     Verify Return Request Contact Details Section
     Verify Return Request Contact Details Info    Tester Residential: +27 74 440 4494
     [Teardown]    Tear Down
+
+Apps > SS Returns > SMS Contact Details (Drop-Off) > QASA-65
+    [Tags]    data    QASA-258
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+3164561@take2.co.za    test
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Delivery Method Pickup Point Option
+    Click Return Select Delivery Method Pickup Point Item
+    Verify Returns Call To Action Title    ADD CONTACT DETAILS
+    Click Returns Call To Action Button
+    Verify Toolbar Title    Contact Details
+    [Teardown]    Tear Down
+
+Apps > SS Returns > Request a Return > Select Takealot Pickup Point > QASA-410
+    [Tags]    data    QASA-258
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    dev+3164561@take2.co.za    test
+    Click Menu Exchanges And Returns
+    Add Single Return Item To Return Request
+    Click Returns Call To Action Button
+    Click Return Select Delivery Method Pickup Point Option
+    Verify Toolbar Title    Select Takealot Pickup Point
+    Click Back Screen
+    Click Return Select Delivery Method Pickup Point Option
+    Verify Return Select Delivery Method Pickup Point Item Title
+    Verify Return Select Delivery Method Pickup Point Item Subtitle
+    Verify Return Select Delivery Method Pickup Point Item Info Button
+    Click Return Select Pickup Point Filter Option
+    Sleep    1s
+    Verify Toolbar Title    Filter by Province
+    Click Back Screen
+    Sleep    1s
+    Verify Toolbar Title    Select Takealot Pickup Point
+    Verify Return Select Pickup Point Province Title    WESTERN CAPE
+    Click Return Select Pickup Point Item Info
+    Verify Return Pickup Point Info Details    Takealot Cape Town Warehouse    Cape Town, Western Cape    Block B, Montague Park Business Estate, Topaz Boulevard, Montague Gardens, Cape Town, 7441    We'll send you an email to confirm your return eligibility. If eligible, you’ll have 7 days to drop-off your return items.
+    Verify Return Pickup Point Info Call To Action    SELECT PICKUP POINT
+    Click Return Pickup Point Info Call To Action
+    Sleep    5s
+    Verify Return Request Loading State Not Visible
+    Verify Toolbar Title    Log Return Request
+    Scroll To Return Request Return Method Section
+    Scroll To Return Request Delivery Method Selector
+    Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
+    Verify Returns Call To Action Title    ADD CONTACT DETAILS
+    [Teardown]    Tear Down

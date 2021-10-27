@@ -142,6 +142,16 @@ ${returnSelectAddressDeleteDialogConfirmationButton}    id=android:id/button1
 ${returnSelectPickupPointItemTitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_title
 ${returnSelectPickupPointItemSubtitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_subtitle
 ${returnSelectPickupPointItemInfoButton}    id=${APP_PACKAGE}:id/returns_pickup_point_item_info
+${returnSelectPickupPointFilterChangeButton}    id=${APP_PACKAGE}:id/filter_option_button
+${returnSelectPickupPointProvinceTitle}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView
+
+${returnSelectPickupPointInfoMap}    xpath=//android.view.View[@content-desc="Google Map"]
+${returnSelectPickupPointInfoTPPName}    id=${APP_PACKAGE}:id/checkout_select_collect_name
+${returnSelectPickupPointInfoTPPProvince}    id=${APP_PACKAGE}:id/checkout_select_collect_province
+${returnSelectPickupPointInfoTPPAddress}    id=${APP_PACKAGE}:id/checkout_select_collect_address
+${returnSelectPickupPointInfoBusinessHourContainer}    id=${APP_PACKAGE}:id/checkout_select_collect_business_hours_base_content
+${returnSelectPickupPointInfoNotification}    id=${APP_PACKAGE}:id/error_message_content
+${returnSelectPickupPointCallToAction}    id=${APP_PACKAGE}:id/checkout_select_collect_address_use_pickup_point
 
 ${returnContactDetailsNameField}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 ${returnContactDetailsMobileNumberField}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText

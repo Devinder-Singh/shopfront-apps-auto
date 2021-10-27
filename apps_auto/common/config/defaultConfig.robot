@@ -98,5 +98,5 @@ Library           TalLibrary
 Library           String
 
 *** Variables ***
-${PLATFORM_NAME}    ios
+${PLATFORM_NAME}    android
 ${PATH}           /users/jenkins/desktop/shopfront-apps-auto/apps_auto

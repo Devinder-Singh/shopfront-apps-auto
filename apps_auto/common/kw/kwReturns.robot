@@ -458,6 +458,43 @@ Verify Return Select Delivery Method Pickup Point Item Info Button
 Click Return Select Delivery Method Pickup Point Item
     Click Element    ${returnSelectPickupPointItemTitle}
 
+Click Return Select Pickup Point Filter Option
+    Click Element    ${returnSelectPickupPointFilterChangeButton}
+
+Verify Return Select Pickup Point Province Title
+    [Arguments]    ${expectedTitle}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointProvinceTitle}    30s
+    Element Text Should Be    ${returnSelectPickupPointProvinceTitle}    ${expectedTitle}
+
+Click Return Select Pickup Point Item Info
+    Click Element    ${returnSelectPickupPointItemInfoButton}
+
+Verify Return Pickup Point Info Details
+    [Arguments]    ${expectedName}    ${expectedProvince}    ${expectedAddress}    ${expectedNotificationMessage}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoMap}    30s
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoBusinessHourContainer}    30s
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPName}    30s
+    Element Text Should Be    ${returnSelectPickupPointInfoTPPName}    ${expectedName}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPProvince}    30s
+    Element Text Should Be    ${returnSelectPickupPointInfoTPPProvince}    ${expectedProvince}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPAddress}    30s
+    Element Text Should Be    ${returnSelectPickupPointInfoTPPAddress}    ${expectedAddress}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoNotification}    30s
+    Element Text Should Be    ${returnSelectPickupPointInfoNotification}    ${expectedNotificationMessage}
+
+Verify Return Pickup Point Info Call To Action
+    [Arguments]    ${expectedTitle}
+    Element Text Should Be    ${returnSelectPickupPointCallToAction}    ${expectedTitle}
+
+Click Return Pickup Point Info Call To Action
+    Click Element    ${returnSelectPickupPointCallToAction}
+
 Verify Return Select Delivery Method Pickup Point Option Is Not Active
     [Arguments]    ${expectedTitle}
 
