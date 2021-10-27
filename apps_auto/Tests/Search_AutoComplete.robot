@@ -3,8 +3,8 @@ Default Tags      search_autocomplete
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Search: Autocomplete > Recent Searches(Search history) - QA-10012
-    [Tags]    QA-10012
+Apps > Search: Autocomplete > Recent Searches(Search history) - QASA-41
+    [Tags]    QASA-41
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -12,18 +12,18 @@ Apps > Search: Autocomplete > Recent Searches(Search history) - QA-10012
     Click Home
     Click Search Home
     Search Product    Pencil
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Only Search Home
-    Verify Element On Screen    ${btnSearchClearAll}    30s
+    Verify Element On Screen    ${btnSearchClearAll}    ${MIN_TIMEOUT}
     Verify Text On Screen    Recent Search    2s
     Verify Text On Screen    Trending    2s
     [Teardown]    Tear Down
 
-Apps > Search: Autocomplete > Trending Model - QA-5158
-    [Tags]    QA-5158
+Apps > Search: Autocomplete > Trending Model - QASA-641
+    [Tags]    QASA-641
     [Setup]    Start Application
     Click Menu
     Click Menu Login
@@ -31,7 +31,7 @@ Apps > Search: Autocomplete > Trending Model - QA-5158
     Start Application
     Click Home
     Click Search Home
-    Verify Text On Screen    Trending    30s
+    Verify Text On Screen    Trending    ${MIN_TIMEOUT}
     Click Search Trending
     Close Application
     Start Application
@@ -40,39 +40,39 @@ Apps > Search: Autocomplete > Trending Model - QA-5158
     Login Takealot    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Only Search Home
-    Verify Element On Screen    ${btnSearchClearAll}    30s
+    Verify Element On Screen    ${btnSearchClearAll}    ${MIN_TIMEOUT}
     Verify Text On Screen    Recent Search    2s
     Verify Text On Screen    Trending    2s
     [Teardown]    Tear Down
 
-Apps > Search: Autocomplete > Auto-complete Model - QA-5154
-    [Tags]    QA-5154
+Apps > Search: Autocomplete > Auto-complete Model - QASA-645
+    [Tags]    QASA-645
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    Pencil
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    PENCIL
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Search: Autocomplete > Recent Searches(New User) - QA-5155
-    [Tags]    QA-5155
+Apps > Search: Autocomplete > Recent Searches(New User) - QASA-644
+    [Tags]    QASA-644
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    Pencil
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Search Icon
     Verify Element On Screen    ${btnSearchClearAll}    10s
     Verify Text On Screen    Recent Search    2s
@@ -100,14 +100,14 @@ Apps > Search: Autocomplete > Recent Searches(New User) - QA-5155
     Verify Text On Screen    ${query_result_search}    2s
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Sort, Filtering, Paging and Recalling - QA-6320
-    [Tags]    QA-6320
+Apps > Sponsored Ads (PLP) > Sort, Filtering, Paging and Recalling - QASA-331
+    [Tags]    QASA-331
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    Pencil
     Click Product from API
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Verify Text On Screen    Sponsored    2s
     Click Search Product Sort
     Click Sort High To Low
@@ -118,14 +118,14 @@ Apps > Sponsored Ads (PLP) > Sort, Filtering, Paging and Recalling - QA-6320
     Check Text On Screen Not    Sponsored
     [Teardown]    Tear Down
 
-Apps > Sponsored Ads (PLP) > Product Card Components (UI) - QA-6322
-    [Tags]    QA-6322
+Apps > Sponsored Ads (PLP) > Product Card Components (UI) - QASA-330
+    [Tags]    QASA-330
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    Pen
     Click Product from API
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Verify Text On Screen    Sponsored    2s
     Verify Element On Screen    ${btnProductWidget}    2s
     Verify Text On Screen    In stock    2s
@@ -146,14 +146,14 @@ Apps > Sponsored Ads (PLP) > Product Card Components (UI) - QA-6322
     Verify Element On Screen    ${btnAddToCart}    2s
     [Teardown]    Tear Down
 
-Uploaded image for project Quality Assurance - Engineering Quality Assurance - Engineering - QA-6323
-    [Tags]    QA-6323
+Uploaded image for project Quality Assurance - Engineering Quality Assurance - Engineering - QASA-329
+    [Tags]    QASA-329
     [Setup]    Start Application
     Click Home
     Click Search Home
     Search Product    Pen
     Click Product from API
-    Verify Element On Screen    ${btnProductSearchFilter}    30s
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Verify Text On Screen    Sponsored    2s
     Click Product From Title    In stock
     Verify Element On Screen    ${btnAddToCart}    2s

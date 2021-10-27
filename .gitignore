@@ -4,7 +4,7 @@ extension/app/node_modules
 .DS_Store
 extension/.DS_Store
 results
-.pyc
+*.pyc
 .png
 *.html
 *.xml
@@ -12,4 +12,4 @@ results
 *.png
 .gitignore
 .gitignore
-.cpython-39.pyc
+*.cpython-39.pyc

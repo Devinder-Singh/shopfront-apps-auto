@@ -4,6 +4,7 @@ Resource          ../common/config/defaultConfig.robot
 *** Variables ***
 ${minLoopRange}    1
 ${maxLoopRange}    4
+${sleepAfterLoopTime}    5s
 
 *** Test Cases ***
 Check Clear Cart API
@@ -13,6 +14,7 @@ Check Clear Cart API
     FOR    ${result}    IN RANGE    ${minLoopRange}    ${maxLoopRange}
         Run Keyword And Continue On Failure    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
         Run Keyword And Continue On Failure    Clear Cart
+        Sleep    ${sleepAfterLoopTime}
     END
 
 Check Clear Wishlist API
@@ -22,6 +24,7 @@ Check Clear Wishlist API
     FOR    ${result}    IN RANGE    ${minLoopRange}    ${maxLoopRange}
         Run Keyword And Continue On Failure    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
         Run Keyword And Continue On Failure    Clear Wishlist
+        Sleep    ${sleepAfterLoopTime}
     END
 
 Check Clear Address API
@@ -31,6 +34,7 @@ Check Clear Address API
     FOR    ${result}    IN RANGE    ${minLoopRange}    ${maxLoopRange}
         Run Keyword And Continue On Failure    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
         Run Keyword And Continue On Failure    Clear Address
+        Sleep    ${sleepAfterLoopTime}
     END
 
 Check Delete Wishlist API
@@ -40,6 +44,7 @@ Check Delete Wishlist API
     FOR    ${result}    IN RANGE    ${minLoopRange}    ${maxLoopRange}
         Run Keyword And Continue On Failure    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
         Run Keyword And Continue On Failure    Delete Wishlist
+        Sleep    ${sleepAfterLoopTime}
     END
 
 Check Clear Environment API
@@ -49,4 +54,5 @@ Check Clear Environment API
     Log    API environment set as '${APP_ENVIRONMENT}'
     FOR    ${result}    IN RANGE    ${minLoopRange}    ${maxLoopRange}
         Run Keyword And Continue On Failure    Clear Environment
+        Sleep    ${sleepAfterLoopTime}
     END 

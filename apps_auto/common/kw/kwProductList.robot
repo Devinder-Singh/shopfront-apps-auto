@@ -5,7 +5,7 @@ Resource          ../config/defaultConfig.robot
 Click Variant Product from API
     ${txtProduct}=    Get Variant Product to Add To Cart
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -26,7 +26,7 @@ Click Variant Product from API
 Click Product Trending
     ${txtProduct}=    Get Product Trending
 
-    Verify Text On Screen    Trending on Takealot    30s
+    Verify Text On Screen    Trending on Takealot    ${MIN_TIMEOUT}
 
     Element Should Be Visible    ${txtProduct}
     Click Element    ${txtProduct}
@@ -35,7 +35,7 @@ Click Product Trending
 Click Product from API
     ${txtProduct}=    Get Product to Add To Cart
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -52,7 +52,7 @@ Click Product from API
     Click Close Ad
 
 Click In Stock Product from API
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -69,7 +69,7 @@ Click In Stock Product from API
     Click Close Ad
 
 Click Left Product from API
-#    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+#    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -88,7 +88,7 @@ Click Left Product from API
 Click Leadtime Product from API
     ${txtProduct}=    Get Leadtime Product to Add To Cart
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -135,7 +135,7 @@ Verify Product Other Offers from API
 Click Product from API Scroll
     ${txtProduct}=    Get Scroll Product to Add To Cart
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -154,7 +154,7 @@ Click Product from API Scroll
 Verify Price Range Product from API
     ${txtProduct}=    Get Price Range Product to Add To Cart
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -175,7 +175,7 @@ Verify Price Range Product from API
 Click Listing Product from API
     ${txtProduct}=    Get Product Listing Price
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -199,7 +199,7 @@ Click Listing Product from API
 Click Product Auto from API
     ${txtProduct}=    Get Product Auto to Add To Cart
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -217,7 +217,7 @@ Click Product Auto from API
 
 Click Filter Product from API
     ${txtProduct}=    Get Filter Product to Add To Cart
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -236,7 +236,7 @@ Click Filter Product from API
 Click Daily Deals Product from API
     Get Product Daily Deals Slug
     ${txtProduct}=    Get Daily Deals Product to Add To Cart
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -255,7 +255,7 @@ Click Daily Deals Product from API
 Click Third Tab Product from API
     Get Product Deals Third Tab Slug
     ${txtProduct}=    Get Daily Deals Product to Add To Cart
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -274,7 +274,7 @@ Click Third Tab Product from API
 Click App Only Deals Product from API
     Get Product App Only Deals Slug
     ${txtProduct}=    Get Daily Deals Product to Add To Cart
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -292,19 +292,19 @@ Click App Only Deals Product from API
 
 Click First Product from API
     ${txtProduct}=    Get First Product From API
-    Wait Until Element Is Visible    ${txtProduct}    30s
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
     Click Close Ad
 
 Click Product Daily Deals
-    Wait Until Element Is Visible    ${btnProductFilter}    30s
+    Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
 #    Sleep    5s
     Wait Until Element Is Visible    ${imgProductDeals}    5s
     Click Element    ${imgProductDeals}
     Click Close Ad
 
 Click Product Seller Deals
-    Wait Until Element Is Visible    ${btnProductFilter}    30s
+    Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
 #    Sleep    1s
 
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${query_result_FirstProductBrand}"`][2]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${query_result_FirstProductBrand}']
@@ -314,7 +314,7 @@ Click Product Seller Deals
     Click Close Ad
 
 Click Product Department
-    Wait Until Element Is Visible    ${btnProductFilter}    30s
+    Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
 #    Sleep    1s
     Wait Until Element Is Visible    ${imgProductDealsDept}    5s
     Click Element    ${imgProductDealsDept}
@@ -325,7 +325,7 @@ Click Product From Title
 
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, "${title}")]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${title}"`]
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -346,7 +346,7 @@ Click YMAL Product From Title
 
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
 
-    Verify Text On Screen    You Might Also Like    30s
+    Verify Text On Screen    You Might Also Like    ${MIN_TIMEOUT}
 
     Click Element    ${lblProdTitle}
     Click Close Ad
@@ -356,7 +356,7 @@ Click Product Text
 
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
 
-    Wait Until Element Is Visible    ${lblProdTitle}    30s
+    Wait Until Element Is Visible    ${lblProdTitle}    ${MIN_TIMEOUT}
 
     Click Element    ${lblProdTitle}
     Click Close Ad
@@ -366,7 +366,7 @@ Verify Product From Title
 
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -382,65 +382,65 @@ Verify Product From Title
     Element Should Be Visible    ${lblProdTitle}
 
 Click App Only Deals
-    Wait Until Element Is Visible    ${btnProductAppOnlyDeals}    30s
+    Wait Until Element Is Visible    ${btnProductAppOnlyDeals}    ${MIN_TIMEOUT}
     Click Element    ${btnProductAppOnlyDeals}
 
 Click Wine Club Deals
-    Wait Until Element Is Visible    ${btnProductWineClubDeals}    30s
+    Wait Until Element Is Visible    ${btnProductWineClubDeals}    ${MIN_TIMEOUT}
     Click Element    ${btnProductWineClubDeals}
 
 Click Product Filter
-    Wait Until Element Is Visible    ${btnProductFilter}    30s
+    Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
 #    Sleep    2s
     Click Element    ${btnProductFilter}
 
 Click Product Grid View
-    Wait Until Element Is Visible    ${btnProductFilter}    30s
+    Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
     Click Element    ${btnProductGridView}
 
 Click Product Icon Close
-    Wait Until Element Is Visible    ${btnProductIconClose}    30s
+    Wait Until Element Is Visible    ${btnProductIconClose}    ${MIN_TIMEOUT}
     Click Element    ${btnProductIconClose}
 
 Click Search Product Filter
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Element    ${btnProductSearchFilter}
 
 Click Search Product Sort
-    Wait Until Element Is Visible    ${btnProductSearchSort}    30s
+    Wait Until Element Is Visible    ${btnProductSearchSort}    ${MIN_TIMEOUT}
     Click Element    ${btnProductSearchSort}
 
 Click Search Product Wishlist
-    Wait Until Element Is Visible    ${btnProductSearchSort}    30s
+    Wait Until Element Is Visible    ${btnProductSearchSort}    ${MIN_TIMEOUT}
     Click Element    ${btnProductWishlist}
 #    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
 
 Click Search Product Wishlist iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnProductSearchSort}    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnProductSearchSort}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnProductWishlist}
 #    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
 
 Click Product available in JHB only
     ${txtProduct}=    Get Product in JHB only
-    Wait Until Element Is Visible    ${txtProduct}    30s
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
     Click Close Ad
 
 Click Product available in CPT only
     ${txtProduct}=    Get Product in CPT only
-    Wait Until Element Is Visible    ${txtProduct}    30s
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
     Click Close Ad
 
 Click Product available in JHB and CPT
     ${txtProduct}=    Get Product in JHB and CPT
-    Wait Until Element Is Visible    ${txtProduct}    30s
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
     Click Close Ad
 
 Click Product in Leadtime
     ${txtProduct}=    Get Product with Leadtime
-    Wait Until Element Is Visible    ${txtProduct}    30s
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
     Click Close Ad
 
@@ -450,14 +450,14 @@ Verify Product Image
 Click Product
     [Arguments]    ${productText}
     ${lblProduct}=    Replace String    ${lblProduct}    $productText    ${productText}
-    Wait Until Page Contains Element    ${lblProduct}    30s
+    Wait Until Page Contains Element    ${lblProduct}    ${MIN_TIMEOUT}
     Click Element    ${lblProduct}
     Click Close Ad
 
 Click Product No Reviews
     ${txtProduct}=    Get Product No Reviews
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -476,7 +476,7 @@ Click Product No Reviews
 Click Product Multiple Reviews
     ${txtProduct}=    Get Product Review Count Multiple
 
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    30s
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
@@ -498,12 +498,12 @@ Verify Sorted Products
     ${txtProduct}=    Get First Sort Product    ${sort}
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    30s
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
         Run Keyword If
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
-        ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    We could not find results    30s
+        ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    We could not find results    ${MIN_TIMEOUT}
         Run Keyword If
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
@@ -515,18 +515,18 @@ Verify Sorted Products
 
     ${txtProduct}=    Get Third Sort Product    ${sort}
 #    Run Keyword If    '${txtProduct}'!='0'
-#    ...    Wait Until Element Is Visible    ${txtProduct}    30s
+#    ...    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
 #    ...  ELSE
-#    ...    Verify Text On Screen    We could not find results    30s
+#    ...    Verify Text On Screen    We could not find results    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    30s
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
         Run Keyword If
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
-        ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    We could not find results    30s
+        ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    We could not find results    ${MIN_TIMEOUT}
         Run Keyword If
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
@@ -542,7 +542,7 @@ Verify Filtered Products
     ${txtProduct}=    Get First Filter Product    ${filter}
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    30s
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
         Run Keyword If
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
@@ -555,7 +555,7 @@ Verify Filtered Products
     ${txtProduct}=    Get Third Filter Product    ${filter}
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    30s
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
         Run Keyword If
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop

@@ -3,8 +3,8 @@ Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Tablet / iPad Verifications - QA-5366
-    [Tags]    QA-5366
+Tablet / iPad Verifications - QASA-467
+    [Tags]    QASA-467
     [Setup]    Start Application
     Clear Environment
     Click Menu

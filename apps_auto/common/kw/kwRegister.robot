@@ -11,8 +11,8 @@ Register Takealot
     ${email}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
     Set Global Variable    ${G_EMAIL}    ${email}
 
-    Wait Until Element Is Visible    ${txtRegFirstName}    30s
-    Wait Until Element Is Visible    ${btnRegRegister}    30s
+    Wait Until Element Is Visible    ${txtRegFirstName}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnRegRegister}    ${MIN_TIMEOUT}
 
     Input Text    ${txtRegFirstName}    ${name}
     Input Text    ${txtRegSurname}    ${surname}
@@ -22,14 +22,14 @@ Register Takealot
 
     Click Element    ${btnRegRegister}
 
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You are now successfully registered and logged in    30s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Logged in successfully    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You are now successfully registered and logged in    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Logged in successfully    ${MIN_TIMEOUT}
 
 Register Takealot Unverify
     [Arguments]    ${name}    ${surname}    ${email}    ${password}
 
-    Wait Until Element Is Visible    ${txtRegFirstName}    30s
-    Wait Until Element Is Visible    ${btnRegRegister}    30s
+    Wait Until Element Is Visible    ${txtRegFirstName}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnRegRegister}    ${MIN_TIMEOUT}
 
     Input Text    ${txtRegFirstName}    ${name}
     Input Text    ${txtRegSurname}    ${surname}
@@ -40,7 +40,7 @@ Register Takealot Unverify
     Click Element    ${btnRegRegister}
 
 Click Login Register
-    Wait Until Element Is Visible    ${btnLoginRegRegister}    30s
+    Wait Until Element Is Visible    ${btnLoginRegRegister}    ${MIN_TIMEOUT}
     Click Element    ${btnLoginRegRegister}
 
 Verify Register Takealot Blank

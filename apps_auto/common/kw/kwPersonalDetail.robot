@@ -115,7 +115,7 @@ Click Personal Details Password
 Update Personal Detail Invalid Password
     [Arguments]    ${currentPwd}    ${newPwd}    ${confPwd}
 
-    Wait Until Element Is Visible    ${btnSaveDetail}    30s
+    Wait Until Element Is Visible    ${btnSaveDetail}    ${MIN_TIMEOUT}
 
     Clear Text    ${txtCurrentPwd}
     Input Text    ${txtCurrentPwd}    ${currentPwd}
