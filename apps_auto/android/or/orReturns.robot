@@ -23,6 +23,7 @@ ${cardReturnsOrderHistoryItemImageContainer}    xpath=//android.widget.LinearLay
 ${cardReturnsOrderHistoryItemWithMutlipleQuantity}    xpath=//*[contains(@text, 'Order #91818963')]
 ${cardReturnsOrderHistoryItemWithSizeVariantOption}    xpath=//*[contains(@text, 'Order #92998356')]
 ${cardReturnsOrderHistoryItemWithColourVariantOption}    xpath=//*[contains(@text, 'Order #94155963')]
+${cardReturnsOrderHistoryItemWithLiquorOption}    xpath=//*[contains(@text, 'Order #95203168')]
 
 ${returnOrderDetailReturnableSectionTitle}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'product_consignment_container')]//android.widget.TextView[contains(@text, 'Returnable Items')]
 ${returnOrderDetailNonReturnableSectionTitle}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'product_consignment_container')]//android.widget.TextView[contains(@text, 'Non-Returnable Items')]
@@ -36,6 +37,7 @@ ${cardReturnsOrderDetailItemWarrantySubtitle}    xpath=//android.widget.TextView
 ${cardReturnsOrderDetailItemWithMultipleQuantity}    xpath=//*[contains(@text, 'Pokemon Sword & Shield 4: Vivid Voltage - Booster')]
 ${cardReturnsOrderDetailItemWithVariantSize}    xpath=//*[contains(@text, "Nike Women's Miler Long Sleeve Running Top - Black - S")]
 ${cardReturnsOrderDetailItemWithVariantColour}    xpath=//*[contains(@text, "Nike Hyperfuel 500ml Water Bottle - Black/White")]
+${cardReturnsOrderDetailItemWithLiquor}    xpath=//*[contains(@text, "Mixed Case of Top End Wines for the Avid Entertainer 12 x 750ml")]
 
 ${cardReturnsOrderDetailReturnableItem}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Returnable Item')]
 ${cardReturnsOrderDetailReturnableItem2}    xpath=//android.view.ViewGroup[contains(@content-desc, 'Returnable Item')][2]
@@ -109,19 +111,55 @@ ${returnRequestDeliveryMethodAddressDetailText}    id=${APP_PACKAGE}:id/returns_
 
 ${returnRequestContactDetailSelector}    id=${APP_PACKAGE}:id/returnMethodContactDetails
 ${returnRequestContactDetailSelectorTitle}    xpath=//*[contains(@resource-id, 'returnMethodContactDetails')]//android.widget.TextView[contains(@resource-id, 'returns_return_method_selector_title')]
+${returnRequestContactDetailSelectorSubtitle}    xpath=//*[contains(@resource-id, 'returnMethodContactDetails')]//android.widget.TextView[contains(@resource-id, 'returns_return_method_selector_subtitle')]
 ${returnRequestContactDetailSelectorButton}    xpath=//*[contains(@resource-id, 'returnMethodContactDetails')]//android.widget.Button[contains(@resource-id, 'returns_return_method_selector_action_option')]
 
 ${returnRequestEmptyState}    xpath=//android.widget.ImageView[@content-desc="empty return items"]
 ${returnRequestEmptyStateCallToAction}    id=${APP_PACKAGE}:id/tal_material_button
 
 ${returnSelectReturnMethodPickupPoint}    xpath=//android.view.ViewGroup[@content-desc="Pickup Point"]
+${returnSelectReturnMethodPickupPointTitle}    xpath=//android.view.ViewGroup[@content-desc="Pickup Point"]//android.widget.TextView[contains(@resource-id, 'navigation_widget_title')]
 ${returnSelectReturnMethodCollect}    xpath=//android.view.ViewGroup[@content-desc="Collect Address"]
+${returnSelectReturnMethodCollectTitle}    xpath=//android.view.ViewGroup[@content-desc="Collect Address"]//android.widget.TextView[contains(@resource-id, 'navigation_widget_title')]
 
+${returnSelectAddressAddAddress}    id=${APP_PACKAGE}:id/returns_return_method_selector_action_option
 ${returnSelectAddressItem}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returns_address_item_container')]//android.view.ViewGroup
+${returnSelectAddressIncompleteItem}    xpath=//androidx.recyclerview.widget.RecyclerView[contains(@resource-id, 'returns_address_item_container')]//android.view.ViewGroup[contains(@index, '0')]
 ${returnSelectAddressItemName}    id=${APP_PACKAGE}:id/returns_address_item_name
+${returnSelectAddressItemEditButton}    id=${APP_PACKAGE}:id/returns_address_item_address_left_action
+${returnSelectAddressItemDeleteButton}    id=${APP_PACKAGE}:id/returns_address_item_address_right_action
+
+${returnSelectAddressInputNotification}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout
+
+${returnSelectAddressEmptyState}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout
+${returnSelectAddressEmptyStateTitle}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView[1]
+${returnSelectAddressEmptyStateMessage}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/android.widget.TextView[2]
+
+${returnSelectAddressDeleteDialogTitle}    id=${APP_PACKAGE}:id/alertTitle
+${returnSelectAddressDeleteDialogMessage}    id=android:id/message
+${returnSelectAddressDeleteDialogConfirmationButton}    id=android:id/button1
 
 ${returnSelectPickupPointItemTitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_title
 ${returnSelectPickupPointItemSubtitle}    id=${APP_PACKAGE}:id/returns_pickup_point_item_subtitle
 ${returnSelectPickupPointItemInfoButton}    id=${APP_PACKAGE}:id/returns_pickup_point_item_info
+${returnSelectPickupPointFilterChangeButton}    id=${APP_PACKAGE}:id/filter_option_button
+${returnSelectPickupPointProvinceTitle}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView
+
+${returnSelectPickupPointInfoMap}    xpath=//android.view.View[@content-desc="Google Map"]
+${returnSelectPickupPointInfoTPPName}    id=${APP_PACKAGE}:id/checkout_select_collect_name
+${returnSelectPickupPointInfoTPPProvince}    id=${APP_PACKAGE}:id/checkout_select_collect_province
+${returnSelectPickupPointInfoTPPAddress}    id=${APP_PACKAGE}:id/checkout_select_collect_address
+${returnSelectPickupPointInfoBusinessHourContainer}    id=${APP_PACKAGE}:id/checkout_select_collect_business_hours_base_content
+${returnSelectPickupPointInfoNotification}    id=${APP_PACKAGE}:id/error_message_content
+${returnSelectPickupPointCallToAction}    id=${APP_PACKAGE}:id/checkout_select_collect_address_use_pickup_point
+
+${returnContactDetailsNameField}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${returnContactDetailsMobileNumberField}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+
+${returnSuccessIcon}    id=${APP_PACKAGE}:id/returns_success_image
+${returnSuccessTitle}    id=${APP_PACKAGE}:id/returns_success_title
+${returnSuccessSubtitle}    id=${APP_PACKAGE}:id/returns_success_subtitle
+${returnSuccessImageContainer}    id=${APP_PACKAGE}:id/returns_success_image_container
+${returnSuccessTrackButton}    id=${APP_PACKAGE}:id/return_success_track_btn
 
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption
