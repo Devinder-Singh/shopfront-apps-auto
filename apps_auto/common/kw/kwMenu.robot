@@ -90,7 +90,7 @@ Click Menu Sport and Fitness
 
 Click Menu Department
     [Arguments]    ${dept}
-
+# Should use a for loop and set implicit wait to 1
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${dept}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${dept}']
     Scroll    start_locator    end_locator
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
@@ -210,3 +210,8 @@ Verify Menu Items
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Account
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuShopByDepartment}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    My Account
+
+Click No Deal
+    [Arguments]    ${timeout}=5s
+    ${btnPresentNotificationsNo}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnDealsNotification}    ${timeout}
+    Run Keyword If    ${btnPresentNotificationsNo}    Click Element    ${btnDealsNotification}

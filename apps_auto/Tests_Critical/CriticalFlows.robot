@@ -9,6 +9,7 @@ Register User
     [Setup]    Install Application
     Close All Applications
     Start Application
+    Click No Deal     ${MIN_TIMEOUT}
     Click Menu
     Click Menu Login
     Close Application
