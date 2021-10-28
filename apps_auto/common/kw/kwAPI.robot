@@ -42,8 +42,7 @@ Clear Environment
     Delete Wishlist
     Clear Wishlist
     Clear Address
-    ${btnPresentNotificationsNo}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnDealsNotification}
-    Run Keyword If    ${btnPresentNotificationsNo}    Click Element    ${btnDealsNotification}
+    Click No Deal
 
 Create Wishlists
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
