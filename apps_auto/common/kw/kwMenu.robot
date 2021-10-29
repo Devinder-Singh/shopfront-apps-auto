@@ -78,11 +78,18 @@ Click Menu Shop By Department
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuShopByDepartment}
 
 Click Menu Sport and Fitness
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}    1s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
 
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}    1s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    3
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}    5s
+
+        Run Keyword If
+            ...    ${chkTextSuccess}==${True}
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
 
     Wait Until Element Is Visible    ${mnuSportFitness}
     Click Element    ${mnuSportFitness}
@@ -90,17 +97,20 @@ Click Menu Sport and Fitness
 
 Click Menu Department
     [Arguments]    ${dept}
-# Should use a for loop and set implicit wait to 1
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${dept}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${dept}']
-    Scroll    start_locator    end_locator
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
+#    Scroll    start_locator    end_locator
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    5
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
+
+        Run Keyword If
+            ...    ${chkTextSuccess}==${True}
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
 
     Wait Until Element Is Visible    ${txtProduct}
     Click Element    ${txtProduct}
@@ -108,10 +118,19 @@ Click Menu Department
 #    Sleep    3s
 
 Click Menu Gaming
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    3
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
+
+        Run Keyword If
+            ...    ${chkTextSuccess}==${True}
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+
     Wait Until Element Is Visible    ${mnuGaming}
     Click Element    ${mnuGaming}
 
