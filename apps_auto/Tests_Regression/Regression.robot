@@ -108,8 +108,8 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    Blower Cordless
-    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
+    Search Product    roku japanese
+    Click Product From Title    Roku - Japanese Craft Gin - 750ml
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    ${MIN_TIMEOUT}
@@ -120,8 +120,8 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Blower Cordless
-    Click Product From Title    EINHELL - Blower Cordless 18V Inc Inflation Nozzles
+    Search Product    roku japanese
+    Click Product From Title    Roku - Japanese Craft Gin - 750ml
     Click Add Bundle To Cart
     Click Go To Cart
     Wait for Checkout
@@ -138,21 +138,23 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    Accessible File
-    Click Product From Title    Treeline Accessible Files Pink Foolscap - Pack of 4
+    Search Product    Slazenger Golf Shir
+    Click Product From Title    Slazenger Crest Mens Golf Shirt
     Click Add To Cart
     Click Go To Cart
-    Verify Text On Screen    Missed promotion    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ADD 1 ITEM TO QUALIFY    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Add 1 item to qualify    1s
+    Verify Text On Screen    Missed promotion    30s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ADD    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    TO QUALIFY    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Add    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    to qualify    1s
     Close Application
     Start Application
     Click Home
     Click Search Home
-    Search Product    Accessible File
-    Click Product From Title    Treeline Accessible Files Pink Foolscap - Pack of 4
+    Search Product    Slazenger Golf Shir
+    Click Product From Title    Slazenger Crest Mens Golf Shirt
     Click Shop The Deal
-    Click Product From Title    Parrot Products Eraser Whiteboard (95*50mm 12 Peel Off Layers)
+    Click Product From Title    Kappa Mens Logo Life Mss
     Click Add To Cart
     Click Go To Cart
 #    Change Cart Quantity Android    2
@@ -540,8 +542,7 @@ Apps > PDP - QASA-519
     Verify Text On Screen    ${query_result_adProductBrand}    2s
     Click Product From Title    ${query_result_adProductTitle}
     Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Sponsored    2s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Sponsored    2s
+    Verify Text On Screen    Sponsored    2s
     [Teardown]    Tear Down
 
 Apps > PDP - QASA-170
@@ -797,6 +798,7 @@ Apps > Wishlist (iOS) - QASA-472
     Click Go To Cart
     Change Cart Quantity Android    2
     Click Checkout Delete First Item
+    Click Checkout Cart Undo
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No items    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Your Shopping Cart is Empty    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
@@ -918,8 +920,7 @@ Apps > My Account Verifications - QASA-477
     Click Back Android
     Click Back iOS    My Account
     Click Menu Exchanges And Returns
-    Verify Element On Screen    ${btnMenuExchReturns}    ${MIN_TIMEOUT}
-#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    ${MIN_TIMEOUT}
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    30s
 #    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    1s
 #    Click Window Android
     Close Application

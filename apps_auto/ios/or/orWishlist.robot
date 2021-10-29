@@ -18,7 +18,6 @@ ${btnWishlistAdd}      chain=**/XCUIElementTypeButton[`label == "icon plus"`]
 ${btnWishlistContinueShop}      chain=**/XCUIElementTypeButton[`label == "Start Shopping"`]
 
 ${btnWishlistMoveToList}      accessibility_id=Move to List
-${btnWishlistSAVE}      chain=**/XCUIElementTypeButton[`label == "SAVE"`]
 ${btnWishlistPlusIcon}      accessibility_id=Option action
 
 ${btnWishlistDeleteUndo}    ${EMPTY}

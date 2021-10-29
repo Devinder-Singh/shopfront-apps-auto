@@ -144,8 +144,8 @@ Click Menu Orders
     Click Element    ${btnMenuOrders}
 
 Click Menu Exchanges And Returns
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenuExchReturns}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuExchReturns}
+    Wait Until Element Is Visible    ${btnMenuExchReturns}    10s
+    Click Element    ${btnMenuExchReturns}
 
 Click Menu Load Gift Voucher
     Wait Until Element Is Visible    ${btnMenuGiftVoucher}    ${MIN_TIMEOUT}

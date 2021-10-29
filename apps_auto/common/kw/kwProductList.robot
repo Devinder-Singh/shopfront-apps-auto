@@ -16,10 +16,11 @@ Click Variant Product from API
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
-        Swipe Up    ${btnProductListView}
+        Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
     Set Implicitly Wait    5
+    Click Element    ${txtProduct}
     Click Element    ${txtProduct}
     Click Close Ad
 

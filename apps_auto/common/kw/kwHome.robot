@@ -78,7 +78,7 @@ Click Clear All Recently Viewed
     Wait Until Element Is Visible    ${btnSearchHome}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
+    FOR    ${index}    IN RANGE    12
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnHomeClearAllRecent}
 
         Run Keyword If

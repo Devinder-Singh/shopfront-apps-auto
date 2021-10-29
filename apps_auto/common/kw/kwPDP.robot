@@ -327,8 +327,7 @@ Click Blue Colour Option
     Click Element    ${lblBlueValue}
 
 Click Go To Cart
-    Wait Until Element Is Visible    ${btnGoToCart}    ${MIN_TIMEOUT}
-    Sleep    1s
+    Wait Until Keyword Succeeds    3    30s    Wait Until Element Is Visible    ${btnGoToCart}    30s
     Click Element    ${btnGoToCart}
 #    Sleep    2s
 
