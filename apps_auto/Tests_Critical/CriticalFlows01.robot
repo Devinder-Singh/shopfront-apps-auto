@@ -6,7 +6,8 @@ Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 
-#Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QA-5362
+#Apps > Cart Update & Cart Notification - Pre-Order / Out Of Stock - QASA-471
+#    [Tags]    QASA-471
 #    [Setup]    Start Application
 #    Add To Cart Takealot API
 #    Remove From Cart Takealot API

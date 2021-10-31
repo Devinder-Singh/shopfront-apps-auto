@@ -8,20 +8,7 @@ Click Product Widget First View All
 
 Click Product Widget Top Pre Orders
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    5
-        ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductPreOrder}    5s
-
-        Run Keyword If
-            ...    ${chkTextSuccess}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-
-    Wait Until Element Is Visible    ${btnProductPreOrder}    2s
-    Click Element    ${btnProductPreOrder}
+    Click Element On Scroll    ${btnProductPreOrder}    5
 
 Click Product Widget Carousel
     Wait Until Element Is Visible    ${btnCarouselWidget}    15s
@@ -30,43 +17,14 @@ Click Product Widget Carousel
 
 Click Product Widget Banner
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnBannerWidget}    5s
-
-        Run Keyword If
-            ...    ${chkTextSuccess}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-
-    Wait Until Element Is Visible    ${btnBannerWidget}    15s
-#    Sleep    5s
-    Click Element    ${btnBannerWidget}
-#    Sleep    5s
+    Click Element On Scroll    ${btnBannerWidget}    10
 
     ${chkElementExists}=    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${btnBannerWidget}    5s
     Run Keyword If    ${chkElementExists}==${False}    Click Element    ${btnBannerWidget}
 
 Click Product Widget Product
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    5
-        ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductWidget}    5s
-
-        Run Keyword If
-            ...    ${chkTextSuccess}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-
-    Wait Until Element Is Visible    ${btnProductWidget}    15s
-#    Sleep    5s
-    Click Element    ${btnProductWidget}
+    Click Element On Scroll    ${btnProductWidget}    5
 
 Click Product Widget Image
     ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnImageWidget}    5s
@@ -82,20 +40,7 @@ Click Product Widget Image
 
 Click Product Widget Context
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnContextWidget}    5s
-
-        Run Keyword If
-            ...    ${chkTextSuccess}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-
-    Wait Until Element Is Visible    ${btnContextWidget}    15s
-    Click Element    ${btnContextWidget}
+    Click Element On Scroll    ${btnContextWidget}    10
 
 Verify Product Widget Navigation
     ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}

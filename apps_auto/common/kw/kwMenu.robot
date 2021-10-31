@@ -79,60 +79,17 @@ Click Menu Shop By Department
 
 Click Menu Sport and Fitness
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    3
-        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}    5s
-
-        Run Keyword If
-            ...    ${chkTextSuccess}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-
-    Wait Until Element Is Visible    ${mnuSportFitness}
-    Click Element    ${mnuSportFitness}
+    Click Element On Scroll    ${mnuSportFitness}    3
     Click Product Widget First View All
 
 Click Menu Department
     [Arguments]    ${dept}
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${dept}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${dept}']
-#    Scroll    start_locator    end_locator
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    5
-        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
-
-        Run Keyword If
-            ...    ${chkTextSuccess}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-
-    Wait Until Element Is Visible    ${txtProduct}
-    Click Element    ${txtProduct}
-
-#    Sleep    3s
+    Click Element On Scroll    ${txtProduct}    5
 
 Click Menu Gaming
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    3
-        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
-
-        Run Keyword If
-            ...    ${chkTextSuccess}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-
-    Wait Until Element Is Visible    ${mnuGaming}
-    Click Element    ${mnuGaming}
+    Click Element On Scroll    ${mnuGaming}    3
 
 Click Menu New To Electronics
     Wait Until Element Is Visible    ${btnMenuNewToElec}

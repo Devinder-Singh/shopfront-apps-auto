@@ -327,13 +327,11 @@ Click Blue Colour Option
     Click Element    ${lblBlueValue}
 
 Click Go To Cart
-    Wait Until Keyword Succeeds    3    30s    Wait Until Element Is Visible    ${btnGoToCart}    30s
+    Wait Until Keyword Succeeds    3    ${MIN_TIMEOUT}    Wait Until Element Is Visible    ${btnGoToCart}    ${MIN_TIMEOUT}
     Click Element    ${btnGoToCart}
-#    Sleep    2s
 
 Click Go To Cart iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Go To Cart
-#    Sleep    2s
 
 Click PDP Write Review
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    ${MIN_TIMEOUT}

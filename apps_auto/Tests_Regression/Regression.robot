@@ -157,11 +157,6 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     Click Product From Title    Kappa Mens Logo Life Mss
     Click Add To Cart
     Click Go To Cart
-#    Change Cart Quantity Android    2
-#    Click Add Items to Qualify iOS
-#    Click Product From Title    Teddy Finger Paint - 4 x 100ml
-#    Click Add To Cart
-#    Click Go To Cart
     Check Text On Screen Not    Missed promotion
     Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
     Check Text On Screen Not    Add 1 item to qualify
@@ -223,9 +218,6 @@ Apps > Verify Home Screen - QASA-175
     Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    App Only Deals    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    App Only    1s
-#    Verify Text On Screen    Gaming    1s
-#    Verify Text On Screen    Health & Personal Care    1s
-#    Verify Text On Screen    Essential Campsite Supplies    1s
     Click Icon Daily Deals
     Click Daily Deals Product from API
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
@@ -248,8 +240,6 @@ Apps > Verify Home Screen - QASA-175
     Click Icon Daily Deals
     Select Third Deals From API
     Click Third Tab Product from API
-#    Click Back PDP
-#    Click Home Back
     [Teardown]    Tear Down
 
 Apps > Verify Home Screen - QASA-174
@@ -536,9 +526,7 @@ Apps > PDP - QASA-519
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Sponsored    2s
     Verify Text On Screen    % OFF    2s
     Verify Text On Screen    ${query_result_adProductStatus}    2s
-#    Verify Text On Screen    ${query_result_adProductRating}
     Verify Text On Screen    ${query_result_adProductPrice}    2s
-#    Verify Text On Screen    ${query_result_adProductListPrice}    2s
     Verify Text On Screen    ${query_result_adProductBrand}    2s
     Click Product From Title    ${query_result_adProductTitle}
     Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
@@ -920,9 +908,6 @@ Apps > My Account Verifications - QASA-477
     Click Back Android
     Click Back iOS    My Account
     Click Menu Exchanges And Returns
-#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    30s
-#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    1s
-#    Click Window Android
     Close Application
     Start Application    ${False}
     Click Menu
@@ -990,7 +975,6 @@ Apps > My Account Verifications - QASA-89
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Redeem Gift Voucher    1s
     Click Menu Credit History
     Verify Text On Screen    Available Credit    ${MIN_TIMEOUT}
-#    Verify Text On Screen    Gift Voucher:    1s
     Click Back Android
     Click Back iOS    Credit & Refunds
     Click Menu Refund History
@@ -1093,7 +1077,6 @@ Apps > Order Tracking 05 - QASA-79
     Click Apply Payment Voucher
     Click Back Payment Voucher
     Click Pay With Credit Card
-#    Click Payment Confirm Order
     Close Application
     Start Application
     Click Menu
@@ -1157,11 +1140,9 @@ Apps > Cart (Android) 02 - QASA-84
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
-#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item(s) moved to list    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Your Shopping Cart is Empty    5s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Trending on Takealot    5s
     Verify Element On Screen Android    ${btnCartContinueShopping}    1s
-#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Add To Cart Trending First Item
     Click Checkout
     Close Application
@@ -1172,7 +1153,6 @@ Apps > Cart (Android) 02 - QASA-84
     Search Product    Pencil
     Click Product from API
     Click Add To Cart
-#    Click Increase Cart Quantity iOS    1
     Click Go To Cart
     Change Cart Quantity Android    2
     Click Checkout
@@ -1209,7 +1189,6 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Click Go To Cart
     Verify Element On Screen    ${btnWishListIcon}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The gift voucher will be delivered via email to the recipient    ${MIN_TIMEOUT}
-#    Verify Text On Screen    The eBook will be added to your Digital Library, ready for you to download    1s
     Swipe Up    ${windowScroll}
     Swipe Up    ${windowScroll}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The prepaid code will be delivered to you via email    1s
@@ -1220,7 +1199,6 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Click Address
     Click Free Delivery
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delivery via email to    ${MIN_TIMEOUT}
-#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Delivery via email to    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Cart Update & Cart Notification - TV - QASA-248
