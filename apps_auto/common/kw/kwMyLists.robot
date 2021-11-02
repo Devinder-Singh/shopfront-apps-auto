@@ -24,7 +24,7 @@ Click Create Wishlist Only
     Click Element    ${btnWishlistCreate}
 
 Enter Wishlist Name
-    [Arguments]    ${name}=${'AutoTestWishlist'}
+    [Arguments]    ${name}='AutoTestWishlist'
 
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnWishlistSave}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${txtWishlistName}    ${MIN_TIMEOUT}

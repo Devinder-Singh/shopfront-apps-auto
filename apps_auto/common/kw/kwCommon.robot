@@ -336,3 +336,21 @@ Scroll To Element In Container
         Swipe Up    ${scrollContainerLocator}
         ${index}=    Evaluate    ${index} + 1
     END
+
+Click Element On Scroll
+    [Arguments]    ${clickElement}    ${loopTimes}
+
+    Set Implicitly Wait    1
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    ${loopTimes}
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${clickElement}    5s
+
+        Run Keyword If
+            ...    ${chkProdVisible}==${True}
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Set Implicitly Wait    5
+    Click Element    ${clickElement}

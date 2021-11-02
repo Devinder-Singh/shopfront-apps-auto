@@ -78,42 +78,18 @@ Click Menu Shop By Department
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuShopByDepartment}
 
 Click Menu Sport and Fitness
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}    1s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
 
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}    1s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-
-    Wait Until Element Is Visible    ${mnuSportFitness}
-    Click Element    ${mnuSportFitness}
+    Click Element On Scroll    ${mnuSportFitness}    3
     Click Product Widget First View All
 
 Click Menu Department
     [Arguments]    ${dept}
-# Should use a for loop and set implicit wait to 1
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${dept}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${dept}']
-    Scroll    start_locator    end_locator
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-
-    Wait Until Element Is Visible    ${txtProduct}
-    Click Element    ${txtProduct}
-
-#    Sleep    3s
+    Click Element On Scroll    ${txtProduct}    5
 
 Click Menu Gaming
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}    5s
-    Run Keyword If    ${chkTextSuccess}==${False}    Swipe Up    ${windowScroll}
-    Wait Until Element Is Visible    ${mnuGaming}
-    Click Element    ${mnuGaming}
+
+    Click Element On Scroll    ${mnuGaming}    3
 
 Click Menu New To Electronics
     Wait Until Element Is Visible    ${btnMenuNewToElec}
@@ -144,8 +120,8 @@ Click Menu Orders
     Click Element    ${btnMenuOrders}
 
 Click Menu Exchanges And Returns
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenuExchReturns}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuExchReturns}
+    Wait Until Element Is Visible    ${btnMenuExchReturns}    10s
+    Click Element    ${btnMenuExchReturns}
 
 Click Menu Load Gift Voucher
     Wait Until Element Is Visible    ${btnMenuGiftVoucher}    ${MIN_TIMEOUT}

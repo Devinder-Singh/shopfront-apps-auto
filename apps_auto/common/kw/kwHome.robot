@@ -77,18 +77,7 @@ Click Clear All Recently Viewed
 
     Wait Until Element Is Visible    ${btnSearchHome}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnHomeClearAllRecent}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${btnHomeClearAllRecent}
+    Click Element On Scroll    ${mnuSportFitness}    12
 
 Click Clear All Recently Viewed Android
 

@@ -17,7 +17,6 @@ ${btnWishlistAdd}      xpath=//*[@text="icon plus"]
 ${btnWishlistContinueShop}      xpath=//*[@text="Start Shopping"]
 
 ${btnWishlistMoveToList}      accessibility_id=Move to List
-${btnWishlistSAVE}      xpath=//*[@text="SAVE"]
 ${btnWishlistPlusIcon}      accessibility_id=Option action
 
 ${btnWishlistDeleteUndo}    id=${APP_PACKAGE}:id/snackbar_action
