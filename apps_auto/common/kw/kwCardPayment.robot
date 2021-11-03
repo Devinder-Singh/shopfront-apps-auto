@@ -9,7 +9,10 @@ Verify Card Payment
 Verify Payfast Payment Text
     [Arguments]    ${verifyText}='Instant EFT'
     ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    ${MAX_TIMEOUT}
-    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Secure payments by PayFast    1s
+    IF    ${chkTextSuccess} == ${False}
+        ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Secure payments by PayFast    1s
+    END
+    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Secured and powered by PayFast    1s
 
 Click Pay with Credit Card Back
     Wait Until Element Is Visible    ${navPayCreditCardBack}    ${MIN_TIMEOUT}

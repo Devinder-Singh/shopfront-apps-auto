@@ -49,6 +49,8 @@ Add Delivery Address
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
     Sleep    3s
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
     Click Save Address
 
 Add Delivery Address My Acc

@@ -187,7 +187,7 @@ Get Product to Add To Cart
         Exit For Loop If    '${result}'=='True' and ${itemIndex}==1
         IF    '${result}'=='True'
             ${itemIndex}=    Evaluate    ${itemIndex} - 1
-        END   
+        END
         ${index}=    Evaluate    ${index} + 1
     END
     ${results_variant}=    Output    $.sections.products.results[${index}].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].id
@@ -480,7 +480,7 @@ Get Variant Product to Add To Cart
 
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${results_title}[${index}]"]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, "${results_title}[${index}]")]
         Exit For Loop If    '${result}'=='True'
         ${index}=    Evaluate    ${index} + 1
     END
@@ -1240,7 +1240,7 @@ Get Filter Product to Add To Cart
 
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${objTitle}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${objTitle}"]
         Set Global Variable    ${query_result_CartFilterProduct}    ${objTitle}
-        Exit For Loop If    '${objVariant}'=='False'
+        Exit For Loop If    '${objVariant}'=='False' and ${index} > 0
 
         ${searchResult}=    Set Variable    '0'
         ${index}=    Evaluate    ${index} + 1

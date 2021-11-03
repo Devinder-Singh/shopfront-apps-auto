@@ -112,6 +112,10 @@ Click Review Submit
     Wait Until Element Is Visible    ${btnReviewSubmit}    ${MIN_TIMEOUT}
     Click Element    ${btnReviewSubmit}
 
+Click Review Submit OK
+    Wait Until Element Is Visible    ${txtPDPReviewOK}    ${MIN_TIMEOUT}
+    Click Element    ${txtPDPReviewOK}
+
 Click Review Rating
     Wait Until Element Is Visible    ${btnReviewStarRating}    ${MIN_TIMEOUT}
     Click Element    ${btnReviewStarRating}
@@ -183,7 +187,7 @@ Click Review Sort Most Recent
     Click Element    ${lblReviewRecent}
 
 Click Review Helpful
-    Wait Until Element Is Visible    ${lblReviewHelpful}    ${MIN_TIMEOUT}
+    Wait Until Keyword Succeeds    3    3s    Wait Until Element Is Visible    ${lblReviewHelpful}    ${MIN_TIMEOUT}
     Click Element    ${lblReviewHelpful}
 
 Click Review Filter

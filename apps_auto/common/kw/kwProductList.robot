@@ -345,8 +345,7 @@ Click Product Text
 
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
 
-    Wait Until Element Is Visible    ${lblProdTitle}    ${MIN_TIMEOUT}
-
+    Wait Until Keyword Succeeds    3    3s    Wait Until Element Is Visible    ${lblProdTitle}    ${MIN_TIMEOUT}
     Click Element    ${lblProdTitle}
     Click Close Ad
 
