@@ -3,8 +3,16 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Verify Card Payment
-    ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    ${MAX_TIMEOUT}
-    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Card number    1s
+    Set Implicitly Wait    1
+    FOR    ${counter}    IN RANGE    1    30
+        Log    ${counter}
+        ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    1s
+        IF    ${chkTextSuccess}==${False}
+            ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card number    1s
+        END
+        Exit For Loop If    ${chkTextSuccess}==${True}
+    END
+    Set Implicitly Wait    5
 
 Verify Payfast Payment Text
     [Arguments]    ${verifyText}='Instant EFT'
