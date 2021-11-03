@@ -18,7 +18,7 @@ ${btnCart}      chain=**/XCUIElementTypeButton[`label == "Cart"`]
 
 ${btnMenuOrders}      chain=**/XCUIElementTypeStaticText[`label == "Orders"`][1]
 
-${btnMenuExchReturns}    id=Exchanges & Returns
+${btnMenuExchReturns}    id=Returns
 ${btnMenuExchReturnsTitle}    ${EMPTY}
 ${btnMenuGiftVoucher}    id=Redeem Gift Voucher
 ${btnMenuCreditRefunds}    id=Credit & Refunds
