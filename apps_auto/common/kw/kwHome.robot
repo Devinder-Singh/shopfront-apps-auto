@@ -75,9 +75,9 @@ Click View All Daily Deals If Present
 
 Click Clear All Recently Viewed
 
-    Wait Until Element Is Visible    ${btnSearchHome}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnHomeClearAllRecent}    ${MIN_TIMEOUT}
 
-    Click Element On Scroll    ${mnuSportFitness}    12
+    Click Element On Scroll    ${btnHomeClearAllRecent}    12
 
 Click Clear All Recently Viewed Android
 

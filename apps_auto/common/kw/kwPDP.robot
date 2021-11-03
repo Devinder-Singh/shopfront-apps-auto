@@ -253,7 +253,7 @@ Click Add Bundle To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
+    FOR    ${index}    IN RANGE    12
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPAddBundleToCart}
 
         Run Keyword If
@@ -307,14 +307,14 @@ Click Shop The Deal
     Wait Until Element Is Visible    ${btnAddToCart}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
+    FOR    ${index}    IN RANGE    12
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblPDPShopTheDeal}
 
         Run Keyword If
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
-        Swipe Up    ${btnPDPScrollRoot}
+        Swipe Up    ${windowScroll}
 #        Sleep    1s
         ${index}=    Evaluate    ${index} + 1
     END

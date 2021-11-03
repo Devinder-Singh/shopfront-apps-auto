@@ -9,8 +9,8 @@ Click Variant Product from API
 
     ${txtProduct}=    Get Variant Product to Add To Cart
     ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
-    Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPSelectOption}
+#    Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
+#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPSelectOption}
     Wait Until Page Contains Element    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
 
@@ -350,8 +350,7 @@ Click Product Text
 
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
 
-    Wait Until Element Is Visible    ${lblProdTitle}    ${MIN_TIMEOUT}
-
+    Wait Until Keyword Succeeds    3    3s    Wait Until Element Is Visible    ${lblProdTitle}    ${MIN_TIMEOUT}
     Click Element    ${lblProdTitle}
     Click Close Ad
 
