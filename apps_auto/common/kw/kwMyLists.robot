@@ -44,7 +44,7 @@ Click Save Wishlist
     Click Element    ${btnWishlistSave}
 
 Click Wishlist Default
-    Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
+    Wait Until Keyword Succeeds    3    5s    Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
     Click Element    ${btnWishlistItems}
 
 Navigate to Wishlist Auto

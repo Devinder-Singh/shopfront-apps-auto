@@ -73,3 +73,5 @@ ${lblPDPWishlistChange}    chain=**/XCUIElementTypeStaticText[`label == "CHANGE"
 ${btnPDPCloseAd}    id=close_button
 
 ${btnPDPWishListSave}    chain=**/XCUIElementTypeButton[`label == "Save"`]
+
+${txtPDPReviewOK}      chain=**/XCUIElementTypeStaticText[`label == "OK"`]

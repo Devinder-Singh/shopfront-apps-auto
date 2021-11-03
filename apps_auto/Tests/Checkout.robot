@@ -105,3 +105,31 @@ Apps > Checkout > Collect > Subtitle change - QASA-596
     Click Checkout
     Verify Text On Screen    70+ Takealot Pickup Points nationwide. Open 6 days a week    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Pickup Points > No Last Used Pickup Point - QASA-562
+    [Tags]    QASA-562
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    montego
+    Click Variant Product from API
+    Click Product Variant From API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Filter Province
+    Click Gauteng Province
+    Verify Pickup Points Gauteng
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Click Filter Province
+    Click All Available Provinces
+    Verify All Pickup Points
+    [Teardown]    Tear Down
