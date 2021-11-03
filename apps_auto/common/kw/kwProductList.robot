@@ -4,16 +4,11 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Click Variant Product from API
     [Arguments]    ${index}=0
-
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-
     ${txtProduct}=    Get Variant Product to Add To Cart
     ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
-    Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPSelectOption}
-    Wait Until Page Contains Element    ${txtProduct}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
-
     Click Close Ad
 
 Click Product Trending

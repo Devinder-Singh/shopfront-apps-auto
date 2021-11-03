@@ -187,7 +187,7 @@ Buy Airtime and Pay with Credit Card
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Click Product Variant From API
+    Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -209,7 +209,7 @@ Buy Airtime along with another Item on Delivery
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Click Product Variant From API
+    Click Product Variant From API    2
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
@@ -218,7 +218,7 @@ Buy Airtime along with another Item on Delivery
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API
+    Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -243,7 +243,7 @@ Buy Airtime along with another Item on Collection
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Click Product Variant From API
+    Click Product Variant From API    2
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
@@ -252,7 +252,7 @@ Buy Airtime along with another Item on Collection
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API
+    Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
