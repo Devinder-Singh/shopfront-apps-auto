@@ -424,7 +424,11 @@ Click Product Size
 Click Product Variant From API
     [Arguments]    ${index}=0
     ${txtProduct}=    Get Product Variant
-    ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
+    IF    '${index}'>'0' and '${PLATFORM_NAME}'=='ios'
+        Set Local Variable    ${txtProduct}    ${txtProduct}\[${index}]
+    ELSE
+        Set Local Variable    ${txtProduct}    ${txtProduct}
+    END            
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPSelectOption}
     Wait Until Page Contains Element    ${txtProduct}    ${MIN_TIMEOUT}
