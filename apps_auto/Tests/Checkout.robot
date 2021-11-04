@@ -114,9 +114,8 @@ Apps > Checkout > Collect > Pickup Points > No Last Used Pickup Point - QASA-562
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    montego
-    Click Variant Product from API
-    Click Product Variant From API
+    Search Product    Pencil
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -132,4 +131,69 @@ Apps > Checkout > Collect > Pickup Points > No Last Used Pickup Point - QASA-562
     Click Filter Province
     Click All Available Provinces
     Verify All Pickup Points
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Pickup Points > Filter by Province - QASA-585
+    [Tags]    QASA-585
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Filter Province
+    Verify Text On Screen    Eastern Cape
+    Verify Text On Screen    Free State
+    Verify Text On Screen    Gauteng
+    Verify Text On Screen    Kwa-Zulu-Natal
+    Verify Text On Screen    Limpopo
+    Verify Text On Screen    Mpumalanga
+    Verify Text On Screen    North West
+    Verify Text On Screen    Northern Cape
+    Verify Text On Screen    Western Cape
+    Click All Available Provinces
+    Verify All Pickup Points
+    [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Pickup Points List (First time user) - QASA-594
+    [Tags]    QASA-594
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Verify Text On Screen    Filter by Province:    ${MIN_TIMEOUT}
+    Verify Text On Screen    All    1s
+    Click Filter Province
+    Click Western Cape Province
+    Verify Text On Screen    Takealot Cape Town Warehouse Cape Town, Western Cape
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Verify Text On Screen    Takealot Cape Town Warehouse Cape Town, Western Cape    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
