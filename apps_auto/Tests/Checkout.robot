@@ -133,3 +133,21 @@ Apps > Checkout > Collect > Pickup Points > No Last Used Pickup Point - QASA-562
     Click All Available Provinces
     Verify All Pickup Points
     [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Shipping Option > Collection cost Free for order = R 450
+    [Tags]    QASA-575
+    [Setup]    Start Application
+    # Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    microwav
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point Brackenfell
+    Wait Until Element Is Visible    ${txtCollectionFeeFree}        ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
