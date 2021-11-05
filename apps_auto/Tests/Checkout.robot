@@ -137,7 +137,7 @@ Apps > Checkout > Collect > Pickup Points > No Last Used Pickup Point - QASA-562
 Apps > Checkout > Collect > Shipping Option > Collection cost Free for order = R 450
     [Tags]    QASA-575
     [Setup]    Start Application
-    # Clear Environment
+    Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
@@ -149,5 +149,5 @@ Apps > Checkout > Collect > Shipping Option > Collection cost Free for order = R
     Click Checkout
     Click Collect
     Click Pickup Point Brackenfell
-    Wait Until Element Is Visible    ${txtCollectionFeeFree}        ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnFree}        ${MIN_TIMEOUT}
     [Teardown]    Tear Down
