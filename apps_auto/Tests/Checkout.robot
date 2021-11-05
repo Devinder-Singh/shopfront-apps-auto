@@ -139,7 +139,7 @@ Apps > Checkout > Collect > Shipping Option > Collection cost Free for order = R
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    microwav
