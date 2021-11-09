@@ -431,7 +431,7 @@ Click Product Variant From API
     END            
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPSelectOption}
-    Wait Until Page Contains Element    ${txtProduct}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API
