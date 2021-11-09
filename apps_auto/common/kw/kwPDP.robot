@@ -430,7 +430,7 @@ Click Product Variant From API
         Set Local Variable    ${txtProduct}    ${txtProduct}
     END            
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPSelectOption}
+    Click Element    ${btnPDPSelectOption}
     Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
 
