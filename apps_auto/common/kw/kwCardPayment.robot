@@ -4,12 +4,16 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Verify Card Payment
     ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    ${MAX_TIMEOUT}
-    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Card number    1s
+    IF    ${chkTextSuccess} == ${False}
+        Verify Text On Screen    Card number    ${MIN_TIMEOUT}
+    END    
 
 Verify Payfast Payment Text
     [Arguments]    ${verifyText}='Instant EFT'
     ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    ${MAX_TIMEOUT}
-    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Secure payments by PayFast    1s
+    IF    ${chkTextSuccess} == ${False}
+        Verify Text On Screen    Secure payments by PayFast    ${MIN_TIMEOUT}
+    END  
 
 Click Pay with Credit Card Back
     Wait Until Element Is Visible    ${navPayCreditCardBack}    ${MIN_TIMEOUT}
@@ -28,5 +32,8 @@ Click Credit Card Name
 Verify Card Payment Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblCardNumber}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    ELSE IF    ${PLATFORM_NAME} == 'ios'
+        Page Should Contain Text    ${verifyText}
+    END    

@@ -408,8 +408,8 @@ Apps > Cart > Product Card Actions > Remove & Move to Wishlist - QASA-521
     Click Checkout Move To Wishlist Swipe
     Swipe Right    ${btnCartItemContainer}
 
-    Verify Text On Screen Android    Item(s) moved to list    ${MIN_TIMEOUT}
-    Verify Text On Screen iOS    Item added to Wish List    ${MIN_TIMEOUT}
+    Verify Text On Screen    Item(s) moved to list    ${MIN_TIMEOUT}
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
 
     [Teardown]    Tear Down
 
@@ -505,3 +505,22 @@ Apps > Product Card Actions > Stock Check - QASA-2
     Verify Text On Screen    You asked for 10 but we only have    ${MIN_TIMEOUT}
     Verify Text On Screen    available    1s
     [Teardown]    Tear Down
+
+Apps > Cart > Product Card Actions > On Boarding - QASA-4
+    [Tags]    QASA-4
+    [Setup]    Start Application
+    Clear Environment
+    Click Home
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    [Teardown]    Tear Down
+
+Sandbox
+    FOR    ${index}    IN RANGE     10
+        Log To Console    ${index}
+    END

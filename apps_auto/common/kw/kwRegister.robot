@@ -7,8 +7,14 @@ Register Takealot
 
     Get New Email Address
 
-#    ${G_EMAIL}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
-    ${email}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
+    #${G_EMAIL}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
+    ${email}=    Set Variable    ${None}
+    IF    ${email} == '?'
+        ${email}=    Set Variable    ${new_email_address}
+    ELSE
+       ${email}=    Set Variable    ${email}
+    END
+    
     Set Global Variable    ${G_EMAIL}    ${email}
 
     Wait Until Element Is Visible    ${txtRegFirstName}    ${MIN_TIMEOUT}
@@ -21,9 +27,12 @@ Register Takealot
     Input Text    ${txtRegConfirmPwd}    ${password}
 
     Click Element    ${btnRegRegister}
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You are now successfully registered and logged in    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Logged in successfully    ${MIN_TIMEOUT}
+    
+    IF    ${PLATFORM_NAME} == 'android'
+        Verify Text On Screen    You are now successfully registered and logged in    ${MIN_TIMEOUT}
+    ELSE IF    ${PLATFORM_NAME} == 'ios'
+       Verify Text On Screen    Logged in successfully    ${MIN_TIMEOUT} 
+    END
 
 Register Takealot Unverify
     [Arguments]    ${name}    ${surname}    ${email}    ${password}
@@ -44,14 +53,19 @@ Click Login Register
     Click Element    ${btnLoginRegRegister}
 
 Verify Register Takealot Blank
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter your first name    10s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter your surname    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter your email address    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter your password    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please confirm your password    1s
+    IF    ${PLATFORM_NAME} == 'android'
+        Verify Text On Screen    Please enter your first name    ${MIN_TIMEOUT}
+        Verify Text On Screen    Please enter your surname    ${MIN_TIMEOUT}
+        Verify Text On Screen    Please enter your email address    ${MIN_TIMEOUT}
+        Verify Text On Screen    Please enter your password    ${MIN_TIMEOUT}
+        Verify Text On Screen    Please confirm your password    ${MIN_TIMEOUT}
+    ELSE IF    ${PLATFORM_NAME} == 'ios'
+        Verify Text On Screen    Please provide your first name    ${MIN_TIMEOUT}
+        Verify Text On Screen    Please provide your last name    ${MIN_TIMEOUT}
+        Verify Text On Screen    Please enter your email address    ${MIN_TIMEOUT}
+        Verify Text On Screen    Please provide password    ${MIN_TIMEOUT}
+        Verify Text On Screen    Please confirm your password    ${MIN_TIMEOUT}    
+    END
+    
 
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please provide your first name    10s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please provide your last name    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please enter your email address    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please provide password    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please confirm your password    1s
+    

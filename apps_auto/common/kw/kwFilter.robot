@@ -26,14 +26,15 @@ Click Filter Apply Button
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    2s
 
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
+        IF    ${chkProdVisible} == ${True}
+            Exit For Loop
+        END
 
         ${chkProdVisible}=    Run Keyword And Return Status    Click Element    ${btnProductFilterApply}
-        Run Keyword If
-            ...    ${chkProdVisible}==${False}
-            ...    Exit For Loop
+
+        IF    ${chkProdVisible} == ${False}
+            Exit For Loop
+        END
 
         ${index}=    Evaluate    ${index} + 1
     END
@@ -54,9 +55,13 @@ Click Filter Brand
 Click Filter Clear All
     Wait Until Element Is Visible    ${btnProductFilterClearAll}    ${MIN_TIMEOUT}
     Click Element    ${btnProductFilterClearAll}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnProductFilterShowAll}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnProductFilterShowAll}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Filter Apply Button
+
+    IF    ${PLATFORM_NAME} == 'ios'
+        Wait Until Element Is Visible    ${btnProductFilterShowAll}    ${MIN_TIMEOUT}
+        Click Element    ${btnProductFilterShowAll}
+    ELSE IF    ${PLATFORM_NAME} == 'android' 
+         Click Filter Apply Button
+    END
 
 Click Filter Brand Name
     Wait Until Element Is Visible    ${btnProductFilterBrandName}    ${MIN_TIMEOUT}

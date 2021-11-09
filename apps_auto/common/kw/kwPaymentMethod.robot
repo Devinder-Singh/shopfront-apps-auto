@@ -7,12 +7,18 @@ Click Got It Thanks Payment Method
     Click Element    ${btnGotItThanks}
 
 Click Payfast Payment Method
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrPaymentMethodAndroid}    ${MIN_TIMEOUT}
+    IF    ${PLATFORM_NAME} == 'android'
+       Wait Until Element Is Visible    ${scrPaymentMethodAndroid}    ${MIN_TIMEOUT} 
+    END
+
     Wait Until Element Is Visible    ${lblPayFastEFT}    ${MIN_TIMEOUT}
     Click Element    ${lblPayFastEFT}
 
 Click Card Payment Method
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrPaymentMethodAndroid}    ${MIN_TIMEOUT}
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${scrPaymentMethodAndroid}    ${MIN_TIMEOUT}
+    END 
+
     Wait Until Element Is Visible    ${lblCreditCardEFT}    ${MIN_TIMEOUT}
     Click Element    ${lblCreditCardEFT}
 
@@ -47,19 +53,26 @@ Click Mobicred Payment Info
 Verify Payment Options Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblCreditCardEFT}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+
+    IF    ${PLATFORM_NAME} == 'ios'
+        Page Should Contain Text    ${verifyText}
+    ELSE IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    END
 
 Verify Payment Options Text No Wait
     [Arguments]    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+     IF    ${PLATFORM_NAME} == 'ios'
+        Page Should Contain Text    ${verifyText}
+    ELSE IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    END
 
 Verify Payfast Payment
     Wait Until Element Is Visible    ${lblSecurePaymentPayFast}    ${MIN_TIMEOUT}
 
 Verify COD Payment Info
-    Wait Until Element Is Visible    ${lblCODInfo}    10s
+    Wait Until Element Is Visible    ${lblCODInfo}    ${MIN_TIMEOUT}
 
 Verify Mobicred Payment Info
-    Wait Until Element Is Visible    ${lblMobicredInfo}    10s
+    Wait Until Element Is Visible    ${lblMobicredInfo}    ${MIN_TIMEOUT}

@@ -19,14 +19,18 @@ Verify Reviews Distribution Summary View
 
 Verify Reviews Sort Option Default
     ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostHelpful}
-    Run Keyword If    '${checkboxStatus}'=='false' and '${PLATFORM_NAME}'=='android'    Fail
+    IF    ${checkboxStatus} == ${False} and ${PLATFORM_NAME} == 'android'
+        Fail
+    END
 
 Verify Reviews Sort Option Most Recent
     Wait Until Element Is Visible    ${btnReviewsSortButton}    ${MIN_TIMEOUT}
     Click Element    ${btnReviewsSortButton}
     ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostRecent}
-    Run Keyword If    '${checkboxStatus}'=='false' and '${PLATFORM_NAME}'=='android'    Fail
-
+    IF    ${checkboxStatus} == ${False} and ${PLATFORM_NAME} == 'android'
+        Fail
+    END
+    
 Verify Reviews Filter Options All
     Text Should Be Visible    Ratings
     Text Should Be Visible    Colour
@@ -59,7 +63,9 @@ Apply Reviews Filter Options
     Click Element    ${btnReviewsFilterApplyButton}
 
 Apply Reviews Filter Options Rating
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'  Click Element    ${btnReviewsFilterDoneButton}
+    IF    ${PLATFORM_NAME} == 'ios'
+        Click Element    ${btnReviewsFilterDoneButton}
+    END
 
 Verify Reviews on WriteReivew Text
     IF    ${PLATFORM_NAME} == 'android'

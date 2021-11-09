@@ -15,14 +15,16 @@ Click Home iOS
 Click Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    ${MIN_TIMEOUT}
     Click Element    ${btnAddWishlist}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
+    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
 
-#    Sleep    5s
+    #Sleep    5s
     Check Text On Screen Not    Item added to Wish List
 
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMoreOptions}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
+    IF    ${PLATFORM_NAME} == 'android'
+        Click Element    ${btnMoreOptions}
+        Click Element    ${btnOptionHome}
+    END
+   
     Click Continue Shopping Ignore Error
 
 Click Add To Wishlist Only
@@ -39,39 +41,53 @@ Click More Options Menu Android
     Click Element    ${btnMoreOptions}
 
 Click Options Menu Home
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionHome}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionHome}
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnOptionHome}    ${MIN_TIMEOUT}
+        Click Element    ${btnOptionHome}
+    END
 
 Click Options Menu Categories
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionCategories}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionCategories}
-
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnOptionCategories}    ${MIN_TIMEOUT}
+        Click Element    ${btnOptionCategories}
+    END
+    
 Click Options Menu Deals
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionDeals}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionDeals}
-
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnOptionDeals}    ${MIN_TIMEOUT}
+        Click Element    ${btnOptionDeals}
+    END
+    
 Click Options Menu Lists
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionLists}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionLists}
-
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnOptionLists}    ${MIN_TIMEOUT}
+        Click Element    ${btnOptionLists}
+    END
+    
 Click Options Menu Account
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnOptionAccount}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnOptionAccount}
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnOptionAccount}    ${MIN_TIMEOUT}
+        Click Element    ${btnOptionAccount}
+    END
 
 Click Search Icon
     Wait Until Element Is Visible    ${btnSearchIcon}    ${MIN_TIMEOUT}
     Click Element    ${btnSearchIcon}
 
-    ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    15s
-    Run Keyword If    ${btnPresentSearchHistory}    Click Element    ${btnSearchClearAll}
+    ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    ${MIN_TIMEOUT}
+    IF    ${btnPresentSearchHistory} == ${True}
+        Click Element    ${btnSearchClearAll}
+    END    
 
 Click View All Daily Deals
     Wait Until Element Is Visible    ${btnHomeViewAllDailyDeals}    ${MIN_TIMEOUT}
     Click Element    ${btnHomeViewAllDailyDeals}
 
 Click View All Daily Deals If Present
-    ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnHomeViewAllDailyDeals}    10s
-    Run Keyword If    ${chkElement}==${True}    Click Element    ${btnHomeViewAllDailyDeals}
+    ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnHomeViewAllDailyDeals}    ${MIN_TIMEOUT}
+    IF    ${chkElement} == ${True}
+        Click Element    ${btnHomeViewAllDailyDeals}
+    END    
 
 Click Clear All Recently Viewed
 
@@ -81,9 +97,9 @@ Click Clear All Recently Viewed
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnHomeClearAllRecent}
 
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
+        IF    ${chkProdVisible} == ${True}
+            Exit For Loop
+        END
 
         Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
@@ -91,36 +107,44 @@ Click Clear All Recently Viewed
     Click Element    ${btnHomeClearAllRecent}
 
 Click Clear All Recently Viewed Android
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnSearchHome}    ${MIN_TIMEOUT}
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${btnSearchHome}    ${MIN_TIMEOUT}
+    END
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnHomeClearAllRecent}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Run Keyword If
-            ...    ${PLATFORM_NAME}=='android'
-            ...    Exit For Loop
+        
+        IF    ${chkProdVisible} == ${True}
+            Exit For Loop
+        END
+        
+        IF    ${PLATFORM_NAME} == 'android'
+            Exit For Loop
+        END 
 
         Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHomeClearAllRecent}
+    IF    ${PLATFORM_NAME} == 'android'
+        Click Element    ${btnHomeClearAllRecent}
+    END
 
 Click Cancel Clear All Recently Viewed
     Wait Until Element Is Visible    ${btnHomeClearCancelRecent}    ${MIN_TIMEOUT}
     Click Element    ${btnHomeClearCancelRecent}
 
 Confirm Clear All Recently Viewed
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHomeClearRecent}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnHomeClearRecent}
+    IF    ${PLATFORM_NAME} == 'ios'
+        Wait Until Element Is Visible    ${btnHomeClearRecent}    ${MIN_TIMEOUT}
+        Click Element    ${btnHomeClearRecent}
+    END
 
 Click Icon Daily Deals
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuCategories}
+    IF    ${PLATFORM_NAME} == 'android'
+         Click Element    ${btnMenuCategories}
+    END
+    
     Wait Until Element Is Visible    ${btnHomeDeptDailyDeals}    ${MIN_TIMEOUT}
     Click Element    ${btnHomeDeptDailyDeals}
 

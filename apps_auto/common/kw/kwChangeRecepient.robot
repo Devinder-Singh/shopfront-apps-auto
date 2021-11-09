@@ -8,5 +8,4 @@ Click Gift Message Save Button
 
 Enter Gift Message
     [Arguments]    ${msg}
-
     Input Text    ${txtRecepientMsg}    ${msg}
