@@ -1202,7 +1202,7 @@ Apps > Checkout > Payment > Confirmation 02 - QASA-106
 Apps > Checkout > Payment > Pay with PayFast - QASA-539
     [Tags]    QASA-539
     [Setup]    Start Application
-    # Clear Environment
+    Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
@@ -1591,7 +1591,7 @@ Apps > Checkout > Collect Options > Promise Date - QASA-606
 Apps > Checkout > Payment > Pay with eBucks - QASA-538
     [Tags]    QASA-538
     [Setup]    Start Application
-    # Clear Environment
+    Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
