@@ -29,11 +29,9 @@ Click Create Wishlist Only
     Click Element    ${btnWishlistCreate}
 
 Enter Wishlist Name
-    [Arguments]    ${name}=${'AutoTestWishlist'}
-    IF    ${PLATFORM_NAME} == 'ios'
-        Wait Until Element Is Visible    ${btnWishlistSave}    ${MIN_TIMEOUT}
-    END
-    
+    [Arguments]    ${name}='AutoTestWishlist'
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnWishlistSave}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${txtWishlistName}    ${MIN_TIMEOUT}
     Clear Text    ${txtWishlistName}
     Input Text    ${txtWishlistName}    'AutoTestWishlist'
@@ -53,7 +51,7 @@ Click Save Wishlist
     Click Element    ${btnWishlistSave}
 
 Click Wishlist Default
-    Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
+    Wait Until Keyword Succeeds    3    5s    Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
     Click Element    ${btnWishlistItems}
 
 Navigate to Wishlist Auto

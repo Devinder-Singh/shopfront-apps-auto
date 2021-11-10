@@ -4,60 +4,35 @@ Library    DateTime
 
 *** Keywords ***
 Click Menu
-    IF    ${PLATFORM_NAME} == 'ios'
-        Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
-        Click Element    ${btnMenu}
-    END
-    
-    ${btnPresentNotificationsNo}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnDealsNotification}    5s
-    IF    ${btnPresentNotificationsNo} == ${True}
-        Click Element    ${btnDealsNotification}
-    END
-
-    IF    ${PLATFORM_NAME} == 'android'
-        Wait Until Element Is Visible    ${btnHome}    ${MIN_TIMEOUT}
-        Click Element    ${btnHome}
-    END
-    #Sleep    2s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnHome}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnHome}
 
 Click Menu iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnMenu}
-    #Sleep    1s
 
 Click Menu Login
-    IF    ${PLATFORM_NAME} == 'android'
-        Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
-        Click Element    ${btnMenu}
-        Swipe Up    ${cntMenuAccountScroll}
-    END
-    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${cntMenuAccountScroll}
     ${chkLoginElement}=    Run Keyword And Return Status    Page Should Contain Element    ${btnMenuLogin}
-    IF    ${chkLoginElement} == ${False}
-        Click Element    ${btnLogout}
-    END
-    
-    IF    ${PLATFORM_NAME} == 'ios' and ${chkLoginElement} == ${False}
-        Click Element    ${btnMenu}
-    END 
-
+    Run Keyword If    ${chkLoginElement}==${False}    Click Element    ${btnLogout}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and ${chkLoginElement}==${False}    Click Element    ${btnMenu}
     Click Element    ${btnMenuLogin}
-    #Sleep    1s
 
 Log In If Not Logged In
     [Arguments]    ${email}    ${password}
-    IF    ${PLATFORM_NAME} == 'android'
-        Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
-        Click Element    ${btnMenu}
-        Swipe Up    ${windowScroll}
-    END
-   
-    ${chkLoginElement}=    Run Keyword And Return Status    Page Should Contain Element    ${btnMenuLogin}
-    IF    ${chkLoginElement} == ${True}
-        Click Element    ${btnMenuLogin}
-        Login Takealot    ${email}    ${password}
-    END
-    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${windowScroll}
+
+    ${chkLoginElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnMenuLogin}
+    Run Keyword If    ${chkLoginElement}==${True}    Click Element    ${btnMenuLogin}
+    Run Keyword If    ${chkLoginElement}==${True}    Login Takealot    ${email}    ${password}
+
 Click Menu Register
     IF    ${PLATFORM_NAME} == 'android'
         Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
@@ -95,7 +70,6 @@ Click Menu Logout
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
     Click Element    ${btnLogout}
-#    Sleep    2s
 
 Click Menu Logout If Logged In
     Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
@@ -131,6 +105,8 @@ Click Menu Sport and Fitness
     END
 
     Click Element    ${mnuSportFitness}
+
+    Click Element On Scroll    ${mnuSportFitness}    3
     Click Product Widget First View All
 
 Click Menu Department
@@ -157,59 +133,40 @@ Click Menu Department
     #Sleep    3s
 
 Click Menu Gaming
-    FOR    ${index}    IN RANGE    2
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuGaming}
-        IF    ${chkTextSuccess} == ${True}
-            Exit For Loop
-        ELSE
-            Swipe Up    ${windowScroll}
-            Sleep    1s
-        END
-    END
-
-    Click Element    ${mnuGaming}
+    Click Element On Scroll    ${mnuGaming}    3
 
 Click Menu New To Electronics
-    Wait Until Element Is Visible    ${btnMenuNewToElec}    5s
+    Wait Until Element Is Visible    ${btnMenuNewToElec}
     Click Element    ${btnMenuNewToElec}
     Click View All Daily Deals If Present
 
 Click Menu My Account
-    IF    ${PLATFORM_NAME} == 'android'
-        Click Element    ${btnMenu}
-    END
-          
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuMyAccount}    5s
-    Log    ${chkTextSuccess}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Down    ${windowScroll}
 
-    IF    ${chkTextSuccess} == ${True} and ${PLATFORM_NAME} == 'ios'
-        Click Element    ${mnuMyAccount}
-    ELSE IF    ${chkTextSuccess} == ${False} and ${PLATFORM_NAME} == 'ios'
-        Click Element    ${mnuMyAccountText}
-    END
-    #Sleep    2s
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuMyAccount}
+    Run Keyword If    ${chkTextSuccess}==${False} and '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccountText}
+    Run Keyword If    ${chkTextSuccess}==${True} and '${PLATFORM_NAME}'=='ios'    Click Element    ${mnuMyAccount}
 
 Click Menu My Account Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
 
 Click Menu Address Book
-    Wait Until Element Is Visible    ${btnMenuAddressBook}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnMenuAddressBook}
     Click Element    ${btnMenuAddressBook}
 
 Click Menu Personal Detail
-    Wait Until Element Is Visible    ${btnMenuPersonalDetail}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnMenuPersonalDetail}
     Click Element    ${btnMenuPersonalDetail}
 
 Click Menu Orders
-    Wait Until Element Is Visible    ${btnMenuOrders}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnMenuOrders}
     Click Element    ${btnMenuOrders}
 
 Click Menu Exchanges And Returns
-    IF    ${PLATFORM_NAME} == 'android'
-        Wait Until Element Is Visible    ${btnMenuExchReturns}    ${MIN_TIMEOUT}
-        Click Element    ${btnMenuExchReturns}
-    END
-    
+    Wait Until Element Is Visible    ${btnMenuExchReturns}    10s
+    Click Element    ${btnMenuExchReturns}
+
 Click Menu Load Gift Voucher
     Wait Until Element Is Visible    ${btnMenuGiftVoucher}    ${MIN_TIMEOUT}
     Click Element    ${btnMenuGiftVoucher}
@@ -223,11 +180,8 @@ Click Menu Settings
     Click Element    ${btnMenuSettings}
 
 Click Menu Superbalist
-    IF    ${PLATFORM_NAME} == 'android'
-        Wait Until Element Is Visible    ${btnMenuTakealotGroup}    ${MIN_TIMEOUT}
-        Click Element    ${btnMenuTakealotGroup}
-    END
-    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenuTakealotGroup}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenuTakealotGroup}
     Wait Until Element Is Visible    ${mnuSuperbalist}    ${MIN_TIMEOUT}
     Click Element    ${mnuSuperbalist}
 
@@ -276,7 +230,7 @@ Click Cart
     END
 
 Click Home Cart
-    Wait Until Element Is Visible    ${btnCart}    5s
+    Wait Until Element Is Visible    ${btnCart}
     Click Element    ${btnCart}
 
 Verify Menu Items

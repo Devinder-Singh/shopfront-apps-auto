@@ -3,23 +3,10 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Variant Product from API
-    ${txtProduct}=    Get Variant Product to Add To Cart
-
+    [Arguments]    ${itemIndex}=0
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        Set Implicitly Wait    1
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${btnProductListView}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Set Implicitly Wait    5
+    ${txtProduct}=    Get Variant Product to Add To Cart    ${itemIndex}
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
     Click Close Ad
 
@@ -33,7 +20,8 @@ Click Product Trending
     Click Close Ad
 
 Click Product from API
-    ${txtProduct}=    Get Product to Add To Cart
+    [Arguments]    ${itemIndex}=1
+    ${txtProduct}=    Get Product to Add To Cart    ${itemIndex}
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
@@ -356,8 +344,7 @@ Click Product Text
 
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
 
-    Wait Until Element Is Visible    ${lblProdTitle}    ${MIN_TIMEOUT}
-
+    Wait Until Keyword Succeeds    3    3s    Wait Until Element Is Visible    ${lblProdTitle}    ${MIN_TIMEOUT}
     Click Element    ${lblProdTitle}
     Click Close Ad
 

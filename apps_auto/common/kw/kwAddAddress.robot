@@ -56,6 +56,8 @@ Add Delivery Address
     END
        
     Sleep    3s
+    Swipe Up    ${windowScroll}
+    Swipe Up    ${windowScroll}
     Click Save Address
 
 Add Delivery Address My Acc

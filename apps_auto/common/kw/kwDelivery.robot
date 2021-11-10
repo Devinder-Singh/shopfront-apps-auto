@@ -43,7 +43,7 @@ Click Back Delivery
 
 Click Back Delivery Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnDeliveryAddress}    ${MIN_TIMEOUT}
-#    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnBackDelivery}
 
 Verify Delivery Text

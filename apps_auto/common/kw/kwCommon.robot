@@ -130,7 +130,7 @@ Verify Price On Screen
     
 
 Verify Text On Screen
-    [Arguments]    ${verifyText}    ${delay}
+    [Arguments]    ${verifyText}    ${delay}=5s
     Wait Until Page Contains    ${verifyText}    ${delay}
 
 Verify Text Element On Screen iOS
@@ -314,7 +314,7 @@ Verify Element On Screen
     Wait Until Page Contains Element    ${verifyElement}    ${delay}
 
 Verify Element On Screen Not
-    [Arguments]    ${verifyElement}    ${delay}
+    [Arguments]    ${verifyElement}    ${delay}=5s
     
     ${txtProduct}=    Set Variable    ${None}
     IF    ${PLATFORM_NAME} == 'ios'
@@ -325,12 +325,14 @@ Verify Element On Screen Not
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${delay}
     Should Be True    ${chkTextSuccess} == ${False}
 
+#TODO Make 1 keyword
 Verify Element On Screen iOS
     [Arguments]    ${verifyElement}    ${delay}
     IF    ${PLATFORM_NAME} == 'iOS'
         Wait Until Page Contains Element    ${verifyElement}    ${delay}
     END
 
+#TODO Make 1 keyword
 Verify Element On Screen Android
     [Arguments]    ${verifyElement}    ${delay}
     IF    ${PLATFORM_NAME} == 'android'
@@ -393,3 +395,21 @@ Scroll To Element In Container
         Swipe Up    ${scrollContainerLocator}
         ${index}=    Evaluate    ${index} + 1
     END
+
+Click Element On Scroll
+    [Arguments]    ${clickElement}    ${loopTimes}
+
+    Set Implicitly Wait    1
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    ${loopTimes}
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${clickElement}    5s
+
+        IF    ${chkProdVisible}==${True}
+            Exit For Loop
+        END
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Set Implicitly Wait    5
+    Click Element    ${clickElement}

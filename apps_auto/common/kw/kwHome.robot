@@ -90,21 +90,7 @@ Click View All Daily Deals If Present
     END    
 
 Click Clear All Recently Viewed
-
-    Wait Until Element Is Visible    ${btnSearchHome}    ${MIN_TIMEOUT}
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnHomeClearAllRecent}
-
-        IF    ${chkProdVisible} == ${True}
-            Exit For Loop
-        END
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${btnHomeClearAllRecent}
+    Click Element On Scroll    ${btnHomeClearAllRecent}    12
 
 Click Clear All Recently Viewed Android
     IF    ${PLATFORM_NAME} == 'android'

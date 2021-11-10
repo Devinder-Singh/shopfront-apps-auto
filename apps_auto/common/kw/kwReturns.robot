@@ -95,7 +95,7 @@ Verify Returns Order History Item Image Container
     Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemImageContainer}    ${MIN_TIMEOUT}
 
 Click Returns Order History Item
-#    Sleep    5s
+    Sleep    5s
     Click Element    ${cardReturnsOrderHistoryItem}
 
 Verify Returns Order Detail Returnable Section
@@ -345,6 +345,9 @@ Click Return Select Address Item
     Click Element    ${returnSelectAddressItem}
 #    Sleep    10s
 
+Verify Return Select Address Item
+    Wait Until Element Is Visible    ${returnSelectAddressItemName}    30s
+
 Scroll To Return Request Return Method Section
     Scroll To Element In Container    ${returnRequestReturnMethodHeader}    ${containerReturnRequest}    20
 
@@ -367,6 +370,18 @@ Verify Return Request Delivery Method Address Title
     Element Should Be Visible    ${returnRequestDeliveryMethodAddressTitle}
     Element Text Should Be    ${returnRequestDeliveryMethodAddressTitle}    Collection Address
 
+Verify Return Request Delivery Method Address Details
+    [Arguments]    ${expectedPillTitle}    ${expectedRecipientName}    ${expectedAddressDetail}
+    
+    Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressTypePill}    30s
+    Element Text Should Be    ${returnRequestDeliveryMethodAddressTypePill}    ${expectedPillTitle}
+
+    Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressRecipientName}    30s
+    Element Text Should Be    ${returnRequestDeliveryMethodAddressRecipientName}    ${expectedRecipientName}
+
+    Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressDetailText}    30s
+    Element Text Should Be    ${returnRequestDeliveryMethodAddressDetailText}    ${expectedAddressDetail}
+
 Scroll To Return Request Contact Detail Section
     Scroll To Element In Container    ${returnRequestContactDetailSelector}    ${containerReturnRequest}    20
 
@@ -376,6 +391,17 @@ Verify Return Request Contact Details Section
     
     Element Text Should Be    ${returnRequestContactDetailSelectorTitle}    SMS notification for this return will be sent to:
     Element Text Should Be    ${returnRequestContactDetailSelectorButton}    CHANGE
+
+Verify Return Contact Details Input Fields
+    [Arguments]    ${expectedFullName}    ${expectedMobileNumber}
+
+    Element Text Should Be    ${returnContactDetailsNameField}    ${expectedFullName}
+    Element Text Should Be    ${returnContactDetailsMobileNumberField}    ${expectedMobileNumber}
+
+Verify Return Request Contact Details Info
+    [Arguments]    ${expectedContactDetailInfo}
+
+    Element Text Should Be    ${returnRequestContactDetailSelectorSubtitle}    ${expectedContactDetailInfo}
 
 Verify Return Request Loading State Not Visible
     Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    ${MIN_TIMEOUT}
@@ -405,10 +431,16 @@ Click Return Request Contact Details Selector
     Click Element    ${returnRequestContactDetailSelector}
 
 Verify Return Select Delivery Method Pickup Point Option
+    [Arguments]    ${expectedTitle}
+
     Element Should Be Visible    ${returnSelectReturnMethodPickupPoint}
+    Element Text Should Be    ${returnSelectReturnMethodPickupPointTitle}   ${expectedTitle}
 
 Verify Return Select Delivery Method Collect Option
+    [Arguments]    ${expectedTitle}
+
     Element Should Be Visible    ${returnSelectReturnMethodCollect}
+    Element Text Should Be    ${returnSelectReturnMethodCollectTitle}   ${expectedTitle}
 
 Click Return Select Delivery Method Pickup Point Option
     Click Element    ${returnSelectReturnMethodPickupPoint}
@@ -425,6 +457,184 @@ Verify Return Select Delivery Method Pickup Point Item Info Button
 
 Click Return Select Delivery Method Pickup Point Item
     Click Element    ${returnSelectPickupPointItemTitle}
+
+Click Return Select Pickup Point Filter Option
+    Click Element    ${returnSelectPickupPointFilterChangeButton}
+
+Verify Return Select Pickup Point Province Title
+    [Arguments]    ${expectedTitle}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointProvinceTitle}    30s
+    Element Text Should Be    ${returnSelectPickupPointProvinceTitle}    ${expectedTitle}
+
+Click Return Select Pickup Point Item Info
+    Click Element    ${returnSelectPickupPointItemInfoButton}
+
+Verify Return Pickup Point Info Details
+    [Arguments]    ${expectedName}    ${expectedProvince}    ${expectedAddress}    ${expectedNotificationMessage}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoMap}    30s
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoBusinessHourContainer}    30s
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPName}    30s
+    Element Text Should Be    ${returnSelectPickupPointInfoTPPName}    ${expectedName}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPProvince}    30s
+    Element Text Should Be    ${returnSelectPickupPointInfoTPPProvince}    ${expectedProvince}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPAddress}    30s
+    Element Text Should Be    ${returnSelectPickupPointInfoTPPAddress}    ${expectedAddress}
+
+    Wait Until Element Is Visible    ${returnSelectPickupPointInfoNotification}    30s
+    Element Text Should Be    ${returnSelectPickupPointInfoNotification}    ${expectedNotificationMessage}
+
+Verify Return Pickup Point Info Call To Action
+    [Arguments]    ${expectedTitle}
+    Element Text Should Be    ${returnSelectPickupPointCallToAction}    ${expectedTitle}
+
+Click Return Pickup Point Info Call To Action
+    Click Element    ${returnSelectPickupPointCallToAction}
+
+Verify Return Select Delivery Method Pickup Point Option Is Not Active
+    [Arguments]    ${expectedTitle}
+
+    Verify Return Select Delivery Method Pickup Point Option    ${expectedTitle}
+    Click Return Select Delivery Method Pickup Point Option
+    Verify Toolbar Title    Select Return Method
+
+Verify Return Request Return Method Header Is Not Present
+    Wait Until Page Does Not Contain Element    ${returnRequestReturnMethodHeader}    30s
+
+Click Return Address Item Edit
+    Click Element    ${returnSelectAddressItemEditButton}
+
+Click Return Address Item Delete
+    Click Element    ${returnSelectAddressItemDeleteButton}
+
+Confirm Return Address Item Delete Dialog
+    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogTitle}    30s
+    Element Text Should Be    ${returnSelectAddressDeleteDialogTitle}     Delete Address
+
+    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogMessage}    30s
+    Element Text Should Be    ${returnSelectAddressDeleteDialogMessage}    Are you sure you want to delete this address?
+
+    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogConfirmationButton}    30s
+    Element Text Should Be    ${returnSelectAddressDeleteDialogConfirmationButton}    DELETE
+
+    Click Element    ${returnSelectAddressDeleteDialogConfirmationButton}
+
+Click Return Address Add Option
+    Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s
+    Click Element    ${returnSelectAddressAddAddress}
+
+Verify Return Address Empty State
+    Wait Until Element Is Visible    ${returnSelectAddressEmptyState}    30s
+
+    Wait Until Element Is Visible    ${returnSelectAddressEmptyStateTitle}    30s
+    Element Text Should Be    ${returnSelectAddressEmptyStateTitle}    You don't have any addresses saved.
+
+    Wait Until Element Is Visible    ${returnSelectAddressEmptyStateMessage}    30s
+    Element Text Should Be    ${returnSelectAddressEmptyStateMessage}    Please add a Delivery Address.
+
+Verify Return Address Add Option
+    Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s
+
+Click Return Address Incomplete Item
+    Sleep    2s
+    Click Element    ${returnSelectAddressIncompleteItem}
+
+Update Incomplete Address
+    [Arguments]    ${name}    ${mobile}    ${street}
+    Clear Text    ${txtRecipientNameMyAcc}
+    Input Text    ${txtRecipientNameMyAcc}    ${name}
+    Clear Text    ${txtRecipientMobileMyAcc}
+    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
+    Swipe Up    ${windowScroll}    
+    Clear Text    ${txtRecipientComplexMyAcc}
+    Input Text    ${txtRecipientComplexMyAcc}    ABC
+    Swipe Up    ${windowScroll}
+    Clear Text    ${txtRecipientStreetMyAcc}
+    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Sleep    10s
+    Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='""'    Swipe Up    ${windowScroll}
+    Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='&*'    Swipe Up    ${windowScroll}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
+    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='&*'    Wait Until Element Is Visible    ${lblAddresOption}    15s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='&*'    Click Element    ${lblAddresOption}
+    Sleep    3s
+    Swipe Up    ${windowScroll}
+    Click Save Address
+
+Clear Return Contact Details Input Fields
+    Clear Text    ${returnContactDetailsNameField}
+    Clear Text    ${returnContactDetailsMobileNumberField}
+
+Verify Return Contact Details Input Field Validation
+    [Arguments]    ${expectedNameValidation}    ${expectedMobileNumberValidation}
+
+    Verify Text On Screen    ${expectedNameValidation}    30s
+    Verify Text On Screen    ${expectedMobileNumberValidation}    30s
+
+Edit Return Contact Details Input
+    [Arguments]    ${expectedName}    ${expectedMobileNumber}
+
+    Clear Return Contact Details Input Fields
+    Input Text    ${returnContactDetailsNameField}    ${expectedName}
+    Input Text    ${returnContactDetailsMobileNumberField}    ${expectedMobileNumber}
+
+Verify Return Success Details
+    Wait Until Element Is Visible    ${returnSuccessIcon}    ${MIN_TIMEOUT}
+
+    Wait Until Element Is Visible    ${returnSuccessTitle}    ${MIN_TIMEOUT}
+    Element Text Should Be    ${returnSuccessTitle}    Return Request Submitted
+
+    Wait Until Element Is Visible    ${returnSuccessSubtitle}    ${MIN_TIMEOUT}
+    Element Should Contain Text    ${returnSuccessSubtitle}    Reference: MRRN
+
+    Wait Until Element Is Visible    ${returnSuccessImageContainer}    ${MIN_TIMEOUT}
+
+    Wait Until Element Is Visible    ${returnSuccessTrackButton}    ${MIN_TIMEOUT}
+    Element Text Should Be    ${returnSuccessTrackButton}    TRACK RETURN
+
+Click Return Success Track
+    Click Element    ${returnSuccessTrackButton}
+
+Verify Return Success Flow From Return Request
+    Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
+    Click Returns Call To Action Button
+    Sleep    5s
+    Verify Toolbar Title    Return Request Submitted
+    Verify Return Success Details
+    Click Return Success Track
+    Sleep    1s
+    Verify Toolbar Title    Returns
+
+
+Add Liquor Return Item To Return Request
+    Click Returns Call To Action Button
+    Sleep    5s
+    Scroll To Element In Container    ${cardReturnsOrderHistoryItemWithLiquorOption}    ${containerReturnsOrderHistory}    20
+    Click Element    ${cardReturnsOrderHistoryItemWithLiquorOption}
+    Sleep    5s
+    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithLiquor}    ${containerReturnsHOrderDetail}    20
+    Click Element    ${cardReturnsOrderDetailItemWithLiquor}
+    Click Return Reason Reason Selector
+    Click Return Reason Reason Non-Exchange Item
+    Scroll To Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Selector
+    Click Return Reason Preferred Outcome Item
+    Scroll To Return Reason Text Area
+    Input Return Reason Text Area Text    Test Description
+    Click Returns Call To Action Button
 
 # Setup Keyword for getting a product in returns request
 Add Single Return Item To Return Request

@@ -112,6 +112,37 @@ Change Cart Quantity Android
             
     Wait Until Element Is Visible    ${txtCartQty}    ${MIN_TIMEOUT}
     Click Element    ${txtCartQty}
+#    Sleep    3s
+
+Change Cart Quantity Scroll
+    [Arguments]    ${qty}
+
+    Wait Until Element Is Visible    ${btnCartQty}    ${MIN_TIMEOUT}
+    Click Element    ${btnCartQty}
+    
+    ${txtCartQty}=    Set Variable    ${None}
+    IF    ${PLATFORM_NAME} == 'android'
+        ${txtCartQty}=    Set Variable    xpath=//*[@text="${qty}"]
+    ELSE IF    ${PLATFORM_NAME} == 'ios'
+        ${txtCartQty}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
+    END
+               
+    Verify Text On Screen    Select quantity
+
+    Set Implicitly Wait    1
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    15
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtCartQty}
+
+        IF    ${chkProdVisible} == ${True}
+            Exit For Loop
+        END
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Set Implicitly Wait    5
+    Click Element    ${txtCartQty}
 
 Click Add Items to Qualify iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnCartAddPromoItems}    ${MIN_TIMEOUT}

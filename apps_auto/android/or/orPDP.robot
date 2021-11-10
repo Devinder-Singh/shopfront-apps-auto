@@ -72,3 +72,5 @@ ${lblPDPWishlistChange}    xpath=//*[@text="CHANGE"]
 ${btnPDPCloseAd}    ${EMPTY}
 
 ${btnPDPWishListSave}    chain=**/XCUIElementTypeButton[`label == "Save"`]
+
+${txtPDPReviewOK}      xpath=//*[@text="OK"]

@@ -253,7 +253,7 @@ Click Add Bundle To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
+    FOR    ${index}    IN RANGE    12
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPDPAddBundleToCart}
 
         Run Keyword If
@@ -307,14 +307,14 @@ Click Shop The Deal
     Wait Until Element Is Visible    ${btnAddToCart}    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
+    FOR    ${index}    IN RANGE    12
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblPDPShopTheDeal}
 
         Run Keyword If
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
-        Swipe Up    ${btnPDPScrollRoot}
+        Swipe Up    ${windowScroll}
 #        Sleep    1s
         ${index}=    Evaluate    ${index} + 1
     END
@@ -327,14 +327,11 @@ Click Blue Colour Option
     Click Element    ${lblBlueValue}
 
 Click Go To Cart
-    Wait Until Element Is Visible    ${btnGoToCart}    ${MIN_TIMEOUT}
-    Sleep    1s
+    Wait Until Keyword Succeeds    3    ${MIN_TIMEOUT}    Wait Until Element Is Visible    ${btnGoToCart}    ${MIN_TIMEOUT}
     Click Element    ${btnGoToCart}
-#    Sleep    2s
 
 Click Go To Cart iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Go To Cart
-#    Sleep    2s
 
 Click PDP Write Review
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnAddToCart}    ${MIN_TIMEOUT}
@@ -427,7 +424,11 @@ Click Product Size
 Click Product Variant From API
     [Arguments]    ${index}=0
     ${txtProduct}=    Get Product Variant
-    ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
+    IF    '${index}'>'0' and '${PLATFORM_NAME}'=='ios'
+        Set Local Variable    ${txtProduct}    ${txtProduct}\[${index}]
+    ELSE
+        Set Local Variable    ${txtProduct}    ${txtProduct}
+    END            
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnPDPSelectOption}
     Wait Until Page Contains Element    ${txtProduct}    ${MIN_TIMEOUT}
