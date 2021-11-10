@@ -327,8 +327,8 @@ Click Blue Colour Option
     Click Element    ${lblBlueValue}
 
 Click Go To Cart
-    Wait Until Keyword Succeeds    3    ${MIN_TIMEOUT}    Wait Until Element Is Visible    ${btnGoToCart}    ${MIN_TIMEOUT}
-    Click Element    ${btnGoToCart}
+    Wait Until Keyword Succeeds    6    5   Click Element    ${btnGoToCart}
+    
 
 Click Go To Cart iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Go To Cart
