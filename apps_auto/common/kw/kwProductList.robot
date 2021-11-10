@@ -3,10 +3,9 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Variant Product from API
-    [Arguments]    ${index}=0
+    [Arguments]    ${itemIndex}=0
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    ${txtProduct}=    Get Variant Product to Add To Cart
-    ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
+    ${txtProduct}=    Get Variant Product to Add To Cart    ${itemIndex}
     Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
     Click Close Ad

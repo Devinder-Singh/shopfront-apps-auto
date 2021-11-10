@@ -471,6 +471,7 @@ Verify Product Search App Only Deals Badge
     [Return]    ${searchResult}
 
 Get Variant Product to Add To Cart
+    [Arguments]    ${index}=0
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
@@ -478,7 +479,6 @@ Get Variant Product to Add To Cart
     @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.is_shop_all_options_available
     @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
 
-    ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, "${results_title}[${index}]")]
         Exit For Loop If    '${result}'=='True'
