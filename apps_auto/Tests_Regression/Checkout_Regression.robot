@@ -1591,7 +1591,7 @@ Apps > Checkout > Collect Options > Promise Date - QASA-606
 Apps > Checkout > Payment > Pay with eBucks - QASA-538
     [Tags]    QASA-538
     [Setup]    Start Application
-    Clear Environment
+    # Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
@@ -1638,8 +1638,12 @@ Apps > Checkout > Payment > Credits (Voucher) - QASA-537
     Click Back Payment Voucher
     Verify Payment Element Exists    ${rdoPaymentUseMyCredit}
     Verify Payment Text    Use my Credit (R
-    Verify Payment Text    You don't owe us a cent. Your available credit balance covers the full value of your order
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Payment Text    You don't owe us a cent. Your available credit balance covers the full value of your order
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Payment Text    You don’t owe us a cent. Your available credit balance covers the full value of your order
+    Swipe Up    ${windowScroll}
     Click Payment Donation
+    Verify Payment Element Exists    ${lblPaymentDonation}
+    Verify Payment Element Exists    ${lblPaymentCreditsApplied}
     Verify Payment Element Exists    ${txtPaymentAmount}
     Click Payment Confirm Order
     [Teardown]    Tear Down

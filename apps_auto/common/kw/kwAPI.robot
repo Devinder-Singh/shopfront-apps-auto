@@ -17,7 +17,7 @@ ${address_Body}    { "email": "take2Automation+201905213934@gmail.com", "passwor
 ${address_Body_Business}    { "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "business", "city": "Cape Town", "contact_number": "0820000001", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
 
 ${voucher_URL}    http://tal-test-data-service.master.env/execute_query_voucher_service
-${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-05-18' and DateUsed is null limit 1" }
+${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-12-31' and DateUsed is null limit 1" }
 
 ${wishlist_URL}    http://tal-test-data-service.master.env/add_customer_wishlists
 ${Add_cart_URL}       http://tal-test-data-service.master.env/add_to_cart
