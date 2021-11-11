@@ -34,7 +34,7 @@ Log In If Not Logged In
     Run Keyword If    ${chkLoginElement}==${True}    Login Takealot    ${email}    ${password}
 
 Click Menu Register
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
         Click Element    ${btnMenu}
         Swipe Up    ${windowScroll}
@@ -45,11 +45,11 @@ Click Menu Register
          Click Element    ${btnLogout}
     END
 
-    IF    ${PLATFORM_NAME} == 'ios' and ${chkLoginElement} == ${True}
+    IF    '${PLATFORM_NAME}' == 'ios' and ${chkLoginElement} == ${True}
         Click Element    ${btnMenu}
     END
 
-    IF   ${PLATFORM_NAME} == 'android'
+    IF   '${PLATFORM_NAME}' == 'android'
         Swipe Up    ${windowScroll}
     END
     
@@ -81,15 +81,15 @@ Click Menu Logout If Logged In
     END
 
 Click Menu Daily Deals
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${btnMenuCategories}
     END    
     Click Element    ${btnMenuDailyDeals}
 
 Click Menu Shop By Department
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${btnMenuCategories}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Click Element    ${mnuShopByDepartment}
     END    
 
@@ -113,9 +113,9 @@ Click Menu Department
     [Arguments]    ${dept}
     ${txtProduct}=    Set Variable    ${None}
 
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         ${txtProduct}=    Set Variable    xpath=//*[@text='${dept}']
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == '${dept}'`]
     END
     
@@ -185,7 +185,7 @@ Click Menu Superbalist
     Click Element    ${mnuSuperbalist}
 
 Click Menu MrD
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnMenuTakealotGroup}    ${MIN_TIMEOUT}
         Click Element    ${btnMenuTakealotGroup}
     END
@@ -194,7 +194,7 @@ Click Menu MrD
     Click Element    ${mnuMrDFood}
 
 Click Menu Takealot Group
-    IF     ${PLATFORM_NAME} == 'android'
+    IF     '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnMenuTakealotGroup}    ${MIN_TIMEOUT}
         Click Element    ${btnMenuTakealotGroup}
     END
@@ -208,10 +208,10 @@ Click Back Delivery iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnBackMyAcc}
 
 Click Wishlist Nav Bar
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnWishlist}
         Click Element    ${btnWishlist}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Click Home WishList Only
     END
 
@@ -221,10 +221,10 @@ Click Wishlist
     Navigate to Wishlist
 
 Click Cart
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnCart}
         Click Element    ${btnCart}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Click Wishlist Add To Cart
     END
 
@@ -233,11 +233,11 @@ Click Home Cart
     Click Element    ${btnCart}
 
 Verify Menu Items
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${btnMenuCategories}
         Wait Until Element Is Visible    ${btnMenuDailyDeals}
         Wait Until Page Contains    Account
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Wait Until Element Is Visible    ${btnMenuDailyDeals}
         Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuShopByDepartment}
         Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    My Account

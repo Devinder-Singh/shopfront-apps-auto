@@ -19,7 +19,7 @@ Verify Reviews Distribution Summary View
 
 Verify Reviews Sort Option Default
     ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostHelpful}
-    IF    ${checkboxStatus} == ${False} and ${PLATFORM_NAME} == 'android'
+    IF    ${checkboxStatus} == ${False} and '${PLATFORM_NAME}' == 'android'
         Fail
     END
 
@@ -27,7 +27,7 @@ Verify Reviews Sort Option Most Recent
     Wait Until Element Is Visible    ${btnReviewsSortButton}    ${MIN_TIMEOUT}
     Click Element    ${btnReviewsSortButton}
     ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsSortOptionMostRecent}
-    IF    ${checkboxStatus} == ${False} and ${PLATFORM_NAME} == 'android'
+    IF    ${checkboxStatus} == ${False} and '${PLATFORM_NAME}' == 'android'
         Fail
     END
     
@@ -39,7 +39,7 @@ Verify Reviews Filter Options All
 Verify Reviews Filter Options Applied
     [Arguments]    ${numberOfFilters}
     Wait Until Element Is Visible    ${btnReviewsFilterButton}    ${MIN_TIMEOUT}
-    IF    ${PLATFORM_NAME} == 'android' 
+    IF    '${PLATFORM_NAME}' == 'android' 
         IF    ${numberOfFilters} == 0
             Element Text Should Be    ${btnReviewsFilterButton}    FILTER
         ELSE
@@ -63,12 +63,12 @@ Apply Reviews Filter Options
     Click Element    ${btnReviewsFilterApplyButton}
 
 Apply Reviews Filter Options Rating
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Click Element    ${btnReviewsFilterDoneButton}
     END
 
 Verify Reviews on WriteReivew Text
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
        Verify Text On Screen    WRITE REVIEW    ${MIN_TIMEOUT} 
     ELSE
        Verify Text On Screen  write a review   ${MIN_TIMEOUT}
@@ -78,7 +78,7 @@ Verify Reviews Upvote Added
     Verify Text On Screen    Thank you for your feedback    ${MIN_TIMEOUT}
 
 Verify Reviews Upvote Removed
-  IF    ${PLATFORM_NAME} == 'android'
+  IF    '${PLATFORM_NAME}' == 'android'
         Verify Text On Screen    Vote removed    ${MIN_TIMEOUT}    
   ELSE
         Element Should Contain Text    ${croutonTitle}    Vote removed
@@ -86,13 +86,13 @@ Verify Reviews Upvote Removed
   END
 
 Verify Reviews Upvote Success Message
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         ${checkboxStatus}=    Get Checkbox Status    ${btnReviewsUpvoteButton}
         Run Keyword If    '${checkboxStatus}'=='false'    Verify Reviews Upvote Removed    ELSE    Verify Reviews Upvote Added
     END
 
 Verify Reviews Report Review Success Message
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
          Verify Text On Screen    Thank you for reporting    ${MIN_TIMEOUT}
         Element Should Be Visible    ${btnReviewsReportReviewText}
     ELSE 
@@ -131,13 +131,13 @@ Click Review Upvote Button
 
 Click Review Report Review Menu Button
     Click Element    ${btnReviewsMenuButton}
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnReviewsReportReviewButton}    ${MIN_TIMEOUT}
     END
     Click Element    ${btnReviewsReportReviewButton}
 
 Click Review Report Review Dialog Button
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnReviewsReportReviewDialogButton}    ${MIN_TIMEOUT}
         Click Element    ${btnReviewsReportReviewDialogButton}
     END

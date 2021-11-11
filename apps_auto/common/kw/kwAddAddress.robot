@@ -3,7 +3,7 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Residential
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnResidential}    ${MIN_TIMEOUT}
         Click Element    ${btnResidential}    
     END
@@ -40,7 +40,7 @@ Add Delivery Address
     Input Text    ${txtRecipientMobile}    ${mobile}
     Input Text    ${txtRecipientStreet}    ${street}
 
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtRecipientStreet}
         Sleep    5s
         Press Keycode    20
@@ -48,7 +48,7 @@ Add Delivery Address
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}    
     END
@@ -65,7 +65,7 @@ Add Delivery Address My Acc
     Input Text    ${txtRecipientComplexMyAcc}    ABC
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
     
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtRecipientStreetMyAcc}    
     END
     
@@ -79,13 +79,13 @@ Add Delivery Address My Acc
         Swipe Up    ${windowScroll}
     END
 
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Press Keycode    20
         Sleep    1s
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    ${PLATFORM_NAME} == 'ios' and ${street} != '&*'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '&*'
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}
     END
@@ -102,7 +102,7 @@ Add Delivery Address Business My Acc No Name
     Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
 
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtRecipientStreetMyAcc}
     END
     
@@ -116,20 +116,20 @@ Add Delivery Address Business My Acc No Name
         Swipe Down    ${windowScroll}
     END
     
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Press Keycode    20
         Sleep    1s
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    ${PLATFORM_NAME} == 'ios' and ${street} != '""' and ${street} != ''
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""' and ${street} != ''
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}
     END
     
     Sleep    3s
     
-    IF    ${PLATFORM_NAME} == 'ios' and ${street} == ''
+    IF    '${PLATFORM_NAME}' == 'ios' and ${street} == ''
         Click Element    ${txtBusinessNameMyAcc}
         
     END
@@ -146,7 +146,7 @@ Add Delivery Address Business My Acc
     Input Text    ${txtBusinessNameMyAcc}    ABC
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
     
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtRecipientStreetMyAcc}
     END
            
@@ -160,13 +160,13 @@ Add Delivery Address Business My Acc
         Swipe Down    ${windowScroll}
     END
     
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Press Keycode    20
         Sleep    1s
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    ${PLATFORM_NAME} == 'ios' and ${street} != '""' 
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""' 
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}
     END
@@ -184,7 +184,7 @@ Edit Delivery Address On Map
 
     Sleep    10s
 
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtSearchAddressOnMap}
         Sleep    5s
         Press Keycode    67
@@ -194,7 +194,7 @@ Edit Delivery Address On Map
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    ${PLATFORM_NAME} == 'ios' and ${street} != '""' 
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""' 
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}
     END
@@ -212,7 +212,7 @@ Edit Delivery Address On Map My Acc
 
     Sleep    10s
 
-    IF     ${PLATFORM_NAME} == 'android'
+    IF     '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtSearchAddressOnMap}
         Sleep    5s
         Press Keycode    67
@@ -222,7 +222,7 @@ Edit Delivery Address On Map My Acc
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    ${PLATFORM_NAME} == 'ios' and ${street} != '""'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""'
         Wait Until Element Is Visible    ${lblAddresOptionMyAccMap}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOptionMyAccMap}
     END
@@ -240,7 +240,7 @@ Edit Delivery Address On Map My Acc Suburb
 
     Sleep    10s
 
-    IF     ${PLATFORM_NAME} == 'android'
+    IF     '${PLATFORM_NAME}' == 'android'
     Click Element    ${txtSearchAddressOnMap}
     Sleep    5s
     Press Keycode    67
@@ -250,7 +250,7 @@ Edit Delivery Address On Map My Acc Suburb
     Press Keycode    20
     Sleep    1s
     Press Keycode    66
-    ELSE IF    ${PLATFORM_NAME} == 'ios' and ${street} != '""'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""'
         Wait Until Element Is Visible    ${lblAddresOptionMyAccMapSuburb}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOptionMyAccMapSuburb}
     END
@@ -270,9 +270,9 @@ Clear Delivery Address Mobile Number Dyneamic
     Wait Until Element Is Visible    ${lblAddAddress}    ${MIN_TIMEOUT}
 
     ${txtMobile}=    Set Variable    ${None}
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         ${txtMobile}=    Set Variable    xpath=//*[@text='${field}']
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${txtMobile}=    Set Variable    chain=**/XCUIElementTypeTextField[`value == "${field}"`]
     END           
 
@@ -289,7 +289,7 @@ Edit Delivery Address Postal Code
     Input Text    ${txtRecipientPostCode}    ${postalCode}
 
     #Sleep    1s
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Click Back iOS    Close
     END  
 
@@ -351,7 +351,7 @@ Edit Delivery Address Street
     Clear Text    ${txtRecipientStreet}
     Input Text    ${txtRecipientStreet}    ${street}
 
-    IF     ${PLATFORM_NAME} == 'android'
+    IF     '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtRecipientStreet}
     END
     
@@ -363,7 +363,7 @@ Edit Delivery Address Street My Acc
     Clear Text    ${txtRecipientStreetMyAcc}
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
 
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtRecipientStreetMyAcc}
         Sleep    10s
         Press Keycode    20
@@ -372,7 +372,7 @@ Edit Delivery Address Street My Acc
         Sleep    1s
         Press Keycode    66
         Sleep    2s
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}
     END
@@ -413,7 +413,7 @@ Edit Delivery Address Business
     Input Text    ${txtBusinessName}    ${business}
 
     #Sleep    1s
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Click Back iOS    Close
         Swipe Up    ${windowScroll}
     END
@@ -440,17 +440,17 @@ Verify Add Address Question Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnAddressGotItThanks}    ${MIN_TIMEOUT}
 
-    IF    ${PLATFORM_NAME} == 'android' 
+    IF    '${PLATFORM_NAME}' == 'android' 
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
     END    
 
 Verify Add Address Province Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${navAddressProvince}    ${MIN_TIMEOUT}
-    IF    ${PLATFORM_NAME} == 'android' 
+    IF    '${PLATFORM_NAME}' == 'android' 
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
     END

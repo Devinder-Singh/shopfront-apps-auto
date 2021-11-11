@@ -3,7 +3,7 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Domestic TV Licence
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${scrTvLicType}    ${MIN_TIMEOUT}
     END
  
@@ -36,9 +36,9 @@ Verify Tv Licence Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnVerify}    ${MIN_TIMEOUT}
 
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
     END
     

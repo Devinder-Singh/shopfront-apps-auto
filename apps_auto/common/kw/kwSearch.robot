@@ -19,9 +19,9 @@ Click Only Search Home
 
 Search Product
     [Arguments]    ${search}
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Input Text    ${btnSearchHome}    ${search}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         Input Text    ${txtSearch}    ${search}
     END
 

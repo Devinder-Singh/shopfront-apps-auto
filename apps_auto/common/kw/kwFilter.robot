@@ -56,10 +56,10 @@ Click Filter Clear All
     Wait Until Element Is Visible    ${btnProductFilterClearAll}    ${MIN_TIMEOUT}
     Click Element    ${btnProductFilterClearAll}
 
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Wait Until Element Is Visible    ${btnProductFilterShowAll}    ${MIN_TIMEOUT}
         Click Element    ${btnProductFilterShowAll}
-    ELSE IF    ${PLATFORM_NAME} == 'android' 
+    ELSE IF    '${PLATFORM_NAME}' == 'android' 
          Click Filter Apply Button
     END
 

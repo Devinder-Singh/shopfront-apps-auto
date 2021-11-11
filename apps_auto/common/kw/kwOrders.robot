@@ -10,7 +10,7 @@ Verify Order Detail Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnOrdersPayNow}    ${MIN_TIMEOUT}
 
-     IF    ${PLATFORM_NAME} == 'ios'
+     IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
      ELSE
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
@@ -26,7 +26,7 @@ Click Order Cancel
     Wait Until Element Is Visible    ${btnOrdersCancelConfirm}    ${MIN_TIMEOUT}
     Click Element    ${btnOrdersCancelConfirm}
 
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Verify Text On Screen    Cancelled Item(s)    ${MIN_TIMEOUT}
     ELSE
         Verify Text On Screen    Your order has been cancelled    ${MIN_TIMEOUT}

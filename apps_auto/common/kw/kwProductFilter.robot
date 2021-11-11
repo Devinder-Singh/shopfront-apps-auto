@@ -7,9 +7,9 @@ Select Filter Option
     [Arguments]    ${option}
 
     ${chkProdFilter}=    Set Variable    ${None}
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         ${chkProdFilter}=    Set Variable    xpath=//*[@text="${option}"]  
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${chkProdFilter}=    Set Variable    //XCUIElementTypeStaticText[@name="${option}"]
     END    
 

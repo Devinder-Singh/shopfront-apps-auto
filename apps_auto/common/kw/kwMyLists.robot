@@ -3,7 +3,7 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Navigate to Wishlist
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnWishlistCreate}    ${MIN_TIMEOUT}
         Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
         Click Element    ${btnWishListScreen}
@@ -38,7 +38,7 @@ Enter Wishlist Name
 
 Enter Wishlist Custom Name
     [Arguments]    ${name}
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Wait Until Element Is Visible    ${btnWishlistSave}    ${MIN_TIMEOUT}
     END
 
@@ -55,7 +55,7 @@ Click Wishlist Default
     Click Element    ${btnWishlistItems}
 
 Navigate to Wishlist Auto
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnWishlistCreate}    ${MIN_TIMEOUT}
         Wait Until Element Is Visible    ${btnWishlistAuto}    ${MIN_TIMEOUT}
         Click Element    ${btnWishListScreen}

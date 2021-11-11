@@ -111,9 +111,9 @@ Verify Payment Details Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${txtPaymentCancel}    ${MIN_TIMEOUT}
 
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Contains    ${verifyText}    10s
     END
 
@@ -121,9 +121,9 @@ Verify Payment Text Not
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnChange}    ${MIN_TIMEOUT}
 
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Not Contain Text    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Does Not Contain    ${verifyText}
     END
 
@@ -131,9 +131,9 @@ Verify Payment Donation Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnNoThanks}    ${MIN_TIMEOUT}
     
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
     END
 
@@ -141,9 +141,9 @@ Verify Payment Donation Info Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnPaymentDonationOK}    ${MIN_TIMEOUT}
 
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
          Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
     END
 
