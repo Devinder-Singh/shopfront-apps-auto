@@ -17,6 +17,13 @@ Click Free Delivery
 #    Wait Until Element Is Visible    ${btnFree}    ${MIN_TIMEOUT}
 #    Click Element    ${btnFree}
 
+Click Standard Collect
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
+
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtStandardCollect}    ${MIN_TIMEOUT}
+    Run Keyword If    ${chkTextSuccess}==${True}    Click Element    ${txtStandardCollect}
+    Run Keyword If    ${chkTextSuccess}==${False}    Click Surcharge Delivery
+
 Click Free Delivery Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnFree}    ${MIN_TIMEOUT}
