@@ -49,3 +49,5 @@ ${lblAddresMyAccSuburb}      chain=**/XCUIElementTypeStaticText[`label == "Gaute
 ${lblAddresOptionMyAccGauteng}      chain=**/XCUIElementTypeStaticText[`label == "12 Ridge Way, Green Point, Cape Town, Gauteng, 8007"`]
 
 ${lblAddresOptionMyAccMapSuburb}      chain=**/XCUIElementTypeStaticText[`label == "13 Caro Road, Robertsham, Johannesburg South, South Africa"`]
+
+${btnAddressDelete}    chain=**/XCUIElementTypeButton[`label == "DELETE"`]
