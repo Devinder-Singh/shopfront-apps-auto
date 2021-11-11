@@ -69,7 +69,7 @@ Add Delivery Address My Acc
     
     Sleep    10s
     
-    IF    ${street} == '""'
+    IF    '${street}' == '""'
         Click Element    ${txtRecipientMobileMyAcc}
         Swipe Up    ${windowScroll}
     ELSE IF    '${street}'=='&*'
@@ -83,7 +83,7 @@ Add Delivery Address My Acc
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '&*'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${street}' != '&*'
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}
     END
@@ -106,10 +106,10 @@ Add Delivery Address Business My Acc No Name
     
     Sleep    10s
     
-    IF    ${street} == '""'
+    IF    '${street}' == '""'
         Click Element    ${txtRecipientMobileMyAcc}
         Swipe Down    ${windowScroll}
-    ELSE IF    ${street} == '&*'
+    ELSE IF    '${street}' == '&*'
         Click Element    ${txtRecipientMobileMyAcc}
         Swipe Down    ${windowScroll}
     END
@@ -120,14 +120,14 @@ Add Delivery Address Business My Acc No Name
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""' and ${street} != ''
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${street}' != '""' and '${street}' != ''
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}
     END
     
     Sleep    3s
     
-    IF    '${PLATFORM_NAME}' == 'ios' and ${street} == ''
+    IF    '${PLATFORM_NAME}' == 'ios' and '${street}' == ''
         Click Element    ${txtBusinessNameMyAcc}
         
     END
@@ -150,10 +150,10 @@ Add Delivery Address Business My Acc
            
     Sleep    10s
     
-    IF    ${street} == '""'
+    IF    '${street}' == '""'
         Click Element    ${txtRecipientMobileMyAcc}
         Swipe Down    ${windowScroll}
-    ELSE IF    ${street} == '&*'
+    ELSE IF    '${street}' == '&*'
         Click Element    ${txtRecipientMobileMyAcc}
         Swipe Down    ${windowScroll}
     END
@@ -164,7 +164,7 @@ Add Delivery Address Business My Acc
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""' 
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${street}' != '""' 
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}
     END
@@ -174,7 +174,7 @@ Add Delivery Address Business My Acc
     Click Save Address
 
 Edit Delivery Address On Map
-    [Arguments]    ${street}   
+    [Arguments]    ${street}  
     Wait Until Element Is Visible    ${txtSearchAddressOnMap}    ${MIN_TIMEOUT}
     Click Element    ${txtSearchAddressOnMap}
     Clear Text    ${txtSearchAddressOnMap}
@@ -192,7 +192,7 @@ Edit Delivery Address On Map
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""' 
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${street}' != '""' 
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}
     END
@@ -220,7 +220,7 @@ Edit Delivery Address On Map My Acc
         Press Keycode    20
         Sleep    1s
         Press Keycode    66
-    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${street}' != '""'
         Wait Until Element Is Visible    ${lblAddresOptionMyAccMap}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOptionMyAccMap}
     END
@@ -248,7 +248,7 @@ Edit Delivery Address On Map My Acc Suburb
     Press Keycode    20
     Sleep    1s
     Press Keycode    66
-    ELSE IF    '${PLATFORM_NAME}' == 'ios' and ${street} != '""'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${street}' != '""'
         Wait Until Element Is Visible    ${lblAddresOptionMyAccMapSuburb}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOptionMyAccMapSuburb}
     END
