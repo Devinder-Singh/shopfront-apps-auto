@@ -9,11 +9,13 @@ Click Free Delivery
     IF    ${chkTextSuccess} == ${True}
         Click Element    ${btnFree}
     END
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtSurchargeDelivery}    ${MIN_TIMEOUT}
-    IF    ${chkTextSuccess} == ${True}
-        Click Surcharge Delivery
-    ELSE
-        Click Standard Collect
+    IF    ${chkTextSuccess} != ${True}
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtSurchargeDelivery}    ${MIN_TIMEOUT}
+        IF    ${chkTextSuccess} == ${True}
+            Click Surcharge Delivery
+        ELSE
+            Click Standard Collect
+        END
     END
 
 Click Standard Collect
