@@ -27,18 +27,12 @@ Register Takealot
     Input Text    ${txtRegConfirmPwd}    ${password}
 
     Click Element    ${btnRegRegister}
-<<<<<<< HEAD
     
     IF    ${PLATFORM_NAME} == 'android'
         Verify Text On Screen    You are now successfully registered and logged in    ${MIN_TIMEOUT}
     ELSE IF    ${PLATFORM_NAME} == 'ios'
        Verify Text On Screen    Logged in successfully    ${MIN_TIMEOUT} 
     END
-=======
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You are now successfully registered and logged in    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Logged in successfully.    ${MIN_TIMEOUT}
->>>>>>> origin/develop
 
 Register Takealot Unverify
     [Arguments]    ${name}    ${surname}    ${email}    ${password}

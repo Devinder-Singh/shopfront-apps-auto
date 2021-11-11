@@ -41,16 +41,6 @@ Add Delivery Address
     Input Text    ${txtRecipientName}    ${name}
     Input Text    ${txtRecipientMobile}    ${mobile}
     Input Text    ${txtRecipientStreet}    ${street}
-<<<<<<< HEAD
-=======
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    5s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
->>>>>>> origin/develop
 
     IF    ${PLATFORM_NAME} == 'android'
         Click Element    ${txtRecipientStreet}
@@ -77,7 +67,6 @@ Add Delivery Address My Acc
     Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
     Input Text    ${txtRecipientComplexMyAcc}    ABC
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
-<<<<<<< HEAD
     
     IF    ${PLATFORM_NAME} == 'android'
         Click Element    ${txtRecipientStreetMyAcc}    
@@ -104,23 +93,6 @@ Add Delivery Address My Acc
         Click Element    ${lblAddresOption}
     END
         
-=======
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
-    Wait Until Page Contains    ${street}    10s
-    Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
-    Run Keyword If    '${street}'=='""'    Swipe Up    ${windowScroll}
-    Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
-    Run Keyword If    '${street}'=='&*'    Swipe Up    ${windowScroll}
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
-    Sleep    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
-    Sleep    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
-
-    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='&*'    Wait Until Element Is Visible    ${lblAddresOption}    15s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios' and '${street}'!='&*'    Click Element    ${lblAddresOption}
->>>>>>> origin/develop
     Sleep    3s
     Swipe Up    ${windowScroll}
     Click Save Address
