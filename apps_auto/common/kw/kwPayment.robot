@@ -36,8 +36,11 @@ Select Earn eBucks
 
 Click Change Payment Method
     Wait Until Element Is Visible    ${txtPaymentVoucher}    ${MIN_TIMEOUT}
+    
     ${rdoPaymentCredit}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${rdoPaymentUseMyCredit}    1s
-    Run Keyword If    ${rdoPaymentCredit}    Click Element    ${rdoPaymentUseMyCredit}
+    IF    ${rdoPaymentCredit} == ${True}
+        Click Element    ${rdoPaymentUseMyCredit}
+    END
 
     Wait Until Element Is Visible    ${btnChange}    ${MIN_TIMEOUT}
     Click Element    ${btnChange}
@@ -107,26 +110,42 @@ Click Payment Donation
 Verify Payment Details Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${txtPaymentCancel}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Contains    ${verifyText}    10s
+    END
 
 Verify Payment Text Not
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnChange}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Not Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain    ${verifyText}
+
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Not Contain Text    ${verifyText}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Does Not Contain    ${verifyText}
+    END
 
 Verify Payment Donation Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnNoThanks}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    END
 
 Verify Payment Donation Info Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnPaymentDonationOK}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    END
 
 Verify Payment Element Not Exists
     [Arguments]    ${verifyElement}

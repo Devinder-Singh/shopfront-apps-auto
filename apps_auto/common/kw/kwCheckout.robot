@@ -15,8 +15,10 @@ Click Checkout
     Click Element    ${btnCheckout}
 
 Click CAB Add To Cart
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCartCustomersAlsoBought}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartCustomersAlsoBought}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${btnCartCustomersAlsoBought}    ${MIN_TIMEOUT}
+        Click Element    ${btnCartCustomersAlsoBought}
+    END
 
 Click CAB Add To Cart Scroll
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
@@ -25,53 +27,74 @@ Click CAB Add To Cart Scroll
     FOR    ${index}    IN RANGE    50
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnCartCustomersAlsoBought}
 
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
+        IF    ${chkProdVisible} == ${True}
+            Exit For Loop
+        END
 
-        Swipe Up    ${windowScroll}
+         Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${btnCartCustomersAlsoBought}
 
 Click Checkout Android
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckout}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
+        Click Element    ${btnCheckout}
+    END
 
 Verify Toolbar iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHome}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnCart}    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnWishListIcon}    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuMyAccount}    1s
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Wait Until Element Is Visible    ${btnHome}    ${MIN_TIMEOUT}
+        Wait Until Element Is Visible    ${btnCart}    ${MIN_TIMEOUT}
+        Wait Until Element Is Visible    ${btnWishListIcon}    ${MIN_TIMEOUT}
+        Wait Until Element Is Visible    ${mnuMyAccount}    ${MIN_TIMEOUT}
+    END
+    
 
 Wait for Checkout
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
 
 Click Checkout Delete First Item
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutEdit}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCheckoutSelect}    15s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutSelect}
+
+    IF    '${PLATFORM_NAME}' == 'android'
+        Click Element    ${btnCheckoutEdit}
+        Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
+        Click Element    ${btnCheckoutSelect}    
+    END
+    
     Click Element    ${btnCheckoutDelete}
 
 Click Checkout Move To Wishlist First Item
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutEdit}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCheckoutSelect}    15s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutSelect}
+    
+    IF    '${PLATFORM_NAME}' == 'android'
+        Click Element    ${btnCheckoutEdit}
+        Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
+        Click Element    ${btnCheckoutSelect}
+    END
+    
     Click Element    ${btnCheckoutMoveToWishlist}
 
 Click Checkout Move To Wishlist Swipe
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartItemContainer}
+    
+    IF    '${PLATFORM_NAME}' == 'android'
+        Click Element    ${btnCartItemContainer}
+    END
+        
 
 Verify Checkout Delete And Wishlist
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutEdit}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCheckoutSelect}    15s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCheckoutSelect}
-    Verify Element On Screen    ${btnCheckoutDelete}    5s
-    Verify Element On Screen    ${btnCheckoutMoveToWishlist}    1s
+    
+    IF    '${PLATFORM_NAME}' == 'android'
+        Click Element    ${btnCheckoutEdit}
+        Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
+        Click Element    ${btnCheckoutSelect}    
+    END
+    
+    Verify Element On Screen    ${btnCheckoutDelete}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${btnCheckoutMoveToWishlist}    ${MIN_TIMEOUT}
 
 Change Cart Quantity Android
     [Arguments]    ${qty}
@@ -79,9 +102,15 @@ Change Cart Quantity Android
     Wait Until Element Is Visible    ${btnCartQty}    ${MIN_TIMEOUT}
     Click Element    ${btnCartQty}
 
-    ${txtCartQty}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${qty}"]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
+    ${txtCartQty}=    Set Variable    ${None}
 
-    Wait Until Element Is Visible    ${txtCartQty}    1s
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${txtCartQty}=    Set Variable    xpath=//*[@text="${qty}"]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'    
+        ${txtCartQty}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]    
+    END
+            
+    Wait Until Element Is Visible    ${txtCartQty}    ${MIN_TIMEOUT}
     Click Element    ${txtCartQty}
 #    Sleep    3s
 
@@ -90,8 +119,14 @@ Change Cart Quantity Scroll
 
     Wait Until Element Is Visible    ${btnCartQty}    ${MIN_TIMEOUT}
     Click Element    ${btnCartQty}
-
-    ${txtCartQty}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${qty}"]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
+    
+    ${txtCartQty}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${txtCartQty}=    Set Variable    xpath=//*[@text="${qty}"]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtCartQty}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
+    END
+               
     Verify Text On Screen    Select quantity
 
     Set Implicitly Wait    1
@@ -99,9 +134,9 @@ Change Cart Quantity Scroll
     FOR    ${index}    IN RANGE    15
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtCartQty}
 
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
+        IF    ${chkProdVisible} == ${True}
+            Exit For Loop
+        END
 
         Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
@@ -114,9 +149,14 @@ Click Add Items to Qualify iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnCartAddPromoItems}
 
 Click Checkout Cart Undo
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCartUndo}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartUndo}
-
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${btnCartUndo}    ${MIN_TIMEOUT}
+        Click Element    ${btnCartUndo}    
+    END
+    
 Add To Cart Trending First Item
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnCartTrendingAddToCart}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    ${MIN_TIMEOUT}
+        Click Element    ${btnCartTrendingAddToCart}
+    END
+    

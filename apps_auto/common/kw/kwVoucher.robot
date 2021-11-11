@@ -19,4 +19,4 @@ Click Back Payment Voucher
 
 Verify Payment Voucher Text
     [Arguments]    ${verifyText}
-    Wait Until Page Contains    ${verifyText}    20s
+    Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}

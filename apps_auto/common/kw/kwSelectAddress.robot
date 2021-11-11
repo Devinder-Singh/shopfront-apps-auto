@@ -16,10 +16,10 @@ Click Pickup Point
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    25
         ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
+        
+        IF    ${chkProdVisible} == ${True}
+            Exit For Loop
+        END
 
         Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
@@ -51,9 +51,11 @@ Display WC Province Pickup Points
     Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
 
     ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Western Cape    2s
-    Run Keyword If    ${chkTextSuccess}==${False}    Click Filter Province
-    Run Keyword If    ${chkTextSuccess}==${False}    Click Western Cape Province
-
+    IF    ${chkTextSuccess} == ${False}
+        Click Filter Province
+        Click Western Cape Province    
+    END
+    
 Click Filter Province
     Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
     Click Element    ${txtFilterProvince}
@@ -81,14 +83,20 @@ Click Collect Address Back
 Verify Delivery Address Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnDeliveryAddress}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    END
 
 Verify Collect Address Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    END
 
 Verify Pickup Point
     Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}

@@ -9,8 +9,9 @@ Verify Card Payment
         ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    1s
         IF    ${chkTextSuccess}==${False}
             ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card number    1s
+        ELSE
+            Exit For Loop
         END
-        Exit For Loop If    ${chkTextSuccess}==${True}
     END
     Set Implicitly Wait    5
 
@@ -39,5 +40,8 @@ Click Credit Card Name
 Verify Card Payment Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblCardNumber}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}
+    END    

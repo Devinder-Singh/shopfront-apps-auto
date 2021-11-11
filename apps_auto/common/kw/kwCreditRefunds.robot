@@ -11,5 +11,5 @@ Click Menu Refund History
     Click Element    ${mnuRefundHistory}
 
 Click Back Credit and Refunds
-    Wait Until Element Is Visible    ${btnBackCredit}    5s
+    Wait Until Element Is Visible    ${btnBackCredit}    ${MIN_TIMEOUT}
     Click Element    ${btnBackCredit}

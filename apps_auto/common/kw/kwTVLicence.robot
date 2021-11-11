@@ -3,7 +3,10 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Domestic TV Licence
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrTvLicType}    ${MIN_TIMEOUT}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${scrTvLicType}    ${MIN_TIMEOUT}
+    END
+ 
     Wait Until Element Is Visible    ${btnDomestic}    ${MIN_TIMEOUT}
     Click Element    ${btnDomestic}
 
@@ -32,9 +35,13 @@ Click Back TV Licence
 Verify Tv Licence Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnVerify}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
 
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    END
+    
 Verify Tv Licence Element Exists
     [Arguments]    ${verifyElement}
     Wait Until Page Contains Element    ${verifyElement}

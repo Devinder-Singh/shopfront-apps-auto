@@ -23,7 +23,9 @@ Register User
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
+    Wait Until Element Is Visible    ${btnAddressDelete}    ${MIN_TIMEOUT}
     Wait Until Page Contains    Tester Residential    10s
+    Wait Until Page Contains    Robertsham    10s
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Credit Card
