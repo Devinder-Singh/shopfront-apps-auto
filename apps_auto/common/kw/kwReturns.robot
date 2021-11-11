@@ -118,7 +118,7 @@ Verify Returns Order Detail Item Price And Qty
 Verify Returns Order Detail Item Warranty Title
     Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWarrantyTitle}    ${MIN_TIMEOUT}
     ${hasValidWarranty}=    Run Keyword And Return Status    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantyTitle}    Warranty
-    Run Keyword And Return If    ${hasValidWarranty}==False    Element Should Contain Text   ${cardReturnsOrderDetailItemWarrantyTitle}    Non-Returnable 
+    Run Keyword And Return If    ${hasValidWarranty}==False    Element Should Contain Text   ${cardReturnsOrderDetailItemWarrantyTitle}    Non-Returnable
 
 Verify Returns Order Detail Item Warranty Subtitle
     ${hasValidWarranty}=    Run Keyword And Return Status    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantyTitle}    Warranty

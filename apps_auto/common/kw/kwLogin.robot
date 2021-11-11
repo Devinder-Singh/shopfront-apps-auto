@@ -16,13 +16,11 @@ Login Takealot
     Input Text    ${txtPassword}    ${password}
     Click Element    ${btnLogin}
 
-    Run Keyword If
-        ...    '${PLATFORM_NAME}'=='android'
-        ...    Return Android Login Status    ${email}    ${password}
-
-    Run Keyword If
-        ...    '${PLATFORM_NAME}'=='ios'
-        ...    Return iOS Login Status    ${email}    ${password}
+    IF     ${PLATFORM_NAME} == 'android'
+        Return Android Login Status    ${email}    ${password}
+    ELSE IF    ${PLATFORM_NAME} == 'ios'
+        Return iOS Login Status    ${email}    ${password}
+    END
 
 Login Takealot Forgot Password
     [Arguments]    ${email}
@@ -37,13 +35,19 @@ Login Takealot Forgot Password
 Return Android Login Status
     [Arguments]    ${email}    ${password}
     ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Page Contains    You are logged in    ${MIN_TIMEOUT}
-    Run Keyword If    ${chkLoginSuccess}==${False}    Register From Login Takealot    ${email}    ${password}
+
+    IF    ${chkLoginSuccess} == ${False}
+        Register From Login Takealot    ${email}    ${password}
+    END   
 
 Return iOS Login Status
     [Arguments]    ${email}    ${password}
 #    ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    ${MIN_TIMEOUT}
     ${chkLoginSuccess}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    ${MIN_TIMEOUT}
-    Run Keyword If    ${chkLoginSuccess}==${False}    Register From Login Takealot    ${email}    ${password}
+
+    IF    ${chkLoginSuccess} == ${False}
+        Register From Login Takealot    ${email}    ${password}
+    END
 
 Register From Login Takealot
     [Arguments]    ${email}    ${password}
@@ -52,7 +56,12 @@ Register From Login Takealot
 
 Verify Logged In
     [Arguments]    ${verifyText}
-    ${lblUserName}=    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Set Variable    id=${verifyText}
-    ...    ELSE    Set Variable    ${lblUserName}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    You are logged in    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Contain Text    ${lblUserName}    ${verifyText}
+    ${lblUserName}=    Set Variable    ${None}
+
+    IF    ${PLATFORM_NAME} == 'ios'
+        ${lblUserName}=    Set Variable    id=${verifyText}
+        Element Should Contain Text    ${lblUserName}    ${verifyText}
+    ELSE IF    ${PLATFORM_NAME} == 'android'
+        ${lblUserName}=    Set Variable    ${lblUserName}
+        Wait Until Page Contains    You are logged in    ${MIN_TIMEOUT}
+    END

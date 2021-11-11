@@ -6,7 +6,12 @@ Resource    kwAPI.robot
 Select Filter Option
     [Arguments]    ${option}
 
-    ${chkProdFilter}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${option}"]    '${PLATFORM_NAME}'=='ios'    //XCUIElementTypeStaticText[@name="${option}"]
+    ${chkProdFilter}=    Set Variable    ${None}
+    IF    ${PLATFORM_NAME} == 'android'
+        ${chkProdFilter}=    Set Variable    xpath=//*[@text="${option}"]  
+    ELSE IF    ${PLATFORM_NAME} == 'ios'
+        ${chkProdFilter}=    Set Variable    //XCUIElementTypeStaticText[@name="${option}"]
+    END    
 
     Wait Until Element Is Visible    ${chkProdFilter}    ${MIN_TIMEOUT}
     Click Element    ${chkProdFilter}

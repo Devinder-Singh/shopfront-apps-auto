@@ -10,7 +10,7 @@ ${sleepAfterLoopTime}    5s
 Check Clear Cart API
     [Documentation]    The purpose of this test is to verify that the clear cart API is running.
 
-    Log    API environment set as '${APP_ENVIRONMENT}''
+    Log    API environment set as '${APP_ENVIRONMENT}'
     FOR    ${result}    IN RANGE    ${minLoopRange}    ${maxLoopRange}
         Run Keyword And Continue On Failure    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
         Run Keyword And Continue On Failure    Clear Cart

@@ -19,26 +19,31 @@ Click Only Search Home
 
 Search Product
     [Arguments]    ${search}
+    IF    ${PLATFORM_NAME} == 'ios'
+        Input Text    ${btnSearchHome}    ${search}
+    ELSE IF    ${PLATFORM_NAME} == 'android'
+        Input Text    ${txtSearch}    ${search}
+    END
 
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Input Text    ${btnSearchHome}    ${search}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Input Text    ${txtSearch}    ${search}
     ${searchFirstOption}=    Get First Search Option    ${search}
-    Wait Until Element Is Visible    ${searchFirstOption}    15s
+    Wait Until Element Is Visible    ${searchFirstOption}    ${MIN_TIMEOUT}
     Click Element    ${searchFirstOption}
-
-#    Sleep    2s
+    #Sleep    2s
 
 Search and Press Enter
     [Arguments]    ${search}
 
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Input Text    ${btnSearchHome}    ${search}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Input Text    ${txtSearch}    ${search}
-
-    Sleep    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
-    ${searchiOS}=    Set Variable    chain=**/XCUIElementTypeButton[`label == "search"`]
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${searchiOS}
-
+    IF    '${PLATFORM_NAME}'=='ios'
+        Run Keyword If    '${PLATFORM_NAME}'=='ios'    Input Text    ${btnSearchHome}    ${search}
+        Sleep    1s
+        ${searchiOS}=    Set Variable    chain=**/XCUIElementTypeButton[`label == "search"`]
+        Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${searchiOS}
+    ELSE
+        Run Keyword If    '${PLATFORM_NAME}'=='android'    Input Text    ${txtSearch}    ${search}
+        Sleep    1s
+        Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66        
+    END
+    
 Click Search Recent
     Wait Until Element Is Visible    ${btnSearchRecent}    ${MIN_TIMEOUT}
     Click Element    ${btnSearchRecent}

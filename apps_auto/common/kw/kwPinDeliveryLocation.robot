@@ -3,7 +3,7 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Map Address Option
-    Wait Until Element Is Visible    ${txtMapAddressOption}    15s
+    Wait Until Element Is Visible    ${txtMapAddressOption}    ${MIN_TIMEOUT}
     Click Element    ${txtMapAddressOption}
 
 Click Use This Location
@@ -13,6 +13,6 @@ Click Use This Location
 
 Add Map Street Address
     [Arguments]    ${street}
-    Wait Until Element Is Visible    ${txtMapStreetAddress}    15s
+    Wait Until Element Is Visible    ${txtMapStreetAddress}    ${MIN_TIMEOUT}
     Clear Text    ${txtMapStreetAddress}
     Input Text    ${txtMapStreetAddress}    ${street}
