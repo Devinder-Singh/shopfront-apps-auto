@@ -17,12 +17,12 @@ Verify Card Payment
 
 Verify Payfast Payment Text
     [Arguments]    ${verifyText}='Instant EFT'
-    ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    ${MAX_TIMEOUT}
-    IF    ${chkTextSuccess} == ${False}
-        ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Secure payments by PayFast    1s
+    IF    '${APP_ENVIRONMENT}' == 'https://api.takealot.com/'
+        Verify Text On Screen    'Instant EFT'    ${MAX_TIMEOUT}
+    ELSE
+        Verify Text On Screen    'Test Merchant'    ${MAX_TIMEOUT}
     END
-    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Secured and powered by PayFast    1s
-
+    
 Click Pay with Credit Card Back
     Wait Until Element Is Visible    ${navPayCreditCardBack}    ${MIN_TIMEOUT}
     Click Element    ${navPayCreditCardBack}
