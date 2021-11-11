@@ -242,3 +242,10 @@ Verify Menu Items
         Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${mnuShopByDepartment}
         Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    My Account
     END
+
+Click No Deal
+    [Arguments]    ${timeout}=5s
+    ${btnPresentNotificationsNo}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnDealsNotification}    ${timeout}
+    IF    ${btnPresentNotificationsNo} == ${True}
+        Click Element    ${btnDealsNotification}
+    END

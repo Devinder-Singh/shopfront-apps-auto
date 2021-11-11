@@ -4,12 +4,10 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Click Residential
     IF    ${PLATFORM_NAME} == 'android'
-        Wait Until Element Is Visible    ${btnResidential}    ${MIN_TIMEOUT}    
+        Wait Until Element Is Visible    ${btnResidential}    ${MIN_TIMEOUT}
+        Click Element    ${btnResidential}    
     END
     
-    Wait Until Element Is Visible    ${btnResidential}    ${MIN_TIMEOUT}
-    Click Element    ${btnResidential}
-
 Click Address Business
     Wait Until Element Is Visible    ${lblAddressBusiness}    ${MIN_TIMEOUT}
     Click Element    ${lblAddressBusiness}
