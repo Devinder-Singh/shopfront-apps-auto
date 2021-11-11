@@ -648,7 +648,7 @@ Apps > Checkout > Collect > Pickup Points List - QASA-583
     Click Western Cape Province
     Click Pickup Point Info
     Click Select Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -716,7 +716,7 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
@@ -752,7 +752,7 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
@@ -772,14 +772,14 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
     Click Pickup Point
     Verify Delivery Options Text    Standard Collect
     Verify Delivery Options Text    Why the wait?
-    Click Free Delivery
+    Click Standard Collect
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Verify Payment Text    Delivery Method
     Verify Payment Text    Pickup Point
     Click Change Payment Pickup Point
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click Change Payment Delivery Method
     Click Collect
     [Teardown]    Tear Down
@@ -799,12 +799,12 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QASA-569
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click Change Payment Delivery Method
     Click Collect
     [Teardown]    Tear Down
@@ -824,12 +824,12 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
     Click Pickup Point Brackenfell
-    Click Free Delivery
+    Click Standard Collect
     [Teardown]    Tear Down
 
 Apps > Checkout > Order Review - QASA-590
@@ -906,7 +906,7 @@ Apps > Checkout > Payment > Earn eBucks - QASA-605
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1094,11 +1094,11 @@ Apps > Checkout > Payment > Donation - QASA-618
     Click Free Delivery
     Verify Payment Donation Text    Donate R 5 to Beautiful Gate Children's Charity
     Verify Payment Donation Text    Beautiful Gate South Africa is a registered non-profit organisation providing care and support to vulnerable children and families
-    Verify Payment Element Exists    ${imgPaymentDonation}
+    Verify Element On Screen    ${imgPaymentDonation}    ${MIN_TIMEOUT}
     Click Payment Donate
-    Verify Payment Element Exists    ${rdoDonationSelected}
-    Verify Payment Element Exists    ${lblPaymentDonation}
-#    Verify Payment Element Exists    ${lblPaymentR5}
+    Verify Element On Screen    ${rdoDonationSelected}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${lblPaymentDonation}    ${MIN_TIMEOUT}
+#    Verify Element On Screen    ${lblPaymentR5}    ${MIN_TIMEOUT}
     Click Payment Donation Info Icon
     Verify Payment Donation Info Text    Beautiful Gate South Africa is a registered non-profit organisation providing care and support to vulnerable children and families
 #    Click Payment Donation Ok
@@ -1202,7 +1202,7 @@ Apps > Checkout > Payment > Confirmation 02 - QASA-106
 Apps > Checkout > Payment > Pay with PayFast - QASA-539
     [Tags]    QASA-539
     [Setup]    Start Application
-    # Clear Environment
+    Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
@@ -1574,7 +1574,7 @@ Apps > Checkout > Collect Options > Promise Date - QASA-606
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1591,7 +1591,7 @@ Apps > Checkout > Collect Options > Promise Date - QASA-606
 Apps > Checkout > Payment > Pay with eBucks - QASA-538
     [Tags]    QASA-538
     [Setup]    Start Application
-    # Clear Environment
+    Clear Environment
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
@@ -1603,7 +1603,7 @@ Apps > Checkout > Payment > Pay with eBucks - QASA-538
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click Donate No Thanks
     Click Change Payment Method
     Click eBucks Payment Method
@@ -1630,21 +1630,21 @@ Apps > Checkout > Payment > Credits (Voucher) - QASA-537
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click Donate No Thanks
     Click Add Payment Voucher
     Enter Payment Voucher Code
     Click Apply Payment Voucher
     Click Back Payment Voucher
-    Verify Payment Element Exists    ${rdoPaymentUseMyCredit}
+    Verify Element On Screen    ${rdoPaymentUseMyCredit}    ${MIN_TIMEOUT}
     Verify Payment Text    Use my Credit (R
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Payment Text    You don't owe us a cent. Your available credit balance covers the full value of your order
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Payment Text    You don’t owe us a cent. Your available credit balance covers the full value of your order
     Swipe Up    ${windowScroll}
     Click Payment Donation
-    Verify Payment Element Exists    ${lblPaymentDonation}
-    Verify Payment Element Exists    ${lblPaymentCreditsApplied}
-    Verify Payment Element Exists    ${txtPaymentAmount}
+    Verify Element On Screen    ${lblPaymentDonation}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${lblPaymentCreditsApplied}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${txtPaymentAmount}    ${MIN_TIMEOUT}
     Click Payment Confirm Order
     [Teardown]    Tear Down
 
@@ -1789,7 +1789,7 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QASA-100
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Standard Collect
     Click +2 Show Details
     Verify Delivery Options Text    Items for Collection
     Verify Delivery Options Text    Qty: 1
