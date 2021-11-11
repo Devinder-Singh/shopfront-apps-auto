@@ -56,7 +56,7 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
     Click Go To Cart
     Click Checkout
     Verify Delivery Text    Courier delivery to your door
-    Verify Delivery Text    50+ Takealot Pickup Points nationwide. Open 6 days a week
+    Verify Delivery Text    70+ Takealot Pickup Points nationwide. Open 6 days a week
     Click Collect
     Click Pickup Point
     [Teardown]    Tear Down
@@ -80,7 +80,7 @@ Apps > Checkout > Collect > Liquor Item - QASA-588
     Verify Delivery Text Not    Takealot Pickup Points
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QASA-117
+Apps - Checkout - Delivery Methods - Digital and Physical Item and Collect 04 - QASA-117
     [Tags]    QASA-117
     [Setup]    Start Application
     Clear Environment
@@ -93,6 +93,8 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QASA-117
     Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
+    Click Checkout
+    Verify Element On Screen    ${txtDigitalItem}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -103,6 +105,8 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QASA-117
     Click Add To Cart
     Click Go To Cart
     Click Checkout
+    Verify Element On Screen    ${btnDelivery}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${btnCollect}    ${MIN_TIMEOUT}
     Click Collect
     Click Pickup Point
     [Teardown]    Tear Down
@@ -255,7 +259,7 @@ Checkout - Delivery Address - General 04 - QASA-111
     Edit Delivery Address Mobile Number    0897665665
     Swipe Up    ${windowScroll}
     Swipe Up    ${windowScroll}
-    Click Save Address
+    Click Save Address    
     Click Address
     [Teardown]    Tear Down
 
@@ -648,7 +652,7 @@ Apps > Checkout > Collect > Pickup Points List - QASA-583
     Click Western Cape Province
     Click Pickup Point Info
     Click Select Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -716,7 +720,7 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
@@ -752,7 +756,7 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
@@ -772,14 +776,14 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
     Click Pickup Point
     Verify Delivery Options Text    Standard Collect
     Verify Delivery Options Text    Why the wait?
-    Click Standard Collect
+    Click Free Delivery
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Verify Payment Text    Delivery Method
     Verify Payment Text    Pickup Point
     Click Change Payment Pickup Point
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click Change Payment Delivery Method
     Click Collect
     [Teardown]    Tear Down
@@ -799,12 +803,12 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QASA-569
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click Change Payment Delivery Method
     Click Collect
     [Teardown]    Tear Down
@@ -824,12 +828,12 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
     Click Pickup Point Brackenfell
-    Click Standard Collect
+    Click Free Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Order Review - QASA-590
@@ -906,7 +910,7 @@ Apps > Checkout > Payment > Earn eBucks - QASA-605
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1574,7 +1578,7 @@ Apps > Checkout > Collect Options > Promise Date - QASA-606
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1603,7 +1607,7 @@ Apps > Checkout > Payment > Pay with eBucks - QASA-538
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click eBucks Payment Method
@@ -1630,7 +1634,7 @@ Apps > Checkout > Payment > Credits (Voucher) - QASA-537
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click Donate No Thanks
     Click Add Payment Voucher
     Enter Payment Voucher Code
@@ -1789,7 +1793,7 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QASA-100
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Standard Collect
+    Click Free Delivery
     Click +2 Show Details
     Verify Delivery Options Text    Items for Collection
     Verify Delivery Options Text    Qty: 1
