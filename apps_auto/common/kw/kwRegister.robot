@@ -23,7 +23,7 @@ Register Takealot
     Click Element    ${btnRegRegister}
 
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You are now successfully registered and logged in    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Logged in successfully    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Logged in successfully.    ${MIN_TIMEOUT}
 
 Register Takealot Unverify
     [Arguments]    ${name}    ${surname}    ${email}    ${password}
