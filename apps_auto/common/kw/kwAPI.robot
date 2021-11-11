@@ -42,6 +42,7 @@ Clear Environment
     Delete Wishlist
     Clear Wishlist
     Clear Address
+    Click No Deal
 
 Create Wishlists
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
