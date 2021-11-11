@@ -94,18 +94,6 @@ Click Menu Shop By Department
     END    
 
 Click Menu Sport and Fitness
-    FOR    ${index}    IN RANGE    2
-        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${mnuSportFitness}
-        IF    ${chkTextSuccess} == ${True}
-            Exit For Loop         
-        ELSE
-            Swipe Up    ${windowScroll}
-            Sleep    1s
-        END        
-    END
-
-    Click Element    ${mnuSportFitness}
-
     Click Element On Scroll    ${mnuSportFitness}    3
     Click Product Widget First View All
 
