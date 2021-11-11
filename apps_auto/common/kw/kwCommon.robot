@@ -88,7 +88,7 @@ Verify eBucks On Screen
     END    
 
 Verify Price On Screen
-    [Arguments]    ${title}    ${delay}
+    [Arguments]    ${title}    ${delay}=5s
 
     ${result}=    Convert To String    ${title}
     ${cnt}=    Get length    ${result}
@@ -397,7 +397,7 @@ Scroll To Element In Container
     END
 
 Click Element On Scroll
-    [Arguments]    ${clickElement}    ${loopTimes}
+    [Arguments]    ${clickElement}    ${loopTimes}=10
 
     Set Implicitly Wait    1
     ${index}=    Set Variable    0

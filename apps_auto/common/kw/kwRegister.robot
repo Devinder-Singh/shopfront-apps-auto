@@ -4,30 +4,21 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Register Takealot
     [Arguments]    ${name}    ${surname}    ${email}    ${password}
-
     Get New Email Address
-
-    #${G_EMAIL}=    Set Variable If    '${email}'=='?'    ${new_email_address}    '${email}'!='?'    ${email}
-    ${email}=    Set Variable    ${None}
-    IF    ${email} == '?'
+    IF    '${email}' == '?'
         ${email}=    Set Variable    ${new_email_address}
     ELSE
        ${email}=    Set Variable    ${email}
-    END
-    
+    END 
     Set Global Variable    ${G_EMAIL}    ${email}
-
     Wait Until Element Is Visible    ${txtRegFirstName}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${btnRegRegister}    ${MIN_TIMEOUT}
-
     Input Text    ${txtRegFirstName}    ${name}
     Input Text    ${txtRegSurname}    ${surname}
     Input Text    ${txtRegEmail}    ${email}
     Input Text    ${txtRegPassword}    ${password}
     Input Text    ${txtRegConfirmPwd}    ${password}
-
-    Click Element    ${btnRegRegister}
-    
+    Click Element    ${btnRegRegister} 
     IF    '${PLATFORM_NAME}' == 'android'
         Verify Text On Screen    You are now successfully registered and logged in    ${MIN_TIMEOUT}
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
@@ -36,16 +27,13 @@ Register Takealot
 
 Register Takealot Unverify
     [Arguments]    ${name}    ${surname}    ${email}    ${password}
-
     Wait Until Element Is Visible    ${txtRegFirstName}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${btnRegRegister}    ${MIN_TIMEOUT}
-
     Input Text    ${txtRegFirstName}    ${name}
     Input Text    ${txtRegSurname}    ${surname}
     Input Text    ${txtRegEmail}    ${email}
     Input Text    ${txtRegPassword}    ${password}
     Input Text    ${txtRegConfirmPwd}    ${password}
-
     Click Element    ${btnRegRegister}
 
 Click Login Register
@@ -66,6 +54,3 @@ Verify Register Takealot Blank
         Verify Text On Screen    Please provide password    ${MIN_TIMEOUT}
         Verify Text On Screen    Please confirm your password    ${MIN_TIMEOUT}    
     END
-    
-
-    
