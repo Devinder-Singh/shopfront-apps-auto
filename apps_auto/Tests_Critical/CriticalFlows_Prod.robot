@@ -19,7 +19,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Product Department
     Click Add To Wishlist
     Click Wishlist
-    Click Wishlist Add To Cart
+    Click Wishlist Add To Cart    ${False}
     Click Back iOS    My Lists
     Click Home Cart
     Click Checkout
