@@ -22,7 +22,6 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Wishlist Add To Cart
     Click Back iOS    My Lists
     Click Home Cart
-#    Click Cart
     Click Checkout
     Click Delivery
     Click Add Delivery Address
@@ -33,7 +32,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
+    Verify Payfast Payment Text
     Close Application
     Start Application    ${False}
     Cancel Latest Order
@@ -149,7 +148,6 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Back Delivery Android
     Click Back Delivery iOS
     Click Back iOS    My Account
-#    Click Back Android
     Click Home
     Click Search Home
     Search Product    Pencil

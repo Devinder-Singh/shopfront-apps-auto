@@ -16,11 +16,10 @@ Verify Card Payment
     Set Implicitly Wait    5
 
 Verify Payfast Payment Text
-    [Arguments]    ${verifyText}='Instant EFT'
     IF    '${APP_ENVIRONMENT}' == 'https://api.takealot.com/'
-        Verify Text On Screen    'Instant EFT'    ${MAX_TIMEOUT}
+        Verify Text On Screen    Instant EFT    ${MAX_TIMEOUT}
     ELSE
-        Verify Text On Screen    'Test Merchant'    ${MAX_TIMEOUT}
+        Verify Text On Screen    Test Merchant    ${MAX_TIMEOUT}
     END
     
 Click Pay with Credit Card Back
