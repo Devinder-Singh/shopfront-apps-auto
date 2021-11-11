@@ -1,6 +1,6 @@
 *** Variables ***
-# ${btnFree}      xpath=//*[@text="FREE"]
-${btnFree}      xpath=//*[@text="Standard Delivery"]
+${btnFree}      xpath=//*[@text="FREE"]
+#${btnFree}      xpath=//*[@text="Standard Delivery"]
 ${txtStandardCollect}      xpath=//*[@text="Standard Collect"]
 ${txtSurchargeDelivery}      id=${APP_PACKAGE}:id/checkout_delivery_type_selector_root
 

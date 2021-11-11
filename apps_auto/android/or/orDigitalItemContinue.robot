@@ -3,3 +3,4 @@ ${btnContinueAirtime}    id=${APP_PACKAGE}:id/checkout_delivery_type_digital_con
 ${btnCancel}    accessibility_id=Navigate up
 
 ${lblChangeRecepient}      id=${APP_PACKAGE}:id/checkout_delivery_digital_product_image_summary_button
+${txtDigitalItem}      xpath=//*[@text="DIGITAL ITEMS"]
