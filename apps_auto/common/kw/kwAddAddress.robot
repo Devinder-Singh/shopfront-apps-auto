@@ -39,18 +39,16 @@ Add Delivery Address
     Input Text    ${txtRecipientMobile}    ${mobile}
     Input Text    ${txtRecipientStreet}    ${street}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
-    Sleep    5s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    5s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
-    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
-    Sleep    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    66
 
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
-    Sleep    3s
-    Swipe Up    ${windowScroll}
-    Swipe Up    ${windowScroll}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    3s
     Click Save Address
 
 Add Delivery Address My Acc
@@ -62,7 +60,7 @@ Add Delivery Address My Acc
     Input Text    ${txtRecipientComplexMyAcc}    ABC
     Input Text    ${txtRecipientStreetMyAcc}    ${street}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
-    Sleep    10s
+    Wait Until Page Contains    ${street}    10s
     Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
     Run Keyword If    '${street}'=='""'    Swipe Up    ${windowScroll}
     Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
