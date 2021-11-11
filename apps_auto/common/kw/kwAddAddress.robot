@@ -57,7 +57,6 @@ Add Delivery Address
        
     Sleep    3s
     Click Save Address
-    Wait Until Element Is Visible    ${btnAddressDelete}    ${MIN_TIMEOUT}
 
 Add Delivery Address My Acc
     [Arguments]    ${name}    ${mobile}    ${street}
