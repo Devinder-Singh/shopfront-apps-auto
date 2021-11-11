@@ -283,7 +283,7 @@ Click Product Size
     [Arguments]    ${size}
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${size}"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${size}"]
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
 
 Click Product Variant From API
     [Arguments]    ${index}=0
@@ -301,28 +301,28 @@ Click Product Variant From API
 Click Product Disabled Variant From API
     ${txtProduct}=    Get Product Disabled Variant
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Colour From API
     ${txtProduct}=    Get Product Variant Colour
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Disabled Colour From API
     ${txtProduct}=    Get Product Variant Disabled Colour
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
     Click Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Colour With ShowAll From API
     ${txtProduct}=    Get Product Variant Colour
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
@@ -362,33 +362,33 @@ Click Product Variant From Name
 Click Product Variant Colour Size From API
     ${txtProduct}=    Get Product Variant Colour Size
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Disabled Size From API
     ${txtProduct}=    Get Product Variant Disabled Size
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Variant Size From API
     ${txtProduct}=    Get Product Variant Size
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${txtProduct}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtProduct}
 
 Click Product Disabled Variant Colour From API
     ${txtProduct}=    Get Product Disabled Variant Colour
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
 
 Click Product Disabled Variant Colour Size From API
     ${txtProduct}=    Get Product Disabled Variant Colour Size
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${txtProduct}   10
+    Click Element On Scroll    ${txtProduct}
 
 Verify Product YAML from API
     Get Product YAML Detail
