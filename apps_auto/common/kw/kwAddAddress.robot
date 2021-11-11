@@ -48,8 +48,9 @@ Add Delivery Address
 
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${lblAddresOption}    15s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${lblAddresOption}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Sleep    3s
+    Sleep    3s
     Click Save Address
+    Wait Until Element Is Visible    ${btnAddressDelete}    ${MIN_TIMEOUT}
 
 Add Delivery Address My Acc
     [Arguments]    ${name}    ${mobile}    ${street}
