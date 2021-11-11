@@ -83,18 +83,18 @@ Click Collect Address Back
 Verify Delivery Address Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnDeliveryAddress}    ${MIN_TIMEOUT}
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
     END
 
 Verify Collect Address Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
     END
 

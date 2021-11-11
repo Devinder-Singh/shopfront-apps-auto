@@ -7,7 +7,7 @@ Click Got It Thanks Payment Method
     Click Element    ${btnGotItThanks}
 
 Click Payfast Payment Method
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
        Wait Until Element Is Visible    ${scrPaymentMethodAndroid}    ${MIN_TIMEOUT} 
     END
 
@@ -15,7 +15,7 @@ Click Payfast Payment Method
     Click Element    ${lblPayFastEFT}
 
 Click Card Payment Method
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${scrPaymentMethodAndroid}    ${MIN_TIMEOUT}
     END 
 
@@ -54,17 +54,17 @@ Verify Payment Options Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblCreditCardEFT}    ${MIN_TIMEOUT}
 
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
     END
 
 Verify Payment Options Text No Wait
     [Arguments]    ${verifyText}
-     IF    ${PLATFORM_NAME} == 'ios'
+     IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
     END
 

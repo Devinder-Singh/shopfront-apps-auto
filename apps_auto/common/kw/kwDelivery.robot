@@ -7,7 +7,7 @@ Click Cancel Delivery Method
     Click Element    ${btnCancelDelivery}
 
 Click Delivery
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${scrDeliveryAndroid}    ${MIN_TIMEOUT}
     END
     
@@ -15,14 +15,14 @@ Click Delivery
     Click Element    ${btnDelivery}
 
 Click Delivery Android
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${scrDeliveryAndroid}    ${MIN_TIMEOUT}
         Wait Until Element Is Visible    ${btnDelivery}    ${MIN_TIMEOUT}
         Click Element    ${btnDelivery}
     END
     
 Click Collect
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${scrDeliveryAndroid}    ${MIN_TIMEOUT}    
     END
    
@@ -50,16 +50,16 @@ Verify Delivery Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnDelivery}    ${MIN_TIMEOUT}
     
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}    
     END
      
 Verify Delivery Text Not
     [Arguments]    ${verifyText}
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Does Not Contain    ${verifyText}    ${MIN_TIMEOUT}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'  
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'  
         Page Should Not Contain Text    ${verifyText}    ${MIN_TIMEOUT}
     END

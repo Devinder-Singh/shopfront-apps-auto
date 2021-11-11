@@ -16,9 +16,9 @@ Login Takealot
     Input Text    ${txtPassword}    ${password}
     Click Element    ${btnLogin}
 
-    IF     ${PLATFORM_NAME} == 'android'
+    IF     '${PLATFORM_NAME}' == 'android'
         Return Android Login Status    ${email}    ${password}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Return iOS Login Status    ${email}    ${password}
     END
 
@@ -58,10 +58,10 @@ Verify Logged In
     [Arguments]    ${verifyText}
     ${lblUserName}=    Set Variable    ${None}
 
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         ${lblUserName}=    Set Variable    id=${verifyText}
         Element Should Contain Text    ${lblUserName}    ${verifyText}
-    ELSE IF    ${PLATFORM_NAME} == 'android'
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
         ${lblUserName}=    Set Variable    ${lblUserName}
         Wait Until Page Contains    You are logged in    ${MIN_TIMEOUT}
     END

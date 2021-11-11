@@ -28,7 +28,7 @@ Click Wishlist Move to List
 
 Verify Wishlist Checked
     ${checkboxStatus}=    Get Checkbox Status    ${chkWishlist}
-    IF    ${checkboxStatus} == ${False} and ${PLATFORM_NAME} == 'android'
+    IF    ${checkboxStatus} == ${False} and '${PLATFORM_NAME}' == 'android'
         Fail    'Wishlist Checkbox was not selected or not found'
     END
     

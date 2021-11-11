@@ -3,7 +3,7 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Free Delivery
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
     END
 

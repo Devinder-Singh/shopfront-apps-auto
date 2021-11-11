@@ -90,18 +90,18 @@ Update Personal Detail Mobile Country Code
     Click Element    ${btnSaveDetail}
 
 Click Why Add Personal Detail Mobile
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${lnkPDMobile}    ${MIN_TIMEOUT}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Wait Until Element Is Visible    ${lblPersonalDetailMobile}    ${MIN_TIMEOUT}
     END
 
     Click Element    ${lnkPDMobile}
 
 Click Why Add Personal Detail Business Detail
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${lnkPDBusiness}    ${MIN_TIMEOUT}
-    ELSE IF    ${PLATFORM_NAME} == 'ios'
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
        Wait Until Element Is Visible    ${lblPersonalDetailMobile}    ${MIN_TIMEOUT}
     END
     

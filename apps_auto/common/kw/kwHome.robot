@@ -20,7 +20,7 @@ Click Add To Wishlist
     #Sleep    5s
     Check Text On Screen Not    Item added to Wish List
 
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${btnMoreOptions}
         Click Element    ${btnOptionHome}
     END
@@ -41,31 +41,31 @@ Click More Options Menu Android
     Click Element    ${btnMoreOptions}
 
 Click Options Menu Home
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnOptionHome}    ${MIN_TIMEOUT}
         Click Element    ${btnOptionHome}
     END
 
 Click Options Menu Categories
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnOptionCategories}    ${MIN_TIMEOUT}
         Click Element    ${btnOptionCategories}
     END
     
 Click Options Menu Deals
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnOptionDeals}    ${MIN_TIMEOUT}
         Click Element    ${btnOptionDeals}
     END
     
 Click Options Menu Lists
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnOptionLists}    ${MIN_TIMEOUT}
         Click Element    ${btnOptionLists}
     END
     
 Click Options Menu Account
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnOptionAccount}    ${MIN_TIMEOUT}
         Click Element    ${btnOptionAccount}
     END
@@ -93,7 +93,7 @@ Click Clear All Recently Viewed
     Click Element On Scroll    ${btnHomeClearAllRecent}    12
 
 Click Clear All Recently Viewed Android
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnSearchHome}    ${MIN_TIMEOUT}
     END
 
@@ -105,14 +105,14 @@ Click Clear All Recently Viewed Android
             Exit For Loop
         END
         
-        IF    ${PLATFORM_NAME} == 'android'
+        IF    '${PLATFORM_NAME}' == 'android'
             Exit For Loop
         END 
 
         Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${btnHomeClearAllRecent}
     END
 
@@ -121,13 +121,13 @@ Click Cancel Clear All Recently Viewed
     Click Element    ${btnHomeClearCancelRecent}
 
 Confirm Clear All Recently Viewed
-    IF    ${PLATFORM_NAME} == 'ios'
+    IF    '${PLATFORM_NAME}' == 'ios'
         Wait Until Element Is Visible    ${btnHomeClearRecent}    ${MIN_TIMEOUT}
         Click Element    ${btnHomeClearRecent}
     END
 
 Click Icon Daily Deals
-    IF    ${PLATFORM_NAME} == 'android'
+    IF    '${PLATFORM_NAME}' == 'android'
          Click Element    ${btnMenuCategories}
     END
     
