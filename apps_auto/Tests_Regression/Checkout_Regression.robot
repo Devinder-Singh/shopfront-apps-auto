@@ -220,7 +220,7 @@ Checkout > Delivery Address > Saved Addresses - QASA-616
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - General 03 - QASA-112
@@ -367,7 +367,7 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QASA
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
+    Click Any Delivery
     Get Address Coordinates
     [Teardown]    Tear Down
 
@@ -500,7 +500,7 @@ Checkout - Delivery Address - Street Suggestion - QASA-582
     Click Address Business
     Edit Delivery Address Business    TestBusiness
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Pin on Map - QASA-570
@@ -652,7 +652,7 @@ Apps > Checkout > Collect > Pickup Points List - QASA-583
     Click Western Cape Province
     Click Pickup Point Info
     Click Select Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -720,7 +720,7 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
@@ -756,7 +756,7 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
@@ -776,14 +776,14 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
     Click Pickup Point
     Verify Delivery Options Text    Standard Collect
     Verify Delivery Options Text    Why the wait?
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Verify Payment Text    Delivery Method
     Verify Payment Text    Pickup Point
     Click Change Payment Pickup Point
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Change Payment Delivery Method
     Click Collect
     [Teardown]    Tear Down
@@ -803,12 +803,12 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QASA-569
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Change Payment Delivery Method
     Click Collect
     [Teardown]    Tear Down
@@ -828,12 +828,12 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
     Click Pickup Point Brackenfell
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Order Review - QASA-590
@@ -910,7 +910,7 @@ Apps > Checkout > Payment > Earn eBucks - QASA-605
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -946,7 +946,7 @@ Apps > Checkout > Payment > Gift Msg - QASA-613
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Verify Payment Text    Is this a gift? Add a gift message
     Click Add Gift
@@ -987,7 +987,7 @@ Apps > Checkout > Payment > Payment Method Availability - QASA-607
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1020,7 +1020,7 @@ Apps > Checkout > Payment > Payment Method Availability 02 - QASA-107
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Pay With Payfast
     Verify Payfast Payment    Secure payments by PayFast
@@ -1065,7 +1065,7 @@ Apps > Checkout > Payment > Post-Order Creation - QASA-542
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1095,7 +1095,7 @@ Apps > Checkout > Payment > Donation - QASA-618
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Verify Payment Donation Text    Donate R 5 to Beautiful Gate Children's Charity
     Verify Payment Donation Text    Beautiful Gate South Africa is a registered non-profit organisation providing care and support to vulnerable children and families
     Verify Element On Screen    ${imgPaymentDonation}    ${MIN_TIMEOUT}
@@ -1110,7 +1110,7 @@ Apps > Checkout > Payment > Donation - QASA-618
     Verify Payment Element Not Exists    ${lblPaymentDonation}
     Verify Payment Element Not Exists    ${lblPaymentR5}
     Click Back Payment Screen
-    Click Free Delivery
+    Click Any Delivery
     Click Change Payment Method
     Click Card Payment Method
     [Teardown]    Tear Down
@@ -1130,7 +1130,7 @@ Apps > Checkout > Payment > Donation 02 - QASA-95
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Back Payment Screen
     Click Back Delivery Options
@@ -1139,7 +1139,7 @@ Apps > Checkout > Payment > Donation 02 - QASA-95
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
    [Teardown]    Tear Down
 
@@ -1158,7 +1158,7 @@ Apps > Checkout > Payment > Confirmation - QASA-552
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1193,7 +1193,7 @@ Apps > Checkout > Payment > Confirmation 02 - QASA-106
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1218,7 +1218,7 @@ Apps > Checkout > Payment > Pay with PayFast - QASA-539
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Payfast Payment Method
@@ -1251,7 +1251,7 @@ Apps > Checkout > Payment > Credit Card - PayU - QASA-536
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1274,7 +1274,7 @@ Apps > Checkout > Payment > COD - QASA-535
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Cash Payment Method
@@ -1297,7 +1297,7 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QASA-
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Payfast Payment Method
@@ -1330,7 +1330,7 @@ Apps > Checkout > Payment > Pay with Ozow - QASA-533
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Ozow Payment Method
@@ -1361,7 +1361,7 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QAS
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1391,7 +1391,7 @@ Apps > Checkout > Payment > Mobicred - QASA-527
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Mobicred Payment Method
@@ -1512,7 +1512,7 @@ Apps > Checkout > Delivery Options > Promise Date - QASA-611
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1578,7 +1578,7 @@ Apps > Checkout > Collect Options > Promise Date - QASA-606
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1607,7 +1607,7 @@ Apps > Checkout > Payment > Pay with eBucks - QASA-538
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click eBucks Payment Method
@@ -1634,7 +1634,7 @@ Apps > Checkout > Payment > Credits (Voucher) - QASA-537
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Add Payment Voucher
     Enter Payment Voucher Code
@@ -1694,7 +1694,7 @@ Apps > Checkout > Delivery Options > General Test Case 02 - QASA-104
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Continue Digital Item
     Click Donate No Thanks
     [Teardown]    Tear Down
@@ -1793,7 +1793,7 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QASA-100
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click +2 Show Details
     Verify Delivery Options Text    Items for Collection
     Verify Delivery Options Text    Qty: 1
@@ -1906,7 +1906,7 @@ Apps > Checkout > Payment > Mobicred - QASA-555
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Mobicred Payment Method

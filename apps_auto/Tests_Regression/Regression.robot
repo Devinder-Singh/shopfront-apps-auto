@@ -853,7 +853,7 @@ Apps > Order Tracking - QASA-547
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1013,7 +1013,7 @@ Apps > Order Tracking 02 - QASA-80
     Click Collect
     Display WC Province Pickup Points
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1194,7 +1194,7 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delivery via email to    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
@@ -1259,7 +1259,7 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1279,7 +1279,7 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Add To Cart
     Click Pay With Credit Card
