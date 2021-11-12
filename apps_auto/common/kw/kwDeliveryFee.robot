@@ -10,7 +10,7 @@ Click Any Delivery
     IF    ${chkTextSuccess} == ${True}
         Click Element    ${btnFree}
     ELSE IF    ${chkTextSuccess} != ${True}
-        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtSurchargeDelivery}    ${MIN_TIMEOUT}
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtStandardDelivery}    ${MIN_TIMEOUT}
         IF    ${chkTextSuccess} == ${True}
             Click Standard Delivery
         ELSE IF   ${chkTextSuccess} != ${True}
@@ -18,7 +18,7 @@ Click Any Delivery
             IF    ${chkTextSuccess} == ${True}
                 Click Surcharge Delivery
             ELSE IF    ${chkTextSuccess} != ${True}
-                ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtSurchargeDelivery}    ${MIN_TIMEOUT}
+                ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtStandardCollect}    ${MIN_TIMEOUT}
                 IF    ${chkTextSuccess} == ${True}
                     Click Standard Collect
                 END
