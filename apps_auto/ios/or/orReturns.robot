@@ -164,4 +164,4 @@ ${returnSuccessSubtitle}    ${EMPTY}
 ${returnSuccessImageContainer}    ${EMPTY}
 ${returnSuccessTrackButton}    ${EMPTY}
 
-${btnReturnsCallToAction}    ${EMPTY}
+${btnReturnsCallToAction}    id=ViewSingleButton
