@@ -1,8 +1,10 @@
 *** Variables ***
 ${containerReturnsHistory}    ${EMPTY}
 ${containerReturnsEmptyState}    ${EMPTY}
+${onboardingCell1}    chain=**/XCUIElementTypeStaticText[`label == "Log a Return"`]
+${returnsToolBar}     chain=**/XCUIElementTypeNavigationBar[`name == "Returns"`]
 
-${cardReturnsHistoryEmptyState1}    ${EMPTY}
+${cardReturnsHistoryEmptyState1}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 
 ${cardReturnsHistoryItem}    ${EMPTY}
 ${cardReturnsHistoryItemTitle}    ${EMPTY}

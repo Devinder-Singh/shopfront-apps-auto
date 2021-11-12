@@ -5,13 +5,16 @@ Library    XML
 *** Keywords ***
 Verify Returns Menu Item    
     Element Should Be Visible    ${btnMenuExchReturns}
-    Element Should Contain Text    ${btnMenuExchReturnsTitle}    Returns
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Contain Text    ${btnMenuExchReturnsTitle}    Returns
+    Run Keyword If     ${PLATFORM_NAME} == 'ios'       Element Should Contain Text    ${btnMenuExchReturns}    Returns
 
 Verify Returns Screen header
-    Verify Toolbar Title    Returns
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Returns
+    Run Keyword If     ${PLATFORM_NAME} == 'ios'     Wait Until Element Is Visible     ${returnsToolBar}    ${MIN_TIMEOUT}
 
 Verify Returns Empty State Visible
-    Scroll To Element In Container    ${containerReturnsEmptyState}    ${containerReturnsHistory}    10
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Scroll To Element In Container    ${containerReturnsEmptyState}    ${containerReturnsHistory}    10
+    Run Keyword If     ${PLATFORM_NAME} == 'ios'       Wait Until Element Is Visible    ${onboardingCell1}    ${MIN_TIMEOUT}
 
 Verify Returns Empty State Step Visible
     [Arguments]    ${stepTitle}    ${stepSubtitle}
