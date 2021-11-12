@@ -15,10 +15,10 @@ Click Home iOS
 Click Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    ${MIN_TIMEOUT}
     Click Element    ${btnAddWishlist}
-    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
+    Verify Text On Screen    Item added to Wish List    ${MAX_TIMEOUT}
 
     #Sleep    5s
-    Check Text On Screen Not    Item added to Wish List
+    Wait Until Page Does Not Contain    Item added to Wish List    ${MAX_TIMEOUT}
 
     IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${btnMoreOptions}
