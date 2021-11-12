@@ -21,7 +21,7 @@ Search and Buy Item on Delivery using Credit Card
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
