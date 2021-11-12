@@ -5,24 +5,27 @@ Resource          ../config/defaultConfig.robot
 
 Click Any Delivery
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
-    
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnFree}    ${MIN_TIMEOUT}
-    IF    ${chkTextSuccess} == ${True}
-        Click Element    ${btnFree}
-    ELSE IF    ${chkTextSuccess} != ${True}
-        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtStandardDelivery}    ${MIN_TIMEOUT}
+    Set Implicitly Wait    1
+    FOR    ${counter}    IN RANGE    1    15
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnFree}
+        IF    ${chkTextSuccess} == ${True}
+            Click Element    ${btnFree}
+            Exit For Loop
+        END
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtStandardDelivery}
         IF    ${chkTextSuccess} == ${True}
             Click Standard Delivery
-        ELSE IF   ${chkTextSuccess} != ${True}
-            ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtSurchargeDelivery}    ${MIN_TIMEOUT}
-            IF    ${chkTextSuccess} == ${True}
-                Click Surcharge Delivery
-            ELSE IF    ${chkTextSuccess} != ${True}
-                ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtStandardCollect}    ${MIN_TIMEOUT}
-                IF    ${chkTextSuccess} == ${True}
-                    Click Standard Collect
-                END
-            END
+            Exit For Loop
+        END
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtSurchargeDelivery}
+        IF    ${chkTextSuccess} == ${True}
+            Click Surcharge Delivery
+            Exit For Loop
+        END
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtStandardCollect}
+        IF    ${chkTextSuccess} == ${True}
+            Click Standard Collect
+            Exit For Loop
         END
     END
 Click Free Delivery

@@ -8,7 +8,7 @@ Click Wishlist Add To Cart
     Click Element    ${btnWishlistCart}
 
     IF    ${checkText} == ${True}
-        Verify Text On Screen    Item added to your cart    ${MIN_TIMEOUT}
+        Verify Text On Screen    Item added to your cart    ${MAX_TIMEOUT}
     END
 #    Sleep    5s
 
