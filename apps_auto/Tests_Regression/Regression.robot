@@ -692,7 +692,8 @@ Merchandised Landing Pages (CMS Widgets) - Contextual Navigation Widget - QASA-1
     Click Menu
     Click Menu Shop By Department
     Click Menu Department    Beauty
-    Click Product Widget Image
+#    Click Product Widget Image
+    Click Product Widget Context
     Verify Product Widget Navigation
     [Teardown]    Tear Down
 
