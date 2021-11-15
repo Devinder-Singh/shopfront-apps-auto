@@ -6,15 +6,27 @@ Library    XML
 Verify Returns Menu Item    
     Element Should Be Visible    ${btnMenuExchReturns}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Contain Text    ${btnMenuExchReturnsTitle}    Returns
-    Run Keyword If     ${PLATFORM_NAME} == 'ios'       Element Should Contain Text    ${btnMenuExchReturns}    Returns
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Element Should Contain Text    ${btnMenuExchReturns}    Returns
 
 Verify Returns Screen header
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Returns
-    Run Keyword If     ${PLATFORM_NAME} == 'ios'     Wait Until Element Is Visible     ${returnsToolBar}    ${MIN_TIMEOUT}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'     Wait Until Element Is Visible     ${returnsToolBar}    ${MIN_TIMEOUT}
 
 Verify Returns Empty State Visible
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Scroll To Element In Container    ${containerReturnsEmptyState}    ${containerReturnsHistory}    10
-    Run Keyword If     ${PLATFORM_NAME} == 'ios'       Wait Until Element Is Visible    ${onboardingCell1}    ${MIN_TIMEOUT}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Wait Until Element Is Visible    ${onboardingCell1}    ${MIN_TIMEOUT}
+
+Verify NavBar Title
+    [Arguments]    ${expectedTitle}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains Element    ${txtToolbarTitle}    ${MIN_TIMEOUT}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Wait Until Page Contains Element    ${navController}      ${MIN_TIMEOUT}
+    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Be Visible    ${txtToolbarTitle}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Element Should Be Visible    ${navController}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${txtToolbarTitle}    ${expectedTitle}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Verify Text On Screen    ${expectedTitle}     5s
 
 Verify Returns Empty State Step Visible
     [Arguments]    ${stepTitle}    ${stepSubtitle}
@@ -73,7 +85,8 @@ Verify Returns Order History Filter Option View Visible
 
 Verify Returns Order History Filter Option Button Title
     Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    ${MIN_TIMEOUT}
-    Element Text Should Be    ${btnReturnsOrderHistoryFilterOptionChange}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${btnReturnsOrderHistoryFilterOptionChange}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${btnReturnsOrderHistoryFilterOptionChange}    Change
 
 Click Returns Order History Filter Option Button
     Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    ${MIN_TIMEOUT}
@@ -83,19 +96,36 @@ Verify Returns Order History Filter Options
     Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
     Verify Text On Screen    Last 6 months    ${MIN_TIMEOUT}
 
+Click Returns Close Button
+    Click Element    ${navCloseButton}
+
 Verify Returns Order History Item Visible
     Wait Until Element Is Visible    ${cardReturnsOrderHistoryItem}    ${MIN_TIMEOUT}
 
 Verify Returns Order History Item Title
-    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemTitle}    ${MIN_TIMEOUT}
-    Element Should Contain Text    ${cardReturnsOrderHistoryItemTitle}    Order #
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemTitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Contain Text    ${cardReturnsOrderHistoryItemTitle}    Order #
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Order #    ${MIN_TIMEOUT}
 
 Verify Returns Order History Item Subtitle
-    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemSubtitle}    ${MIN_TIMEOUT}
-    Element Should Contain Text    ${cardReturnsOrderHistoryItemSubtitle}    Ordered
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemSubtitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Contain Text    ${cardReturnsOrderHistoryItemSubtitle}    Ordered
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Ordered
 
 Verify Returns Order History Item Image Container
     Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemImageContainer}    ${MIN_TIMEOUT}
+
+Click Returns Close
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Click Back Screen
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'        Click Returns Close Button
+
+Click Returns Back
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Click Back Screen
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'    Click Element    ${navBackButton}
+
+Verify Returns Toolbar Title
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Select Order to Return Items
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'        Verify NavBar Title     Select Return Item
 
 Click Returns Order History Item
     Sleep    5s

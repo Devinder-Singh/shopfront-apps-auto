@@ -3,6 +3,9 @@ ${containerReturnsHistory}    ${EMPTY}
 ${containerReturnsEmptyState}    ${EMPTY}
 ${onboardingCell1}    chain=**/XCUIElementTypeStaticText[`label == "Log a Return"`]
 ${returnsToolBar}     chain=**/XCUIElementTypeNavigationBar[`name == "Returns"`]
+${navController}      id=NavController
+${navCloseButton}     id=icon close
+${navBackButton}    id=Back
 
 ${cardReturnsHistoryEmptyState1}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 
@@ -13,14 +16,13 @@ ${cardReturnsHistoryPolicyItem}    ${EMPTY}
 ${cardReturnsHistoryItemImage}    ${EMPTY}
 
 ${returnsOrderHistoryFilterOptionContainer}    ${EMPTY}
-${btnReturnsOrderHistoryFilterOptionChange}    ${EMPTY}
+${btnReturnsOrderHistoryFilterOptionChange}    id=Change
 
 ${containerReturnsOrderHistory}    ${EMPTY}
 
-${cardReturnsOrderHistoryItem}    ${EMPTY}
+${cardReturnsOrderHistoryItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[4]
 ${cardReturnsOrderHistoryItemTitle}    ${EMPTY}
 ${cardReturnsOrderHistoryItemSubtitle}    ${EMPTY}
-${cardReturnsOrderHistoryItemImageContainer}    ${EMPTY}
 
 ${cardReturnsOrderHistoryItemWithMutlipleQuantity}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithSizeVariantOption}    ${EMPTY}
