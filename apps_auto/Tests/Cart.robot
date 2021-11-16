@@ -573,4 +573,3 @@ Apps > Cart > Product Card Actions > On boarding > QASA-4
     Click Canvas Delete Item Relative To Cart Item Card Dynamically    1
     Verify Snack Bar Popup Contains Text   Item removed from Cart.  
     [Teardown]    Tear Down
-        
