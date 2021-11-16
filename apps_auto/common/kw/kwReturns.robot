@@ -56,6 +56,11 @@ Verify Returns Call To Action Title
     Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
     Element Text Should Be    ${btnReturnsCallToAction}    ${expectedTitle}
 
+Verify Returns Log Return Title
+    Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${btnReturnsCallToAction}    LOG RETURN
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${btnReturnsCallToAction}    Log Return
+
 Scoll To Returns History Policy
     Scroll To Element In Container    ${cardReturnsHistoryPolicyItem}    ${containerReturnsHistory}    20
 

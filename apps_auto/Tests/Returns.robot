@@ -36,8 +36,7 @@ Apps > SS Returns > Returns UI (User with Returns History) > QA-9256
     Verify Toolbar Title    Returns Tracking
     Click Back Screen
     Verify Toolbar Title    Returns
-    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Returns Call To Action Title    LOG RETURN
-    Run Keyword If     '${PLATFORM_NAME}'=='ios'    Verify Returns Call To Action Title    Log Return
+    Verify Returns Log Return Title
     Scoll To Returns History Policy
     Verify Returns History Policy Title    Learn more about our Return Policy or visit our Help Page.
     [Teardown]    Tear Down
