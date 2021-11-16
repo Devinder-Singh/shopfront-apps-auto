@@ -1,4 +1,5 @@
 *** Variables ***
 ${windowScroll}      chain=**/XCUIElementTypeWindow[1]
-${navBack}      id=Cancel
+${navBack}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeNavigationBar[1]/XCUIElementTypeButton[1]
 ${croutonTitle}    id=croutonTitle
+${txtToolbarTitle}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeNavigationBar[1]/XCUIElementTypeStaticText[1]

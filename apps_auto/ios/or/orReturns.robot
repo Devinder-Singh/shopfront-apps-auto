@@ -1,5 +1,5 @@
 *** Variables ***
-${containerReturnsHistory}    ${EMPTY}
+${containerReturnsHistory}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable
 ${containerReturnsEmptyState}    ${EMPTY}
 ${onboardingCell1}    chain=**/XCUIElementTypeStaticText[`label == "Log a Return"`]
 ${returnsToolBar}     chain=**/XCUIElementTypeNavigationBar[`name == "Returns"`]
@@ -9,11 +9,11 @@ ${navBackButton}    id=Back
 
 ${cardReturnsHistoryEmptyState1}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 
-${cardReturnsHistoryItem}    ${EMPTY}
-${cardReturnsHistoryItemTitle}    ${EMPTY}
-${cardReturnsHistoryItemStatus}    ${EMPTY}
-${cardReturnsHistoryPolicyItem}    ${EMPTY}
-${cardReturnsHistoryItemImage}    ${EMPTY}
+${cardReturnsHistoryItem}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
+${cardReturnsHistoryItemTitle}    xpath=(//XCUIElementTypeStaticText[@name="orderItemTitle"])[1]
+${cardReturnsHistoryItemStatus}    xpath=(//XCUIElementTypeStaticText[@name="orderItemSubtitle"])[1]
+${cardReturnsHistoryPolicyItem}    id=viewCenteredLinkTextView
+${cardReturnsHistoryItemImage}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeCollectionView/XCUIElementTypeCell
 
 ${returnsOrderHistoryFilterOptionContainer}    ${EMPTY}
 ${btnReturnsOrderHistoryFilterOptionChange}    id=Change
