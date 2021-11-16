@@ -69,9 +69,10 @@ Apps > SS Returns > Request a Return > Select Order > QA-5429
     Click Returns Order History Item
     Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Select Return Item
     Click Returns Back
-    # Verify Toolbar Title    Select Order to Return Items
-    # Click Back Screen
-    # Verify Toolbar Title    Returns
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Select Order to Return Items
+    Click Returns Close
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Returns
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'        Verify Text On Screen    Returns
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Return Item > QA-5430
