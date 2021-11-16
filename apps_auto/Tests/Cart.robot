@@ -361,7 +361,7 @@ Apps > Cart > Note Notification - QASA-520
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click COD Payment Info
