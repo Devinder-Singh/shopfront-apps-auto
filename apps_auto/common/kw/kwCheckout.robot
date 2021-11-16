@@ -159,4 +159,56 @@ Add To Cart Trending First Item
         Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    ${MIN_TIMEOUT}
         Click Element    ${btnCartTrendingAddToCart}
     END
+
+Swipe Cart Item Card Left By Index Dynamically
+    [Documentation]    This keyword will swipe a cart item card left partially based on a specified index dynamically.
+                       ...    Example parsing 1 will result in the first cart item card being swiped.
+    [Arguments]    ${cartItemIndex}    ${sleepBeforeAction}=1s
+    Sleep    ${sleepBeforeAction}
+
+    ${dynamicCartItemXpath}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicCartItemXpath}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/cartProductItemContainer'])[${cartItemIndex}]
+    END
+    Swipe Left    ${dynamicCartItemXpath}    swipeSpeed=2000
+
+Click Canvas Move To Wishlist Relative To Cart Item Card Dynamically
+    [Documentation]    This keyword will click the "Move to wishlist" canvas element relative to an open cart item card by index.
+                       ...    The index refers to a cart card in the list where 1 is equal to the first card.     
+                       ...    Note: In order for this keyword to work a cart item card must already be partially swiped left.
+    [Arguments]    ${cartItemIndex}    ${sleepBeforeAction}=2s
+    Sleep    ${sleepBeforeAction}
+
+    ${dynamicCartItemXpath}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicCartItemXpath}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/cartProductItemContainer'])[${cartItemIndex}]
+    END
+
+    ${element_size}=    Get Element Size    ${dynamicCartItemXpath}
+    ${element_location}=    Get Element Location    ${dynamicCartItemXpath}
+    ${click_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 1.1)
+    ${click_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.3)
+    Click Element At Coordinates    ${click_x}    ${click_y}
+
+
+Click Canvas Delete Item Relative To Cart Item Card Dynamically
+    [Documentation]    This keyword will click the "Delete item" canvas element relative to an open cart item card by index.
+                       ...    The index refers to a cart card in the list where 1 is equal to the first card.     
+                       ...    Note: In order for this keyword to work a cart item card must already be partially swiped left.
+    [Arguments]    ${cartItemIndex}    ${sleepBeforeAction}=2s
+    Sleep    ${sleepBeforeAction}
+
+    ${dynamicCartItemXpath}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicCartItemXpath}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/cartProductItemContainer'])[${cartItemIndex}]
+    END
+
+    ${element_size}=    Get Element Size    ${dynamicCartItemXpath}
+    ${element_location}=    Get Element Location    ${dynamicCartItemXpath}
+    ${click_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 1.1)
+    ${click_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.7)
+    Click Element At Coordinates    ${click_x}    ${click_y}
+    
+
+    
     

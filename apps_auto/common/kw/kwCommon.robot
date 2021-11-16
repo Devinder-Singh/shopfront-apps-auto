@@ -47,6 +47,18 @@ Swipe Right
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
 #    Sleep  1
 
+Swipe Left
+    [Documentation]    This keyword will perform a left swipe action on a given element.
+    [Arguments]       ${element}    ${swipeSpeed}=1500
+    wait until element is Visible     ${element}
+    ${element_size}=    Get Element Size    ${element}
+    ${element_location}=    Get Element Location    ${element}
+    ${start_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 0.7)
+    ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
+    ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
+    ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
+    Swipe    ${start_x}    ${start_y}  ${end_x}  ${end_y}  ${swipeSpeed}
+
 Verify eBucks On Screen
     ${result}=    Evaluate    ${query_result_CartProductPrice} * 10
     ${result}=    Convert To String    ${result}
@@ -413,3 +425,12 @@ Click Element On Scroll
     END
     Set Implicitly Wait    5
     Click Element    ${clickElement}
+
+Verify Snack Bar Popup Contains Text
+    [Documentation]    This keyword will verify that a snack bar popup contains the specified text.
+    [Arguments]    ${textToVerify}
+    ${dynamicSnackBarPopupWithText}=    Set Variable    xpath=(//android.widget.TextView[@text='${textToVerify}' and @resource-id='fi.android.takealot.debug:id/snackbar_text'])
+    IF    '${PLATFORM_NAME}'=='android'
+        Wait Until Element Is Visible    ${dynamicSnackBarPopupWithText}    ${MIN_TIMEOUT}
+    END    
+

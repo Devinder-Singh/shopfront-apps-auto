@@ -543,3 +543,34 @@ Apps > Cart > Product Card Actions > Edit - QASA-5
     Click Checkout Cart Undo
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProduct}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
+
+Apps > Cart > Product Card Actions > On boarding > QASA-4
+    [Tags]    QASA-4
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu My Account
+    Click Menu Logout If Logged In
+    Click Menu Login
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
+    Click Menu
+    Click Home
+    Click Search Home
+    Search Product    omo
+    Click Product from API
+    Click Add To Cart
+    Click Back Android
+    Click Back Android
+    Click Back Android
+    Click Search Home
+    Search Product    sunlight
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Swipe Cart Item Card Left By Index Dynamically    1
+    Click Canvas Move To Wishlist Relative To Cart Item Card Dynamically    1
+    Verify Snack Bar Popup Contains Text   Item moved to list
+    Swipe Cart Item Card Left By Index Dynamically    1    3s
+    Click Canvas Delete Item Relative To Cart Item Card Dynamically    1
+    Verify Snack Bar Popup Contains Text   Item removed from Cart.  
+    [Teardown]    Tear Down
+        
