@@ -19,3 +19,18 @@ Verify Confirmation Element Exists
 Click PayFast Cancel
     Wait Until Element Is Visible    ${btnPayFastCancel}    ${MIN_TIMEOUT}
     Click Element    ${btnPayFastCancel}
+
+Click Track Order
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${chkbtnStatus}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnNotnow}
+            IF    ${chkbtnStatus} == ${True}
+                Click Element    ${btnNotnow}
+            END
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${chkbtnStatus}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnappReviewClose}
+            IF    ${chkbtnStatus} == ${True}
+                Click Element    ${btnappReviewClose}
+            END
+    END
+    Wait Until Element Is Visible    ${btnTrackOrder}    ${MIN_TIMEOUT}
+    Click Element    ${btnTrackOrder}

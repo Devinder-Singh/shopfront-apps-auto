@@ -4,3 +4,5 @@ ${btnOrdersPayNow}    id=${APP_PACKAGE}:id/orderDetailConsignmentItemPayNow
 
 ${btnOrdersCancel}      id=${APP_PACKAGE}:id/orderDetailConsignmentCancelOrder
 ${btnOrdersCancelConfirm}      id=android:id/button1
+${txtDigitalDeliveryMethod}      id=${APP_PACKAGE}:id/orderDetailSummaryItemShippingMethodValue
+${txtDigitalShippingAddress}      id=${APP_PACKAGE}:id/orderDetailSummaryItemShippingAddressStreetValue
