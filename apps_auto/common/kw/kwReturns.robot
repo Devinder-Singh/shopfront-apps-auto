@@ -145,7 +145,7 @@ Verify Returns Order Detail Non-Returnable Section
     Scroll To Element In Container    ${returnOrderDetailNonReturnableSectionTitle}    ${containerReturnsHOrderDetail}    20
 
 Verify Returns Order Detail Item Image
-    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    ${MIN_TIMEOUT}
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Title
     Wait Until Element Is Visible    ${cardReturnsOrderDetailItemTitle}    ${MIN_TIMEOUT}

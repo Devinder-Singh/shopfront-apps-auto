@@ -57,8 +57,7 @@ Apps > SS Returns > Request a Return > Select Order > QA-5429
     Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Returns Order History Filter Option View Visible
     Verify Returns Order History Filter Option Button Title
     Click Returns Order History Filter Option Button
-    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Filter orders placed in:
-    Run Keyword If     '${PLATFORM_NAME}'=='ios'        Verify Text On Screen    Filter orders placed in:
+    Verify Returns Screen header    Filter orders placed in:
     Verify Returns Order History Filter Options
     Click Returns Close
     Verify Returns Toolbar Title
@@ -67,12 +66,11 @@ Apps > SS Returns > Request a Return > Select Order > QA-5429
     Verify Returns Order History Item Subtitle
     Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Returns Order History Item Image Container
     Click Returns Order History Item
-    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Select Return Item
+    Verify Returns Screen header    Select Return Item
     Click Returns Back
     Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Select Order to Return Items
     Click Returns Close
-    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Returns
-    Run Keyword If     '${PLATFORM_NAME}'=='ios'        Verify Text On Screen    Returns
+    Verify Returns Screen header    Returns
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Return Item > QA-5430
@@ -87,11 +85,10 @@ Apps > SS Returns > Request a Return > Select Return Item > QA-5430
     Click Returns Call To Action Button
     Verify Returns Order History Item Visible
     Click Returns Order History Item
-    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Select Return Item
-    Run Keyword If     '${PLATFORM_NAME}'=='ios'        Verify Text On Screen    Select Return Item
+    Verify Returns Screen header    Select Return Item
     Verify Returns Order Detail Returnable Section
     Verify Returns Order Detail Non-Returnable Section
-    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Returns Order Detail Item Image
+    Verify Returns Order Detail Item Image
     Verify Returns Order Detail Item Title
     Verify Returns Order Detail Item Price And Qty
     Verify Returns Order Detail Item Warranty Title
@@ -110,6 +107,7 @@ Apps > SS Returns > Request a Return > Select Return Item > QA-5430
     Click Returns Order Detail Non Returnable Item
     Verify Returns Screen header    Select Return Item
     Click Returns Back
+    # note android returns has its toolbar title change when iOS does not, so in cases where the app behaviour is not the same I think it is fine to use "if android"
     Run Keyword If     '${PLATFORM_NAME}'=='android'        Verify Returns Screen header    Select Order to Return Items
     [Teardown]    Tear Down
 
