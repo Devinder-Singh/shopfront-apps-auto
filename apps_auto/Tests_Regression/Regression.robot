@@ -839,8 +839,8 @@ Apps > Wishlist (iOS) - QASA-472
 ##    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
 #    [Teardown]    Tear Down
 
-Apps > Order Tracking - QASA-547
-    [Tags]    QASA-547
+Apps > Order Tracking (Delivery) - QASA-80
+    [Tags]    QASA-80
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -998,8 +998,8 @@ Apps > My Account Verifications - QASA-89
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    5s
     [Teardown]    Tear Down
 
-Apps > Order Tracking 02 - QASA-80
-    [Tags]    QASA-80
+Apps > Order Tracking (Collect) 02 - QASA-547
+    [Tags]    QASA-547
     [Setup]    Start Application
     Clear Environment
     Click Menu
