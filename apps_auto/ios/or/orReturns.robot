@@ -20,7 +20,7 @@ ${btnReturnsOrderHistoryFilterOptionChange}    id=Change
 
 ${containerReturnsOrderHistory}    ${EMPTY}
 
-${cardReturnsOrderHistoryItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[4]
+${cardReturnsOrderHistoryItem}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[2]
 ${cardReturnsOrderHistoryItemTitle}    ${EMPTY}
 ${cardReturnsOrderHistoryItemSubtitle}    ${EMPTY}
 
@@ -43,7 +43,8 @@ ${cardReturnsOrderDetailItemWithVariantSize}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithVariantColour}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
 
-${cardReturnsOrderDetailReturnableItem}    ${EMPTY}
+${cardReturnsOrderDetailReturnableItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]
+
 ${cardReturnsOrderDetailReturnableItem2}    ${EMPTY}
 ${cardReturnsOrderDetailNonReturnableItem}    ${EMPTY}
 
@@ -56,19 +57,20 @@ ${returnsOrderDetailWarrantyDialogButton}    ${EMPTY}
 ${containerReturnsHOrderDetail}    ${EMPTY}
 
 ${containerReturnsReason}    ${EMPTY}
+${txtReasonForReturnTitle}    chain=**/XCUIElementTypeStaticText[`label == "Reason for Return"`]
 
-${returnReasonReasonSelector}    ${EMPTY}
+${returnReasonReasonSelector}    chain=**/XCUIElementTypeCell[`name == "reason_for_return"`]/XCUIElementTypeTextField
 ${returnReasonReasonSelectorText}    ${EMPTY}
-${returnReasonReasonSelectorErrorText}    ${EMPTY}
-${returnReasonReasonItemNonExchange}    ${EMPTY}
+${returnReasonReasonSelectorErrorText}    chain=**/XCUIElementTypeStaticText[`label == "Please select a reason for return"`]
+${returnReasonReasonItemNonExchange}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]
 
-${returnReasonTextArea}    ${EMPTY}
-${returnReasonTextAreaText}    ${EMPTY}
-${returnReasonTextAreaErrorMessage}    ${EMPTY}
+${returnReasonTextArea}    id=sharedSingleTextViewTableViewCell
+${returnReasonTextAreaText}    id=sharedSingleTextViewTableViewCellContent
+${returnReasonTextAreaErrorMessage}    id=sharedSingleTextViewTableViewCellContentFooter
 
-${returnReasonPreferredOutcomeSelector}    ${EMPTY}
-${returnReasonPreferredOutcomeErrorMessage}    ${EMPTY}
-${returnReasonPreferredOutcomeItem}    ${EMPTY}
+${returnReasonPreferredOutcomeSelector}    chain=**/XCUIElementTypeCell[`name == "preferred_outcome"`]/XCUIElementTypeTextField
+${returnReasonPreferredOutcomeErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select a preferred outcome"`]
+${returnReasonPreferredOutcomeItem}    chain=**/XCUIElementTypeCell[`name == "preferred_outcome"`]/XCUIElementTypeTextField
 
 ${returnReasonQuantitySelector}    ${EMPTY}
 ${returnReasonQuantityErrorMessage}    ${EMPTY}

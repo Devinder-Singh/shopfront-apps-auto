@@ -129,7 +129,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Steps 1,2 and 3
     Verify Return Reason Reason Selector Visible
     Verify Return Reason Reason Selector Error Message
     Click Return Reason Reason Selector
-    Verify Toolbar Title    Reason for Return
+    Verify Reason For Return Title    Reason for Return
     Click Return Reason Reason Non-Exchange Item
     Verify Toolbar Title    Return Reason
     Click Returns Call To Action Button

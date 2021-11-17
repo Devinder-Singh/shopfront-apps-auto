@@ -193,6 +193,15 @@ Scroll To First Non Returnable Reason
 Verify Return Reason Reason Selector Visible
     Wait Until Element Is Visible    ${returnReasonReasonSelector}    ${MIN_TIMEOUT}
 
+Verify Reason For Return Title
+    [Arguments]    ${expectedTitle}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    ${expectedTitle}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Page Contains Element    ${txtReasonForReturnTitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Be Visible    ${txtReasonForReturnTitle}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${txtReasonForReturnTitle}    ${expectedTitle}
+
 Verify Return Reason Reason Selector Text
     [Arguments]    ${expectedText}
     Element Text Should Be    ${returnReasonReasonSelectorText}    ${expectedText}
