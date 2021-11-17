@@ -20,7 +20,7 @@ ${btnReturnsOrderHistoryFilterOptionChange}    id=Change
 
 ${containerReturnsOrderHistory}    ${EMPTY}
 
-${cardReturnsOrderHistoryItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[4]
+${cardReturnsOrderHistoryItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[5]
 ${cardReturnsOrderHistoryItemTitle}    ${EMPTY}
 ${cardReturnsOrderHistoryItemSubtitle}    ${EMPTY}
 
@@ -29,31 +29,32 @@ ${cardReturnsOrderHistoryItemWithSizeVariantOption}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithColourVariantOption}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithLiquorOption}    ${EMPTY}
 
-${returnOrderDetailReturnableSectionTitle}    ${EMPTY}
-${returnOrderDetailNonReturnableSectionTitle}    ${EMPTY}
+${returnOrderDetailReturnableSectionTitle}    chain=**/XCUIElementTypeStaticText[`label == "RETURNABLE ITEMS"`]
+${returnOrderDetailNonReturnableSectionTitle}    chain=**/XCUIElementTypeStaticText[`label == "NON-RETURNABLE ITEMS"`]
 
-${cardReturnsOrderDetailItemImage}    ${EMPTY}
-${cardReturnsOrderDetailItemTitle}    ${EMPTY}
-${cardReturnsOrderDetailItemPriceAndQty}    ${EMPTY}
-${cardReturnsOrderDetailItemWarrantyTitle}    ${EMPTY}
-${cardReturnsOrderDetailItemWarrantySubtitle}    ${EMPTY}
+${cardReturnsOrderDetailItemImage}    chain=**/XCUIElementTypeImage[`name == "ReturnItemImage"`][1]
+${cardReturnsOrderDetailItemTitle}    xpath=(//XCUIElementTypeStaticText[@name="ReturnItemTitle"])[1]
+${cardReturnsOrderDetailItemPriceAndQty}    xpath=(//XCUIElementTypeStaticText[@name="ReturnItemSubtitle"])[1]
+${cardReturnsOrderDetailItemWarrantyTitle}    xpath=(//XCUIElementTypeStaticText[@name="ReturnItemFooter1"])[1]
+${cardReturnsOrderDetailItemWarrantySubtitle}    xpath=(//XCUIElementTypeStaticText[@name="ReturnItemFooter2"])[1]
+${cardReturnsOrderDetailItemWarrantyInfo}    xpath=(//XCUIElementTypeButton[@name="icon info black"])[1]
 
 ${cardReturnsOrderDetailItemWithMultipleQuantity}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithVariantSize}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithVariantColour}    ${EMPTY}
 ${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
 
-${cardReturnsOrderDetailReturnableItem}    ${EMPTY}
+${cardReturnsOrderDetailReturnableItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]
 ${cardReturnsOrderDetailReturnableItem2}    ${EMPTY}
-${cardReturnsOrderDetailNonReturnableItem}    ${EMPTY}
+${cardReturnsOrderDetailNonReturnableItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 
-${cardReturnsOrderDetailItemNonReturnableReasonTitle}    ${EMPTY}
+${cardReturnsOrderDetailItemNonReturnableReasonTitle}    chain=**/XCUIElementTypeStaticText[`label == "NON-RETURNABLE ITEMS"`]
 
 ${returnsOrderDetailWarrantyDialogTitle}    ${EMPTY}
-${returnsOrderDetailWarrantyDialogMessage}    ${EMPTY}
-${returnsOrderDetailWarrantyDialogButton}    ${EMPTY}
+${returnsOrderDetailWarrantyDialogMessage}    xpath=//XCUIElementTypeStaticText[@name="Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details."]
+${returnsOrderDetailWarrantyDialogButton}    id=OK
 
-${containerReturnsHOrderDetail}    ${EMPTY}
+${containerReturnsHOrderDetail}    chain=**/XCUIElementTypeOther[`name == "NON-RETURNABLE ITEMS"`]
 
 ${containerReturnsReason}    ${EMPTY}
 
