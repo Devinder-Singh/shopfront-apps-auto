@@ -9,8 +9,10 @@ Verify Returns Menu Item
     Run Keyword If     '${PLATFORM_NAME}'=='ios'       Element Should Contain Text    ${btnMenuExchReturns}    Returns
 
 Verify Returns Screen header
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Returns
-    Run Keyword If     '${PLATFORM_NAME}'=='ios'     Wait Until Element Is Visible     ${returnsToolBar}    ${MIN_TIMEOUT}
+    [Arguments]    ${expectedTitle}
+    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    ${expectedTitle}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'     Verify Text On Screen     ${expectedTitle}    5s
 
 Verify Returns Empty State Visible
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Scroll To Element In Container    ${containerReturnsEmptyState}    ${containerReturnsHistory}    10
@@ -143,7 +145,7 @@ Verify Returns Order Detail Non-Returnable Section
     Scroll To Element In Container    ${returnOrderDetailNonReturnableSectionTitle}    ${containerReturnsHOrderDetail}    20
 
 Verify Returns Order Detail Item Image
-    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    ${MIN_TIMEOUT}
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Title
     Wait Until Element Is Visible    ${cardReturnsOrderDetailItemTitle}    ${MIN_TIMEOUT}
@@ -164,11 +166,13 @@ Verify Returns Order Detail Item Warranty Subtitle
     Run Keyword And Return If    ${hasValidWarranty}==True    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantySubtitle}    Warranty Expires
 
 Click Returns Order Detail Item Warranty Title
-    Click Element    ${cardReturnsOrderDetailItemWarrantyTitle} 
+   Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${cardReturnsOrderDetailItemWarrantyTitle}
+   Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${cardReturnsOrderDetailItemWarrantyInfo} 
 
 Verify Returns Order Detail Item Warranty Dialog Title
-    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogTitle}    ${MIN_TIMEOUT}
-    Element Should Contain Text    ${returnsOrderDetailWarrantyDialogTitle}    Limited Warranty
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogTitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Contain Text    ${returnsOrderDetailWarrantyDialogTitle}    Limited Warranty
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Limited Warranty    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Warranty Dialog Message
     Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogMessage}    ${MIN_TIMEOUT}
