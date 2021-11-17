@@ -64,7 +64,7 @@ ${txtReasonForReturnTitle}    chain=**/XCUIElementTypeStaticText[`label == "Reas
 ${returnReasonReasonSelector}    chain=**/XCUIElementTypeCell[`name == "reason_for_return"`]/XCUIElementTypeTextField
 ${returnReasonReasonSelectorText}    ${EMPTY}
 ${returnReasonReasonSelectorErrorText}    chain=**/XCUIElementTypeStaticText[`label == "Please select a reason for return"`]
-${returnReasonReasonItemNonExchange}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]
+${returnReasonReasonItemNonExchange}    chain=**/XCUIElementTypeCell[`name == "sharedTitleTableViewCell"`][1]
 
 ${returnReasonTextArea}    id=sharedSingleTextViewTableViewCell
 ${returnReasonTextAreaText}    id=sharedSingleTextViewTableViewCellContent
