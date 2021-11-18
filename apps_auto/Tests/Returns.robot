@@ -75,7 +75,7 @@ Apps > SS Returns > Request a Return > Select Order > QA-5429
 
 Apps > SS Returns > Request a Return > Select Return Item > QA-5430
     [Tags]    QA-5430
-    [Setup]    Start Application
+    [Setup]    Start Application    ${False}     # note we are using this as a workaround until https://takealotgroup.atlassian.net/browse/MAQ-852 is complete
     Click Menu
     Click Menu Login
     Login Takealot    dev+431155@take2.co.za    test
@@ -96,9 +96,9 @@ Apps > SS Returns > Request a Return > Select Return Item > QA-5430
     Click Returns Order Detail Item Warranty Title
     #note on iOS the Alert does not show the accessibility id it was given, xpath and other methods are to fragile in this case, thus scanning screen for text was used
     Verify Returns Order Detail Item Warranty Dialog Title
-    # Verify Returns Order Detail Item Warranty Dialog Message
-    # Verify Returns Order Detail Item Warranty Dialog Button
-    # Close Returns Order Detail Item Warranty Dialog
+    Verify Returns Order Detail Item Warranty Dialog Message
+    Verify Returns Order Detail Item Warranty Dialog Button
+    Close Returns Order Detail Item Warranty Dialog
     Click Returns Order Detail Returnable Item
     Verify Returns Screen header    Return Reason
     Click Returns Back
@@ -213,6 +213,7 @@ Apps > SS Returns > Request a Return > Log Return Request > QASA-78
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
+    Sleep    1
     Click Returns Call To Action Button
     Click Returns Order History Item
     Click Returns Order Detail Returnable Item
@@ -224,10 +225,10 @@ Apps > SS Returns > Request a Return > Log Return Request > QASA-78
     Scroll To Return Reason Text Area
     Input Return Reason Text Area Text    Test Description
     Click Returns Call To Action Button
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
     Verify Returns Request Cart Header
     Verify Returns Request Item Image
-    Verify Returns Request Item Title    Stealth Gaming Headset & Stand Bundle - Referee Edition
+    Verify Returns Request Item Title    The Ugly Five
     Verify Returns Request Item Price And Qty
     Verify Returns Request Item Reason Title
     Verify Returns Request Item Preferred Outcome Title

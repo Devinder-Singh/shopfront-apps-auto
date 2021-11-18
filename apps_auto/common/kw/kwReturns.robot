@@ -175,8 +175,9 @@ Verify Returns Order Detail Item Warranty Dialog Title
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Limited Warranty    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Warranty Dialog Message
-    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogMessage}    ${MIN_TIMEOUT}
-    Element Should Contain Text    ${returnsOrderDetailWarrantyDialogMessage}    Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details.
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogMessage}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'   Element Should Contain Text    ${returnsOrderDetailWarrantyDialogMessage}    Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details.
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details.    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Warranty Dialog Button
     Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogButton}    ${MIN_TIMEOUT}
@@ -316,7 +317,7 @@ Verify Return Request Return Method Header
     Wait Until Element Is Visible    ${returnRequestReturnItemsHeader}    ${MIN_TIMEOUT}
 
 Verify Returns Request Item Image
-    Wait Until Element Is Visible    ${cardReturnsRequestItemImage}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cardReturnsRequestItemImage}    ${MIN_TIMEOUT}
 
 Verify Returns Request Item Title
     [Arguments]    ${expectedTitle}

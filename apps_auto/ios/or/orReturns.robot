@@ -58,7 +58,7 @@ ${returnsOrderDetailWarrantyDialogButton}    id=OK
 
 ${containerReturnsHOrderDetail}    chain=**/XCUIElementTypeOther[`name == "NON-RETURNABLE ITEMS"`]
 
-${containerReturnsReason}    ${EMPTY}
+${containerReturnsReason}    id=sharedSingleTextViewTableViewCell
 ${txtReasonForReturnTitle}    chain=**/XCUIElementTypeStaticText[`label == "Reason for Return"`]
 
 ${returnReasonReasonSelector}    chain=**/XCUIElementTypeCell[`name == "reason_for_return"`]/XCUIElementTypeTextField
@@ -72,7 +72,7 @@ ${returnReasonTextAreaErrorMessage}    id=sharedSingleTextViewTableViewCellConte
 
 ${returnReasonPreferredOutcomeSelector}    chain=**/XCUIElementTypeCell[`name == "preferred_outcome"`]/XCUIElementTypeTextField
 ${returnReasonPreferredOutcomeErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select a preferred outcome"`]
-${returnReasonPreferredOutcomeItem}    chain=**/XCUIElementTypeCell[`name == "preferred_outcome"`]/XCUIElementTypeTextField
+${returnReasonPreferredOutcomeItem}    chain=**/XCUIElementTypeCell[`name == "sharedTitleTableViewCell"`][1]
 
 ${returnReasonQuantitySelector}    ${EMPTY}
 ${returnReasonQuantityErrorMessage}    ${EMPTY}
@@ -83,14 +83,14 @@ ${returnReasonVariantColourSelectorErrorMessage}    ${EMPTY}
 ${containerReturnRequest}    ${EMPTY}
 
 
-${returnRequestReturnItemsHeader}    ${EMPTY}
+${returnRequestReturnItemsHeader}    chain=**/XCUIElementTypeStaticText[`label == "RETURN ITEMS"`]
 ${returnRequestReturnMethodHeader}    ${EMPTY}
 ${cardReturnsRequestItem}    ${EMPTY}
 ${cardReturnsRequestItemImage}    ${EMPTY}
-${cardReturnsRequestItemTitle}    ${EMPTY}
-${cardReturnsRequestItemPriceAndQty}    ${EMPTY}
-${cardReturnsRequestItemReasonTitle}    ${EMPTY}
-${cardReturnsRequestItemPreferredOutcomeTitle}    ${EMPTY}
+${cardReturnsRequestItemTitle}    id=ReturnItemTitle
+${cardReturnsRequestItemPriceAndQty}    id=ReturnItemSubtitle
+${cardReturnsRequestItemReasonTitle}    id=ReturnItemFooter1
+${cardReturnsRequestItemPreferredOutcomeTitle}    id=ReturnItemFooter2
 
 ${returnsRequestDialogTitle}    ${EMPTY}
 ${returnsRequestDialogMessage}    ${EMPTY}
