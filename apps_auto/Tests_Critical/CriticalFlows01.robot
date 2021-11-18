@@ -2,12 +2,14 @@
 Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 Library    TalLibrary
+Library    TalLibrary
+Library    TalLibrary
 
 *** Variables ***
 
 *** Test Cases ***
-Create Paid Order
-    [Tags]    Returns Data
+Apps > Checkout > Payment > Pay With OZOW - QASA-533
+    [Tags]    QASA-533
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -18,54 +20,46 @@ Create Paid Order
     Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Click Checkout
+    Click Checkout    
     Click Delivery
     Click Address
     Click Free Delivery
     Click Donate No Thanks
     Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
+    Click Ozow Payment Method
+    Click Pay With Ozow
+
     Verify Card Payment
-
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Pickup Points > Last Used Pickup Point - QASA-561
-    [Tags]    QASA-561
-    [Setup]    Start Application
-    Click Menu
-    Click Menu Login
-    Close Application
-    Start Application    ${False}
-    Click Menu
-    Click Menu Register
-    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Collect
-    Verify Text On Screen    Filter by Province:    ${MIN_TIMEOUT}
-    Verify Text On Screen    All    1s
-    Click Filter Province
-    Click Western Cape Province
-    Verify Text On Screen    Takealot Cape Town Warehouse Cape Town, Western Cape
-    Close Application
-    Start Application
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Collect
-    Verify Text On Screen    Takealot Cape Town Warehouse Cape Town, Western Cape    ${MIN_TIMEOUT}
-    [Teardown]    Tear Down
+#    ${resultTwo}=    Run Keyword    Replace String    ${txtProductLeadTimes}[${index}]    ,    ${EMPTY}
+#    ${resultTwo}=    Run Keyword    Replace String    ${txtProductLeadTimes}[${index}]    R    ${EMPTY}
+
+#Create Paid Order
+#    [Tags]    Returns Data
+#    [Setup]    Start Application
+#    Clear Environment
+#    Click Menu
+#    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+#    Click Home
+#    Click Search Home
+#    Search Product    Pencil
+#    Click Product from API
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout
+#    Click Delivery
+#    Click Address
+#    Click Free Delivery
+#    Click Donate No Thanks
+#    Click Change Payment Method
+#    Click Payfast Payment Method
+#    Click Pay With Payfast
+#    Verify Payfast Payment Text    Instant EFT
+#    Click Complete Payment With Payfast
+#    Click Track Order
+#    Verify Text On Screen    PAID
+#    [Teardown]    Tear Down
 
 #Apps > PDP - QASA-168
 #    [Tags]    QASA-168

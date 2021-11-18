@@ -11,6 +11,10 @@ Click Search Home
     ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    10s
     Run Keyword If    ${btnPresentSearchHistory} and ${clearAll}    Click Element    ${btnSearchClearAll}
 
+Click Search PLP Clear Text
+    Wait Until Element Is Visible    ${btnSearchClearText}    10s
+    Click Element    ${btnSearchClearText}
+
 Click Only Search Home
     [Arguments]    ${clearAll}=${True}
 

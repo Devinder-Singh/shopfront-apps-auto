@@ -25,9 +25,17 @@ Click Holiday TV Licence
     Wait Until Element Is Visible    ${btnTvLicHoliday}    ${MIN_TIMEOUT}
     Click Element    ${btnTvLicHoliday}
 
+Click Dealer TV Licence
+    Wait Until Element Is Visible    ${btnTvLicDealer}    ${MIN_TIMEOUT}
+    Click Element    ${btnTvLicDealer}
+
 Click Back TV Licence
     Wait Until Element Is Visible    ${btnTvLicBack}    ${MIN_TIMEOUT}
     Click Element    ${btnTvLicBack}
+
+Click Cancel TV Licence
+    Wait Until Element Is Visible    ${btnLicenceCancel}    ${MIN_TIMEOUT}
+    Click Element    ${btnLicenceCancel}
 
 Verify Tv Licence Text
     [Arguments]    ${verifyText}
@@ -38,3 +46,23 @@ Verify Tv Licence Text
 Verify Tv Licence Element Exists
     [Arguments]    ${verifyElement}
     Wait Until Page Contains Element    ${verifyElement}
+
+Enter Business TV Licence
+    [Arguments]    ${licemce}    ${reg}
+    Wait Until Element Is Visible    ${txtLicenceCompReg}    ${MIN_TIMEOUT}
+    Input Text    ${txtLicenceCompReg}    ${licemce}
+    Input Text    ${txtLicenceBusiness}    ${licemce}
+    Click Element    ${btnVerify}
+
+Enter Holiday Home TV Licence
+    [Arguments]    ${licemce}
+    Wait Until Element Is Visible    ${txtLicenceHolidayHome}    ${MIN_TIMEOUT}
+    Input Text    ${txtLicenceHolidayHome}    ${licemce}
+    Click Element    ${btnVerify}
+
+Enter Dealer TV Licence
+    [Arguments]    ${licemce}    ${reg}
+    Wait Until Element Is Visible    ${txtLicenceCompRegDealer}    ${MIN_TIMEOUT}
+    Input Text    ${txtLicenceCompRegDealer}    ${licemce}
+    Input Text    ${txtLicenceDealer}    ${licemce}
+    Click Element    ${btnVerify}

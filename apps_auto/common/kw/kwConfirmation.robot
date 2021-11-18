@@ -15,3 +15,7 @@ Verify Confirmation Element Exists
 Click PayFast Cancel
     Wait Until Element Is Visible    ${btnPayFastCancel}    ${MIN_TIMEOUT}
     Click Element    ${btnPayFastCancel}
+
+Click Track Order
+    Wait Until Element Is Visible    ${btnTrackOrder}    ${MIN_TIMEOUT}
+    Click Element    ${btnTrackOrder}

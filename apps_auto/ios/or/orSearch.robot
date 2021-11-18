@@ -6,3 +6,5 @@ ${txtSearch}      ${EMPTY}
 
 ${btnSearchRecent}      id=pencil case
 ${btnSearchTrending}      id=masks
+
+${btnSearchClearText}      chain=**/XCUIElementTypeButton[`label == "Clear text"`]

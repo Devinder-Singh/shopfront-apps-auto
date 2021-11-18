@@ -1597,7 +1597,7 @@ Apps > Checkout > Payment > Pay with eBucks - QASA-538
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout

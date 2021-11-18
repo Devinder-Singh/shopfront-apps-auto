@@ -29,6 +29,22 @@ Click Pickup Point
 #    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
 #    Run Keyword If    ${chkProdVisible}==${True}    Click Element    ${btnPickupPoint}
 
+Click Pickup Point Gauteng
+    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
+
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    25
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPointGauteng}
+
+        Run Keyword If
+            ...    ${chkProdVisible}==${True}
+            ...    Exit For Loop
+
+        Swipe Up    ${windowScroll}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Click Element    ${btnPickupPointGauteng}
+
 Click Pickup Point Brackenfell
     Wait Until Element Is Visible    ${btnPickupPointBrackenfell}    ${MIN_TIMEOUT}
     Click Element    ${btnPickupPointBrackenfell}

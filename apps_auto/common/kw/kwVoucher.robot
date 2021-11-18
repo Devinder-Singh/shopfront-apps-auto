@@ -9,6 +9,19 @@ Enter Payment Voucher Code
     Clear Text    ${txtVoucherCode}
     Input Text    ${txtVoucherCode}    ${coupon}
 
+Enter Payment Voucher Expired
+    Wait Until Element Is Visible    ${btnVoucherApply}    ${MIN_TIMEOUT}
+
+    ${coupon}=    Get Payment Voucher Number Expired
+    Clear Text    ${txtVoucherCode}
+    Input Text    ${txtVoucherCode}    ${coupon}
+
+Enter Payment Voucher Used
+    Wait Until Element Is Visible    ${btnVoucherApply}    ${MIN_TIMEOUT}
+
+    Clear Text    ${txtVoucherCode}
+    Input Text    ${txtVoucherCode}    ${query_result_voucher}
+
 Click Apply Payment Voucher
     Wait Until Element Is Visible    ${btnVoucherApply}    ${MIN_TIMEOUT}
     Click Element    ${btnVoucherApply}
