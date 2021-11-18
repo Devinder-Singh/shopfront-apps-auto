@@ -31,3 +31,4 @@ ${rdoPaymentUseMyCredit}      id=btn radio selected
 ${txtPaymentAmount}      chain=**/XCUIElementTypeStaticText[`label == "R  0"`]
 
 ${rdoPaymentDonation}      id=Donate R 5 to Beautiful Gate Children's Charity
+${lblPaymentCreditsApplied}      chain=**/XCUIElementTypeStaticText[`label == "Credit"`]

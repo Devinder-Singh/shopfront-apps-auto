@@ -19,21 +19,20 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Product Department
     Click Add To Wishlist
     Click Wishlist
-    Click Wishlist Add To Cart
+    Click Wishlist Add To Cart    ${False}
     Click Back iOS    My Lists
     Click Home Cart
-#    Click Cart
     Click Checkout
     Click Delivery
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
+    Verify Payfast Payment Text
     Close Application
     Start Application    ${False}
     Cancel Latest Order
@@ -55,7 +54,7 @@ Search and Buy Item on Delivery using Credit Card
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -149,7 +148,6 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Back Delivery Android
     Click Back Delivery iOS
     Click Back iOS    My Account
-#    Click Back Android
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -159,7 +157,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -179,7 +177,7 @@ Buy Airtime and Pay with Credit Card
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -204,7 +202,7 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
@@ -220,7 +218,7 @@ Buy Airtime along with another Item on Delivery
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method
@@ -241,7 +239,7 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
@@ -257,7 +255,7 @@ Buy Airtime along with another Item on Collection
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method

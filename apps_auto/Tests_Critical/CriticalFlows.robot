@@ -23,7 +23,9 @@ Register User
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
+    Wait Until Element Is Visible    ${btnAddressDelete}    ${MIN_TIMEOUT}
     Wait Until Page Contains    Tester Residential    10s
+    Wait Until Page Contains    Robertsham    10s
     [Teardown]    Tear Down
 
 Search and Buy Item on Delivery using Credit Card
@@ -42,7 +44,7 @@ Search and Buy Item on Delivery using Credit Card
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -66,7 +68,7 @@ Buy Daily Deal Item on Delivery using Credit Card
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -87,7 +89,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Product Department
     Click Add To Wishlist
     Click Wishlist
-    Click Wishlist Add To Cart
+    Click Wishlist Add To Cart    ${False}
     Click Back iOS    My Lists
     Click Home Cart
 #    Click Cart
@@ -96,7 +98,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Payfast Payment Method
@@ -169,7 +171,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -186,7 +188,7 @@ Buy Airtime and Pay with Credit Card
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -208,7 +210,7 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
@@ -224,7 +226,7 @@ Buy Airtime along with another Item on Delivery
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method
@@ -242,7 +244,7 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
@@ -258,7 +260,7 @@ Buy Airtime along with another Item on Collection
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method
@@ -282,7 +284,7 @@ Buy Daily Deals Item and verify no Promotions
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -305,7 +307,7 @@ Buy Daily Deals Item and verify Promotions
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method

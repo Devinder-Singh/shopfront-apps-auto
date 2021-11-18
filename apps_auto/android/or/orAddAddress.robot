@@ -50,3 +50,5 @@ ${lblAddresMyAccSuburb}      xpath=//*[@text="Gauteng"]
 ${lblAddresOptionMyAccGauteng}      xpath=//*[@text="12 Ridge Way, Green Point, Cape Town, Gauteng, 8007"]
 
 ${lblAddresOptionMyAccMapSuburb}      ${EMPTY}
+
+${btnAddressDelete}    id=${APP_PACKAGE}:id/checkout_address_item_recipient_address_delete

@@ -3,10 +3,9 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Variant Product from API
-    [Arguments]    ${index}=0
+    [Arguments]    ${itemIndex}=0
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    ${txtProduct}=    Get Variant Product to Add To Cart
-    ${txtProduct}=    Set Variable If    ${index}==0    ${txtProduct}    ${txtProduct}\[${index}]
+    ${txtProduct}=    Get Variant Product to Add To Cart    ${itemIndex}
     Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
     Click Close Ad
@@ -26,18 +25,7 @@ Click Product from API
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Click In Stock Product from API
@@ -79,18 +67,7 @@ Click Leadtime Product from API
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${btnProductListView}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Click Product Brand from API
@@ -109,16 +86,16 @@ Verify Product Other Offers from API
     ${index}=    Set Variable    0
     FOR    ${result}    IN    @{txtProductNames}
         ${txtProductResult}=    Run Keyword    Convert To Upper Case    ${result}
-        Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${txtProductResult}    5s    ELSE    Verify Text On Screen    ${result}    5s
-        Verify Price On Screen    ${txtProductPrices}[${index}]    5s
+        Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${txtProductResult}    ELSE    Verify Text On Screen    ${result}    5s
+        Verify Price On Screen    ${txtProductPrices}[${index}]
 
         ${resultLeft}=    Run Keyword    Get Substring    ${txtProductLeadTimes}[${index}]    0    8
         ${resultFinal}=    Set Variable If    '${resultLeft}'=='In stock'    ${resultLeft}
-        Run Keyword If    '${resultLeft}'=='In stock'    Verify Text On Screen    ${resultFinal}    5s
+        Run Keyword If    '${resultLeft}'=='In stock'    Verify Text On Screen    ${resultFinal}
 
         ${resultTwo}=    Run Keyword    Replace String    ${txtProductLeadTimes}[${index}]    working    work
         ${resultFinal}=    Set Variable If    '${resultLeft}'!='In stock'    ${resultTwo}
-        Run Keyword If    '${resultLeft}'!='In stock'    Verify Text On Screen    ${resultFinal}    5s
+        Run Keyword If    '${resultLeft}'!='In stock'    Verify Text On Screen    ${resultFinal}
     END
 
 Click Product from API Scroll
@@ -126,18 +103,7 @@ Click Product from API Scroll
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${btnProductListView}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Verify Price Range Product from API
@@ -159,7 +125,7 @@ Verify Price Range Product from API
 
     ${result_f}=    Convert To String    ${query_result_RangeCartProductPriceL}
     ${result_f}=    Remove String    ${result_f}    .0
-    Verify Text On Screen    ${result_f}    5s
+    Verify Text On Screen    ${result_f}
 
 Click Listing Product from API
     ${txtProduct}=    Get Product Listing Price
@@ -190,36 +156,14 @@ Click Product Auto from API
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${btnProductListView}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Click Filter Product from API
     ${txtProduct}=    Get Filter Product to Add To Cart
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Click Daily Deals Product from API
@@ -227,18 +171,7 @@ Click Daily Deals Product from API
     ${txtProduct}=    Get Daily Deals Product to Add To Cart
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Click Third Tab Product from API
@@ -246,18 +179,7 @@ Click Third Tab Product from API
     ${txtProduct}=    Get Daily Deals Product to Add To Cart
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Click App Only Deals Product from API
@@ -265,18 +187,7 @@ Click App Only Deals Product from API
     ${txtProduct}=    Get Daily Deals Product to Add To Cart
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Click First Product from API
@@ -287,47 +198,28 @@ Click First Product from API
 
 Click Product Daily Deals
     Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
-#    Sleep    5s
-    Wait Until Element Is Visible    ${imgProductDeals}    5s
+    Wait Until Element Is Visible    ${imgProductDeals}
     Click Element    ${imgProductDeals}
     Click Close Ad
 
 Click Product Seller Deals
     Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
-#    Sleep    1s
-
     ${txtProduct}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == "${query_result_FirstProductBrand}"`][2]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${query_result_FirstProductBrand}']
-
-    Wait Until Element Is Visible    ${txtProduct}    5s
+    Wait Until Element Is Visible    ${txtProduct}
     Click Element    ${txtProduct}
     Click Close Ad
 
 Click Product Department
     Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
-#    Sleep    1s
-    Wait Until Element Is Visible    ${imgProductDealsDept}    5s
+    Wait Until Element Is Visible    ${imgProductDealsDept}
     Click Element    ${imgProductDealsDept}
     Click Close Ad
 
 Click Product From Title
     [Arguments]    ${title}
-
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, "${title}")]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${title}"`]
-
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${lblProdTitle}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${lblProdTitle}
+    Click Element On Scroll    ${lblProdTitle}    10
     Click Close Ad
 
 Click YMAL Product From Title
@@ -379,7 +271,6 @@ Click Wine Club Deals
 
 Click Product Filter
     Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
-#    Sleep    2s
     Click Element    ${btnProductFilter}
 
 Click Product Grid View
@@ -401,12 +292,10 @@ Click Search Product Sort
 Click Search Product Wishlist
     Wait Until Element Is Visible    ${btnProductSearchSort}    ${MIN_TIMEOUT}
     Click Element    ${btnProductWishlist}
-#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
 
 Click Search Product Wishlist iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnProductSearchSort}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnProductWishlist}
-#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5s
 
 Click Product available in JHB only
     ${txtProduct}=    Get Product in JHB only
@@ -447,18 +336,7 @@ Click Product No Reviews
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${btnProductListView}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Click Product Multiple Reviews
@@ -466,18 +344,7 @@ Click Product Multiple Reviews
 
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${btnProductListView}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}
     Click Close Ad
 
 Verify Sorted Products

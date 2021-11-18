@@ -7,17 +7,25 @@ Click Cancel Delivery Method
     Click Element    ${btnCancelDelivery}
 
 Click Delivery
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryAndroid}    ${MIN_TIMEOUT}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${scrDeliveryAndroid}    ${MIN_TIMEOUT}
+    END
+    
     Wait Until Element Is Visible    ${btnDelivery}    ${MIN_TIMEOUT}
     Click Element    ${btnDelivery}
 
 Click Delivery Android
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryAndroid}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnDelivery}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnDelivery}
-
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${scrDeliveryAndroid}    ${MIN_TIMEOUT}
+        Wait Until Element Is Visible    ${btnDelivery}    ${MIN_TIMEOUT}
+        Click Element    ${btnDelivery}
+    END
+    
 Click Collect
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryAndroid}    ${MIN_TIMEOUT}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${scrDeliveryAndroid}    ${MIN_TIMEOUT}    
+    END
+   
     Wait Until Element Is Visible    ${btnCollect}    ${MIN_TIMEOUT}
     Click Element    ${btnCollect}
 
@@ -41,10 +49,17 @@ Click Back Delivery Android
 Verify Delivery Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnDelivery}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
-
+    
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}    
+    END
+     
 Verify Delivery Text Not
     [Arguments]    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Not Contain Text    ${verifyText}    10s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain    ${verifyText}    10s
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Does Not Contain    ${verifyText}    ${MIN_TIMEOUT}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'  
+        Page Should Not Contain Text    ${verifyText}    ${MIN_TIMEOUT}
+    END

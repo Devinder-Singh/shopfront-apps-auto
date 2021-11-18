@@ -1,5 +1,8 @@
 *** Variables ***
 ${btnFree}      chain=**/XCUIElementTypeStaticText[`label == "Free"`]
+#${btnFree}      id=Standard Delivery
+${txtStandardCollect}      id=Standard Collect
+${txtStandardDelivery}    id=Standard Delivery
 ${txtSurchargeDelivery}      chain=**/XCUIElementTypeStaticText[`label == "Standard Delivery + Delivery Surcharge"`]
 
 ${navDeliveryOptBack}      chain=**/XCUIElementTypeNavigationBar[`name == "Delivery Options"`]/XCUIElementTypeButton

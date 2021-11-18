@@ -882,3 +882,21 @@ Android > Checkout > Payment > Order Summary - QASA-595
     Click Payment Confirm Order
     Click Track Order
     [Teardown]    Tear Down
+
+Apps > Checkout > Collect > Shipping Option > Collection cost Free for order = R 450 - QASA-575
+    [Tags]    QASA-575
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Search Home
+    Search Product    microwav
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Pickup Point Brackenfell
+    Wait Until Element Is Visible    ${btnFree}        ${MIN_TIMEOUT}
+    [Teardown]    Tear Down

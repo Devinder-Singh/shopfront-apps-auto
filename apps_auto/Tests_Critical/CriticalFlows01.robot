@@ -50,7 +50,7 @@ Apps > Checkout > Payment > Pay With OZOW - QASA-533
 #    Click Checkout
 #    Click Delivery
 #    Click Address
-#    Click Free Delivery
+#    Click Any Delivery
 #    Click Donate No Thanks
 #    Click Change Payment Method
 #    Click Payfast Payment Method

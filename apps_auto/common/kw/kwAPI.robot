@@ -17,7 +17,7 @@ ${address_Body}    { "email": "take2Automation+201905213934@gmail.com", "passwor
 ${address_Body_Business}    { "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "business", "city": "Cape Town", "contact_number": "0820000001", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
 
 ${voucher_URL}    http://tal-test-data-service.master.env/execute_query_voucher_service
-${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-11-18' and DateUsed is null limit 1" }
+${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-12-31' and DateUsed is null limit 1" }
 ${voucher_Body_Expired}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired < '2021-11-18' and DateUsed is null limit 1" }
 
 ${wishlist_URL}    http://tal-test-data-service.master.env/add_customer_wishlists
@@ -106,7 +106,7 @@ Get Tokens
 Add To Cart
     Get Customer ID
     Get Tokens
-    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id": 87365581, "quantity": 1}]}
+    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id": 53373214, "quantity": 1}]}
     Post    ${Add_cart_URL}    ${Add_cart_Body}
     Integer    response status    200
 
@@ -472,6 +472,7 @@ Verify Product Search App Only Deals Badge
     [Return]    ${searchResult}
 
 Get Variant Product to Add To Cart
+    [Arguments]    ${index}=0
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
@@ -479,7 +480,6 @@ Get Variant Product to Add To Cart
     @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.is_shop_all_options_available
     @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
 
-    ${index}=    Set Variable    0
     FOR    ${result}    IN    @{results}
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${results_title}[${index}]"`]    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, "${results_title}[${index}]")]
         Exit For Loop If    '${result}'=='True'

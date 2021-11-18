@@ -9,19 +9,19 @@ Verify Card Payment
         ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    1s
         IF    ${chkTextSuccess}==${False}
             ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card number    1s
+        ELSE
+            Exit For Loop
         END
-        Exit For Loop If    ${chkTextSuccess}==${True}
     END
     Set Implicitly Wait    5
 
 Verify Payfast Payment Text
-    [Arguments]    ${verifyText}='Instant EFT'
-    ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    ${verifyText}    ${MAX_TIMEOUT}
-    IF    ${chkTextSuccess} == ${False}
-        ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Secure payments by PayFast    1s
+    IF    '${APP_ENVIRONMENT}' == 'https://api.takealot.com/'
+        Verify Text On Screen    Instant EFT    ${MAX_TIMEOUT}
+    ELSE
+        Verify Text On Screen    Test Merchant    ${MAX_TIMEOUT}
     END
-    Run Keyword If    ${chkTextSuccess}==${False}    Verify Text On Screen    Secured and powered by PayFast    1s
-
+    
 Click Pay with Credit Card Back
     Wait Until Element Is Visible    ${navPayCreditCardBack}    ${MIN_TIMEOUT}
     Click Element    ${navPayCreditCardBack}
@@ -39,8 +39,12 @@ Click Credit Card Name
 Verify Card Payment Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblCardNumber}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}
+    END    
 
 Input Credit Card Description Paygate
     [Arguments]    ${cardDesc}='Test'

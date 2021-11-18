@@ -965,7 +965,8 @@ Merchandised Landing Pages (CMS Widgets) - Contextual Navigation Widget - QASA-1
     Click Menu
     Click Menu Shop By Department
     Click Menu Department    Beauty
-    Click Product Widget Image
+#    Click Product Widget Image
+    Click Product Widget Context
     Verify Product Widget Navigation
     [Teardown]    Tear Down
 
@@ -1110,8 +1111,8 @@ Apps > Wishlist (iOS) - QASA-472
 ##    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
 #    [Teardown]    Tear Down
 
-Apps > Order Tracking - QASA-547
-    [Tags]    QASA-547
+Apps > Order Tracking (Delivery) - QASA-80
+    [Tags]    QASA-80
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1125,7 +1126,7 @@ Apps > Order Tracking - QASA-547
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1269,8 +1270,8 @@ Apps > My Account Verifications - QASA-89
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    5s
     [Teardown]    Tear Down
 
-Apps > Order Tracking 02 - QASA-80
-    [Tags]    QASA-80
+Apps > Order Tracking (Collect) 02 - QASA-547
+    [Tags]    QASA-547
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -1285,7 +1286,7 @@ Apps > Order Tracking 02 - QASA-80
     Click Collect
     Display WC Province Pickup Points
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1466,7 +1467,7 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delivery via email to    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
@@ -1531,13 +1532,16 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
     Add To Cart
     Click Pay With Credit Card
     Click Cart Update Continue Checkout
+#    Verify Text On Screen Scroll    ${varSurchargeDelivery}    10s    ${windowScroll}    
+    #Verify Text On Screen    ${varSurchargeDelivery}
+    #Wait Until Page Contains Element    ${varSurchargeDelivery}
     Click Pay With Credit Card
     Close Application
     Start Application
@@ -1551,12 +1555,15 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Add To Cart
     Click Pay With Credit Card
     Click Cart Update Back To Cart
     Click Checkout
+    Click Delivery
+    Click Address
+    Click Surcharge Delivery
     [Teardown]    Tear Down
 
 CLONE - PDP - Brand Links - QASA-29
@@ -1594,4 +1601,60 @@ PDP - Brand Links - QASA-28
     Click Back Android
     Click Back iOS    ${query_result_FirstProduct}
     Verify Element On Screen    ${btnAddToCart}    10s
+    [Teardown]    Tear Down
+
+Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
+    [Tags]    QASA-874
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Filter Province
+    Click Western Cape Province
+    Click Pickup Point
+    Click Any Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Add To Cart
+    Click Pay With Credit Card
+    Click Cart Update Continue Checkout
+    Click Collect Not Available
+    Click Delivery
+    Click Address
+    Click Surcharge Delivery
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Collect
+    Click Filter Province
+    Click Western Cape Province
+    Click Pickup Point
+    Click Any Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Add To Cart
+    Click Pay With Credit Card
+    Click Cart Update Back To Cart
+    Click Checkout
+    Click Collect Not Available
+    Click Delivery
+    Click Address
+    Click Surcharge Delivery
     [Teardown]    Tear Down
