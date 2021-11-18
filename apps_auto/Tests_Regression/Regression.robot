@@ -1,7 +1,6 @@
 *** Settings ***
 Default Tags      regression
 Resource          ../common/config/defaultConfig.robot
-Library    TalLibrary
 
 *** Test Cases ***
 Apps > Register & Login - QASA-498

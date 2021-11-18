@@ -1,11 +1,6 @@
 *** Settings ***
 Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
-Library    TalLibrary
-Library    TalLibrary
-Library    TalLibrary
-
-*** Variables ***
 
 *** Test Cases ***
 Apps > Checkout > Payment > Pay With OZOW - QASA-533
