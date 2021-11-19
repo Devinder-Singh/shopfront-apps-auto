@@ -274,7 +274,8 @@ Scroll To Returns Reason Variant Size Error Message
     Scroll To Element In Container    ${returnReasonVariantSizeSelectorErrorMessage}   ${containerReturnsReason}    20
 
 Verify Returns Reason Variant Size Error Message
-    Element Text Should Be    ${returnReasonVariantSizeSelectorErrorMessage}    Please select a size
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnReasonVariantSizeSelectorErrorMessage}    Please select a size
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${returnReasonVariantSizeSelectorErrorMessage}    Please select size
 
 Scroll To Returns Order History Item With Variant Colour
 #    Sleep    5s

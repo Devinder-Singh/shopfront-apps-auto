@@ -20,14 +20,14 @@ ${btnReturnsOrderHistoryFilterOptionChange}    id=Change
 
 ${containerReturnsOrderHistory}    ${EMPTY}
 
-${cardReturnsOrderHistoryItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[5]
+${cardReturnsOrderHistoryItem}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[2]
 
 ${cardReturnsOrderHistoryItemTitle}    ${EMPTY}
 ${cardReturnsOrderHistoryItemSubtitle}    ${EMPTY}
 
-${cardReturnsOrderHistoryItemWithMutlipleQuantity}    ${EMPTY}
-${cardReturnsOrderHistoryItemWithSizeVariantOption}    ${EMPTY}
-${cardReturnsOrderHistoryItemWithColourVariantOption}    ${EMPTY}
+${cardReturnsOrderHistoryItemWithMutlipleQuantity}    chain=**/XCUIElementTypeStaticText[`label == "Order #91818963"`]
+${cardReturnsOrderHistoryItemWithSizeVariantOption}    chain=**/XCUIElementTypeStaticText[`label == "Order #96062667"`]
+${cardReturnsOrderHistoryItemWithColourVariantOption}    chain=**/XCUIElementTypeStaticText[`label == "Order #96147644"`]
 ${cardReturnsOrderHistoryItemWithLiquorOption}    ${EMPTY}
 
 ${returnOrderDetailReturnableSectionTitle}    chain=**/XCUIElementTypeStaticText[`label == "RETURNABLE ITEMS"`]
@@ -40,16 +40,17 @@ ${cardReturnsOrderDetailItemWarrantyTitle}    xpath=(//XCUIElementTypeStaticText
 ${cardReturnsOrderDetailItemWarrantySubtitle}    xpath=(//XCUIElementTypeStaticText[@name="ReturnItemFooter2"])[1]
 ${cardReturnsOrderDetailItemWarrantyInfo}    xpath=(//XCUIElementTypeButton[@name="icon info black"])[1]
 
-${cardReturnsOrderDetailItemWithMultipleQuantity}    ${EMPTY}
-${cardReturnsOrderDetailItemWithVariantSize}    ${EMPTY}
-${cardReturnsOrderDetailItemWithVariantColour}    ${EMPTY}
+${cardReturnsOrderDetailItemWithMultipleQuantity}    chain=**/XCUIElementTypeStaticText[`label == "Pokemon Sword & Shield 4: Vivid Voltage - Booster"`]
+${cardReturnsOrderDetailItemWithVariantSize}    chain=**/XCUIElementTypeStaticText[`label == "adidas Men's Long Sleeve Tee - Black - S"`]
+${cardReturnsOrderDetailItemWithVariantColour}    chain=**/XCUIElementTypeStaticText[`label == "Nike Hyperfuel 500ml Water Bottle"`]
 ${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
 
-${cardReturnsOrderDetailReturnableItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]
+${cardReturnsOrderDetailReturnableItem}    xpath=(//XCUIElementTypeCell[@name="viewReturnItemCell"])[1]
 
 ${cardReturnsOrderDetailReturnableItem2}    ${EMPTY}
 ${cardReturnsOrderDetailNonReturnableItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 
+${returnReasonReasonItemExchange}    chain=**/XCUIElementTypeStaticText[`label == "I want to exchange it for different size/colour"`]
 ${cardReturnsOrderDetailItemNonReturnableReasonTitle}    chain=**/XCUIElementTypeStaticText[`label == "NON-RETURNABLE ITEMS"`]
 
 ${returnsOrderDetailWarrantyDialogTitle}    ${EMPTY}
@@ -74,11 +75,12 @@ ${returnReasonPreferredOutcomeSelector}    chain=**/XCUIElementTypeCell[`name ==
 ${returnReasonPreferredOutcomeErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select a preferred outcome"`]
 ${returnReasonPreferredOutcomeItem}    chain=**/XCUIElementTypeCell[`name == "sharedTitleTableViewCell"`][1]
 
-${returnReasonQuantitySelector}    ${EMPTY}
-${returnReasonQuantityErrorMessage}    ${EMPTY}
+${returnReasonQuantitySelector}    chain=**/XCUIElementTypeCell[`name == "quantity_to_return"`]/XCUIElementTypeTextField
 
-${returnReasonVariantSizeSelectorErrorMessage}    ${EMPTY}
-${returnReasonVariantColourSelectorErrorMessage}    ${EMPTY}
+${returnReasonQuantityErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select a quantity to return"`]
+
+${returnReasonVariantSizeSelectorErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select size"`]
+${returnReasonVariantColourSelectorErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select a colour"`]
 
 ${containerReturnRequest}    ${EMPTY}
 

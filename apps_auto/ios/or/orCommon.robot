@@ -2,4 +2,4 @@
 ${windowScroll}      chain=**/XCUIElementTypeWindow[1]
 ${navBack}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeNavigationBar[1]/XCUIElementTypeButton[1]
 ${croutonTitle}    id=croutonTitle
-${txtToolbarTitle}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeNavigationBar[1]/XCUIElementTypeStaticText[1]
+${txtToolbarTitle}    chain=**/XCUIElementTypeStaticText[1]
