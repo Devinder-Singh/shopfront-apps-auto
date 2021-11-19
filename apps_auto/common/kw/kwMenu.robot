@@ -147,6 +147,7 @@ Click Menu Personal Detail
     Click Element    ${btnMenuPersonalDetail}
 
 Click Menu Orders
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Down    ${windowScroll}
     Wait Until Element Is Visible    ${btnMenuOrders}
     Click Element    ${btnMenuOrders}
 
