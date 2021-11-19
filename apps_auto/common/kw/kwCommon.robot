@@ -322,8 +322,8 @@ Check Text On Screen Not Android
     END  
 
 Verify Element On Screen
-    [Arguments]    ${verifyElement}    ${delay}
-    Wait Until Page Contains Element    ${verifyElement}    ${delay}
+    [Arguments]    ${verifyElement}    ${timeout}
+    Wait Until Page Contains Element    ${verifyElement}    ${timeout}
 
 Verify Element On Screen Not
     [Arguments]    ${verifyElement}    ${delay}=5s
@@ -426,11 +426,14 @@ Click Element On Scroll
     Set Implicitly Wait    5
     Click Element    ${clickElement}
 
-Verify Snack Bar Popup Contains Text
+Verify Snack Bar
     [Documentation]    This keyword will verify that a snack bar popup contains the specified text.
     [Arguments]    ${textToVerify}
-    ${dynamicSnackBarPopupWithText}=    Set Variable    xpath=(//android.widget.TextView[@text='${textToVerify}' and @resource-id='fi.android.takealot.debug:id/snackbar_text'])
+    ${dynamicSnackBarPopupWithText}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}'=='android'
-        Wait Until Element Is Visible    ${dynamicSnackBarPopupWithText}    ${MIN_TIMEOUT}
-    END    
+        ${dynamicSnackBarPopupWithText}=    Set Variable    xpath=(//android.widget.TextView[@text='${textToVerify}' and @resource-id='fi.android.takealot.debug:id/snackbar_text'])
+    END
+    
+    Verify Element On Screen    ${dynamicSnackBarPopupWithText}    ${MIN_TIMEOUT}
+    
 
