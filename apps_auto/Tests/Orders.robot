@@ -18,7 +18,7 @@ Apps > Order Refactor > Order History > Home Page > Landing Page
     [Teardown]    Tear Down
 
 Apps > Order Refactor > Order History > Home Page > Empty Landing Screen
-    [Tags]    QASA-378
+    [Tags]    QASA-375
     [Setup]    Start Application
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
