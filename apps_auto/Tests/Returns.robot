@@ -206,7 +206,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 6
 
 Apps > SS Returns > Request a Return > Log Return Request > QASA-78
     [Tags]    QASA-78
-    [Setup]    Start Application
+    [Setup]    Start Application    ${False}
     Click Menu
     Click Menu Login
     Login Takealot    dev+431155@take2.co.za    test
@@ -233,16 +233,18 @@ Apps > SS Returns > Request a Return > Log Return Request > QASA-78
     Verify Returns Request Item Reason Title
     Verify Returns Request Item Preferred Outcome Title
     Swipe Returns Request Item For Delete
-    Verify Returns Request Dialog    Remove Item    Remove item from return request?    KEEP    REMOVE
+    Tap Delete Button
+    Verify Returns Request Delete Dialog
     Click Returns Request Delete Dialog Keep Option
-    Verify Returns Request Item Title    Stealth Gaming Headset & Stand Bundle - Referee Edition
+    Verify Returns Request Item Title    The Ugly Five
     Click Returns Request Cart Item
-    Verify Toolbar Title    Return Reason
+    Verify Returns Screen header    Return Reason
     Verify Return Reason Toolbar Delete Icon
     Click Return Reason Toolbar Delete Icon
-    Verify Return Reason Dialog    Remove Item    Remove item from return request?    KEEP    REMOVE
+    Verify Edit Return Deletion Dialogue
     Click Return Reason Delete Dialog Keep Option
-    Verify Returns Call To Action Title    SAVE
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Returns Call To Action Title    SAVE
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Returns Call To Action Title    Continue
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Log Return Request > QASA-257

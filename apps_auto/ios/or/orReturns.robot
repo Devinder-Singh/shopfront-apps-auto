@@ -85,24 +85,25 @@ ${containerReturnRequest}    ${EMPTY}
 
 ${returnRequestReturnItemsHeader}    chain=**/XCUIElementTypeStaticText[`label == "RETURN ITEMS"`]
 ${returnRequestReturnMethodHeader}    ${EMPTY}
-${cardReturnsRequestItem}    ${EMPTY}
+${cardReturnsRequestItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]
 ${cardReturnsRequestItemImage}    ${EMPTY}
 ${cardReturnsRequestItemTitle}    id=ReturnItemTitle
 ${cardReturnsRequestItemPriceAndQty}    id=ReturnItemSubtitle
 ${cardReturnsRequestItemReasonTitle}    id=ReturnItemFooter1
 ${cardReturnsRequestItemPreferredOutcomeTitle}    id=ReturnItemFooter2
+${btnReturnsRequestItemDelete}    chain=**/XCUIElementTypeButton[`label == "Delete"`]
 
-${returnsRequestDialogTitle}    ${EMPTY}
-${returnsRequestDialogMessage}    ${EMPTY}
-${returnsRequestDialogNegativeActionButton}    ${EMPTY}
-${returnsRequestDialogPositiveActionButton}    ${EMPTY}
+${returnsRequestDialogTitle}    id=Are you sure?
+${returnsRequestDialogMessage}    id=Remove item from return request?
+${returnsRequestDialogNegativeActionButton}    id=Keep
+${returnsRequestDialogPositiveActionButton}    id=Remove
 
-${returnReasonToolbarDeleteIcon}    ${EMPTY}
+${returnReasonToolbarDeleteIcon}    id=icon delete
 
-${returnReasonDialogTitle}    ${EMPTY}
-${returnReasonDialogMessage}    ${EMPTY}
-${returnReasonDialogNegativeActionButton}    ${EMPTY}
-${returnReasonDialogPositiveActionButton}    ${EMPTY}
+${returnReasonDialogTitle}    id=Remove Item
+${returnReasonDialogMessage}    id=Remove item from return request?
+${returnReasonDialogNegativeActionButton}    id=Keep
+${returnReasonDialogPositiveActionButton}    id=Remove
 
 ${returnRequestAddAnotherItemButton}    ${EMPTY}
 ${returnRequestShimmer}    ${EMPTY}

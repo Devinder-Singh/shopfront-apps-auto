@@ -348,6 +348,23 @@ Swipe Returns Request Item For Delete
     Swipe    ${startPositionX}    ${startPositionY}    ${endPositionX}    ${endPositionY}
 #    Sleep    5s
 
+Tap Delete Button
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Wait Until Element Is Visible    ${btnReturnsRequestItemDelete}    ${MIN_TIMEOUT}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Click Element    ${btnReturnsRequestItemDelete}
+
+Verify Edit Return Deletion Dialogue
+    IF    ${PLATFORM_NAME} == 'android'
+        Verify Return Reason Dialog    Remove Item    Remove item from return request?    KEEP    REMOVE
+    ELSE 
+        Verify Return Reason Dialog    Remove Item    Remove item from return request?    Keep    Remove
+    END
+    
+Verify Returns Request Delete Dialog
+     IF    ${PLATFORM_NAME} == 'android'
+        Verify Returns Request Dialog    Remove Item    Remove item from return request?    KEEP    REMOVE
+    ELSE 
+        Verify Returns Request Dialog    Are you sure?    Remove item from return request?    Keep    Remove
+    END
 Verify Returns Request Dialog
     [Arguments]    ${expectedTitle}    ${expectedMessage}    ${negativeButton}    ${positiveButton}
     Element Text Should Be    ${returnsRequestDialogTitle}    ${expectedTitle}
