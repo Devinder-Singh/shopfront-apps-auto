@@ -45,7 +45,7 @@ ${cardReturnsOrderDetailItemWithVariantSize}    chain=**/XCUIElementTypeStaticTe
 ${cardReturnsOrderDetailItemWithVariantColour}    chain=**/XCUIElementTypeStaticText[`label == "Nike Hyperfuel 500ml Water Bottle"`]
 ${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
 
-${cardReturnsOrderDetailReturnableItem}    xpath=(//XCUIElementTypeCell[@name="viewReturnItemCell"])[1]
+${cardReturnsOrderDetailReturnableItem}    xpath=(//XCUIElementTypeKey[@name="viewReturnItemCell"])[1]
 
 ${cardReturnsOrderDetailReturnableItem2}    ${EMPTY}
 ${cardReturnsOrderDetailNonReturnableItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
@@ -87,7 +87,7 @@ ${containerReturnRequest}    ${EMPTY}
 
 ${returnRequestReturnItemsHeader}    chain=**/XCUIElementTypeStaticText[`label == "RETURN ITEMS"`]
 ${returnRequestReturnMethodHeader}    ${EMPTY}
-${cardReturnsRequestItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]
+${cardReturnsRequestItem}    chain=**/XCUIElementTypeKey[`name == "viewReturnItemCell"`]/XCUIElementTypeOther[1]
 ${cardReturnsRequestItemImage}    ${EMPTY}
 ${cardReturnsRequestItemTitle}    id=ReturnItemTitle
 ${cardReturnsRequestItemPriceAndQty}    id=ReturnItemSubtitle
@@ -107,7 +107,7 @@ ${returnReasonDialogMessage}    id=Remove item from return request?
 ${returnReasonDialogNegativeActionButton}    id=Keep
 ${returnReasonDialogPositiveActionButton}    id=Remove
 
-${returnRequestAddAnotherItemButton}    ${EMPTY}
+${returnRequestAddAnotherItemButton}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell
 ${returnRequestShimmer}    ${EMPTY}
 
 ${returnRequestDeliveryMethodSelector}    ${EMPTY}

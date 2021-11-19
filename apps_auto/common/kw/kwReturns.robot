@@ -350,6 +350,7 @@ Swipe Returns Request Item For Delete
 #    Sleep    5s
 
 Tap Delete Button
+    Sleep    1
     Run Keyword If     '${PLATFORM_NAME}'=='ios'       Wait Until Element Is Visible    ${btnReturnsRequestItemDelete}    ${MIN_TIMEOUT}
     Run Keyword If     '${PLATFORM_NAME}'=='ios'       Click Element    ${btnReturnsRequestItemDelete}
 
