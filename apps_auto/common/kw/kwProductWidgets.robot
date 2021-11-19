@@ -35,7 +35,7 @@ Click Product Widget Image
     Run Keyword If    ${chkElementExists}==${True}    Click Element    ${btnImageWidget}
 
 Click Product Widget Context
-    Click Element On Scroll    ${btnContextWidget}    10
+    Click Element On Scroll    ${btnContextWidget}    15
 
 Verify Product Widget Navigation
     ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}

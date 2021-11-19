@@ -176,7 +176,7 @@ Verify Text On Screen Scroll
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
 
         IF    ${chkProdVisible} == ${True}
-            Exit For Loop
+           Exit For Loop
         END
 
         Swipe Up    ${scrollElement}
