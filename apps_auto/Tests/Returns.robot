@@ -161,6 +161,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 4
     [Teardown]    Tear Down
 
 Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 5
+    # This has dynamic data 
     [Tags]    QA-8339
     [Setup]    Start Application
     Click Menu
@@ -183,6 +184,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 5
     [Teardown]    Tear Down
 
 Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 6
+    # This has dynamic data  
     [Tags]    QA-8339
     [Setup]    Start Application
     Click Menu
