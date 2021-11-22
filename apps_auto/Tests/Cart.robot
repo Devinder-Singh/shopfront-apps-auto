@@ -548,33 +548,25 @@ Apps > Cart > Product Card Actions > On boarding > QASA-4
     [Tags]    QASA-4
     [Setup]    Start Application
     Clear Environment
+    ${productId}=    Search Product And Return Product Id    Sunlight Regular Dishwashing Liquid
+    Add To Cart    ${productId}
 
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${productId}=    Search Product And Return Product Id    Sunlight Regular Dishwashing Liquid
-        Add To Cart    ${productId}
-
-        ${productId}=    Search Product And Return Product Id    omo auto washing
-        Add To Cart    ${productId}
+    ${productId}=    Search Product And Return Product Id    omo auto washing
+    Add To Cart    ${productId}
         
-        Click Menu Logout If Logged In
-        Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-        Click Home Cart
-        Swipe Cart Item Left    1
-        Click Cart Move To Wishlist    1
-        Verify Snack Bar    Item moved to list
-        Swipe Cart Item Left    1    3s
-        Click Cart Delete    1
-        Verify Snack Bar    Item removed from Cart.
+    Click Menu Logout If Logged In
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
+    Click Home Cart
+    
+    Swipe Cart Item Left    1
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Cart Move To Wishlist    1
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Verify Snack Bar    Item moved to list
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Cart Delete    1
 
-    ELSE IF    '${PLATFORM_NAME}' == 'ios'
-        ${productId}=    Search Product And Return Product Id    Sunlight Regular Dishwashing Liquid
-        Add To Cart    ${productId}
-        Click Menu Logout If Logged In
-        Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-        Click Menu
-        Click Home Cart
-        Swipe Cart Item Left    1
-        Click Cart Delete
-        Verify Text On Screen    No items
-    END
+    Swipe Cart Item Left    1    3s
+    Click Cart Delete    1
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Verify Snack Bar    Item removed from Cart.    
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Verify Text On Screen    No items
+    
     [Teardown]    Tear Down
