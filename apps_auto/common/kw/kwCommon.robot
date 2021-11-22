@@ -47,6 +47,18 @@ Swipe Right
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
 #    Sleep  1
 
+Swipe Left
+    [Documentation]    This keyword will perform a left swipe action on a given element.
+    [Arguments]       ${element}    ${swipeSpeed}=1500
+    wait until element is Visible     ${element}
+    ${element_size}=    Get Element Size    ${element}
+    ${element_location}=    Get Element Location    ${element}
+    ${start_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 0.7)
+    ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
+    ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
+    ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
+    Swipe    ${start_x}    ${start_y}  ${end_x}  ${end_y}  ${swipeSpeed}
+
 Verify eBucks On Screen
     ${result}=    Evaluate    ${query_result_CartProductPrice} * 10
     ${result}=    Convert To String    ${result}
@@ -310,8 +322,8 @@ Check Text On Screen Not Android
     END  
 
 Verify Element On Screen
-    [Arguments]    ${verifyElement}    ${delay}
-    Wait Until Page Contains Element    ${verifyElement}    ${delay}
+    [Arguments]    ${verifyElement}    ${timeout}
+    Wait Until Page Contains Element    ${verifyElement}    ${timeout}
 
 Verify Element On Screen Not
     [Arguments]    ${verifyElement}    ${delay}=5s
@@ -413,3 +425,15 @@ Click Element On Scroll
     END
     Set Implicitly Wait    5
     Click Element    ${clickElement}
+
+Verify Snack Bar
+    [Documentation]    This keyword will verify that a snack bar popup contains the specified text.
+    [Arguments]    ${textToVerify}
+    ${dynamicSnackBarPopupWithText}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}'=='android'
+        ${dynamicSnackBarPopupWithText}=    Set Variable    xpath=(//android.widget.TextView[@text='${textToVerify}' and @resource-id='fi.android.takealot.debug:id/snackbar_text'])
+    END
+    
+    Verify Element On Screen    ${dynamicSnackBarPopupWithText}    ${MIN_TIMEOUT}
+    
+
