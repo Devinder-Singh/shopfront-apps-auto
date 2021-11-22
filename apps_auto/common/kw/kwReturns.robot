@@ -135,8 +135,9 @@ Verify Returns Toolbar Title
     Run Keyword If     '${PLATFORM_NAME}'=='ios'        Verify NavBar Title     Select Return Item
 
 Click Returns Order History Item
+    [Arguments]    ${orderItemToTap}=${cardReturnsOrderHistoryItem}
     Sleep    5s
-    Click Element    ${cardReturnsOrderHistoryItem}
+    Click Element    ${orderItemToTap}
 
 Verify Returns Order Detail Returnable Section
     Wait Until Element Is Visible    ${returnOrderDetailReturnableSectionTitle}    ${MIN_TIMEOUT}
@@ -475,7 +476,7 @@ Verify Return Request Contact Details Info
     Element Text Should Be    ${returnRequestContactDetailSelectorSubtitle}    ${expectedContactDetailInfo}
 
 Verify Return Request Loading State Not Visible
-    Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    ${MIN_TIMEOUT}
 
 Scroll To Return Request Cart Item
     Scroll To Element In Container    ${cardReturnsRequestItem}     ${containerReturnRequest}    20
@@ -709,8 +710,9 @@ Add Liquor Return Item To Return Request
 
 # Setup Keyword for getting a product in returns request
 Add Single Return Item To Return Request
+    [Arguments]    ${orderItemToTap}=${cardReturnsOrderHistoryItem}
     Click Returns Call To Action Button
-    Click Returns Order History Item
+    Click Returns Order History Item    ${orderItemToTap}
     Click Returns Order Detail Returnable Item
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item
@@ -720,12 +722,13 @@ Add Single Return Item To Return Request
     Scroll To Return Reason Text Area
     Input Return Reason Text Area Text    Test Description
     Click Returns Call To Action Button
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
 
 Add Two Return Items to Return Request
-    Add Single Return Item To Return Request
+    [Arguments]    ${orderItemToTap}=${cardReturnsOrderHistoryItem}
+    Add Single Return Item To Return Request    ${orderItemToTap}
     Click Returns Request Add Another Item
-    Verify Toolbar Title    Select Return Item
+    Verify Returns Screen header    Select Return Item
     Click Returns Order Detail Returnable Item 2
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item

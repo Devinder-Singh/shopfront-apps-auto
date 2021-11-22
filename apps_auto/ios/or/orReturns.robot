@@ -21,6 +21,7 @@ ${btnReturnsOrderHistoryFilterOptionChange}    id=Change
 ${containerReturnsOrderHistory}    ${EMPTY}
 
 ${cardReturnsOrderHistoryItem}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[2]
+${cardReturnsOrderHistoryItemWithMultipleReturnableItems}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[4]
 
 ${cardReturnsOrderHistoryItemTitle}    ${EMPTY}
 ${cardReturnsOrderHistoryItemSubtitle}    ${EMPTY}
@@ -47,7 +48,7 @@ ${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
 
 ${cardReturnsOrderDetailReturnableItem}    xpath=(//XCUIElementTypeKey[@name="viewReturnItemCell"])[1]
 
-${cardReturnsOrderDetailReturnableItem2}    ${EMPTY}
+${cardReturnsOrderDetailReturnableItem2}    xpath=(//XCUIElementTypeKey[@name="viewReturnItemCell"])[2]
 ${cardReturnsOrderDetailNonReturnableItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 
 ${returnReasonReasonItemExchange}    chain=**/XCUIElementTypeStaticText[`label == "I want to exchange it for different size/colour"`]
@@ -128,9 +129,9 @@ ${returnRequestContactDetailSelectorButton}    ${EMPTY}
 ${returnRequestEmptyState}    ${EMPTY}
 ${returnRequestEmptyStateCallToAction}    ${EMPTY}
 
-${returnSelectReturnMethodPickupPoint}    ${EMPTY}
+${returnSelectReturnMethodPickupPoint}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][1]
 ${returnSelectReturnMethodPickupPointTitle}    ${EMPTY}
-${returnSelectReturnMethodCollect}    ${EMPTY}
+${returnSelectReturnMethodCollect}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][2]
 ${returnSelectReturnMethodCollectTitle}    ${EMPTY}
 
 ${returnSelectAddressAddAddress}    ${EMPTY}
