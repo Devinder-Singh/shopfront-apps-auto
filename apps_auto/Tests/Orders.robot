@@ -16,3 +16,11 @@ Apps > Order Refactor > Order History > Home Page > Landing Page
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Orders
     Verify Text On Screen    Last 3 months
     [Teardown]    Tear Down
+
+Apps > Order Tracking > Delivery Order > QASA-80
+    [Tags]    QASA-80
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu Logout If Logged In
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    [Teardown]    Tear Down
