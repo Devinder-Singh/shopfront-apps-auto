@@ -568,5 +568,4 @@ Apps > Cart > Product Card Actions > On boarding > QASA-4
     Click Cart Delete    1
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Verify Snack Bar    Item removed from Cart.    
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Verify Text On Screen    No items
-    
     [Teardown]    Tear Down
