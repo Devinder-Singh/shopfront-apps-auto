@@ -81,3 +81,6 @@ Verify Delivery Options Thimbnail Images
 Verify Delivery Options Text
     [Arguments]    ${verifyText}
     Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+
+
+

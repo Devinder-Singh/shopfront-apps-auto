@@ -24,7 +24,7 @@ Apps - Checkout - Delivery Methods - QASA-593
     Verify Delivery Text    70+ Takealot Pickup Points nationwide. Open 6 days a week
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital Items 02 - QASA-114
+Apps - Checkout - Delivery Methods - Digital Only - QASA-114
     [Tags]    QASA-114
     [Setup]    Start Application
     Clear Environment
@@ -34,12 +34,22 @@ Apps - Checkout - Delivery Methods - Digital Items 02 - QASA-114
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Click Product Variant From API
+    Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Continue Digital Item
     Click Donate No Thanks
+    Click Add Payment Voucher
+    Enter Payment Voucher Code
+    Click Apply Payment Voucher
+    Click Back Payment Voucher
+    Verify Element On Screen    ${rdoPaymentUseMyCredit}    ${MIN_TIMEOUT}
+    Click Payment Confirm Order
+    Click Track Order
+    Swipe Up    ${windowScroll}
+    Verify Element On Screen    ${txtDigitalDeliveryMethod}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${txtDigitalShippingAddress}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
