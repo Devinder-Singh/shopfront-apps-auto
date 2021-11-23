@@ -104,9 +104,11 @@ Get Tokens
     [return]    ${query_result}
 
 Add To Cart
+    [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
+    [Arguments]    ${productId}=87365581    ${productQuantity}=1
     Get Customer ID
     Get Tokens
-    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id": 53373214, "quantity": 1}]}
+    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
     Post    ${Add_cart_URL}    ${Add_cart_Body}
     Integer    response status    200
 
@@ -1283,3 +1285,17 @@ Get Daily Deals Product to Add To Cart
     ${cnt}=    Get length    ${searchResult}
     Should Be True    ${cnt}>1
     [return]    ${searchResult}
+
+Search Product And Return Product Id
+    [Documentation]    This keyword will call the search API and return the first item matching product id.
+                        ...    Note that this API call is simulating a user searching within the home search
+                        ...    and returning matching results. In this case the first item that matches id will
+                        ...    be returned.
+    [Arguments]    ${search}
+
+    ${searchProductEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${search}
+    Get    ${searchProductEndpoint}
+    Integer    response status    200
+
+    ${productId}=    Output    $.sections.products.results[1].product_views.buybox_summary.product_id
+    [Return]    ${productId}

@@ -74,8 +74,8 @@ Search and Buy Item on Delivery using Credit Card
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
     Verify Text On Screen    PAYMENT METHOD    1s
-    Verify Text On Screen    Credit Card    1s
     Swipe Up    ${windowScroll}
+    Verify Text On Screen    Credit Card    1s  
     Verify Text On Screen    DELIVERY METHOD    1s
     Verify Text On Screen    First Delivery Free - Standard    1s
     Verify Text On Screen    SHIPPING ADDRESS    1s
