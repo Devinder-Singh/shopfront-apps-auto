@@ -3,8 +3,8 @@ Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Checkout > Payment > Pay With OZOW - QASA-533
-    [Tags]    QASA-533
+Apps > Checkout > Payment > Pay with eBucks screen - QASA-538
+    [Tags]    QASA-538
     [Setup]    Start Application
     Clear Environment
     Click Menu
@@ -15,14 +15,15 @@ Apps > Checkout > Payment > Pay With OZOW - QASA-533
     Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Click Checkout    
+    Click Checkout
     Click Delivery
     Click Address
+    Click Pickup Point
     Click Free Delivery
     Click Donate No Thanks
     Click Change Payment Method
-    Click Ozow Payment Method
-    Click Pay With Ozow
+    Click eBucks Payment Method
+    Click Pay With eBucks
 
     Verify Card Payment
     [Teardown]    Tear Down

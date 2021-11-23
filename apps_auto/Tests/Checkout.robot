@@ -900,3 +900,30 @@ Apps > Checkout > Collect > Shipping Option > Collection cost Free for order = R
     Click Pickup Point Brackenfell
     Wait Until Element Is Visible    ${btnFree}        ${MIN_TIMEOUT}
     [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay With OZOW - QASA-533
+    [Tags]    QASA-533
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Ozow Payment Method
+    Click Pay With Ozow
+    Click Ozow Payment Bank
+    Enter Ozow Username Password Submit    dev@i-pay.co.za    T3mpP@ssw0rd
+    Select Ozow Acc No Submit
+    Enter Ozow OTP Submit
+    Click Track Order
+    [Teardown]    Tear Down
