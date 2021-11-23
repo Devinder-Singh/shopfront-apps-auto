@@ -83,11 +83,11 @@ ${returnReasonQuantityErrorMessage}    chain=**/XCUIElementTypeStaticText[`label
 ${returnReasonVariantSizeSelectorErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select size"`]
 ${returnReasonVariantColourSelectorErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select a colour"`]
 
-${containerReturnRequest}    ${EMPTY}
+${containerReturnRequest}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable
 
 
 ${returnRequestReturnItemsHeader}    chain=**/XCUIElementTypeStaticText[`label == "RETURN ITEMS"`]
-${returnRequestReturnMethodHeader}    ${EMPTY}
+${returnRequestReturnMethodHeader}    chain=**/XCUIElementTypeStaticText[`label == "RETURN METHOD"`]
 ${cardReturnsRequestItem}    chain=**/XCUIElementTypeKey[`name == "viewReturnItemCell"`]/XCUIElementTypeOther[1]
 ${cardReturnsRequestItemImage}    ${EMPTY}
 ${cardReturnsRequestItemTitle}    id=ReturnItemTitle
@@ -111,20 +111,20 @@ ${returnReasonDialogPositiveActionButton}    id=Remove
 ${returnRequestAddAnotherItemButton}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell
 ${returnRequestShimmer}    ${EMPTY}
 
-${returnRequestDeliveryMethodSelector}    ${EMPTY}
-${returnRequestDeliveryMethodSelectorTitle}    ${EMPTY}
-${returnRequestDeliveryMethodSelectorButton}    ${EMPTY}
+${returnRequestDeliveryMethodSelector}    id=collectAddressSelectorCell
+${returnRequestDeliveryMethodSelectorTitle}    chain=**/XCUIElementTypeStaticText[`label == "Takealot to collect from my address"`]
+${returnRequestDeliveryMethodSelectorButton}    chain=**/XCUIElementTypeStaticText[`label == "Change"`][1]
 
-${returnRequestDeliveryMethodAddress}    ${EMPTY}
-${returnRequestDeliveryMethodAddressTitle}    ${EMPTY}
-${returnRequestDeliveryMethodAddressTypePill}    ${EMPTY}
-${returnRequestDeliveryMethodAddressRecipientName}    ${EMPTY}
-${returnRequestDeliveryMethodAddressDetailText}    ${EMPTY}
+${returnRequestDeliveryMethodAddress}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[3]
+${returnRequestDeliveryMethodAddressTitle}    chain=**/XCUIElementTypeStaticText[`label == "Collection Address"`]
+${returnRequestDeliveryMethodAddressTypePill}    id=BUSINESS
+${returnRequestDeliveryMethodAddressRecipientName}    id=Business Name
+${returnRequestDeliveryMethodAddressDetailText}    id=7th floor, 5 Sunny Way, Pinelands, Cape Town, Western Cape, 7405
 
-${returnRequestContactDetailSelector}    ${EMPTY}
-${returnRequestContactDetailSelectorTitle}    ${EMPTY}
-${returnRequestContactDetailSelectorSubtitle}    ${EMPTY}
-${returnRequestContactDetailSelectorButton}    ${EMPTY}
+${returnRequestContactDetailSelector}    id=contactDetailSelectorCell
+${returnRequestContactDetailSelectorTitle}    xpath=(//XCUIElementTypeStaticText[@name="selectorTitle"])[2]
+${returnRequestContactDetailSelectorSubtitle}    xpath=(//XCUIElementTypeStaticText[@name="selectorTitle"])[2]
+${returnRequestContactDetailSelectorButton}    chain=**/XCUIElementTypeStaticText[`label == "Change"`][2]
 
 ${returnRequestEmptyState}    ${EMPTY}
 ${returnRequestEmptyStateCallToAction}    ${EMPTY}
@@ -135,7 +135,7 @@ ${returnSelectReturnMethodCollect}    chain=**/XCUIElementTypeCell[`name == "Del
 ${returnSelectReturnMethodCollectTitle}    ${EMPTY}
 
 ${returnSelectAddressAddAddress}    ${EMPTY}
-${returnSelectAddressItem}    ${EMPTY}
+${returnSelectAddressItem}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
 ${returnSelectAddressIncompleteItem}    ${EMPTY}
 ${returnSelectAddressItemName}    ${EMPTY}
 ${returnSelectAddressItemEditButton}    ${EMPTY}

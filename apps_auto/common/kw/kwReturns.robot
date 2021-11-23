@@ -84,6 +84,7 @@ Swipe To Empty State Step 2
 #    Sleep    5s
 
 Click Returns Call To Action Button
+    Sleep    2
     Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
     Click Element    ${btnReturnsCallToAction}
 
@@ -413,7 +414,7 @@ Click Return Select Return Method Address
     Click Element    ${returnSelectReturnMethodCollect}
 
 Click Return Select Address Item
-    Wait Until Element Is Visible    ${returnSelectAddressItemName}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${returnSelectAddressItem}    ${MIN_TIMEOUT}
     Click Element    ${returnSelectAddressItem}
 #    Sleep    10s
 
@@ -433,7 +434,8 @@ Verify Return Request Delivery Method Selector
     Element Should Be Visible    ${returnRequestDeliveryMethodSelectorButton}
     
     Element Text Should Be    ${returnRequestDeliveryMethodSelectorTitle}    ${expectedTitle}
-    Element Text Should Be    ${returnRequestDeliveryMethodSelectorButton}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnRequestDeliveryMethodSelectorButton}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${returnRequestDeliveryMethodSelectorButton}    Change
 
 Scroll To Return Request Delivery Method Address
     Scroll To Element In Container    ${returnRequestDeliveryMethodAddress}     ${containerReturnRequest}    20
@@ -461,8 +463,10 @@ Verify Return Request Contact Details Section
     Element Should Be Visible    ${returnRequestContactDetailSelectorTitle}
     Element Should Be Visible    ${returnRequestContactDetailSelectorButton}
     
-    Element Text Should Be    ${returnRequestContactDetailSelectorTitle}    SMS notification for this return will be sent to:
-    Element Text Should Be    ${returnRequestContactDetailSelectorButton}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnRequestContactDetailSelectorTitle}    SMS notification for this return will be sent to:
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnRequestContactDetailSelectorButton}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Contain Text    ${returnRequestContactDetailSelectorTitle}    SMS notifications for this return will be sent to
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${returnRequestContactDetailSelectorButton}    Change
 
 Verify Return Contact Details Input Fields
     [Arguments]    ${expectedFullName}    ${expectedMobileNumber}

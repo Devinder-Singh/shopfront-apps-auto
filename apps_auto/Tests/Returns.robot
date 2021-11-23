@@ -258,13 +258,13 @@ Apps > SS Returns > Request a Return > Log Return Request > QASA-257
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
-    Add Two Return Items to Return Request
+    Add Two Return Items to Return Request    ${cardReturnsOrderHistoryItemWithMultipleReturnableItems}
     Click Returns Call To Action Button
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Click Return Select Address Item
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
     Scroll To Return Request Return Method Section
     Scroll To Return Request Delivery Method Selector
