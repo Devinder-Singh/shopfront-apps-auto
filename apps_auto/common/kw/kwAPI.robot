@@ -1039,7 +1039,7 @@ Get Product Daily Deals Slug
     ${searchResult}=    Set Variable    ''
     FOR    ${result}    IN    @{results}
         Output    ${result}
-        ${searchResult}=    Run Keyword If    "${result}"=='Daily Deals'    Output    $.response[${index}].promotion_id
+        ${searchResult}=    Run Keyword If    '${result}'=='Daily Deals'    Output    $.response[${index}].promotion_id
 
         Run Keyword If
             ...    '${searchResult}'!='None'
@@ -1268,7 +1268,9 @@ Get Daily Deals Product to Add To Cart
 
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${objTitle}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${objTitle}']
         Set Global Variable    ${query_result_CartFilterProduct}    ${objTitle}
-        Exit For Loop If    '${objVariant}'=='False'
+
+        ${chkTextSuccess}=    Run Keyword And Return Status    Should Not Contain    ${objTitle}    TV
+        Exit For Loop If    ${chkTextSuccess}==${True} and '${objVariant}'=='False'
 
         ${searchResult}=    Set Variable    0
         ${index}=    Evaluate    ${index} + 1
