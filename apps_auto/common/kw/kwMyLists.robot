@@ -3,11 +3,16 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Navigate to Wishlist
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    ${MIN_TIMEOUT}
-    Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishListScreen}
-    Wait Until Element Is Visible    ${btnWishlistItems}
-    Click Element    ${btnWishlistItems}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${btnWishlistCreate}    ${MIN_TIMEOUT}
+        Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
+        Click Element    ${btnWishListScreen}
+        Click Element    ${btnWishlistItems}
+    ELSE
+        Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
+        Click Element    ${btnWishlistItems}
+    END
+    
 
 Click Create Wishlist
     Wait Until Element Is Visible    ${btnWishlistCreate}    ${MIN_TIMEOUT}
@@ -33,8 +38,10 @@ Enter Wishlist Name
 
 Enter Wishlist Custom Name
     [Arguments]    ${name}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Wait Until Element Is Visible    ${btnWishlistSave}    ${MIN_TIMEOUT}
+    END
 
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnWishlistSave}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${txtWishlistName}    ${MIN_TIMEOUT}
     Clear Text    ${txtWishlistName}
     Input Text    ${txtWishlistName}    ${name}
@@ -48,7 +55,12 @@ Click Wishlist Default
     Click Element    ${btnWishlistItems}
 
 Navigate to Wishlist Auto
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnWishlistCreate}    ${MIN_TIMEOUT}
-    Wait Until Element Is Visible    ${btnWishlistAuto}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnWishListScreen}
-    Click Element    ${btnWishlistAuto}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${btnWishlistCreate}    ${MIN_TIMEOUT}
+        Wait Until Element Is Visible    ${btnWishlistAuto}    ${MIN_TIMEOUT}
+        Click Element    ${btnWishListScreen}
+        Click Element    ${btnWishlistAuto}
+    ELSE
+        Wait Until Element Is Visible    ${btnWishlistAuto}    ${MIN_TIMEOUT}
+        Click Element    ${btnWishlistAuto}
+    END

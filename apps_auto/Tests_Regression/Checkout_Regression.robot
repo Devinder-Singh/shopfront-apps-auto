@@ -8,11 +8,11 @@ Apps - Checkout - Delivery Methods - QASA-593
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
     Click Menu Login
-    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil Case
@@ -21,25 +21,35 @@ Apps - Checkout - Delivery Methods - QASA-593
     Click Go To Cart
     Click Checkout
     Verify Delivery Text    Courier delivery to your door
-    Verify Delivery Text    50+ Takealot Pickup Points nationwide. Open 6 days a week
+    Verify Delivery Text    70+ Takealot Pickup Points nationwide. Open 6 days a week
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital Items 02 - QASA-114
+Apps - Checkout - Delivery Methods - Digital Only - QASA-114
     [Tags]    QASA-114
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    airtim
     Click Variant Product from API
-    Click Product Variant From API
+    Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Continue Digital Item
     Click Donate No Thanks
+    Click Add Payment Voucher
+    Enter Payment Voucher Code
+    Click Apply Payment Voucher
+    Click Back Payment Voucher
+    Verify Element On Screen    ${rdoPaymentUseMyCredit}    ${MIN_TIMEOUT}
+    Click Payment Confirm Order
+    Click Track Order
+    Swipe Up    ${windowScroll}
+    Verify Element On Screen    ${txtDigitalDeliveryMethod}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${txtDigitalShippingAddress}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
@@ -47,7 +57,7 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -56,7 +66,7 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
     Click Go To Cart
     Click Checkout
     Verify Delivery Text    Courier delivery to your door
-    Verify Delivery Text    50+ Takealot Pickup Points nationwide. Open 6 days a week
+    Verify Delivery Text    70+ Takealot Pickup Points nationwide. Open 6 days a week
     Click Collect
     Click Pickup Point
     [Teardown]    Tear Down
@@ -66,7 +76,7 @@ Apps > Checkout > Collect > Liquor Item - QASA-588
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    johnny
@@ -80,12 +90,12 @@ Apps > Checkout > Collect > Liquor Item - QASA-588
     Verify Delivery Text Not    Takealot Pickup Points
     [Teardown]    Tear Down
 
-Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QASA-117
+Apps - Checkout - Delivery Methods - Digital and Physical Item and Collect 04 - QASA-117
     [Tags]    QASA-117
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    airtim
@@ -93,6 +103,8 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QASA-117
     Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
+    Click Checkout
+    Verify Element On Screen    ${txtDigitalItem}    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home
@@ -103,6 +115,8 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item 04 - QASA-117
     Click Add To Cart
     Click Go To Cart
     Click Checkout
+    Verify Element On Screen    ${btnDelivery}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${btnCollect}    ${MIN_TIMEOUT}
     Click Collect
     Click Pickup Point
     [Teardown]    Tear Down
@@ -112,7 +126,7 @@ Checkout - Collect - Add Delivery and Digital Items - QASA-589
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    airtim
@@ -139,7 +153,7 @@ Checkout - Collect - Add Only Delivery Items - QASA-574
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    montego
@@ -157,7 +171,7 @@ Checkout - Collect - White Goods - QASA-580
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    fridg
@@ -175,7 +189,7 @@ Checkout - Age Verification - QASA-576
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    johnny
@@ -192,7 +206,7 @@ Checkout > Delivery Address > Saved Addresses - QASA-616
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -216,7 +230,7 @@ Checkout > Delivery Address > Saved Addresses - QASA-616
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - General 03 - QASA-112
@@ -224,7 +238,7 @@ Checkout - Delivery Address - General 03 - QASA-112
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -241,7 +255,7 @@ Checkout - Delivery Address - General 04 - QASA-111
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -255,7 +269,7 @@ Checkout - Delivery Address - General 04 - QASA-111
     Edit Delivery Address Mobile Number    0897665665
     Swipe Up    ${windowScroll}
     Swipe Up    ${windowScroll}
-    Click Save Address
+    Click Save Address    
     Click Address
     [Teardown]    Tear Down
 
@@ -264,7 +278,7 @@ Checkout - Delivery Address - Edit Address - Street Correction - QASA-610
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -351,7 +365,7 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QASA
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -363,7 +377,7 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QASA
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
+    Click Any Delivery
     Get Address Coordinates
     [Teardown]    Tear Down
 
@@ -372,7 +386,7 @@ Checkout - Delivery Address - Address Form Validation - QASA-600
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
     Click Menu My Account
@@ -464,7 +478,7 @@ Checkout - Delivery Address - Street Suggestion - QASA-582
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -496,7 +510,7 @@ Checkout - Delivery Address - Street Suggestion - QASA-582
     Click Address Business
     Edit Delivery Address Business    TestBusiness
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Checkout - Delivery Address - Pin on Map - QASA-570
@@ -504,7 +518,7 @@ Checkout - Delivery Address - Pin on Map - QASA-570
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -540,7 +554,7 @@ Apps > Checkout > Collect > Select Pickup Point button - QASA-565
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -557,7 +571,7 @@ Apps > Checkout > Collect > Pickup Point INFO - QASA-609
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -617,7 +631,7 @@ Apps > Checkout > Collect > Pickup Points List - QASA-583
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -648,7 +662,7 @@ Apps > Checkout > Collect > Pickup Points List - QASA-583
     Click Western Cape Province
     Click Pickup Point Info
     Click Select Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -670,7 +684,7 @@ Apps > Checkout > Collect > Add Only Digital Item - QASA-556
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    airtim
@@ -688,7 +702,7 @@ Apps > Checkout > Collect > Shipping Options (Standard) - QASA-577
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -706,7 +720,7 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    chair office
@@ -716,7 +730,7 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
@@ -724,7 +738,7 @@ Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -742,7 +756,7 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    chair office
@@ -752,7 +766,7 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
@@ -760,7 +774,7 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    zagg slim book
@@ -772,14 +786,14 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
     Click Pickup Point
     Verify Delivery Options Text    Standard Collect
     Verify Delivery Options Text    Why the wait?
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Verify Payment Text    Delivery Method
     Verify Payment Text    Pickup Point
     Click Change Payment Pickup Point
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Change Payment Delivery Method
     Click Collect
     [Teardown]    Tear Down
@@ -789,7 +803,7 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QASA-569
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    zagg slim book
@@ -799,12 +813,12 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QASA-569
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Change Payment Delivery Method
     Click Collect
     [Teardown]    Tear Down
@@ -814,7 +828,7 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    zagg slim book
@@ -824,12 +838,12 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
     Click Pickup Point Brackenfell
-    Click Free Delivery
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Order Review - QASA-590
@@ -837,7 +851,7 @@ Apps > Checkout > Order Review - QASA-590
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    airtime
@@ -896,7 +910,7 @@ Apps > Checkout > Payment > Earn eBucks - QASA-605
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -906,7 +920,7 @@ Apps > Checkout > Payment > Earn eBucks - QASA-605
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -932,7 +946,7 @@ Apps > Checkout > Payment > Gift Msg - QASA-613
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -942,7 +956,7 @@ Apps > Checkout > Payment > Gift Msg - QASA-613
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Verify Payment Text    Is this a gift? Add a gift message
     Click Add Gift
@@ -954,7 +968,7 @@ Apps > Checkout > Payment > Gift Msg 02 - QASA-109
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Airtime
@@ -973,7 +987,7 @@ Apps > Checkout > Payment > Payment Method Availability - QASA-607
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -983,7 +997,7 @@ Apps > Checkout > Payment > Payment Method Availability - QASA-607
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1006,7 +1020,7 @@ Apps > Checkout > Payment > Payment Method Availability 02 - QASA-107
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1016,7 +1030,7 @@ Apps > Checkout > Payment > Payment Method Availability 02 - QASA-107
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Pay With Payfast
     Verify Payfast Payment    Secure payments by PayFast
@@ -1027,7 +1041,7 @@ Apps > Checkout > Payment > Payment Method Availability 03 - QASA-108
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    airtime
@@ -1051,7 +1065,7 @@ Apps > Checkout > Payment > Post-Order Creation - QASA-542
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1061,7 +1075,7 @@ Apps > Checkout > Payment > Post-Order Creation - QASA-542
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1081,7 +1095,7 @@ Apps > Checkout > Payment > Donation - QASA-618
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1091,14 +1105,14 @@ Apps > Checkout > Payment > Donation - QASA-618
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Verify Payment Donation Text    Donate R 5 to Beautiful Gate Children's Charity
     Verify Payment Donation Text    Beautiful Gate South Africa is a registered non-profit organisation providing care and support to vulnerable children and families
-    Verify Payment Element Exists    ${imgPaymentDonation}
+    Verify Element On Screen    ${imgPaymentDonation}    ${MIN_TIMEOUT}
     Click Payment Donate
-    Verify Payment Element Exists    ${rdoDonationSelected}
-    Verify Payment Element Exists    ${lblPaymentDonation}
-#    Verify Payment Element Exists    ${lblPaymentR5}
+    Verify Element On Screen    ${rdoDonationSelected}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${lblPaymentDonation}    ${MIN_TIMEOUT}
+#    Verify Element On Screen    ${lblPaymentR5}    ${MIN_TIMEOUT}
     Click Payment Donation Info Icon
     Verify Payment Donation Info Text    Beautiful Gate South Africa is a registered non-profit organisation providing care and support to vulnerable children and families
 #    Click Payment Donation Ok
@@ -1106,7 +1120,7 @@ Apps > Checkout > Payment > Donation - QASA-618
     Verify Payment Element Not Exists    ${lblPaymentDonation}
     Verify Payment Element Not Exists    ${lblPaymentR5}
     Click Back Payment Screen
-    Click Free Delivery
+    Click Any Delivery
     Click Change Payment Method
     Click Card Payment Method
     [Teardown]    Tear Down
@@ -1116,7 +1130,7 @@ Apps > Checkout > Payment > Donation 02 - QASA-95
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1126,7 +1140,7 @@ Apps > Checkout > Payment > Donation 02 - QASA-95
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Back Payment Screen
     Click Back Delivery Options
@@ -1135,7 +1149,7 @@ Apps > Checkout > Payment > Donation 02 - QASA-95
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
    [Teardown]    Tear Down
 
@@ -1144,7 +1158,7 @@ Apps > Checkout > Payment > Confirmation - QASA-552
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1154,7 +1168,7 @@ Apps > Checkout > Payment > Confirmation - QASA-552
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1179,7 +1193,7 @@ Apps > Checkout > Payment > Confirmation 02 - QASA-106
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1189,7 +1203,7 @@ Apps > Checkout > Payment > Confirmation 02 - QASA-106
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1204,17 +1218,17 @@ Apps > Checkout > Payment > Pay with PayFast - QASA-539
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Payfast Payment Method
@@ -1237,7 +1251,7 @@ Apps > Checkout > Payment > Credit Card - PayU - QASA-536
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1247,7 +1261,7 @@ Apps > Checkout > Payment > Credit Card - PayU - QASA-536
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1260,7 +1274,7 @@ Apps > Checkout > Payment > COD - QASA-535
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1270,7 +1284,7 @@ Apps > Checkout > Payment > COD - QASA-535
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Cash Payment Method
@@ -1283,7 +1297,7 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QASA-
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1293,7 +1307,7 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QASA-
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Payfast Payment Method
@@ -1316,7 +1330,7 @@ Apps > Checkout > Payment > Pay with Ozow - QASA-533
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1326,7 +1340,7 @@ Apps > Checkout > Payment > Pay with Ozow - QASA-533
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Ozow Payment Method
@@ -1347,7 +1361,7 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QAS
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1357,7 +1371,7 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QAS
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1377,7 +1391,7 @@ Apps > Checkout > Payment > Mobicred - QASA-527
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1387,7 +1401,7 @@ Apps > Checkout > Payment > Mobicred - QASA-527
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Mobicred Payment Method
@@ -1400,7 +1414,7 @@ Apps > Checkout > TV Licence Verification - QASA-307
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Television
@@ -1426,7 +1440,7 @@ Apps > Checkout > TV Licence Verification 02 - QASA-105
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Television
@@ -1449,7 +1463,7 @@ Apps > Checkout > Delivery Options > Promise Date - QASA-611
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1508,7 +1522,7 @@ Apps > Checkout > Delivery Options > Promise Date - QASA-611
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1527,7 +1541,7 @@ Apps > Checkout > Collect Options > Promise Date - QASA-606
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1574,7 +1588,7 @@ Apps > Checkout > Collect Options > Promise Date - QASA-606
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -1593,17 +1607,17 @@ Apps > Checkout > Payment > Pay with eBucks - QASA-538
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click eBucks Payment Method
@@ -1620,7 +1634,7 @@ Apps > Checkout > Payment > Credits (Voucher) - QASA-537
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1630,17 +1644,21 @@ Apps > Checkout > Payment > Credits (Voucher) - QASA-537
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Add Payment Voucher
     Enter Payment Voucher Code
     Click Apply Payment Voucher
     Click Back Payment Voucher
-    Verify Payment Element Exists    ${rdoPaymentUseMyCredit}
+    Verify Element On Screen    ${rdoPaymentUseMyCredit}    ${MIN_TIMEOUT}
     Verify Payment Text    Use my Credit (R
-    Verify Payment Text    You don't owe us a cent. Your available credit balance covers the full value of your order
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Payment Text    You don't owe us a cent. Your available credit balance covers the full value of your order
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Payment Text    You don’t owe us a cent. Your available credit balance covers the full value of your order
+    Swipe Up    ${windowScroll}
     Click Payment Donation
-    Verify Payment Element Exists    ${txtPaymentAmount}
+    Verify Element On Screen    ${lblPaymentDonation}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${lblPaymentCreditsApplied}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${txtPaymentAmount}    ${MIN_TIMEOUT}
     Click Payment Confirm Order
     [Teardown]    Tear Down
 
@@ -1649,7 +1667,7 @@ Apps > Checkout > Delivery Options > General Test Case - QASA-601
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    airtime
@@ -1669,7 +1687,7 @@ Apps > Checkout > Delivery Options > General Test Case 02 - QASA-104
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    airtime
@@ -1686,7 +1704,7 @@ Apps > Checkout > Delivery Options > General Test Case 02 - QASA-104
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Continue Digital Item
     Click Donate No Thanks
     [Teardown]    Tear Down
@@ -1696,7 +1714,7 @@ Apps > Checkout > Delivery Options > General Test Case 03 - QASA-103
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1713,7 +1731,7 @@ Apps > Checkout > Delivery Options > General Test Case 04 - QASA-102
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1734,7 +1752,7 @@ Apps > Checkout > Delivery Options > General Test Case 05 - QASA-101
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1755,7 +1773,7 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QASA-100
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1785,7 +1803,7 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QASA-100
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click +2 Show Details
     Verify Delivery Options Text    Items for Collection
     Verify Delivery Options Text    Qty: 1
@@ -1797,7 +1815,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient - QASA-298
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Gift Vouch
@@ -1817,7 +1835,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QASA-99
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Airtime
@@ -1837,7 +1855,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 03 - QASA-98
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    eBook
@@ -1850,7 +1868,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QASA-97
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1869,7 +1887,7 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QASA-96
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1888,7 +1906,7 @@ Apps > Checkout > Payment > Mobicred - QASA-555
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -1898,7 +1916,7 @@ Apps > Checkout > Payment > Mobicred - QASA-555
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Mobicred Payment Method

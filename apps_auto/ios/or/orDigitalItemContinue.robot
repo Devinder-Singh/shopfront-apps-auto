@@ -3,3 +3,4 @@ ${btnContinueAirtime}      chain=**/XCUIElementTypeStaticText[`label == "CONTINU
 ${btnCancel}      chain=**/XCUIElementTypeButton[`label == "Cancel"`]
 
 ${lblChangeRecepient}      xpath=//XCUIElementTypeStaticText[contain(@name,"CHANGE GIFT RECIPENT")]
+${txtDigitalItem}      id=Digital Items Sent upon payment

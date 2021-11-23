@@ -19,21 +19,20 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Product Department
     Click Add To Wishlist
     Click Wishlist
-    Click Wishlist Add To Cart
+    Click Wishlist Add To Cart    ${False}
     Click Back iOS    My Lists
     Click Home Cart
-#    Click Cart
     Click Checkout
     Click Delivery
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
+    Verify Payfast Payment Text
     Close Application
     Start Application    ${False}
     Cancel Latest Order
@@ -55,7 +54,7 @@ Search and Buy Item on Delivery using Credit Card
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -75,8 +74,8 @@ Search and Buy Item on Delivery using Credit Card
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
     Verify Text On Screen    PAYMENT METHOD    1s
-    Verify Text On Screen    Credit Card    1s
     Swipe Up    ${windowScroll}
+    Verify Text On Screen    Credit Card    1s  
     Verify Text On Screen    DELIVERY METHOD    1s
     Verify Text On Screen    First Delivery Free - Standard    1s
     Verify Text On Screen    SHIPPING ADDRESS    1s
@@ -149,7 +148,6 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Back Delivery Android
     Click Back Delivery iOS
     Click Back iOS    My Account
-#    Click Back Android
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -159,7 +157,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
@@ -220,7 +218,7 @@ Buy Airtime along with another Item on Delivery
     Click Checkout
     Click Delivery
     Click Address
-    Click Free Delivery
+    Click Any Delivery
     Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method
@@ -257,7 +255,7 @@ Buy Airtime along with another Item on Collection
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Free Delivery
+    Click Any Delivery
     Click Continue Digital Item
     Click Donate No Thanks
     Click Change Payment Method

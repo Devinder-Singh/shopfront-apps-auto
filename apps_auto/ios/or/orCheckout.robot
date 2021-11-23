@@ -21,3 +21,5 @@ ${lblCheckoutMissedPromotion}      chain=**/XCUIElementTypeStaticText[`label == 
 
 ${btnCartCustomersAlsoBought}    ${EMPTY}
 ${btnCartItemContainer}    ${EMPTY}
+
+${btnDeleteUnderItemCard}    chain=**/XCUIElementTypeButton[`label == "Delete"`]

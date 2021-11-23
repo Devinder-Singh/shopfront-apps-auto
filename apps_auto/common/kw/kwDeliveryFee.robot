@@ -2,19 +2,41 @@
 Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
+
+Click Any Delivery
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
+    Set Implicitly Wait    1
+    FOR    ${counter}    IN RANGE    1    15
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnFree}
+        IF    ${chkTextSuccess} == ${True}
+            Click Element    ${btnFree}
+            Exit For Loop
+        END
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtStandardDelivery}
+        IF    ${chkTextSuccess} == ${True}
+            Click Standard Delivery
+            Exit For Loop
+        END
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtSurchargeDelivery}
+        IF    ${chkTextSuccess} == ${True}
+            Click Surcharge Delivery
+            Exit For Loop
+        END
+        ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtStandardCollect}
+        IF    ${chkTextSuccess} == ${True}
+            Click Standard Collect
+            Exit For Loop
+        END
+    END
 Click Free Delivery
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnFree}    ${MIN_TIMEOUT}
+    Click Element    ${btnFree}
 
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnFree}    ${MIN_TIMEOUT}
-    Run Keyword If    ${chkTextSuccess}==${True}    Click Element    ${btnFree}
-    Run Keyword If    ${chkTextSuccess}==${False}    Click Surcharge Delivery
-#    Wait Until Element Is Visible    ${btnFree}    ${MIN_TIMEOUT}
-#    Click Element    ${btnFree}
-
-Click Free Delivery Android
+Click Standard Collect
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnFree}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnFree}
+    Wait Until Element Is Visible    ${txtStandardCollect}    ${MIN_TIMEOUT}
+    Run Keyword If    ${chkTextSuccess}==${True}    Click Element    ${txtStandardCollect}
 
 Click Surcharge Delivery
     Wait Until Element Is Visible    ${txtSurchargeDelivery}    ${MIN_TIMEOUT}
@@ -36,6 +58,11 @@ Click Why The Wait
     Wait Until Element Is Visible    ${btnWhyTheWait}    ${MIN_TIMEOUT}
     Click Element    ${btnWhyTheWait}
 
+Click Standard Delivery
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${txtStandardDelivery}    ${MIN_TIMEOUT}
+    Run Keyword If    ${chkTextSuccess}==${True}    Click Element    ${txtStandardDelivery}
+
 Click Got It Thanks
     Wait Until Element Is Visible    ${btnGotItThanks}    ${MIN_TIMEOUT}
     Click Element    ${btnGotItThanks}
@@ -54,3 +81,6 @@ Verify Delivery Options Thimbnail Images
 Verify Delivery Options Text
     [Arguments]    ${verifyText}
     Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+
+
+

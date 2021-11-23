@@ -5,8 +5,12 @@ Resource          ../config/defaultConfig.robot
 Verify Confirmation Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${btnTrackOrder}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Page Should Contain Text    ${verifyText}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    ${verifyText}    10s
+    
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        Page Should Contain Text    ${verifyText}
+    END
 
 Verify Confirmation Element Exists
     [Arguments]    ${verifyElement}
@@ -15,3 +19,18 @@ Verify Confirmation Element Exists
 Click PayFast Cancel
     Wait Until Element Is Visible    ${btnPayFastCancel}    ${MIN_TIMEOUT}
     Click Element    ${btnPayFastCancel}
+
+Click Track Order
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${chkbtnStatus}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnNotnow}
+            IF    ${chkbtnStatus} == ${True}
+                Click Element    ${btnNotnow}
+            END
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${chkbtnStatus}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnappReviewClose}
+            IF    ${chkbtnStatus} == ${True}
+                Click Element    ${btnappReviewClose}
+            END
+    END
+    Wait Until Element Is Visible    ${btnTrackOrder}    ${MIN_TIMEOUT}
+    Click Element    ${btnTrackOrder}
