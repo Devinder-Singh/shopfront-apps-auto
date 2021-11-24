@@ -21,6 +21,7 @@ ${btnReturnsOrderHistoryFilterOptionChange}    id=Change
 ${containerReturnsOrderHistory}    ${EMPTY}
 
 ${cardReturnsOrderHistoryItem}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[2]
+${cardReturnsOrderHistoryItem1}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[1]
 ${cardReturnsOrderHistoryItemWithMultipleReturnableItems}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[4]
 
 ${cardReturnsOrderHistoryItemTitle}    ${EMPTY}
@@ -111,8 +112,8 @@ ${returnReasonDialogPositiveActionButton}    id=Remove
 ${returnRequestAddAnotherItemButton}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell
 ${returnRequestShimmer}    ${EMPTY}
 
-${returnRequestDeliveryMethodSelector}    id=collectAddressSelectorCell
-${returnRequestDeliveryMethodSelectorTitle}    chain=**/XCUIElementTypeStaticText[`label == "Takealot to collect from my address"`]
+${returnRequestDeliveryMethodSelector}    id=pickupPointSelectorCell
+${returnRequestDeliveryMethodSelectorTitle}    xpath=//XCUIElementTypeStaticText[@name="selectorTitle"]
 ${returnRequestDeliveryMethodSelectorButton}    chain=**/XCUIElementTypeStaticText[`label == "Change"`][1]
 
 ${returnRequestDeliveryMethodAddress}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[3]
@@ -130,9 +131,10 @@ ${returnRequestEmptyState}    ${EMPTY}
 ${returnRequestEmptyStateCallToAction}    ${EMPTY}
 
 ${returnSelectReturnMethodPickupPoint}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][1]
-${returnSelectReturnMethodPickupPointTitle}    ${EMPTY}
+${returnSelectReturnMethodPickupPointTitle}    chain=**/XCUIElementTypeStaticText[`label == "Return to a Takealot Pickup Point"`]
+
 ${returnSelectReturnMethodCollect}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][2]
-${returnSelectReturnMethodCollectTitle}    ${EMPTY}
+${returnSelectReturnMethodCollectTitle}    chain=**/XCUIElementTypeStaticText[`label == "Collect from my address"`]
 
 ${returnSelectAddressAddAddress}    ${EMPTY}
 ${returnSelectAddressItem}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
@@ -151,9 +153,9 @@ ${returnSelectAddressDeleteDialogTitle}    ${EMPTY}
 ${returnSelectAddressDeleteDialogMessage}    ${EMPTY}
 ${returnSelectAddressDeleteDialogConfirmationButton}    ${EMPTY}
 
-${returnSelectPickupPointItemTitle}    ${EMPTY}
-${returnSelectPickupPointItemSubtitle}    ${EMPTY}
-${returnSelectPickupPointItemInfoButton}    ${EMPTY}
+${returnSelectPickupPointItemTitle}    xpath=(//XCUIElementTypeStaticText[@name="viewPickupPointCellTitleLabel"])[1]
+${returnSelectPickupPointItemSubtitle}    xpath=(//XCUIElementTypeStaticText[@name="viewPickupPointCellSubtitleLabel"])[1]
+${returnSelectPickupPointItemInfoButton}    xpath=(//XCUIElementTypeStaticText[@name="INFO"])[1]
 ${returnSelectPickupPointFilterChangeButton}    ${EMPTY}
 ${returnSelectPickupPointProvinceTitle}    ${EMPTY}
 

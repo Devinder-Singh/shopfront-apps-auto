@@ -333,13 +333,13 @@ Apps > SS Returns > Log Return Request > Drop-off > QA-5435
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+1@take2.co.za    test
+    Login Takealot    dev+3290349@take2.co.za    test
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
-    Add Single Return Item To Return Request
+    Add Single Return Item To Return Request For Drop Off
     Click Returns Call To Action Button
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Verify Return Select Delivery Method Pickup Point Option    Return to a Takealot Pickup Point
     Verify Return Select Delivery Method Collect Option    Collect from my address
     Click Return Select Delivery Method Pickup Point Option
@@ -347,15 +347,15 @@ Apps > SS Returns > Log Return Request > Drop-off > QA-5435
     Verify Return Select Delivery Method Pickup Point Item Subtitle
     Verify Return Select Delivery Method Pickup Point Item Info Button
     Click Return Select Delivery Method Pickup Point Item
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
     Scroll To Return Request Delivery Method Selector
     Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
     Click Return Request Delivery Method Selector
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Click Return Select Delivery Method Pickup Point Option
     Click Return Select Delivery Method Pickup Point Item
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
     Verify Returns Request Cart Header
     Scroll To Return Request Return Method Section

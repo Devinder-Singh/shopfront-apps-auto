@@ -728,6 +728,10 @@ Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Verify Returns Screen header    Log Return Request
 
+Add Single Return Item To Return Request For Drop Off
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Add Single Return Item To Return Request
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Add Single Return Item To Return Request    ${cardReturnsOrderHistoryItem1}
+
 Add Two Return Items to Return Request
     [Arguments]    ${orderItemToTap}=${cardReturnsOrderHistoryItem}
     Add Single Return Item To Return Request    ${orderItemToTap}
