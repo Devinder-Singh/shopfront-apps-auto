@@ -18,6 +18,7 @@ ${address_Body_Business}    { "email": "take2Automation+201905213934@gmail.com",
 
 ${voucher_URL}    http://tal-test-data-service.master.env/execute_query_voucher_service
 ${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-12-31' and DateUsed is null limit 1" }
+${voucher_Body_Expired}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired < '2021-11-18' and DateUsed is null limit 1" }
 
 ${wishlist_URL}    http://tal-test-data-service.master.env/add_customer_wishlists
 ${Add_cart_URL}       http://tal-test-data-service.master.env/add_to_cart
@@ -863,6 +864,13 @@ Get Payment Voucher Number
     Set Global Variable    ${query_result_voucher}    ${query_result}
     [return]    ${query_result_voucher}
 
+Get Payment Voucher Number Expired
+    Post    ${voucher_URL}    ${voucher_Body_Expired}
+    Integer    response status    200
+    ${query_result}=    Output    $[0].VoucherCode
+    Set Global Variable    ${query_result_voucher}    ${query_result}
+    [return]    ${query_result_voucher}
+
 Get First Sort Product
     [Arguments]    ${sort}
 
@@ -1038,7 +1046,6 @@ Get Product Daily Deals Slug
     ${index}=    Set Variable    0
     ${searchResult}=    Set Variable    ''
     FOR    ${result}    IN    @{results}
-        #Output    ${result}
         ${searchResult}=    Run Keyword If    '${result}'=='Daily Deals'    Output    $.response[${index}].promotion_id
 
         Run Keyword If
