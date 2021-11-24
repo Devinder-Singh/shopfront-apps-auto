@@ -21,18 +21,7 @@ Click Pickup Point
         ${txtProduct}=    Set Variable    xpath=//*[contains(@text, '${point}')]
     END
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    25
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-        
-        IF    ${chkProdVisible} == ${True}
-            Exit For Loop
-        END
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${txtProduct}
+    Click Element On Scroll    ${txtProduct}    25
 #    Sleep    3s
 #    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
 #    Run Keyword If    ${chkProdVisible}==${True}    Click Element    ${txtProduct}
