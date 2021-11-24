@@ -3,34 +3,6 @@ Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Checkout > Payment > Pay with eBucks screen - QASA-538
-    [Tags]    QASA-538
-    [Setup]    Start Application
-    Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Pickup Point
-    Click Free Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click eBucks Payment Method
-    Click Pay With eBucks
-
-    Verify Card Payment
-    [Teardown]    Tear Down
-
-#    ${resultTwo}=    Run Keyword    Replace String    ${txtProductLeadTimes}[${index}]    ,    ${EMPTY}
-#    ${resultTwo}=    Run Keyword    Replace String    ${txtProductLeadTimes}[${index}]    R    ${EMPTY}
-
 #Create Paid Order
 #    [Tags]    Returns Data
 #    [Setup]    Start Application

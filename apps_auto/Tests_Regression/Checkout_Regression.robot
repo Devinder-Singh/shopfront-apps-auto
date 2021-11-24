@@ -842,7 +842,7 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
-    Click Pickup Point Brackenfell
+    Click Pickup Point    Brackenfell Cape Town, Western Cape
     Click Any Delivery
     [Teardown]    Tear Down
 
@@ -1422,11 +1422,11 @@ Apps > Checkout > TV Licence Verification - QASA-307
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Business TV Licence
+    Click Domestic TV Licence    Business
     Verify Tv Licence Text    COMPANY REGISTRATION NUMBER / OWNER ID
     Verify Tv Licence Text    TV LICENCE / EASYPAY NUMBER
     Click Back TV Licence
-    Click Holiday TV Licence
+    Click Domestic TV Licence    Holiday Home
     Verify Tv Licence Text    LICENCE HOLDER SA ID / PASSPORT NUMBER
     Click Back TV Licence
     Click Domestic TV Licence

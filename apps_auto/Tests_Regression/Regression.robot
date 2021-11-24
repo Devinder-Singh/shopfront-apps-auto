@@ -225,209 +225,246 @@ Verify Home Screen > Shop by Dept widget - QASA-861
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
-    Click Home Icon Blue Dot
+    Click Home Icon    Blue Dot Countdown
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
-    Click Home Icon Christmas
+    Click Home Icon    Christmas
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
-    Click Home Icon Summer
+    Click Home Icon    Summer
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
-    Click Home Icon Load Shed
-    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
-    Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Fashion
+    Click Home Icon    Load-shedding
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Unboxed
+    Click Home Icon    Fashion Outlet
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Braai Master
+    Click Home Icon    Unboxed Deals
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
+    Click Cancel Screen
+    Click Home Icon    Ultimate Braai Master
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Exclusive
+    Click Home Icon    Exclusive To Takealot
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon New To Takealot
+    Click Home Icon    New To Takealot
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Local
+    Click Home Icon    Shop Local
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
+    Click Cancel Screen
+    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    [Teardown]    Tear Down
+
+Verify Home Screen > Shop by Dept widget - QASA-882
+    [Tags]    QASA-882
+    [Setup]    Start Application
+    Click Home
+    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Click Home Icon    Brand Stores
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Brand
+    Click Home Icon    Auto
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Auto
+    Click Home Icon    Baby & Toddler
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Baby
+    Click Home Icon    Beauty
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Beauty
+    Click Home Icon    Books
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Books
+    Click Home Icon    Camping
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Camping
+    Click Home Icon    Cellphones
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Cellphones
+    Click Home Icon    Clothing
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Clothing
+    Click Home Icon    Computers
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Computers
+    Click Home Icon    DIY & Home Improvement
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon DIY
+    Click Home Icon    Gaming
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Gaming
+    Click Home Icon    Garden, Pool & Patio
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Garden
+    Click Home Icon    Grocery
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Grocery
+    Click Home Icon    Health & Hygiene
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Verify Home Screen > Shop by Dept widget - QASA-883
+    [Tags]    QASA-883
+    [Setup]    Start Application
+    Click Home
+    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Swipe Right    ${cntHomeDeptIcons}
+    Click Home Icon    Home & Appliances
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Health
+    Click Home Icon    Household Cleaning
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Appliances
+    Click Home Icon    Kitchen & Appliances
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Household
+    Click Home Icon    Liquor
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Kitchen
+    Click Home Icon    Luggage & Travel
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Liquor
+    Click Home Icon    Movies
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Luggage
+    Click Home Icon    Music
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Movies
+    Click Home Icon    Musical Instruments
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Music
+    Click Home Icon    Networking
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Instruments
+    Click Home Icon    Office
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Network
+    Click Home Icon    Pets
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Office
+    Click Home Icon    Photography
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Pets
+    Click Home Icon    Sport & Training
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Photography
+    Click Home Icon    Stationery
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Sports
+    Click Home Icon    Toiletries
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Stationery
+    Click Home Icon    Toys & Games
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Toiletries
+    Click Home Icon    TV, Audio & Video
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
     Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
     Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Toys
-    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
-    Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Audio
-    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
-    Swipe Right    ${cntHomeDeptIcons}
-    Click Home Icon Wearable
+    Click Home Icon    Wearable Tech
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 

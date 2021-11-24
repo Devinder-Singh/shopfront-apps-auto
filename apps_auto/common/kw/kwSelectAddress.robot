@@ -11,11 +11,19 @@ Click Address Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnAddress}
 
 Click Pickup Point
+    [Arguments]    ${point}=Takealot Cape Town Warehouse Cape Town, Western Cape
+
     Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
+
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${point}'`]
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${txtProduct}=    Set Variable    xpath=//*[contains(@text, '${point}')]
+    END
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    25
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
+        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
         
         IF    ${chkProdVisible} == ${True}
             Exit For Loop
@@ -24,30 +32,10 @@ Click Pickup Point
         Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
-    Click Element    ${btnPickupPoint}
+    Click Element    ${txtProduct}
 #    Sleep    3s
-#    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
-#    Run Keyword If    ${chkProdVisible}==${True}    Click Element    ${btnPickupPoint}
-
-Click Pickup Point Gauteng
-    Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    25
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPointGauteng}
-
-        Run Keyword If
-            ...    ${chkProdVisible}==${True}
-            ...    Exit For Loop
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Click Element    ${btnPickupPointGauteng}
-
-Click Pickup Point Brackenfell
-    Wait Until Element Is Visible    ${btnPickupPointBrackenfell}    ${MIN_TIMEOUT}
-    Click Element    ${btnPickupPointBrackenfell}
+#    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
+#    Run Keyword If    ${chkProdVisible}==${True}    Click Element    ${txtProduct}
 
 Click Pickup Point Info
     Wait Until Element Is Visible    ${txtInfoAddress}    ${MIN_TIMEOUT}

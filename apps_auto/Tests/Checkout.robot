@@ -371,13 +371,7 @@ Apps > Checkout > Payments > Credit Card > PayGate > Successful Payment - QASA-5
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate
     Click Track Order
     [Teardown]    Tear Down
 
@@ -414,13 +408,7 @@ Apps > Checkout > Payment > Credit Card > PayU Screens (UI Checks) - QASA-545
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate
     Click Track Order
     [Teardown]    Tear Down
 
@@ -469,13 +457,7 @@ Apps > Checkout > Payments > Credit Card > PayU > Unsuccessful Payment for an ex
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000019562093601
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000019562093601
     Verify Text On Screen    Card Transaction Failed    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
@@ -501,13 +483,7 @@ Apps > Checkout > Payment > Credit Card > PayGate Screens (UI Checks) - QASA-548
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000019562093601
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000019562093601
     Verify Text On Screen    Card Transaction Failed    ${MIN_TIMEOUT}
     Click Credit Card Retry
     Click Cancel Screen
@@ -535,14 +511,7 @@ Apps > Checkout > Payment > Credit Card > PayGate Screens (UI Checks) - QASA-867
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000000000000002
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Save Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000000000000002    05    2025    877    ${True}
     Click Track Order
     Close Application
     Start Application
@@ -599,14 +568,7 @@ Apps > Checkout > Payments > Credit Card > PayU > Successful Payment for an exis
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000000000000002
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Save Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000000000000002    05    2025    877    ${True}
     Click Track Order
     [Teardown]    Tear Down
 
@@ -632,13 +594,7 @@ Apps > Checkout > Payments > Credit Card > PayU > Unsuccessful Payment - QASA-55
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000019562093601
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000019562093601
     Verify Text On Screen    Card Transaction Failed    ${MIN_TIMEOUT}
     Close Application
     Start Application
@@ -670,63 +626,27 @@ Apps > Checkout > Payments > Credit Card > PayGate > Unsuccessful Payment - QASA
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000000000000028
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000000000000028
     Verify Text On Screen    Card Transaction Failed    ${MIN_TIMEOUT}
     Click Credit Card Retry
     Click Credit Card Pay New
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000000000000036
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000000000000036
     Verify Text On Screen    Card Transaction Failed    ${MIN_TIMEOUT}
     Click Credit Card Retry
     Click Credit Card Pay New
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    5200000000000049
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    5200000000000049
     Verify Text On Screen    Card Transaction Failed    ${MIN_TIMEOUT}
     Click Credit Card Retry
     Click Credit Card Pay New
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    5200000000000064
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    5200000000000064
     Verify Text On Screen    Card Transaction Failed    ${MIN_TIMEOUT}
     Click Credit Card Retry
     Click Credit Card Pay New
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000002220000002
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000002220000002
     Verify Text On Screen    Card Transaction Failed    ${MIN_TIMEOUT}
     Click Credit Card Retry
     Click Credit Card Pay New
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000000000000002
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000000000000002
     Click Track Order
     Close Application
     Start Application
@@ -758,13 +678,7 @@ Apps > Checkout > Delivery Options > Heavy Charge - QASA-842
     Verify Text On Screen    R 100    10s
     Click Pay With Credit Card
     Verify Card Payment
-    Input Credit Card Description Paygate
-    Input Credit Card Holder Paygate
-    Input Credit Card Number Paygate    4000000000000002
-    Input Credit Card Expirt Month Paygate
-    Input Credit Card Expirt Year Paygate
-    Input Credit Card Expirt CVV Paygate
-    Click Credit Card Pay Paygate
+    Pay via Credit Card Paygate    Test    Tester    4000000000000002
     Click Track Order
     [Teardown]    Tear Down
 
@@ -781,19 +695,19 @@ Apps > Checkout > TV Licence Verification - QASA-828
     Click Add To Cart
     Click Go To Cart
     Click Checkout    
-    Click Business TV Licence
+    Click Domestic TV Licence    Business
     Enter Business TV Licence    261607329    1234
     Click Back Screen
     Click Back Screen
-    Click Holiday TV Licence
+    Click Domestic TV Licence    Holiday Home
     Enter Holiday Home TV Licence    1234
     Click Back Screen
     Click Back Screen
-    Click Dealer TV Licence
+    Click Domestic TV Licence    Dealer
     Enter Dealer TV Licence    609800545    1234
     Click Back Screen
     Click Back Screen
-    Click Holiday TV Licence
+    Click Domestic TV Licence    Holiday Home
     Enter Holiday Home TV Licence    69111452030816911145203081
     Verify Text On Screen    Your TV licence account is in arrears. You need to settle your account with the SABC before you can continue with your purchase    ${MIN_TIMEOUT}
     Click Cancel TV Licence
@@ -897,7 +811,7 @@ Apps > Checkout > Collect > Shipping Option > Collection cost Free for order = R
     Click Go To Cart
     Click Checkout
     Click Collect
-    Click Pickup Point Brackenfell
+    Click Pickup Point    Brackenfell Cape Town, Western Cape
     Wait Until Element Is Visible    ${btnFree}        ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
@@ -925,5 +839,33 @@ Apps > Checkout > Payment > Pay With OZOW - QASA-533
     Enter Ozow Username Password Submit    dev@i-pay.co.za    T3mpP@ssw0rd
     Select Ozow Acc No Submit
     Enter Ozow OTP Submit
+    Click Track Order
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay with eBucks screen - QASA-538
+    [Tags]    QASA-538
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Pickup Point
+    Click Free Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click eBucks Payment Method
+    Click Pay With eBucks
+    Enter EBUcks User ID and Password
+    Click EBUcks Account
+    Enter EBUcks Amount
+    Enter EBUcks OTP
     Click Track Order
     [Teardown]    Tear Down

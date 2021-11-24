@@ -46,49 +46,28 @@ Verify Card Payment Text
         Page Should Contain Text    ${verifyText}
     END    
 
-Input Credit Card Description Paygate
-    [Arguments]    ${cardDesc}='Test'
+Pay via Credit Card Paygate
+    [Arguments]    ${cardDesc}='Test'    ${cardHolder}='Tester'    ${cardNum}=4000000000000002    ${cardExpM}=05    ${cardExpY}=2025    ${cardCVV}=877    ${cardSave}=${False}
     Wait Until Element Is Visible    ${txtCardDescPaygate}    ${MIN_TIMEOUT}
-    Clear Text    ${txtCardDescPaygate}
     Input Text    ${txtCardDescPaygate}    ${cardDesc}
 
-Input Credit Card Holder Paygate
-    [Arguments]    ${cardHolder}='Tester'
-    Wait Until Element Is Visible    ${txtCardHolderPaygate}    ${MIN_TIMEOUT}
-    Clear Text    ${txtCardHolderPaygate}
     Input Text    ${txtCardHolderPaygate}    ${cardHolder}
 
-Input Credit Card Number Paygate
-    [Arguments]    ${cardHolder}=4000000000000002
-    Wait Until Element Is Visible    ${txtCreditCardNumberPaygate}    ${MIN_TIMEOUT}
-    Clear Text    ${txtCreditCardNumberPaygate}
-    Input Text    ${txtCreditCardNumberPaygate}    ${cardHolder}
+    Input Text    ${txtCreditCardNumberPaygate}    ${cardNum}
 
-Input Credit Card Expirt Month Paygate
-    [Arguments]    ${cardHolder}=05
-    Wait Until Element Is Visible    ${txtCreditCardExpMonPaygate}    ${MIN_TIMEOUT}
-    Clear Text    ${txtCreditCardExpMonPaygate}
-    Input Text    ${txtCreditCardExpMonPaygate}    ${cardHolder}
+    Input Text    ${txtCreditCardExpMonPaygate}    ${cardExpM}
 
-Input Credit Card Expirt Year Paygate
-    [Arguments]    ${cardHolder}=2025
-    Wait Until Element Is Visible    ${txtCreditCardExpYrPaygate}    ${MIN_TIMEOUT}
-    Clear Text    ${txtCreditCardExpYrPaygate}
-    Input Text    ${txtCreditCardExpYrPaygate}    ${cardHolder}
+    Input Text    ${txtCreditCardExpYrPaygate}    ${cardExpY}
 
-Input Credit Card Expirt CVV Paygate
-    [Arguments]    ${cardHolder}=877
-    Wait Until Element Is Visible    ${txtCreditCardCVVPaygate}    ${MIN_TIMEOUT}
-    Clear Text    ${txtCreditCardCVVPaygate}
-    Input Text    ${txtCreditCardCVVPaygate}    ${cardHolder}
+    Input Text    ${txtCreditCardCVVPaygate}    ${cardCVV}
 
-Click Credit Card Pay Paygate
+    IF    ${cardSave} == ${True}
+        Wait Until Element Is Visible    ${lblCreditCardSavePaygate}    ${MIN_TIMEOUT}
+        Click Element    ${lblCreditCardSavePaygate}
+    END
+
     Wait Until Element Is Visible    ${btnCreditCardPayPaygate}    ${MIN_TIMEOUT}
     Click Element    ${btnCreditCardPayPaygate}
-
-Click Credit Card Save Paygate
-    Wait Until Element Is Visible    ${lblCreditCardSavePaygate}    ${MIN_TIMEOUT}
-    Click Element    ${lblCreditCardSavePaygate}
 
 Click Credit Card Retry
     Wait Until Element Is Visible    ${btnCreditCardRetry}    ${MIN_TIMEOUT}
