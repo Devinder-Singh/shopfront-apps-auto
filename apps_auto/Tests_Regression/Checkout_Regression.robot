@@ -549,7 +549,7 @@ Checkout - Delivery Address - Pin on Map - QASA-570
     Verify Text On Screen    8006    2s
     [Teardown]    Tear Down
 
-Apps > Checkout > Collect > Select Pickup Point button - QASA-565
+Apps > Checkout > Collect > Select Pickup Point Info button - QASA-565
     [Tags]    QASA-565
     [Setup]    Start Application
     Clear Environment
@@ -563,7 +563,9 @@ Apps > Checkout > Collect > Select Pickup Point button - QASA-565
     Click Go To Cart
     Click Checkout
     Click Collect
-    Click Pickup Point
+    Click Pickup Point Info
+    Click Select Pickup Point
+    Click Any Delivery
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Pickup Point INFO - QASA-609
@@ -729,8 +731,8 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
     Click Go To Cart
     Click Checkout
     Click Collect
-    Click Pickup Point
-    Click Any Delivery
+    # Click Pickup Point Gauteng
+    Verify Text On Screen    Free    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
@@ -747,8 +749,8 @@ Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
     Click Go To Cart
     Click Checkout
     Click Collect
-    Click Pickup Point
-#    Click Collection Fee R25
+    # Click Pickup Point Gauteng
+    Verify Text On Screen    R  25    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
@@ -759,14 +761,17 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    chair office
+    Search Product    pen
     Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Collect
+    Click Filter Province
+    Click Western Cape Province
     Click Pickup Point
-    Click Any Delivery
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'   Verify Text On Screen    Free    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'   Verify Text On Screen    FREE    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
