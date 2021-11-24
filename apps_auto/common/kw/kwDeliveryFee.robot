@@ -28,8 +28,8 @@ Click Any Delivery
             Exit For Loop
         END
     END
+
 Click Free Delivery
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${btnFree}    ${MIN_TIMEOUT}
     Click Element    ${btnFree}
 
@@ -38,13 +38,13 @@ Click Standard Collect
     Wait Until Element Is Visible    ${txtStandardCollect}    ${MIN_TIMEOUT}
     Run Keyword If    ${chkTextSuccess}==${True}    Click Element    ${txtStandardCollect}
 
+Click Delivery Show Details
+    Wait Until Element Is Visible    ${lnkShowDetails}    ${MIN_TIMEOUT}
+    Click Element    ${lnkShowDetails}
+
 Click Surcharge Delivery
     Wait Until Element Is Visible    ${txtSurchargeDelivery}    ${MIN_TIMEOUT}
     Click Element    ${txtSurchargeDelivery}
-
-Click Collection Fee R25
-    Wait Until Element Is Visible    ${txtCollectionFee}    ${MIN_TIMEOUT}
-    Click Element    ${txtCollectionFee}
 
 Click Back Delivery Options
     Wait Until Element Is Visible    ${btnFree}    ${MIN_TIMEOUT}

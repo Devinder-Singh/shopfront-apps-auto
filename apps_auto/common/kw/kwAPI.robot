@@ -18,6 +18,7 @@ ${address_Body_Business}    { "email": "take2Automation+201905213934@gmail.com",
 
 ${voucher_URL}    http://tal-test-data-service.master.env/execute_query_voucher_service
 ${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-12-31' and DateUsed is null limit 1" }
+${voucher_Body_Expired}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired < '2021-11-18' and DateUsed is null limit 1" }
 
 ${wishlist_URL}    http://tal-test-data-service.master.env/add_customer_wishlists
 ${Add_cart_URL}       http://tal-test-data-service.master.env/add_to_cart
@@ -103,9 +104,11 @@ Get Tokens
     [return]    ${query_result}
 
 Add To Cart
+    [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
+    [Arguments]    ${productId}=87365581    ${productQuantity}=1
     Get Customer ID
     Get Tokens
-    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id": 53373214, "quantity": 1}]}
+    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
     Post    ${Add_cart_URL}    ${Add_cart_Body}
     Integer    response status    200
 
@@ -861,6 +864,13 @@ Get Payment Voucher Number
     Set Global Variable    ${query_result_voucher}    ${query_result}
     [return]    ${query_result_voucher}
 
+Get Payment Voucher Number Expired
+    Post    ${voucher_URL}    ${voucher_Body_Expired}
+    Integer    response status    200
+    ${query_result}=    Output    $[0].VoucherCode
+    Set Global Variable    ${query_result_voucher}    ${query_result}
+    [return]    ${query_result_voucher}
+
 Get First Sort Product
     [Arguments]    ${sort}
 
@@ -1036,8 +1046,7 @@ Get Product Daily Deals Slug
     ${index}=    Set Variable    0
     ${searchResult}=    Set Variable    ''
     FOR    ${result}    IN    @{results}
-        Output    ${result}
-        ${searchResult}=    Run Keyword If    "${result}"=='Daily Deals'    Output    $.response[${index}].promotion_id
+        ${searchResult}=    Run Keyword If    '${result}'=='Daily Deals'    Output    $.response[${index}].promotion_id
 
         Run Keyword If
             ...    '${searchResult}'!='None'
@@ -1266,7 +1275,9 @@ Get Daily Deals Product to Add To Cart
 
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${objTitle}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${objTitle}']
         Set Global Variable    ${query_result_CartFilterProduct}    ${objTitle}
-        Exit For Loop If    '${objVariant}'=='False'
+
+        ${chkTextSuccess}=    Run Keyword And Return Status    Should Not Contain    ${objTitle}    TV
+        Exit For Loop If    ${chkTextSuccess}==${True} and '${objVariant}'=='False'
 
         ${searchResult}=    Set Variable    0
         ${index}=    Evaluate    ${index} + 1
@@ -1274,3 +1285,17 @@ Get Daily Deals Product to Add To Cart
     ${cnt}=    Get length    ${searchResult}
     Should Be True    ${cnt}>1
     [return]    ${searchResult}
+
+Search Product And Return Product Id
+    [Documentation]    This keyword will call the search API and return the first item matching product id.
+                        ...    Note that this API call is simulating a user searching within the home search
+                        ...    and returning matching results. In this case the first item that matches id will
+                        ...    be returned.
+    [Arguments]    ${search}
+
+    ${searchProductEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${search}
+    Get    ${searchProductEndpoint}
+    Integer    response status    200
+
+    ${productId}=    Output    $.sections.products.results[1].product_views.buybox_summary.product_id
+    [Return]    ${productId}

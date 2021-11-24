@@ -42,6 +42,8 @@ Resource          ../../${PLATFORM_NAME}/or/orCreditRefunds.robot
 Resource          ../../${PLATFORM_NAME}/or/orCartUpdate.robot
 Resource          ../../${PLATFORM_NAME}/or/orCommon.robot
 Resource          ../../${PLATFORM_NAME}/or/orReturns.robot
+Resource          ../../${PLATFORM_NAME}/or/orOrderConfirmation.robot
+Resource          ../../${PLATFORM_NAME}/or/orPaymentPayfast.robot
 Resource          ../../android/or/orWeb.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
@@ -94,13 +96,15 @@ Resource          ../kw/kwWeb.robot
 Resource          ../kw/kwCartUpdate.robot
 Resource          ../kw/kwToolbar.robot
 Resource          ../kw/kwReturns.robot
+Resource          ../kw/kwOrderConfirmation.robot
+Resource          ../kw/kwPaymentPayfast.robot
 Library           TalLibrary
 Library           String
 Library           Collections
 Library           REST
 
 *** Variables ***
-${PLATFORM_NAME}    android
+${PLATFORM_NAME}    ios
 ${PATH}           /users/jenkins/desktop/shopfront-apps-auto/apps_auto
 ${MIN_TIMEOUT}    10s
 ${MAX_TIMEOUT}    30s

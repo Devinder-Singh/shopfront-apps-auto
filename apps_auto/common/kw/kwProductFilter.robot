@@ -49,7 +49,7 @@ Select App Only Deals Filter Option From API
             ...    ${chkProdVisible}==${True}
             ...    Exit For Loop
 
-        Swipe Up    ${windowScrolliOS}
+        Swipe Up    ${windowScroll}
         ${index}=    Evaluate    ${index} + 1
     END
     Click Element    ${txtFilterOpt}
