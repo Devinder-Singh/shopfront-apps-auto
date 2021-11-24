@@ -47,9 +47,9 @@ ${cardReturnsOrderDetailItemWithVariantSize}    chain=**/XCUIElementTypeStaticTe
 ${cardReturnsOrderDetailItemWithVariantColour}    chain=**/XCUIElementTypeStaticText[`label == "Nike Hyperfuel 500ml Water Bottle"`]
 ${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
 
-${cardReturnsOrderDetailReturnableItem}    xpath=(//XCUIElementTypeKey[@name="viewReturnItemCell"])[1]
+${cardReturnsOrderDetailReturnableItem}    chain=**/XCUIElementTypeKey[`name == "viewReturnItemCell"`][1]
 
-${cardReturnsOrderDetailReturnableItem2}    xpath=(//XCUIElementTypeKey[@name="viewReturnItemCell"])[2]
+${cardReturnsOrderDetailReturnableItem2}    chain=**/XCUIElementTypeKey[`name == "viewReturnItemCell"`][2]
 ${cardReturnsOrderDetailNonReturnableItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 
 ${returnReasonReasonItemExchange}    chain=**/XCUIElementTypeStaticText[`label == "I want to exchange it for different size/colour"`]
@@ -127,8 +127,8 @@ ${returnRequestContactDetailSelectorTitle}    xpath=(//XCUIElementTypeStaticText
 ${returnRequestContactDetailSelectorSubtitle}    xpath=(//XCUIElementTypeStaticText[@name="selectorTitle"])[2]
 ${returnRequestContactDetailSelectorButton}    chain=**/XCUIElementTypeStaticText[`label == "Change"`][2]
 
-${returnRequestEmptyState}    ${EMPTY}
-${returnRequestEmptyStateCallToAction}    ${EMPTY}
+${returnRequestEmptyState}    id=CMSPageEmptyStateView
+${returnRequestEmptyStateCallToAction}    id=CMSPageEmptyStateButton
 
 ${returnSelectReturnMethodPickupPoint}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][1]
 ${returnSelectReturnMethodPickupPointTitle}    chain=**/XCUIElementTypeStaticText[`label == "Return to a Takealot Pickup Point"`]

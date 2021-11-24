@@ -266,23 +266,22 @@ Apps > SS Returns > Request a Return > Log Return Request > QASA-257
     Click Return Select Address Item
     Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
-    Scroll To Return Request Return Method Section
-    Scroll To Return Request Delivery Method Selector
+    Swipe Up    ${windowScroll}
     Verify Return Request Delivery Method Selector    Takealot to collect from my address
-    Scroll To Return Request Delivery Method Address
     Verify Return Request Delivery Method Address Title
-    Scroll To Return Request Contact Detail Section
     Verify Return Request Contact Details Section
-    Scroll To Return Request Cart Item
+    Swipe Down    ${windowScroll}
     Swipe Returns Request Item For Delete
+    Tap Delete Button
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Loading State Not Visible
-    Scroll To Return Request Cart Item
+    Swipe Down    ${windowScroll}
     Swipe Returns Request Item For Delete
+    Tap Delete Button
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Empty State
     Click Return Request Empty State Call To Action
-    Verify Toolbar Title    Select Order to Return Items
+    Verify Returns Post Empty State Screen Header
     [Teardown]    Tear Down
 
 Apps > SS Returns > Log Return Request > Collect > QA-5436

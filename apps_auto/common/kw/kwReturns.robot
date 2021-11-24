@@ -36,6 +36,10 @@ Verify Returns Empty State Step Visible
     Verify Text On Screen    ${stepTitle}     5s
     Verify Text On Screen    ${stepSubtitle}     5s
 
+Verify Returns Post Empty State Screen Header 
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Returns Screen header    Select Order to Return Items
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Returns Screen header    Select Return Item
+
 Verify Returns History Item Visible
     Wait Until Element Is Visible    ${cardReturnsHistoryItem}    ${MIN_TIMEOUT}
     
@@ -717,6 +721,7 @@ Add Single Return Item To Return Request
     [Arguments]    ${orderItemToTap}=${cardReturnsOrderHistoryItem}
     Click Returns Call To Action Button
     Click Returns Order History Item    ${orderItemToTap}
+    Sleep    1
     Click Returns Order Detail Returnable Item
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item
