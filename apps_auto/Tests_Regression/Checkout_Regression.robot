@@ -731,8 +731,12 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
     Click Go To Cart
     Click Checkout
     Click Collect
-    # Click Pickup Point Gauteng
-    Verify Text On Screen    Free    ${MIN_TIMEOUT}
+    Click Filter Province
+    Click Western Cape Province
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'   Click Pickup Point    Brackenfell Cape Town, Western Cape
+    Run Keyword If    '${PLATFORM_NAME}'=='android'   Click Pickup Point    Brackenfell 
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'   Verify Text On Screen    Free    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'   Verify Text On Screen    FREE    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
@@ -749,8 +753,11 @@ Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
     Click Go To Cart
     Click Checkout
     Click Collect
-    # Click Pickup Point Gauteng
-    Verify Text On Screen    R  25    ${MIN_TIMEOUT}
+    Click Filter Province
+    Click Western Cape Province
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'   Click Pickup Point    Brackenfell Cape Town, Western Cape
+    Run Keyword If    '${PLATFORM_NAME}'=='android'   Click Pickup Point    Brackenfell 
+    Verify Text On Screen    25    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
