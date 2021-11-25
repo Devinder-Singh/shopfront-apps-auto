@@ -11,7 +11,7 @@ Click Address Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnAddress}
 
 Click Pickup Point
-    [Arguments]    ${point}=Takealot Cape Town Warehouse Cape Town, Western Cape
+    [Arguments]    ${point}=Takealot Cape Town Warehouse
 
     Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
 

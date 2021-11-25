@@ -414,7 +414,7 @@ Click Element On Scroll
     Set Implicitly Wait    1
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    ${loopTimes}
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${clickElement}    5s
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${clickElement}    1s
 
         IF    ${chkProdVisible}==${True}
             Exit For Loop
