@@ -5,9 +5,6 @@ ${txtStandardCollect}      xpath=//*[@text="Standard Collect"]
 ${txtStandardDelivery}    xpath=//*[@text="Standard Delivery"]
 ${txtSurchargeDelivery}      id=${APP_PACKAGE}:id/checkout_delivery_type_selector_root
 
-${txtEstimatedCollection}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView
-${txtCollectionFee}        id=${APP_PACKAGE}:id/checkout_delivery_type_selector_price
-
 ${navDeliveryOptBack}      accessibility_id=Navigate up
 ${navCollectOptBack}      accessibility_id=Navigate up
 
