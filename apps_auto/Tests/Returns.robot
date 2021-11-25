@@ -289,26 +289,25 @@ Apps > SS Returns > Log Return Request > Collect > QA-5436
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+1@take2.co.za    test
+    Login Takealot    dev+952005@take2.co.za    test
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
-    Add Single Return Item To Return Request
+    Add Single Return First Item To Return Request
     Click Returns Call To Action Button
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Click Return Select Address Item
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
-    Scroll To Return Request Delivery Method Selector
+    Scroll To Return Request Collect Adress Delivery Method Selector
     Verify Return Request Delivery Method Selector    Takealot to collect from my address
-    Click Return Request Delivery Method Selector
-    Verify Toolbar Title    Select Return Method
+    Click Return Request Collect Adress Delivery Method Selector
+    Verify Returns Screen header    Select Return Method
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Click Return Select Address Item
-    Verify Toolbar Title    Log Return Request
     Scroll To Return Request Delivery Method Address
     Verify Return Request Delivery Method Address Title
     Verify Return Request Delivery Method Address Type Pill
@@ -317,14 +316,14 @@ Apps > SS Returns > Log Return Request > Collect > QA-5436
     Scroll To Return Request Contact Detail Section
     Verify Return Request Contact Details Section
     Click Return Request Contact Details Selector
-    Verify Toolbar Title    Contact Details
+    Verify Returns Screen header    Contact Details
     Click Back Screen
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
-    Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
+    Verify Returns Submit Return Action Title
     # Click Returns Call To Action Button
     # Verify Return Request Loading State Not Visible
-    # Verify Toolbar Title    Return Request Submitted
+    # Verify Returns Screen header    Return Request Submitted
     [Teardown]    Tear Down
 
 Apps > SS Returns > Log Return Request > Drop-off > QA-5435
@@ -336,7 +335,7 @@ Apps > SS Returns > Log Return Request > Drop-off > QA-5435
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
-    Add Single Return Item To Return Request For Drop Off
+    Add Single Return First Item To Return Request
     Click Returns Call To Action Button
     Verify Returns Screen header    Select Return Method
     Verify Return Select Delivery Method Pickup Point Option    Return to a Takealot Pickup Point

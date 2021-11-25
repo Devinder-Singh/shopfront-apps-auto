@@ -113,14 +113,15 @@ ${returnRequestAddAnotherItemButton}    chain=**/XCUIElementTypeOther[`name == "
 ${returnRequestShimmer}    ${EMPTY}
 
 ${returnRequestDeliveryMethodSelector}    id=pickupPointSelectorCell
+${returnRequestCollectAdressSelector}    id=collectAddressSelectorCell
 ${returnRequestDeliveryMethodSelectorTitle}    xpath=//XCUIElementTypeStaticText[@name="selectorTitle"]
 ${returnRequestDeliveryMethodSelectorButton}    chain=**/XCUIElementTypeStaticText[`label == "Change"`][1]
 
 ${returnRequestDeliveryMethodAddress}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[3]
-${returnRequestDeliveryMethodAddressTitle}    chain=**/XCUIElementTypeStaticText[`label == "Collection Address"`]
-${returnRequestDeliveryMethodAddressTypePill}    id=BUSINESS
-${returnRequestDeliveryMethodAddressRecipientName}    id=Business Name
-${returnRequestDeliveryMethodAddressDetailText}    id=7th floor, 5 Sunny Way, Pinelands, Cape Town, Western Cape, 7405
+${returnRequestDeliveryMethodAddressTitle}    id=viewReturnCartAddressCellTitleLabel
+${returnRequestDeliveryMethodAddressTypePill}    id=viewReturnCartAddressCellAddressTypeLabel
+${returnRequestDeliveryMethodAddressRecipientName}    id=viewReturnCartAddressCellNameLabel
+${returnRequestDeliveryMethodAddressDetailText}    id=viewReturnCartAddressCellAddressLabel
 
 ${returnRequestContactDetailSelector}    id=contactDetailSelectorCell
 ${returnRequestContactDetailSelectorTitle}    xpath=(//XCUIElementTypeStaticText[@name="selectorTitle"])[2]

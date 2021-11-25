@@ -62,6 +62,12 @@ Verify Returns Call To Action Title
     Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
     Element Text Should Be    ${btnReturnsCallToAction}    ${expectedTitle}
 
+Verify Returns Submit Return Action Title
+    Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${btnReturnsCallToAction}    SUBMIT RETURN REQUEST
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${btnReturnsCallToAction}    Submit Return Request
+
+
 Verify Returns Log Return Title
     Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${btnReturnsCallToAction}    LOG RETURN
@@ -431,6 +437,10 @@ Scroll To Return Request Return Method Section
 Scroll To Return Request Delivery Method Selector
     Scroll To Element In Container    ${returnRequestDeliveryMethodSelector}     ${containerReturnRequest}    20
 
+Scroll To Return Request Collect Adress Delivery Method Selector
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Scroll To Element In Container    ${returnRequestDeliveryMethodSelector}     ${containerReturnRequest}    20
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Scroll To Element In Container    ${returnRequestCollectAdressSelector}     ${containerReturnRequest}    20
+
 Verify Return Request Delivery Method Selector
     [Arguments]    ${expectedTitle}
     
@@ -497,6 +507,10 @@ Click Return Request Empty State Call To Action
 
 Click Return Request Delivery Method Selector
     Click Element    ${returnRequestDeliveryMethodSelector}
+
+Click Return Request Collect Adress Delivery Method Selector
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${returnRequestDeliveryMethodSelector}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${returnRequestCollectAdressSelector}
 
 Verify Return Request Delivery Method Address Type Pill
     Element Should Be Visible    ${returnRequestDeliveryMethodAddressTypePill}
@@ -733,7 +747,7 @@ Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Verify Returns Screen header    Log Return Request
 
-Add Single Return Item To Return Request For Drop Off
+Add Single Return First Item To Return Request
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Add Single Return Item To Return Request
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Add Single Return Item To Return Request    ${cardReturnsOrderHistoryItem1}
 
