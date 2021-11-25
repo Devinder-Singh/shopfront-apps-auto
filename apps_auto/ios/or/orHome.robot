@@ -26,3 +26,6 @@ ${btnHomeWishlist}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/X
 ${btnWishListIcon}      chain=**/XCUIElementTypeButton[`label == "My Lists"`]
 
 ${btnHomeWishListIcon}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeButton[1]
+
+${cntHomeDeptIcons}      ${EMPTY}
+${imgHomeWishList}      ${EMPTY}

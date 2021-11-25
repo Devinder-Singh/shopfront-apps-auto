@@ -39,8 +39,46 @@ Click Credit Card Name
 Verify Card Payment Text
     [Arguments]    ${verifyText}
     Wait Until Element Is Visible    ${lblCardNumber}    ${MIN_TIMEOUT}
+
     IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
     END    
+
+Pay via Credit Card Paygate
+    [Arguments]    ${cardDesc}='Test'    ${cardHolder}='Tester'    ${cardNum}=4000000000000002    ${cardExpM}=05    ${cardExpY}=2025    ${cardCVV}=877    ${cardSave}=${False}
+    Wait Until Element Is Visible    ${txtCardDescPaygate}    ${MIN_TIMEOUT}
+    Input Text    ${txtCardDescPaygate}    ${cardDesc}
+
+    Input Text    ${txtCardHolderPaygate}    ${cardHolder}
+
+    Input Text    ${txtCreditCardNumberPaygate}    ${cardNum}
+
+    Input Text    ${txtCreditCardExpMonPaygate}    ${cardExpM}
+
+    Input Text    ${txtCreditCardExpYrPaygate}    ${cardExpY}
+
+    Input Text    ${txtCreditCardCVVPaygate}    ${cardCVV}
+
+    IF    ${cardSave} == ${True}
+        Wait Until Element Is Visible    ${lblCreditCardSavePaygate}    ${MIN_TIMEOUT}
+        Click Element    ${lblCreditCardSavePaygate}
+    END
+
+    Wait Until Element Is Visible    ${btnCreditCardPayPaygate}    ${MIN_TIMEOUT}
+    Click Element    ${btnCreditCardPayPaygate}
+
+Click Credit Card Retry
+    Wait Until Element Is Visible    ${btnCreditCardRetry}    ${MIN_TIMEOUT}
+    Click Element    ${btnCreditCardRetry}
+
+Click Credit Card Pay New
+    Wait Until Element Is Visible    ${btnCreditCardNewCard}    ${MIN_TIMEOUT}
+    Click Element    ${btnCreditCardNewCard}
+
+Delete Saved Credit Card
+    Wait Until Element Is Visible    ${lblCreditCardDeletePaygate}    ${MIN_TIMEOUT}
+    Click Element    ${lblCreditCardDeletePaygate}
+    Wait Until Element Is Visible    ${btnCreditCardDeleteConfirmPaygate}    ${MIN_TIMEOUT}
+    Click Element    ${btnCreditCardDeleteConfirmPaygate}
