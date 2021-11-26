@@ -367,17 +367,17 @@ Apps > SS Returns > Request a Return > Log Return Request (Not eligible for Drop
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+4982402@take2.co.za    test
+    Login Takealot    dev+959728@take2.co.za    test
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
-    Add Single Return Item To Return Request
+    Add Single Return First Item To Return Request
     Verify Return Request Loading State Not Visible
     Click Returns Call To Action Button
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Verify Return Select Delivery Method Pickup Point Option Is Not Active    Return to a Takealot Pickup Point not available
-    Click Back Screen
-    Verify Toolbar Title    Log Return Request
+    Click Returns Close
+    Verify Returns Screen header    Log Return Request
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop off & Collect are available

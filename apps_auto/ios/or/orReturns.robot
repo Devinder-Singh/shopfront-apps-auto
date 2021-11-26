@@ -132,7 +132,7 @@ ${returnRequestEmptyState}    id=CMSPageEmptyStateView
 ${returnRequestEmptyStateCallToAction}    id=CMSPageEmptyStateButton
 
 ${returnSelectReturnMethodPickupPoint}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][1]
-${returnSelectReturnMethodPickupPointTitle}    chain=**/XCUIElementTypeStaticText[`label == "Return to a Takealot Pickup Point"`]
+${returnSelectReturnMethodPickupPointTitle}    xpath=(//XCUIElementTypeStaticText[@name="viewDeliveryMethodCellReturnMethod"])[1]
 
 ${returnSelectReturnMethodCollect}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][2]
 ${returnSelectReturnMethodCollectTitle}    chain=**/XCUIElementTypeStaticText[`label == "Collect from my address"`]

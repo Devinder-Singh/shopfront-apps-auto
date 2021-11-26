@@ -594,7 +594,7 @@ Verify Return Select Delivery Method Pickup Point Option Is Not Active
 
     Verify Return Select Delivery Method Pickup Point Option    ${expectedTitle}
     Click Return Select Delivery Method Pickup Point Option
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
 
 Verify Return Request Return Method Header Is Not Present
     Wait Until Page Does Not Contain Element    ${returnRequestReturnMethodHeader}    30s
