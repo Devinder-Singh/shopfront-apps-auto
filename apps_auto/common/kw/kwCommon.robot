@@ -142,8 +142,7 @@ Verify Price On Screen
     
 
 Verify Text On Screen
-    [Arguments]    ${verifyText}    ${timeout}=5s    ${sleepBeforeAction}=0s
-    Sleep    ${sleepBeforeAction}
+    [Arguments]    ${verifyText}    ${timeout}=5s
     Wait Until Page Contains    ${verifyText}    ${timeout}
 
 Verify Product Review
