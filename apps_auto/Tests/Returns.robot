@@ -392,11 +392,11 @@ Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop off & Coll
     Add Single Return Item To Return Request
     Verify Return Request Loading State Not Visible
     Click Returns Call To Action Button
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Verify Return Select Delivery Method Pickup Point Option    Return to a Takealot Pickup Point
     Verify Return Select Delivery Method Collect Option    Collect from my address
-    Click Back Screen
-    Verify Toolbar Title    Log Return Request
+    Click Returns Close
+    Verify Returns Screen header    Log Return Request
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-off is available
@@ -411,10 +411,10 @@ Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-off is ava
     Add Single Return Item To Return Request
     Verify Return Request Loading State Not Visible
     Click Returns Call To Action Button
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Verify Return Select Delivery Method Pickup Point Option    Return to a Takealot Pickup Point
     Click Return Select Delivery Method Pickup Point Option
-    Verify Toolbar Title    Select Takealot Pickup Point
+    Verify Returns Screen header    Select Takealot Pickup Point
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT available > Liquor
