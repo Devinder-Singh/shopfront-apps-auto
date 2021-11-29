@@ -252,6 +252,7 @@ Scroll To Text
         ${element}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${text}"`]
     END
     Scroll To Element   ${element}
+    Page Should Contain Element    ${element}
 
 Scroll To Element
     [Arguments]    ${element}    ${scrollElement}=${windowScroll}    ${loopTimes}=10
@@ -269,3 +270,4 @@ Scroll To Element
         ${index}=    Evaluate    ${index} + 1
     END
     Set Implicitly Wait    5
+    Page Should Contain Element    ${element}
