@@ -353,6 +353,7 @@ Apps > Search Listings > Related Search - QASA-179
     Click Home
     Click Search Home
     Search Product    pencil
+    Swipe Up    ${windowScroll}
     Scroll To Text    Related Searches
     Click Product from API Scroll
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
