@@ -210,7 +210,7 @@ Apps > Cart > Promotions > Promotion Low Stock - QASA-515
     Click Home
     Click Menu
     Click Menu Daily Deals
-    Verify Text On Screen Scroll    left    1s    ${windowScroll}    ${btnProductSearchFilter}
+    Scroll To Text    left
     Click Left Product from API
     Verify Text On Screen    LEFT AT    ${MIN_TIMEOUT}
     [Teardown]    Tear Down

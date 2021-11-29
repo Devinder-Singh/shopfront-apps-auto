@@ -170,3 +170,22 @@ Verify Home Menu
 
 Verify Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    ${MIN_TIMEOUT}
+
+Click Home Icon Wish List
+    Wait Until Element Is Visible    ${imgHomeWishList}    ${MIN_TIMEOUT}
+    Click Element    ${imgHomeWishList}
+
+Click Home Icon Daily Deals
+    Wait Until Element Is Visible    ${btnHomeDeptDailyDeals}    ${MIN_TIMEOUT}
+    Click Element    ${btnHomeDeptDailyDeals}
+
+Click Home Icon
+    [Arguments]    ${iconText}
+
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${iconText}'`]
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${txtProduct}=    Set Variable    xpath=//*[contains(@text, '${iconText}')]
+    END
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
+    Click Element    ${txtProduct}

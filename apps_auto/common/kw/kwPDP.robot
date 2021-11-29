@@ -394,8 +394,7 @@ Click Product Disabled Variant Colour Size From API
 
 Verify Product YAML from API
     Get Product YAML Detail
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You Might Also Like    ${MIN_TIMEOUT}    ELSE
-    Verify Text Element On Screen iOS    You Might Also Like    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Verify Text On Screen    You Might Also Like    ${MIN_TIMEOUT}
     ${txtProductRating}=    Convert To String    ${query_result_YMALProductRating}
     ${txtProductPrice}=    Get Substring    ${query_result_YMALProductPrice}    2
     Swipe Up    ${windowScroll}
