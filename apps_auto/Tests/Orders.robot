@@ -22,8 +22,8 @@ Apps > Order Tracking > Delivery Order > QASA-80
     [Setup]    Start Application
     Clear Environment
 
-    ${completedOrderproductId}=    Search And Return Product Id API    sunlight
-    Create New Order API   ${completedOrderproductId}    1    Credit Card    COURIER    true
+    ${completedOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
     
     Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
@@ -41,6 +41,7 @@ Apps > Order Tracking > Delivery Order > QASA-80
     Verify Text On Screen    Standard
     Verify Text On Screen    SHIPPING ADDRESS
     Verify Text On Screen    Nkhabi
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Swipe Up    ${windowScroll}
     Verify Text On Screen    5 Templar Street
     Verify Text On Screen    Camelot
     Verify Text On Screen    Cape Town
@@ -50,8 +51,8 @@ Apps > Order Tracking > Delivery Order > QASA-80
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    Back
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    My Account
 
-    ${completedOrderproductId}=    Search And Return Product Id API    sunlight
-    Create New Order API    ${completedOrderproductId}    1    PayFast    COURIER    false
+    ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
 
     Click Menu Orders
     Click Awaiting Order By Index    1
@@ -61,8 +62,10 @@ Apps > Order Tracking > Delivery Order > QASA-80
     Click Pay With Credit Card
     Enter CVV Number    123
     Click Pay Button
-    Close Ratings Popup
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Close Ratings Popup
     Verify Order Confirmation
+    [Teardown]    Tear Down
+
 Apps > Order Refactor > Order History > Home Page > Empty Landing Screen
     [Tags]    QASA-375
     [Setup]    Start Application

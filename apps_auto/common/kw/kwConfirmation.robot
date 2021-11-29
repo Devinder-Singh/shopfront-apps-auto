@@ -37,7 +37,7 @@ Click Track Order
 
 Close Ratings Popup
     [Documentation]    Clicks the "Not now" button within the ratings popup that appears on the confirmation page.
-    Wait Until Element Is Visible    ${lblRatingsNotNowConfirmationPopup}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${lblRatingsNotNowConfirmationPopup}    ${MAX_TIMEOUT}
     Click Element    ${lblRatingsNotNowConfirmationPopup}
 
 verify Order Confirmation
