@@ -145,181 +145,15 @@ Verify Text On Screen
     [Arguments]    ${verifyText}    ${delay}=5s
     Wait Until Page Contains    ${verifyText}    ${delay}
 
-Verify Text Element On Screen iOS
-    [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
-
-    Wait Until Element Is Visible    ${verifyScreenElement}    ${MIN_TIMEOUT}
-    ${checkElement}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${verifyText}'`]
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    15
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${checkElement}    1s
-
-        IF    ${chkProdVisible} == ${True} or '${PLATFORM_NAME}' == 'android'
-            Exit For Loop
-        END
-
-        Swipe Up    ${scrollElement}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    IF    '${PLATFORM_NAME}' == 'ios'
-        Wait Until Element Is Visible    ${checkElement}    ${MIN_TIMEOUT}
-    END
-
-Verify Text On Screen Scroll
-    [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
-
-    Wait Until Element Is Visible    ${verifyScreenElement}    ${MIN_TIMEOUT}
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    15
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
-
-        IF    ${chkProdVisible} == ${True}
-           Exit For Loop
-        END
-
-        Swipe Up    ${scrollElement}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Wait Until Page Contains    ${verifyText}    1s
-
-Verify Text On Screen Scroll Android
-    [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${verifyScreenElement}    ${MIN_TIMEOUT}
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    15
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
-
-        IF    ${chkProdVisible} == ${True} or '${PLATFORM_NAME}' == 'ios'
-            Exit For Loop
-        END
-
-        Swipe Up    ${scrollElement}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    IF    '${PLATFORM_NAME}' == 'android'
-       Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT} 
-    END
-
-Verify Text On Screen Scroll iOS
-    [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
-
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${verifyScreenElement}    ${MIN_TIMEOUT}
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    15
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains    ${verifyText}    1s
-
-         IF    ${chkProdVisible} == ${True} or '${PLATFORM_NAME}' == 'android'
-            Exit For Loop
-        END
-
-        Swipe Up    ${scrollElement}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    IF    '${PLATFORM_NAME}' == 'ios'
-        Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
-    END     
-
-Verify Element On Screen Scroll
-    [Arguments]    ${verifyElement}    ${delay}    ${scrollElement}    ${verifyScreenElement}
-
-    Wait Until Element Is Visible    ${verifyScreenElement}    ${delay}
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    15
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
-
-        IF    ${chkProdVisible} == ${True}
-            Exit For Loop
-        END
-
-        Swipe Up    ${scrollElement}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Wait Until Page Contains Element    ${verifyElement}    1s
-
-Verify Element On Screen Scroll Android
-    [Arguments]    ${verifyElement}    ${delay}    ${scrollElement}    ${verifyScreenElement}
-
-    IF    '${PLATFORM_NAME}' == 'android'
-        Wait Until Element Is Visible    ${verifyScreenElement}    ${delay}
-    END
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    15
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
-
-        IF    ${chkProdVisible} == ${True} or '${PLATFORM_NAME}' == 'ios'
-            Exit For Loop
-        END
-
-        Swipe Up    ${scrollElement}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    IF    '${PLATFORM_NAME}' == 'android'
-        Wait Until Page Contains Element    ${verifyElement}    ${MIN_TIMEOUT}
-    END 
-
-Verify Element On Screen Scroll iOS
-    [Arguments]    ${verifyElement}    ${delay}    ${scrollElement}    ${verifyScreenElement}
-
-    IF    '${PLATFORM_NAME}' == 'ios'
-        Wait Until Element Is Visible    ${verifyScreenElement}    ${delay}
-    END
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    15
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${verifyElement}    1s
-
-        IF    ${chkProdVisible} == ${True} or '${PLATFORM_NAME}' == 'android'
-            Exit For Loop
-        END
-
-        Swipe Up    ${scrollElement}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    IF    '${PLATFORM_NAME}' == 'ios'
-        Wait Until Page Contains Element    ${verifyElement}    ${MIN_TIMEOUT}
-    END
-
-Verify Product Review iOS
-
-    Get Product List Review
-
+Verify Product Review
+    ${txtProduct}=    Get Product List Review
     ${txtProduct}=    Convert To String    ${query_result_Rating}
-    IF    '${PLATFORM_NAME}' == 'ios'
-        Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    END
-
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
-        ${chkProdVisible}=    Run Keyword And Return Status    Verify Text On Screen    ${txtProduct}    1s
-
-        IF    ${chkProdVisible} == ${True} or '${PLATFORM_NAME}' == 'android'
-            Exit For Loop
-        END
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    IF     '${PLATFORM_NAME}' == 'ios'
-         Verify Text On Screen    ${txtProduct}    ${MIN_TIMEOUT}
-    Verify Text On Screen    (${query_result_Review})    ${MIN_TIMEOUT}
-    END
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
+    Scroll To Text    ${txtProduct}
    
 Check Text On Screen Not
     [Arguments]    ${verifyText}
-    Wait Until Page Does Not Contain    ${verifyText}    ${MIN_TIMEOUT}
-
-Check Text On Screen Not Android
-    [Arguments]    ${verifyText}
-    IF    '${PLATFORM_NAME}' == 'android'
-         Wait Until Page Does Not Contain    ${verifyText}    ${MIN_TIMEOUT}
-    END  
+    Wait Until Page Does Not Contain    ${verifyText}    ${MIN_TIMEOUT} 
 
 Verify Element On Screen
     [Arguments]    ${verifyElement}    ${timeout}
@@ -336,20 +170,6 @@ Verify Element On Screen Not
     END
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${delay}
     Should Be True    ${chkTextSuccess} == ${False}
-
-#TODO Make 1 keyword
-Verify Element On Screen iOS
-    [Arguments]    ${verifyElement}    ${delay}
-    IF    '${PLATFORM_NAME}' == 'ios'
-        Wait Until Page Contains Element    ${verifyElement}    ${delay}
-    END
-
-#TODO Make 1 keyword
-Verify Element On Screen Android
-    [Arguments]    ${verifyElement}    ${delay}
-    IF    '${PLATFORM_NAME}' == 'android'
-        Wait Until Page Contains Element    ${verifyElement}    ${delay}
-    END
 
 Click Back Screen
     IF    '${PLATFORM_NAME}' == 'android'
@@ -395,7 +215,7 @@ Click Cancel Screen
     Sleep    1s
 
 Scroll To Element In Container
-    [Arguments]    ${elementLocator}    ${scrollContainerLocator}    ${retryCount}
+    [Arguments]    ${elementLocator}    ${scrollContainerLocator}=${windowScroll}    ${retryCount}=10
     ${index}=    Set Variable    0
     
     FOR    ${index}    IN RANGE    ${retryCount}
@@ -410,20 +230,7 @@ Scroll To Element In Container
 
 Click Element On Scroll
     [Arguments]    ${clickElement}    ${loopTimes}=10
-
-    Set Implicitly Wait    1
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    ${loopTimes}
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${clickElement}    1s
-
-        IF    ${chkProdVisible}==${True}
-            Exit For Loop
-        END
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Set Implicitly Wait    5
+    Scroll To Element    ${clickElement}    ${loopTimes}=10
     Click Element    ${clickElement}
 
 Verify Snack Bar
@@ -436,4 +243,29 @@ Verify Snack Bar
     
     Verify Element On Screen    ${dynamicSnackBarPopupWithText}    ${MIN_TIMEOUT}
     
+Scroll To Text
+    [Arguments]    ${text}
+    ${element}=      Set Variable    ${EMPTY}
+    IF    '${PLATFORM_NAME}'== 'android'
+        ${element}=    Set Variable    xpath=//*[contains(@text,"${text}")]
+    ELSE
+        ${element}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${text}"`]
+    END
+    Scroll To Element   ${element}
 
+Scroll To Element
+    [Arguments]    ${element}    ${scrollElement}=${windowScroll}    ${loopTimes}=10
+
+    Set Implicitly Wait    1
+    ${index}=    Set Variable    0
+    FOR    ${index}    IN RANGE    ${loopTimes}
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    1s
+
+        IF    ${chkProdVisible}==${True}
+            Exit For Loop
+        END
+
+        Swipe Up    ${scrollElement}
+        ${index}=    Evaluate    ${index} + 1
+    END
+    Set Implicitly Wait    5

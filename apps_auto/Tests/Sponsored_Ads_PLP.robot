@@ -227,7 +227,7 @@ Apps > Sponsored Ads (PDP) > Product Card Layout - QASA-315
     Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Product From Title    ${query_result_adProductTitle}
-    Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    Related Products
     Click Related Products Sponsored
     Verify Text On Screen    You're seeing these ads based on the product's relevance to your product query    5s
     Click Related Products Sponsored OK
@@ -249,6 +249,6 @@ Apps > Sponsored Ads (PDP) > Sponsored Ad product rules - QASA-319
     Verify Text On Screen    ${query_result_adProductPrice}    2s
 #    Verify Text On Screen    ${query_result_adProductListPrice}    2s
     Click Product From Title    ${query_result_adProductTitle}
-    Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    Related Products
     Verify Text On Screen    Sponsored    5s
     [Teardown]    Tear Down
