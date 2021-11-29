@@ -34,3 +34,12 @@ Click Track Order
     END
     Wait Until Element Is Visible    ${btnTrackOrder}    ${MIN_TIMEOUT}
     Click Element    ${btnTrackOrder}
+
+Close Ratings Popup
+    [Documentation]    Clicks the "Not now" button within the ratings popup that appears on the confirmation page.
+    Wait Until Element Is Visible    ${lblRatingsNotNowConfirmationPopup}    ${MIN_TIMEOUT}
+    Click Element    ${lblRatingsNotNowConfirmationPopup}
+
+verify Order Confirmation
+    [Documentation]    Confirms that an order has been processed successfully.
+    Verify Element On Screen    ${txtOrderConfirmation}    ${MIN_TIMEOUT}

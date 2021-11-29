@@ -548,10 +548,10 @@ Apps > Cart > Product Card Actions > On boarding > QASA-4
     [Tags]    QASA-4
     [Setup]    Start Application
     Clear Environment
-    ${productId}=    Search Product And Return Product Id    Sunlight Regular Dishwashing Liquid
+    ${productId}=    Search And Return Product Id API    Sunlight Regular Dishwashing Liquid
     Add To Cart    ${productId}
 
-    ${productId}=    Search Product And Return Product Id    omo auto washing
+    ${productId}=    Search And Return Product Id API    omo auto washing
     Add To Cart    ${productId}
         
     Click Menu Logout If Logged In

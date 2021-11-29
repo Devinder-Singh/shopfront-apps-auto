@@ -142,8 +142,9 @@ Verify Price On Screen
     
 
 Verify Text On Screen
-    [Arguments]    ${verifyText}    ${delay}=5s
-    Wait Until Page Contains    ${verifyText}    ${delay}
+    [Arguments]    ${verifyText}    ${timeout}=5s    ${sleepBeforeAction}=0s
+    Sleep    ${sleepBeforeAction}
+    Wait Until Page Contains    ${verifyText}    ${timeout}
 
 Verify Text Element On Screen iOS
     [Arguments]    ${verifyText}    ${delay}    ${scrollElement}    ${verifyScreenElement}
