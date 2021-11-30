@@ -18,7 +18,7 @@ ${cardReturnsHistoryItemImage}    chain=**/XCUIElementTypeWindow[1]/XCUIElementT
 ${returnsOrderHistoryFilterOptionContainer}    ${EMPTY}
 ${btnReturnsOrderHistoryFilterOptionChange}    id=Change
 
-${containerReturnsOrderHistory}    ${EMPTY}
+${containerReturnsOrderHistory}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable
 
 ${cardReturnsOrderHistoryItem}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[2]
 ${cardReturnsOrderHistoryItem1}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[1]
@@ -30,7 +30,7 @@ ${cardReturnsOrderHistoryItemSubtitle}    ${EMPTY}
 ${cardReturnsOrderHistoryItemWithMutlipleQuantity}    chain=**/XCUIElementTypeStaticText[`label == "Order #91818963"`]
 ${cardReturnsOrderHistoryItemWithSizeVariantOption}    chain=**/XCUIElementTypeStaticText[`label == "Order #96062667"`]
 ${cardReturnsOrderHistoryItemWithColourVariantOption}    chain=**/XCUIElementTypeStaticText[`label == "Order #96147644"`]
-${cardReturnsOrderHistoryItemWithLiquorOption}    ${EMPTY}
+${cardReturnsOrderHistoryItemWithLiquorOption}    chain=**/XCUIElementTypeStaticText[`label == "Order #97916412"`]
 
 ${returnOrderDetailReturnableSectionTitle}    chain=**/XCUIElementTypeStaticText[`label == "RETURNABLE ITEMS"`]
 ${returnOrderDetailNonReturnableSectionTitle}    chain=**/XCUIElementTypeStaticText[`label == "NON-RETURNABLE ITEMS"`]
@@ -45,7 +45,7 @@ ${cardReturnsOrderDetailItemWarrantyInfo}    xpath=(//XCUIElementTypeButton[@nam
 ${cardReturnsOrderDetailItemWithMultipleQuantity}    chain=**/XCUIElementTypeStaticText[`label == "Pokemon Sword & Shield 4: Vivid Voltage - Booster"`]
 ${cardReturnsOrderDetailItemWithVariantSize}    chain=**/XCUIElementTypeStaticText[`label == "adidas Men's Long Sleeve Tee - Black - S"`]
 ${cardReturnsOrderDetailItemWithVariantColour}    chain=**/XCUIElementTypeStaticText[`label == "Nike Hyperfuel 500ml Water Bottle"`]
-${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
+${cardReturnsOrderDetailItemWithLiquor}    chain=**/XCUIElementTypeStaticText[`label == "Robertson - Chapel Natural Sweet Rose - 750ml"`]
 
 ${cardReturnsOrderDetailReturnableItem}    chain=**/XCUIElementTypeKey[`name == "viewReturnItemCell"`][1]
 
