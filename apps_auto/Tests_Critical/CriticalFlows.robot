@@ -247,7 +247,7 @@ Buy Airtime along with another Item on Collection
     Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${btnGoToCart}    ${MAX_TIMEOUT}
     Close Application
     Start Application
     Click Home

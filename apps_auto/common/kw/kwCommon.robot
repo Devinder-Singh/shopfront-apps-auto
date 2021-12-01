@@ -24,7 +24,6 @@ Swipe Down
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.7)
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
-#    Sleep  1
 
 Swipe Up
     [Arguments]       ${locator}
@@ -36,7 +35,6 @@ Swipe Up
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.3)
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
-#    Sleep  1
 
 Swipe Right
     [Arguments]       ${locator}
@@ -47,7 +45,6 @@ Swipe Right
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.7)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
-#    Sleep  1
 
 Swipe Left
     [Documentation]    This keyword will perform a left swipe action on a given element.
@@ -232,7 +229,7 @@ Scroll To Element In Container
 
 Click Element On Scroll
     [Arguments]    ${clickElement}    ${loopTimes}=10
-    Scroll To Element    ${clickElement}    ${loopTimes}=10
+    Scroll To Element    ${clickElement}    ${windowScroll}    ${loopTimes}
     Click Element    ${clickElement}
 
 Verify Snack Bar
@@ -246,14 +243,14 @@ Verify Snack Bar
     Verify Element On Screen    ${dynamicSnackBarPopupWithText}    ${MIN_TIMEOUT}
     
 Scroll To Text
-    [Arguments]    ${text}
+    [Arguments]    ${text}    ${loopTimes}=10
     ${element}=      Set Variable    ${EMPTY}
     IF    '${PLATFORM_NAME}'== 'android'
         ${element}=    Set Variable    xpath=//*[contains(@text,"${text}")]
     ELSE
         ${element}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${text}"`]
     END
-    Scroll To Element   ${element}
+    Scroll To Element   ${element}    ${windowScroll}    ${loopTimes}
     Page Should Contain Element    ${element}
 
 Scroll To Element
