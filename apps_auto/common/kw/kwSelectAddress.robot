@@ -22,9 +22,6 @@ Click Pickup Point
     END
 
     Click Element On Scroll    ${txtProduct}    25
-#    Sleep    3s
-#    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtProduct}
-#    Run Keyword If    ${chkProdVisible}==${True}    Click Element    ${txtProduct}
 
 Click Pickup Point Info
     Wait Until Element Is Visible    ${txtInfoAddress}    ${MIN_TIMEOUT}
