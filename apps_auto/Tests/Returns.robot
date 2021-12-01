@@ -523,15 +523,15 @@ Apps > SS Returns > Select Return Method > Return Method Invalid (Add item) > QA
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+4704435@take2.co.za    test
+    Login Takealot    dev+3539805@take2.co.za    test
     Click Menu My Account
     Click Menu Exchanges And Returns
-    Add Single Return Item To Return Request
+    Add Single Return First Item To Return Request
     Verify Return Request Loading State Not Visible
     Click Returns Call To Action Button
     Click Return Select Delivery Method Pickup Point Option
     Click Return Select Delivery Method Pickup Point Item
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
     Scroll To Return Request Delivery Method Selector
     Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
@@ -546,13 +546,13 @@ Apps > SS Returns > Select Return Method > Return Method Invalid (Add item) > QA
     Scroll To Return Reason Text Area
     Input Return Reason Text Area Text    Test Description
     Click Returns Call To Action Button
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
     Verify Return Request Return Method Header Is Not Present
     Swipe Returns Request Item For Delete
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Loading State Not Visible
-    Swipe Returns Request Item For Delete
+    Swipe Returns Request Item For Delete   
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Loading State Not Visible
     [Teardown]    Tear Down
