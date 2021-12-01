@@ -1147,57 +1147,57 @@ Apps > Wishlist (iOS) - QASA-472
 ##    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
 #    [Teardown]    Tear Down
 
-Apps > Order Tracking (Delivery) - QASA-80
+Apps > Order Tracking > Delivery Order > QASA-80
     [Tags]    QASA-80
     [Setup]    Start Application
     Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Any Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
-    Close Application
-    Start Application
-    Click Menu
+
+    ${completedOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    
+    Click Menu Logout If Logged In
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
     Click Menu My Account
     Click Menu Orders
-    Click Order Awaiting Payment
+    Click Order By Index    1
+    
     Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
-    Verify Text On Screen    1 Item    1s
-    Verify Text On Screen    Delivery    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
-    Verify Text On Screen    PAYMENT METHOD    1s
-    Verify Text On Screen    Credit Card    1s
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen    DELIVERY METHOD    1s
-    Verify Text On Screen    First Delivery Free - Standard    1s
-    Verify Text On Screen    SHIPPING ADDRESS    1s
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen    Test    1s
-    Verify Text On Screen    12 Ridge Way    1s
-    Verify Text On Screen    Green Point    1s
-    Verify Text On Screen    Cape Town    1s
-    Verify Text On Screen    8005    1s
-    Swipe Down    ${windowScroll}
-    Click Order Pay Now
+    Verify Text On Screen    1 Item
+    Verify Text On Screen    Delivery
+    Verify Text On Screen    PAYMENT METHOD
+    Verify Text On Screen    Credit Card
+    Verify Text On Screen    DELIVERY METHOD
+    Verify Text On Screen    Standard
+    Verify Text On Screen    SHIPPING ADDRESS
+    Verify Text On Screen    Nkhabi
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Swipe Up    ${windowScroll}
+    Verify Text On Screen    5 Templar Street
+    Verify Text On Screen    Camelot
+    Verify Text On Screen    Cape Town
+    Verify Text On Screen    7580
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Back Screen
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Back Screen
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    Back
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    My Account
+
+    ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
+
+    Click Menu Orders
+    Click Awaiting Order By Index    1
+    Click Pay Now Button
     Click Change Payment Method Only
-    Click Payfast Payment Method
-    Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
+    Click Card Payment Method
+    Click Pay With Credit Card
+
+    ${isAddCreditCardScreenRendered}=    Run Keyword And Return Status    Verify Card Payment Text    Card Description
+    Run Keyword If    ${isAddCreditCardScreenRendered} == ${True}    Pay via Credit Card Paygate    cardSave=${True}
+    Run Keyword If    ${isAddCreditCardScreenRendered} == ${False}    Enter CVV Number    123
+    Run Keyword If    ${isAddCreditCardScreenRendered} == ${False}    Click Pay Button
+    
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Close Ratings Popup
+    Verify Order Confirmation
     [Teardown]    Tear Down
 
 Apps > My Account Verifications - QASA-477

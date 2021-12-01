@@ -4,13 +4,13 @@ ${navPayCreditCardBack}      chain=**/XCUIElementTypeNavigationBar[`name == "PAY
 ${txtCreditCardNumber}      chain=**/XCUIElementTypeOther[`label == "main"`]/XCUIElementTypeTextField[3]
 ${txtCreditCardName}      chain=**/XCUIElementTypeOther[`label == "main"`]/XCUIElementTypeTextField[2]
 
-${txtCardDescPaygate}      id=cardDesc
-${txtCardHolderPaygate}      id=cardHolder
-${txtCreditCardNumberPaygate}      id=cardFormattedNumber
-${txtCreditCardExpMonPaygate}      id=expMon
-${txtCreditCardExpYrPaygate}      id=expYr
-${txtCreditCardCVVPaygate}      id=cvvNew
-${btnCreditCardPayPaygate}      id=paySecure
+${txtCardDescPaygate}      chain=**/XCUIElementTypeOther[`label == "main"`]/XCUIElementTypeTextField[1]
+${txtCardHolderPaygate}      chain=**/XCUIElementTypeOther[`label == "main"`]/XCUIElementTypeTextField[2]
+${txtCreditCardNumberPaygate}      chain=**/XCUIElementTypeOther[`label == "main"`]/XCUIElementTypeTextField[3]
+${txtCreditCardExpMonPaygate}      chain=**/XCUIElementTypeTextField[`value == "MM"`]
+${txtCreditCardExpYrPaygate}      chain=**/XCUIElementTypeTextField[`value == "YYYY"`]
+${txtCreditCardCVVPaygate}      chain=**/XCUIElementTypeOther[`label == "main"`]/XCUIElementTypeOther[8]/XCUIElementTypeOther[2]/XCUIElementTypeTextField
+${btnCreditCardPayPaygate}      chain=**/XCUIElementTypeButton[`label CONTAINS "PAY"`]
 
 ${lblCreditCardSavePaygate}      chain=**/XCUIElementTypeStaticText[`label == "Use as my default card"`]
 ${btnCreditCardRetry}      id=retry

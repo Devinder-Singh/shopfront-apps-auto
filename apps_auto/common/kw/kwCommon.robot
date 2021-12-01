@@ -144,8 +144,8 @@ Verify Price On Screen
     
 
 Verify Text On Screen
-    [Arguments]    ${verifyText}    ${delay}=5s
-    Wait Until Page Contains    ${verifyText}    ${delay}
+    [Arguments]    ${verifyText}    ${timeout}=5s
+    Wait Until Page Contains    ${verifyText}    ${timeout}
 
 Verify Product Review
     ${txtProduct}=    Get Product List Review
