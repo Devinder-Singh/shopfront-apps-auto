@@ -444,13 +444,14 @@ Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT av
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
+    Sleep    1
     Add Single Return Item To Return Request
     Verify Return Request Loading State Not Visible
     Click Returns Call To Action Button
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Verify Return Select Delivery Method Pickup Point Option Is Not Active    Return to a Takealot Pickup Point not available
-    Click Back Screen
-    Verify Toolbar Title    Log Return Request
+    Click Returns Close
+    Verify Returns Screen header    Log Return Request
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT available > Dropoff eligible and Non-Dropoff eligible
@@ -486,17 +487,17 @@ Apps > SS Returns > Select Return Method > Collect > QASA-415 > Liquor
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+4704435@take2.co.za    test
+    Login Takealot    dev+3539805@take2.co.za    test
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
     Add Liquor Return Item To Return Request
     Verify Return Request Loading State Not Visible
     Click Returns Call To Action Button
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Verify Return Select Delivery Method Collect Option    Collect from my address
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     [Teardown]    Tear Down
 
 
@@ -512,10 +513,10 @@ Apps > SS Returns > Select Return Method > Collect > QASA-415 > White good
     Add Single Return Item To Return Request
     Verify Return Request Loading State Not Visible
     Click Returns Call To Action Button
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
     Verify Return Select Delivery Method Collect Option    Collect from my address
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Return Method Invalid (Add item) > QASA-93
