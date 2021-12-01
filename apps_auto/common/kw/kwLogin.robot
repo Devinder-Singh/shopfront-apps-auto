@@ -43,7 +43,7 @@ Return Android Login Status
 Return iOS Login Status
     [Arguments]    ${email}    ${password}
 #    ${chkLoginSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    ${MIN_TIMEOUT}
-    ${chkLoginSuccess}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    ${MIN_TIMEOUT}
+    ${chkLoginSuccess}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    ${MAX_TIMEOUT}
 
     IF    ${chkLoginSuccess} == ${False}
         Register From Login Takealot    ${email}    ${password}
