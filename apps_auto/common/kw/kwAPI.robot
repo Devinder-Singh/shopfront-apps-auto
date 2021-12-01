@@ -32,6 +32,8 @@ ${items_Body_tv}    {"products":[{"id":87365581,"quantity":1,"enhancedEcommerceA
 ${items_URL_Delete}    ${APP_ENVIRONMENT}rest/v-1-10-0/customers/4933405/cart/items
 ${items_Body_Delete_any}    {"products":[{"id":94086375}]}
 
+${createNewOrderEndpoint}=    http://tal-test-data-service.master.env/create_new_order
+
 ${envMaster}    http://api.master.env
 ${envProd}    https://api.takealot.com
 
@@ -1283,7 +1285,7 @@ Get Daily Deals Product to Add To Cart
     Should Be True    ${cnt}>1
     [return]    ${searchResult}
 
-Search Product And Return Product Id
+Search And Return Product Id API
     [Documentation]    This keyword will call the search API and return the first item matching product id.
                         ...    Note that this API call is simulating a user searching within the home search
                         ...    and returning matching results. In this case the first item that matches id will
@@ -1296,3 +1298,18 @@ Search Product And Return Product Id
 
     ${productId}=    Output    $.sections.products.results[1].product_views.buybox_summary.product_id
     [Return]    ${productId}
+
+Create New Order API
+    [Documentation]    This keyword will call the create order API and create a new order. The order can then be located
+                        ...    in the orders section within the account section. The address used for the order will be fixed for this keyword.
+                        ...    Known payment methods that can be used are 'COD', 'Credit Card', 'Debit Card', 'eBucks', 'iPay', 'MasterPass', 'Mobicred', 'PayFast, 'sBux' and 'CREDIT'.
+                        ...    Known delivery methods that can be used are 'COLLECT', 'COURIER' and 'DIGITAL'.
+                        ...    The 'completePayment' parameter will determine if the order created should be fully paid or not paid (Awaiting payment state).
+    [Arguments]    ${productId}    ${productQuantity}    ${paymentMethod}    ${deliveryMethod}    ${completePayment}
+    
+    ${customerId}=    Get Customer ID
+    ${createNewOrderJsonBody}=    Set Variable    {"customer_id":${customerId},"products":[{"product_id":${productId},"quantity":${productQuantity}, "unit_price":190}],"address_id":"5f3758b775787614fc4487bb","payment_method":"${paymentMethod}","delivery_method":"${deliveryMethod}","pay_full_amount_due":true,"percentage_of_amount_due_to_pay":100,"complete_payment":${completePayment},"add_donation":false,"cancel_order":false}
+   
+    POST    ${createNewOrderEndpoint}    ${createNewOrderJsonBody}
+    Output    response
+    Integer    response status    200    

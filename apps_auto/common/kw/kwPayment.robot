@@ -23,6 +23,8 @@ Click Payment Confirm Order
     Click Element    ${btnPayWithCash}
 
 Click Pay With Credit Card
+    [Documentation]    Clicks the 'Pay with credit card' button within the payment screen. This button is only visible if the
+                        ...    'Credit & Debit Card' payment method is selected as the current payment option.
     Wait Until Element Is Visible    ${btnCreditCard}    ${MIN_TIMEOUT}
     Click Element    ${btnCreditCard}
 
