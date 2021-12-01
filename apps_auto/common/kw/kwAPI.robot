@@ -1046,13 +1046,10 @@ Get Product Daily Deals Slug
     ${index}=    Set Variable    0
     ${searchResult}=    Set Variable    ''
     FOR    ${result}    IN    @{results}
-        ${searchResult}=    Run Keyword If    '${result}'=='Daily Deals'    Output    $.response[${index}].promotion_id
-
-        Run Keyword If
-            ...    '${searchResult}'!='None'
-            ...    Exit For Loop
-
-        ${searchResult}=    Set Variable    ''
+        IF    '''${result}'''=='Daily Deals'
+            ${searchResult}=    Output    $.response[${index}].promotion_id
+            Exit For Loop
+        END
         ${index}=    Evaluate    ${index} + 1
     END
     Should Be True    '${results}[${index}]'=='Daily Deals'
