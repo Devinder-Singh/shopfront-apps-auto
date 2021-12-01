@@ -38,3 +38,26 @@ Cancel Latest Order
     Click Menu Orders
     Click Order Awaiting Payment
     Click Order Cancel
+
+Click Order By Index
+    [Documentation]    Clicks an order based on index from the list of orders.
+    [Arguments]    ${orderIndex}
+    ${dynamicOrderIndex}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicOrderIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle'])[${orderIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label contains "Delivery by"`][${orderIndex}]    
+    END
+    Click Element    ${dynamicOrderIndex}
+
+Click Awaiting Order By Index
+    [Documentation]    Clicks an awaiting order based on index from the list of orders.
+    [Arguments]    ${orderIndex}
+    ${dynamicAwaitingOrderIndex}=    Set Variable    ${None}
+    
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicAwaitingOrderIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle' and @text='Awaiting Payment'])[${orderIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicAwaitingOrderIndex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "Awaiting Payment"`][${orderIndex}]    
+    END
+    Click Element    ${dynamicAwaitingOrderIndex}
