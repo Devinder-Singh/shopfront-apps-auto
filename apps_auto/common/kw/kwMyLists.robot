@@ -5,8 +5,8 @@ Resource          ../config/defaultConfig.robot
 Navigate to Wishlist
     IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${btnWishlistCreate}    ${MIN_TIMEOUT}
-        Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
         Click Element    ${btnWishListScreen}
+        Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
         Click Element    ${btnWishlistItems}
     ELSE
         Wait Until Element Is Visible    ${btnWishlistItems}    ${MIN_TIMEOUT}
