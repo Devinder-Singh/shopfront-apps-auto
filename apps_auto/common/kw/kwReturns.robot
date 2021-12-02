@@ -622,13 +622,20 @@ Click Return Address Add Option
     Click Element    ${returnSelectAddressAddAddress}
 
 Verify Return Address Empty State
-    Wait Until Element Is Visible    ${returnSelectAddressEmptyState}    30s
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${returnSelectAddressEmptyState}    30s
+        Wait Until Element Is Visible    ${returnSelectAddressEmptyStateTitle}    30s
+        Element Text Should Be    ${returnSelectAddressEmptyStateTitle}    You don't have any addresses saved.
 
-    Wait Until Element Is Visible    ${returnSelectAddressEmptyStateTitle}    30s
-    Element Text Should Be    ${returnSelectAddressEmptyStateTitle}    You don't have any addresses saved.
+        Wait Until Element Is Visible    ${returnSelectAddressEmptyStateMessage}    30s
+        Element Text Should Be    ${returnSelectAddressEmptyStateMessage}    Please add a Delivery Address.
+    ELSE 
+        Sleep    1
+        Verify Text On Screen    You don't have any addresses saved. Please add a Delivery Address.
+    END
+    
 
-    Wait Until Element Is Visible    ${returnSelectAddressEmptyStateMessage}    30s
-    Element Text Should Be    ${returnSelectAddressEmptyStateMessage}    Please add a Delivery Address.
+    
 
 Verify Return Address Add Option
     Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s

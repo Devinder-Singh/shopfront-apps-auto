@@ -137,7 +137,7 @@ ${returnSelectReturnMethodPickupPointTitle}    xpath=(//XCUIElementTypeStaticTex
 ${returnSelectReturnMethodCollect}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][2]
 ${returnSelectReturnMethodCollectTitle}    chain=**/XCUIElementTypeStaticText[`label == "Collect from my address"`]
 
-${returnSelectAddressAddAddress}    ${EMPTY}
+${returnSelectAddressAddAddress}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 ${returnSelectAddressItem}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
 ${returnSelectAddressIncompleteItem}    ${EMPTY}
 ${returnSelectAddressItemName}    ${EMPTY}
@@ -146,9 +146,9 @@ ${returnSelectAddressItemDeleteButton}    ${EMPTY}
 
 ${returnSelectAddressInputNotification}    ${EMPTY}
 
-${returnSelectAddressEmptyState}    ${EMPTY}
-${returnSelectAddressEmptyStateTitle}    ${EMPTY}
-${returnSelectAddressEmptyStateMessage}    ${EMPTY}
+${returnSelectAddressEmptyState}    id=SharedCenterImageTitleCellImage
+${returnSelectAddressEmptyStateTitle}    id=SharedCenterImageTitleCellImage
+${returnSelectAddressEmptyStateMessage}    id=SharedCenterImageTitleCellTitle
 
 ${returnSelectAddressDeleteDialogTitle}    ${EMPTY}
 ${returnSelectAddressDeleteDialogMessage}    ${EMPTY}
