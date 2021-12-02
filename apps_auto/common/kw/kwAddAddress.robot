@@ -41,8 +41,8 @@ Add Delivery Address
     IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtRecipientStreet}
         Sleep    1
-        ${street}=    Replace String    ${street}    ${SPACE}    %s
-        ${command}=    Set Variable    adb shell input text ${street}
+        ${adbstreet}=    Replace String    ${street}    ${SPACE}    %s
+        ${command}=    Set Variable    adb shell input text ${adbstreet}
         ${result}=    Run Process    ${command}    shell=True
         Log    ${result}
         Sleep    5s
