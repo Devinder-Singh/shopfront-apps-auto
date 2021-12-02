@@ -530,7 +530,7 @@ Apps > SS Returns > Select Return Method > Return Method Invalid (Add item) > QA
     Scroll To Return Request Delivery Method Selector
     Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
     Click Returns Request Add Another Item
-    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithLiquor}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${cardReturnsOrderDetailItemWithLiquor}    20    ${containerReturnsHOrderDetail}
     Click Element    ${cardReturnsOrderDetailItemWithLiquor}
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item
@@ -563,7 +563,7 @@ Apps > SS Returns > Select Return Method > Return Method Invalid (Remove Item) >
     Verify Toolbar Title    Log Return Request
     Verify Return Request Loading State Not Visible
     Click Returns Request Add Another Item
-    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithLiquor}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${cardReturnsOrderDetailItemWithLiquor}    20    ${containerReturnsHOrderDetail}
     Click Element    ${cardReturnsOrderDetailItemWithLiquor}
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item
