@@ -21,6 +21,7 @@ ${lblEditAddress}      xpath=/hierarchy/android.widget.FrameLayout/android.widge
 
 ${btnAddressMobileQuestion}      id=${APP_PACKAGE}:id/validation_input_question_image
 ${btnAddressGotItThanks}      xpath=//*[@text="GOT IT, THANKS!"]
+${btnGoogleFirstAddress}    id=${APP_PACKAGE}:id/appRootToolbar
 
 ${txtAddressProvince}      id=${APP_PACKAGE}:id/address_input_province
 ${navAddressProvince}      xpath=//android.widget.ImageButton[@content-desc="Navigate up"]
