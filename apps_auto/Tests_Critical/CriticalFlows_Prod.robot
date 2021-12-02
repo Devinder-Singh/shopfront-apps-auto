@@ -18,7 +18,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Menu Sport and Fitness
     Click Product Department
     Click Add To Wishlist
-    Click Wishlist
+    Click Wishlist    ${True}
     Click Wishlist Add To Cart    ${False}
     Click Back iOS    My Lists
     Click Home Cart
