@@ -213,23 +213,9 @@ Click Cancel Screen
     END
     Sleep    1s
 
-Scroll To Element In Container
-    [Arguments]    ${elementLocator}    ${scrollContainerLocator}=${windowScroll}    ${retryCount}=10
-    ${index}=    Set Variable    0
-    
-    FOR    ${index}    IN RANGE    ${retryCount}
-        ${isElementVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${elementLocator}
-        IF    ${isElementVisible} == ${True}
-            Exit For Loop
-        END
-
-        Swipe Up    ${scrollContainerLocator}
-        ${index}=    Evaluate    ${index} + 1
-    END
-
 Click Element On Scroll
     [Arguments]    ${clickElement}    ${loopTimes}=10
-    Scroll To Element    ${clickElement}    ${windowScroll}    ${loopTimes}
+    Scroll To Element    ${clickElement}    ${loopTimes}    ${windowScroll}
     Click Element    ${clickElement}
 
 Verify Snack Bar
@@ -250,11 +236,11 @@ Scroll To Text
     ELSE
         ${element}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${text}"`]
     END
-    Scroll To Element   ${element}    ${windowScroll}    ${loopTimes}
+    Scroll To Element   ${element}    ${loopTimes}    ${windowScroll}
     Page Should Contain Element    ${element}
 
 Scroll To Element
-    [Arguments]    ${element}    ${scrollElement}=${windowScroll}    ${loopTimes}=10
+    [Arguments]    ${element}    ${loopTimes}=10    ${scrollElement}=${windowScroll}
 
     Set Implicitly Wait    1
     ${index}=    Set Variable    0

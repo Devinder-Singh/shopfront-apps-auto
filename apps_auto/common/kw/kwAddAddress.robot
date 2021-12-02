@@ -36,22 +36,24 @@ Add Delivery Address
     Clear Text    ${txtRecipientName}
     Input Text    ${txtRecipientName}    ${name}
     Input Text    ${txtRecipientMobile}    ${mobile}
-    Input Text    ${txtRecipientStreet}    ${street}
+    
 
     IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtRecipientStreet}
+        Sleep    1
+        ${street}=    Replace String    ${street}    ${SPACE}    %s
+        ${command}=    Set Variable    adb shell input text ${street}
+        ${result}=    Run Process    ${command}    shell=True
+        Log    ${result}
         Sleep    5s
-        Press Keycode    20
-        Sleep    1s
-        Press Keycode    20
-        Sleep    1s
-        Press Keycode    66
+        Click Element    ${btnGoogleFirstAddress}
+        
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        Input Text    ${txtRecipientStreet}    ${street}
         Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOption}    
     END
-       
-    Sleep    3s
+    Wait Until Page Contains    ${street}    ${MIN_TIMEOUT}
     Click Save Address
 
 Add Delivery Address My Acc
