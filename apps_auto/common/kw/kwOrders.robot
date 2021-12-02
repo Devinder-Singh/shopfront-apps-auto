@@ -61,3 +61,20 @@ Click Awaiting Order By Index
         ${dynamicAwaitingOrderIndex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "Awaiting Payment"`][${orderIndex}]    
     END
     Click Element    ${dynamicAwaitingOrderIndex}
+
+Click Filter Options Change
+    [Documentation]    Clicks the filter options change button within the order history screen.
+    Wait Until Element Is Visible    ${btnFilterOptionChange}    ${MAX_TIMEOUT}
+    Click Element    ${btnFilterOptionChange}
+
+Select Order History Filter Option
+    [Documentation]    Selects a filter option date from the orders history screen.
+    [Arguments]    ${filterOption}
+    ${filterOptionToSelect}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${filterOptionToSelect}=    Set Variable    xpath=(//android.widget.RadioButton[@resource-id='fi.android.takealot.debug:id/talWidgetSingleSelectItemRadioButton' and @text='${filterOption}'])
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${filterOptionToSelect}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${filterOption}"`]
+    END
+    Wait Until Element Is Visible    ${filterOptionToSelect}    ${MIN_TIMEOUT}
+    Click Element    ${filterOptionToSelect}
