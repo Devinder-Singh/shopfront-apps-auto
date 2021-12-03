@@ -7,6 +7,7 @@ Resource          ../common/config/defaultConfig.robot
 Register User
     [Tags]    Master0
     [Setup]    Install Application
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Start Application
     Click No Deal     ${MIN_TIMEOUT}
     Click Menu
     Click Menu Login
