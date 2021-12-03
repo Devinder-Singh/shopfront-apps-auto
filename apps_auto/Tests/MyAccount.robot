@@ -234,7 +234,7 @@ Apps > My Account > Address Book > Add Residential Address > Street Suggestion -
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    Tester Residential    072345677    13 Caro Road
+    Add Delivery Address    Tester Residential    072345677    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    ${MIN_TIMEOUT}
     Close Application
@@ -244,7 +244,7 @@ Apps > My Account > Address Book > Add Residential Address > Street Suggestion -
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
+    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Add Delivery Address    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Tester Residential    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    RESIDENTIAL    1s
