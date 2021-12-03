@@ -56,63 +56,25 @@ Add Delivery Address
     Wait Until Page Contains    ${street}    ${MIN_TIMEOUT}
     Click Save Address
 
-Add Delivery Address My Acc
-    [Arguments]    ${name}    ${mobile}    ${street}
-    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    ${MIN_TIMEOUT}
-    Clear Text    ${txtRecipientNameMyAcc}
-    Input Text    ${txtRecipientNameMyAcc}    ${name}
-    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
-    Input Text    ${txtRecipientComplexMyAcc}    ABC
-    Input Text    ${txtRecipientStreetMyAcc}    ${street}
-    
-    IF    '${PLATFORM_NAME}' == 'android'
-        Click Element    ${txtRecipientStreetMyAcc}    
-    END
-    
-    Sleep    10s
-    
-    IF    '${street}' == '""'
-        Click Element    ${txtRecipientMobileMyAcc}
-        Swipe Up    ${windowScroll}
-    ELSE IF    '${street}'=='&*'
-        Click Element    ${txtRecipientMobileMyAcc}
-        Swipe Up    ${windowScroll}
-    END
-
-    IF    '${PLATFORM_NAME}' == 'android'
-        Press Keycode    20
-        Sleep    1s
-        Press Keycode    20
-        Sleep    1s
-        Press Keycode    66
-    ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${street}' != '&*'
-        Wait Until Element Is Visible    ${lblAddresOption}    ${MIN_TIMEOUT}
-        Click Element    ${lblAddresOption}
-    END
-        
-    Sleep    3s
-    Swipe Up    ${windowScroll}
-    Click Save Address
-
 Add Delivery Address Business My Acc No Name
     [Arguments]    ${name}    ${mobile}    ${street}  
-    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    ${MIN_TIMEOUT}
-    Clear Text    ${txtRecipientNameMyAcc}
-    Input Text    ${txtRecipientNameMyAcc}    ${name}
-    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
-    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Wait Until Element Is Visible    ${txtRecipientStreet}    ${MIN_TIMEOUT}
+    Clear Text    ${txtRecipientName}
+    Input Text    ${txtRecipientName}    ${name}
+    Input Text    ${txtRecipientMobile}    ${mobile}
+    Input Text    ${txtRecipientStreet}    ${street}
 
     IF    '${PLATFORM_NAME}' == 'android'
-        Click Element    ${txtRecipientStreetMyAcc}
+        Click Element    ${txtRecipientStreet}
     END
     
     Sleep    10s
     
     IF    '${street}' == '""'
-        Click Element    ${txtRecipientMobileMyAcc}
+        Click Element    ${txtRecipientMobile}
         Swipe Down    ${windowScroll}
     ELSE IF    '${street}' == '&*'
-        Click Element    ${txtRecipientMobileMyAcc}
+        Click Element    ${txtRecipientMobile}
         Swipe Down    ${windowScroll}
     END
     
@@ -130,7 +92,7 @@ Add Delivery Address Business My Acc No Name
     Sleep    3s
     
     IF    '${PLATFORM_NAME}' == 'ios' and '${street}' == ''
-        Click Element    ${txtBusinessNameMyAcc}
+        Click Element    ${txtBusinessName}
         
     END
 
@@ -139,24 +101,24 @@ Add Delivery Address Business My Acc No Name
 
 Add Delivery Address Business My Acc
     [Arguments]    ${name}    ${mobile}    ${street}
-    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    ${MIN_TIMEOUT}
-    Clear Text    ${txtRecipientNameMyAcc}
-    Input Text    ${txtRecipientNameMyAcc}    ${name}
-    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
-    Input Text    ${txtBusinessNameMyAcc}    ABC
-    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Wait Until Element Is Visible    ${txtRecipientStreet}    ${MIN_TIMEOUT}
+    Clear Text    ${txtRecipientName}
+    Input Text    ${txtRecipientName}    ${name}
+    Input Text    ${txtRecipientMobile}    ${mobile}
+    Input Text    ${txtBusinessName}    ABC
+    Input Text    ${txtRecipientStreet}    ${street}
     
     IF    '${PLATFORM_NAME}' == 'android'
-        Click Element    ${txtRecipientStreetMyAcc}
+        Click Element    ${txtRecipientStreet}
     END
            
     Sleep    10s
     
     IF    '${street}' == '""'
-        Click Element    ${txtRecipientMobileMyAcc}
+        Click Element    ${txtRecipientMobile}
         Swipe Down    ${windowScroll}
     ELSE IF    '${street}' == '&*'
-        Click Element    ${txtRecipientMobileMyAcc}
+        Click Element    ${txtRecipientMobile}
         Swipe Down    ${windowScroll}
     END
     
@@ -324,8 +286,8 @@ Edit Delivery Address My Acc Empty
     Wait Until Element Is Visible    ${lblRecepientMobile}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
 
-    Clear Text    ${txtRecipientNameMyAcc}
-    Clear Text    ${txtRecipientMobileMyAcc}
+    Clear Text    ${txtRecipientName}
+    Clear Text    ${txtRecipientMobile}
     Clear Text    ${txtRecipientSuburbMyAcc}
     Clear Text    ${txtRecipientCityMyAcc}
 
@@ -359,12 +321,12 @@ Edit Delivery Address Street
 
 Edit Delivery Address Street My Acc
     [Arguments]    ${street}
-    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    ${MIN_TIMEOUT}
-    Clear Text    ${txtRecipientStreetMyAcc}
-    Input Text    ${txtRecipientStreetMyAcc}    ${street}
+    Wait Until Element Is Visible    ${txtRecipientStreet}    ${MIN_TIMEOUT}
+    Clear Text    ${txtRecipientStreet}
+    Input Text    ${txtRecipientStreet}    ${street}
 
     IF    '${PLATFORM_NAME}' == 'android'
-        Click Element    ${txtRecipientStreetMyAcc}
+        Click Element    ${txtRecipientStreet}
         Sleep    10s
         Press Keycode    20
         Sleep    1s
@@ -383,10 +345,10 @@ Edit Delivery Address Street My Acc
 Edit Delivery Address Street My Acc Only
     [Arguments]    ${street}
 
-    Wait Until Element Is Visible    ${txtRecipientStreetMyAcc}    ${MIN_TIMEOUT}
-    Clear Text    ${txtRecipientStreetMyAcc}
-    Input Text    ${txtRecipientStreetMyAcc}    ${street}
-    Click Element    ${txtRecipientMobileMyAcc}
+    Wait Until Element Is Visible    ${txtRecipientStreet}    ${MIN_TIMEOUT}
+    Clear Text    ${txtRecipientStreet}
+    Input Text    ${txtRecipientStreet}    ${street}
+    Click Element    ${txtRecipientMobile}
 
 Edit Delivery Address Suburb
     [Arguments]    ${suburb}
@@ -421,9 +383,9 @@ Edit Delivery Address Business
 
 Edit Delivery Address Business My Acc
     [Arguments]    ${business}
-    Wait Until Element Is Visible    ${txtBusinessNameMyAcc}    ${MIN_TIMEOUT}
-    Clear Text    ${txtBusinessNameMyAcc}
-    Input Text    ${txtBusinessNameMyAcc}    ${business}
+    Wait Until Element Is Visible    ${txtBusinessName}    ${MIN_TIMEOUT}
+    Clear Text    ${txtBusinessName}
+    Input Text    ${txtBusinessName}    ${business}
     Edit Delivery Address Street My Acc    13 Caro Road
 
 Verify Edit Address Text

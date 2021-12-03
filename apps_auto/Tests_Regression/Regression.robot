@@ -1236,7 +1236,7 @@ Apps > My Account Verifications - QASA-477
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
+    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
     Click Back Delivery Android
     Click Back iOS    My Account
