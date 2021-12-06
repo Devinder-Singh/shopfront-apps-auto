@@ -20,6 +20,21 @@ Click Order Pay Now
     Wait Until Element Is Visible    ${btnOrdersPayNow}    ${MIN_TIMEOUT}
     Click Element    ${btnOrdersPayNow}
 
+Click Orders Filter Change
+    Wait Until Element Is Visible    ${btnOrdersFilterChange}    ${MIN_TIMEOUT}
+    Click Element    ${btnOrdersFilterChange}
+
+Click Orders Filter Option
+    [Arguments]    ${optionText}
+
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${optionText}'`]
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${txtProduct}=    Set Variable    xpath=//*[contains(@text, '${optionText}')]
+    END
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
+    Click Element    ${txtProduct}
+
 Click Order Cancel
     Wait Until Element Is Visible    ${btnOrdersCancel}    ${MIN_TIMEOUT}
     Click Element    ${btnOrdersCancel}

@@ -3,6 +3,36 @@ Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
+Apps > Order Refactor > Order History > My Account > Empty Landing Screen - QASA-374
+    [Tags]    QASA-374
+    [Setup]    Start Application
+
+    Clear Environment
+    Click Menu
+    Click Menu Login
+    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
+    Verify Text On Screen    No orders found    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order History > Date filter applied - QASA-373
+    [Tags]    QASA-373
+    [Setup]    Start Application
+
+    Clear Environment
+    Click Menu
+    Click Menu Login
+    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
+    Verify Text On Screen    No orders found    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
 #Create Paid Order
 #    [Tags]    Returns Data
 #    [Setup]    Start Application

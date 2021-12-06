@@ -1306,7 +1306,7 @@ Apps > My Account Verifications - QASA-89
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    5s
     [Teardown]    Tear Down
 
-Apps > Order Tracking (Collect) 02 - QASA-547
+Apps > Order Tracking (Collect) - QASA-547
     [Tags]    QASA-547
     [Setup]    Start Application
     Clear Environment
@@ -1359,6 +1359,8 @@ Apps > Order Tracking (Collect) 02 - QASA-547
     Click Payfast Payment Method
     Click Pay With Payfast
     Verify Payfast Payment Text    Instant EFT
+    Click Complete Payment With Payfast
+    Click Track Order
     [Teardown]    Tear Down
 
 Apps > Order Tracking 05 - QASA-79
@@ -1382,7 +1384,8 @@ Apps > Order Tracking 05 - QASA-79
     Enter Payment Voucher Code
     Click Apply Payment Voucher
     Click Back Payment Voucher
-    Click Pay With Credit Card
+    Click Payment Confirm Order
+    Click Track Order
     Close Application
     Start Application
     Click Menu

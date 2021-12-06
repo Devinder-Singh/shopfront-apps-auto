@@ -50,6 +50,33 @@ Search and Buy Item on Delivery using Credit Card
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
+    Click Order Awaiting Payment
+    Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
+    Verify Text On Screen    1 Item    1s
+    Verify Text On Screen    Delivery    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
+    Verify Text On Screen    PAYMENT METHOD    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Credit Card    1s  
+    Verify Text On Screen    DELIVERY METHOD    1s
+    Verify Text On Screen    First Delivery Free - Standard    1s
+    Verify Text On Screen    SHIPPING ADDRESS    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Test    1s
+    Verify Text On Screen    12 Ridge Way    1s
+    Verify Text On Screen    Green Point    1s
+    Verify Text On Screen    Cape Town    1s
+    Verify Text On Screen    8005    1s
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
     [Teardown]    Tear Down
 
 Buy Daily Deal Item on Delivery using Credit Card

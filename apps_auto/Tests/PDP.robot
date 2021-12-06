@@ -1271,3 +1271,16 @@ Apps > PDP > Buy Box > Add to Wishlist - QASA-752
     Verify Text On Screen    Limit reached    20s
     Verify Text On Screen    You can not create more than 25 lists    2s
     [Teardown]    Tear Down
+
+Apps > PDP > Heavy Charge - QASA-426
+    [Tags]    QASA-426
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Fridg
+    Click Product from API
+    Verify Text On Screen    + R 100 Delivery Surcharge
+    [Teardown]    Tear Down
