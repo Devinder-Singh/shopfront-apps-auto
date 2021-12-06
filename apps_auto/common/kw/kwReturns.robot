@@ -478,7 +478,8 @@ Verify Return Request Delivery Method Address Details
     Element Text Should Be    ${returnRequestDeliveryMethodAddressDetailText}    ${expectedAddressDetail}
 
 Scroll To Return Request Contact Detail Section
-    Scroll To Element    ${returnRequestContactDetailSelector}    20    ${containerReturnRequest}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Scroll To Element    ${returnRequestContactDetailSelector}    20    ${containerReturnRequest}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Swipe Up    ${windowScroll}
 
 Verify Return Request Contact Details Section
     Element Should Be Visible    ${returnRequestContactDetailSelectorTitle}
@@ -498,7 +499,8 @@ Verify Return Contact Details Input Fields
 Verify Return Request Contact Details Info
     [Arguments]    ${expectedContactDetailInfo}
 
-    Element Text Should Be    ${returnRequestContactDetailSelectorSubtitle}    ${expectedContactDetailInfo}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnRequestContactDetailSelectorSubtitle}    ${expectedContactDetailInfo}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen     ${expectedContactDetailInfo}    5s
 
 Verify Return Request Loading State Not Visible
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    ${MIN_TIMEOUT}
@@ -640,9 +642,6 @@ Verify Return Address Empty State
         Sleep    1
         Verify Text On Screen    You don't have any addresses saved. Please add a Delivery Address.
     END
-    
-
-    
 
 Verify Return Address Add Option
     Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s

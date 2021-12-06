@@ -168,8 +168,8 @@ ${returnSelectPickupPointInfoBusinessHourContainer}    ${EMPTY}
 ${returnSelectPickupPointInfoNotification}    ${EMPTY}
 ${returnSelectPickupPointCallToAction}    ${EMPTY}
 
-${returnContactDetailsNameField}    ${EMPTY}
-${returnContactDetailsMobileNumberField}    ${EMPTY}
+${returnContactDetailsNameField}    xpath=//XCUIElementTypeCell[@name="TextFieldCellId"]/XCUIElementTypeTextField
+${returnContactDetailsMobileNumberField}    xpath=//XCUIElementTypeCell[@name="SharedSingleTextFieldTableViewCellId"]/XCUIElementTypeTextField
 
 ${returnSuccessIcon}    ${EMPTY}
 ${returnSuccessTitle}    ${EMPTY}

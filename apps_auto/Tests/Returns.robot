@@ -728,6 +728,7 @@ Apps > SS Returns > SMS Contact Details (Collect) > QASA-258
     Click Menu
     Click Menu Login
     Login Takealot    dev+3164561@take2.co.za    test
+    Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
     Click Returns Call To Action Button
@@ -738,7 +739,7 @@ Apps > SS Returns > SMS Contact Details (Collect) > QASA-258
     Verify Return Request Contact Details Section
     Verify Return Request Contact Details Info    Dedrick: +27 79 739 0806
     Click Return Request Contact Details Selector
-    Verify Toolbar Title    Contact Details
+    Verify Returns Screen header    Contact Details
     Verify Return Contact Details Input Fields    Dedrick    797390806
     Clear Return Contact Details Input Fields
     Click Returns Call To Action Button
@@ -746,7 +747,7 @@ Apps > SS Returns > SMS Contact Details (Collect) > QASA-258
     Edit Return Contact Details Input    Tester Residential    744404494
     Click Returns Call To Action Button
     Sleep    5s
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
     Scroll To Return Request Contact Detail Section
     Verify Return Request Contact Details Section
