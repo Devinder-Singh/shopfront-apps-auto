@@ -4,15 +4,12 @@ ${txtRecipientName}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[5]/XCUI
 ${txtRecipientMobile}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[6]/XCUIElementTypeTextField
 ${txtRecipientStreet}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[7]/XCUIElementTypeTextField
 
-${txtBusinessName}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[8]/XCUIElementTypeTextField
+${txtBusinessName}      chain=**/XCUIElementTypeTable/XCUIElementTypeCell[8]/XCUIElementTypeTextField
 
 ${btnSaveAddress}   id=Save
 
 ${txtRecipientPostCode}      xpath=//XCUIElementTypeApplication[@name="takealot"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[12]/XCUIElementTypeTextField
 
-${txtRecipientNameMyAcc}      chain=**/XCUIElementTypeTable/XCUIElementTypeCell[5]/XCUIElementTypeTextField
-${txtRecipientMobileMyAcc}      chain=**/XCUIElementTypeTable/XCUIElementTypeCell[6]/XCUIElementTypeTextField
-${txtRecipientStreetMyAcc}      chain=**/XCUIElementTypeTable/XCUIElementTypeCell[7]/XCUIElementTypeTextField
 ${txtRecipientCityMyAcc}      chain=**/XCUIElementTypeTable/XCUIElementTypeCell[10]/XCUIElementTypeTextField
 ${txtRecipientSuburbMyAcc}      chain=**/XCUIElementTypeTable/XCUIElementTypeCell[9]/XCUIElementTypeTextField
 ${txtRecipientComplexMyAcc}      chain=**/XCUIElementTypeTable/XCUIElementTypeCell[8]/XCUIElementTypeTextField
@@ -25,7 +22,6 @@ ${txtAddressProvince}      chain=**/XCUIElementTypeTextField[`value == "Western 
 ${navAddressProvince}      chain=**/XCUIElementTypeNavigationBar[`name == "Provinces"`]
 
 ${lblAddressBusiness}      chain=**/XCUIElementTypeStaticText[`label == "Business"`]
-${txtBusinessNameMyAcc}      chain=**XCUIElementTypeTable/XCUIElementTypeCell[8]/XCUIElementTypeTextField
 
 ${lblAddresOption}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "13 Caro Road, Robertsham, Johannesburg South"`]
 ${lblAddresOptionChanged}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "13 Caro Road, Robertsham, Johannesburg South, Gauteng, 8007"`]

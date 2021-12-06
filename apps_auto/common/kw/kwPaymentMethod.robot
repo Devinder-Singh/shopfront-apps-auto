@@ -15,6 +15,7 @@ Click Payfast Payment Method
     Click Element    ${lblPayFastEFT}
 
 Click Card Payment Method
+    [Documentation]    Clicks the 'Credit & Debit Card' payment option within the Payment method screen.
     IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${scrPaymentMethodAndroid}    ${MIN_TIMEOUT}
     END 

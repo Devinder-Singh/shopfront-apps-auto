@@ -206,8 +206,8 @@ Verify Home Screen (Logged-In User) > Recently Viewed - QASA-175
     Close Application
     Start Application    ${False}
     Click Home
-    Verify Text On Screen Scroll    Recommended For You    1s    ${windowScroll}    ${btnSearchHome}
-    Verify Text On Screen Scroll    Recently Viewed    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Recommended For You
+    Scroll To Text    Recently Viewed
     Click Clear All Recently Viewed
     Click Cancel Clear All Recently Viewed
     Swipe Up    ${windowScroll}
@@ -220,32 +220,32 @@ Verify Home Screen > Shop by Dept widget - QASA-861
     [Tags]    QASA-861
     [Setup]    Start Application
     Click Home
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Click Home Icon Daily Deals
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Click Home Icon    Blue Dot Countdown
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Click Home Icon    Christmas
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Click Home Icon    Summer
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Click Home Icon    Load-shedding
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Fashion Outlet
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Unboxed Deals
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
@@ -253,29 +253,29 @@ Verify Home Screen > Shop by Dept widget - QASA-861
     Click Home Icon    Ultimate Braai Master
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Exclusive To Takealot
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department 
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    New To Takealot
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Shop Local
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     [Teardown]    Tear Down
 
 Verify Home Screen > Shop by Dept widget - QASA-882
     [Tags]    QASA-882
     [Setup]    Start Application
     Click Home
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Swipe Right    ${cntHomeDeptIcons}
     Swipe Right    ${cntHomeDeptIcons}
@@ -287,67 +287,67 @@ Verify Home Screen > Shop by Dept widget - QASA-882
     Click Home Icon    Brand Stores
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Auto
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Baby & Toddler
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Beauty
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Books
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Camping
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Cellphones
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Clothing
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Computers
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    DIY & Home Improvement
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Gaming
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Garden, Pool & Patio
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Grocery
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Health & Hygiene
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
@@ -357,7 +357,7 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     [Tags]    QASA-883
     [Setup]    Start Application
     Click Home
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Swipe Right    ${cntHomeDeptIcons}
     Swipe Right    ${cntHomeDeptIcons}
@@ -382,87 +382,87 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Click Home Icon    Home & Appliances
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Household Cleaning
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Kitchen & Appliances
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Liquor
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Luggage & Travel
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Movies
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Music
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Musical Instruments
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Networking
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Office
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Pets
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Photography
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Sport & Training
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Stationery
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Toiletries
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Toys & Games
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    TV, Audio & Video
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Click Cancel Screen
-    Verify Text On Screen Scroll    Shop by Department    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Shop by Department
     Swipe Right    ${cntHomeDeptIcons}
     Click Home Icon    Wearable Tech
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
@@ -539,7 +539,7 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     Close Application
     Start Application
     Click Home
-    Verify Text On Screen Scroll    Recently Viewed    1s    ${windowScroll}    ${btnSearchHome}
+    Scroll To Text    Recently Viewed
     Swipe Down    ${windowScroll}
     Click Home Icon Wish List
     Verify Text On Screen    Item added to Wish List
@@ -833,7 +833,7 @@ Apps > PDP - QASA-519
     Verify Text On Screen    ${query_result_adProductPrice}    2s
     Verify Text On Screen    ${query_result_adProductBrand}    2s
     Click Product From Title    ${query_result_adProductTitle}
-    Verify Text On Screen Scroll    Related Products    1s    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    Related Products
     Verify Text On Screen    Sponsored    2s
     [Teardown]    Tear Down
 
@@ -1147,57 +1147,57 @@ Apps > Wishlist (iOS) - QASA-472
 ##    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
 #    [Teardown]    Tear Down
 
-Apps > Order Tracking (Delivery) - QASA-80
+Apps > Order Tracking > Delivery Order > QASA-80
     [Tags]    QASA-80
     [Setup]    Start Application
     Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Any Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
-    Close Application
-    Start Application
-    Click Menu
+
+    ${completedOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    
+    Click Menu Logout If Logged In
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
     Click Menu My Account
     Click Menu Orders
-    Click Order Awaiting Payment
+    Click Order By Index    1
+    
     Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
-    Verify Text On Screen    1 Item    1s
-    Verify Text On Screen    Delivery    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Order Total    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
-    Verify Text On Screen    PAYMENT METHOD    1s
-    Verify Text On Screen    Credit Card    1s
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen    DELIVERY METHOD    1s
-    Verify Text On Screen    First Delivery Free - Standard    1s
-    Verify Text On Screen    SHIPPING ADDRESS    1s
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen    Test    1s
-    Verify Text On Screen    12 Ridge Way    1s
-    Verify Text On Screen    Green Point    1s
-    Verify Text On Screen    Cape Town    1s
-    Verify Text On Screen    8005    1s
-    Swipe Down    ${windowScroll}
-    Click Order Pay Now
+    Verify Text On Screen    1 Item
+    Verify Text On Screen    Delivery
+    Verify Text On Screen    PAYMENT METHOD
+    Verify Text On Screen    Credit Card
+    Verify Text On Screen    DELIVERY METHOD
+    Verify Text On Screen    Standard
+    Verify Text On Screen    SHIPPING ADDRESS
+    Verify Text On Screen    Nkhabi
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Swipe Up    ${windowScroll}
+    Verify Text On Screen    5 Templar Street
+    Verify Text On Screen    Camelot
+    Verify Text On Screen    Cape Town
+    Verify Text On Screen    7580
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Back Screen
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Back Screen
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    Back
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    My Account
+
+    ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
+
+    Click Menu Orders
+    Click Awaiting Order By Index    1
+    Click Pay Now Button
     Click Change Payment Method Only
-    Click Payfast Payment Method
-    Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
+    Click Card Payment Method
+    Click Pay With Credit Card
+
+    ${isAddCreditCardScreenRendered}=    Run Keyword And Return Status    Verify Card Payment Text    Card Description
+    Run Keyword If    ${isAddCreditCardScreenRendered} == ${True}    Pay via Credit Card Paygate    cardSave=${True}
+    Run Keyword If    ${isAddCreditCardScreenRendered} == ${False}    Enter CVV Number    123
+    Run Keyword If    ${isAddCreditCardScreenRendered} == ${False}    Click Pay Button
+    
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Close Ratings Popup
+    Verify Order Confirmation
     [Teardown]    Tear Down
 
 Apps > My Account Verifications - QASA-477
@@ -1236,7 +1236,7 @@ Apps > My Account Verifications - QASA-477
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
+    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
     Click Back Delivery Android
     Click Back iOS    My Account
@@ -1451,7 +1451,7 @@ Apps > Cart (Android) 02 - QASA-84
     Click Checkout Move To Wishlist First Item
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Your Shopping Cart is Empty    5s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Trending on Takealot    5s
-    Verify Element On Screen Android    ${btnCartContinueShopping}    1s
+    Verify Element On Screen    ${btnCartContinueShopping}    1s
     Add To Cart Trending First Item
     Click Checkout
     Close Application
@@ -1578,9 +1578,6 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     Add To Cart
     Click Pay With Credit Card
     Click Cart Update Continue Checkout
-#    Verify Text On Screen Scroll    ${varSurchargeDelivery}    10s    ${windowScroll}    
-    #Verify Text On Screen    ${varSurchargeDelivery}
-    #Wait Until Page Contains Element    ${varSurchargeDelivery}
     Click Pay With Credit Card
     Close Application
     Start Application

@@ -530,7 +530,7 @@ Apps > SS Returns > Select Return Method > Return Method Invalid (Add item) > QA
     Scroll To Return Request Delivery Method Selector
     Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
     Click Returns Request Add Another Item
-    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithLiquor}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${cardReturnsOrderDetailItemWithLiquor}    20    ${containerReturnsHOrderDetail}
     Click Element    ${cardReturnsOrderDetailItemWithLiquor}
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item
@@ -563,7 +563,7 @@ Apps > SS Returns > Select Return Method > Return Method Invalid (Remove Item) >
     Verify Toolbar Title    Log Return Request
     Verify Return Request Loading State Not Visible
     Click Returns Request Add Another Item
-    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithLiquor}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${cardReturnsOrderDetailItemWithLiquor}    20    ${containerReturnsHOrderDetail}
     Click Element    ${cardReturnsOrderDetailItemWithLiquor}
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item
@@ -640,7 +640,7 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Add Address
     Verify Toolbar Title    Select Address
     Click Return Address Add Option
     Click Residential
-    Add Delivery Address My Acc    Tester Residential    0744404494    13 Caro Road
+    Add Delivery Address    Tester Residential    0744404494    13 Caro Road
     Sleep    5s
     Verify Toolbar Title    Log Return Request
     Scroll To Return Request Return Method Section

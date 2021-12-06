@@ -231,9 +231,11 @@ Apps > Wishlist > My Lists > Default List - QASA-150
     Click Home
     Click Wishlist Nav Bar
     Navigate to Wishlist Auto
-    Click More Options Menu Android
-    Check Text On Screen Not Android    Rename List
-    Check Text On Screen Not Android    Delete List
+    IF    '${PLATFORM_NAME}' == 'android'
+        Click More Options Menu Android
+        Check Text On Screen Not    Rename List
+        Check Text On Screen Not    Delete List
+    END
     [Teardown]    Tear Down
 
 Apps > Wishlist > List Details > Edit > Move to list - QASA-140
@@ -324,7 +326,7 @@ Apps > Wishlist > My Lists > Pagination - QASA-464
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Wishlist Nav Bar
-    Verify Text On Screen Scroll    Test-Wishlist-8570800-0    2s    ${windowScroll}    ${btnWishlistCreate}
+    Scroll To Text    Test-Wishlist-8570800-0
     Clear Environment
     Clear Environment
     Clear Environment
@@ -416,7 +418,7 @@ Apps > Wishlist > List Details > Pagination - QASA-453
     Click Home
     Click Wishlist Nav Bar
     Navigate to Wishlist Auto
-    Verify Text On Screen Scroll    Gosh Donoderm Moisture Gel    1s    ${windowScroll}    ${btnWishlistCart}
+    Scroll To Text    Gosh Donoderm Moisture Gel
     [Teardown]    Tear Down
 
 Apps > Wishlist > List Details > Swipe Gestures - QASA-452
@@ -650,7 +652,7 @@ Apps > Wishlist > My Lists > Recommended For You - QASA-148
     Click Home
     Click Wishlist Nav Bar
     Verify Text On Screen    DEFAULT    ${MIN_TIMEOUT}
-    Verify Text On Screen Scroll    Recommended for You    1s    ${windowScroll}    ${btnWishlistItems}
+    Scroll To Text    Recommended for You
     Close Application
     Start Application
     Click Menu
@@ -661,7 +663,7 @@ Apps > Wishlist > My Lists > Recommended For You - QASA-148
     Login Takealot    ${G_EMAIL_Wishlists}    t@ke@!ot1234
     Click Home
     Click Home Wishlist
-    Verify Text On Screen Scroll    Recommended for You    1s    ${windowScroll}    ${btnMoreOptions}
+    Scroll To Text    Recommended for You
     [Teardown]    Tear Down
 
 Apps > Wishlist > My Lists > Trending Now Widgets - QASA-147

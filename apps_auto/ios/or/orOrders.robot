@@ -8,3 +8,4 @@ ${txtDigitalDeliveryMethod}      chain=**/XCUIElementTypeStaticText[`label == "D
 ${txtDigitalShippingAddress}      chain=**/XCUIElementTypeStaticText[`label == "Digital Delivery"`][2]
 
 ${btnOrdersFilterChange}      id=Change
+${btnFilterOptionChange}    chain=**/XCUIElementTypeStaticText[`label == "Change"`]

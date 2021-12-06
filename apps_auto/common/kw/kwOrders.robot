@@ -53,3 +53,43 @@ Cancel Latest Order
     Click Menu Orders
     Click Order Awaiting Payment
     Click Order Cancel
+
+Click Order By Index
+    [Documentation]    Clicks an order based on index from the list of orders.
+    [Arguments]    ${orderIndex}
+    ${dynamicOrderIndex}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicOrderIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle'])[${orderIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label contains "Delivery by"`][${orderIndex}]    
+    END
+    Click Element    ${dynamicOrderIndex}
+
+Click Awaiting Order By Index
+    [Documentation]    Clicks an awaiting order based on index from the list of orders.
+    [Arguments]    ${orderIndex}
+    ${dynamicAwaitingOrderIndex}=    Set Variable    ${None}
+    
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicAwaitingOrderIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle' and @text='Awaiting Payment'])[${orderIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicAwaitingOrderIndex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "Awaiting Payment"`][${orderIndex}]    
+    END
+    Click Element    ${dynamicAwaitingOrderIndex}
+
+Click Filter Options Change
+    [Documentation]    Clicks the filter options change button within the order history screen.
+    Wait Until Element Is Visible    ${btnFilterOptionChange}    ${MAX_TIMEOUT}
+    Click Element    ${btnFilterOptionChange}
+
+Select Order History Filter Option
+    [Documentation]    Selects a filter option date from the orders history screen.
+    [Arguments]    ${filterOption}
+    ${filterOptionToSelect}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${filterOptionToSelect}=    Set Variable    xpath=(//android.widget.RadioButton[@resource-id='fi.android.takealot.debug:id/talWidgetSingleSelectItemRadioButton' and @text='${filterOption}'])
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${filterOptionToSelect}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${filterOption}"`]
+    END
+    Wait Until Element Is Visible    ${filterOptionToSelect}    ${MIN_TIMEOUT}
+    Click Element    ${filterOptionToSelect}

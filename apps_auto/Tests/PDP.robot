@@ -156,7 +156,7 @@ Apps > PDP > You Might Also Like - QASA-769
     Click Search Home
     Search Product    pencil
     Click Product from API
-    Verify Text On Screen Scroll    You Might Also Like    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text   You Might Also Like
     Verify Product YAML from API
     [Teardown]    Tear Down
 
@@ -271,27 +271,21 @@ Apps > PDP > Unboxed Deals & New > Primary Unboxed > Variant - QASA-132
     Click Search Home
     Search Product    unboxed dea
     Click Product from API
-    Verify Text On Screen Scroll Android    Fulfilled by Takealot    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Unboxed Deals    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    WHAT IS THIS?    1s
-#    Verify Text On Screen Scroll iOS    Fulfilled by Takealot    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Unboxed Deal    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    What is this?    1s
+    Scroll To Text    Fulfilled by Takealot
+    Scroll To Text    Unboxed Deals
+    Verify Text On Screen    What is this?    1s
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart iOS
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProduct}    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Item added to Cart    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ${query_result_CartProduct}    1s
+    Verify Text On Screen    ${query_result_CartProduct}    1s
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Click Back Android
     Click Go To Cart iOS
     Click Home iOS
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart No Scroll iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
-#    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
+    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Bundle Deals > Set Bundle (Same product) - QASA-780
@@ -304,8 +298,7 @@ Apps > PDP > Bundle Deals > Set Bundle (Same product) - QASA-780
     Click Search Home
     Search Product    Ring - Video Doorbel
     Click Product From Title    Ring - Video Doorbell 3 Faceplate - Night Sky
-    Verify Text On Screen Scroll Android    SAVE R    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    SAVE R    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    SAVE R
     Swipe Up    ${windowScroll}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Bundle Price    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Bundle Price    1s
@@ -326,14 +319,12 @@ Apps > PDP > Bundle Deals > “Show All Deals” Screen - QASA-777
     Click Search Home
     Search Product    Maybelline Fit Me Matte Poreles
     Click Product From Title    Maybelline Fit Me Matte Poreless 356 Warm Coconut
-    Verify Text On Screen Scroll Android    Bundle Deals expire when stock runs out    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Bundle Deals expire when stock runs out    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    Bundle Deals expire when stock runs out
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Mix and match any    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    eligible products for    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Mix and match any    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    eligible products for    1s
-    Verify Element On Screen Android    ${lblPDPShopTheDeal}    1s
-    Verify Element On Screen Scroll iOS    ${lblPDPShopTheDeal}    1s    ${windowScroll}    ${btnAddToCart}
+    Verify Element On Screen    ${lblPDPShopTheDeal}    1s
     Click PDP Shop The Deal TCs
     [Teardown]    Tear Down
 
@@ -347,8 +338,7 @@ Apps > PDP > Bundle Deals > Set Bundle (Different products) - QASA-128
     Click Search Home
     Search Product    Ring - Video Doorbel
     Click Product From Title    Ring - Video Doorbell 3 Faceplate - Night Sky
-    Verify Text On Screen Scroll Android    SAVE R    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    SAVE R    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    SAVE R
     Swipe Up    ${windowScroll}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Bundle Price    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Bundle Price    1s
@@ -369,18 +359,12 @@ Apps > PDP > Unboxed Deals > Primary Unboxed - QASA-776
     Click Search Home
     Search Product    Keychron K8 Walnu
     Click Product From Title    Keychron K8 Walnut Wood Keyboard Palm Rest
-    Verify Text On Screen Scroll Android    No extended supplier warranty    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Returned & shop soiled products    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Quality checked by Takealot    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    UNBOXED DEAL    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Unboxed stock available    1s
-    Verify Text On Screen Scroll iOS    No extended supplier warranty    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Returned & shop soiled products    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Quality checked by Takealot    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    UNBOXED DEAL    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Unboxed stock available    1s
+    Scroll To Text   No extended supplier warranty
+    Verify Text On Screen    Returned & shop soiled products    1s
+    Verify Text On Screen    Quality checked by Takealot    1s
+    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
+    Verify Text On Screen    UNBOXED DEAL    1s
+    Verify Text On Screen    Unboxed stock available    1s
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Item Added To Cart    1s
@@ -403,20 +387,14 @@ Apps > PDP > Unboxed Deals > Unboxed Offers - QASA-775
     Click Search Home
     Search Product    Unboxed Dea
     Click Product from API
-    Verify Text On Screen Scroll Android    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    Unboxed Deals
     Click PDP What Is This No Scroll Android
     Click PDP What Is This iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Returned & shop soiled products    5s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Quality checked by Takealot    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    No extended supplier warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What is this?    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Returned & shop soiled products    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Quality checked by Takealot    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No extended supplier warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    What is this?    1s
+    Verify Text On Screen    Returned & shop soiled products    ${MIN_TIMEOUT}
+    Verify Text On Screen    Quality checked by Takealot    1s
+    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
+    Verify Text On Screen    No extended supplier warranty    1s
+    Verify Text On Screen    What is this?    1s
     Click PDP Warehouse OK
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart No Scroll iOS
@@ -428,8 +406,7 @@ Apps > PDP > Unboxed Deals > Unboxed Offers - QASA-775
     Click Home iOS
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart No Scroll iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
+    Verify Text On Screen    You asked for 2 but we only have 1 available    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QASA-774
@@ -443,20 +420,14 @@ Apps > PDP > Unboxed Deals > Primary Unboxed > Variants - QASA-774
     Search Product    Dog Days Cherries Sweatshir
     Click Product From Title    Dog Days Crowns Sweatshirts Blue
     Click Product Variant From Name    S
-    Verify Text On Screen Scroll Android    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Unboxed Deals    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    Unboxed Deals
     Click PDP What Is This No Scroll Android
     Click PDP What Is This iOS
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Returned & shop soiled products    5s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Quality checked by Takealot    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    No extended supplier warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What is this?    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Returned & shop soiled products    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Quality checked by Takealot    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No extended supplier warranty    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    What is this?    1s
+    Verify Text On Screen    Returned & shop soiled products    5s
+    Verify Text On Screen    Quality checked by Takealot    1s
+    Verify Text On Screen    Backed by our 6 month Takealot warranty    1s
+    Verify Text On Screen    No extended supplier warranty    1s
+    Verify Text On Screen    What is this?    1s
     Click PDP Warehouse OK
     Click Other Offers Add To Cart No Scroll Android
     Click Other Offers Add To Cart No Scroll iOS
@@ -492,8 +463,7 @@ Apps > PDP >Bundle Deals > Multi-buy Bundle - QASA-778
     Click Search Home
     Search Product    Maybelline Fit Me Matte Poreles
     Click Product From Title    Maybelline Fit Me Matte Poreless 356 Warm Coconut
-    Verify Text On Screen Scroll Android    Bundle Deals expire when stock runs out    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
-    Verify Text On Screen Scroll iOS    Bundle Deals expire when stock runs out    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    Bundle Deals expire when stock runs out
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Mix and match any    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    eligible products for    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Mix and match any    1s
@@ -689,7 +659,7 @@ Apps > PDP > Main Product Details > Product Title and Sub-title - QASA-746
     Search Product    book
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    By    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    by    ${MIN_TIMEOUT}
-    Verify Text On Screen Scroll    et al    5s    ${windowScroll}    ${btnProductSearchFilter}
+    Scroll To Text    et al
     Click Product from API
     Get Product Subtitle from PLID
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ${query_result_CartProductSubTitle}    ${MIN_TIMEOUT}
@@ -1076,7 +1046,7 @@ Apps > PDP > Customers Also Bought - QASA-772
     Click Search Home
     Search Product    Pencil
     Click Product from API
-    Verify Text On Screen Scroll    Customers Also Bought    ${MIN_TIMEOUT}    ${windowScroll}    ${btnAddToCart}
+    Scroll To Text    Customers Also Bought
     Get Product CABT Detail    0
     Verify Text On Screen    ${query_result_CABTProductTitle}    5s
     Verify Text On Screen    ${query_result_CABTProductPrice}    5s

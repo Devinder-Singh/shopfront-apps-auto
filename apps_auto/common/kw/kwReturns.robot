@@ -11,7 +11,7 @@ Verify Returns Screen header
     Verify Toolbar Title    Returns
 
 Verify Returns Empty State Visible
-    Scroll To Element In Container    ${containerReturnsEmptyState}    ${containerReturnsHistory}    10
+    Scroll To Element    ${containerReturnsEmptyState}    10    ${containerReturnsHistory}    
 
 Verify Returns Empty State Step Visible
     [Arguments]    ${stepTitle}    ${stepSubtitle}
@@ -42,7 +42,7 @@ Verify Returns Call To Action Title
     Element Text Should Be    ${btnReturnsCallToAction}    ${expectedTitle}
 
 Scoll To Returns History Policy
-    Scroll To Element In Container    ${cardReturnsHistoryPolicyItem}    ${containerReturnsHistory}    20
+    Scroll To Element    ${cardReturnsHistoryPolicyItem}    20    ${containerReturnsHistory}
 
 Verify Returns History Policy Title
     [Arguments]    ${expectedTitle}
@@ -102,7 +102,7 @@ Verify Returns Order Detail Returnable Section
     Wait Until Element Is Visible    ${returnOrderDetailReturnableSectionTitle}    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Non-Returnable Section
-    Scroll To Element In Container    ${returnOrderDetailNonReturnableSectionTitle}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${returnOrderDetailNonReturnableSectionTitle}    20    ${containerReturnsHOrderDetail}
 
 Verify Returns Order Detail Item Image
     Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    ${MIN_TIMEOUT}
@@ -150,7 +150,7 @@ Click Returns Order Detail Non Returnable Item
     Click Element    ${cardReturnsOrderDetailNonReturnableItem}
 
 Scroll To First Non Returnable Reason
-    Scroll To Element In Container    ${cardReturnsOrderDetailItemNonReturnableReasonTitle}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${cardReturnsOrderDetailItemNonReturnableReasonTitle}    20    ${containerReturnsHOrderDetail}
 
 Verify Return Reason Reason Selector Visible
     Wait Until Element Is Visible    ${returnReasonReasonSelector}    ${MIN_TIMEOUT}
@@ -172,7 +172,7 @@ Click Return Reason Reason Non-Exchange Item
     Click Element    ${returnReasonReasonItemNonExchange}
 
 Scroll To Return Reason Text Area
-    Scroll To Element In Container    ${returnReasonTextArea}   ${containerReturnsReason}    20
+    Scroll To Element    ${returnReasonTextArea}    20   ${containerReturnsReason}
 
 Verify Return Reason Text Area Error Message
     Wait Until Element Is Visible    ${returnReasonTextArea}    ${MIN_TIMEOUT}
@@ -190,7 +190,7 @@ Click Returns Order History Item With Multiple Quantity
     Click Element    ${cardReturnsOrderHistoryItemWithMutlipleQuantity}
 
 Scroll To Returns Order Detail Item With Multiple Quantity
-    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithMultipleQuantity}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${cardReturnsOrderDetailItemWithMultipleQuantity}    20    ${containerReturnsHOrderDetail}
 
 Click Returns Order Detail Item With Multiple Quantity
     Wait Until Element Is Visible    ${cardReturnsOrderDetailItemWithMultipleQuantity}    ${MIN_TIMEOUT}
@@ -204,13 +204,13 @@ Verify Returns Reason Quantity Error Message
     Element Text Should Be    ${returnReasonQuantityErrorMessage}    Please select a quantity to return
 
 Scroll To Returns Order History Item With Variant Size
-    Scroll To Element In Container    ${cardReturnsOrderHistoryItemWithSizeVariantOption}    ${containerReturnsOrderHistory}    20
+    Scroll To Element    ${cardReturnsOrderHistoryItemWithSizeVariantOption}    20    ${containerReturnsOrderHistory}
 
 Click Returns Order History Item With Variant Size
     Click Element    ${cardReturnsOrderHistoryItemWithSizeVariantOption}
 
 Scroll To Returns Order Detail Item With Variant Size
-    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithVariantSize}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${cardReturnsOrderDetailItemWithVariantSize}    20    ${containerReturnsHOrderDetail}
 
 Click Returns Order Detail Item With Variant Size
     Click Element    ${cardReturnsOrderDetailItemWithVariantSize}
@@ -219,33 +219,33 @@ Click Returns Reason Reason Item Exchange
     Click Element    ${returnReasonReasonItemExchange}
 
 Scroll To Returns Reason Variant Size Error Message
-    Scroll To Element In Container    ${returnReasonVariantSizeSelectorErrorMessage}   ${containerReturnsReason}    20
+    Scroll To Element    ${returnReasonVariantSizeSelectorErrorMessage}    20   ${containerReturnsReason}
 
 Verify Returns Reason Variant Size Error Message
     Element Text Should Be    ${returnReasonVariantSizeSelectorErrorMessage}    Please select a size
 
 Scroll To Returns Order History Item With Variant Colour
 #    Sleep    5s
-    Scroll To Element In Container    ${cardReturnsOrderHistoryItemWithColourVariantOption}    ${containerReturnsOrderHistory}    20
+    Scroll To Element    ${cardReturnsOrderHistoryItemWithColourVariantOption}    20    ${containerReturnsOrderHistory}
 
 Click Returns Order History Item With Variant Colour
     Click Element    ${cardReturnsOrderHistoryItemWithColourVariantOption}
 
 Scroll To Returns Order Detail Item With Variant Colour
 #    Sleep    5s
-    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithVariantColour}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${cardReturnsOrderDetailItemWithVariantColour}    20    ${containerReturnsHOrderDetail}
 
 Click Returns Order Detail Item With Variant Colour
     Click Element    ${cardReturnsOrderDetailItemWithVariantColour}
 
 Scroll To Returns Reason Variant Colour Error Message
-    Scroll To Element In Container    ${returnReasonVariantColourSelectorErrorMessage}   ${containerReturnsReason}    20
+    Scroll To Element    ${returnReasonVariantColourSelectorErrorMessage}    20   ${containerReturnsReason}
 
 Verify Returns Reason Variant Colour Error Message
     Element Text Should Be    ${returnReasonVariantColourSelectorErrorMessage}    Please select a colour
 
 Scroll To Return Reason Preferred Outcome Selector
-    Scroll To Element In Container    ${returnReasonPreferredOutcomeSelector}   ${containerReturnsReason}    20
+    Scroll To Element    ${returnReasonPreferredOutcomeSelector}    20   ${containerReturnsReason}
 
 Click Return Reason Preferred Outcome Selector
     Click Element    ${returnReasonPreferredOutcomeSelector}
@@ -349,10 +349,10 @@ Verify Return Select Address Item
     Wait Until Element Is Visible    ${returnSelectAddressItemName}    30s
 
 Scroll To Return Request Return Method Section
-    Scroll To Element In Container    ${returnRequestReturnMethodHeader}    ${containerReturnRequest}    20
+    Scroll To Element    ${returnRequestReturnMethodHeader}    20    ${containerReturnRequest}
 
 Scroll To Return Request Delivery Method Selector
-    Scroll To Element In Container    ${returnRequestDeliveryMethodSelector}     ${containerReturnRequest}    20
+    Scroll To Element    ${returnRequestDeliveryMethodSelector}    20     ${containerReturnRequest}
 
 Verify Return Request Delivery Method Selector
     [Arguments]    ${expectedTitle}
@@ -364,7 +364,7 @@ Verify Return Request Delivery Method Selector
     Element Text Should Be    ${returnRequestDeliveryMethodSelectorButton}    CHANGE
 
 Scroll To Return Request Delivery Method Address
-    Scroll To Element In Container    ${returnRequestDeliveryMethodAddress}     ${containerReturnRequest}    20
+    Scroll To Element    ${returnRequestDeliveryMethodAddress}    20     ${containerReturnRequest}
 
 Verify Return Request Delivery Method Address Title
     Element Should Be Visible    ${returnRequestDeliveryMethodAddressTitle}
@@ -383,7 +383,7 @@ Verify Return Request Delivery Method Address Details
     Element Text Should Be    ${returnRequestDeliveryMethodAddressDetailText}    ${expectedAddressDetail}
 
 Scroll To Return Request Contact Detail Section
-    Scroll To Element In Container    ${returnRequestContactDetailSelector}    ${containerReturnRequest}    20
+    Scroll To Element    ${returnRequestContactDetailSelector}    20    ${containerReturnRequest}
 
 Verify Return Request Contact Details Section
     Element Should Be Visible    ${returnRequestContactDetailSelectorTitle}
@@ -407,7 +407,7 @@ Verify Return Request Loading State Not Visible
     Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    ${MIN_TIMEOUT}
 
 Scroll To Return Request Cart Item
-    Scroll To Element In Container    ${cardReturnsRequestItem}     ${containerReturnRequest}    20
+    Scroll To Element    ${cardReturnsRequestItem}    20     ${containerReturnRequest}
 
 Verify Return Request Empty State
     Wait Until Element Is Visible    ${returnRequestEmptyState}    ${MIN_TIMEOUT}
@@ -545,21 +545,21 @@ Click Return Address Incomplete Item
 
 Update Incomplete Address
     [Arguments]    ${name}    ${mobile}    ${street}
-    Clear Text    ${txtRecipientNameMyAcc}
-    Input Text    ${txtRecipientNameMyAcc}    ${name}
-    Clear Text    ${txtRecipientMobileMyAcc}
-    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
+    Clear Text    ${txtRecipientName}
+    Input Text    ${txtRecipientName}    ${name}
+    Clear Text    ${txtRecipientMobile}
+    Input Text    ${txtRecipientMobile}    ${mobile}
     Swipe Up    ${windowScroll}    
     Clear Text    ${txtRecipientComplexMyAcc}
     Input Text    ${txtRecipientComplexMyAcc}    ABC
     Swipe Up    ${windowScroll}
-    Clear Text    ${txtRecipientStreetMyAcc}
-    Input Text    ${txtRecipientStreetMyAcc}    ${street}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Clear Text    ${txtRecipientStreet}
+    Input Text    ${txtRecipientStreet}    ${street}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
     Sleep    10s
-    Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobile}
     Run Keyword If    '${street}'=='""'    Swipe Up    ${windowScroll}
-    Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobile}
     Run Keyword If    '${street}'=='&*'    Swipe Up    ${windowScroll}
 
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20
@@ -622,10 +622,10 @@ Verify Return Success Flow From Return Request
 Add Liquor Return Item To Return Request
     Click Returns Call To Action Button
     Sleep    5s
-    Scroll To Element In Container    ${cardReturnsOrderHistoryItemWithLiquorOption}    ${containerReturnsOrderHistory}    20
+    Scroll To Element    ${cardReturnsOrderHistoryItemWithLiquorOption}    20    ${containerReturnsOrderHistory}
     Click Element    ${cardReturnsOrderHistoryItemWithLiquorOption}
     Sleep    5s
-    Scroll To Element In Container    ${cardReturnsOrderDetailItemWithLiquor}    ${containerReturnsHOrderDetail}    20
+    Scroll To Element    ${cardReturnsOrderDetailItemWithLiquor}    20    ${containerReturnsHOrderDetail}
     Click Element    ${cardReturnsOrderDetailItemWithLiquor}
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item
