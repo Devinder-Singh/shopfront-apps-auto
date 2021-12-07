@@ -602,16 +602,16 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > User with sav
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    dev+3164561@take2.co.za    test
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Verify Return Select Address Item
-    Click Back Screen
-    Verify Toolbar Title   Select Return Method
+    Click Returns Back
+    Verify Returns Screen header   Select Return Method
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Address > QASA-409 > User with no saved addresses
@@ -638,22 +638,20 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Add Address
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    dev+3164561@take2.co.za    test
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Click Return Address Add Option
     Click Residential
     Add Delivery Address My Acc    Tester Residential    0744404494    13 Caro Road
     Sleep    5s
-    Verify Toolbar Title    Log Return Request
-    Scroll To Return Request Return Method Section
-    Scroll To Return Request Delivery Method Selector
+    Verify Returns Screen header    Log Return Request
+    Swipe Up    ${windowScroll}
     Verify Return Request Delivery Method Selector    Takealot to collect from my address
-    Scroll To Return Request Delivery Method Address
     Verify Return Request Delivery Method Address Title
     Verify Return Request Delivery Method Address Details    RESIDENTIAL    Tester Residential    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091
     [Teardown]    Tear Down
@@ -778,34 +776,34 @@ Apps > SS Returns > Request a Return > Select Takealot Pickup Point > QASA-410
     Click Menu
     Click Menu Login
     Login Takealot    dev+3164561@take2.co.za    test
+    Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Click Return Select Delivery Method Pickup Point Option
-    Verify Toolbar Title    Select Takealot Pickup Point
-    Click Back Screen
-    Click Return Select Delivery Method Pickup Point Option
+    Verify Returns Screen header    Select Takealot Pickup Point
     Verify Return Select Delivery Method Pickup Point Item Title
     Verify Return Select Delivery Method Pickup Point Item Subtitle
     Verify Return Select Delivery Method Pickup Point Item Info Button
     Click Return Select Pickup Point Filter Option
     Sleep    1s
-    Verify Toolbar Title    Filter by Province
-    Click Back Screen
+    Verify Returns Screen header    Filter by Province
+    Click Returns Close
     Sleep    1s
-    Verify Toolbar Title    Select Takealot Pickup Point
-    Verify Return Select Pickup Point Province Title    WESTERN CAPE
+    Verify Returns Screen header    Select Takealot Pickup Point
+    Verify Return Select Pickup Point Province Title
+    Sleep    3
     Click Return Select Pickup Point Item Info
-    Verify Return Pickup Point Info Details    Takealot Cape Town Warehouse    Cape Town, Western Cape    Block B, Montague Park Business Estate, Topaz Boulevard, Montague Gardens, Cape Town, 7441    We'll send you an email to confirm your return eligibility. If eligible, you’ll have 7 days to drop-off your return items.
+    Verify Return Pickup Point Info Details    Berea    East London, Eastern Cape    33 Devereux Avenue, East London, 5241    We'll send you an email to confirm your return eligibility. If eligible, you’ll have 7 days to drop-off your return items.
     Verify Return Pickup Point Info Call To Action    SELECT PICKUP POINT
     Click Return Pickup Point Info Call To Action
     Sleep    5s
     Verify Return Request Loading State Not Visible
-    Verify Toolbar Title    Log Return Request
-    Scroll To Return Request Return Method Section
-    Scroll To Return Request Delivery Method Selector
+    Verify Returns Screen header    Log Return Request
+    Swipe Up    ${windowScroll}
     Verify Return Request Delivery Method Selector    I will return the items to a Takealot Pickup Point
-    Verify Returns Call To Action Title    ADD CONTACT DETAILS
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Returns Call To Action Title    ADD CONTACT DETAILS
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Returns Call To Action Title    Add Contact Details
     [Teardown]    Tear Down
 
 Apps > SS Returns > Return Request Submitted > Success (Drop Off) > QASA-407

@@ -140,7 +140,7 @@ ${returnSelectReturnMethodCollectTitle}    chain=**/XCUIElementTypeStaticText[`l
 ${returnSelectAddressAddAddress}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 ${returnSelectAddressItem}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
 ${returnSelectAddressIncompleteItem}    ${EMPTY}
-${returnSelectAddressItemName}    ${EMPTY}
+${returnSelectAddressItemName}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
 ${returnSelectAddressItemEditButton}    ${EMPTY}
 ${returnSelectAddressItemDeleteButton}    ${EMPTY}
 
@@ -157,7 +157,7 @@ ${returnSelectAddressDeleteDialogConfirmationButton}    ${EMPTY}
 ${returnSelectPickupPointItemTitle}    xpath=(//XCUIElementTypeStaticText[@name="viewPickupPointCellTitleLabel"])[1]
 ${returnSelectPickupPointItemSubtitle}    xpath=(//XCUIElementTypeStaticText[@name="viewPickupPointCellSubtitleLabel"])[1]
 ${returnSelectPickupPointItemInfoButton}    xpath=(//XCUIElementTypeStaticText[@name="INFO"])[1]
-${returnSelectPickupPointFilterChangeButton}    ${EMPTY}
+${returnSelectPickupPointFilterChangeButton}    id=selectorChange
 ${returnSelectPickupPointProvinceTitle}    ${EMPTY}
 
 ${returnSelectPickupPointInfoMap}    ${EMPTY}
@@ -166,7 +166,7 @@ ${returnSelectPickupPointInfoTPPProvince}    ${EMPTY}
 ${returnSelectPickupPointInfoTPPAddress}    ${EMPTY}
 ${returnSelectPickupPointInfoBusinessHourContainer}    ${EMPTY}
 ${returnSelectPickupPointInfoNotification}    ${EMPTY}
-${returnSelectPickupPointCallToAction}    ${EMPTY}
+${returnSelectPickupPointCallToAction}    chain=**/XCUIElementTypeButton[`label == "SELECT PICKUP POINT"`]
 
 ${returnContactDetailsNameField}    xpath=//XCUIElementTypeCell[@name="TextFieldCellId"]/XCUIElementTypeTextField
 ${returnContactDetailsMobileNumberField}    xpath=//XCUIElementTypeCell[@name="SharedSingleTextFieldTableViewCellId"]/XCUIElementTypeTextField
