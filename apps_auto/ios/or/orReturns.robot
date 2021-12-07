@@ -140,7 +140,7 @@ ${returnSelectReturnMethodCollectTitle}    chain=**/XCUIElementTypeStaticText[`l
 ${returnSelectAddressAddAddress}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 ${returnSelectAddressItem}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
 ${returnSelectAddressIncompleteItem}    ${EMPTY}
-${returnSelectAddressItemName}    ${EMPTY}
+${returnSelectAddressItemName}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
 ${returnSelectAddressItemEditButton}    ${EMPTY}
 ${returnSelectAddressItemDeleteButton}    ${EMPTY}
 
