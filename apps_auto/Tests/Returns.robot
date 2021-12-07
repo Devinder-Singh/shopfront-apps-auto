@@ -830,7 +830,8 @@ Apps > SS Returns > Return Request Submitted > Success (Collect) > QASA-263
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+738292@take2.co.za    test
+    Login Takealot    dev+7432773@take2.co.za    test
+    Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
     Click Returns Call To Action Button
