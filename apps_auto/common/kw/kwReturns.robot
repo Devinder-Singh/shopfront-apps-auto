@@ -615,16 +615,18 @@ Click Return Address Item Delete
     Click Element    ${returnSelectAddressItemDeleteButton}
 
 Confirm Return Address Item Delete Dialog
-    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogTitle}    30s
-    Element Text Should Be    ${returnSelectAddressDeleteDialogTitle}     Delete Address
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogTitle}    30s
+        Element Text Should Be    ${returnSelectAddressDeleteDialogTitle}     Delete Address
 
-    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogMessage}    30s
-    Element Text Should Be    ${returnSelectAddressDeleteDialogMessage}    Are you sure you want to delete this address?
+        Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogMessage}    30s
+        Element Text Should Be    ${returnSelectAddressDeleteDialogMessage}    Are you sure you want to delete this address?
 
-    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogConfirmationButton}    30s
-    Element Text Should Be    ${returnSelectAddressDeleteDialogConfirmationButton}    DELETE
+        Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogConfirmationButton}    30s
+        Element Text Should Be    ${returnSelectAddressDeleteDialogConfirmationButton}    DELETE
 
-    Click Element    ${returnSelectAddressDeleteDialogConfirmationButton}
+        Click Element    ${returnSelectAddressDeleteDialogConfirmationButton}
+    END
 
 Click Return Address Add Option
     Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s

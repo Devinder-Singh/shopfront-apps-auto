@@ -682,17 +682,18 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Delete Addres
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    dev+3164561@take2.co.za    test
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Verify Return Select Address Item
     Click Return Address Item Delete
+    # we cannot confirm the delete dialogue on iOS as long as https://takealotgroup.atlassian.net/browse/MAQ-852 is not complete as it is cancelled before we can check
     Confirm Return Address Item Delete Dialog
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Address > Incomplete Address > QASA-408
@@ -701,22 +702,21 @@ Apps > SS Returns > Request a Return > Select Address > Incomplete Address > QAS
     Click Menu
     Click Menu Login
     Login Takealot    dev+101@take2.co.za    test
+    Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Click Return Address Incomplete Item
-    Verify Toolbar Title    Edit Delivery Address
+    Verify Returns Screen header    Edit Delivery Address
     Update Incomplete Address    Tester Residential    0744404494    13 Caro Road
     Sleep    5s
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Click Return Address Incomplete Item
     Sleep    5s
-    Scroll To Return Request Return Method Section
-    Scroll To Return Request Delivery Method Selector
+    Swipe Up    ${windowScroll}
     Verify Return Request Delivery Method Selector    Takealot to collect from my address
-    Scroll To Return Request Delivery Method Address
     Verify Return Request Delivery Method Address Title
     [Teardown]    Tear Down
 
