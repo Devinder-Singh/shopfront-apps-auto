@@ -699,7 +699,7 @@ Edit Return Contact Details Input
     Input Text    ${returnContactDetailsMobileNumberField}    ${expectedMobileNumber}
 
 Verify Return Success Details
-    Wait Until Element Is Visible    ${returnSuccessIcon}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${returnSuccessIcon}    ${MIN_TIMEOUT}
 
     Wait Until Element Is Visible    ${returnSuccessTitle}    ${MIN_TIMEOUT}
     Element Text Should Be    ${returnSuccessTitle}    Return Request Submitted
@@ -710,20 +710,22 @@ Verify Return Success Details
     Wait Until Element Is Visible    ${returnSuccessImageContainer}    ${MIN_TIMEOUT}
 
     Wait Until Element Is Visible    ${returnSuccessTrackButton}    ${MIN_TIMEOUT}
-    Element Text Should Be    ${returnSuccessTrackButton}    TRACK RETURN
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnSuccessTrackButton}    TRACK RETURN
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${returnSuccessTrackButton}    Track Return
 
 Click Return Success Track
     Click Element    ${returnSuccessTrackButton}
 
 Verify Return Success Flow From Return Request
-    Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Returns Call To Action Title    Submit Return Request
     Click Returns Call To Action Button
     Sleep    5s
-    Verify Toolbar Title    Return Request Submitted
+    Verify Returns Screen header    Return Request Submitted   
     Verify Return Success Details
     Click Return Success Track
     Sleep    1s
-    Verify Toolbar Title    Returns
+    Verify Returns Screen header    Returns
 
 
 Add Liquor Return Item To Return Request

@@ -171,10 +171,10 @@ ${returnSelectPickupPointCallToAction}    ${EMPTY}
 ${returnContactDetailsNameField}    xpath=//XCUIElementTypeCell[@name="TextFieldCellId"]/XCUIElementTypeTextField
 ${returnContactDetailsMobileNumberField}    xpath=//XCUIElementTypeCell[@name="SharedSingleTextFieldTableViewCellId"]/XCUIElementTypeTextField
 
-${returnSuccessIcon}    ${EMPTY}
-${returnSuccessTitle}    ${EMPTY}
-${returnSuccessSubtitle}    ${EMPTY}
-${returnSuccessImageContainer}    ${EMPTY}
-${returnSuccessTrackButton}    ${EMPTY}
+${returnSuccessIcon}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeImage
+${returnSuccessTitle}    id=viewReturnsSuccessCellTitleLabel
+${returnSuccessSubtitle}    id=viewReturnsSuccessCellSubtileLabel
+${returnSuccessImageContainer}    chain=**/XCUIElementTypeOther[`name == "viewReturnsSuccessCellImageContainer"`]/XCUIElementTypeOther/XCUIElementTypeOther
+${returnSuccessTrackButton}    id=ViewSingleButton
 
 ${btnReturnsCallToAction}    id=ViewSingleButton

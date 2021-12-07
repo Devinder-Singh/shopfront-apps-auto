@@ -814,8 +814,9 @@ Apps > SS Returns > Return Request Submitted > Success (Drop Off) > QASA-407
     Click Menu
     Click Menu Login
     Login Takealot    dev+738292@take2.co.za    test
+    Click Menu My Account
     Click Menu Exchanges And Returns
-    Add Single Return Item To Return Request
+    Add Single Return First Item To Return Request
     Click Returns Call To Action Button
     Click Return Select Delivery Method Pickup Point Option
     Click Return Select Delivery Method Pickup Point Item
