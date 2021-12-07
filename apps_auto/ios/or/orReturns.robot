@@ -141,8 +141,8 @@ ${returnSelectAddressAddAddress}    chain=**/XCUIElementTypeOther[`name == "NavC
 ${returnSelectAddressItem}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
 ${returnSelectAddressIncompleteItem}    ${EMPTY}
 ${returnSelectAddressItemName}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
-${returnSelectAddressItemEditButton}    ${EMPTY}
-${returnSelectAddressItemDeleteButton}    ${EMPTY}
+${returnSelectAddressItemEditButton}    chain=**/XCUIElementTypeStaticText[`label == "EDIT"`][1]
+${returnSelectAddressItemDeleteButton}    chain=**/XCUIElementTypeStaticText[`label == "DELETE"`][1]
 
 ${returnSelectAddressInputNotification}    ${EMPTY}
 

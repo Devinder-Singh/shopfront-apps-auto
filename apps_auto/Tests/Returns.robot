@@ -661,20 +661,20 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Edit Address
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    dev+3164561@take2.co.za    test
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Verify Return Select Address Item
     Click Return Address Item Edit
-    Verify Toolbar Title    Edit Delivery Address
-    Edit Delivery Address Mobile Number    0744484494
+    Verify Returns Screen header    Edit Delivery Address
+    Swipe Up    ${windowScroll}
     Click Save Address
     Sleep    2s
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Address > QASA-409 > Delete Address
