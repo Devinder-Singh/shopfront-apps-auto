@@ -638,22 +638,20 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Add Address
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    dev+3164561@take2.co.za    test
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
     Click Returns Call To Action Button
     Click Return Select Return Method Address
-    Verify Toolbar Title    Select Address
+    Verify Returns Screen header    Select Address
     Click Return Address Add Option
     Click Residential
     Add Delivery Address My Acc    Tester Residential    0744404494    13 Caro Road
     Sleep    5s
-    Verify Toolbar Title    Log Return Request
-    Scroll To Return Request Return Method Section
-    Scroll To Return Request Delivery Method Selector
+    Verify Returns Screen header    Log Return Request
+    Swipe Up    ${windowScroll}
     Verify Return Request Delivery Method Selector    Takealot to collect from my address
-    Scroll To Return Request Delivery Method Address
     Verify Return Request Delivery Method Address Title
     Verify Return Request Delivery Method Address Details    RESIDENTIAL    Tester Residential    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091
     [Teardown]    Tear Down

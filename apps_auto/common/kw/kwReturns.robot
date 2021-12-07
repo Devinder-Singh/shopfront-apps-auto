@@ -468,14 +468,22 @@ Verify Return Request Delivery Method Address Title
 Verify Return Request Delivery Method Address Details
     [Arguments]    ${expectedPillTitle}    ${expectedRecipientName}    ${expectedAddressDetail}
     
-    Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressTypePill}    30s
-    Element Text Should Be    ${returnRequestDeliveryMethodAddressTypePill}    ${expectedPillTitle}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressTypePill}    30s
+        Element Text Should Be    ${returnRequestDeliveryMethodAddressTypePill}    ${expectedPillTitle}
 
-    Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressRecipientName}    30s
-    Element Text Should Be    ${returnRequestDeliveryMethodAddressRecipientName}    ${expectedRecipientName}
+        Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressRecipientName}    30s
+        Element Text Should Be    ${returnRequestDeliveryMethodAddressRecipientName}    ${expectedRecipientName}
 
-    Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressDetailText}    30s
-    Element Text Should Be    ${returnRequestDeliveryMethodAddressDetailText}    ${expectedAddressDetail}
+        Wait Until Element Is Visible    ${returnRequestDeliveryMethodAddressDetailText}    30s
+        Element Text Should Be    ${returnRequestDeliveryMethodAddressDetailText}    ${expectedAddressDetail}
+    ELSE IF     '${PLATFORM_NAME}' == 'ios'
+        Verify Text On Screen    ${expectedPillTitle}    ${MIN_TIMEOUT}
+        Verify Text On Screen    ${expectedRecipientName}    ${MIN_TIMEOUT}
+        Verify Text On Screen    ${expectedAddressDetail}    ${MIN_TIMEOUT}
+    END
+
+    
 
 Scroll To Return Request Contact Detail Section
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Scroll To Element    ${returnRequestContactDetailSelector}    20    ${containerReturnRequest}
