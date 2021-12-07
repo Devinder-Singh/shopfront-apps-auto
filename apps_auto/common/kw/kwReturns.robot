@@ -565,10 +565,12 @@ Click Return Select Pickup Point Filter Option
     Click Element    ${returnSelectPickupPointFilterChangeButton}
 
 Verify Return Select Pickup Point Province Title
-    [Arguments]    ${expectedTitle}
-
-    Wait Until Element Is Visible    ${returnSelectPickupPointProvinceTitle}    30s
-    Element Text Should Be    ${returnSelectPickupPointProvinceTitle}    ${expectedTitle}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${returnSelectPickupPointProvinceTitle}    30s
+        Element Text Should Be    ${returnSelectPickupPointProvinceTitle}    WESTERN CAPE
+    ELSE IF     '${PLATFORM_NAME}' == 'ios'
+        Verify Text On Screen    Eastern Cape     5s
+    END
 
 Click Return Select Pickup Point Item Info
     Click Element    ${returnSelectPickupPointItemInfoButton}
@@ -576,20 +578,32 @@ Click Return Select Pickup Point Item Info
 Verify Return Pickup Point Info Details
     [Arguments]    ${expectedName}    ${expectedProvince}    ${expectedAddress}    ${expectedNotificationMessage}
 
-    Wait Until Element Is Visible    ${returnSelectPickupPointInfoMap}    30s
-    Wait Until Element Is Visible    ${returnSelectPickupPointInfoBusinessHourContainer}    30s
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${returnSelectPickupPointInfoMap}    30s
+        Wait Until Element Is Visible    ${returnSelectPickupPointInfoBusinessHourContainer}    30s
 
-    Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPName}    30s
-    Element Text Should Be    ${returnSelectPickupPointInfoTPPName}    ${expectedName}
+        Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPName}    30s
+        Element Text Should Be    ${returnSelectPickupPointInfoTPPName}    ${expectedName}
 
-    Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPProvince}    30s
-    Element Text Should Be    ${returnSelectPickupPointInfoTPPProvince}    ${expectedProvince}
+        Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPProvince}    30s
+        Element Text Should Be    ${returnSelectPickupPointInfoTPPProvince}    ${expectedProvince}
 
-    Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPAddress}    30s
-    Element Text Should Be    ${returnSelectPickupPointInfoTPPAddress}    ${expectedAddress}
+        Wait Until Element Is Visible    ${returnSelectPickupPointInfoTPPAddress}    30s
+        Element Text Should Be    ${returnSelectPickupPointInfoTPPAddress}    ${expectedAddress}
 
-    Wait Until Element Is Visible    ${returnSelectPickupPointInfoNotification}    30s
-    Element Text Should Be    ${returnSelectPickupPointInfoNotification}    ${expectedNotificationMessage}
+        Wait Until Element Is Visible    ${returnSelectPickupPointInfoNotification}    30s
+        Element Text Should Be    ${returnSelectPickupPointInfoNotification}    ${expectedNotificationMessage}
+    ELSE IF     '${PLATFORM_NAME}' == 'ios'
+        Verify Text On Screen    ${returnSelectPickupPointInfoTPPName}     5s
+        Verify Text On Screen    ${returnSelectPickupPointInfoTPPProvince}     5s
+        Verify Text On Screen    ${returnSelectPickupPointInfoTPPAddress}    5s
+        Verify Text On Screen    ${returnSelectPickupPointInfoNotification}     5s
+    END
+
+
+    
+
+    # Verify Return Pickup Point Info Details    Takealot Cape Town Warehouse    Cape Town, Western Cape    
 
 Verify Return Pickup Point Info Call To Action
     [Arguments]    ${expectedTitle}
@@ -719,11 +733,11 @@ Verify Return Success Flow From Return Request
     Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
     Click Returns Call To Action Button
     Sleep    5s
-    Verify Toolbar Title    Return Request Submitted
+    Verify Returns Screen header    Return Request Submitted
     Verify Return Success Details
     Click Return Success Track
     Sleep    1s
-    Verify Toolbar Title    Returns
+    Verify Returns Screen header    Returns
 
 
 Add Liquor Return Item To Return Request
