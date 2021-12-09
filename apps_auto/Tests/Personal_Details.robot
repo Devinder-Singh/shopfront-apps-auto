@@ -28,12 +28,7 @@ Apps > Personal Details Parity > Update Personal Details - Edit First & Last Nam
     Click Menu My Account
     Click Menu Personal Detail
     Update Personal Detail Name    AutoTester
-#    Click Menu Personal Detail
     Update Personal Detail LastName    Tester
-#    Click Menu Personal Detail
-#    Click Back Screen
-#    Click Menu Personal Detail
-#    Update Personal Detail LastName    Tester
     Clear Personal Detail
     Verify Text On Screen    Please enter your first name    5s
     Verify Text On Screen    Please enter your last name    1s
@@ -49,7 +44,6 @@ Apps > Personal Details Parity > Update Personal Details - Mobile Number - QASA-
     Click Menu My Account
     Click Menu Personal Detail
     Update Personal Detail Mobile    662327661
-#    Click Menu Personal Detail
     Clear Personal Detail Mobile
     Verify Text On Screen    Please enter a valid mobile number    5s
     [Teardown]    Tear Down

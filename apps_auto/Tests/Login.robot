@@ -61,8 +61,6 @@ Apps > Login > Forgot Password - QASA-508
     Click Menu Logout
     Click Menu
     Click Menu Login
-#    Login Takealot Forgot Password    take2@yahoo.com
-#    Verify Text On Screen    We're sorry. We weren't able to identify you given the information provided    ${MIN_TIMEOUT}
     Login Takealot Forgot Password    ${G_EMAIL}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    An email has been sent to your email address with further instructions    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Reset instructions have been sent to the entered email address    ${MIN_TIMEOUT}

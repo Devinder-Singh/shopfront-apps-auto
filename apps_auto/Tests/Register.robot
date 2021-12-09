@@ -29,7 +29,6 @@ Android > Register New User > Existing user validation - QASA-441
     Click Back iOS    Cancel
     Click Menu Register
     Register Takealot Unverify    AutoTest    Test    ${G_EMAIL}    ${G_PASSWORD}
-#    Verify Text On Screen    The email address is already registered on takealot    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Android > Register New User - QASA-200
