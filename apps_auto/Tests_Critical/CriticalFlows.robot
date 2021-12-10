@@ -1,6 +1,5 @@
 *** Settings ***
 Default Tags      critical
-#Suite Setup    Install Application  
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
@@ -61,7 +60,6 @@ Buy Daily Deal Item on Delivery using Credit Card
     Click Menu
     Click Menu Daily Deals
     Click Daily Deals Product from API
-#    Click Product Daily Deals
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -91,7 +89,6 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Wishlist Add To Cart    ${False}
     Click Back iOS    My Lists
     Click Home Cart
-#    Click Cart
     Click Checkout
     Click Delivery
     Click Add Delivery Address
@@ -160,7 +157,6 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Back Delivery Android
     Click Back Delivery iOS
     Click Back iOS    My Account
-#    Click Back Android
     Click Home
     Click Search Home
     Search Product    Pencil
