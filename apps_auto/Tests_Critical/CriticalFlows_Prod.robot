@@ -48,7 +48,7 @@ Search and Buy Item on Delivery using Credit Card
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product from API
+    Click Product from API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -151,7 +151,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product from API
+    Click Product from API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
