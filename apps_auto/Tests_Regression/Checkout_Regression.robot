@@ -381,6 +381,7 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QASA
     Get Address Coordinates
     [Teardown]    Tear Down
 
+#TODO
 Checkout - Delivery Address - Address Form Validation - QASA-600
     [Tags]    QASA-600
     [Setup]    Start Application    ${False}
@@ -437,7 +438,7 @@ Checkout - Delivery Address - Address Form Validation - QASA-600
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    ${EMPTY}    %^    &*
+    Add Delivery Address    ${EMPTY}    %^    &*
     Verify Text On Screen    Please enter the recipient's name    10s
     Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    2s
 #    Verify Text On Screen    Please enter the street address    2s

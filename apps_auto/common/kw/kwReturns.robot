@@ -654,21 +654,21 @@ Click Return Address Incomplete Item
 
 Update Incomplete Address
     [Arguments]    ${name}    ${mobile}    ${street}
-    Clear Text    ${txtRecipientNameMyAcc}
-    Input Text    ${txtRecipientNameMyAcc}    ${name}
-    Clear Text    ${txtRecipientMobileMyAcc}
-    Input Text    ${txtRecipientMobileMyAcc}    ${mobile}
+    Clear Text    ${txtRecipientName}
+    Input Text    ${txtRecipientName}    ${name}
+    Clear Text    ${txtRecipientMobile}
+    Input Text    ${txtRecipientMobile}    ${mobile}
     Swipe Up    ${windowScroll}    
     Clear Text    ${txtRecipientComplexMyAcc}
     Input Text    ${txtRecipientComplexMyAcc}    ABC
     Swipe Up    ${windowScroll}
-    Clear Text    ${txtRecipientStreetMyAcc}
-    Input Text    ${txtRecipientStreetMyAcc}    ${street}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreetMyAcc}
+    Clear Text    ${txtRecipientStreet}
+    Input Text    ${txtRecipientStreet}    ${street}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${txtRecipientStreet}
     Sleep    10s
-    Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='""'    Click Element    ${txtRecipientMobile}
     Run Keyword If    '${street}'=='""'    Swipe Up    ${windowScroll}
-    Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobileMyAcc}
+    Run Keyword If    '${street}'=='&*'    Click Element    ${txtRecipientMobile}
     Run Keyword If    '${street}'=='&*'    Swipe Up    ${windowScroll}
 
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Press Keycode    20

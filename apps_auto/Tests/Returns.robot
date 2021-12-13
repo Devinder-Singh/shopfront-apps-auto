@@ -647,7 +647,7 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Add Address
     Verify Returns Screen header    Select Address
     Click Return Address Add Option
     Click Residential
-    Add Delivery Address My Acc    Tester Residential    0744404494    13 Caro Road
+    Add Delivery Address    Tester Residential    0744404494    13 Caro Road
     Sleep    5s
     Verify Returns Screen header    Log Return Request
     Swipe Up    ${windowScroll}
