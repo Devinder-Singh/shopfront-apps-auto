@@ -46,11 +46,9 @@ Apps > Order Refactor > Order History > Display Results
 
 Apps > Order Refactor > Order History > Awaiting Payment Order
     [Tags]    QASA-367
-    [Setup]    Start Application
-    
+    [Setup]    Start Application    
     ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
-
     Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
