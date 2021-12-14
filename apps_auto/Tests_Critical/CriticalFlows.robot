@@ -112,7 +112,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Search Home
     Search Product    Fridg
     Click Product from API
-    Verify Delivery Surcharge    + R 100 Delivery Surcharge
+    Verify Delivery Surcharge    + R 200 Delivery Surcharge
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
