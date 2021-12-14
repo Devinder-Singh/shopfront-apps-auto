@@ -100,7 +100,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Search Home
     Search Product    Fridg
     Click Product from API
-    Verify Delivery Surcharge    + R 100 Delivery Surcharge
+    Verify Delivery Surcharge    + R 200 Delivery Surcharge
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
@@ -211,7 +211,7 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API
+    Click Variant Product from API    2
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -248,7 +248,7 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API
+    Click Variant Product from API    2
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
