@@ -8,7 +8,7 @@ Apps > SS Returns > Returns UI (User without Returns History) > QA-5438
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -24,7 +24,7 @@ Apps > SS Returns > Returns UI (User with Returns History) > QA-9256
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -46,7 +46,7 @@ Apps > SS Returns > Request a Return > Select Order > QA-5429
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -78,7 +78,7 @@ Apps > SS Returns > Request a Return > Select Return Item > QA-5430
     [Setup]    Start Application    ${False}     # note we are using this as a workaround until https://takealotgroup.atlassian.net/browse/MAQ-852 is complete
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -116,7 +116,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Steps 1,2 and 3
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -145,7 +145,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 4
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -166,7 +166,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 5
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+1197895@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -189,7 +189,7 @@ Apps > SS Returns > Return Reason > Form Validation > QA-8339 > Step 6
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+286661@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -211,7 +211,7 @@ Apps > SS Returns > Request a Return > Log Return Request > QASA-78
     [Setup]    Start Application    ${False}
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -234,7 +234,7 @@ Apps > SS Returns > Request a Return > Log Return Request > QASA-78
     Verify Returns Request Item Price And Qty
     Verify Returns Request Item Reason Title
     Verify Returns Request Item Preferred Outcome Title
-    Swipe Returns Request Item For Delete
+    Swipe Returns Request Item Left Partially By Index    1
     Tap Delete Button
     Verify Returns Request Delete Dialog
     Click Returns Request Delete Dialog Keep Option
@@ -254,7 +254,7 @@ Apps > SS Returns > Request a Return > Log Return Request > QASA-257
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -271,12 +271,12 @@ Apps > SS Returns > Request a Return > Log Return Request > QASA-257
     Verify Return Request Delivery Method Address Title
     Verify Return Request Contact Details Section
     Swipe Down    ${windowScroll}
-    Swipe Returns Request Item For Delete
+    Swipe Returns Request Item Left Partially By Index    1
     Tap Delete Button
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Loading State Not Visible
     Swipe Down    ${windowScroll}
-    Swipe Returns Request Item For Delete
+    Swipe Returns Request Item Left Partially By Index    1
     Tap Delete Button
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Empty State
@@ -289,7 +289,7 @@ Apps > SS Returns > Log Return Request > Collect > QA-5436
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+952005@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -331,7 +331,7 @@ Apps > SS Returns > Log Return Request > Drop-off > QA-5435
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3290349@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -363,11 +363,11 @@ Apps > SS Returns > Log Return Request > Drop-off > QA-5435
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Log Return Request (Not eligible for Drop-Off) > QA-9640
-    [Tags]    data    QA-9640
+    [Tags]    QA-9640
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+959728@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -381,11 +381,11 @@ Apps > SS Returns > Request a Return > Log Return Request (Not eligible for Drop
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop off & Collect are available
-    [Tags]    data    QASA-416
+    [Tags]    QASA-416
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -400,11 +400,11 @@ Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop off & Coll
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-off is available
-    [Tags]    data    QASA-416
+    [Tags]    QASA-416
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+431155@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -418,11 +418,11 @@ Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-off is ava
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT available > Liquor
-    [Tags]    data    QASA-416
+    [Tags]    QASA-416
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3539805@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -436,11 +436,11 @@ Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT av
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT available > White goods
-    [Tags]    data    QASA-416
+    [Tags]    QASA-416
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+4982402@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -455,11 +455,11 @@ Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT av
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT available > Dropoff eligible and Non-Dropoff eligible
-    [Tags]    data    QASA-416
+    [Tags]    QASA-416
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3539805@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -483,11 +483,11 @@ Apps > SS Returns > Select Return Method > Drop off > QASA-416 > Drop-Off NOT av
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Collect > QASA-415 > Liquor
-    [Tags]    data    QASA-416
+    [Tags]    QASA-416
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3539805@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -502,11 +502,11 @@ Apps > SS Returns > Select Return Method > Collect > QASA-415 > Liquor
 
 
 Apps > SS Returns > Select Return Method > Collect > QASA-415 > White good
-    [Tags]    data    QASA-416
+    [Tags]    QASA-416
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+4982402@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Verify Returns Menu Item
     Click Menu Exchanges And Returns
@@ -520,11 +520,11 @@ Apps > SS Returns > Select Return Method > Collect > QASA-415 > White good
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Return Method Invalid (Add item) > QASA-93
-    [Tags]    data    QASA-93
+    [Tags]    QASA-93
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3539805@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return First Item To Return Request
@@ -550,20 +550,20 @@ Apps > SS Returns > Select Return Method > Return Method Invalid (Add item) > QA
     Verify Returns Screen header    Log Return Request
     Verify Return Request Loading State Not Visible
     Verify Return Request Return Method Header Is Not Present
-    Swipe Returns Request Item For Delete
+    Swipe Returns Request Item Left Fully By Index    1
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Loading State Not Visible
-    Swipe Returns Request Item For Delete   
+    Swipe Returns Request Item Left Fully By Index    1   
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Loading State Not Visible
     [Teardown]    Tear Down
 
 Apps > SS Returns > Select Return Method > Return Method Invalid (Remove Item) > QASA-90
-    [Tags]    data    QASA-90
+    [Tags]    QASA-90
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+4704435@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -588,21 +588,21 @@ Apps > SS Returns > Select Return Method > Return Method Invalid (Remove Item) >
     Click Return Select Address Item
     Verify Toolbar Title    Log Return Request
     Verify Return Request Loading State Not Visible
-    Swipe Returns Request Item For Delete
+    Swipe Returns Request Item Left Fully By Index    1
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Loading State Not Visible
     Verify Return Request Return Method Header Is Not Present
-    Swipe Returns Request Item For Delete
+    Swipe Returns Request Item Left Fully By Index    1    2s
     Click Returns Request Delete Dialog Remove Option
     Verify Return Request Loading State Not Visible
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Address > QASA-409 > User with saved addresses
-    [Tags]    data    QASA-409
+    [Tags]    QASA-409
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3164561@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -615,11 +615,11 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > User with sav
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Address > QASA-409 > User with no saved addresses
-    [Tags]    data    QASA-409
+    [Tags]    QASA-409
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+102@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -634,11 +634,11 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > User with no 
 
 
 Apps > SS Returns > Request a Return > Select Address > QASA-409 > Add Address
-    [Tags]    data    QASA-409
+    [Tags]    QASA-409
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3164561@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -657,11 +657,11 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Add Address
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Address > QASA-409 > Edit Address
-    [Tags]    data    QASA-409
+    [Tags]    QASA-409
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3164561@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -678,11 +678,11 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Edit Address
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Address > QASA-409 > Delete Address
-    [Tags]    data    QASA-409
+    [Tags]    QASA-409
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3164561@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -697,11 +697,11 @@ Apps > SS Returns > Request a Return > Select Address > QASA-409 > Delete Addres
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Address > Incomplete Address > QASA-408
-    [Tags]    data    QASA-408
+    [Tags]    QASA-408
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+101@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -721,11 +721,11 @@ Apps > SS Returns > Request a Return > Select Address > Incomplete Address > QAS
     [Teardown]    Tear Down
 
 Apps > SS Returns > SMS Contact Details (Collect) > QASA-258
-    [Tags]    data    QASA-258
+    [Tags]    QASA-258
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3164561@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -753,11 +753,11 @@ Apps > SS Returns > SMS Contact Details (Collect) > QASA-258
     [Teardown]    Tear Down
 
 Apps > SS Returns > SMS Contact Details (Drop-Off) > QASA-65
-    [Tags]    data    QASA-65
+    [Tags]    QASA-65
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3164561@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -771,11 +771,11 @@ Apps > SS Returns > SMS Contact Details (Drop-Off) > QASA-65
     [Teardown]    Tear Down
 
 Apps > SS Returns > Request a Return > Select Takealot Pickup Point > QASA-410
-    [Tags]    data    QASA-410
+    [Tags]    QASA-410
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+3164561@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request
@@ -807,11 +807,11 @@ Apps > SS Returns > Request a Return > Select Takealot Pickup Point > QASA-410
     [Teardown]    Tear Down
 
 Apps > SS Returns > Return Request Submitted > Success (Drop Off) > QASA-407
-    [Tags]    data    QASA-407
+    [Tags]    QASA-407
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+738292@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return First Item To Return Request
@@ -826,11 +826,11 @@ Apps > SS Returns > Return Request Submitted > Success (Drop Off) > QASA-407
     [Teardown]    Tear Down
 
 Apps > SS Returns > Return Request Submitted > Success (Collect) > QASA-263
-    [Tags]    data    QASA-263
+    [Tags]    QASA-263
     [Setup]    Start Application
     Click Menu
     Click Menu Login
-    Login Takealot    dev+7432773@take2.co.za    test
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Exchanges And Returns
     Add Single Return Item To Return Request

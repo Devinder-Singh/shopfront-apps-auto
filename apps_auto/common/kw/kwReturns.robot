@@ -354,16 +354,33 @@ Verify Returns Request Item Preferred Outcome Title
     Wait Until Element Is Visible    ${cardReturnsRequestItemPreferredOutcomeTitle}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsRequestItemPreferredOutcomeTitle}    Preferred Outcome:
 
-Swipe Returns Request Item For Delete
-    ${cardItemSize}=    Get Element Size    ${cardReturnsRequestItem}
-    ${cardItemLocation}=    Get Element Location    ${cardReturnsRequestItem}
-    ${startPositionX}=    Evaluate    ${cardItemLocation['x']} + (${cardItemSize['width']} * 0.5)
-    ${startPositionY}=    Evaluate    ${cardItemLocation['y']} + 0
-    ${endPositionX}=    Evaluate    ${startPositionX} - (${cardItemSize['width']} * 0.5)
-    ${endPositionY}=    Evaluate    ${cardItemLocation['y']} + 0
+Swipe Returns Request Item Left Partially By Index
+    [Documentation]    This keyword will swipe a returns request item card left partially based on a specified index dynamically.
+                       ...    Example parsing 1 will result in the first cart item card being swiped.
+    [Arguments]    ${returnsRequestItemIndex}    ${sleepBeforeAction}=1s
+    Sleep    ${sleepBeforeAction}
 
-    Swipe    ${startPositionX}    ${startPositionY}    ${endPositionX}    ${endPositionY}
-#    Sleep    5s
+    ${dynamicReturnsRequestlocator}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicReturnsRequestlocator}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/returns_request_cart_item_root'])[${returnsRequestItemIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicReturnsRequestlocator}=    Set Variable    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[${returnsRequestItemIndex}]
+    END
+    Swipe Left Partially    ${dynamicReturnsRequestlocator}    swipeSpeed=1500
+
+Swipe Returns Request Item Left Fully By Index
+    [Documentation]    This keyword will swipe a returns request item card left fully based on a specified index dynamically.
+                       ...    Example parsing 1 will result in the first cart item card being swiped.
+    [Arguments]    ${returnsRequestItemIndex}    ${sleepBeforeAction}=1s
+    Sleep    ${sleepBeforeAction}
+    
+    ${dynamicReturnsRequestlocator}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicReturnsRequestlocator}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/returns_request_cart_item_root'])[${returnsRequestItemIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicReturnsRequestlocator}=    Set Variable    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[${returnsRequestItemIndex}]
+    END
+    Swipe Left Fully    ${dynamicReturnsRequestlocator}    swipeSpeed=1500
 
 Tap Delete Button
     Sleep    1
@@ -394,6 +411,8 @@ Click Returns Request Delete Dialog Keep Option
     Click Element    ${returnsRequestDialogNegativeActionButton}
 
 Click Returns Request Delete Dialog Remove Option
+    [Arguments]    ${sleepBeforeAction}= 2s
+    Sleep    ${sleepBeforeAction}
     Click Element    ${returnsRequestDialogPositiveActionButton}
 
 Click Returns Request Cart Item
