@@ -78,3 +78,15 @@ Select Order History Filter Option
     END
     Wait Until Element Is Visible    ${filterOptionToSelect}    ${MIN_TIMEOUT}
     Click Element    ${filterOptionToSelect}
+
+Verify Order Status By Index
+    [Documentation]    This keyword will verify an order status based on its index.
+    [Arguments]        ${statusText}    ${orderIndex}
+    ${orderWithStatusByindex}=    Set Variable    ${None}
+    
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${orderWithStatusByindex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle' and @text='${statusText}'])[${orderIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${orderWithStatusByindex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${statusText}"`][${orderIndex}]    
+    END
+    Verify Element On Screen    ${orderWithStatusByindex}    ${MIN_TIMEOUT}
