@@ -211,7 +211,7 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API    1
+    Click Variant Product from API
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -248,7 +248,7 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API    1
+    Click Variant Product from API
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
