@@ -172,7 +172,7 @@ Swipe Cart Item Left
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${dynamicCartItemXpath}=    Set Variable    chain=**/XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeOther[${cartItemIndex}]
     END
-    Swipe Left    ${dynamicCartItemXpath}    swipeSpeed=1500
+    Swipe Left Partially    ${dynamicCartItemXpath}    swipeSpeed=1500
 
 Click Cart Move To Wishlist
     [Documentation]    This keyword will click the "Move to wishlist" canvas element relative to an open cart item card by index.
