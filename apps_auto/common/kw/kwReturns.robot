@@ -356,7 +356,7 @@ Verify Returns Request Item Preferred Outcome Title
 
 Swipe Returns Request Item Left Partially By Index
     [Documentation]    This keyword will swipe a returns request item card left partially based on a specified index dynamically.
-                       ...    Example parsing 1 will result in the first cart item card being swiped.
+                       ...    Example parsing 1 will result in the first item card being swiped.
     [Arguments]    ${returnsRequestItemIndex}    ${sleepBeforeAction}=1s
     Sleep    ${sleepBeforeAction}
 
@@ -370,7 +370,7 @@ Swipe Returns Request Item Left Partially By Index
 
 Swipe Returns Request Item Left Fully By Index
     [Documentation]    This keyword will swipe a returns request item card left fully based on a specified index dynamically.
-                       ...    Example parsing 1 will result in the first cart item card being swiped.
+                       ...    Example parsing 1 will result in the first item card being swiped.
     [Arguments]    ${returnsRequestItemIndex}    ${sleepBeforeAction}=1s
     Sleep    ${sleepBeforeAction}
     
