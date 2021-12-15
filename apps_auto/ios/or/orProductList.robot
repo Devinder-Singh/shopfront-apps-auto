@@ -1,6 +1,6 @@
 *** Variables ***
-${imgProductDeals}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]/XCUIElementTypeOther
-${imgProductDealsDept}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[4]
+${imgProductDeals}    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]/XCUIElementTypeOther
+${imgProductDealsDept}    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]
 
 ${lblProduct}     id=$productText
 
@@ -11,11 +11,11 @@ ${btnProductFilter}      chain=**/XCUIElementTypeButton[`label CONTAINS "Filter"
 ${btnProductSearchFilter}      chain=**/XCUIElementTypeButton[`label CONTAINS "Filter"`]
 ${btnProductSearchSort}      chain=**/XCUIElementTypeButton[`label == "Sort"`]
 
-${btnProductWishlist}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]
+${btnProductWishlist}      chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]/XCUIElementTypeOther/XCUIElementTypeOther[2]
 
-${btnProductListView}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView
+${btnProductListView}      chain=**/XCUIElementTypeCollectionView
 
-${lnkPLPSellerDeals}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]
+${lnkPLPSellerDeals}    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]
 
 ${btnProductGridView}      chain=**/XCUIElementTypeButton[`label == "icon list"`]
 ${btnProductIconClose}      chain=**/XCUIElementTypeButton[`label == "icon close"`]
