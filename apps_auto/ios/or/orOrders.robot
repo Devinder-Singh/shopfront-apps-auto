@@ -7,3 +7,4 @@ ${btnOrdersCancelConfirm}      id=Cancel Order
 ${txtDigitalDeliveryMethod}      chain=**/XCUIElementTypeStaticText[`label == "Digital Delivery"`][1]
 ${txtDigitalShippingAddress}      chain=**/XCUIElementTypeStaticText[`label == "Digital Delivery"`][2]
 ${btnFilterOptionChange}    chain=**/XCUIElementTypeStaticText[`label == "Change"`]
+${txtShipped}        id=SHIPPED
