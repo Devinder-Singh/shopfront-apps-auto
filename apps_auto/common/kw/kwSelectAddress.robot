@@ -11,27 +11,17 @@ Click Address Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnAddress}
 
 Click Pickup Point
+    [Arguments]    ${point}=Takealot Cape Town Warehouse
+
     Wait Until Element Is Visible    ${txtFilterProvince}    ${MIN_TIMEOUT}
 
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    25
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
-        
-        IF    ${chkProdVisible} == ${True}
-            Exit For Loop
-        END
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${point}'`]
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${txtProduct}=    Set Variable    xpath=//*[contains(@text, '${point}')]
     END
-    Click Element    ${btnPickupPoint}
-#    Sleep    3s
-#    ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${btnPickupPoint}
-#    Run Keyword If    ${chkProdVisible}==${True}    Click Element    ${btnPickupPoint}
 
-Click Pickup Point Brackenfell
-    Wait Until Element Is Visible    ${btnPickupPointBrackenfell}    ${MIN_TIMEOUT}
-    Click Element    ${btnPickupPointBrackenfell}
+    Click Element On Scroll    ${txtProduct}    25
 
 Click Pickup Point Info
     Wait Until Element Is Visible    ${txtInfoAddress}    ${MIN_TIMEOUT}

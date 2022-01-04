@@ -42,6 +42,8 @@ Resource          ../../${PLATFORM_NAME}/or/orCreditRefunds.robot
 Resource          ../../${PLATFORM_NAME}/or/orCartUpdate.robot
 Resource          ../../${PLATFORM_NAME}/or/orCommon.robot
 Resource          ../../${PLATFORM_NAME}/or/orReturns.robot
+Resource          ../../${PLATFORM_NAME}/or/orPaymentPayfast.robot
+Resource          ../../${PLATFORM_NAME}/or/orOrderDetail.robot
 Resource          ../../android/or/orWeb.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
@@ -94,6 +96,9 @@ Resource          ../kw/kwWeb.robot
 Resource          ../kw/kwCartUpdate.robot
 Resource          ../kw/kwToolbar.robot
 Resource          ../kw/kwReturns.robot
+Resource          ../kw/kwOrderDetail.robot
+Resource          ../kw/kwPayWithCreditCard.robot
+Resource          ../kw/kwPaymentPayfast.robot
 Library           TalLibrary
 Library           String
 Library           Collections

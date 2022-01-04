@@ -18,6 +18,7 @@ ${address_Body_Business}    { "email": "take2Automation+201905213934@gmail.com",
 
 ${voucher_URL}    http://tal-test-data-service.master.env/execute_query_voucher_service
 ${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-12-31' and DateUsed is null limit 1" }
+${voucher_Body_Expired}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired < '2021-11-18' and DateUsed is null limit 1" }
 
 ${wishlist_URL}    http://tal-test-data-service.master.env/add_customer_wishlists
 ${Add_cart_URL}       http://tal-test-data-service.master.env/add_to_cart
@@ -30,6 +31,8 @@ ${items_Body_tv}    {"products":[{"id":87365581,"quantity":1,"enhancedEcommerceA
 
 ${items_URL_Delete}    ${APP_ENVIRONMENT}rest/v-1-10-0/customers/4933405/cart/items
 ${items_Body_Delete_any}    {"products":[{"id":94086375}]}
+
+${createNewOrderEndpoint}=    http://tal-test-data-service.master.env/create_new_order
 
 ${envMaster}    http://api.master.env
 ${envProd}    https://api.takealot.com
@@ -863,6 +866,13 @@ Get Payment Voucher Number
     Set Global Variable    ${query_result_voucher}    ${query_result}
     [return]    ${query_result_voucher}
 
+Get Payment Voucher Number Expired
+    Post    ${voucher_URL}    ${voucher_Body_Expired}
+    Integer    response status    200
+    ${query_result}=    Output    $[0].VoucherCode
+    Set Global Variable    ${query_result_voucher}    ${query_result}
+    [return]    ${query_result_voucher}
+
 Get First Sort Product
     [Arguments]    ${sort}
 
@@ -1038,14 +1048,10 @@ Get Product Daily Deals Slug
     ${index}=    Set Variable    0
     ${searchResult}=    Set Variable    ''
     FOR    ${result}    IN    @{results}
-        Output    ${result}
-        ${searchResult}=    Run Keyword If    "${result}"=='Daily Deals'    Output    $.response[${index}].promotion_id
-
-        Run Keyword If
-            ...    '${searchResult}'!='None'
-            ...    Exit For Loop
-
-        ${searchResult}=    Set Variable    ''
+        IF    '''${result}'''=='Daily Deals'
+            ${searchResult}=    Output    $.response[${index}].promotion_id
+            Exit For Loop
+        END
         ${index}=    Evaluate    ${index} + 1
     END
     Should Be True    '${results}[${index}]'=='Daily Deals'
@@ -1268,7 +1274,9 @@ Get Daily Deals Product to Add To Cart
 
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${objTitle}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${objTitle}']
         Set Global Variable    ${query_result_CartFilterProduct}    ${objTitle}
-        Exit For Loop If    '${objVariant}'=='False'
+
+        ${chkTextSuccess}=    Run Keyword And Return Status    Should Not Contain    ${objTitle}    TV
+        Exit For Loop If    ${chkTextSuccess}==${True} and '${objVariant}'=='False'
 
         ${searchResult}=    Set Variable    0
         ${index}=    Evaluate    ${index} + 1
@@ -1277,7 +1285,7 @@ Get Daily Deals Product to Add To Cart
     Should Be True    ${cnt}>1
     [return]    ${searchResult}
 
-Search Product And Return Product Id
+Search And Return Product Id API
     [Documentation]    This keyword will call the search API and return the first item matching product id.
                         ...    Note that this API call is simulating a user searching within the home search
                         ...    and returning matching results. In this case the first item that matches id will
@@ -1290,3 +1298,18 @@ Search Product And Return Product Id
 
     ${productId}=    Output    $.sections.products.results[1].product_views.buybox_summary.product_id
     [Return]    ${productId}
+
+Create New Order API
+    [Documentation]    This keyword will call the create order API and create a new order. The order can then be located
+                        ...    in the orders section within the account section. The address used for the order will be fixed for this keyword.
+                        ...    Known payment methods that can be used are 'COD', 'Credit Card', 'Debit Card', 'eBucks', 'iPay', 'MasterPass', 'Mobicred', 'PayFast, 'sBux' and 'CREDIT'.
+                        ...    Known delivery methods that can be used are 'COLLECT', 'COURIER' and 'DIGITAL'.
+                        ...    The 'completePayment' parameter will determine if the order created should be fully paid or not paid (Awaiting payment state).
+    [Arguments]    ${productId}    ${productQuantity}    ${paymentMethod}    ${deliveryMethod}    ${completePayment}
+    
+    ${customerId}=    Get Customer ID
+    ${createNewOrderJsonBody}=    Set Variable    {"customer_id":${customerId},"products":[{"product_id":${productId},"quantity":${productQuantity}, "unit_price":190}],"address_id":"5f3758b775787614fc4487bb","payment_method":"${paymentMethod}","delivery_method":"${deliveryMethod}","pay_full_amount_due":true,"percentage_of_amount_due_to_pay":100,"complete_payment":${completePayment},"add_donation":false,"cancel_order":false}
+   
+    POST    ${createNewOrderEndpoint}    ${createNewOrderJsonBody}
+    Output    response
+    Integer    response status    200    

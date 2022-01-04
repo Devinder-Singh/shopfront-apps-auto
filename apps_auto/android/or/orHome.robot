@@ -26,3 +26,6 @@ ${btnHomeWishlist}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListSingleItemA
 ${btnWishListIcon}      accessibility_id=Lists
 
 ${btnHomeWishListIcon}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListItemAddToList
+
+${cntHomeDeptIcons}      id=${APP_PACKAGE}:id/shopByDepartmentContainer
+${imgHomeWishList}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListItemAddToList

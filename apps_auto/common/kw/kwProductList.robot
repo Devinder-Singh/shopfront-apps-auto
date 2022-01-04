@@ -100,9 +100,6 @@ Verify Product Other Offers from API
 
 Click Product from API Scroll
     ${txtProduct}=    Get Scroll Product to Add To Cart
-
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-
     Click Element On Scroll    ${txtProduct}
     Click Close Ad
 

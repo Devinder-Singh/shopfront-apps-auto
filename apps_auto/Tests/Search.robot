@@ -62,7 +62,7 @@ Apps > Search Listings > Attributes 02 - QASA-94
     Search Product    Book
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    By    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    by    ${MIN_TIMEOUT}
-    Verify Text On Screen Scroll    et al    5s    ${windowScroll}    ${btnProductSearchFilter}
+    Scroll To Text    et al
     [Teardown]    Tear Down
 
 Apps | Search Listings | Section below header - QASA-711
@@ -121,9 +121,9 @@ Apps > Search Listings > Reviews - QASA-199
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Element On Screen Scroll Android    ${lblRatingText}    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
-    Verify Element On Screen Scroll Android    ${lblRatingNumber}    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
-    Verify Product Review iOS
+    Verify Element On Screen    ${lblRatingText}    ${MIN_TIMEOUT}
+    Verify Element On Screen   ${lblRatingNumber}    ${MIN_TIMEOUT}
+    Verify Product Review
     Click Back Android
     Click Back iOS    Back
     Click Search Home
@@ -256,7 +256,7 @@ Apps > Search Listings > Stock > Available Now - QASA-185
     Click Home
     Click Search Home
     Search Product    eboo
-    Verify Text On Screen Scroll    Available Now    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
+    Scroll To Text    Available Now
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Pre-Order - QASA-184
@@ -276,7 +276,7 @@ Apps > Search Listings > Stock > Currently Unavailable - QASA-183
     Click Home
     Click Search Home
     Search Product    eboo
-    Verify Text On Screen Scroll    Currently Unavailable    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
+    Scroll To Text    Currently Unavailable
     [Teardown]    Tear Down
 
 Apps > Search Listings > Filters - QASA-182
@@ -353,7 +353,8 @@ Apps > Search Listings > Related Search - QASA-179
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Text On Screen Scroll Android    Related Searches    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
+    Swipe Up    ${windowScroll}
+    Scroll To Text    Related Searches
     Click Product from API Scroll
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
@@ -374,9 +375,9 @@ Apps > Search Listings > Stock > In Stock - QASA-188
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Text On Screen Scroll    In stock    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
-    Verify Text On Screen Scroll    JHB    1s    ${windowScroll}    ${btnProductSearchFilter}
-    Verify Text On Screen Scroll    CPT    1s    ${windowScroll}    ${btnProductSearchFilter}
+    Scroll To Text    In stock
+    Scroll To Text    JHB
+    Scroll To Text    CPT
     [Teardown]    Tear Down
 
 Apps > Search Listings > Stock > Lead Time - QASA-187
@@ -385,7 +386,7 @@ Apps > Search Listings > Stock > Lead Time - QASA-187
     Click Home
     Click Search Home
     Search Product    pencil
-    Verify Text On Screen Scroll    Ships in 5 - 7 work days    ${MIN_TIMEOUT}    ${windowScroll}    ${btnProductSearchFilter}
+    Scroll To Text    Ships in 5 - 7 work days
     [Teardown]    Tear Down
 
 Apps > Search: Autocomplete > Search icon - Logged Out - QASA-643

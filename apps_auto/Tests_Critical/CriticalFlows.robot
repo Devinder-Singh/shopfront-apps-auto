@@ -1,14 +1,12 @@
 *** Settings ***
 Default Tags      critical
-#Suite Setup    Install Application  
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
 Register User
     [Tags]    Master0
     [Setup]    Install Application
-    Close All Applications
-    Start Application
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Start Application
     Click No Deal     ${MIN_TIMEOUT}
     Click Menu
     Click Menu Login
@@ -62,7 +60,6 @@ Buy Daily Deal Item on Delivery using Credit Card
     Click Menu
     Click Menu Daily Deals
     Click Daily Deals Product from API
-#    Click Product Daily Deals
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -88,11 +85,10 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Menu Sport and Fitness
     Click Product Department
     Click Add To Wishlist
-    Click Wishlist
+    Click Wishlist    ${True}
     Click Wishlist Add To Cart    ${False}
     Click Back iOS    My Lists
     Click Home Cart
-#    Click Cart
     Click Checkout
     Click Delivery
     Click Add Delivery Address
@@ -116,7 +112,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Search Home
     Search Product    Fridg
     Click Product from API
-    Verify Delivery Surcharge    + R 100 Delivery Surcharge
+    Verify Delivery Surcharge    + R 200 Delivery Surcharge
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
@@ -124,7 +120,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Home
     Click Search Home
     Search Product    Televisio
-    Click Product from API    3
+    Click Product from API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -157,11 +153,10 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
+    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Click Back Delivery Android
     Click Back Delivery iOS
     Click Back iOS    My Account
-#    Click Back Android
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -220,7 +215,7 @@ Buy Airtime along with another Item on Delivery
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API    2
+    Click Product Variant From API    1
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -247,14 +242,14 @@ Buy Airtime along with another Item on Collection
     Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
-    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${btnGoToCart}    ${MAX_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API    2
+    Click Product Variant From API    1
     Click Add To Cart
     Click Go To Cart
     Click Checkout

@@ -205,9 +205,10 @@ Click Wishlist Nav Bar
     END
 
 Click Wishlist
+    [Arguments]    ${newUser}=${False}
     Wait Until Element Is Visible    ${btnWishlist}    ${MIN_TIMEOUT}
     Click Element    ${btnWishlist}
-    Navigate to Wishlist
+    Navigate to Wishlist    ${newUser}
 
 Click Cart
     IF    '${PLATFORM_NAME}' == 'android'

@@ -18,7 +18,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Menu Sport and Fitness
     Click Product Department
     Click Add To Wishlist
-    Click Wishlist
+    Click Wishlist    ${True}
     Click Wishlist Add To Cart    ${False}
     Click Back iOS    My Lists
     Click Home Cart
@@ -48,7 +48,7 @@ Search and Buy Item on Delivery using Credit Card
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product from API
+    Click Product from API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -74,8 +74,8 @@ Search and Buy Item on Delivery using Credit Card
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    To Pay    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    TO PAY    1s
     Verify Text On Screen    PAYMENT METHOD    1s
-    Verify Text On Screen    Credit Card    1s
     Swipe Up    ${windowScroll}
+    Verify Text On Screen    Credit Card    1s  
     Verify Text On Screen    DELIVERY METHOD    1s
     Verify Text On Screen    First Delivery Free - Standard    1s
     Verify Text On Screen    SHIPPING ADDRESS    1s
@@ -100,7 +100,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Search Home
     Search Product    Fridg
     Click Product from API
-    Verify Delivery Surcharge    + R 100 Delivery Surcharge
+    Verify Delivery Surcharge    + R 200 Delivery Surcharge
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
@@ -144,14 +144,14 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
-    Add Delivery Address My Acc    Tester Residential    0723456778    13 Caro Road
+    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Click Back Delivery Android
     Click Back Delivery iOS
     Click Back iOS    My Account
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product from API
+    Click Product from API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -212,7 +212,7 @@ Buy Airtime along with another Item on Delivery
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API    2
+    Click Product Variant From API    1
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -249,7 +249,7 @@ Buy Airtime along with another Item on Collection
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API    2
+    Click Product Variant From API    1
     Click Add To Cart
     Click Go To Cart
     Click Checkout
