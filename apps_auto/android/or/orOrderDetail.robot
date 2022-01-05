@@ -1,3 +1,3 @@
 *** Variables ***
-${btnPayNow}=    id=fi.android.takealot.debug:id/orderDetailConsignmentItemPayNow
-${btnTrack}=    id=Track
+${btnPayNow}=    id=${APP_PACKAGE}:id/orderDetailConsignmentItemPayNow
+${btnTrack}=    id=${APP_PACKAGE}:id/orderDetailConsignmentItemTrack

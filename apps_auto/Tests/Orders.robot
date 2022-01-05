@@ -57,21 +57,22 @@ Apps > Order Refactor > Order History > Awaiting Payment Order
     Verify Order Status By Index    Awaiting Payment    1
     [Teardown]    Tear Down
 
-Apps > Order Refactor > Order Detail > Shipped Order
+Apps > Order Refactor > Order Detail > Delivered Order
     [Tags]    QASA-354
     [Setup]    Start Application    
-    # ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
-    # Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
-    # Ship the order - Order should be in Shipped status 
+    ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
+    # Deliver the order - Order should be in Delivered status 
     Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
     Click Menu My Account
     Click Menu Orders
-    Wait Until Element Is Visible    ${txtShipped}
-    Click Element    ${txtShipped}
+    Click Order By Index    1
     Verify Text On Screen    Order Detail
-    Wait Until Element Is Visible    ${txtShipped}
+    Verify Text On Screen    Delivered
+    Verify Text On Screen    Signed by
+    Verify Text On Screen    ORDERED
+    Verify Text On Screen    PAID
     Wait Until Element Is Visible    ${btnTrack}
-    
     [Teardown]    Tear Down
