@@ -296,7 +296,7 @@ Click Product Variant From API
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Click Element    ${btnPDPSelectOption}
     #Add sleep for PDP reload on ios
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    3  
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5  
     Wait Until Page Contains Element    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
 
