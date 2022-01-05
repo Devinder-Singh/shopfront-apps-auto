@@ -11,6 +11,7 @@ Register Takealot
        ${email}=    Set Variable    ${email}
     END 
     Set Global Variable    ${G_EMAIL}    ${email}
+    Set Global Variable    ${G_PASSWORD}    ${password}
     Wait Until Element Is Visible    ${txtRegFirstName}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${btnRegRegister}    ${MIN_TIMEOUT}
     Input Text    ${txtRegFirstName}    ${name}
