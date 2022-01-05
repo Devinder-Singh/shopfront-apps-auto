@@ -7,4 +7,3 @@ ${btnBannerWidget}      id=${APP_PACKAGE}:id/cmsPageWidgetBannerPairItemRoot
 ${btnProductWidget}      xpath=//*[contains(@text, "OFF")]
 ${btnImageWidget}      id=${APP_PACKAGE}:id/cmsPageWidgetImageListItemRoot
 ${btnContextWidget}      xpath=//*[contains(@text, "Body Care")]
-${btnFeaturedWidget}    xpath=//*[@text="Tote Bags"]

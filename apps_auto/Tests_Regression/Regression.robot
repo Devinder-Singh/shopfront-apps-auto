@@ -1699,7 +1699,7 @@ Apps > Merchandised Landing Pages (CMS Widgets) - Featured Collection Widget - Q
     Click Menu
     Click Menu Shop By Department
     Click Menu Department    	Luggage & Travel
-    Click Featured Collection Widget
+    Click Featured Collection Widget    Tote Bags
     Verify Product Widget Navigation
     Verify Text On Screen    Totes
     [Teardown]    Tear Down
