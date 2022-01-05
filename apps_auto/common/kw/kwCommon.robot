@@ -47,7 +47,8 @@ Swipe Right
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
 
 Swipe Left
-    [Documentation]    This keyword will perform a full left swipe action on a given element.
+    [Documentation]    This keyword will perform a a swipe on an element. By default it will fully swipe an element else
+                        ...    else you can use the 'swipePartially' flag partial swipe instead of a full swipe on an element.
     [Arguments]       ${element}    ${swipeSpeed}=1500    ${swipePartially}=${False}
     wait until element is Visible     ${element}
     ${element_size}=    Get Element Size    ${element}
