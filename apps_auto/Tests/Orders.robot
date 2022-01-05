@@ -68,4 +68,5 @@ Apps > Order Refactor > Order History > Digital Order
     Click Menu Orders
     Click Order By Index    1
     Verify Text On Screen    Digital Product(s)
+    Verify Text On Screen    Digital Delivery
     [Teardown]    Tear Down
