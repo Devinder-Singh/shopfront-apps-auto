@@ -1,5 +1,5 @@
 *** Variables ***
-${containerReturnsHistory}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable
+${containerReturnsHistory}    chain=**/XCUIElementTypeTable
 ${containerReturnsEmptyState}    ${EMPTY}
 ${onboardingCell1}    chain=**/XCUIElementTypeStaticText[`label == "Log a Return"`]
 ${returnsToolBar}     chain=**/XCUIElementTypeNavigationBar[`name == "Returns"`]
@@ -7,18 +7,18 @@ ${navController}      id=NavController
 ${navCloseButton}     id=icon close
 ${navBackButton}    id=Back
 
-${cardReturnsHistoryEmptyState1}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
+${cardReturnsHistoryEmptyState1}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[2]
 
-${cardReturnsHistoryItem}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
-${cardReturnsHistoryItemTitle}    xpath=(//XCUIElementTypeStaticText[@name="orderItemTitle"])[1]
+${cardReturnsHistoryItem}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[2]
+${cardReturnsHistoryItemTitle}    chain=(//XCUIElementTypeStaticText[@name="orderItemTitle"])[1]
 ${cardReturnsHistoryItemStatus}    xpath=(//XCUIElementTypeStaticText[@name="orderItemSubtitle"])[1]
 ${cardReturnsHistoryPolicyItem}    id=viewCenteredLinkTextView
-${cardReturnsHistoryItemImage}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeCollectionView/XCUIElementTypeCell
+${cardReturnsHistoryItemImage}    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell    
 
 ${returnsOrderHistoryFilterOptionContainer}    ${EMPTY}
 ${btnReturnsOrderHistoryFilterOptionChange}    id=Change
 
-${containerReturnsOrderHistory}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable
+${containerReturnsOrderHistory}    chain=**/XCUIElementTypeTable
 
 ${cardReturnsOrderHistoryItem}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[2]
 ${cardReturnsOrderHistoryItem1}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[1]

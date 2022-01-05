@@ -46,30 +46,23 @@ Swipe Right
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
 
-Swipe Left Partially
-    [Documentation]    This keyword will perform a partial left swipe action on a given element.
-    [Arguments]       ${element}    ${swipeSpeed}=1500
+Swipe Left
+    [Documentation]    This keyword will perform a full left swipe action on a given element.
+    [Arguments]       ${element}    ${swipeSpeed}=1500    ${swipePartially}=${False}
     wait until element is Visible     ${element}
     ${element_size}=    Get Element Size    ${element}
     ${element_location}=    Get Element Location    ${element}
     ${start_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 0.7)
     ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
-    ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
+    ${end_x}=    Set Variable    ${None}
+    IF    ${swipePartially} == ${True}
+        ${end_x}=    Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
+    ELSE
+        ${end_x}=    Evaluate      ${element_location['x']} + (${element_size['width']} * 0.1)    
+    END
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
     Swipe    ${start_x}    ${start_y}  ${end_x}  ${end_y}  ${swipeSpeed}
 
-Swipe Left Fully
-    [Documentation]    This keyword will perform a full left swipe action on a given element.
-    [Arguments]       ${element}    ${swipeSpeed}=1500
-    wait until element is Visible     ${element}
-    ${element_size}=    Get Element Size    ${element}
-    ${element_location}=    Get Element Location    ${element}
-    ${start_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 0.7)
-    ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
-    ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.1)
-    ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
-    Swipe    ${start_x}    ${start_y}  ${end_x}  ${end_y}  ${swipeSpeed}
-    
 Verify eBucks On Screen
     ${result}=    Evaluate    ${query_result_CartProductPrice} * 10
     ${result}=    Convert To String    ${result}

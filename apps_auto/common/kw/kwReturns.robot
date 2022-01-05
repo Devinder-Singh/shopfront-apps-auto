@@ -366,7 +366,7 @@ Swipe Returns Request Item Left Partially By Index
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${dynamicReturnsRequestlocator}=    Set Variable    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[${returnsRequestItemIndex}]
     END
-    Swipe Left Partially    ${dynamicReturnsRequestlocator}    swipeSpeed=1500
+    Swipe Left    ${dynamicReturnsRequestlocator}    swipeSpeed=1500    swipePartially=${True}
 
 Swipe Returns Request Item Left Fully By Index
     [Documentation]    This keyword will swipe a returns request item card left fully based on a specified index dynamically.
@@ -380,7 +380,7 @@ Swipe Returns Request Item Left Fully By Index
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${dynamicReturnsRequestlocator}=    Set Variable    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[${returnsRequestItemIndex}]
     END
-    Swipe Left Fully    ${dynamicReturnsRequestlocator}    swipeSpeed=1500
+    Swipe Left    ${dynamicReturnsRequestlocator}    swipeSpeed=1500
 
 Tap Delete Button
     Sleep    1
