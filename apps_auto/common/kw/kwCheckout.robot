@@ -6,6 +6,15 @@ Click Item Promotion Text
     Wait Until Element Is Visible    ${btnItemPromotion}    ${MIN_TIMEOUT}
     Click Element    ${btnItemPromotion}
 
+Click Item Promotion Text By Index
+    [Documentation]    Clicks the promotion text based on index.
+    [Arguments]    ${index}
+    ${dynamicItemPromotionText}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicItemPromotionText}=    Set Variable    xpath=(//android.view.ViewGroup/android.widget.Button[@resource-id='fi.android.takealot.debug:id/cartProductItemPromotionText'])[${index}]
+    END
+    Click Element    ${dynamicItemPromotionText}
+
 Click Missed Promotion Text
     Wait Until Element Is Visible    ${lblCheckoutMissedPromotion}    ${MIN_TIMEOUT}
     Click Element    ${lblCheckoutMissedPromotion}
