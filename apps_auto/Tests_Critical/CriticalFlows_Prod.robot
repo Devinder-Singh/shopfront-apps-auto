@@ -111,7 +111,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Go To Cart
     Click Checkout
     Click Domestic TV Licence
-    Enter TV Licence    8507315799086
+    Enter TV Licence    1234
     Click Delivery
     Click Address
     Click Surcharge Delivery
