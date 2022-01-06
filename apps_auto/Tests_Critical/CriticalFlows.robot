@@ -54,7 +54,6 @@ Buy Daily Deal Item on Delivery using Credit Card
     [Tags]    Master2
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -77,7 +76,6 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     [Tags]    Master3
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -106,7 +104,6 @@ Search and Buy Heavy Item on Delivery along with TV
     [Tags]    Master4
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -141,7 +138,6 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     [Tags]    Master5
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -178,7 +174,6 @@ Buy Airtime and Pay with Credit Card
     [Tags]    Master6
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -200,7 +195,6 @@ Buy Airtime along with another Item on Delivery
     [Tags]    Master7
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -234,7 +228,6 @@ Buy Airtime along with another Item on Collection
     [Tags]    Master8
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -268,7 +261,6 @@ Buy Daily Deals Item and verify no Promotions
     [Tags]    Master9
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -291,7 +283,6 @@ Buy Daily Deals Item and verify Promotions
     [Tags]    Master10
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu

@@ -10,7 +10,6 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Close All Applications
     Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -94,7 +93,6 @@ Search and Buy Heavy Item on Delivery along with TV
     [Tags]    Production3
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -113,8 +111,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Go To Cart
     Click Checkout
     Click Domestic TV Licence
-    Click Verify TV Licence
-    Enter TV Licence    1234
+    Enter TV Licence    8507315799086
     Click Delivery
     Click Address
     Click Surcharge Delivery
@@ -132,7 +129,6 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     [Tags]    Production4
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -172,7 +168,6 @@ Buy Airtime and Pay with Credit Card
     [Tags]    Production5
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -197,7 +192,6 @@ Buy Airtime along with another Item on Delivery
     [Tags]    Production6
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -211,7 +205,7 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -234,7 +228,6 @@ Buy Airtime along with another Item on Collection
     [Tags]    Production7
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -248,7 +241,7 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
