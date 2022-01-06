@@ -61,7 +61,7 @@ Click Why The Wait
 Click Standard Delivery
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${txtStandardDelivery}    ${MIN_TIMEOUT}
-    Run Keyword If    ${chkTextSuccess}==${True}    Click Element    ${txtStandardDelivery}
+    Click Element    ${txtStandardDelivery}
 
 Click Got It Thanks
     Wait Until Element Is Visible    ${btnGotItThanks}    ${MIN_TIMEOUT}
