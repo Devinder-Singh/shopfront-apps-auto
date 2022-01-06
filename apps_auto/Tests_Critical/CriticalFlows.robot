@@ -122,7 +122,6 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Go To Cart
     Click Checkout
     Click Domestic TV Licence
-    Click Verify TV Licence
     Enter TV Licence    1234
     Click Delivery
     Click Address
@@ -208,7 +207,7 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -241,7 +240,7 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
