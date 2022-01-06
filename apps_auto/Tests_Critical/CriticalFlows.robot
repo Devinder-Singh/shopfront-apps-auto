@@ -120,7 +120,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Home
     Click Search Home
     Search Product    Televisio
-    Click Product from API    2
+    Click Product from API    1
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -215,7 +215,7 @@ Buy Airtime along with another Item on Delivery
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API    1
+    Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -249,7 +249,7 @@ Buy Airtime along with another Item on Collection
     Click Search Home
     Search Product    monteg
     Click Variant Product from API
-    Click Product Variant From API    1
+    Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout

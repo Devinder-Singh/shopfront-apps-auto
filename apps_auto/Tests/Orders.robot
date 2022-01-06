@@ -56,3 +56,17 @@ Apps > Order Refactor > Order History > Awaiting Payment Order
     Click Menu Orders
     Verify Order Status By Index    Awaiting Payment    1
     [Teardown]    Tear Down
+
+Apps > Order Refactor > Order History > Digital Order
+    [Tags]    QASA-359
+    [Setup]    Start Application    
+    ${digitalOrderProductId}=    Search And Return Product Id API    takealot voucher
+    Create New Order API    ${digitalOrderProductId}    1    PayFast    COURIER    true
+    Click Menu Logout If Logged In
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Menu My Account
+    Click Menu Orders
+    Click Order By Index    1
+    Verify Text On Screen    Digital Product(s)
+    Verify Text On Screen    Digital Delivery
+    [Teardown]    Tear Down
