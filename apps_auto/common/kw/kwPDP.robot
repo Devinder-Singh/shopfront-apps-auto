@@ -290,10 +290,8 @@ Click Product Variant From API
     ${txtProduct}=    Get Product Variant
     IF    '${index}'>'0' and '${PLATFORM_NAME}'=='ios'
         Set Local Variable    ${txtProduct}    ${txtProduct}\[${index}]
-        Log To Console    message ${txtProduct}
     ELSE
         Set Local Variable    ${txtProduct}    ${txtProduct}
-        Log To Console    message ${txtProduct}
     END            
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
     Click Element    ${btnPDPSelectOption}
