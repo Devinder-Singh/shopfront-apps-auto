@@ -5,19 +5,44 @@ Library    XML
 *** Keywords ***
 Verify Returns Menu Item    
     Element Should Be Visible    ${btnMenuExchReturns}
-    Element Should Contain Text    ${btnMenuExchReturnsTitle}    Returns
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Contain Text    ${btnMenuExchReturnsTitle}    Returns
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Element Should Contain Text    ${btnMenuExchReturns}    Returns
 
 Verify Returns Screen header
-    Verify Toolbar Title    Returns
+    [Arguments]    ${expectedTitle}
+    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    ${expectedTitle}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'     Verify Text On Screen     ${expectedTitle}    5s
 
 Verify Returns Empty State Visible
-    Scroll To Element    ${containerReturnsEmptyState}    10    ${containerReturnsHistory}    
+    Scroll To Element    ${containerReturnsEmptyState}    scrollElement=${containerReturnsHistory}
+    IF    '${PLATFORM_NAME}' == 'android'
+        Scroll To Element    ${containerReturnsEmptyState}    scrollElement=${containerReturnsHistory}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        Wait Until Element Is Visible    ${onboardingCell1}    ${MIN_TIMEOUT}
+    END        
+
+Verify NavBar Title
+    [Arguments]    ${expectedTitle}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains Element    ${txtToolbarTitle}    ${MIN_TIMEOUT}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Wait Until Page Contains Element    ${navController}      ${MIN_TIMEOUT}
+    
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Be Visible    ${txtToolbarTitle}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Element Should Be Visible    ${navController}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${txtToolbarTitle}    ${expectedTitle}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Verify Text On Screen    ${expectedTitle}     5s
 
 Verify Returns Empty State Step Visible
     [Arguments]    ${stepTitle}    ${stepSubtitle}
 
     Verify Text On Screen    ${stepTitle}     5s
     Verify Text On Screen    ${stepSubtitle}     5s
+
+Verify Returns Post Empty State Screen Header 
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Returns Screen header    Select Order to Return Items
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Returns Screen header    Select Return Item
 
 Verify Returns History Item Visible
     Wait Until Element Is Visible    ${cardReturnsHistoryItem}    ${MIN_TIMEOUT}
@@ -41,6 +66,17 @@ Verify Returns Call To Action Title
     Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
     Element Text Should Be    ${btnReturnsCallToAction}    ${expectedTitle}
 
+Verify Returns Submit Return Action Title
+    Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${btnReturnsCallToAction}    SUBMIT RETURN REQUEST
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${btnReturnsCallToAction}    Submit Return Request
+
+
+Verify Returns Log Return Title
+    Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${btnReturnsCallToAction}    LOG RETURN
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${btnReturnsCallToAction}    Log Return
+
 Scoll To Returns History Policy
     Scroll To Element    ${cardReturnsHistoryPolicyItem}    20    ${containerReturnsHistory}
 
@@ -62,6 +98,7 @@ Swipe To Empty State Step 2
 #    Sleep    5s
 
 Click Returns Call To Action Button
+    Sleep    2
     Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
     Click Element    ${btnReturnsCallToAction}
 
@@ -70,7 +107,8 @@ Verify Returns Order History Filter Option View Visible
 
 Verify Returns Order History Filter Option Button Title
     Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    ${MIN_TIMEOUT}
-    Element Text Should Be    ${btnReturnsOrderHistoryFilterOptionChange}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${btnReturnsOrderHistoryFilterOptionChange}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${btnReturnsOrderHistoryFilterOptionChange}    Change
 
 Click Returns Order History Filter Option Button
     Wait Until Element Is Visible    ${btnReturnsOrderHistoryFilterOptionChange}    ${MIN_TIMEOUT}
@@ -80,23 +118,41 @@ Verify Returns Order History Filter Options
     Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
     Verify Text On Screen    Last 6 months    ${MIN_TIMEOUT}
 
+Click Returns Close Button
+    Click Element    ${navCloseButton}
+
 Verify Returns Order History Item Visible
     Wait Until Element Is Visible    ${cardReturnsOrderHistoryItem}    ${MIN_TIMEOUT}
 
 Verify Returns Order History Item Title
-    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemTitle}    ${MIN_TIMEOUT}
-    Element Should Contain Text    ${cardReturnsOrderHistoryItemTitle}    Order #
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemTitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Contain Text    ${cardReturnsOrderHistoryItemTitle}    Order #
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Order #    ${MIN_TIMEOUT}
 
 Verify Returns Order History Item Subtitle
-    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemSubtitle}    ${MIN_TIMEOUT}
-    Element Should Contain Text    ${cardReturnsOrderHistoryItemSubtitle}    Ordered
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemSubtitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Contain Text    ${cardReturnsOrderHistoryItemSubtitle}    Ordered
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Ordered
 
 Verify Returns Order History Item Image Container
     Wait Until Element Is Visible    ${cardReturnsOrderHistoryItemImageContainer}    ${MIN_TIMEOUT}
 
+Click Returns Close
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Click Back Screen
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'        Click Returns Close Button
+
+Click Returns Back
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Click Back Screen
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'    Click Element    ${navBackButton}
+
+Verify Returns Toolbar Title
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    Select Order to Return Items
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'        Verify NavBar Title     Select Return Item
+
 Click Returns Order History Item
+    [Arguments]    ${orderItemToTap}=${cardReturnsOrderHistoryItem}
     Sleep    5s
-    Click Element    ${cardReturnsOrderHistoryItem}
+    Click Element    ${orderItemToTap}
 
 Verify Returns Order Detail Returnable Section
     Wait Until Element Is Visible    ${returnOrderDetailReturnableSectionTitle}    ${MIN_TIMEOUT}
@@ -105,7 +161,7 @@ Verify Returns Order Detail Non-Returnable Section
     Scroll To Element    ${returnOrderDetailNonReturnableSectionTitle}    20    ${containerReturnsHOrderDetail}
 
 Verify Returns Order Detail Item Image
-    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    ${MIN_TIMEOUT}
+    Run Keyword If     '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cardReturnsOrderDetailItemImage}    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Title
     Wait Until Element Is Visible    ${cardReturnsOrderDetailItemTitle}    ${MIN_TIMEOUT}
@@ -126,15 +182,18 @@ Verify Returns Order Detail Item Warranty Subtitle
     Run Keyword And Return If    ${hasValidWarranty}==True    Element Should Contain Text    ${cardReturnsOrderDetailItemWarrantySubtitle}    Warranty Expires
 
 Click Returns Order Detail Item Warranty Title
-    Click Element    ${cardReturnsOrderDetailItemWarrantyTitle} 
+   Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${cardReturnsOrderDetailItemWarrantyTitle}
+   Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${cardReturnsOrderDetailItemWarrantyInfo} 
 
 Verify Returns Order Detail Item Warranty Dialog Title
-    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogTitle}    ${MIN_TIMEOUT}
-    Element Should Contain Text    ${returnsOrderDetailWarrantyDialogTitle}    Limited Warranty
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogTitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Should Contain Text    ${returnsOrderDetailWarrantyDialogTitle}    Limited Warranty
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Limited Warranty    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Warranty Dialog Message
-    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogMessage}    ${MIN_TIMEOUT}
-    Element Should Contain Text    ${returnsOrderDetailWarrantyDialogMessage}    Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details.
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogMessage}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'   Element Should Contain Text    ${returnsOrderDetailWarrantyDialogMessage}    Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details.
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details.    ${MIN_TIMEOUT}
 
 Verify Returns Order Detail Item Warranty Dialog Button
     Wait Until Element Is Visible    ${returnsOrderDetailWarrantyDialogButton}    ${MIN_TIMEOUT}
@@ -154,6 +213,15 @@ Scroll To First Non Returnable Reason
 
 Verify Return Reason Reason Selector Visible
     Wait Until Element Is Visible    ${returnReasonReasonSelector}    ${MIN_TIMEOUT}
+
+Verify Reason For Return Title
+    [Arguments]    ${expectedTitle}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Toolbar Title    ${expectedTitle}
+
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Page Contains Element    ${txtReasonForReturnTitle}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Be Visible    ${txtReasonForReturnTitle}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${txtReasonForReturnTitle}    ${expectedTitle}
 
 Verify Return Reason Reason Selector Text
     [Arguments]    ${expectedText}
@@ -222,7 +290,8 @@ Scroll To Returns Reason Variant Size Error Message
     Scroll To Element    ${returnReasonVariantSizeSelectorErrorMessage}    20   ${containerReturnsReason}
 
 Verify Returns Reason Variant Size Error Message
-    Element Text Should Be    ${returnReasonVariantSizeSelectorErrorMessage}    Please select a size
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnReasonVariantSizeSelectorErrorMessage}    Please select a size
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${returnReasonVariantSizeSelectorErrorMessage}    Please select size
 
 Scroll To Returns Order History Item With Variant Colour
 #    Sleep    5s
@@ -265,7 +334,7 @@ Verify Return Request Return Method Header
     Wait Until Element Is Visible    ${returnRequestReturnItemsHeader}    ${MIN_TIMEOUT}
 
 Verify Returns Request Item Image
-    Wait Until Element Is Visible    ${cardReturnsRequestItemImage}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${cardReturnsRequestItemImage}    ${MIN_TIMEOUT}
 
 Verify Returns Request Item Title
     [Arguments]    ${expectedTitle}
@@ -285,17 +354,52 @@ Verify Returns Request Item Preferred Outcome Title
     Wait Until Element Is Visible    ${cardReturnsRequestItemPreferredOutcomeTitle}    ${MIN_TIMEOUT}
     Element Should Contain Text    ${cardReturnsRequestItemPreferredOutcomeTitle}    Preferred Outcome:
 
-Swipe Returns Request Item For Delete
-    ${cardItemSize}=    Get Element Size    ${cardReturnsRequestItem}
-    ${cardItemLocation}=    Get Element Location    ${cardReturnsRequestItem}
-    ${startPositionX}=    Evaluate    ${cardItemLocation['x']} + (${cardItemSize['width']} * 0.5)
-    ${startPositionY}=    Evaluate    ${cardItemLocation['y']} + 0
-    ${endPositionX}=    Evaluate    ${startPositionX} - (${cardItemSize['width']} * 0.5)
-    ${endPositionY}=    Evaluate    ${cardItemLocation['y']} + 0
+Swipe Returns Request Item Left Partially By Index
+    [Documentation]    This keyword will swipe a returns request item card left partially based on a specified index dynamically.
+                       ...    Example parsing 1 will result in the first item card being swiped.
+    [Arguments]    ${returnsRequestItemIndex}    ${sleepBeforeAction}=1s
+    Sleep    ${sleepBeforeAction}
 
-    Swipe    ${startPositionX}    ${startPositionY}    ${endPositionX}    ${endPositionY}
-#    Sleep    5s
+    ${dynamicReturnsRequestlocator}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicReturnsRequestlocator}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/returns_request_cart_item_root'])[${returnsRequestItemIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicReturnsRequestlocator}=    Set Variable    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[${returnsRequestItemIndex}]
+    END
+    Swipe Left    ${dynamicReturnsRequestlocator}    swipeSpeed=1500    swipePartially=${True}
 
+Swipe Returns Request Item Left Fully By Index
+    [Documentation]    This keyword will swipe a returns request item card left fully based on a specified index dynamically.
+                       ...    Example parsing 1 will result in the first item card being swiped.
+    [Arguments]    ${returnsRequestItemIndex}    ${sleepBeforeAction}=1s
+    Sleep    ${sleepBeforeAction}
+    
+    ${dynamicReturnsRequestlocator}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicReturnsRequestlocator}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/returns_request_cart_item_root'])[${returnsRequestItemIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicReturnsRequestlocator}=    Set Variable    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[${returnsRequestItemIndex}]
+    END
+    Swipe Left    ${dynamicReturnsRequestlocator}    swipeSpeed=1500
+
+Tap Delete Button
+    Sleep    1
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Wait Until Element Is Visible    ${btnReturnsRequestItemDelete}    ${MIN_TIMEOUT}
+    Run Keyword If     '${PLATFORM_NAME}'=='ios'       Click Element    ${btnReturnsRequestItemDelete}
+
+Verify Edit Return Deletion Dialogue
+    IF    ${PLATFORM_NAME} == 'android'
+        Verify Return Reason Dialog    Remove Item    Remove item from return request?    KEEP    REMOVE
+    ELSE 
+        Verify Return Reason Dialog    Remove Item    Remove item from return request?    Keep    Remove
+    END
+    
+Verify Returns Request Delete Dialog
+     IF    ${PLATFORM_NAME} == 'android'
+        Verify Returns Request Dialog    Remove Item    Remove item from return request?    KEEP    REMOVE
+    ELSE 
+        Verify Returns Request Dialog    Are you sure?    Remove item from return request?    Keep    Remove
+    END
 Verify Returns Request Dialog
     [Arguments]    ${expectedTitle}    ${expectedMessage}    ${negativeButton}    ${positiveButton}
     Element Text Should Be    ${returnsRequestDialogTitle}    ${expectedTitle}
@@ -307,6 +411,8 @@ Click Returns Request Delete Dialog Keep Option
     Click Element    ${returnsRequestDialogNegativeActionButton}
 
 Click Returns Request Delete Dialog Remove Option
+    [Arguments]    ${sleepBeforeAction}= 2s
+    Sleep    ${sleepBeforeAction}
     Click Element    ${returnsRequestDialogPositiveActionButton}
 
 Click Returns Request Cart Item
@@ -341,7 +447,7 @@ Click Return Select Return Method Address
     Click Element    ${returnSelectReturnMethodCollect}
 
 Click Return Select Address Item
-    Wait Until Element Is Visible    ${returnSelectAddressItemName}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${returnSelectAddressItem}    ${MIN_TIMEOUT}
     Click Element    ${returnSelectAddressItem}
 #    Sleep    10s
 
@@ -354,6 +460,13 @@ Scroll To Return Request Return Method Section
 Scroll To Return Request Delivery Method Selector
     Scroll To Element    ${returnRequestDeliveryMethodSelector}    20     ${containerReturnRequest}
 
+Scroll To Return Request Collect Adress Delivery Method Selector
+    IF    '${PLATFORM_NAME}' == 'android'
+        Scroll To Element    ${returnRequestDeliveryMethodSelector}    loopTimes=20     scrollElement=${containerReturnRequest}
+    ELSE IF     '${PLATFORM_NAME}' == 'ios'
+        Scroll To Element    ${returnRequestCollectAdressSelector}    loopTimes=20    scrollElement=${containerReturnRequest}
+    END
+    
 Verify Return Request Delivery Method Selector
     [Arguments]    ${expectedTitle}
     
@@ -361,7 +474,8 @@ Verify Return Request Delivery Method Selector
     Element Should Be Visible    ${returnRequestDeliveryMethodSelectorButton}
     
     Element Text Should Be    ${returnRequestDeliveryMethodSelectorTitle}    ${expectedTitle}
-    Element Text Should Be    ${returnRequestDeliveryMethodSelectorButton}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnRequestDeliveryMethodSelectorButton}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${returnRequestDeliveryMethodSelectorButton}    Change
 
 Scroll To Return Request Delivery Method Address
     Scroll To Element    ${returnRequestDeliveryMethodAddress}    20     ${containerReturnRequest}
@@ -383,14 +497,17 @@ Verify Return Request Delivery Method Address Details
     Element Text Should Be    ${returnRequestDeliveryMethodAddressDetailText}    ${expectedAddressDetail}
 
 Scroll To Return Request Contact Detail Section
-    Scroll To Element    ${returnRequestContactDetailSelector}    20    ${containerReturnRequest}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Scroll To Element    ${returnRequestContactDetailSelector}    20    ${containerReturnRequest}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Swipe Up    ${windowScroll}
 
 Verify Return Request Contact Details Section
     Element Should Be Visible    ${returnRequestContactDetailSelectorTitle}
     Element Should Be Visible    ${returnRequestContactDetailSelectorButton}
     
-    Element Text Should Be    ${returnRequestContactDetailSelectorTitle}    SMS notification for this return will be sent to:
-    Element Text Should Be    ${returnRequestContactDetailSelectorButton}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnRequestContactDetailSelectorTitle}    SMS notification for this return will be sent to:
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnRequestContactDetailSelectorButton}    CHANGE
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Should Contain Text    ${returnRequestContactDetailSelectorTitle}    SMS notifications for this return will be sent to
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${returnRequestContactDetailSelectorButton}    Change
 
 Verify Return Contact Details Input Fields
     [Arguments]    ${expectedFullName}    ${expectedMobileNumber}
@@ -401,10 +518,11 @@ Verify Return Contact Details Input Fields
 Verify Return Request Contact Details Info
     [Arguments]    ${expectedContactDetailInfo}
 
-    Element Text Should Be    ${returnRequestContactDetailSelectorSubtitle}    ${expectedContactDetailInfo}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnRequestContactDetailSelectorSubtitle}    ${expectedContactDetailInfo}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen     ${expectedContactDetailInfo}    5s
 
 Verify Return Request Loading State Not Visible
-    Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Does Not Contain Element    ${returnRequestShimmer}    ${MIN_TIMEOUT}
 
 Scroll To Return Request Cart Item
     Scroll To Element    ${cardReturnsRequestItem}    20     ${containerReturnRequest}
@@ -417,6 +535,10 @@ Click Return Request Empty State Call To Action
 
 Click Return Request Delivery Method Selector
     Click Element    ${returnRequestDeliveryMethodSelector}
+
+Click Return Request Collect Adress Delivery Method Selector
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${returnRequestDeliveryMethodSelector}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${returnRequestCollectAdressSelector}
 
 Verify Return Request Delivery Method Address Type Pill
     Element Should Be Visible    ${returnRequestDeliveryMethodAddressTypePill}
@@ -500,7 +622,7 @@ Verify Return Select Delivery Method Pickup Point Option Is Not Active
 
     Verify Return Select Delivery Method Pickup Point Option    ${expectedTitle}
     Click Return Select Delivery Method Pickup Point Option
-    Verify Toolbar Title    Select Return Method
+    Verify Returns Screen header    Select Return Method
 
 Verify Return Request Return Method Header Is Not Present
     Wait Until Page Does Not Contain Element    ${returnRequestReturnMethodHeader}    30s
@@ -512,29 +634,35 @@ Click Return Address Item Delete
     Click Element    ${returnSelectAddressItemDeleteButton}
 
 Confirm Return Address Item Delete Dialog
-    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogTitle}    30s
-    Element Text Should Be    ${returnSelectAddressDeleteDialogTitle}     Delete Address
+    IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogTitle}    30s
+        Element Text Should Be    ${returnSelectAddressDeleteDialogTitle}     Delete Address
 
-    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogMessage}    30s
-    Element Text Should Be    ${returnSelectAddressDeleteDialogMessage}    Are you sure you want to delete this address?
+        Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogMessage}    30s
+        Element Text Should Be    ${returnSelectAddressDeleteDialogMessage}    Are you sure you want to delete this address?
 
-    Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogConfirmationButton}    30s
-    Element Text Should Be    ${returnSelectAddressDeleteDialogConfirmationButton}    DELETE
+        Wait Until Element Is Visible    ${returnSelectAddressDeleteDialogConfirmationButton}    30s
+        Element Text Should Be    ${returnSelectAddressDeleteDialogConfirmationButton}    DELETE
 
-    Click Element    ${returnSelectAddressDeleteDialogConfirmationButton}
+        Click Element    ${returnSelectAddressDeleteDialogConfirmationButton}
+    END
 
 Click Return Address Add Option
     Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s
     Click Element    ${returnSelectAddressAddAddress}
 
 Verify Return Address Empty State
-    Wait Until Element Is Visible    ${returnSelectAddressEmptyState}    30s
+    IF    ${PLATFORM_NAME} == 'android'
+        Wait Until Element Is Visible    ${returnSelectAddressEmptyState}    30s
+        Wait Until Element Is Visible    ${returnSelectAddressEmptyStateTitle}    30s
+        Element Text Should Be    ${returnSelectAddressEmptyStateTitle}    You don't have any addresses saved.
 
-    Wait Until Element Is Visible    ${returnSelectAddressEmptyStateTitle}    30s
-    Element Text Should Be    ${returnSelectAddressEmptyStateTitle}    You don't have any addresses saved.
-
-    Wait Until Element Is Visible    ${returnSelectAddressEmptyStateMessage}    30s
-    Element Text Should Be    ${returnSelectAddressEmptyStateMessage}    Please add a Delivery Address.
+        Wait Until Element Is Visible    ${returnSelectAddressEmptyStateMessage}    30s
+        Element Text Should Be    ${returnSelectAddressEmptyStateMessage}    Please add a Delivery Address.
+    ELSE 
+        Sleep    1
+        Verify Text On Screen    You don't have any addresses saved. Please add a Delivery Address.
+    END
 
 Verify Return Address Add Option
     Wait Until Element Is Visible    ${returnSelectAddressAddAddress}    30s
@@ -592,7 +720,7 @@ Edit Return Contact Details Input
     Input Text    ${returnContactDetailsMobileNumberField}    ${expectedMobileNumber}
 
 Verify Return Success Details
-    Wait Until Element Is Visible    ${returnSuccessIcon}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${returnSuccessIcon}    ${MIN_TIMEOUT}
 
     Wait Until Element Is Visible    ${returnSuccessTitle}    ${MIN_TIMEOUT}
     Element Text Should Be    ${returnSuccessTitle}    Return Request Submitted
@@ -603,20 +731,22 @@ Verify Return Success Details
     Wait Until Element Is Visible    ${returnSuccessImageContainer}    ${MIN_TIMEOUT}
 
     Wait Until Element Is Visible    ${returnSuccessTrackButton}    ${MIN_TIMEOUT}
-    Element Text Should Be    ${returnSuccessTrackButton}    TRACK RETURN
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Element Text Should Be    ${returnSuccessTrackButton}    TRACK RETURN
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Element Text Should Be    ${returnSuccessTrackButton}    Track Return
 
 Click Return Success Track
     Click Element    ${returnSuccessTrackButton}
 
 Verify Return Success Flow From Return Request
-    Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Returns Call To Action Title    SUBMIT RETURN REQUEST
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Returns Call To Action Title    Submit Return Request
     Click Returns Call To Action Button
     Sleep    5s
-    Verify Toolbar Title    Return Request Submitted
+    Verify Returns Screen header    Return Request Submitted   
     Verify Return Success Details
     Click Return Success Track
     Sleep    1s
-    Verify Toolbar Title    Returns
+    Verify Returns Screen header    Returns
 
 
 Add Liquor Return Item To Return Request
@@ -638,8 +768,10 @@ Add Liquor Return Item To Return Request
 
 # Setup Keyword for getting a product in returns request
 Add Single Return Item To Return Request
+    [Arguments]    ${orderItemToTap}=${cardReturnsOrderHistoryItem}
     Click Returns Call To Action Button
-    Click Returns Order History Item
+    Click Returns Order History Item    ${orderItemToTap}
+    Sleep    1
     Click Returns Order Detail Returnable Item
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item
@@ -649,12 +781,17 @@ Add Single Return Item To Return Request
     Scroll To Return Reason Text Area
     Input Return Reason Text Area Text    Test Description
     Click Returns Call To Action Button
-    Verify Toolbar Title    Log Return Request
+    Verify Returns Screen header    Log Return Request
+
+Add Single Return First Item To Return Request
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Add Single Return Item To Return Request
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Add Single Return Item To Return Request    ${cardReturnsOrderHistoryItem1}
 
 Add Two Return Items to Return Request
-    Add Single Return Item To Return Request
+    [Arguments]    ${orderItemToTap}=${cardReturnsOrderHistoryItem}
+    Add Single Return Item To Return Request    ${orderItemToTap}
     Click Returns Request Add Another Item
-    Verify Toolbar Title    Select Return Item
+    Verify Returns Screen header    Select Return Item
     Click Returns Order Detail Returnable Item 2
     Click Return Reason Reason Selector
     Click Return Reason Reason Non-Exchange Item

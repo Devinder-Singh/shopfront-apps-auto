@@ -23,15 +23,15 @@ Click Menu Login
     Click Element    ${btnMenuLogin}
 
 Log In If Not Logged In
-    [Arguments]    ${email}    ${password}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnMenu}
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Swipe Up    ${windowScroll}
-
-    ${chkLoginElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnMenuLogin}
-    Run Keyword If    ${chkLoginElement}==${True}    Click Element    ${btnMenuLogin}
-    Run Keyword If    ${chkLoginElement}==${True}    Login Takealot    ${email}    ${password}
+    [Arguments]    ${email}    ${password}        
+    Verify Element On Screen    ${btnMenu}    ${MIN_TIMEOUT}
+    Click Element    ${btnMenu}
+    ${chkVisible}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    ${MIN_TIMEOUT}
+    IF   ${chkVisible} == ${False}
+        Click Element    ${btnMenuLogin}
+        Login Takealot    ${email}    ${password}
+        Click Element    ${btnMenu}
+    END
 
 Click Menu Register
     IF    '${PLATFORM_NAME}' == 'android'
@@ -72,12 +72,15 @@ Click Menu Logout
     Click Element    ${btnLogout}
 
 Click Menu Logout If Logged In
-    Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${btnMenu}    ${MIN_TIMEOUT}
     Click Element    ${btnMenu}
 
-    ${chkVisible}=    Run Keyword And Return Status    Page Should Contain Element    ${btnLogout}
-    IF   '${chkVisible}' == ${True}
+    ${chkVisible}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    ${MIN_TIMEOUT}
+    IF   ${chkVisible} == ${True}
         Click Element    ${btnLogout}
+    ELSE
+        #Click on burger item if user is already already logged out to not cause confusion with other keywords to restore app to normal home state.
+        Click Element    ${btnMenu}
     END
 
 Click Menu Daily Deals

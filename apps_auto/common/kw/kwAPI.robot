@@ -6,7 +6,7 @@ Resource          ../config/defaultConfig.robot
 ${cart_URL}       http://tal-test-data-service.master.env/remove_products_in_cart
 ${cart_Body}      { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": "4933518", "env": "master.env" }
 
-${wishlist_URL}    http://tal-test-data-service.master.env/clear_customer_wishlists
+${wishlist_URL_clear}    http://tal-test-data-service.master.env/clear_customer_wishlists
 ${wishlist_Body}    { "namespace": "master", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
 
 ${wishlist_Del_URL}    http://tal-test-data-service.master.env/delete_customer_wishlists
@@ -20,7 +20,7 @@ ${voucher_URL}    http://tal-test-data-service.master.env/execute_query_voucher_
 ${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-12-31' and DateUsed is null limit 1" }
 ${voucher_Body_Expired}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired < '2021-11-18' and DateUsed is null limit 1" }
 
-${wishlist_URL}    http://tal-test-data-service.master.env/add_customer_wishlists
+${wishlist_URL_add}    http://tal-test-data-service.master.env/add_customer_wishlists
 ${Add_cart_URL}       http://tal-test-data-service.master.env/add_to_cart
 
 ${items_URL}    ${APP_ENVIRONMENT}rest/v-1-10-0/customers/4933405/cart/items
@@ -50,7 +50,7 @@ Clear Environment
 Create Wishlists
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
     ${WL_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "count": 25 }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": 4933518, "count": 24 }
-    Post    ${wishlist_URL}    ${WL_Body}
+    Post    ${wishlist_URL_add}    ${WL_Body}
     Integer    response status    200
 
 Get Customer ID
@@ -74,7 +74,7 @@ Clear Cart
 
 Clear Wishlist
     ${wishlist_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
-    Post    ${wishlist_URL}    ${wishlist_Body}
+    Post    ${wishlist_URL_clear}    ${wishlist_Body}
     Integer    response status    200
 
 Delete Wishlist
