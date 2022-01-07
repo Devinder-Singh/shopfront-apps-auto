@@ -57,22 +57,24 @@ Apps > Order Refactor > Order History > Awaiting Payment Order
     Verify Order Status By Index    Awaiting Payment    1
     [Teardown]    Tear Down
 
-Apps > Order Refactor > Order Detail > Delivered Order
-    [Tags]    QASA-354
+Apps > Order Refactor > Order History > Estimated Collection Order
+    [Tags]    QASA-366
     [Setup]    Start Application    
     ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
-    Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
-    # Deliver the order - Order should be in Delivered status 
+    Create New Order API    ${awaitingOrderProductId}    1    PayFast    COLLECT    true    5f3d1644fdb1e941af57fd7e
     Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
     Click Menu My Account
     Click Menu Orders
-    Click Order By Index    1
+    Click Order By Index    1    COLLECT
     Verify Text On Screen    Order Detail
-    Verify Text On Screen    Delivered
-    Verify Text On Screen    Signed by
+    Verify Text On Screen    Estimated Collection from
+    Verify Text On Screen    NOT YET READY
     Verify Text On Screen    ORDERED
     Verify Text On Screen    PAID
+    # Currently there is a production defect CHSAPP-12792 for the below line, once that is resolved this line can be uncommented
+    # Verify Text On Screen    Note: We'll send you an SMS or email once your order is ready for collection
+    Verify Text On Screen    Standard Collect
     Wait Until Element Is Visible    ${btnTrack}
     [Teardown]    Tear Down

@@ -41,12 +41,14 @@ Cancel Latest Order
 
 Click Order By Index
     [Documentation]    Clicks an order based on index from the list of orders.
-    [Arguments]    ${orderIndex}
+    [Arguments]    ${orderIndex}    ${deliveryMethod}='COURIER'
     ${dynamicOrderIndex}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
         ${dynamicOrderIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle'])[${orderIndex}]
-    ELSE IF    '${PLATFORM_NAME}' == 'ios'
-        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label contains "Delivery by"`][${orderIndex}]    
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${deliveryMethod}' == 'COURIER'
+        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label contains "Delivery by"`][${orderIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${deliveryMethod}' == 'COLLECT'
+        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label Contains "Estimated Collection from"`][${orderIndex}]
     END
     Click Element    ${dynamicOrderIndex}
 
