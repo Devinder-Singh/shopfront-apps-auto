@@ -135,22 +135,8 @@ Change Cart Quantity Scroll
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${txtCartQty}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
     END
-               
-    Verify Text On Screen    Select quantity
-
-    Set Implicitly Wait    1
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    15
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtCartQty}
-
-        IF    ${chkProdVisible} == ${True}
-            Exit For Loop
-        END
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Set Implicitly Wait    5
+    Scroll To Element    xpath=//*[@text="1"]    scrollSwipeDirection=Down
+    Scroll To Element    ${txtCartQty}
     Click Element    ${txtCartQty}
 
 Click Add Items to Qualify iOS

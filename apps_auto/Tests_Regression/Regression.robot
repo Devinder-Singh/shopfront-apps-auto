@@ -45,9 +45,8 @@ Apps > Promotions (Android) Daily Deals - QASA-476 - QASA-306
     Click Filter Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    4
+    Change Cart Quantity Scroll    4
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
-    #Click Item Promotion Text
     Click Item Promotion Text By Index    index=1
     Verify Text On Screen    4 x R    ${MAX_TIMEOUT}
     Verify Text On Screen    Daily Deals    ${MAX_TIMEOUT}

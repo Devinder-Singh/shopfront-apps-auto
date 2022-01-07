@@ -235,19 +235,23 @@ Verify Snack Bar
     Verify Element On Screen    ${dynamicSnackBarPopupWithText}    ${MIN_TIMEOUT}
     
 Scroll To Text
-    [Arguments]    ${text}    ${loopTimes}=10
+    [Arguments]    ${text}    ${loopTimes}=10    ${scrollSwipeDirection}=Up
     ${element}=      Set Variable    ${EMPTY}
     IF    '${PLATFORM_NAME}'== 'android'
         ${element}=    Set Variable    xpath=//*[contains(@text,"${text}")]
     ELSE
         ${element}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${text}"`]
     END
-    Scroll To Element   ${element}    ${loopTimes}    ${windowScroll}
+
+    IF    '${scrollSwipeDirection}' == 'Up'
+        Scroll To Element   ${element}    ${loopTimes}    ${windowScroll}
+    ELSE IF    '${scrollSwipeDirection}' == 'Down'
+        Scroll To Element   ${element}    ${loopTimes}    ${windowScroll}    scrollSwipeDirection=Down
+    END
     Page Should Contain Element    ${element}
 
 Scroll To Element
-    [Arguments]    ${element}    ${loopTimes}=10    ${scrollElement}=${windowScroll}
-
+    [Arguments]    ${element}    ${loopTimes}=10    ${scrollElement}=${windowScroll}    ${scrollSwipeDirection}=Up
     Set Implicitly Wait    1
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    ${loopTimes}
@@ -256,8 +260,13 @@ Scroll To Element
         IF    ${chkProdVisible}==${True}
             Exit For Loop
         END
+        
+        IF    '${scrollSwipeDirection}' == 'Up'  
+            Swipe Up    ${scrollElement}
+        ELSE IF    '${scrollSwipeDirection}' == 'Down'
+            Swipe Down    ${scrollElement}
+        END
 
-        Swipe Up    ${scrollElement}
         ${index}=    Evaluate    ${index} + 1
     END
     Set Implicitly Wait    5
