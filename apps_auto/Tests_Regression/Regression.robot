@@ -1692,3 +1692,15 @@ Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
     Click Address
     Click Surcharge Delivery
     [Teardown]    Tear Down
+
+Apps > Merchandised Landing Pages (CMS Widgets) - Featured Collection Widget - QASA-165
+    [Tags]    QASA-165
+    [Setup]    Start Application
+    Click Home
+    Click Menu
+    Click Menu Shop By Department
+    Click Menu Department    	Luggage & Travel
+    Click Featured Collection Widget    Tote Bags
+    Verify Product Widget Navigation
+    Verify Text On Screen    Totes
+    [Teardown]    Tear Down
