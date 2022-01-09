@@ -1,6 +1,5 @@
 *** Settings ***
 Default Tags      critical
-#Suite Setup    Install Application  
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
@@ -82,13 +81,11 @@ Buy Daily Deal Item on Delivery using Credit Card
     [Tags]    Master2
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
     Click Menu Daily Deals
     Click Daily Deals Product from API
-#    Click Product Daily Deals
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -106,7 +103,6 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     [Tags]    Master3
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -118,7 +114,6 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Wishlist Add To Cart    ${False}
     Click Back iOS    My Lists
     Click Home Cart
-#    Click Cart
     Click Checkout
     Click Delivery
     Click Add Delivery Address
@@ -136,13 +131,12 @@ Search and Buy Heavy Item on Delivery along with TV
     [Tags]    Master4
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
     Search Product    Fridg
     Click Product from API
-    Verify Delivery Surcharge    + R 100 Delivery Surcharge
+    Verify Delivery Surcharge    + R 200 Delivery Surcharge
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
     Close Application
@@ -150,12 +144,11 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Home
     Click Search Home
     Search Product    Televisio
-    Click Product from API    2
+    Click Product from API    1
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Domestic TV Licence
-    Click Verify TV Licence
     Enter TV Licence    1234
     Click Delivery
     Click Address
@@ -171,7 +164,6 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     [Tags]    Master5
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -187,7 +179,6 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Back Delivery Android
     Click Back Delivery iOS
     Click Back iOS    My Account
-#    Click Back Android
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -209,7 +200,6 @@ Buy Airtime and Pay with Credit Card
     [Tags]    Master6
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -231,7 +221,6 @@ Buy Airtime along with another Item on Delivery
     [Tags]    Master7
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -245,7 +234,7 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -265,7 +254,6 @@ Buy Airtime along with another Item on Collection
     [Tags]    Master8
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -279,7 +267,7 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API
+    Click Variant Product from API    1
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -299,7 +287,6 @@ Buy Daily Deals Item and verify no Promotions
     [Tags]    Master9
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -322,7 +309,6 @@ Buy Daily Deals Item and verify Promotions
     [Tags]    Master10
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu

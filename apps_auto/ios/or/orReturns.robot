@@ -1,148 +1,163 @@
 *** Variables ***
-${containerReturnsHistory}    ${EMPTY}
+${containerReturnsHistory}    chain=**/XCUIElementTypeTable
 ${containerReturnsEmptyState}    ${EMPTY}
+${onboardingCell1}    chain=**/XCUIElementTypeStaticText[`label == "Log a Return"`]
+${returnsToolBar}     chain=**/XCUIElementTypeNavigationBar[`name == "Returns"`]
+${navController}      id=NavController
+${navCloseButton}     id=icon close
+${navBackButton}    id=Back
 
-${cardReturnsHistoryEmptyState1}    ${EMPTY}
+${cardReturnsHistoryEmptyState1}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[2]
 
-${cardReturnsHistoryItem}    ${EMPTY}
-${cardReturnsHistoryItemTitle}    ${EMPTY}
-${cardReturnsHistoryItemStatus}    ${EMPTY}
-${cardReturnsHistoryPolicyItem}    ${EMPTY}
-${cardReturnsHistoryItemImage}    ${EMPTY}
+${cardReturnsHistoryItem}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[2]
+${cardReturnsHistoryItemTitle}    chain=(//XCUIElementTypeStaticText[@name="orderItemTitle"])[1]
+${cardReturnsHistoryItemStatus}    xpath=(//XCUIElementTypeStaticText[@name="orderItemSubtitle"])[1]
+${cardReturnsHistoryPolicyItem}    id=viewCenteredLinkTextView
+${cardReturnsHistoryItemImage}    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell    
 
 ${returnsOrderHistoryFilterOptionContainer}    ${EMPTY}
-${btnReturnsOrderHistoryFilterOptionChange}    ${EMPTY}
+${btnReturnsOrderHistoryFilterOptionChange}    id=Change
 
-${containerReturnsOrderHistory}    ${EMPTY}
+${containerReturnsOrderHistory}    chain=**/XCUIElementTypeTable
 
-${cardReturnsOrderHistoryItem}    ${EMPTY}
+${cardReturnsOrderHistoryItem}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[2]
+${cardReturnsOrderHistoryItem1}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[1]
+${cardReturnsOrderHistoryItemWithMultipleReturnableItems}    xpath=(//XCUIElementTypeCell[@name="viewOrderItemCell"])[4]
+
 ${cardReturnsOrderHistoryItemTitle}    ${EMPTY}
 ${cardReturnsOrderHistoryItemSubtitle}    ${EMPTY}
-${cardReturnsOrderHistoryItemImageContainer}    ${EMPTY}
 
-${cardReturnsOrderHistoryItemWithMutlipleQuantity}    ${EMPTY}
-${cardReturnsOrderHistoryItemWithSizeVariantOption}    ${EMPTY}
-${cardReturnsOrderHistoryItemWithColourVariantOption}    ${EMPTY}
-${cardReturnsOrderHistoryItemWithLiquorOption}    ${EMPTY}
+${cardReturnsOrderHistoryItemWithMutlipleQuantity}    chain=**/XCUIElementTypeStaticText[`label == "Order #91818963"`]
+${cardReturnsOrderHistoryItemWithSizeVariantOption}    chain=**/XCUIElementTypeStaticText[`label == "Order #96062667"`]
+${cardReturnsOrderHistoryItemWithColourVariantOption}    chain=**/XCUIElementTypeStaticText[`label == "Order #96147644"`]
+${cardReturnsOrderHistoryItemWithLiquorOption}    chain=**/XCUIElementTypeStaticText[`label == "Order #97916412"`]
 
-${returnOrderDetailReturnableSectionTitle}    ${EMPTY}
-${returnOrderDetailNonReturnableSectionTitle}    ${EMPTY}
+${returnOrderDetailReturnableSectionTitle}    chain=**/XCUIElementTypeStaticText[`label == "RETURNABLE ITEMS"`]
+${returnOrderDetailNonReturnableSectionTitle}    chain=**/XCUIElementTypeStaticText[`label == "NON-RETURNABLE ITEMS"`]
 
-${cardReturnsOrderDetailItemImage}    ${EMPTY}
-${cardReturnsOrderDetailItemTitle}    ${EMPTY}
-${cardReturnsOrderDetailItemPriceAndQty}    ${EMPTY}
-${cardReturnsOrderDetailItemWarrantyTitle}    ${EMPTY}
-${cardReturnsOrderDetailItemWarrantySubtitle}    ${EMPTY}
+${cardReturnsOrderDetailItemImage}    chain=**/XCUIElementTypeImage[`name == "ReturnItemImage"`][1]
+${cardReturnsOrderDetailItemTitle}    xpath=(//XCUIElementTypeStaticText[@name="ReturnItemTitle"])[1]
+${cardReturnsOrderDetailItemPriceAndQty}    xpath=(//XCUIElementTypeStaticText[@name="ReturnItemSubtitle"])[1]
+${cardReturnsOrderDetailItemWarrantyTitle}    xpath=(//XCUIElementTypeStaticText[@name="ReturnItemFooter1"])[1]
+${cardReturnsOrderDetailItemWarrantySubtitle}    xpath=(//XCUIElementTypeStaticText[@name="ReturnItemFooter2"])[1]
+${cardReturnsOrderDetailItemWarrantyInfo}    xpath=(//XCUIElementTypeButton[@name="icon info black"])[1]
 
-${cardReturnsOrderDetailItemWithMultipleQuantity}    ${EMPTY}
-${cardReturnsOrderDetailItemWithVariantSize}    ${EMPTY}
-${cardReturnsOrderDetailItemWithVariantColour}    ${EMPTY}
-${cardReturnsOrderDetailItemWithLiquor}    ${EMPTY}
+${cardReturnsOrderDetailItemWithMultipleQuantity}    chain=**/XCUIElementTypeStaticText[`label == "Pokemon Sword & Shield 4: Vivid Voltage - Booster"`]
+${cardReturnsOrderDetailItemWithVariantSize}    chain=**/XCUIElementTypeStaticText[`label == "adidas Men's Long Sleeve Tee - Black - S"`]
+${cardReturnsOrderDetailItemWithVariantColour}    chain=**/XCUIElementTypeStaticText[`label == "Nike Hyperfuel 500ml Water Bottle"`]
+${cardReturnsOrderDetailItemWithLiquor}    chain=**/XCUIElementTypeStaticText[`label == "Robertson - Chapel Natural Sweet Rose - 750ml"`]
 
-${cardReturnsOrderDetailReturnableItem}    ${EMPTY}
-${cardReturnsOrderDetailReturnableItem2}    ${EMPTY}
-${cardReturnsOrderDetailNonReturnableItem}    ${EMPTY}
+${cardReturnsOrderDetailReturnableItem}    chain=**/XCUIElementTypeKey[`name == "viewReturnItemCell"`][1]
 
-${cardReturnsOrderDetailItemNonReturnableReasonTitle}    ${EMPTY}
+${cardReturnsOrderDetailReturnableItem2}    chain=**/XCUIElementTypeKey[`name == "viewReturnItemCell"`][2]
+${cardReturnsOrderDetailNonReturnableItem}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
+
+${returnReasonReasonItemExchange}    chain=**/XCUIElementTypeStaticText[`label == "I want to exchange it for different size/colour"`]
+${cardReturnsOrderDetailItemNonReturnableReasonTitle}    chain=**/XCUIElementTypeStaticText[`label == "NON-RETURNABLE ITEMS"`]
 
 ${returnsOrderDetailWarrantyDialogTitle}    ${EMPTY}
-${returnsOrderDetailWarrantyDialogMessage}    ${EMPTY}
-${returnsOrderDetailWarrantyDialogButton}    ${EMPTY}
+${returnsOrderDetailWarrantyDialogMessage}    xpath=//XCUIElementTypeStaticText[@name="Limited warranty, with certain exclusions, as defined by the manufacturer. Please consult the manufacturer for further details."]
+${returnsOrderDetailWarrantyDialogButton}    id=OK
 
-${containerReturnsHOrderDetail}    ${EMPTY}
+${containerReturnsHOrderDetail}    chain=**/XCUIElementTypeOther[`name == "NON-RETURNABLE ITEMS"`]
 
-${containerReturnsReason}    ${EMPTY}
+${containerReturnsReason}    id=sharedSingleTextViewTableViewCell
+${txtReasonForReturnTitle}    chain=**/XCUIElementTypeStaticText[`label == "Reason for Return"`]
 
-${returnReasonReasonSelector}    ${EMPTY}
+${returnReasonReasonSelector}    chain=**/XCUIElementTypeCell[`name == "reason_for_return"`]/XCUIElementTypeTextField
 ${returnReasonReasonSelectorText}    ${EMPTY}
-${returnReasonReasonSelectorErrorText}    ${EMPTY}
-${returnReasonReasonItemNonExchange}    ${EMPTY}
+${returnReasonReasonSelectorErrorText}    chain=**/XCUIElementTypeStaticText[`label == "Please select a reason for return"`]
+${returnReasonReasonItemNonExchange}    chain=**/XCUIElementTypeCell[`name == "sharedTitleTableViewCell"`][1]
 
-${returnReasonTextArea}    ${EMPTY}
-${returnReasonTextAreaText}    ${EMPTY}
-${returnReasonTextAreaErrorMessage}    ${EMPTY}
+${returnReasonTextArea}    id=sharedSingleTextViewTableViewCell
+${returnReasonTextAreaText}    id=sharedSingleTextViewTableViewCellContent
+${returnReasonTextAreaErrorMessage}    id=sharedSingleTextViewTableViewCellContentFooter
 
-${returnReasonPreferredOutcomeSelector}    ${EMPTY}
-${returnReasonPreferredOutcomeErrorMessage}    ${EMPTY}
-${returnReasonPreferredOutcomeItem}    ${EMPTY}
+${returnReasonPreferredOutcomeSelector}    chain=**/XCUIElementTypeCell[`name == "preferred_outcome"`]/XCUIElementTypeTextField
+${returnReasonPreferredOutcomeErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select a preferred outcome"`]
+${returnReasonPreferredOutcomeItem}    chain=**/XCUIElementTypeCell[`name == "sharedTitleTableViewCell"`][1]
 
-${returnReasonQuantitySelector}    ${EMPTY}
-${returnReasonQuantityErrorMessage}    ${EMPTY}
+${returnReasonQuantitySelector}    chain=**/XCUIElementTypeCell[`name == "quantity_to_return"`]/XCUIElementTypeTextField
 
-${returnReasonVariantSizeSelectorErrorMessage}    ${EMPTY}
-${returnReasonVariantColourSelectorErrorMessage}    ${EMPTY}
+${returnReasonQuantityErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select a quantity to return"`]
 
-${containerReturnRequest}    ${EMPTY}
+${returnReasonVariantSizeSelectorErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select size"`]
+${returnReasonVariantColourSelectorErrorMessage}    chain=**/XCUIElementTypeStaticText[`label == "Please select a colour"`]
+
+${containerReturnRequest}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable
 
 
-${returnRequestReturnItemsHeader}    ${EMPTY}
-${returnRequestReturnMethodHeader}    ${EMPTY}
-${cardReturnsRequestItem}    ${EMPTY}
+${returnRequestReturnItemsHeader}    chain=**/XCUIElementTypeStaticText[`label == "RETURN ITEMS"`]
+${returnRequestReturnMethodHeader}    chain=**/XCUIElementTypeStaticText[`label == "RETURN METHOD"`]
+${cardReturnsRequestItem}    chain=**/XCUIElementTypeKey[`name == "viewReturnItemCell"`]/XCUIElementTypeOther[1]
 ${cardReturnsRequestItemImage}    ${EMPTY}
-${cardReturnsRequestItemTitle}    ${EMPTY}
-${cardReturnsRequestItemPriceAndQty}    ${EMPTY}
-${cardReturnsRequestItemReasonTitle}    ${EMPTY}
-${cardReturnsRequestItemPreferredOutcomeTitle}    ${EMPTY}
+${cardReturnsRequestItemTitle}    id=ReturnItemTitle
+${cardReturnsRequestItemPriceAndQty}    id=ReturnItemSubtitle
+${cardReturnsRequestItemReasonTitle}    id=ReturnItemFooter1
+${cardReturnsRequestItemPreferredOutcomeTitle}    id=ReturnItemFooter2
+${btnReturnsRequestItemDelete}    chain=**/XCUIElementTypeButton[`label == "Delete"`]
 
-${returnsRequestDialogTitle}    ${EMPTY}
-${returnsRequestDialogMessage}    ${EMPTY}
-${returnsRequestDialogNegativeActionButton}    ${EMPTY}
-${returnsRequestDialogPositiveActionButton}    ${EMPTY}
+${returnsRequestDialogTitle}    id=Are you sure?
+${returnsRequestDialogMessage}    id=Remove item from return request?
+${returnsRequestDialogNegativeActionButton}    id=Keep
+${returnsRequestDialogPositiveActionButton}    id=Remove
 
-${returnReasonToolbarDeleteIcon}    ${EMPTY}
+${returnReasonToolbarDeleteIcon}    id=icon delete
 
-${returnReasonDialogTitle}    ${EMPTY}
-${returnReasonDialogMessage}    ${EMPTY}
-${returnReasonDialogNegativeActionButton}    ${EMPTY}
-${returnReasonDialogPositiveActionButton}    ${EMPTY}
+${returnReasonDialogTitle}    id=Remove Item
+${returnReasonDialogMessage}    id=Remove item from return request?
+${returnReasonDialogNegativeActionButton}    id=Keep
+${returnReasonDialogPositiveActionButton}    id=Remove
 
-${returnRequestAddAnotherItemButton}    ${EMPTY}
+${returnRequestAddAnotherItemButton}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell
 ${returnRequestShimmer}    ${EMPTY}
 
-${returnRequestDeliveryMethodSelector}    ${EMPTY}
-${returnRequestDeliveryMethodSelectorTitle}    ${EMPTY}
-${returnRequestDeliveryMethodSelectorButton}    ${EMPTY}
+${returnRequestDeliveryMethodSelector}    id=pickupPointSelectorCell
+${returnRequestCollectAdressSelector}    id=collectAddressSelectorCell
+${returnRequestDeliveryMethodSelectorTitle}    xpath=//XCUIElementTypeStaticText[@name="selectorTitle"]
+${returnRequestDeliveryMethodSelectorButton}    chain=**/XCUIElementTypeStaticText[`label == "Change"`][1]
 
-${returnRequestDeliveryMethodAddress}    ${EMPTY}
-${returnRequestDeliveryMethodAddressTitle}    ${EMPTY}
-${returnRequestDeliveryMethodAddressTypePill}    ${EMPTY}
-${returnRequestDeliveryMethodAddressRecipientName}    ${EMPTY}
-${returnRequestDeliveryMethodAddressDetailText}    ${EMPTY}
+${returnRequestDeliveryMethodAddress}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[3]
+${returnRequestDeliveryMethodAddressTitle}    id=viewReturnCartAddressCellTitleLabel
+${returnRequestDeliveryMethodAddressTypePill}    id=viewReturnCartAddressCellAddressTypeLabel
+${returnRequestDeliveryMethodAddressRecipientName}    id=viewReturnCartAddressCellNameLabel
+${returnRequestDeliveryMethodAddressDetailText}    id=viewReturnCartAddressCellAddressLabel
 
-${returnRequestContactDetailSelector}    ${EMPTY}
-${returnRequestContactDetailSelectorTitle}    ${EMPTY}
-${returnRequestContactDetailSelectorSubtitle}    ${EMPTY}
-${returnRequestContactDetailSelectorButton}    ${EMPTY}
+${returnRequestContactDetailSelector}    id=contactDetailSelectorCell
+${returnRequestContactDetailSelectorTitle}    xpath=(//XCUIElementTypeStaticText[@name="selectorTitle"])[2]
+${returnRequestContactDetailSelectorSubtitle}    xpath=(//XCUIElementTypeStaticText[@name="selectorTitle"])[2]
+${returnRequestContactDetailSelectorButton}    chain=**/XCUIElementTypeStaticText[`label == "Change"`][2]
 
-${returnRequestEmptyState}    ${EMPTY}
-${returnRequestEmptyStateCallToAction}    ${EMPTY}
+${returnRequestEmptyState}    id=CMSPageEmptyStateView
+${returnRequestEmptyStateCallToAction}    id=CMSPageEmptyStateButton
 
-${returnSelectReturnMethodPickupPoint}    ${EMPTY}
-${returnSelectReturnMethodPickupPointTitle}    ${EMPTY}
-${returnSelectReturnMethodCollect}    ${EMPTY}
-${returnSelectReturnMethodCollectTitle}    ${EMPTY}
+${returnSelectReturnMethodPickupPoint}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][1]
+${returnSelectReturnMethodPickupPointTitle}    xpath=(//XCUIElementTypeStaticText[@name="viewDeliveryMethodCellReturnMethod"])[1]
 
-${returnSelectAddressAddAddress}    ${EMPTY}
-${returnSelectAddressItem}    ${EMPTY}
+${returnSelectReturnMethodCollect}    chain=**/XCUIElementTypeCell[`name == "DeliveryMethodCell"`][2]
+${returnSelectReturnMethodCollectTitle}    chain=**/XCUIElementTypeStaticText[`label == "Collect from my address"`]
+
+${returnSelectAddressAddAddress}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
+${returnSelectAddressItem}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
 ${returnSelectAddressIncompleteItem}    ${EMPTY}
-${returnSelectAddressItemName}    ${EMPTY}
-${returnSelectAddressItemEditButton}    ${EMPTY}
-${returnSelectAddressItemDeleteButton}    ${EMPTY}
+${returnSelectAddressItemName}    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][1]
+${returnSelectAddressItemEditButton}    chain=**/XCUIElementTypeStaticText[`label == "EDIT"`][1]
+${returnSelectAddressItemDeleteButton}    chain=**/XCUIElementTypeStaticText[`label == "DELETE"`][1]
 
 ${returnSelectAddressInputNotification}    ${EMPTY}
 
-${returnSelectAddressEmptyState}    ${EMPTY}
-${returnSelectAddressEmptyStateTitle}    ${EMPTY}
-${returnSelectAddressEmptyStateMessage}    ${EMPTY}
+${returnSelectAddressEmptyState}    id=SharedCenterImageTitleCellImage
+${returnSelectAddressEmptyStateTitle}    id=SharedCenterImageTitleCellImage
+${returnSelectAddressEmptyStateMessage}    id=SharedCenterImageTitleCellTitle
 
 ${returnSelectAddressDeleteDialogTitle}    ${EMPTY}
 ${returnSelectAddressDeleteDialogMessage}    ${EMPTY}
 ${returnSelectAddressDeleteDialogConfirmationButton}    ${EMPTY}
 
-${returnSelectPickupPointItemTitle}    ${EMPTY}
-${returnSelectPickupPointItemSubtitle}    ${EMPTY}
-${returnSelectPickupPointItemInfoButton}    ${EMPTY}
-${returnSelectPickupPointFilterChangeButton}    ${EMPTY}
+${returnSelectPickupPointItemTitle}    xpath=(//XCUIElementTypeStaticText[@name="viewPickupPointCellTitleLabel"])[1]
+${returnSelectPickupPointItemSubtitle}    xpath=(//XCUIElementTypeStaticText[@name="viewPickupPointCellSubtitleLabel"])[1]
+${returnSelectPickupPointItemInfoButton}    xpath=(//XCUIElementTypeStaticText[@name="INFO"])[1]
+${returnSelectPickupPointFilterChangeButton}    id=selectorChange
 ${returnSelectPickupPointProvinceTitle}    ${EMPTY}
 
 ${returnSelectPickupPointInfoMap}    ${EMPTY}
@@ -151,16 +166,16 @@ ${returnSelectPickupPointInfoTPPProvince}    ${EMPTY}
 ${returnSelectPickupPointInfoTPPAddress}    ${EMPTY}
 ${returnSelectPickupPointInfoBusinessHourContainer}    ${EMPTY}
 ${returnSelectPickupPointInfoNotification}    ${EMPTY}
-${returnSelectPickupPointCallToAction}    ${EMPTY}
+${returnSelectPickupPointCallToAction}    chain=**/XCUIElementTypeButton[`label == "SELECT PICKUP POINT"`]
 
-${returnContactDetailsNameField}    ${EMPTY}
-${returnContactDetailsMobileNumberField}    ${EMPTY}
+${returnContactDetailsNameField}    xpath=//XCUIElementTypeCell[@name="TextFieldCellId"]/XCUIElementTypeTextField
+${returnContactDetailsMobileNumberField}    xpath=//XCUIElementTypeCell[@name="SharedSingleTextFieldTableViewCellId"]/XCUIElementTypeTextField
 
-${returnSuccessIcon}    ${EMPTY}
-${returnSuccessTitle}    ${EMPTY}
-${returnSuccessSubtitle}    ${EMPTY}
-${returnSuccessImageContainer}    ${EMPTY}
-${returnSuccessTrackButton}    ${EMPTY}
+${returnSuccessIcon}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeImage
+${returnSuccessTitle}    id=viewReturnsSuccessCellTitleLabel
+${returnSuccessSubtitle}    id=viewReturnsSuccessCellSubtileLabel
+${returnSuccessImageContainer}    chain=**/XCUIElementTypeOther[`name == "viewReturnsSuccessCellImageContainer"`]/XCUIElementTypeOther/XCUIElementTypeOther
+${returnSuccessTrackButton}    id=ViewSingleButton
 
 ${btnReturnsCallToAction}      chain=**/XCUIElementTypeButton[`label == "Log Return"`]
 
@@ -174,3 +189,4 @@ ${btnLogReturn}    chain=**/XCUIElementTypeButton[`label == "Log Return"`]
 ${txtReturnCollect}    chain=**/XCUIElementTypeStaticText[`label == "Collect from my address"`]
 ${txtReturnCollectOption}    chain=**/XCUIElementTypeStaticText[`label == "Test"`]
 ${txtReturnSubmit}    chain=**/XCUIElementTypeButton[`label == "Submit Return Request"`]
+${btnReturnsCallToAction}    id=ViewSingleButton

@@ -47,14 +47,20 @@ Swipe Right
     Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  1000
 
 Swipe Left
-    [Documentation]    This keyword will perform a left swipe action on a given element.
-    [Arguments]       ${element}    ${swipeSpeed}=1500
+    [Documentation]    This keyword will perform a a swipe on an element. By default it will fully swipe an element else
+                        ...    else you can use the 'swipePartially' flag partial swipe instead of a full swipe on an element.
+    [Arguments]       ${element}    ${swipeSpeed}=1500    ${swipePartially}=${False}
     wait until element is Visible     ${element}
     ${element_size}=    Get Element Size    ${element}
     ${element_location}=    Get Element Location    ${element}
     ${start_x}=         Evaluate      ${element_location['x']} + (${element_size['width']} * 0.7)
     ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
-    ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
+    ${end_x}=    Set Variable    ${None}
+    IF    ${swipePartially} == ${True}
+        ${end_x}=    Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
+    ELSE
+        ${end_x}=    Evaluate      ${element_location['x']} + (${element_size['width']} * 0.1)    
+    END
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.5)
     Swipe    ${start_x}    ${start_y}  ${end_x}  ${end_y}  ${swipeSpeed}
 

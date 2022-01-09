@@ -8,3 +8,4 @@ ${btnBannerWidget}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/X
 ${btnProductWidget}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "% OFF"`]
 ${btnImageWidget}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[3]
 ${btnContextWidget}      chain=**/XCUIElementTypeStaticText[`label == "Body Care"`]
+${btnFeaturedWidget}    id=Tote Bags

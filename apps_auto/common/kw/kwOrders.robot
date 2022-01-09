@@ -61,7 +61,7 @@ Click Order By Index
     IF    '${PLATFORM_NAME}' == 'android'
         ${dynamicOrderIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle'])[${orderIndex}]
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
-        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label contains "Delivery by"`][${orderIndex}]    
+        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeCell/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther[${orderIndex}]    
     END
     Click Element    ${dynamicOrderIndex}
 
@@ -97,3 +97,15 @@ Select Order History Filter Option
 Click Order Delivery
     Wait Until Element Is Visible    ${txtOrdersDelivery}    ${MIN_TIMEOUT}
     Click Element    ${txtOrdersDelivery}
+
+Verify Order Status By Index
+    [Documentation]    This keyword will verify an order status based on its index.
+    [Arguments]        ${statusText}    ${orderIndex}
+    ${orderWithStatusByindex}=    Set Variable    ${None}
+    
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${orderWithStatusByindex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle' and @text='${statusText}'])[${orderIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${orderWithStatusByindex}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${statusText}"`][${orderIndex}]    
+    END
+    Verify Element On Screen    ${orderWithStatusByindex}    ${MIN_TIMEOUT}
