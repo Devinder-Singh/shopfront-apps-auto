@@ -61,6 +61,46 @@ Swipe To Empty State Step 2
     Swipe    ${startPositionX}    ${startPositionY}    ${endPositionX}    ${endPositionY}
 #    Sleep    5s
 
+Click Select Return Reason
+    Wait Until Element Is Visible    ${btnSelectReturnReason}    ${MIN_TIMEOUT}
+    Click Element    ${btnSelectReturnReason}
+
+Select Return Reason
+    Wait Until Element Is Visible    ${txtReturnReason}    ${MIN_TIMEOUT}
+    Click Element    ${txtReturnReason}
+
+Click Select Return Method
+    Wait Until Element Is Visible    ${btnReturnReturnMethod}    ${MIN_TIMEOUT}
+    Click Element    ${btnReturnReturnMethod}
+
+Select Return Method
+    Wait Until Element Is Visible    ${txtReturnMethod}    ${MIN_TIMEOUT}
+    Click Element    ${txtReturnMethod}
+
+Enter Return Description
+    Wait Until Element Is Visible    ${txtReturnDesc}    ${MIN_TIMEOUT}
+    Input Text    ${txtReturnDesc}    Test
+
+Click Return Continue
+    Wait Until Element Is Visible    ${txtReturnCont}    ${MIN_TIMEOUT}
+    Click Element    ${txtReturnCont}
+
+Click Log Return
+    Wait Until Element Is Visible    ${btnLogReturn}    ${MIN_TIMEOUT}
+    Click Element    ${btnLogReturn}
+
+Click Return Collect
+    Wait Until Element Is Visible    ${txtReturnCollect}    ${MIN_TIMEOUT}
+    Click Element    ${txtReturnCollect}
+
+Select Return Collect
+    Wait Until Element Is Visible    ${txtReturnCollectOption}    ${MIN_TIMEOUT}
+    Click Element    ${txtReturnCollectOption}
+
+Select Return Submit
+    Wait Until Element Is Visible    ${txtReturnSubmit}    ${MIN_TIMEOUT}
+    Click Element    ${txtReturnSubmit}
+
 Click Returns Call To Action Button
     Wait Until Element Is Visible    ${btnReturnsCallToAction}    ${MIN_TIMEOUT}
     Click Element    ${btnReturnsCallToAction}

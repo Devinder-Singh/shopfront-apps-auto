@@ -9,3 +9,5 @@ ${txtDigitalShippingAddress}      id=${APP_PACKAGE}:id/orderDetailSummaryItemShi
 
 ${btnOrdersFilterChange}      xpath=//*[@text="CHANGE"]
 ${btnFilterOptionChange}    id=fi.android.takealot.debug:id/filter_option_button
+
+${txtOrdersDelivery}      xpath=//*[contains(@text, "Delivery by")]

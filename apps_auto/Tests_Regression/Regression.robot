@@ -1154,7 +1154,7 @@ Apps > Order Tracking > Delivery Order > QASA-80
 
     ${completedOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
-    
+ 
     Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
@@ -1693,4 +1693,40 @@ Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
     Click Delivery
     Click Address
     Click Surcharge Delivery
+    [Teardown]    Tear Down
+
+iOS > Privacy Attention Prompt - QASA-43
+    [Tags]    QASA-43
+    [Setup]    Start Application    ${False}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Would you like to receive push notifications for Daily Deals and Promotions    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Would you like to receive app notifications for Daily Deals    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Returns > Non-Variant item - QASA-865
+    [Tags]    QASA-865
+    [Setup]    Start Application
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Click Element From Text    ${query_order_id}
+    Click Element From Text    ${prod_Title}
+    Click Select Return Reason
+    Select Return Reason
+    Click Select Return Method
+    Select Return Method
+    Enter Return Description
+    Click Return Continue
+    Click Log Return
+    Click Return Collect
+    Select Return Collect
+    Select Return Submit
+    Verify Text On Screen    Track Return    ${MIN_TIMEOUT}
     [Teardown]    Tear Down

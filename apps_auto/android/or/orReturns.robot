@@ -163,3 +163,14 @@ ${returnSuccessImageContainer}    id=${APP_PACKAGE}:id/returns_success_image_con
 ${returnSuccessTrackButton}    id=${APP_PACKAGE}:id/return_success_track_btn
 
 ${btnReturnsCallToAction}    id=${APP_PACKAGE}:id/returnsCallToActionOption
+
+${btnSelectReturnReason}    id=${APP_PACKAGE}:id/optionSelectorActionText
+${txtReturnReason}    xpath=//*[contains(@text, "I have changed my mind")]
+${btnReturnReturnMethod}    xpath=//*[contains(@text, "SELECT")]
+${txtReturnMethod}    xpath=//*[contains(@text, "Credit my Takealot account")]
+${txtReturnDesc}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${txtReturnCont}    xpath=//*[contains(@text, "CONTINUE")]
+${btnLogReturn}    id=${APP_PACKAGE}:id/returnsCallToActionOption
+${txtReturnCollect}    xpath=//*[contains(@text, "Collect from my address")]
+${txtReturnCollectOption}    xpath=//*[contains(@text, "Test")]
+${txtReturnSubmit}    id=${APP_PACKAGE}:id/returnsCallToActionOption

@@ -118,3 +118,96 @@ Apps > Order Refactor > Order History > Display Results
     Select Order History Filter Option    Last 6 months
     Verify Text On Screen    Last 6 months    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
+
+Apps > Order Refactor > Order History > Date filter applied - QASA-373
+    [Tags]    QASA-373
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
+    Verify Text On Screen    No orders found    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order History > My Account > Empty Landing Screen - QASA-374
+    [Tags]    QASA-374
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
+    Verify Text On Screen    No orders found    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order Detail > Delivered Order - QASA-348
+    [Tags]    QASA-348
+    [Setup]    Start Application
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order Delivery
+    Click Track Order
+    Verify Text On Screen    Order paid    ${MIN_TIMEOUT}
+    Verify Text On Screen    Expected to ship    ${MIN_TIMEOUT}
+    Verify Text On Screen    DELIVERY BY    ${MIN_TIMEOUT}
+    Verify Text On Screen    Detailed tracking will become available once your parcel has shipped from our warehouse    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Element On Screen    ${barTrackerVertical}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Element On Screen    ${progressTrackerVertical}    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order Detail > Digital Order - QASA-350
+    [Tags]    QASA-350
+    [Setup]    Start Application
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    airtim
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order Delivery
+    Verify Text On Screen    Digital Product    ${MIN_TIMEOUT}
+    Verify Text On Screen    Delivered via email to    ${MIN_TIMEOUT}
+    Verify Text On Screen    ${prod_Title}    ${MIN_TIMEOUT}
+    Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
+    Verify Text On Screen    1 Item    1s
+    Verify Text On Screen    Delivery    1s
+    Verify Text On Screen    PAYMENT METHOD    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Credit Card    1s  
+    Verify Text On Screen    DELIVERY METHOD    1s
+    Verify Text On Screen    First Delivery Free - Standard    1s
+    Verify Text On Screen    SHIPPING ADDRESS    1s
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Test    1s
+    Verify Text On Screen    12 Ridge Way    1s
+    Verify Text On Screen    Green Point    1s
+    Verify Text On Screen    Cape Town    1s
+    Verify Text On Screen    8005    1s
+    [Teardown]    Tear Down

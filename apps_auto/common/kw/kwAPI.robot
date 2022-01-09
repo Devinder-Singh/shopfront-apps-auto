@@ -3,6 +3,9 @@ Resource          ../config/defaultConfig.robot
 
 *** Variables ***
 #    test-automation-platform
+${query_URL}      http://tal-test-data-service.master.env/execute_query_anydb
+${query_OrderDel_Body}      { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "select * From wms2_instructions where idOrder = 99521775" }
+
 ${cart_URL}       http://tal-test-data-service.master.env/remove_products_in_cart
 ${cart_Body}      { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": "4933518", "env": "master.env" }
 
@@ -104,6 +107,35 @@ Get Tokens
     Set Global Variable    ${query_customer_bearer}    ${query_result_bearer}
     Set Global Variable    ${query_customer_csrf}    ${query_result_csrf}
     [return]    ${query_result}
+
+Update Order Delivery DB
+    [Arguments]    ${orderId}
+
+    ${OrderDel_URL}=    Set Variable    http://admin.master.env/s3cret/admin/pickcreate.php?idOrder=${orderId}
+    Get    ${OrderDel_URL}
+    Integer    response status    200
+
+    ${query_OrderDel_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "Update wms2_instructions set idInstructionStatus = 6 where idOrder = ${orderId}" }
+    Post    ${query_URL}    ${query_OrderDel_Body}
+    Integer    response status    200
+
+    ${query_OrderInst_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "select idInstruction From wms2_instructions where idOrder = ${orderId}" }
+    Post    ${query_URL}    ${query_OrderInst_Body}
+    Integer    response status    200
+
+    ${retInstId}=    Output    $[0].idInstruction
+    Set Global Variable    ${query_Instruction_id}    ${retInstId}
+
+    ${OrderShip_URL}=    Set Variable    http://tal-test-data-service.master.env/pack_and_ship/order/${orderId}/instruction/${retInstId}
+    Get    ${OrderShip_URL}
+    Integer    response status    200
+
+    ${date}=      Get Current Date    exclude_millis=True
+    ${todayDateFormat}=      Convert Date      ${date}      result_format=%Y-%m-%d
+
+    ${query_OrderShip_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "Update orderitems set DateDelivered = ${todayDateFormat} where idOrder = ${orderId}" }
+    Post    ${query_URL}    ${query_OrderShip_Body}
+    Integer    response status    200
 
 Add To Cart
     [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
@@ -1297,6 +1329,10 @@ Search And Return Product Id API
     Integer    response status    200
 
     ${productId}=    Output    $.sections.products.results[1].product_views.buybox_summary.product_id
+
+    ${productTitle}=    Output    $.sections.products.results[1].product_views.core.title
+    Set Global Variable    ${prod_Title}    ${productTitle}
+
     [Return]    ${productId}
 
 Create New Order API
@@ -1306,10 +1342,13 @@ Create New Order API
                         ...    Known delivery methods that can be used are 'COLLECT', 'COURIER' and 'DIGITAL'.
                         ...    The 'completePayment' parameter will determine if the order created should be fully paid or not paid (Awaiting payment state).
     [Arguments]    ${productId}    ${productQuantity}    ${paymentMethod}    ${deliveryMethod}    ${completePayment}
-    
+
     ${customerId}=    Get Customer ID
-    ${createNewOrderJsonBody}=    Set Variable    {"customer_id":${customerId},"products":[{"product_id":${productId},"quantity":${productQuantity}, "unit_price":190}],"address_id":"5f3758b775787614fc4487bb","payment_method":"${paymentMethod}","delivery_method":"${deliveryMethod}","pay_full_amount_due":true,"percentage_of_amount_due_to_pay":100,"complete_payment":${completePayment},"add_donation":false,"cancel_order":false}
-   
+    ${createNewOrderJsonBody}=    Set Variable    {"customer_id":${customerId},"products":[{"product_id":${productId},"quantity":${productQuantity}, "unit_price":62}],"address_id":"5f3758b775787614fc4487bb","payment_method":"${paymentMethod}","delivery_method":"${deliveryMethod}","pay_full_amount_due":true,"percentage_of_amount_due_to_pay":100,"complete_payment":${completePayment},"add_donation":false,"cancel_order":false}
+
     POST    ${createNewOrderEndpoint}    ${createNewOrderJsonBody}
-    Output    response
-    Integer    response status    200    
+    Integer    response status    200
+
+    ${retOorderId}=    Output    $.order_id
+    Set Global Variable    ${query_order_id}    ${retOorderId}
+    [Return]    ${retOorderId}

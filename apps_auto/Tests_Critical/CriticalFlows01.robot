@@ -3,34 +3,62 @@ Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Order Refactor > Order History > My Account > Empty Landing Screen - QASA-374
-    [Tags]    QASA-374
+Returns > Variant item - QASA-868
+    [Tags]    QASA-868
     [Setup]    Start Application
-
     Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    fridge
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}
     Click Menu
-    Click Menu Login
-    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
-    Click Menu Orders
-    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
-    Verify Text On Screen    No orders found    ${MIN_TIMEOUT}
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Click Element From Text    ${query_order_id}
+    Click Element From Text    ${prod_Title}
+    Click Select Return Reason
+    Select Return Reason
+    Click Select Return Method
+    Select Return Method
+    Enter Return Description
+    Click Return Continue
+    Click Log Return
+    Click Return Collect
+    Select Return Collect
+    Select Return Submit
+    Verify Text On Screen    Track Return    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Order Refactor > Order History > Date filter applied - QASA-373
-    [Tags]    QASA-373
+Returns > Heavy Good Item - QASA-869
+    [Tags]    QASA-869
     [Setup]    Start Application
-
     Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}
     Click Menu
-    Click Menu Login
-    Login Takealot    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
     Click Menu
     Click Menu My Account
-    Click Menu Orders
-    Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
-    Verify Text On Screen    No orders found    ${MIN_TIMEOUT}
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Click Element From Text    ${query_order_id}
+    Click Element From Text    ${prod_Title}
+    Click Select Return Reason
+    Select Return Reason
+    Click Select Return Method
+    Select Return Method
+    Enter Return Description
+    Click Return Continue
+    Click Log Return
+    Click Return Collect
+    Select Return Collect
+    Select Return Submit
+    Verify Text On Screen    Track Return    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 #Create Paid Order

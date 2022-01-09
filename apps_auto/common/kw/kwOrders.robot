@@ -93,3 +93,7 @@ Select Order History Filter Option
     END
     Wait Until Element Is Visible    ${filterOptionToSelect}    ${MIN_TIMEOUT}
     Click Element    ${filterOptionToSelect}
+
+Click Order Delivery
+    Wait Until Element Is Visible    ${txtOrdersDelivery}    ${MIN_TIMEOUT}
+    Click Element    ${txtOrdersDelivery}

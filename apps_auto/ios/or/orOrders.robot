@@ -9,3 +9,5 @@ ${txtDigitalShippingAddress}      chain=**/XCUIElementTypeStaticText[`label == "
 
 ${btnOrdersFilterChange}      id=Change
 ${btnFilterOptionChange}    chain=**/XCUIElementTypeStaticText[`label == "Change"`]
+
+${txtOrdersDelivery}      chain=**/XCUIElementTypeStaticText[`label CONTAINS "Delivery by"`]
