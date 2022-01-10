@@ -6,3 +6,5 @@ ${txtSearch}      id=${APP_PACKAGE}:id/searchParentToolbarSearchInput
 
 ${btnSearchRecent}      xpath=//*[@text="pencil case"]
 ${btnSearchTrending}      xpath=//*[@text="waist trainer"]
+
+${btnSearchClearText}    id=fi.android.takealot.debug:id/searchParentToolbarOptionAction
