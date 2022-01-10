@@ -70,3 +70,13 @@ Apps > Order Refactor > Order History > Digital Order
     Verify Text On Screen    Digital Product(s)
     Verify Text On Screen    Digital Delivery
     [Teardown]    Tear Down
+
+Apps > Order Refactor > Order History > Cancelled Order
+    [Tags]    QASA-365
+    [Setup]    Start Application
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Menu My Account
+    Click Menu Orders
+    Click Order By Index    1
+    Verify Text On Screen    Cancelled Item(s)
+    [Teardown]    Tear Down
