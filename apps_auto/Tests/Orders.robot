@@ -60,14 +60,13 @@ Apps > Order Refactor > Order History > Awaiting Payment Order
 Apps > Order Refactor > Order History > Estimated Collection Order
     [Tags]    QASA-366
     [Setup]    Start Application    
-    ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
+    ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight    
     Create New Order API    ${awaitingOrderProductId}    1    PayFast    COLLECT    true    5f3d1644fdb1e941af57fd7e
-    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
     Click Menu My Account
     Click Menu Orders
-    Click Order By Index    1    COLLECT
+    Click Order By Index    1
     Verify Text On Screen    Order Detail
     Verify Text On Screen    Estimated Collection from
     Verify Text On Screen    NOT YET READY
