@@ -57,8 +57,8 @@ Apps > Order Refactor > Order History > Awaiting Payment Order
     Verify Order Status By Index    Awaiting Payment    1
     [Teardown]    Tear Down
 
-Apps > Order Refactor > Order History > Estimated Collection Order
-    [Tags]    QASA-366
+Apps > Order Refactor > Order Detail > Estimated Collection Order
+    [Tags]    QASA-357
     [Setup]    Start Application    
     ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight    
     Create New Order API    ${awaitingOrderProductId}    1    PayFast    COLLECT    true    5f3d1644fdb1e941af57fd7e
