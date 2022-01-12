@@ -107,10 +107,11 @@ Get Tokens
 
 Add To Cart
     [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
-    [Arguments]    ${productId}=87365581    ${productQuantity}=1
+    [Arguments]    ${productId}=87365581   ${productQuantity}=1
     Get Customer ID
     Get Tokens
     ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    Log To Console    ${Add_cart_Body}
     Post    ${Add_cart_URL}    ${Add_cart_Body}
     Integer    response status    200
 
