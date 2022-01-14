@@ -59,8 +59,8 @@ Click Order By Index
     ${dynamicOrderIndex}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
         ${dynamicOrderIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle'])[${orderIndex}]
-    ELSE IF    '${PLATFORM_NAME}' == 'ios'
-        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeCell/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther[${orderIndex}]    
+     ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeCell/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther[${orderIndex}]
     END
     Click Element    ${dynamicOrderIndex}
 

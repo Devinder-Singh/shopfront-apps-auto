@@ -1340,10 +1340,10 @@ Create New Order API
                         ...    Known payment methods that can be used are 'COD', 'Credit Card', 'Debit Card', 'eBucks', 'iPay', 'MasterPass', 'Mobicred', 'PayFast, 'sBux' and 'CREDIT'.
                         ...    Known delivery methods that can be used are 'COLLECT', 'COURIER' and 'DIGITAL'.
                         ...    The 'completePayment' parameter will determine if the order created should be fully paid or not paid (Awaiting payment state).
-    [Arguments]    ${productId}    ${productQuantity}    ${paymentMethod}    ${deliveryMethod}    ${completePayment}
-
+    [Arguments]    ${productId}    ${productQuantity}    ${paymentMethod}    ${deliveryMethod}    ${completePayment}    ${addressID}=5f3758b775787614fc4487bb
+    
     ${customerId}=    Get Customer ID
-    ${createNewOrderJsonBody}=    Set Variable    {"customer_id":${customerId},"products":[{"product_id":${productId},"quantity":${productQuantity}, "unit_price":62}],"address_id":"5f3758b775787614fc4487bb","payment_method":"${paymentMethod}","delivery_method":"${deliveryMethod}","pay_full_amount_due":true,"percentage_of_amount_due_to_pay":100,"complete_payment":${completePayment},"add_donation":false,"cancel_order":false}
+    ${createNewOrderJsonBody}=    Set Variable    {"customer_id":${customerId},"products":[{"product_id":${productId},"quantity":${productQuantity}, "unit_price":190}],"address_id":"${addressID}","payment_method":"${paymentMethod}","delivery_method":"${deliveryMethod}","pay_full_amount_due":true,"percentage_of_amount_due_to_pay":100,"complete_payment":${completePayment},"add_donation":false,"cancel_order":false}
 
     POST    ${createNewOrderEndpoint}    ${createNewOrderJsonBody}
     Integer    response status    200

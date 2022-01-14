@@ -6,8 +6,6 @@ ${btnOrdersCancel}      id=${APP_PACKAGE}:id/orderDetailConsignmentCancelOrder
 ${btnOrdersCancelConfirm}      id=android:id/button1
 ${txtDigitalDeliveryMethod}      id=${APP_PACKAGE}:id/orderDetailSummaryItemShippingMethodValue
 ${txtDigitalShippingAddress}      id=${APP_PACKAGE}:id/orderDetailSummaryItemShippingAddressStreetValue
-
 ${btnOrdersFilterChange}      xpath=//*[@text="CHANGE"]
 ${btnFilterOptionChange}    id=${APP_PACKAGE}:id/filter_option_button
-
 ${txtOrdersDelivery}      xpath=//*[contains(@text, "Delivery by")]
