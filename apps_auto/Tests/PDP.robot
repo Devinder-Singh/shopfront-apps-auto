@@ -1252,5 +1252,5 @@ Apps > PDP > Heavy Charge - QASA-426
     Click Search Home
     Search Product    Fridg
     Click Product from API
-    Verify Text On Screen    + R 100 Delivery Surcharge
+    Verify Text On Screen    + R 200 Delivery Surcharge
     [Teardown]    Tear Down

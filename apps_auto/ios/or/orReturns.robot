@@ -183,7 +183,7 @@ ${btnSelectReturnReason}    chain=**/XCUIElementTypeButton[`label == "Select"`]
 ${txtReturnReason}    chain=**/XCUIElementTypeStaticText[`label == "I have changed my mind"`]
 ${btnReturnReturnMethod}    chain=**/XCUIElementTypeStaticText[`label == "Select"`]
 ${txtReturnMethod}    chain=**/XCUIElementTypeStaticText[`label == "Credit my Takealot account"`]
-${txtReturnDesc}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[5]/XCUIElementTypeTextView
+${txtReturnDesc}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[5]/XCUIElementTypeTextView
 ${txtReturnCont}    chain=**/XCUIElementTypeButton[`label == "Continue"`]
 ${btnLogReturn}    chain=**/XCUIElementTypeButton[`label == "Log Return"`]
 ${txtReturnCollect}    chain=**/XCUIElementTypeStaticText[`label == "Collect from my address"`]

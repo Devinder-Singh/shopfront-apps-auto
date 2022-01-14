@@ -219,16 +219,6 @@ Click Cancel Screen
     END
     Sleep    1s
 
-Click Element From Text
-    [Arguments]    ${text}
-
-    IF    '${PLATFORM_NAME}'== 'android'
-        ${element}=    Set Variable    xpath=//*[contains(@text,"${text}")]
-    ELSE
-        ${element}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${text}"`]
-    END
-    Click Element On Scroll    ${element}
-
 Click Element On Scroll
     [Arguments]    ${clickElement}    ${loopTimes}=10
     Scroll To Element    ${clickElement}    ${loopTimes}    ${windowScroll}

@@ -26,7 +26,6 @@ Click Orders Filter Change
 
 Click Orders Filter Option
     [Arguments]    ${optionText}
-
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${optionText}'`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'

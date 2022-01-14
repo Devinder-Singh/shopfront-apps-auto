@@ -1151,17 +1151,14 @@ Apps > Order Tracking > Delivery Order > QASA-80
     [Tags]    QASA-80
     [Setup]    Start Application
     Clear Environment
-
     ${completedOrderProductId}=    Search And Return Product Id API    sunlight
-    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
- 
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true 
     Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
     Click Menu My Account
     Click Menu Orders
     Click Order By Index    1
-    
     Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
     Verify Text On Screen    1 Item
     Verify Text On Screen    Delivery
@@ -1180,22 +1177,18 @@ Apps > Order Tracking > Delivery Order > QASA-80
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Back Screen
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    Back
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    My Account
-
     ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
-
     Click Menu Orders
     Click Awaiting Order By Index    1
     Click Pay Now Button
     Click Change Payment Method Only
     Click Card Payment Method
     Click Pay With Credit Card
-
     ${isAddCreditCardScreenRendered}=    Run Keyword And Return Status    Verify Card Payment Text    Card Description
     Run Keyword If    ${isAddCreditCardScreenRendered} == ${True}    Pay via Credit Card Paygate    cardSave=${True}
     Run Keyword If    ${isAddCreditCardScreenRendered} == ${False}    Enter CVV Number    123
     Run Keyword If    ${isAddCreditCardScreenRendered} == ${False}    Click Pay Button
-    
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Close Ratings Popup
     Verify Order Confirmation
     [Teardown]    Tear Down
@@ -1716,8 +1709,8 @@ Returns > Non-Variant item - QASA-865
     Click Menu My Account
     Click Menu Exchanges And Returns
     Click Returns Call To Action Button
-    Click Element From Text    ${query_order_id}
-    Click Element From Text    ${prod_Title}
+    Click Text    ${query_order_id}
+    Click Text    ${prod_Title}
     Click Select Return Reason
     Select Return Reason
     Click Select Return Method

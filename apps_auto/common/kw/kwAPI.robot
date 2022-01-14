@@ -4,10 +4,8 @@ Resource          ../config/defaultConfig.robot
 *** Variables ***
 #    test-automation-platform
 ${query_URL}      http://tal-test-data-service.master.env/execute_query_anydb
-${query_OrderDel_Body}      { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "select * From wms2_instructions where idOrder = 99521775" }
 
 ${cart_URL}       http://tal-test-data-service.master.env/remove_products_in_cart
-${cart_Body}      { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": "4933518", "env": "master.env" }
 
 ${wishlist_URL_clear}    http://tal-test-data-service.master.env/clear_customer_wishlists
 ${wishlist_Body}    { "namespace": "master", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }

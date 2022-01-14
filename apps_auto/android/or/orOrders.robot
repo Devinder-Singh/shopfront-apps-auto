@@ -8,6 +8,6 @@ ${txtDigitalDeliveryMethod}      id=${APP_PACKAGE}:id/orderDetailSummaryItemShip
 ${txtDigitalShippingAddress}      id=${APP_PACKAGE}:id/orderDetailSummaryItemShippingAddressStreetValue
 
 ${btnOrdersFilterChange}      xpath=//*[@text="CHANGE"]
-${btnFilterOptionChange}    id=fi.android.takealot.debug:id/filter_option_button
+${btnFilterOptionChange}    id=${APP_PACKAGE}:id/filter_option_button
 
 ${txtOrdersDelivery}      xpath=//*[contains(@text, "Delivery by")]
