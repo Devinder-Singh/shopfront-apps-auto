@@ -415,3 +415,16 @@ Verify Filtered Products
         ${index}=    Evaluate    ${index} + 1
     END
     Should Be True    ${chkProdVisible}
+
+Click Promotion Item By Index
+    [Documentation]    Clicks a promotion product item based on its index as displayed on the screen. This keyword will work for both
+                        ...    daily deals and app deals screen etc.
+    [Arguments]    ${itemIndex}
+    ${dynamicItemByIndex}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicItemByIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/dealsWidgetPromotionProductItemTitle'])[${itemIndex}]
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'    
+        ${dynamicItemByIndex}=    Set Variable    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeImage[${itemIndex}]
+    END
+    Wait Until Page Contains Element    ${dynamicItemByIndex}
+    Click Element    ${dynamicItemByIndex}

@@ -132,11 +132,11 @@ Change Cart Quantity Scroll
     ${txtCartQty}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
         ${txtCartQty}=    Set Variable    xpath=//*[@text="${qty}"]
+        Scroll To Element    xpath=//*[@text="1"]    scrollSwipeDirection=Down
+        Scroll To Element    ${txtCartQty}
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${txtCartQty}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
     END
-    Scroll To Element    xpath=//*[@text="1"]    scrollSwipeDirection=Down
-    Scroll To Element    ${txtCartQty}
     Click Element    ${txtCartQty}
 
 Click Add Items to Qualify iOS
