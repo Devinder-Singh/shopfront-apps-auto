@@ -13,8 +13,8 @@ results
 .gitignore
 .gitignore
 *.cpython-39.pyc
-Tests/CriticalFlows01.robot
-android/config/testData.robot
-android/config/testConfig.robot
-ios/config/testData.robot
-ios/config/testConfig.robot
+Tests_Critical/CriticalFlows01.robot
+#android/config/testData.robot
+#android/config/testConfig.robot
+#ios/config/testData.robot
+#ios/config/testConfig.robot
