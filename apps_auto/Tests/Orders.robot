@@ -266,6 +266,16 @@ Apps > Order Refactor > Order History > Cancelled Order
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu My Account
     Click Menu Orders
+    Verify Text On Screen    Cancelled Item(s)
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order Detail > Cancelled Order
+    [Tags]    QASA-356
+    [Setup]    Start Application
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Menu My Account
+    Click Menu Orders
     Click Order By Index    1
+    Verify Text On Screen    Order Detail
     Verify Text On Screen    Cancelled Item(s)
     [Teardown]    Tear Down
