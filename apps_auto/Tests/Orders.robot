@@ -101,3 +101,20 @@ Apps > Order Refactor > Order History > Cancelled Order
     Click Order By Index    1
     Verify Text On Screen    Cancelled Item(s)
     [Teardown]    Tear Down
+
+Apps > Order Refactor > Order Detailed > Ready For Collection
+    [Tags]    QASA-353
+    [Setup]    Start Application
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Menu My Account
+    Click Menu Orders
+    Click Order By Index    1
+    Verify Text On Screen    Order Detail
+    Verify Text On Screen    Ready for Collection
+    Click and Verify Collect Order Disclaimer
+    Verify Element On Screen    ${btnDirections}    ${MIN_TIMEOUT}
+    View and Verify Collect Order 
+    Verify Element On Screen    ${btnViewQRCode}    ${MIN_TIMEOUT}
+    Click View QR Code Button
+    Verify Text On Screen    Scan QR Code
+    [Teardown]    Tear Down
