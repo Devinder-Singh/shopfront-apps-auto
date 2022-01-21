@@ -869,3 +869,62 @@ Apps > Checkout > Payment > Pay with eBucks screen - QASA-538
     Enter EBUcks OTP
     Click Track Order
     [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay With PayFast - QASA-539
+    [Tags]    QASA-539
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Any Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Click Order Pay Now
+    Click Change Payment Method Only
+    Click Payfast Payment Method
+    Click Pay With Payfast
+    Verify Payfast Payment Text    Instant EFT
+    Click Complete Payment With Payfast
+    Click Track Order
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Mobicred (Validations) - QASA-555
+    [Tags]    QASA-555
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Any Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Mobicred Payment Method
+    Click Pay With Mobi
+    Verify Mobicred Payment Info
+    [Teardown]    Tear Down
