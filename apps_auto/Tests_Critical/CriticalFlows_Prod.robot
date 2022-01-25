@@ -32,10 +32,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Payfast Payment Method
     Click Pay With Payfast
     Verify Payfast Payment Text
-    Close Application
-    Start Application    ${False}
-    Cancel Latest Order
-    [Teardown]    Tear Down
+    [Teardown]    Tear Down Cancel Order
 
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Production2
@@ -84,10 +81,7 @@ Search and Buy Item on Delivery using Credit Card
     Verify Text On Screen    Green Point    1s
     Verify Text On Screen    Cape Town    1s
     Verify Text On Screen    8005    1s
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Click Order Cancel
-    [Teardown]    Tear Down
+    [Teardown]    Tear Down Cancel Order
 
 Search and Buy Heavy Item on Delivery along with TV
     [Tags]    Production3
@@ -120,10 +114,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Close Application
-    Start Application    ${False}
-    Cancel Latest Order
-    [Teardown]    Tear Down
+    [Teardown]    Tear Down Cancel Order
 
 Edit Personal Details, Create Address and Buy Item on Delivery
     [Tags]    Production4
@@ -159,10 +150,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Close Application
-    Start Application    ${False}
-    Cancel Latest Order
-    [Teardown]    Tear Down
+    [Teardown]    Tear Down Cancel Order
 
 Buy Airtime and Pay with Credit Card
     [Tags]    Production5
@@ -183,10 +171,7 @@ Buy Airtime and Pay with Credit Card
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Close Application
-    Start Application    ${False}
-    Cancel Latest Order
-    [Teardown]    Tear Down
+    [Teardown]    Tear Down Cancel Order
 
 Buy Airtime along with another Item on Delivery
     [Tags]    Production6
@@ -219,10 +204,7 @@ Buy Airtime along with another Item on Delivery
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Close Application
-    Start Application    ${False}
-    Cancel Latest Order
-    [Teardown]    Tear Down
+    [Teardown]    Tear Down Cancel Order
 
 Buy Airtime along with another Item on Collection
     [Tags]    Production7
@@ -255,10 +237,7 @@ Buy Airtime along with another Item on Collection
     Click Card Payment Method
     Click Pay With Credit Card
     Verify Card Payment
-    Close Application
-    Start Application    ${False}
-    Cancel Latest Order
-    [Teardown]    Tear Down
+    [Teardown]    Tear Down Cancel Order
 
 Register User
     [Tags]    Production8
@@ -271,4 +250,4 @@ Register User
     Click Menu Register
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
     Click Home
-    [Teardown]    Tear Down
+    [Teardown]    Tear Down Production
