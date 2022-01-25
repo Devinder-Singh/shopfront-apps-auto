@@ -6,7 +6,6 @@ Resource          ../common/config/defaultConfig.robot
 Register User
     [Tags]    Master0
     [Setup]    Install Application
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Start Application
     Click No Deal     ${MIN_TIMEOUT}
     Click Menu
     Click Menu Login
@@ -29,10 +28,10 @@ Register User
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Master1
     [Setup]    Start Application
-    Clear Environment
     Click Menu
     Click Menu Login
     Login Takealot    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -80,8 +79,8 @@ Search and Buy Item on Delivery using Credit Card
 Buy Daily Deal Item on Delivery using Credit Card
     [Tags]    Master2
     [Setup]    Start Application
-    Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Menu
     Click Menu Daily Deals
@@ -102,8 +101,8 @@ Buy Daily Deal Item on Delivery using Credit Card
 Search and Buy Item on Delivery using Payfast and Create new Address
     [Tags]    Master3
     [Setup]    Start Application
-    Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Menu
     Click Menu Shop By Department
@@ -130,12 +129,12 @@ Search and Buy Item on Delivery using Payfast and Create new Address
 Search and Buy Heavy Item on Delivery along with TV
     [Tags]    Master4
     [Setup]    Start Application
-    Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    Fridg
-    Click Product from API
+    Click Product From API
     Verify Delivery Surcharge    + R 200 Delivery Surcharge
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
@@ -163,8 +162,8 @@ Search and Buy Heavy Item on Delivery along with TV
 Edit Personal Details, Create Address and Buy Item on Delivery
     [Tags]    Master5
     [Setup]    Start Application
-    Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Menu
     Click Menu My Account
@@ -199,12 +198,12 @@ Edit Personal Details, Create Address and Buy Item on Delivery
 Buy Airtime and Pay with Credit Card
     [Tags]    Master6
     [Setup]    Start Application
-    Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Variant Product from API    1
+    Click Variant Product from API
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -220,12 +219,12 @@ Buy Airtime and Pay with Credit Card
 Buy Airtime along with another Item on Delivery
     [Tags]    Master7
     [Setup]    Start Application
-    Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Variant Product from API    1
+    Click Variant Product from API
     Click Product Variant From API    2
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
@@ -253,12 +252,12 @@ Buy Airtime along with another Item on Delivery
 Buy Airtime along with another Item on Collection
     [Tags]    Master8
     [Setup]    Start Application
-    Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
-    Click Variant Product from API    1
+    Click Variant Product from API
     Click Product Variant From API    2
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MAX_TIMEOUT}
@@ -286,8 +285,8 @@ Buy Airtime along with another Item on Collection
 Buy Daily Deals Item and verify no Promotions
     [Tags]    Master9
     [Setup]    Start Application
-    Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Menu
     Click Menu Daily Deals
@@ -308,8 +307,8 @@ Buy Daily Deals Item and verify no Promotions
 Buy Daily Deals Item and verify Promotions
     [Tags]    Master10
     [Setup]    Start Application
-    Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Clear Environment
     Click Home
     Click Menu
     Click Menu Daily Deals

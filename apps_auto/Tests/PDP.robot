@@ -27,7 +27,7 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QASA-124
     Search Product    jean
     Click Variant Product from API
     Click Product Disabled Variant From API
-    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
+    Verify Element Not On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Product Variant From API
     Click Add To Cart
     Close Application
@@ -37,7 +37,7 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QASA-124
     Search Product    shoes f
     Click Variant Product from API
     Click Product Disabled Variant Colour From API
-    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
+    Verify Element Not On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Product Variant Colour From API
     Click Add To Cart
     Close Application
@@ -47,7 +47,7 @@ Apps > PDP > Buy Box > Select an Option > Variants (Out of stock) - QASA-124
     Search Product    shirt
     Click Variant Product from API
     Click Product Disabled Variant Colour Size From API
-    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
+    Verify Element Not On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Product Variant Colour From API
     Click Product Variant Colour Size From API
     Click Add To Cart
@@ -60,8 +60,8 @@ Apps > PDP > Buy Box > Select an Option - QASA-754
     Click Search Home
     Search Product    jean
     Click Variant Product from API
-    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Verify Element On Screen Not    ${btnAddWishlist}    1s
+    Verify Element Not On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
+    Verify Element Not On Screen    ${btnAddWishlist}    1s
     Click Product Variant From API
     Verify Element On Screen    ${btnAddWishlist}    ${MIN_TIMEOUT}
     Click Add To Cart
@@ -71,8 +71,8 @@ Apps > PDP > Buy Box > Select an Option - QASA-754
     Click Search Home
     Search Product    shoes f
     Click Variant Product from API
-    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Verify Element On Screen Not    ${btnAddWishlist}    1s
+    Verify Element Not On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
+    Verify Element Not On Screen    ${btnAddWishlist}    1s
     Click Product Variant Colour From API
     Verify Element On Screen    ${btnAddWishlist}    ${MIN_TIMEOUT}
     Click Add To Cart
@@ -82,8 +82,8 @@ Apps > PDP > Buy Box > Select an Option - QASA-754
     Click Search Home
     Search Product    shirt
     Click Variant Product from API
-    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Verify Element On Screen Not    ${btnAddWishlist}    1s
+    Verify Element Not On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
+    Verify Element Not On Screen    ${btnAddWishlist}    1s
     Click Product Variant Colour From API
     Click Product Variant Colour Size From API
     Verify Element On Screen    ${btnAddWishlist}    ${MIN_TIMEOUT}
@@ -554,8 +554,8 @@ Apps > PDP > Variants > Colour & Size - QASA-85
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Select a size    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a size    ${MIN_TIMEOUT}
     Click Product Variant Colour From API
-    Verify Element On Screen Not    ${btnAddToCart}    2s
-    Verify Element On Screen Not    ${btnAddWishlist}    2s
+    Verify Element Not On Screen    ${btnAddToCart}    2s
+    Verify Element Not On Screen    ${btnAddWishlist}    2s
     Click Product Variant Colour Size From API
     Click Add To Cart
     [Teardown]    Tear Down
@@ -1139,7 +1139,7 @@ Apps > PDP > Variants > Sold out - QASA-87
     Swipe Up    ${windowScroll}
     Click Product Variant Colour Size From API
     Click Product Variant Disabled Colour From API
-    Verify Element On Screen Not    ${btnAddToCart}    2s
+    Verify Element Not On Screen    ${btnAddToCart}    2s
     Close Application
     Start Application
     Click Home
@@ -1150,7 +1150,7 @@ Apps > PDP > Variants > Sold out - QASA-87
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Select a size    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Click Product Variant Disabled Size From API
-    Verify Element On Screen Not    ${btnAddToCart}    2s
+    Verify Element Not On Screen    ${btnAddToCart}    2s
     Close Application
     Start Application
     Click Home

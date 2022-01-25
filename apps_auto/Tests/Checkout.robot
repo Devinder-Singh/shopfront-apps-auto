@@ -345,8 +345,8 @@ Android > Checkout > Payment > Default Payment Method - QASA-866
     Click Add Payment Voucher
     Enter Payment Voucher Code
     Click Apply Payment Voucher
-    Verify Element On Screen Not    ${btnCreditCard}
-    Verify Element On Screen Not    ${btnPayWithFast}
+    Verify Element Not On Screen    ${btnCreditCard}
+    Verify Element Not On Screen    ${btnPayWithFast}
     [Teardown]    Tear Down
 
 Apps > Checkout > Payments > Credit Card > PayGate > Successful Payment - QASA-543

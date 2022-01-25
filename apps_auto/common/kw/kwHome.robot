@@ -5,32 +5,25 @@ Resource          ../config/defaultConfig.robot
 Click Home
     Wait Until Element Is Visible    ${btnHome}    ${MIN_TIMEOUT}
     Click Element    ${btnHome}
-#    Sleep    2s
 
 Click Home iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnHome}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnHome}
-#    Sleep    2s
 
 Click Add To Wishlist
     Wait Until Element Is Visible    ${btnAddWishlist}    ${MIN_TIMEOUT}
     Click Element    ${btnAddWishlist}
     Verify Text On Screen    Item added to Wish List    ${MAX_TIMEOUT}
-
-    #Sleep    5s
-    Wait Until Page Does Not Contain    Item added to Wish List    ${MAX_TIMEOUT}
-
+    Verify Text Not On Screen    Item added to Wish List    ${MAX_TIMEOUT}
     IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${btnMoreOptions}
         Click Element    ${btnOptionHome}
     END
-   
     Click Continue Shopping Ignore Error
 
 Click Add To Wishlist Only
     Wait Until Element Is Visible    ${btnAddWishlist}    ${MIN_TIMEOUT}
     Click Element    ${btnAddWishlist}
-#    Sleep    1s
 
 Click More Options Menu
     Wait Until Element Is Visible    ${btnMoreOptions}    ${MIN_TIMEOUT}
@@ -157,7 +150,6 @@ Click Home WishList Only
 Click Home Wishlist Icon
     Wait Until Element Is Visible    ${btnHomeWishListIcon}    ${MIN_TIMEOUT}
     Click Element    ${btnHomeWishListIcon}
-#    Sleep    1s
 
 Click Home WishList
     Wait Until Element Is Visible    ${btnWishListIcon}    ${MIN_TIMEOUT}
