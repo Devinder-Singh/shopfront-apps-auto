@@ -1,0 +1,14 @@
+{
+    "robot.pythonpath": [
+        "${workspaceFolder}/"
+    ],
+    "robot.completions.keywords.format": "Title Case",
+    "python.experiments.enabled": false,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "debug.terminal.clearBeforeReusing": true,
+    "robot.codeFormatter": "robotidy",
+    "robot.lint.robocop.enabled": true,
+    "robot.variables": {
+        "PLATFORM_NAME":"android",
+    }
+}
