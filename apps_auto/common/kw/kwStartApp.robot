@@ -16,6 +16,13 @@ Tear Down
     Set Implicitly Wait    1
     Close Application
 
+Tear Down Cancel Order
+    Capture Page Screenshot
+    Close Application
+    Start Application    ${False}
+    Cancel Latest Order
+    Close Application
+
 Install Application
     [Arguments]    ${autoAlert}=${True}
     Log    ${APP_PATH}
