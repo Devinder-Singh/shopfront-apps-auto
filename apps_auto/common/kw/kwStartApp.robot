@@ -29,6 +29,7 @@ Install Application
     &{cap}=    Get Capabilities    ${True}    ${autoAlert}
     IF    '${PLATFORM_NAME}' == 'android'
         Log Many    &{cap}
-        Open Application    ${REMOTE_URL}    &{cap}    
+        Open Application    ${REMOTE_URL}    &{cap}
+    ELSE
+        Start Application
     END
-    

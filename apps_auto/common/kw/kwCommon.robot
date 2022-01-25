@@ -148,7 +148,25 @@ Verify Price On Screen
 
 Verify Text On Screen
     [Arguments]    ${verifyText}    ${timeout}=5s
-    Wait Until Page Contains    ${verifyText}    ${timeout}
+        ${txtVerify}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == '${verifyText}'`]
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${txtVerify}=    Set Variable    xpath=//*[@text='${verifyText}']
+    END
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${txtVerify}    ${timeout}
+    Should Be True    ${chkTextSuccess} == ${True}
+
+Verify Text Not On Screen
+    [Arguments]    ${verifyText}    ${timeout}=5s
+        ${txtVerify}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == '${verifyText}'`]
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${txtVerify}=    Set Variable    xpath=//*[@text='${verifyText}']
+    END
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${txtVerify}    ${timeout}
+    Should Be True    ${chkTextSuccess} == ${True}
 
 Verify Product Review
     ${txtProduct}=    Get Product List Review
@@ -164,17 +182,9 @@ Verify Element On Screen
     [Arguments]    ${verifyElement}    ${timeout}
     Wait Until Page Contains Element    ${verifyElement}    ${timeout}
 
-Verify Element On Screen Not
+Verify Element Not On Screen
     [Arguments]    ${verifyElement}    ${delay}=5s
-    
-    ${txtProduct}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'ios'
-        ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == '${verifyElement}'`]
-    ELSE IF    '${PLATFORM_NAME}' == 'android'
-        ${txtProduct}=    Set Variable    xpath=//*[@text='${verifyElement}']
-    END
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${delay}
-    Should Be True    ${chkTextSuccess} == ${False}
+    Wait Until Page Does Not Contain Element    ${verifyElement}    ${timeout}
 
 Click Back Screen
     IF    '${PLATFORM_NAME}' == 'android'
@@ -204,7 +214,7 @@ Click Back iOS
     [Arguments]    ${elementID}
     ${backiOS}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${elementID}"`]
     IF    '${PLATFORM_NAME}' == 'ios'
-        Wait Until Element Is Visible    ${backiOS}    ${MIN_TIMEOUT}
+        Wait Until Element Is Visible    ${backiOS}    ${MAX_TIMEOUT}
         Click Element    ${backiOS}
     END
     Sleep    1s

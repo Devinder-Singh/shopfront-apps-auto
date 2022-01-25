@@ -233,7 +233,7 @@ Click Blue Colour Option
     Click Element    ${lblBlueValue}
 
 Click Go To Cart
-    Wait Until Keyword Succeeds    6    ${MIN_TIMEOUT}   Click Element    ${btnGoToCart}
+    Wait Until Keyword Succeeds    30    ${MAX_TIMEOUT}   Click Element    ${btnGoToCart}
     
 
 Click Go To Cart iOS

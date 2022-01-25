@@ -40,7 +40,7 @@ Apps > Wishlist > Add to List > PDP - QASA-462
     Search Product    airtim
     Click Variant Product from API
     Verify Element On Screen    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
-    Verify Element On Screen Not    ${btnAddWishlist}    2s
+    Verify Element Not On Screen    ${btnAddWishlist}    2s
     Click Product Variant From API
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Verify Element On Screen    ${btnAddWishlist}    2s
@@ -576,7 +576,7 @@ Apps > Wishlist > List Details > Product Card > out off stock - QASA-134
     Click Search Home
     Search Product    shirt
     Click Product from API
-    Verify Element On Screen Not    ${btnAddToCart}    ${MIN_TIMEOUT}
+    Verify Element Not On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Wishlist > List Details > Onboarding - QASA-133

@@ -17,9 +17,9 @@ Verify Card Payment
 
 Verify Payfast Payment Text
     IF    '${APP_ENVIRONMENT}' == 'https://api.takealot.com/'
-        Verify Text On Screen    Instant EFT    ${MAX_TIMEOUT}
+        Verify Text On Screen    Instant EFT    300s
     ELSE
-        Verify Text On Screen    Test Merchant    ${MAX_TIMEOUT}
+        Verify Text On Screen    Test Merchant    300s
     END
     
 Click Pay with Credit Card Back
