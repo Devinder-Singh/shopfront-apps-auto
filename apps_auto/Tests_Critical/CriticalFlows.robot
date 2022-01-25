@@ -6,7 +6,7 @@ Resource          ../common/config/defaultConfig.robot
 Register User
     [Tags]    Master0
     [Setup]    Install Application
-    Click No Deal     ${MIN_TIMEOUT}
+    Click No Deal     ${MAX_TIMEOUT}
     Click Menu
     Click Menu Login
     Close Application

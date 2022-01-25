@@ -36,7 +36,6 @@ Click Menu Login
 
 Log In If Not Logged In
     [Arguments]    ${email}    ${password}
-    Click No Deal    ${MAX_TIMEOUT}
     Verify Element On Screen    ${btnMenu}    ${MIN_TIMEOUT}
     Click Element    ${btnMenu}
     ${chkVisible}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    ${MIN_TIMEOUT}

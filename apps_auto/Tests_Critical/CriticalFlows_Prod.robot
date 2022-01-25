@@ -9,6 +9,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     [Setup]    Install Application
     Close Application
     Start Application
+    Click No Deal    ${MAX_TIMEOUT}
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Clear Environment
     Click Home
