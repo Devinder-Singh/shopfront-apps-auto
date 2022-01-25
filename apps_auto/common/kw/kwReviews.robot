@@ -223,3 +223,12 @@ Click Review Icon More
 Click Review Report
     Wait Until Element Is Visible    ${lblReviewReport}    ${MIN_TIMEOUT}
     Click Element    ${lblReviewReport}
+
+Click Review Helpful By Index
+    [Arguments]    ${index}
+    ${dynamicHelpfulButton}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicHelpfulButton}=    Set Variable    xpath=(//androidx.recyclerview.widget.RecyclerView[@resource-id='fi.android.takealot.debug:id/reviews_container'])/android.view.ViewGroup/android.widget.Button[@resource-id='fi.android.takealot.debug:id/review_up_vote_button' and contains(@text,'Helpful')][${index}]
+    END
+    Wait Until Element Is Visible    ${dynamicHelpfulButton}    ${MIN_TIMEOUT}
+    Click Element    ${dynamicHelpfulButton}

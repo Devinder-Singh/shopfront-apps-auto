@@ -187,6 +187,8 @@ Click Back Screen
     Sleep    1s
 
 Click Back Android
+    [Arguments]    ${sleepBeforeAction}= 0.5s
+    Sleep    ${sleepBeforeAction}
     IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${navBack}    ${MIN_TIMEOUT}
         Click Element    ${navBack}

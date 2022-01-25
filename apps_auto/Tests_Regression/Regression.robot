@@ -418,62 +418,49 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     [Setup]    Start Application
     Click Menu
     Click Menu Shop By Department
-    Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
-    Verify Text On Screen    Blue Dot Countdown    ${MIN_TIMEOUT}
-    Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
-    Verify Text On Screen    Christmas    ${MIN_TIMEOUT}
-    Verify Text On Screen    Summer    ${MIN_TIMEOUT}
-    Verify Text On Screen    Load-shedding    ${MIN_TIMEOUT}
-    Verify Text On Screen    Fashion Outlet    ${MIN_TIMEOUT}
-    Verify Text On Screen    Unboxed Deals    ${MIN_TIMEOUT}
-    Verify Text On Screen    Ultimate Braai Master    ${MIN_TIMEOUT}
-    Verify Text On Screen    Exclusive To Takealot    ${MIN_TIMEOUT}
-    Verify Text On Screen    New To Takealot    ${MIN_TIMEOUT}
-    Swipe Up    ${windowScroll}
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen    Shop Local    ${MIN_TIMEOUT}
-    Verify Text On Screen    Brand Stores    ${MIN_TIMEOUT}
-    Verify Text On Screen    Auto    ${MIN_TIMEOUT}
-    Verify Text On Screen    Baby & Toddler    ${MIN_TIMEOUT}
-    Verify Text On Screen    Beauty    ${MIN_TIMEOUT}
-    Verify Text On Screen    Books    ${MIN_TIMEOUT}
-    Verify Text On Screen    Camping    ${MIN_TIMEOUT}
-    Verify Text On Screen    Cellphones    ${MIN_TIMEOUT}
-    Verify Text On Screen    Clothing    ${MIN_TIMEOUT}
-    Verify Text On Screen    Computers    ${MIN_TIMEOUT}
-    Swipe Up    $locator    ${windowScroll}
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen    DIY & Home improvement    ${MIN_TIMEOUT}
-    Verify Text On Screen    Gaming    ${MIN_TIMEOUT}
-    Verify Text On Screen    Garden, Pool & Patio    ${MIN_TIMEOUT}
-    Verify Text On Screen    Groceries    ${MIN_TIMEOUT}
-    Verify Text On Screen    Health & Hygiene    ${MIN_TIMEOUT}
-    Verify Text On Screen    Home & Appliances    ${MIN_TIMEOUT}
-    Verify Text On Screen    Household Cleaning    ${MIN_TIMEOUT}
-    Verify Text On Screen    Kitchen & Appliances    ${MIN_TIMEOUT}
-    Verify Text On Screen    Liquor    ${MIN_TIMEOUT}
-    Verify Text On Screen    Luggage & Travel    ${MIN_TIMEOUT}
-    Swipe Up    ${windowScroll}
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen    Movies    ${MIN_TIMEOUT}
-    Verify Text On Screen    Music    ${MIN_TIMEOUT}
-    Verify Text On Screen    Musical Instruments    ${MIN_TIMEOUT}
-    Verify Text On Screen    Networking    ${MIN_TIMEOUT}
-    Verify Text On Screen    Office    ${MIN_TIMEOUT}
-    Verify Text On Screen    Pets    ${MIN_TIMEOUT}
-    Verify Text On Screen    Photography    ${MIN_TIMEOUT}
-    Verify Text On Screen    Sports & Training    ${MIN_TIMEOUT}
-    Verify Text On Screen    Stationery    ${MIN_TIMEOUT}
-    Verify Text On Screen    Toiletries    ${MIN_TIMEOUT}
-    Swipe Up    ${windowScroll}
-    Swipe Up    ${windowScroll}
-    Verify Text On Screen    Toys & Games    ${MIN_TIMEOUT}
-    Verify Text On Screen    TV, Audio & Video    ${MIN_TIMEOUT}
-    Verify Text On Screen    Wearable Tech    ${MIN_TIMEOUT}
+    Verify Text On Screen    Daily Deals    ${MAX_TIMEOUT}
+    Scroll To Text    Daily Deals
+    Scroll To Text    Summer
+    Scroll To Text    Load-shedding
+    Scroll To Text    Fashion Outlet
+    Scroll To Text    Unboxed Deals
+    Scroll To Text    Exclusive To Takealot
+    Scroll To Text    Shop Local
+    Scroll To Text    Brand Stores
+    Scroll To Text    Auto
+    Scroll To Text    Baby
+    Scroll To Text    Beauty
+    Scroll To Text    Books
+    Scroll To Text    Camping
+    Scroll To Text    Cellphones
+    Scroll To Text    Clothing
+    Scroll To Text    Computers
+    Scroll To Text    DIY
+    Scroll To Text    Gaming
+    Scroll To Text    Garden, Pool
+    Scroll To Text    Groceries
+    Scroll To Text    Health
+    Scroll To Text    Home
+    Scroll To Text    Household Cleaning
+    Scroll To Text    Kitchen
+    Scroll To Text    Liquor
+    Scroll To Text    Luggage
+    Scroll To Text    Movies
+    Scroll To Text    Music
+    Scroll To Text    Musical Instruments
+    Scroll To Text    Networking
+    Scroll To Text    Office
+    Scroll To Text    Pets
+    Scroll To Text    Photography 
+    Scroll To Text    Sport
+    Scroll To Text    Stationery
+    Scroll To Text    Toiletries
+    Scroll To Text    Toys
+    Scroll To Text    TV, Audio
+    Scroll To Text    Wearable Tech
     Close Application
     Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
@@ -484,8 +471,7 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     Close Application
     Start Application
     Click Home
-    Scroll To Text    Recently Viewed
-    Swipe Down    ${windowScroll}
+    Scroll To Text    Recently Viewed    loopTimes=20
     Click Home Icon Wish List
     Verify Text On Screen    Item added to Wish List
     [Teardown]    Tear Down
@@ -550,7 +536,7 @@ Apps > PLP - QASA-473
     Start Application
     Click Home
     Click Search Home
-    Search Product    toy
+    Search Product    puzzle
     Click Product from API
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
@@ -756,7 +742,7 @@ Apps > PDP - QASA-519
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    pencil
+    Search Product    pencil case
     Click Product from API
     Click Add To Cart
     Click Go To Cart
@@ -773,7 +759,7 @@ Apps > PDP - QASA-519
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Sponsored    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Sponsored    ${MIN_TIMEOUT}
-#    Verify Text On Screen    % OFF    2s
+    #Verify Text On Screen    % OFF    2s
     Verify Text On Screen    ${query_result_adProductStatus}    ${MIN_TIMEOUT}
     Verify Text On Screen    ${query_result_adProductPrice}    ${MIN_TIMEOUT}
     Verify Text On Screen    ${query_result_adProductBrand}    ${MIN_TIMEOUT}
@@ -849,12 +835,11 @@ Apps > PDP - QASA-168
     Click Review Sort Most Helpful
     Click Review Sort
     Click Review Sort Most Recent
-    Click Review Helpful
-    Verify Text On Screen    Thank you for your feedback    ${MIN_TIMEOUT}
+    Click Review Helpful By Index    index=1
+    Verify Text On Screen    Thank you for your feedback    ${MAX_TIMEOUT}
     Click Review Filter
     Click Review Filter Rating
     Click Review Filter Rating Five
-    Click Review Filter Done
     Click Review Filter Apply
     Verify Element On Screen    ${btnReviewFilter}    ${MIN_TIMEOUT}
     Click Review Icon More
@@ -955,7 +940,6 @@ Apps > Wishlist (Android) - QASA-466
     [Tags]    android    QASA-466
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Wishlist Nav Bar
@@ -972,7 +956,6 @@ Apps > Wishlist (Android) > Delete List - QASA-161
     [Tags]    QASA-161
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -1005,11 +988,10 @@ Apps > Wishlist (Android) > Bottom Navigation - QASA-160
     [Tags]    QASA-160
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    Pencil
+    Search Product    sunlight
     Click Product from API
     Click Add To Wishlist
     Close Application
@@ -1303,7 +1285,7 @@ Apps > Order Tracking (Collect) 02 - QASA-547
     Click Change Payment Method Only
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
+    Verify Payfast Payment Text
     [Teardown]    Tear Down
 
 Apps > Order Tracking 05 - QASA-79
@@ -1357,7 +1339,7 @@ Apps > Order Tracking 05 - QASA-79
     Click Change Payment Method Only
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment Text    Instant EFT
+    Verify Payfast Payment Text
     [Teardown]    Tear Down
 
 Apps > Cart (Android) > QASA-524 - QASA-81
@@ -1391,6 +1373,8 @@ Apps > Cart (Android) 02 - QASA-84
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
+    Click Cart Continue Shopping
+    Click Home Cart
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Your Shopping Cart is Empty    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Trending on Takealot    ${MIN_TIMEOUT}
     Verify Element On Screen    ${btnCartContinueShopping}    ${MIN_TIMEOUT}
@@ -1485,17 +1469,21 @@ Cart Update & Cart Notification - Liquor - QASA-249
     [Tags]    QASA-249
     [Setup]    Start Application
     Clear Environment
-    Click Menu
+    Add To Cart
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Click Home
-    Click Search Home
-    Search Product    johnny
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
+    Click Cart
     Click Checkout
-    Click Select Age
-    Click Verify Age
+    Click Delivery
+    Click Address
+    Click Any Delivery
+    ${liquorProductId}=    Search And Return Product Id API    liquor
+    Add To Cart    productId=${liquorProductId}
+    Click Donate No Thanks
+    Click Pay With Credit Card
+    Verify Text On Screen    You've added the following new item(s) to your cart
+    Click Continue To Checkout
+    Verify Text On Screen    Age Verification
+    Verify Text On Screen    You have added liquor to your cart. Please verify that you are 18 years of age or older.
     [Teardown]    Tear Down
 
 Cart Update & Cart Notification - Heavy Good - QASA-247
@@ -1544,39 +1532,15 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     Click Surcharge Delivery
     [Teardown]    Tear Down
 
-CLONE - PDP - Brand Links - QASA-29
-    [Tags]    QASA-29
-    [Setup]    Start Application
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Verify Element On Screen    ${btnAddWishlist}    ${MIN_TIMEOUT}
-    Verify Text On Screen    ${query_result_CartProduct}    ${MIN_TIMEOUT}
-    Close Application
-    Start Application
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Get Sponsored Product Detail
-    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    Verify Text On Screen    Sponsored    ${MIN_TIMEOUT}
-    Verify Text On Screen    % OFF    ${MIN_TIMEOUT}
-    Verify Text On Screen    ${query_result_adProductStatus}    ${MIN_TIMEOUT}
-    Click Product From Title    ${query_result_adProductTitle}
-    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
-    [Teardown]    Tear Down
-
 PDP - Brand Links - QASA-28
     [Tags]    QASA-28
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Search Product    glass
+    Search Product    Samsung
     Click First Product from API
     Click Seller Name
-    Click Back Android
+    Click Back Android    2s
     Click Back iOS    ${query_result_FirstProduct}
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down

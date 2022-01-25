@@ -211,6 +211,10 @@ Click Cart Delete
         Click Element    ${btnDeleteUnderItemCard}
     END
 
+Click Cart Continue Shopping
+    Wait Until Element Is Visible    ${btnCartContinueShopping}
+    Click Element    ${btnCartContinueShopping}
+
     
     
 

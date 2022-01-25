@@ -21,3 +21,7 @@ Click Select Age
         Wait Until Element Is Visible    ${btnSelectAge}    ${MIN_TIMEOUT}
         Click Element    ${btnSelectAge} 
     END
+
+Click Continue To Checkout
+    Wait Until Element Is Visible    ${continueCheckoutButtonId}
+    Click Element    ${continueCheckoutButtonId}
