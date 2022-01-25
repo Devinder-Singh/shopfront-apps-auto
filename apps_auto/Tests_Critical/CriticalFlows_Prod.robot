@@ -45,7 +45,7 @@ Search and Buy Item on Delivery using Credit Card
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product from API    2
+    Click Product from API    0
     Click Add To Cart
     Click Go To Cart
     Click Checkout
