@@ -150,7 +150,7 @@ Verify Text On Screen
     [Arguments]    ${verifyText}    ${timeout}=5s
         ${txtVerify}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'ios'
-        ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == '${verifyText}'`]
+        ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'
         ${txtVerify}=    Set Variable    xpath=//*[@text='${verifyText}']
     END
@@ -161,7 +161,7 @@ Verify Text Not On Screen
     [Arguments]    ${verifyText}    ${timeout}=5s
         ${txtVerify}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'ios'
-        ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == '${verifyText}'`]
+        ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'
         ${txtVerify}=    Set Variable    xpath=//*[@text='${verifyText}']
     END
