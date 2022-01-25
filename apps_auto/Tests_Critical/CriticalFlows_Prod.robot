@@ -250,4 +250,4 @@ Register User
     Click Menu Register
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
     Click Home
-    [Teardown]    Tear Down Production
+    [Teardown]    Tear Down

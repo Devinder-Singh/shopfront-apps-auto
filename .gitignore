@@ -11,10 +11,4 @@ results
 *.cpython-38.pyc
 *.png
 .gitignore
-.gitignore
 *.cpython-39.pyc
-Tests_Critical/CriticalFlows01.robot
-#android/config/testData.robot
-#android/config/testConfig.robot
-#ios/config/testData.robot
-#ios/config/testConfig.robot
