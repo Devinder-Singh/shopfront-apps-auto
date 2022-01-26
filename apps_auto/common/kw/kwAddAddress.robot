@@ -15,7 +15,6 @@ Click Edit Address Business
     Click Element    ${lblEditAddressBusiness}
 
 Click Save Address
-    Wait Until Element Is Visible    ${btnSaveAddress}    ${MIN_TIMEOUT}
     Click Element    ${btnSaveAddress}
 
 Click Address Mobile Question
