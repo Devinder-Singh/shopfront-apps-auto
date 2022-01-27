@@ -15,7 +15,6 @@ Login Takealot
     Input Text    ${txtEmail}    ${email}
     Input Text    ${txtPassword}    ${password}
     Click Element    ${btnLogin}
-
     IF     '${PLATFORM_NAME}' == 'android'
         Return Android Login Status    ${email}    ${password}
     ELSE IF    '${PLATFORM_NAME}' == 'ios'

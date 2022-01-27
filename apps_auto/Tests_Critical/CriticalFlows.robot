@@ -27,11 +27,10 @@ Register User
 
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Master1
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Click Menu
     Click Menu Login
     Login Takealot    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -78,9 +77,8 @@ Search and Buy Item on Delivery using Credit Card
 
 Buy Daily Deal Item on Delivery using Credit Card
     [Tags]    Master2
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Menu
     Click Menu Daily Deals
@@ -100,9 +98,8 @@ Buy Daily Deal Item on Delivery using Credit Card
 
 Search and Buy Item on Delivery using Payfast and Create new Address
     [Tags]    Master3
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Menu
     Click Menu Shop By Department
@@ -128,9 +125,8 @@ Search and Buy Item on Delivery using Payfast and Create new Address
 
 Search and Buy Heavy Item on Delivery along with TV
     [Tags]    Master4
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    Fridg
@@ -161,9 +157,8 @@ Search and Buy Heavy Item on Delivery along with TV
 
 Edit Personal Details, Create Address and Buy Item on Delivery
     [Tags]    Master5
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Menu
     Click Menu My Account
@@ -197,9 +192,8 @@ Edit Personal Details, Create Address and Buy Item on Delivery
 
 Buy Airtime and Pay with Credit Card
     [Tags]    Master6
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
@@ -218,9 +212,8 @@ Buy Airtime and Pay with Credit Card
 
 Buy Airtime along with another Item on Delivery
     [Tags]    Master7
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
@@ -233,7 +226,7 @@ Buy Airtime along with another Item on Delivery
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API    1
+    Click Variant Product from API    0
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
@@ -251,9 +244,8 @@ Buy Airtime along with another Item on Delivery
 
 Buy Airtime along with another Item on Collection
     [Tags]    Master8
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
@@ -266,7 +258,7 @@ Buy Airtime along with another Item on Collection
     Click Home
     Click Search Home
     Search Product    monteg
-    Click Variant Product from API    1
+    Click Variant Product from API    0
     Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart

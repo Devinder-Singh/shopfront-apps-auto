@@ -4,24 +4,40 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Verify Card Payment
     Set Implicitly Wait    1
-    FOR    ${counter}    IN RANGE    1    30
+    ${success}=    Set Variable    ${False}
+    FOR    ${counter}    IN RANGE    1    120
         Log    ${counter}
-        ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    1s
-        IF    ${chkTextSuccess}==${False}
-            ${chkTextSuccess}=    Run Keyword And Return Status    Verify Text On Screen    Card number    1s
-        ELSE
+        ${success}=    Run Keyword And Return Status    Verify Text On Screen    Card Number    1s
+        IF    ${success}==${False}
+            ${success}=    Run Keyword And Return Status    Verify Text On Screen    Card number    1s
+        END
+        IF    ${success}==${True}
             Exit For Loop
         END
+    END
+    IF    ${success} == ${False}
+        Fail    Could not verify payment text
     END
     Set Implicitly Wait    5
 
 Verify Payfast Payment Text
-    IF    '${APP_ENVIRONMENT}' == 'https://api.takealot.com/'
-        Verify Text On Screen    Instant EFT    300s
-    ELSE
-        Verify Text On Screen    Test Merchant    300s
+    Set Implicitly Wait    1
+    ${success}=    Set Variable    ${False}
+    FOR    ${counter}    IN RANGE    1    120
+        Log    ${counter}
+        ${success}=    Run Keyword And Return Status    Verify Text On Screen    Instant EFT    1s
+        IF    ${success}==${False}
+            ${success}=    Run Keyword And Return Status    Verify Text On Screen    Test Merchant    1s
+        END
+        IF    ${success}==${True}
+            Exit For Loop
+        END
     END
-    
+    IF    ${success} == ${False}
+        Fail    Could not verify payment text
+    END
+    Set Implicitly Wait    5
+
 Click Pay with Credit Card Back
     Wait Until Element Is Visible    ${navPayCreditCardBack}    ${MIN_TIMEOUT}
     Click Element    ${navPayCreditCardBack}
