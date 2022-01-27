@@ -214,7 +214,7 @@ Apps > Order Refactor > Order Detail > Digital Order - QASA-350
 
 Apps > Order Refactor > Order History > Awaiting Payment Order
     [Tags]    QASA-367
-    [Setup]    Start Application    
+    [Setup]    Start Application
     ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
     Click Menu Logout If Logged In
@@ -278,4 +278,121 @@ Apps > Order Refactor > Order Detail > Cancelled Order
     Click Order By Index    1
     Verify Text On Screen    Order Detail
     Verify Text On Screen    Cancelled Item(s)
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order Detail > Shipped Order - QASA-355
+    [Tags]    QASA-355
+    [Setup]    Start Application
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    pencil
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}    ${False}
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order By Index    1
+    Verify Text On Screen    ${prod_Title}    ${MIN_TIMEOUT}
+    Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
+    Verify Text On Screen    1 Item
+    Verify Text On Screen    Delivery
+    Verify Text On Screen    PAYMENT METHOD
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Credit Card
+    Verify Text On Screen    DELIVERY METHOD
+    Verify Text On Screen    Standard
+    Verify Text On Screen    SHIPPING ADDRESS
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Test
+    Verify Text On Screen    12 Ridge Way
+    Verify Text On Screen    Green Point
+    Verify Text On Screen    Cape Town
+    Verify Text On Screen    8005
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order Detail > Awaiting Payment Order - QASA-358
+    [Tags]    QASA-358
+    [Setup]    Start Application
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    pencil
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    false
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Verify Order Status By Index    Awaiting Payment    ${MIN_TIMEOUT}
+    Click Order By Index    1
+    Verify Text On Screen    ${prod_Title}    ${MIN_TIMEOUT}
+    Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
+    Verify Text On Screen    1 Item
+    Verify Text On Screen    Delivery
+    Verify Text On Screen    PAYMENT METHOD
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Credit Card
+    Verify Text On Screen    DELIVERY METHOD
+    Verify Text On Screen    Standard
+    Verify Text On Screen    SHIPPING ADDRESS
+    Swipe Up    ${windowScroll}
+    Verify Text On Screen    Test
+    Verify Text On Screen    12 Ridge Way
+    Verify Text On Screen    Green Point
+    Verify Text On Screen    Cape Town
+    Verify Text On Screen    8005
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order History > Delivered Order - QASA-363
+    [Tags]    QASA-363
+    [Setup]    Start Application
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    pencil
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}    ${True}
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order By Index    1
+    Verify Text On Screen    Delivered    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order History > Shipped Order - QASA-364
+    [Tags]    QASA-364
+    [Setup]    Start Application
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    pencil
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}    ${False}
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order By Index    1
+    Verify Text On Screen    Shipped    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order History > Estimated Collection Order - QASA-366
+    [Tags]    QASA-366
+    [Setup]    Start Application
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    pencil
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COLLECT    true    5648c4217f1b2d10e54f6a1e
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order By Index    1
+    Verify Text On Screen    ${prod_Title}    ${MIN_TIMEOUT}
+    Verify Text On Screen    Estimated Collection from    ${MIN_TIMEOUT}
+    Verify Text On Screen    We'll send you an email once your order is ready for collection    ${MIN_TIMEOUT}
+    Verify Text On Screen    NOT YET READY    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
