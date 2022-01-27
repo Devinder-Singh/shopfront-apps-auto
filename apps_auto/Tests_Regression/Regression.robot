@@ -177,7 +177,6 @@ Apps > Verify Home Screen - QASA-478
     [Setup]    Start Application
     Click Home
     Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
-    #Click View All Daily Deals
     Click Home Icon Daily Deals
     Click Daily Deals Product from API
     [Teardown]    Tear Down
@@ -269,7 +268,7 @@ Verify Home Screen > Shop by Dept widget - QASA-882
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Baby & Toddler
-    Verify Text On Screen    Baby    ${MAX_TIMEOUT}
+    Verify Text On Screen    Baby & Toddler    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Beauty
@@ -299,7 +298,7 @@ Verify Home Screen > Shop by Dept widget - QASA-882
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    DIY & Home Improvement
-    Verify Text On Screen    Home Improvement    ${MAX_TIMEOUT}
+    Verify Text On Screen    DIY & Home Improvement    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Swipe Left    ${cntHomeDeptIcons}
@@ -308,7 +307,7 @@ Verify Home Screen > Shop by Dept widget - QASA-882
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Garden, Pool & Patio
-    Verify Text On Screen    Garden, Pool    ${MAX_TIMEOUT}
+    Verify Text On Screen    Garden, Pool & Patio    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Groceries
@@ -317,7 +316,7 @@ Verify Home Screen > Shop by Dept widget - QASA-882
     Scroll To Text    Shop by Department
     Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Health & Hygiene
-    Verify Text On Screen    Health    ${MAX_TIMEOUT}
+    Verify Text On Screen    Health & Hygiene    ${MAX_TIMEOUT}
     [Teardown]    Tear Down
 
 Verify Home Screen > Shop by Dept widget - QASA-883
@@ -334,7 +333,7 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Swipe Left    ${cntHomeDeptIcons}
     Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Home & Appliances
-    Verify Text On Screen    Home    ${MAX_TIMEOUT}
+    Verify Text On Screen    Home & Appliances    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Household Cleaning
@@ -343,7 +342,7 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Scroll To Text    Shop by Department
     Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Kitchen & Appliances
-    Verify Text On Screen    Kitchen    ${MAX_TIMEOUT}
+    Verify Text On Screen    Kitchen & Appliances    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Liquor
@@ -351,7 +350,7 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Luggage & Travel
-    Verify Text On Screen    Luggage    ${MAX_TIMEOUT}
+    Verify Text On Screen    Luggage & Travel    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Movies
@@ -386,7 +385,7 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Sport & Training
-    Verify Text On Screen    Sport    ${MAX_TIMEOUT}
+    Verify Text On Screen    Sport & Training    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Swipe Left    ${cntHomeDeptIcons}
@@ -400,12 +399,12 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Toys & Games
-    Verify Text On Screen    Toys    ${MAX_TIMEOUT}
+    Verify Text On Screen    Toys & Games    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    TV, Audio & Video
-    Verify Text On Screen    TV, Audio
+    Verify Text On Screen    TV, Audio & Video
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Swipe Left    ${cntHomeDeptIcons}
@@ -428,23 +427,23 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     Scroll To Text    Shop Local
     Scroll To Text    Brand Stores
     Scroll To Text    Auto
-    Scroll To Text    Baby
+    Scroll To Text    Baby & Toddler
     Scroll To Text    Beauty
     Scroll To Text    Books
     Scroll To Text    Camping
     Scroll To Text    Cellphones
     Scroll To Text    Clothing
     Scroll To Text    Computers
-    Scroll To Text    DIY
+    Scroll To Text    DIY & Home Improvement
     Scroll To Text    Gaming
-    Scroll To Text    Garden, Pool
+    Scroll To Text    Garden, Pool & Patio
     Scroll To Text    Groceries
-    Scroll To Text    Health
-    Scroll To Text    Home
+    Scroll To Text    Health & Hygiene
+    Scroll To Text    Home & Appliances
     Scroll To Text    Household Cleaning
     Scroll To Text    Kitchen
     Scroll To Text    Liquor
-    Scroll To Text    Luggage
+    Scroll To Text    Luggage & Travel
     Scroll To Text    Movies
     Scroll To Text    Music
     Scroll To Text    Musical Instruments
@@ -452,11 +451,11 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     Scroll To Text    Office
     Scroll To Text    Pets
     Scroll To Text    Photography 
-    Scroll To Text    Sport
+    Scroll To Text    Sport & Training
     Scroll To Text    Stationery
     Scroll To Text    Toiletries
-    Scroll To Text    Toys
-    Scroll To Text    TV, Audio
+    Scroll To Text    Toys & Games
+    Scroll To Text    TV, Audio & Video
     Scroll To Text    Wearable Tech
     Close Application
     Start Application
@@ -1081,7 +1080,7 @@ Apps > Order Tracking > Delivery Order > QASA-80
 
     ${completedOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
-    
+
     Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu

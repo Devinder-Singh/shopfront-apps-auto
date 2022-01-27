@@ -1296,7 +1296,7 @@ Search And Return Product Id API
     ${searchProductEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${search}
     Get    ${searchProductEndpoint}
     Integer    response status    200
-
+    
     ${productId}=    Output    $.sections.products.results[1].product_views.buybox_summary.product_id
     [Return]    ${productId}
 

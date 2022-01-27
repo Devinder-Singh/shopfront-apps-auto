@@ -44,6 +44,7 @@ Resource          ../../${PLATFORM_NAME}/or/orCommon.robot
 Resource          ../../${PLATFORM_NAME}/or/orReturns.robot
 Resource          ../../${PLATFORM_NAME}/or/orPaymentPayfast.robot
 Resource          ../../${PLATFORM_NAME}/or/orOrderDetail.robot
+Resource          ../../${PLATFORM_NAME}/or/orPayWithCreditCard.robot
 Resource          ../../android/or/orWeb.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot

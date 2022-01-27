@@ -144,11 +144,17 @@ Verify Price On Screen
     IF    ${cnt} == 5
         Verify Text On Screen    ${resultFinal}    ${delay}
     END
-    
 
 Verify Text On Screen
     [Arguments]    ${verifyText}    ${timeout}=5s
-    Wait Until Page Contains    ${verifyText}    ${timeout}
+        ${txtVerify}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${txtVerify}=    Set Variable    xpath=//*[@text='${verifyText}']
+    END
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${txtVerify}    ${timeout}
+    Should Be True    ${chkTextSuccess} == ${True}
 
 Verify Product Review
     ${txtProduct}=    Get Product List Review
@@ -253,7 +259,7 @@ Scroll To Text
     Page Should Contain Element    ${element}
 
 Scroll To Element
-    [Arguments]    ${element}    ${loopTimes}=10    ${scrollElement}=${windowScroll}    ${scrollSwipeDirection}=Up
+    [Arguments]    ${element}    ${loopTimes}=30    ${scrollElement}=${windowScroll}    ${scrollSwipeDirection}=Up
     Set Implicitly Wait    1
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    ${loopTimes}
