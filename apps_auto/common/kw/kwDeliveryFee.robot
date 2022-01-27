@@ -36,7 +36,7 @@ Click Free Delivery
 Click Standard Collect
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
     Wait Until Element Is Visible    ${txtStandardCollect}    ${MIN_TIMEOUT}
-    Run Keyword If    ${chkTextSuccess}==${True}    Click Element    ${txtStandardCollect}
+    Click Element    ${txtStandardCollect}
 
 Click Delivery Show Details
     Wait Until Element Is Visible    ${lnkShowDetails}    ${MIN_TIMEOUT}

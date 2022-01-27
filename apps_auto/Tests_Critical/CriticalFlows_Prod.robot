@@ -37,8 +37,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
 
 Search and Buy Item on Delivery using Credit Card
     [Tags]    Production2
-    [Setup]    Start Application
-    Clear Environment
+    [Setup]    Clear Environment And Start Application
     Click Menu
     Click Menu Login
     Login Takealot    ${G_EMAIL}    t@ke@!ot1234
@@ -86,9 +85,8 @@ Search and Buy Item on Delivery using Credit Card
 
 Search and Buy Heavy Item on Delivery along with TV
     [Tags]    Production3
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    Fridg
@@ -119,9 +117,8 @@ Search and Buy Heavy Item on Delivery along with TV
 
 Edit Personal Details, Create Address and Buy Item on Delivery
     [Tags]    Production4
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Menu
     Click Menu My Account
@@ -155,9 +152,8 @@ Edit Personal Details, Create Address and Buy Item on Delivery
 
 Buy Airtime and Pay with Credit Card
     [Tags]    Production5
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
@@ -176,9 +172,8 @@ Buy Airtime and Pay with Credit Card
 
 Buy Airtime along with another Item on Delivery
     [Tags]    Production6
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
@@ -209,9 +204,8 @@ Buy Airtime along with another Item on Delivery
 
 Buy Airtime along with another Item on Collection
     [Tags]    Production7
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
-    Clear Environment
     Click Home
     Click Search Home
     Search Product    airtim
@@ -242,7 +236,7 @@ Buy Airtime along with another Item on Collection
 
 Register User
     [Tags]    Production8
-    [Setup]    Start Application
+    [Setup]    Clear Environment And Start Application
     Click Menu
     Click Menu Login
     Close Application
