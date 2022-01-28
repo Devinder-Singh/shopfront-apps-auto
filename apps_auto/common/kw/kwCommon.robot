@@ -23,7 +23,7 @@ Swipe Down
     ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.3)
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.7)
-    Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  700
+    Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  500
 
 Swipe Up
     [Arguments]       ${locator}
@@ -34,7 +34,7 @@ Swipe Up
     ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.7)
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.3)
-    Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  700
+    Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  800
 
 Swipe Right
     [Arguments]       ${locator}
@@ -197,6 +197,7 @@ Click Back Screen
     Sleep    1s
 
 Click Back Android
+    Sleep    1s
     IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${navBack}    ${MIN_TIMEOUT}
         Click Element    ${navBack}

@@ -11,6 +11,7 @@ Click Missed Promotion Text
     Click Element    ${lblCheckoutMissedPromotion}
 
 Click Checkout
+    Set Test Variable    ${ISORDERED}    ${False}
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
     Click Element    ${btnCheckout}
 
