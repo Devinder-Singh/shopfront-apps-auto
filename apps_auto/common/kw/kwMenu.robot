@@ -129,7 +129,7 @@ Click Menu Department
         ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == '${dept}'`]
     END
 
-    FOR    ${index}    IN RANGE    5
+    FOR    ${index}    IN RANGE    10
         ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}
         IF    ${chkTextSuccess} == ${True}
             Exit For Loop

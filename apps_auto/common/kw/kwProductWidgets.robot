@@ -21,18 +21,14 @@ Click Product Widget Banner
     ${chkElementExists}=    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${btnBannerWidget}    5s
     Run Keyword If    ${chkElementExists}==${False}    Click Element    ${btnBannerWidget}
 
+Click Product Widget Featured Collection
+    Click Element On Scroll    ${btnFeaturedWidgetItem}    10
+
 Click Product Widget Product
     Click Element On Scroll    ${btnProductWidget}    5
 
 Click Product Widget Image
-    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnImageWidget}    5s
-    Run Keyword If    ${chkElementExists}==${False}    Swipe Up    ${windowScroll}
-
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnImageWidget}    15s
-    Click Element    ${btnImageWidget}
-
-    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnImageWidget}    2s
-    Run Keyword If    ${chkElementExists}==${True}    Click Element    ${btnImageWidget}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element On Scroll    ${btnImageWidget}
 
 Click Product Widget Context
     Click Element On Scroll    ${btnContextWidget}    15

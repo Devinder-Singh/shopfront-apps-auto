@@ -1352,3 +1352,15 @@ Create New Order API
     ${retOorderId}=    Output    $.order_id
     Set Global Variable    ${query_order_id}    ${retOorderId}
     [Return]    ${retOorderId}
+
+Get CMS Widget Products Attributes
+    [Arguments]    ${item}
+    ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/cms/pages/${item}
+    Get    ${search_URL}
+    Integer    response status    200
+
+    @{results_title}=    Output    $.page.widgets[*].value.product_data[*].title
+    @{results_price}=    Output    $.page.widgets[*].value.product_data[*].selling_price
+
+    ${searchResult}=    Set Variable    ${results_title}[${index}]
+    [return]    ${searchResult}

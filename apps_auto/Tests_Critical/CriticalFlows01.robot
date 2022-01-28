@@ -3,21 +3,6 @@ Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > CMS Widgets > Carousel Widget - QASA-647
-    [Tags]    QASA-647
-    [Setup]    Start Application
-    Click Menu
-    Click Menu Shop By Department
-    Click Menu Department    Beauty
-    Click Product Widget Product
-    Verify Product Widget Navigation
-
-#    Click Product Widget Image
-    Click Product Widget Context
-
-    Click Product Widget Carousel
-    [Teardown]    Tear Down
-
 Apps > Order Refactor > Order Detail > Collected Order - QASA-352
     [Tags]    QASA-352
     [Setup]    Start Application
