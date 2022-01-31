@@ -39,14 +39,19 @@ Select Earn eBucks
 
 Click Change Payment Method
     Wait Until Element Is Visible    ${txtPaymentVoucher}    ${MIN_TIMEOUT}
-    
-    ${rdoPaymentCredit}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${rdoPaymentUseMyCredit}    1s
-    IF    ${rdoPaymentCredit} == ${True}
-        Click Element    ${rdoPaymentUseMyCredit}
-    END
 
-    Wait Until Element Is Visible    ${btnChange}    ${MIN_TIMEOUT}
-    Click Element    ${btnChange}
+    ${btnChg}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnChange}    1s
+    IF    ${btnChg} == ${True}
+        Click Element    ${btnChange}
+    ELSE
+        ${rdoPaymentCredit}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${rdoPaymentUseMyCredit}    1s
+        IF    ${rdoPaymentCredit} == ${True}
+            Click Element    ${rdoPaymentUseMyCredit}
+        END
+
+        Wait Until Element Is Visible    ${btnChange}    ${MIN_TIMEOUT}
+        Click Element    ${btnChange}
+    END
 
 Click Change Payment Method Only
     Wait Until Element Is Visible    ${btnChange}    ${MIN_TIMEOUT}
@@ -58,13 +63,13 @@ Click Payment Cancel
 
 Click Change Payment Delivery Method
     Wait Until Element Is Visible    ${btnChange}    ${MIN_TIMEOUT}
-    swipe by percent    50    70    50    100    1000
+    Swipe Up    ${windowScroll}
     Wait Until Element Is Visible    ${txtChangePaymentDeliveryMethod}    ${MIN_TIMEOUT}
     Click Element    ${txtChangePaymentDeliveryMethod}
 
 Click Change Payment Pickup Point
     Wait Until Element Is Visible    ${btnChange}    ${MIN_TIMEOUT}
-    swipe by percent    50    70    50    100    1000
+    Swipe Up    ${windowScroll}
     Wait Until Element Is Visible    ${txtChangePaymentPickup}    ${MIN_TIMEOUT}
     Click Element    ${txtChangePaymentPickup}
 

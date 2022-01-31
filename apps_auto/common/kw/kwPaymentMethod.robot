@@ -3,8 +3,12 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Got It Thanks Payment Method
-    Wait Until Element Is Visible    ${btnGotItThanks}    ${MIN_TIMEOUT}
-    Click Element    ${btnGotItThanks}
+    Wait Until Element Is Visible    ${btnChgPaymentGotItThanks}    ${MIN_TIMEOUT}
+    Click Element    ${btnChgPaymentGotItThanks}
+
+Click OK Payment Method Info
+    Wait Until Element Is Visible    ${btnChgPaymentOK}    ${MIN_TIMEOUT}
+    Click Element    ${btnChgPaymentOK}
 
 Click Payfast Payment Method
     IF    '${PLATFORM_NAME}' == 'android'

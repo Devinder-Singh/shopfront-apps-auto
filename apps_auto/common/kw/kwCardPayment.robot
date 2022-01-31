@@ -45,8 +45,12 @@ Click Pay with Credit Card Back
 Input Credit Card Number
     [Arguments]    ${cardNumber}
     Wait Until Element Is Visible    ${txtCreditCardNumber}    ${MIN_TIMEOUT}
+    Click Element    ${txtCreditCardNumber}
+
     Clear Text    ${txtCreditCardNumber}
     Input Text    ${txtCreditCardNumber}    ${cardNumber}
+
+    Click Element    ${txtCreditCardNumber}
 
 Click Credit Card Name
     Wait Until Element Is Visible    ${txtCreditCardName}    ${MIN_TIMEOUT}

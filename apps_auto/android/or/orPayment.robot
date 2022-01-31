@@ -6,7 +6,7 @@ ${btnPayWithFast}      id=${APP_PACKAGE}:id/checkout_order_review_pay
 
 ${btnBackPayment}      accessibility_id=Navigate up
 
-${txtChangePaymentDeliveryMethod}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[3]
+${txtChangePaymentDeliveryMethod}    xpath=(//android.widget.TextView[@resource-id="${APP_PACKAGE}:id/checkout_order_review_summary_item_detail_view_action"])[1]
 ${txtChangePaymentPickup}    id=${APP_PACKAGE}:id/checkout_order_review_summary_item_action
 
 ${txtPaymentShowDetails}    id=${APP_PACKAGE}:id/checkout_order_review_courier_items_action

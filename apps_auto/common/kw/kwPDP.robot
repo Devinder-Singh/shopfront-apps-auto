@@ -234,7 +234,6 @@ Click Blue Colour Option
 
 Click Go To Cart
     Wait Until Keyword Succeeds    30    ${MAX_TIMEOUT}   Click Element    ${btnGoToCart}
-    
 
 Click Go To Cart iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Go To Cart

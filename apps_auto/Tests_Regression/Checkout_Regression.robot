@@ -819,8 +819,8 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QASA-569
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    zagg slim book
-    Click Product
+    Search Product    slim book
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -828,7 +828,10 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QASA-569
     Click Pickup Point
     Click Any Delivery
     Click Donate No Thanks
-    Verify Payment Text    ORDER REVIEW
+    Wait Until Element Is Visible    ${btnChange}    ${MIN_TIMEOUT}
+    Scroll To Text    ORDER REVIEW
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
     Click Change Payment Pickup Point
     Click Pickup Point
     Click Any Delivery
@@ -844,8 +847,8 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    zagg slim book
-    Click Product
+    Search Product    slim book
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -895,27 +898,29 @@ Apps > Checkout > Order Review - QASA-590
 Apps > Checkout > Order Review 02 - QASA-110
     [Tags]    QASA-110
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
-    Search Product    pencil
-    Click Product
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Click Collect
+    Click Continue Digital Item
     Close Application
     Start Application
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout Delete First Item
     Click Checkout
     Click Continue Digital Item
     Click Donate No Thanks
-    Verify Payment Text    ORDER REVIEW
+    Scroll To Text    ORDER REVIEW
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Earn eBucks - QASA-605
@@ -984,9 +989,9 @@ Apps > Checkout > Payment > Gift Msg 02 - QASA-109
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    Airtime
-    Click Product
-    Click Airtime
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1037,7 +1042,7 @@ Apps > Checkout > Payment > Payment Method Availability 02 - QASA-107
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1045,8 +1050,10 @@ Apps > Checkout > Payment > Payment Method Availability 02 - QASA-107
     Click Address
     Click Any Delivery
     Click Donate No Thanks
+    Click Change Payment Method
+    Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment    Secure payments by PayFast
+    Verify Payfast Payment Text
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Payment Method Availability 03 - QASA-108
@@ -1057,9 +1064,9 @@ Apps > Checkout > Payment > Payment Method Availability 03 - QASA-108
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    airtime
-    Click Product
-    Click Airtime
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1068,7 +1075,7 @@ Apps > Checkout > Payment > Payment Method Availability 03 - QASA-108
     Click Change Payment Method
     Click Mobicred Payment Info
     Verify Mobicred Payment Info
-    Click Got It Thanks Payment Method
+    Click OK Payment Method Info
     Click COD Payment Info
     Verify COD Payment Info
     [Teardown]    Tear Down
@@ -1082,7 +1089,7 @@ Apps > Checkout > Payment > Post-Order Creation - QASA-542
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1093,7 +1100,7 @@ Apps > Checkout > Payment > Post-Order Creation - QASA-542
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     Click Pay with Credit Card Back
     Click Change Payment Method
     Click Card Payment Method
@@ -1175,7 +1182,7 @@ Apps > Checkout > Payment > Confirmation - QASA-552
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1195,10 +1202,11 @@ Apps > Checkout > Payment > Confirmation - QASA-552
     Click Payfast Payment Method
     Click Change Payment Method
     Click Cash Payment Method
-#    Click Payment Confirm Order
-#    Verify Confirmation Text    You have chosen to pay with Cash on Delivery. Please have your cash ready for the driver
-#    Verify Confirmation Text    Share your purchase on Facebook or Twitter and you could win its value back in takealot.com store credit! To enter: Share your purchase on takealot.com's Facebook page or on Twitter, tag takealot.com's page or handle and add the hashtag #anythingyoucanimagine. T&C’s apply
-#    Verify Confirmation Element Exists    ${lblShareAndWin}
+    Click Payment Confirm Order
+    Verify Text On Screen    You have chosen to pay with Cash on Delivery    ${MIN_TIMEOUT}
+    Verify Text On Screen    Please have your cash ready for the driver
+    Verify Text On Screen    Share your purchase on Facebook or Twitter using the hashtag #anythingyoucanimagine and you could win the value of the product back in takealot.com store credit
+    Verify Element On Screen    ${lblShareAndWin}
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Confirmation 02 - QASA-106
@@ -1210,7 +1218,7 @@ Apps > Checkout > Payment > Confirmation 02 - QASA-106
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1223,7 +1231,7 @@ Apps > Checkout > Payment > Confirmation 02 - QASA-106
     Click Pay With Credit Card
     Input Credit Card Number    8997877654456554
     Click Credit Card Name
-    Verify Card Payment Text    Please enter a valid credit card number
+    Verify Text On Screen    Please enter a valid credit card number    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Pay with PayFast - QASA-539
@@ -1246,13 +1254,14 @@ Apps > Checkout > Payment > Pay with PayFast - QASA-539
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment
-    Click PayFast Cancel
+    Verify Payfast Payment Text
+    Click Back Screen
     Click Pay With Payfast
-    Verify Payfast Payment
+    Verify Payfast Payment Text
     Close Application
     Start Application
     Click Menu
+    Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
     Click Order Pay Now
@@ -1268,7 +1277,7 @@ Apps > Checkout > Payment > Credit Card - PayU - QASA-536
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1279,7 +1288,7 @@ Apps > Checkout > Payment > Credit Card - PayU - QASA-536
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > COD - QASA-535
@@ -1291,7 +1300,7 @@ Apps > Checkout > Payment > COD - QASA-535
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1302,7 +1311,8 @@ Apps > Checkout > Payment > COD - QASA-535
     Click Change Payment Method
     Click Cash Payment Method
     Click Payment Confirm Order
-    Verify Confirmation Text    You have chosen to pay with Cash on Delivery. Please have your cash ready for the driver
+    Verify Text On Screen    You have chosen to pay with Cash on Delivery    ${MIN_TIMEOUT}
+    Verify Text On Screen    Please have your cash ready for the driver
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QASA-534
@@ -1314,7 +1324,7 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QASA-
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1325,13 +1335,14 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QASA-
     Click Change Payment Method
     Click Payfast Payment Method
     Click Pay With Payfast
-    Verify Payfast Payment
-    Click PayFast Cancel
+    Verify Payfast Payment Text
+    Click Back Screen
     Click Pay With Payfast
-    Verify Payfast Payment
+    Verify Payfast Payment Text
     Close Application
     Start Application
     Click Menu
+    Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
     Click Order Pay Now
@@ -1347,7 +1358,7 @@ Apps > Checkout > Payment > Pay with Ozow - QASA-533
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1358,11 +1369,13 @@ Apps > Checkout > Payment > Pay with Ozow - QASA-533
     Click Change Payment Method
     Click Ozow Payment Method
     Click Pay With Ozow
-    Click Back Payment Ozow
+    Verify Text On Screen    Select your bank    ${MIN_TIMEOUT}
+    Click Back Screen
     Click Pay With Ozow
     Close Application
     Start Application
     Click Menu
+    Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
     Click Order Pay Now
@@ -1378,7 +1391,7 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QAS
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1389,10 +1402,11 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QAS
     Click Change Payment Method
     Click Card Payment Method
     Click Pay With Credit Card
-    Verify Card Payment    Card Number
+    Verify Card Payment
     Close Application
     Start Application
     Click Menu
+    Click Menu My Account
     Click Menu Orders
     Click Order Awaiting Payment
     Click Order Pay Now
@@ -1408,7 +1422,7 @@ Apps > Checkout > Payment > Mobicred - QASA-527
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1419,7 +1433,7 @@ Apps > Checkout > Payment > Mobicred - QASA-527
     Click Change Payment Method
     Click Mobicred Payment Method
     Click Pay With Mobi
-    Verify Payment Mobi Text    Please log in to your Mobicred account
+    Verify Text On Screen    Please log in to your Mobicred account    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > TV Licence Verification - QASA-307
@@ -1430,21 +1444,21 @@ Apps > Checkout > TV Licence Verification - QASA-307
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    Television
-    Click Product
+    Search Product    Televisio
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Click Domestic TV Licence    Business
-    Verify Tv Licence Text    COMPANY REGISTRATION NUMBER / OWNER ID
-    Verify Tv Licence Text    TV LICENCE / EASYPAY NUMBER
-    Click Back TV Licence
-    Click Domestic TV Licence    Holiday Home
-    Verify Tv Licence Text    LICENCE HOLDER SA ID / PASSPORT NUMBER
-    Click Back TV Licence
+    Verify Text On Screen    Company Registration Number / Owner ID    ${MIN_TIMEOUT}
+    Verify Text On Screen    TV Licence / EasyPay Number
+    Click Back Screen
+    Click Domestic TV Licence    Holiday Home    ${MIN_TIMEOUT}
+    Verify Tv Licence Text    Licence Holder SA ID / Passport Number
+    Click Back Screen
     Click Domestic TV Licence
     Click Verify TV Licence
-    Enter TV Licence    1234
+    Enter TV Licence    7209195063086
     Click Delivery
     [Teardown]    Tear Down
 
@@ -1456,19 +1470,21 @@ Apps > Checkout > TV Licence Verification 02 - QASA-105
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    Television
-    Click Product
+    Search Product    Televisio
+    Click Product from API
     Click Add To Cart
-    Click Continue Shopping
+    Click Go To Cart
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Click Back Screen
     Click Search Icon
     Search Product    johnny wal
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Verify Tv Licence Text    TV Licence
-    Verify Tv Licence Text    Age Verification
-    Verify Tv Licence Element Exists    ${navTvLicVerification}
+    Verify Text On Screen    TV Licence    ${MIN_TIMEOUT}
+    Verify Text On Screen    Age Verification
+    Verify Element On Screen    ${navTvLicVerification}
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > Promise Date - QASA-611
@@ -1662,7 +1678,7 @@ Apps > Checkout > Payment > Credits (Voucher) - QASA-537
     Click Add Payment Voucher
     Enter Payment Voucher Code
     Click Apply Payment Voucher
-    Click Back Payment Voucher
+    Click Back Screen
     Verify Element On Screen    ${rdoPaymentUseMyCredit}    ${MIN_TIMEOUT}
     Verify Payment Text    Use my Credit (R
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Payment Text    You don't owe us a cent. Your available credit balance covers the full value of your order
@@ -1670,8 +1686,8 @@ Apps > Checkout > Payment > Credits (Voucher) - QASA-537
     Swipe Up    ${windowScroll}
     Click Payment Donation
     Verify Element On Screen    ${lblPaymentDonation}    ${MIN_TIMEOUT}
-    Verify Element On Screen    ${lblPaymentCreditsApplied}    ${MIN_TIMEOUT}
-    Verify Element On Screen    ${txtPaymentAmount}    ${MIN_TIMEOUT}
+    Verify Element On Screen    ${lblPaymentCreditsApplied}
+    Verify Element On Screen    ${txtPaymentAmount}
     Click Payment Confirm Order
     [Teardown]    Tear Down
 
@@ -1703,15 +1719,17 @@ Apps > Checkout > Delivery Options > General Test Case 02 - QASA-104
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    airtime
-    Click First Product from API
-    Click Airtime
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
-    Click Continue Shopping
+    Click Go To Cart
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Click Back Screen
     Click Search Icon
     Search Product    montego
-    Click First Product from API
-    Click 10 Kg
+    Click Variant Product from API    1
+    Click Product Variant From API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1755,8 +1773,8 @@ Apps > Checkout > Delivery Options > General Test Case 04 - QASA-102
     Click Delivery
     Click Address
     Click Why The Wait
-    Verify Delivery Options Text    Why the wait?
-    Verify Delivery Options Text    One or more items in your cart need to be ordered from our supplier. You can collect your order once all your items have arrived and you've received email confirmation that your order is ready
+    Verify Text On Screen    Why the Wait?    ${MIN_TIMEOUT}
+    Verify Text On Screen    One or more items in your cart need to be ordered from our supplier. We will ship your order once all your items are ready
     Click Got It Thanks
     [Teardown]    Tear Down
 
@@ -1776,8 +1794,10 @@ Apps > Checkout > Delivery Options > General Test Case 05 - QASA-101
     Click Collect
     Click Pickup Point
     Click Why The Wait
-    Verify Delivery Options Text    Why the wait?
-    Verify Delivery Options Text    One or more items in your cart need to be ordered from our supplier. You can collect your order once all your items have arrived and you've received email confirmation that your order is ready
+    Verify Text On Screen    Why the Wait?    ${MIN_TIMEOUT}
+    Verify Text On Screen    One or more items in your cart need to be ordered from our supplier
+    Verify Text On Screen    You can collect your order once all your items have arrived and you
+    Verify Text On Screen    ve received email confirmation that your order is ready
     Click Got It Thanks
     [Teardown]    Tear Down
 

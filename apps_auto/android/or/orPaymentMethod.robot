@@ -10,10 +10,11 @@ ${lblOzowEFT}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.Li
 ${lblMobicredEFT}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[6]/android.widget.LinearLayout
 ${lblCash}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.LinearLayout
 
-${btnCODInfo}      id=${APP_PACKAGE}:id/checkout_payment_method_selector_info
-${btnMobicredEFTInfo}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.view.ViewGroup[2]/androidx.appcompat.widget.LinearLayoutCompat/android.widget.LinearLayout/android.widget.TextView
+${btnCODInfo}      xpath=(//android.widget.ImageView[@resource-id='${APP_PACKAGE}:id/checkout_payment_method_selector_info'])[2]
+${btnMobicredEFTInfo}      xpath=(//android.widget.ImageView[@resource-id='${APP_PACKAGE}:id/checkout_payment_method_selector_info'])[3]
 
-${btnGotItThanks}      id=android:id/button1
+${btnChgPaymentGotItThanks}      id=android:id/button1
+${btnChgPaymentOK}      xpath=//*[@text="OK"]
 
 ${lblCODInfo}      id=android:id/message
 ${lblMobicredInfo}      id=android:id/message

@@ -169,7 +169,7 @@ Apps > Order Refactor > Order Detail > Delivered Order - QASA-348
     Click Menu My Account
     Click Menu Orders
     Click Order Delivery
-    Click Track Order
+    Click Track Order Detail
     Verify Text On Screen    Order paid    ${MIN_TIMEOUT}
     Verify Text On Screen    Expected to ship    ${MIN_TIMEOUT}
     Verify Text On Screen    DELIVERY BY    ${MIN_TIMEOUT}

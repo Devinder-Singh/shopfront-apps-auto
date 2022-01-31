@@ -179,7 +179,7 @@ Check Text On Screen Not
     Wait Until Page Does Not Contain    ${verifyText}    ${MIN_TIMEOUT} 
 
 Verify Element On Screen
-    [Arguments]    ${verifyElement}    ${timeout}
+    [Arguments]    ${verifyElement}    ${timeout}=5s
     Wait Until Page Contains Element    ${verifyElement}    ${timeout}
 
 Verify Element Not On Screen

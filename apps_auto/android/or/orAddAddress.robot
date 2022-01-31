@@ -1,11 +1,11 @@
 *** Variables ***
 ${btnResidential}      xpath=//*[@text="Residential"]
 ${txtRecipientName}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
-${txtRecipientMobile}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
-${txtRecipientStreet}      id=${APP_PACKAGE}:id/address_input_auto_complete_text_view
-${txtBusinessName}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${txtRecipientMobile}      xpath=//*/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 
-${btnSaveAddress}      id=${APP_PACKAGE}:id/address_input_save
+${txtRecipientStreet}      id=${APP_PACKAGE}:id/address_input_auto_complete_text_view
+${txtBusinessName}      xpath=//*/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${btnSaveAddress}      id=${APP_PACKAGE}:id/sticky_action_button
 
 ${txtRecipientPostCode}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[7]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 ${txtRecipientCityMyAcc}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
