@@ -1653,9 +1653,9 @@ Apps > Checkout > Payment > Pay with eBucks - QASA-538
     Click Pay With eBucks
     Fill In EBucks Credentials
     Click EBucks Balance
-    Fill In EBucks Amount Form
+    Fill In EBucks Amount Form    299
     Fill In EBUcks OTP Form
-    Verify Payment EBucks Text    Invalid OTP
+    Verify Text On Screen    Invalid OTP    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Credits (Voucher) - QASA-537
@@ -1962,5 +1962,5 @@ Apps > Checkout > Payment > Mobicred - QASA-555
     Click Mobicred Payment Method
     Click Pay With Mobi
     Verify Text On Screen    Mobicred Username    ${MAX_TIMEOUT}
-    Verify Text On Screen    Mobicred Password    ${MAX_TIMEOUT}
+    Verify Text On Screen    Mobicred Password
     [Teardown]    Tear Down
