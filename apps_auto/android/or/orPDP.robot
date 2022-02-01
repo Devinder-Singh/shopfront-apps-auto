@@ -10,9 +10,10 @@ ${btnPDPSelectOption}      id=${APP_PACKAGE}:id/pdpWidgetButtonContainerVariants
 ${btnPDPCartItemIncrease}      id=${APP_PACKAGE}:id/pdpAddToCartIncreaseButton
 
 ${navBackPDP}    accessibility_id=Navigate up
-${navCartScr}    ${EMPTY}
+${navCartScr}    ${EMPTY}fi.android.takealot.debug:id/pdp_widget_stock_status_seller_btn
 
-${btnPDPSellerName}      id=${APP_PACKAGE}:id/pdp_widget_buy_box_sub_title_action_button
+${btnPDPSellerName}    id=${APP_PACKAGE}:id/pdp_widget_buy_box_sub_title_action_button
+${btnPDPSoldByName}    id=fi.android.takealot.debug:id/pdp_widget_stock_status_seller_btn
 ${lblBlueValue}      xpath=//*[@text="Blue"]
 ${btnPDPReview}      xpath=//*[contains(@text, "WRITE REVIEW")]
 ${btnPDPReviewsSummary}    id=${APP_PACKAGE}:id/pdp_reviews_distribution_summary

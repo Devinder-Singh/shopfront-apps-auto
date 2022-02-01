@@ -103,8 +103,8 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    roku japanese
-    Click Product From Title    Roku - Japanese Craft Gin - 750ml
+    Search Product    Samsung - 14 Place Setting Dishwasher
+    Click Product From Title    Samsung - 14 Place Setting Dishwasher
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    ${MIN_TIMEOUT}
@@ -115,8 +115,8 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    roku japanese
-    Click Product From Title    Roku - Japanese Craft Gin - 750ml
+    Search Product    Samsung - 14 Place Setting Dishwasher
+    Click Product From Title    Samsung - 14 Place Setting Dishwasher
     Click Add Bundle To Cart
     Click Go To Cart
     Wait for Checkout
@@ -129,12 +129,12 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     [Tags]    QASA-254    QASA-306
     [Setup]    Start Application
     Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    Philips Batter
-    Click Product From Title    Philips Alkaline LR03P6BP AAA Battery
+    Search Product    versus soc
+    Click Product From Title    Versus Table Mountain Performance Running Hidden Socks
+    Click Variant Option By Index    1
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    ${MAX_TIMEOUT}
@@ -146,12 +146,15 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     Start Application
     Click Home
     Click Search Home
-    Search Product    Philips Batter
-    Click Product From Title    Philips Alkaline LR03P6BP AAA Battery
+    Search Product    versus soc
+    Click Product From Title    Versus Table Mountain Performance Running Hidden Socks
+    Click Variant Option By Index    1
     Click Shop The Deal
-    Click Product From Title    Philips Alkaline LR6P6BP AA Battery
+    Click Product From Title    Versus Table Mountain Performance Running Hidden Socks
+    Click Variant Option By Index    1
     Click Add To Cart
     Click Go To Cart
+    Change Cart Quantity Android    3
     Check Text On Screen Not    Missed promotion
     Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
     Check Text On Screen Not    Add 1 item to qualify
@@ -162,11 +165,11 @@ Apps > Promotions (Android) Unboxed & Other Offers - QASA-253 - QASA-306
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Unboxed Dea
-    Click Product From Title    HP 123 Black Ink Cartridge
+    Click Product from API
     Click Other Offers Add To Cart
     Click Go To Cart
     Click Checkout
@@ -213,6 +216,7 @@ Verify Home Screen > Shop by Dept widget - QASA-861
     Verify Element On Screen    ${btnProductSearchFilter}    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
+    Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Summer
     Verify Text On Screen    Summer    ${MAX_TIMEOUT}
     Click Cancel Screen
@@ -230,20 +234,10 @@ Verify Home Screen > Shop by Dept widget - QASA-861
     Click Home Icon    Unboxed Deals
     Verify Text On Screen    Unboxed Deals    ${MAX_TIMEOUT}
     Click Cancel Screen
-    #Scroll To Text    Shop by Department
-    #Click Home Icon    Ultimate Braai Master
-    #Verify Text On Screen    The Ultimate Braai Master    ${MAX_TIMEOUT}
-    #Click Cancel Screen
     Scroll To Text    Shop by Department
-    Swipe left    ${cntHomeDeptIcons}
     Click Home Icon    Exclusive To Takealot
     Verify Text On Screen    Exclusive To Takealot    ${MAX_TIMEOUT}
     Click Cancel Screen
-    #Scroll To Text    Shop by Department 
-    #Swipe Right    ${cntHomeDeptIcons}
-    #Click Home Icon    New To Takealot
-    #Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    #Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Shop Local
     Verify Text On Screen    Shop Local    ${MAX_TIMEOUT}
@@ -275,6 +269,7 @@ Verify Home Screen > Shop by Dept widget - QASA-882
     Verify Text On Screen    Beauty    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
+    Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Books
     Verify Text On Screen    Books    ${MAX_TIMEOUT}
     Click Cancel Screen
@@ -288,7 +283,6 @@ Verify Home Screen > Shop by Dept widget - QASA-882
     Verify Text On Screen    Cellphones    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Clothing
     Verify Text On Screen    Clothing    ${MAX_TIMEOUT}
     Click Cancel Screen
@@ -310,13 +304,14 @@ Verify Home Screen > Shop by Dept widget - QASA-882
     Verify Text On Screen    Garden, Pool & Patio    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
+    Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Groceries
     Verify Text On Screen    Household    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Health & Hygiene
-    Verify Text On Screen    Health & Hygiene    ${MAX_TIMEOUT}
+    Verify Text On Screen    Health    ${MAX_TIMEOUT}
     [Teardown]    Tear Down
 
 Verify Home Screen > Shop by Dept widget - QASA-883
@@ -353,6 +348,7 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Verify Text On Screen    Luggage & Travel    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
+    Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Movies
     Verify Text On Screen    Movies    ${MAX_TIMEOUT}
     Click Cancel Screen
@@ -375,7 +371,6 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Verify Text On Screen    Office    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
     Click Home Icon    Pets
     Verify Text On Screen    Pets    ${MAX_TIMEOUT}
     Click Cancel Screen
@@ -385,7 +380,7 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Sport & Training
-    Verify Text On Screen    Sport & Training    ${MAX_TIMEOUT}
+    Verify Text On Screen    Sport    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Swipe Left    ${cntHomeDeptIcons}
@@ -399,7 +394,7 @@ Verify Home Screen > Shop by Dept widget - QASA-883
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Click Home Icon    Toys & Games
-    Verify Text On Screen    Toys & Games    ${MAX_TIMEOUT}
+    Verify Text On Screen    Toys    ${MAX_TIMEOUT}
     Click Cancel Screen
     Scroll To Text    Shop by Department
     Swipe Left    ${cntHomeDeptIcons}
@@ -502,7 +497,7 @@ Apps > Verify Home Screen - QASA-173
     Click Wishlist Edit
     Select Wishlist Item
     Click Wishlist Delete Items
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This list is empty    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This list is empty!    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Search - QASA-475
@@ -559,10 +554,23 @@ Apps > PLP - QASA-473
     Start Application
     Click Home
     Click Search Home
-    Search Product    glass
-    Click First Product from API
-    Click Seller Name
-    Click Product Seller Deals
+    Search Product    flying fish lemon
+    Click Product from API
+    Click Sold By Name
+    Verify Text On Screen    ACA Liquors    timeout=10s
+    Click Product Filter
+    Verify Text On Screen    ACA Liquors
+    Click Back Screen
+    Click Back Screen
+    Click Brand Name
+    Verify Text On Screen    Flying Fish    timeout=10s
+    Click Product Filter
+    Verify Text On Screen    Flying Fish
+    Click Back Screen
+    Click Back Screen
+    Scroll To Text    You Might Also Like
+    Click Product Info Bubble By Name    Liquor
+    Verify Text On Screen    Liquor
     [Teardown]    Tear Down
 
 Apps > PLP > Sort - QASA-171
@@ -738,7 +746,7 @@ Apps > PDP - QASA-519
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    pencil case
@@ -753,7 +761,7 @@ Apps > PDP - QASA-519
     Start Application
     Click Home
     Click Search Home
-    Search Product    Drone
+    Search Product    face mask pac
     Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Sponsored    ${MIN_TIMEOUT}
@@ -775,7 +783,7 @@ Apps > PDP - QASA-170
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    airtim
+    Search Product    Telkom
     Click Variant Product from API
     Click Product Variant From API
     Click Add To Cart
@@ -867,7 +875,7 @@ Apps > PDP - QASA-167
     Click Home
     Click Search Home
     Search Product    tshirt for m
-    Click Variant Product from API
+    Click Variant Product from API    itemIndex=1
     Verify PDP Screen Element Not Exists    ${btnAddToCart}
     Click Product Variant From API
     Click Add To Wishlist Only
@@ -901,7 +909,7 @@ Apps > Merchandised Landing Pages (CMS Widgets) - QASA-165
     Click Home
     Click Search Home
     Verify Text On Screen    Trending    ${MIN_TIMEOUT}
-    Click Search Trending
+    Click Search Trending Option By Index    index=1
     [Teardown]    Tear Down
 
 Merchandised Landing Pages (CMS Widgets) -> Product List Widget - QASA-164
@@ -910,7 +918,7 @@ Merchandised Landing Pages (CMS Widgets) -> Product List Widget - QASA-164
     Click Menu
     Click Menu Shop By Department
     Click Menu Department    Beauty
-    Click Product Widget Product
+    Click Product Widget By Index    index=1
     Verify Product Widget Navigation
     [Teardown]    Tear Down
 
@@ -930,7 +938,6 @@ Merchandised Landing Pages (CMS Widgets) - Contextual Navigation Widget - QASA-1
     Click Menu
     Click Menu Shop By Department
     Click Menu Department    Beauty
-#    Click Product Widget Image
     Click Product Widget Context
     Verify Product Widget Navigation
     [Teardown]    Tear Down
@@ -1095,7 +1102,7 @@ Apps > Order Tracking > Delivery Order > QASA-80
     Verify Text On Screen    Credit Card
     Verify Text On Screen    DELIVERY METHOD
     Verify Text On Screen    Standard
-    Verify Text On Screen    SHIPPING ADDRESS
+    Scroll To Text    SHIPPING ADDRESS
     Verify Text On Screen    Nkhabi
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Swipe Up    ${windowScroll}
     Verify Text On Screen    5 Templar Street
@@ -1131,7 +1138,7 @@ Apps > My Account Verifications - QASA-477
     [Setup]    Start Application    ${False}
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
     Click Menu My Account
@@ -1161,19 +1168,18 @@ Apps > My Account Verifications - QASA-477
     Click Back iOS    My Account
     Click Menu Address Book
     Click Add Delivery Address
-    Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
     Click Back Delivery Android
     Click Back iOS    My Account
     Click Menu Address Book
-    Click Edit Address
+    Click Edit Button By Index    2
     Edit Delivery Address Street My Acc    13 Caro Roa
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
     Click Back Delivery Android
     Click Back iOS    My Account
     Click Menu Address Book
-    Click Delete Address
+    Click Delete Address By Index    1
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Address successfully deleted    ${MIN_TIMEOUT}
     Close Application
     Start Application
@@ -1228,8 +1234,7 @@ Apps > My Account Verifications - QASA-89
     Verify Text On Screen    Superbalist    5s
     Click Back Android
     Click Menu Help
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Open file with    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What can we help you with?    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Order Tracking (Collect) 02 - QASA-547
@@ -1397,10 +1402,10 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    airtim
+    Search Product    Telkom
     Click Variant Product from API
     Click Product Variant From API
     Click Add To Cart
@@ -1475,9 +1480,9 @@ Cart Update & Cart Notification - Liquor - QASA-249
     Click Delivery
     Click Address
     Click Any Delivery
+    Click Donate No Thanks
     ${liquorProductId}=    Search And Return Product Id API    liquor
     Add To Cart    productId=${liquorProductId}
-    Click Donate No Thanks
     Click Pay With Credit Card
     Verify Text On Screen    You've added the following new item(s) to your cart
     Click Continue To Checkout
@@ -1549,7 +1554,7 @@ Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
     [Setup]    Start Application
     Clear Environment
     Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1559,13 +1564,13 @@ Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
     Click Checkout
     Click Collect
     Click Filter Province
-    Click Western Cape Province
+    Select Province Dynamically    Western Cape
     Click Pickup Point
     Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
-    Add To Cart
+    Add To Cart    productId=101371987
     Click Pay With Credit Card
     Click Cart Update Continue Checkout
     Click Collect Not Available
@@ -1584,13 +1589,13 @@ Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
     Click Checkout
     Click Collect
     Click Filter Province
-    Click Western Cape Province
+    Select Province Dynamically    Western Cape
     Click Pickup Point
     Click Any Delivery
     Click Donate No Thanks
     Click Change Payment Method
     Click Card Payment Method
-    Add To Cart
+    Add To Cart    productId=101371987
     Click Pay With Credit Card
     Click Cart Update Back To Cart
     Click Checkout

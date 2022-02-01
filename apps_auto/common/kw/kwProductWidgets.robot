@@ -38,8 +38,8 @@ Click Product Widget Context
     Click Element On Scroll    ${btnContextWidget}    15
 
 Verify Product Widget Navigation
-    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    Run Keyword If    ${chkElementExists}==${False}    Wait Until Element Is Visible    ${btnAddToCart}    5s
+    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MAX_TIMEOUT}
+    Run Keyword If    ${chkElementExists}==${False}    Wait Until Element Is Visible    ${btnAddToCart}    ${MAX_TIMEOUT}
 
 Click Featured Collection Widget 
     [Arguments]    ${text}
@@ -50,3 +50,12 @@ Click Featured Collection Widget
         ${txtElement}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${text}"`]
     END
     Click Element On Scroll    ${txtElement}
+
+Click Product Widget By Index
+    [Arguments]    ${index}
+    ${dynamicProductWidgetByIndex}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicProductWidgetByIndex}=    Set Variable    xpath=(//androidx.cardview.widget.CardView[@resource-id='fi.android.takealot.debug:id/cmsPageWidgetProductListItemRoot'])[${index}]
+    END
+    Scroll To Element    ${dynamicProductWidgetByIndex}
+    Click Element    ${dynamicProductWidgetByIndex}

@@ -1,0 +1,4 @@
+{
+    "robot.lint.robocop.enabled": true,
+    "robot.codeFormatter": "robotidy"
+}

@@ -151,7 +151,7 @@ Verify Text On Screen
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'
-        ${txtVerify}=    Set Variable    xpath=//*[@text='${verifyText}']
+        ${txtVerify}=    Set Variable    xpath=//*[contains(@text,"${verifyText}")]
     END
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${txtVerify}    ${timeout}
     Should Be True    ${chkTextSuccess} == ${True}
@@ -228,7 +228,7 @@ Click Cancel Screen
     Sleep    1s
 
 Click Element On Scroll
-    [Arguments]    ${clickElement}    ${loopTimes}=10
+    [Arguments]    ${clickElement}    ${loopTimes}=30
     Scroll To Element    ${clickElement}    ${loopTimes}    ${windowScroll}
     Click Element    ${clickElement}
 

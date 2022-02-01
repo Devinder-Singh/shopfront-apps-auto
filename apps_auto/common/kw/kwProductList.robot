@@ -4,7 +4,7 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Click Variant Product from API
     [Arguments]    ${itemIndex}=0
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MAX_TIMEOUT}
     ${txtProduct}=    Get Variant Product to Add To Cart    ${itemIndex}
     Click Element On Scroll    ${txtProduct}
     Click Close Ad
@@ -215,7 +215,7 @@ Click Product From Title
     [Arguments]    ${title}
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, "${title}")]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${title}"`]
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${lblProdTitle}    10
+    Click Element On Scroll    ${lblProdTitle}    30
     Click Close Ad
 
 Click YMAL Product From Title
@@ -348,7 +348,7 @@ Verify Sorted Products
 
     ${txtProduct}=    Get First Sort Product    ${sort}
     ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
+    FOR    ${index}    IN RANGE    30
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
         Run Keyword If
             ...    ${chkProdVisible}==${True}

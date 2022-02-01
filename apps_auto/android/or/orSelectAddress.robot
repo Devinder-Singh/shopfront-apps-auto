@@ -1,5 +1,5 @@
 *** Variables ***
-${btnAddress}      id=${APP_PACKAGE}:id/checkout_address_item_title_container
+${btnAddress}      id=${APP_PACKAGE}:id/address_selection_detail_item_root
 
 ${btnDeleteAddress}      xpath=//*[@text="DELETE"][1]
 ${btnConfDeleteAddress}      id=android:id/button1

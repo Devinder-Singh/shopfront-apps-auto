@@ -195,7 +195,7 @@ Click 10 Kg
 
 Click Add Bundle To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${btnPDPAddBundleToCart}    10
+    Click Element On Scroll    ${btnPDPAddBundleToCart}    30
 
 Click Add Bundle To Cart No Scroll Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnPDPAddBundleToCart}
@@ -293,11 +293,11 @@ Click Product Variant From API
     ELSE
         Set Local Variable    ${txtProduct}    ${txtProduct}
     END            
-    Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MAX_TIMEOUT}
     Click Element    ${btnPDPSelectOption}
     #Add sleep for PDP reload on ios
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5  
-    Wait Until Page Contains Element    ${txtProduct}    ${MIN_TIMEOUT}
+    Wait Until Page Contains Element    ${txtProduct}    ${MAX_TIMEOUT}
     Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API
@@ -403,3 +403,30 @@ Verify Product YAML from API
     Swipe Up    ${windowScroll}
     Click YMAL Product From Title    ${query_result_YMALProductTitle}
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
+
+Click Variant Option By Index
+    [Arguments]    ${index}
+    ${dynamicVariantOption}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicVariantOption}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/variantSelectorOptionContainer'])[${index}]
+    END
+    Scroll To Text    Description
+    Click Element    ${dynamicVariantOption}
+
+Click Sold By Name
+    Wait Until Element Is Visible    ${btnPDPSoldByName}
+    Click Element    ${btnPDPSoldByName}
+
+Click Brand Name
+    Wait Until Element Is Visible    ${btnPDPSellerName}
+    Click Element    ${btnPDPSellerName}
+
+Click Product Info Bubble By Name
+    [Arguments]    ${name}
+    ${dynamicBubbleOption}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicBubbleOption}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/materialChipContainerChipGroup'])/android.widget.Button[@text='${name}']
+    END
+    Wait Until Element Is Visible    ${dynamicBubbleOption}
+    Click Element    ${dynamicBubbleOption}
+    

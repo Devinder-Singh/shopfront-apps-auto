@@ -250,3 +250,32 @@ Verify All Pickup Points
 #    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Kimberley
 #    Swipe Up    ${windowScroll}
 #    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Upington
+
+Select Province Dynamically
+    [Arguments]    ${province}
+    ${dynamicProvince}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicProvince}=    Set Variable    xpath=//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/tal_input_selector_field_layout_selector_title' and @text='${province}']
+    END 
+    Wait Until Element Is Visible    ${dynamicProvince}
+    Click Element    ${dynamicProvince}
+
+Click Edit Button By Index
+    [Arguments]    ${index}
+    ${dynamicEditButtonIndex}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicEditButtonIndex}=    Set Variable    xpath=(//android.widget.Button[@resource-id='fi.android.takealot.debug:id/address_selection_detail_item_address_left_action'])[${index}]
+    END 
+    Wait Until Element Is Visible    ${dynamicEditButtonIndex}
+    Click Element    ${dynamicEditButtonIndex}
+
+Click Delete Address By Index
+    [Arguments]    ${index}
+    ${dynamicDeleteButtonIndex}=    Set Variable    ${None}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicDeleteButtonIndex}=    Set Variable    xpath=(//android.widget.Button[@resource-id='fi.android.takealot.debug:id/address_selection_detail_item_address_right_action'])[${index}]
+    END 
+    Wait Until Element Is Visible    ${dynamicDeleteButtonIndex}
+    Click Element    ${dynamicDeleteButtonIndex}
+    Wait Until Element Is Visible    ${btnConfDeleteAddress}    ${MIN_TIMEOUT}
+    Click Element    ${btnConfDeleteAddress}
