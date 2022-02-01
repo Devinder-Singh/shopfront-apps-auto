@@ -14,10 +14,10 @@ ${btnWhyTheWait}      id=${APP_PACKAGE}:id/checkout_delivery_type_why_the_wait
 ${btnGotItThanks}      xpath=//*[@text="GOT IT, THANKS!"]
 ${btnPlusTwo}      id=${APP_PACKAGE}:id/checkout_product_image_summary_text
 
-${imgDelOptionsOne}      xpath=(//android.widget.ImageView[@content-desc="Product"])[1]
-${imgDelOptionsTwo}      xpath=(//android.widget.ImageView[@content-desc="Product"])[2]
-${imgDelOptionsThree}      xpath=(//android.widget.ImageView[@content-desc="Product"])[3]
-${imgDelOptionsFour}      xpath=(//android.widget.ImageView[@content-desc="Product"])[4]
-${imgDelOptionsFive}      xpath=(//android.widget.ImageView[@content-desc="Product"])[5]
+${imgDelOptionsOne}      xpath=(//android.widget.ImageView[@resource-id="${APP_PACKAGE}:id/widgetProductConsignmentItemImage"])[1]
+${imgDelOptionsTwo}      xpath=(//android.widget.ImageView[@resource-id="${APP_PACKAGE}:id/widgetProductConsignmentItemImage"])[2]
+${imgDelOptionsThree}      xpath=(//android.widget.ImageView[@resource-id="${APP_PACKAGE}:id/widgetProductConsignmentItemImage"])[3]
+${imgDelOptionsFour}      xpath=(//android.widget.ImageView[@resource-id="${APP_PACKAGE}:id/widgetProductConsignmentItemImage"])[4]
+${imgDelOptionsFive}      xpath=(//android.widget.ImageView[@resource-id="${APP_PACKAGE}:id/widgetProductConsignmentItemImage"])[5]
 
-${lnkShowDetails}      xpath=//*[@text="Show Details"]
+${lnkShowDetails}      xpath=//*[@text="SHOW DETAILS"]

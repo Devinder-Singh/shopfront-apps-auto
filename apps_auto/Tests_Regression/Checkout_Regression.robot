@@ -1812,22 +1812,30 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QASA-100
     Search Product    Pencil
     Click Product from API
     Click Add To Cart
-    Click Continue Shopping
+    Click Go To Cart
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Click Back Screen
     Click Search Icon
-    Search Product    Television
+    Search Product    monito
     Click Product from API
     Click Add To Cart
-    Click Continue Shopping
+    Click Go To Cart
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Click Back Screen
     Click Search Icon
-    Search Product    Fridge
+    Search Product    Drone
     Click Product from API
     Click Add To Cart
-    Click Continue Shopping
+    Click Go To Cart
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Click Back Screen
     Click Search Icon
     Search Product    toy
     Click Product from API
     Click Add To Cart
-    Click Continue Shopping
+    Click Go To Cart
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Click Back Screen
     Click Search Icon
     Search Product    glass
     Click Product from API
@@ -1836,10 +1844,9 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QASA-100
     Click Checkout
     Click Collect
     Click Pickup Point
-    Click Any Delivery
-    Click +2 Show Details
-    Verify Delivery Options Text    Items for Collection
-    Verify Delivery Options Text    Qty: 1
+    Click Delivery Show Details
+    Verify Text On Screen    ITEMS FOR COLLECTION    ${MIN_TIMEOUT}
+    Verify Text On Screen    Qty: 1
     Verify Delivery Options Thimbnail Images
     [Teardown]    Tear Down
 
@@ -1856,8 +1863,8 @@ Apps > Checkout > Delivery Options > Add Gift Recipient - QASA-298
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Verify Continue Digital Item Text    Delivery via email to
-    Verify Continue Digital Item Text    take2Automation+201905213934@gmail.com
+    Verify Text On Screen    Delivery via email to    ${MIN_TIMEOUT}
+    Verify Text On Screen    ${G_EMAIL}
     Click Change Digital Item Recepient
     Enter Gift Message    Automation Test
     Click Gift Message Save Button

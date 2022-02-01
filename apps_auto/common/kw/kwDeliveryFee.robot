@@ -72,11 +72,12 @@ Click +2 Show Details
     Click Element    ${btnPlusTwo}
 
 Verify Delivery Options Thimbnail Images
-    Wait Until Element Is Visible    ${imgDelOptionsOne}    10s
-    Wait Until Element Is Visible    ${imgDelOptionsTwo}    1s
-    Wait Until Element Is Visible    ${imgDelOptionsThree}    1s
-    Wait Until Element Is Visible    ${imgDelOptionsFour}    1s
-    Wait Until Element Is Visible    ${imgDelOptionsFive}    1s
+    Wait Until Element Is Visible    ${imgDelOptionsOne}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${imgDelOptionsTwo}
+    Wait Until Element Is Visible    ${imgDelOptionsThree}
+    Wait Until Element Is Visible    ${imgDelOptionsFour}
+    Swipe Up    ${windowScroll}
+    Wait Until Element Is Visible    ${imgDelOptionsFive}
 
 Verify Delivery Options Text
     [Arguments]    ${verifyText}
