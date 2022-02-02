@@ -3,8 +3,9 @@ Resource          ../config/defaultConfig.robot
 
 *** Variables ***
 #    test-automation-platform
+${query_URL}      http://tal-test-data-service.master.env/execute_query_anydb
+
 ${cart_URL}       http://tal-test-data-service.master.env/remove_products_in_cart
-${cart_Body}      { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": "4933518", "env": "master.env" }
 
 ${wishlist_URL_clear}    http://tal-test-data-service.master.env/clear_customer_wishlists
 ${wishlist_Body}    { "namespace": "master", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
@@ -45,7 +46,6 @@ Clear Environment
     Delete Wishlist
     Clear Wishlist
     Clear Address
-    Click No Deal
 
 Create Wishlists
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
@@ -104,6 +104,35 @@ Get Tokens
     Set Global Variable    ${query_customer_bearer}    ${query_result_bearer}
     Set Global Variable    ${query_customer_csrf}    ${query_result_csrf}
     [return]    ${query_result}
+
+Update Order Delivery DB
+    [Arguments]    ${orderId}
+
+    ${OrderDel_URL}=    Set Variable    http://admin.master.env/s3cret/admin/pickcreate.php?idOrder=${orderId}
+    Get    ${OrderDel_URL}
+    Integer    response status    200
+
+    ${query_OrderDel_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "Update wms2_instructions set idInstructionStatus = 6 where idOrder = ${orderId}" }
+    Post    ${query_URL}    ${query_OrderDel_Body}
+    Integer    response status    200
+
+    ${query_OrderInst_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "select idInstruction From wms2_instructions where idOrder = ${orderId}" }
+    Post    ${query_URL}    ${query_OrderInst_Body}
+    Integer    response status    200
+
+    ${retInstId}=    Output    $[0].idInstruction
+    Set Global Variable    ${query_Instruction_id}    ${retInstId}
+
+    ${OrderShip_URL}=    Set Variable    http://tal-test-data-service.master.env/pack_and_ship/order/${orderId}/instruction/${retInstId}
+    Get    ${OrderShip_URL}
+    Integer    response status    200
+
+    ${date}=      Get Current Date    exclude_millis=True
+    ${todayDateFormat}=      Convert Date      ${date}      result_format=%Y-%m-%d
+
+    ${query_OrderShip_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "Update orderitems set DateDelivered = ${todayDateFormat} where idOrder = ${orderId}" }
+    Post    ${query_URL}    ${query_OrderShip_Body}
+    Integer    response status    200
 
 Add To Cart
     [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
@@ -181,6 +210,7 @@ Get Product to Add To Cart
     Integer    response status    200
 
     @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.is_add_to_cart_available
+    @{results_cart}=    Output    $.sections.products.results[*].product_views.buybox_summary.add_to_cart_text
     @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
     @{results_price}=    Output    $.sections.products.results[*].product_views.enhanced_ecommerce_add_to_cart.ecommerce.add.products[0].price
 
@@ -189,7 +219,7 @@ Get Product to Add To Cart
         ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${results_title}[${index}]'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${results_title}[${index}]']
         Set Global Variable    ${query_result_CartProduct}    ${results_title}[${index}]
         Set Global Variable    ${query_result_CartProductPrice}    ${results_price}[${index}]
-        Exit For Loop If    '${result}'=='True' and ${itemIndex}==1
+        Exit For Loop If    '${result}'=='True' and ${itemIndex}==1 and '${results_cart}[${index}]'=='Add to Cart'
         IF    '${result}'=='True'
             ${itemIndex}=    Evaluate    ${itemIndex} - 1
         END
@@ -1297,6 +1327,10 @@ Search And Return Product Id API
     Integer    response status    200
 
     ${productId}=    Output    $.sections.products.results[1].product_views.buybox_summary.product_id
+
+    ${productTitle}=    Output    $.sections.products.results[1].product_views.core.title
+    Set Global Variable    ${prod_Title}    ${productTitle}
+
     [Return]    ${productId}
 
 Create New Order API
@@ -1311,5 +1345,8 @@ Create New Order API
     ${createNewOrderJsonBody}=    Set Variable    {"customer_id":${customerId},"products":[{"product_id":${productId},"quantity":${productQuantity}, "unit_price":190}],"address_id":"${addressID}","payment_method":"${paymentMethod}","delivery_method":"${deliveryMethod}","pay_full_amount_due":true,"percentage_of_amount_due_to_pay":100,"complete_payment":${completePayment},"add_donation":false,"cancel_order":false}
 
     POST    ${createNewOrderEndpoint}    ${createNewOrderJsonBody}
-    Output    response
-    Integer    response status    200    
+    Integer    response status    200
+
+    ${retOorderId}=    Output    $.order_id
+    Set Global Variable    ${query_order_id}    ${retOorderId}
+    [Return]    ${retOorderId}

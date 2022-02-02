@@ -10,7 +10,10 @@ Click Wishlist Add To Cart
     IF    ${checkText} == ${True}
         Verify Text On Screen    Item added to your cart    ${MAX_TIMEOUT}
     END
-#    Sleep    5s
+    # Sleep for toast to dismiss
+    IF    '${PLATFORM_NAME}'=='ios'
+        Sleep    7s
+    END
 
 Click Wishlist Edit
     Click More Options Menu

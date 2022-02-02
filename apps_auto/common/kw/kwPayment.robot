@@ -27,6 +27,7 @@ Click Pay With Credit Card
                         ...    'Credit & Debit Card' payment method is selected as the current payment option.
     Wait Until Element Is Visible    ${btnCreditCard}    ${MIN_TIMEOUT}
     Click Element    ${btnCreditCard}
+    Set Test Variable    ${ISORDERED}    ${True}
 
 Click Pay With eBucks
     Wait Until Element Is Visible    ${btnPayWithEBucks}    ${MIN_TIMEOUT}
@@ -76,6 +77,7 @@ Click Payment Show Details
 Click Pay With Payfast
     Wait Until Element Is Visible    ${btnPayWithFast}    ${MIN_TIMEOUT}
     Click Element    ${btnPayWithFast}
+    Set Test Variable    ${ISORDERED}    ${True}
 
 Click Back Payment Screen
     Wait Until Element Is Visible    ${btnBackPayment}    ${MIN_TIMEOUT}

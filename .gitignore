@@ -11,5 +11,4 @@ results
 *.cpython-38.pyc
 *.png
 .gitignore
-.gitignore
 *.cpython-39.pyc

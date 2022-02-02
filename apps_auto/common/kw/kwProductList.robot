@@ -206,7 +206,7 @@ Click Product Seller Deals
     Click Close Ad
 
 Click Product Department
-    Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnProductFilter}    ${MAX_TIMEOUT}
     Wait Until Element Is Visible    ${imgProductDealsDept}
     Click Element    ${imgProductDealsDept}
     Click Close Ad
