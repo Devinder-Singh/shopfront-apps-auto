@@ -170,3 +170,23 @@ Uploaded image for project Quality Assurance - Engineering Quality Assurance - E
     Click Product From Title    Sponsored
     Verify Text On Screen    You're seeing this ad based on the product's relevance to your search query    5s
     [Teardown]    Tear Down
+
+
+Apps > Search: Autocomplete > Integration & Front-end development 
+    [Tags]    QASA-646
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}   
+    Click Home
+    Click Search Home
+    Enter Search Text    pencil
+    Clear Search Text
+    Search Product    pencil
+    Close Application
+    Start Application
+    Click Home
+    Click Only Search Home
+    Verify Element On Screen    ${btnSearchClearAll}    ${MIN_TIMEOUT}
+    Verify Text On Screen    Recent Search    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down

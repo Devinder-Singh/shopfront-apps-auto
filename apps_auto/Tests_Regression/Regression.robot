@@ -1084,7 +1084,6 @@ Apps > Order Tracking > Delivery Order > QASA-80
     [Tags]    QASA-80
     [Setup]    Start Application
     Clear Environment
-
     ${completedOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
 
@@ -1094,7 +1093,6 @@ Apps > Order Tracking > Delivery Order > QASA-80
     Click Menu My Account
     Click Menu Orders
     Click Order By Index    1
-    
     Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
     Verify Text On Screen    1 Item
     Verify Text On Screen    Delivery
@@ -1113,22 +1111,18 @@ Apps > Order Tracking > Delivery Order > QASA-80
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Back Screen
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    Back
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    My Account
-
     ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
-
     Click Menu Orders
     Click Awaiting Order By Index    1
     Click Pay Now Button
     Click Change Payment Method Only
     Click Card Payment Method
     Click Pay With Credit Card
-
     ${isAddCreditCardScreenRendered}=    Run Keyword And Return Status    Verify Card Payment Text    Card Description
     Run Keyword If    ${isAddCreditCardScreenRendered} == ${True}    Pay via Credit Card Paygate    cardSave=${True}
     Run Keyword If    ${isAddCreditCardScreenRendered} == ${False}    Enter CVV Number    123
     Run Keyword If    ${isAddCreditCardScreenRendered} == ${False}    Click Pay Button
-    
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Close Ratings Popup
     Verify Order Confirmation
     [Teardown]    Tear Down
@@ -1237,7 +1231,7 @@ Apps > My Account Verifications - QASA-89
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What can we help you with?    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Order Tracking (Collect) 02 - QASA-547
+Apps > Order Tracking (Collect) - QASA-547
     [Tags]    QASA-547
     [Setup]    Start Application
     Clear Environment
@@ -1290,6 +1284,8 @@ Apps > Order Tracking (Collect) 02 - QASA-547
     Click Payfast Payment Method
     Click Pay With Payfast
     Verify Payfast Payment Text
+    Click Complete Payment With Payfast
+    Click Track Order
     [Teardown]    Tear Down
 
 Apps > Order Tracking 05 - QASA-79
@@ -1313,7 +1309,8 @@ Apps > Order Tracking 05 - QASA-79
     Enter Payment Voucher Code
     Click Apply Payment Voucher
     Click Back Payment Voucher
-    Click Pay With Credit Card
+    Click Payment Confirm Order
+    Click Track Order
     Close Application
     Start Application
     Click Menu
@@ -1603,6 +1600,42 @@ Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
     Click Delivery
     Click Address
     Click Surcharge Delivery
+    [Teardown]    Tear Down
+
+iOS > Privacy Attention Prompt - QASA-43
+    [Tags]    QASA-43
+    [Setup]    Start Application    ${False}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Would you like to receive push notifications for Daily Deals and Promotions    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Would you like to receive app notifications for Daily Deals    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Returns > Non-Variant item - QASA-865
+    [Tags]    QASA-865
+    [Setup]    Start Application
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}
+    Click Menu
+    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Menu Exchanges And Returns
+    Click Returns Call To Action Button
+    Click Text    ${query_order_id}
+    Click Text    ${prod_Title}
+    Click Select Return Reason
+    Select Return Reason
+    Click Select Return Method
+    Select Return Method
+    Enter Return Description
+    Click Return Continue
+    Click Log Return
+    Click Return Collect
+    Select Return Collect
+    Select Return Submit
+    Verify Text On Screen    Track Return    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Merchandised Landing Pages (CMS Widgets) - Featured Collection Widget - QASA-165

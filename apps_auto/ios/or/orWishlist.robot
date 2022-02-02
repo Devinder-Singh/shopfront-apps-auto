@@ -1,5 +1,5 @@
 *** Variables ***
-${btnWishlistCart}      chain=**/XCUIElementTypeButton[`label == "icon cartButton"`]
+${btnWishlistCart}      id=icon cartButton
 
 ${btnWishlistEdit}      chain=**/XCUIElementTypeButton[`label == "Edit"`]
 ${btnWishlistItemSelect}      chain=**/XCUIElementTypeButton[`label == "Select All"`]

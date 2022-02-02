@@ -177,4 +177,16 @@ ${returnSuccessSubtitle}    id=viewReturnsSuccessCellSubtileLabel
 ${returnSuccessImageContainer}    chain=**/XCUIElementTypeOther[`name == "viewReturnsSuccessCellImageContainer"`]/XCUIElementTypeOther/XCUIElementTypeOther
 ${returnSuccessTrackButton}    id=ViewSingleButton
 
+${btnReturnsCallToAction}      chain=**/XCUIElementTypeButton[`label == "Log Return"`]
+
+${btnSelectReturnReason}    chain=**/XCUIElementTypeButton[`label == "Select"`]
+${txtReturnReason}    chain=**/XCUIElementTypeStaticText[`label == "I have changed my mind"`]
+${btnReturnReturnMethod}    chain=**/XCUIElementTypeStaticText[`label == "Select"`]
+${txtReturnMethod}    chain=**/XCUIElementTypeStaticText[`label == "Credit my Takealot account"`]
+${txtReturnDesc}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[5]/XCUIElementTypeTextView
+${txtReturnCont}    chain=**/XCUIElementTypeButton[`label == "Continue"`]
+${btnLogReturn}    chain=**/XCUIElementTypeButton[`label == "Log Return"`]
+${txtReturnCollect}    chain=**/XCUIElementTypeStaticText[`label == "Collect from my address"`]
+${txtReturnCollectOption}    chain=**/XCUIElementTypeStaticText[`label == "Test"`]
+${txtReturnSubmit}    chain=**/XCUIElementTypeButton[`label == "Submit Return Request"`]
 ${btnReturnsCallToAction}    id=ViewSingleButton

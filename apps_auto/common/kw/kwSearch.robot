@@ -63,3 +63,17 @@ Click Search Trending Option By Index
     END
     Wait Until Element Is Visible    ${dynamicTrendingOption}
     Click Element    ${dynamicTrendingOption}
+    
+Enter Search Text
+    [Documentation]    This method will enter search text
+                        ...    This will not initiate the search
+    [Arguments]    ${search}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        Input Text    ${btnSearchHome}    ${search}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        Input Text    ${txtSearch}    ${search}
+    END 
+
+Clear Search Text
+    Wait Until Element Is Visible    ${btnSearchClearText}    ${MIN_TIMEOUT}
+    Click Element    ${btnSearchClearText}

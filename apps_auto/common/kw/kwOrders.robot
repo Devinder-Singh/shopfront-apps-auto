@@ -20,6 +20,20 @@ Click Order Pay Now
     Wait Until Element Is Visible    ${btnOrdersPayNow}    ${MIN_TIMEOUT}
     Click Element    ${btnOrdersPayNow}
 
+Click Orders Filter Change
+    Wait Until Element Is Visible    ${btnOrdersFilterChange}    ${MIN_TIMEOUT}
+    Click Element    ${btnOrdersFilterChange}
+
+Click Orders Filter Option
+    [Arguments]    ${optionText}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${optionText}'`]
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${txtProduct}=    Set Variable    xpath=//*[contains(@text, '${optionText}')]
+    END
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
+    Click Element    ${txtProduct}
+
 Click Order Cancel
     Wait Until Element Is Visible    ${btnOrdersCancel}    ${MIN_TIMEOUT}
     Click Element    ${btnOrdersCancel}
@@ -45,8 +59,8 @@ Click Order By Index
     ${dynamicOrderIndex}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
         ${dynamicOrderIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/orderHistoryItemTitle'])[${orderIndex}]
-    ELSE IF    '${PLATFORM_NAME}' == 'ios'
-        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeCell/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther[${orderIndex}]    
+     ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicOrderIndex}=    Set Variable    chain=**/XCUIElementTypeCell/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther[${orderIndex}]
     END
     Click Element    ${dynamicOrderIndex}
 
@@ -78,6 +92,10 @@ Select Order History Filter Option
     END
     Wait Until Element Is Visible    ${filterOptionToSelect}    ${MIN_TIMEOUT}
     Click Element    ${filterOptionToSelect}
+
+Click Order Delivery
+    Wait Until Element Is Visible    ${txtOrdersDelivery}    ${MIN_TIMEOUT}
+    Click Element    ${txtOrdersDelivery}
 
 Verify Order Status By Index
     [Documentation]    This keyword will verify an order status based on its index.
