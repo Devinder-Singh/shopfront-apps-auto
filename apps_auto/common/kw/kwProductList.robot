@@ -422,7 +422,7 @@ Click Promotion Item By Index
     [Arguments]    ${itemIndex}
     ${dynamicItemByIndex}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicItemByIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/dealsWidgetPromotionProductItemTitle'])[${itemIndex}]
+        ${dynamicItemByIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/dealsWidgetPromotionProductItemTitle'])[${itemIndex}]
     ELSE IF    '${PLATFORM_NAME}' == 'ios'    
         ${dynamicItemByIndex}=    Set Variable    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeImage[${itemIndex}]
     END

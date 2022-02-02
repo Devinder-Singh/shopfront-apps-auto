@@ -55,7 +55,7 @@ Click Product Widget By Index
     [Arguments]    ${index}
     ${dynamicProductWidgetByIndex}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicProductWidgetByIndex}=    Set Variable    xpath=(//androidx.cardview.widget.CardView[@resource-id='fi.android.takealot.debug:id/cmsPageWidgetProductListItemRoot'])[${index}]
+        ${dynamicProductWidgetByIndex}=    Set Variable    xpath=(//androidx.cardview.widget.CardView[@resource-id='${APP_PACKAGE}:id/cmsPageWidgetProductListItemRoot'])[${index}]
     END
     Scroll To Element    ${dynamicProductWidgetByIndex}
     Click Element    ${dynamicProductWidgetByIndex}
