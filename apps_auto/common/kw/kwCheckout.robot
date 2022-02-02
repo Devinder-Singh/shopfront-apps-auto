@@ -11,7 +11,7 @@ Click Item Promotion Text By Index
     [Arguments]    ${index}
     ${dynamicItemPromotionText}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicItemPromotionText}=    Set Variable    xpath=(//android.view.ViewGroup/android.widget.Button[@resource-id='fi.android.takealot.debug:id/cartProductItemPromotionText'])[${index}]
+        ${dynamicItemPromotionText}=    Set Variable    xpath=(//android.view.ViewGroup/android.widget.Button[@resource-id='${APP_PACKAGE}:id/cartProductItemPromotionText'])[${index}]
     END
     Click Element    ${dynamicItemPromotionText}
 
