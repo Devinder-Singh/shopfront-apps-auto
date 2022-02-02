@@ -255,7 +255,7 @@ Select Province Dynamically
     [Arguments]    ${province}
     ${dynamicProvince}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicProvince}=    Set Variable    xpath=//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/tal_input_selector_field_layout_selector_title' and @text='${province}']
+        ${dynamicProvince}=    Set Variable    xpath=//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/tal_input_selector_field_layout_selector_title' and @text='${province}']
     END 
     Wait Until Element Is Visible    ${dynamicProvince}
     Click Element    ${dynamicProvince}
@@ -264,7 +264,7 @@ Click Edit Button By Index
     [Arguments]    ${index}
     ${dynamicEditButtonIndex}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicEditButtonIndex}=    Set Variable    xpath=(//android.widget.Button[@resource-id='fi.android.takealot.debug:id/address_selection_detail_item_address_left_action'])[${index}]
+        ${dynamicEditButtonIndex}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_left_action'])[${index}]
     END 
     Wait Until Element Is Visible    ${dynamicEditButtonIndex}
     Click Element    ${dynamicEditButtonIndex}
@@ -273,7 +273,7 @@ Click Delete Address By Index
     [Arguments]    ${index}
     ${dynamicDeleteButtonIndex}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicDeleteButtonIndex}=    Set Variable    xpath=(//android.widget.Button[@resource-id='fi.android.takealot.debug:id/address_selection_detail_item_address_right_action'])[${index}]
+        ${dynamicDeleteButtonIndex}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_right_action'])[${index}]
     END 
     Wait Until Element Is Visible    ${dynamicDeleteButtonIndex}
     Click Element    ${dynamicDeleteButtonIndex}
