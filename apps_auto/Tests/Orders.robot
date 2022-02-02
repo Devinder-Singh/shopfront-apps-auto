@@ -243,7 +243,7 @@ Apps > Order Refactor > Order Detail > Estimated Collection Order
     # Currently there is a production defect CHSAPP-12792 for the below line, once that is resolved this line can be uncommented
     # Verify Text On Screen    Note: We'll send you an SMS or email once your order is ready for collection
     Verify Text On Screen    Standard Collect
-    Wait Until Element Is Visible    ${btnTrack}
+    Wait Until Element Is Visible    ${btnOrderTrack}
     [Teardown]    Tear Down
 
 Apps > Order Refactor > Order History > Digital Order
@@ -278,4 +278,21 @@ Apps > Order Refactor > Order Detail > Cancelled Order
     Click Order By Index    1
     Verify Text On Screen    Order Detail
     Verify Text On Screen    Cancelled Item(s)
+    [Teardown]    Tear Down
+
+Apps > Order Refactor > Order Detailed > Ready For Collection
+    [Tags]    QASA-353
+    [Setup]    Start Application
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Menu My Account
+    Click Menu Orders
+    Click Order By Index    1
+    Verify Text On Screen    Order Detail
+    Verify Text On Screen    Ready for Collection
+    Click and Verify Collect Order Disclaimer
+    Verify Element On Screen    ${btnDirections}    ${MIN_TIMEOUT}
+    View and Verify Collect Order 
+    Verify Element On Screen    ${btnViewQRCode}    ${MIN_TIMEOUT}
+    Click View QR Code Button
+    Verify Text On Screen    Scan QR Code
     [Teardown]    Tear Down
