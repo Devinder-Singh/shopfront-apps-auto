@@ -1,10 +1,10 @@
 *** Variables ***
 ${btnPayNow}    id=${APP_PACKAGE}:id/orderDetailConsignmentItemPayNow
-${btnViewQRCode}    id=fi.android.takealot.debug:id/orderDetailConsignmentItemShowQRCode
-${btnDirections}    id=fi.android.takealot.debug:id/orderDetailConsignmentItemDirections
-${txtCollectDisclaimer}    id=fi.android.takealot.debug:id/orderDetailConsignmentItemNotificationNote
+${btnViewQRCode}    id=${APP_PACKAGE}:id/orderDetailConsignmentItemShowQRCode
+${btnDirections}    id=${APP_PACKAGE}:id/orderDetailConsignmentItemDirections
+${txtCollectDisclaimer}    id=${APP_PACKAGE}:id/orderDetailConsignmentItemNotificationNote
 ${btnGotItThanks}    id=Got it, thanks!
-${txtVerifyCollectDisclaimerHeader}    id=fi.android.takealot.debug:id/alertTitle 
+${txtVerifyCollectDisclaimerHeader}    id=${APP_PACKAGE}:id/alertTitle 
 ${txtVerifyCollectDisclaimerBody}    id=android:id/message
 ${btnOrderTrack}    id=${APP_PACKAGE}:id/orderDetailConsignmentItemTrack
 ${barTrackerVertical}    id=${APP_PACKAGE}:id/vertical_progress_tracker_back
