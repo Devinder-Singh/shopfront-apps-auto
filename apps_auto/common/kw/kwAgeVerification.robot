@@ -23,5 +23,5 @@ Click Select Age
     END
 
 Click Continue To Checkout
-    Wait Until Element Is Visible    ${continueCheckoutButtonId}
-    Click Element    ${continueCheckoutButtonId}
+    Wait Until Element Is Visible    ${btnContinueCheckout}
+    Click Element    ${btnContinueCheckout}

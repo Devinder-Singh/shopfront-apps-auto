@@ -10,10 +10,10 @@ ${btnPDPSelectOption}      id=${APP_PACKAGE}:id/pdpWidgetButtonContainerVariants
 ${btnPDPCartItemIncrease}      id=${APP_PACKAGE}:id/pdpAddToCartIncreaseButton
 
 ${navBackPDP}    accessibility_id=Navigate up
-${navCartScr}    ${EMPTY}fi.android.takealot.debug:id/pdp_widget_stock_status_seller_btn
+${navCartScr}    ${EMPTY}${APP_PACKAGE}:id/pdp_widget_stock_status_seller_btn
 
 ${btnPDPSellerName}    id=${APP_PACKAGE}:id/pdp_widget_buy_box_sub_title_action_button
-${btnPDPSoldByName}    id=fi.android.takealot.debug:id/pdp_widget_stock_status_seller_btn
+${btnPDPSoldByName}    id=${APP_PACKAGE}:id/pdp_widget_stock_status_seller_btn
 ${lblBlueValue}      xpath=//*[@text="Blue"]
 ${btnPDPReview}      xpath=//*[contains(@text, "WRITE REVIEW")]
 ${btnPDPReviewsSummary}    id=${APP_PACKAGE}:id/pdp_reviews_distribution_summary
@@ -39,7 +39,7 @@ ${lnkPDPShopTheDealTCs}    xpath=//*[contains(@text, "Bundle Deals expire when s
 ${lnkPDPWhatIsThis}    xpath=//*[contains(@text, "WHAT IS THIS")]
 ${lnkPDPSelectOption}    xpath=//*[@text="SELECT AN OPTION"]
 
-${btnVariantShowMore}    id=fi.android.takealot.debug:id/pdp_widget_variants_selector_show_all
+${btnVariantShowMore}    id=${APP_PACKAGE}:id/pdp_widget_variants_selector_show_all
 
 ${btnPDPShowAllOffers}    xpath=//*[contains(@text, "SHOW ALL OFFERS")]
 ${btnPDPShowAllOffersCart}    id=${APP_PACKAGE}:id/pdp_widget_other_offers_item_add_to_cart
