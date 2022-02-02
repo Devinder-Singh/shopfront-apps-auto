@@ -21,3 +21,7 @@ Click Select Age
         Wait Until Element Is Visible    ${btnSelectAge}    ${MIN_TIMEOUT}
         Click Element    ${btnSelectAge} 
     END
+
+Click Age Selector OK Button
+    Wait Until Element Is Visible    ${ageSelectorOKButton}
+    Click Element    ${ageSelectorOKButton}

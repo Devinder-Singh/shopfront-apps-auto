@@ -152,7 +152,6 @@ Checkout - Collect - Add Only Delivery Items - QASA-574
     [Tags]    QASA-574
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -188,7 +187,6 @@ Checkout - Age Verification - QASA-576
     [Tags]    QASA-576
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -197,8 +195,10 @@ Checkout - Age Verification - QASA-576
     Click Add To Cart
     Click Go To Cart
     Click Checkout
+    Click Select Age
+    Click Age Selector OK Button
     Click Verify Age
-    Verify Age Text    The date of birth you entered indicates that you are under the age of 18. We are not permitted to sell liquor to you. Please remove all liquor items from your cart to proceed
+    Verify Age Text    The date of birth you entered indicates that you are under the age of 18. We are not permitted to sell liquor and/or selected vaping products to you. Please remove all liquor and/or selected vaping products from your cart to proceed.
     [Teardown]    Tear Down
 
 Checkout > Delivery Address > Saved Addresses - QASA-616 
@@ -518,7 +518,6 @@ Checkout - Delivery Address - Pin on Map - QASA-570
     [Tags]    QASA-570
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -531,7 +530,7 @@ Checkout - Delivery Address - Pin on Map - QASA-570
     Click Edit Address
     Edit Delivery Address Postal Code    8006
     Click Save Address
-    Click Confirmed Address
+    Click Confirm Address Partially    partialAddress=12 Ridge Way, Green Point, Cape Town,
     Click Got It Thanks
     Add Map Street Address    12 Ridge Way
     Click Map Address Option
@@ -722,7 +721,6 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
     [Tags]    QASA-581
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -843,7 +841,6 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     [Tags]    QASA-571
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -858,7 +855,7 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     Click Donate No Thanks
     Verify Payment Text    ORDER REVIEW
     Click Change Payment Pickup Point
-    Click Pickup Point    Brackenfell Cape Town, Western Cape
+    Click Pickup Point    Takealot Cape Town Warehouse
     Click Any Delivery
     [Teardown]    Tear Down
 

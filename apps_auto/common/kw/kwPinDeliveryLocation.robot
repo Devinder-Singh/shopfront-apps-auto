@@ -9,10 +9,11 @@ Click Map Address Option
 Click Use This Location
     Wait Until Element Is Visible    ${btnUseThisLocation}    ${MIN_TIMEOUT}
     Click Element    ${btnUseThisLocation}
-#    Sleep    5s
 
 Add Map Street Address
     [Arguments]    ${street}
     Wait Until Element Is Visible    ${txtMapStreetAddress}    ${MIN_TIMEOUT}
     Clear Text    ${txtMapStreetAddress}
     Input Text    ${txtMapStreetAddress}    ${street}
+    Sleep    3s
+    Click Element    ${btnGoogleFirstAddress}

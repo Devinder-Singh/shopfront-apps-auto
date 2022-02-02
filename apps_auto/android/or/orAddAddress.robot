@@ -7,7 +7,7 @@ ${txtRecipientStreet}      id=${APP_PACKAGE}:id/address_input_auto_complete_text
 ${txtBusinessName}      xpath=//*/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 ${btnSaveAddress}      id=${APP_PACKAGE}:id/sticky_action_button
 
-${txtRecipientPostCode}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[7]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${txtRecipientPostCode}      xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/address_input_postal_code'])//android.widget.EditText
 ${txtRecipientCityMyAcc}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 ${txtRecipientSuburbMyAcc}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 ${txtRecipientComplexMyAcc}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.EditText
