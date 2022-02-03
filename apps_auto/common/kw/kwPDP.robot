@@ -420,10 +420,7 @@ Click Brand Name
 
 Click Product Info Bubble By Name
     [Arguments]    ${name}
-    ${dynamicBubbleOption}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicBubbleOption}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/materialChipContainerChipGroup'])/android.widget.Button[@text='${name}']
-    END
-    Wait Until Element Is Visible    ${dynamicBubbleOption}
-    Click Element    ${dynamicBubbleOption}
+    ${dynamicBubbleOptionAndroid}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/materialChipContainerChipGroup'])/android.widget.Button[@text='${name}']
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicBubbleOptionAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicBubbleOptionAndroid}
     
