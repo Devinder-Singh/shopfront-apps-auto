@@ -32,8 +32,7 @@ Search Product
     ${searchFirstOption}=    Get First Search Option    ${search}
     Wait Until Element Is Visible    ${searchFirstOption}    ${MIN_TIMEOUT}
     Click Element    ${searchFirstOption}
-    #Sleep    2s
-
+       
 Search and Press Enter
     [Arguments]    ${search}
 
@@ -56,6 +55,12 @@ Click Search Trending
     Wait Until Element Is Visible    ${btnSearchTrending}    ${MIN_TIMEOUT}
     Click Element    ${btnSearchTrending}
 
+Click Search Trending Option By Index
+    [Arguments]    ${index}
+    ${dynamicTrendingOptionAndroid}=    Set Variable    xpath=(//android.widget.TextView)/preceding-sibling::android.widget.HorizontalScrollView//android.widget.Button[${index}]
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${dynamicTrendingOptionAndroid}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${dynamicTrendingOptionAndroid}
+    
 Enter Search Text
     [Documentation]    This method will enter search text
                         ...    This will not initiate the search

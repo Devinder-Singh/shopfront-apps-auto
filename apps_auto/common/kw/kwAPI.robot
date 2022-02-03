@@ -136,7 +136,8 @@ Update Order Delivery DB
 
 Add To Cart
     [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
-    [Arguments]    ${productId}=87365581    ${productQuantity}=1
+                        ...    Please note that the deafult product to be added will be a wine cooler classified as a heavy duty product.
+    [Arguments]    ${productId}=90391104    ${productQuantity}=1
     Get Customer ID
     Get Tokens
     ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
@@ -1325,7 +1326,7 @@ Search And Return Product Id API
     ${searchProductEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${search}
     Get    ${searchProductEndpoint}
     Integer    response status    200
-
+    
     ${productId}=    Output    $.sections.products.results[1].product_views.buybox_summary.product_id
 
     ${productTitle}=    Output    $.sections.products.results[1].product_views.core.title
@@ -1350,3 +1351,18 @@ Create New Order API
     ${retOorderId}=    Output    $.order_id
     Set Global Variable    ${query_order_id}    ${retOorderId}
     [Return]    ${retOorderId}
+
+Get Department Categories API
+    [Documentation]    Gets a list of all department categories that will be displayed on the UI. Returns the list in the form of an array.
+    ${getDepartmentCategoriesEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/cms/pages/primary-navigation
+    Get    ${getDepartmentCategoriesEndpoint}
+    Integer    response status    200
+    
+    @{uncleanDepartmentCatList}=    Output    $.page.widgets[*].value.title
+    @{cleanDepartmentcCatList}=    Set Variable    ${None}
+    FOR    ${item}    IN    @{uncleanDepartmentCatList}
+        ${cleanedItem}=    Remove String    ${item}    "
+        Append To List    ${cleanDepartmentcCatList}    ${cleanedItem}
+    END
+
+    [Return]    @{cleanDepartmentcCatList}

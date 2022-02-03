@@ -29,8 +29,7 @@ Update Personal Detail Email
     [Arguments]    ${email}    ${pwd}
     Get New Email Address
 
-    ${email}=    Set Variable    ${None}
-    IF    ${email} == '?'
+    IF    '${email}' == '?'
         ${email}=    Set Variable    ${new_email_address}
     ELSE
         ${email}=    Set Variable    ${email}

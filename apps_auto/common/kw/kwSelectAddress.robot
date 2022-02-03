@@ -250,3 +250,24 @@ Verify All Pickup Points
 #    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Kimberley
 #    Swipe Up    ${windowScroll}
 #    Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Page Contains    Upington
+
+Select Province Dynamically
+    [Arguments]    ${province}
+    ${dynamicProvinceAndroid}=    Set Variable    xpath=//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/tal_input_selector_field_layout_selector_title' and @text='${province}']
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicProvinceAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicProvinceAndroid}
+
+Click Edit Button By Index
+    [Arguments]    ${index}
+    ${dynamicEditButtonIndexAndroid}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_left_action'])[${index}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicEditButtonIndexAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicEditButtonIndexAndroid}
+
+Click Delete Address By Index
+    [Arguments]    ${index}
+    ${dynamicDeleteButtonIndexAndroid}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_right_action'])[${index}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicDeleteButtonIndexAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicDeleteButtonIndexAndroid}
+    
+    Wait Until Element Is Visible    ${btnConfDeleteAddress}    ${MIN_TIMEOUT}
+    Click Element    ${btnConfDeleteAddress}

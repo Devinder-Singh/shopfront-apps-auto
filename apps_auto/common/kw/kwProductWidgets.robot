@@ -38,15 +38,19 @@ Click Product Widget Context
     Click Element On Scroll    ${btnContextWidget}    15
 
 Verify Product Widget Navigation
-    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    Run Keyword If    ${chkElementExists}==${False}    Wait Until Element Is Visible    ${btnAddToCart}    5s
+    ${chkElementExists}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MAX_TIMEOUT}
+    Run Keyword If    ${chkElementExists}==${False}    Wait Until Element Is Visible    ${btnAddToCart}    ${MAX_TIMEOUT}
 
 Click Featured Collection Widget 
     [Arguments]    ${text}
-    ${txtElement}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${txtElement}=    Set Variable    xpath=//*[@text='${text}']
-    ELSE IF    '${PLATFORM_NAME}' == 'ios'
-        ${txtElement}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${text}"`]
-    END
-    Click Element On Scroll    ${txtElement}
+    ${txtElementAndroid}=    Set Variable    xpath=//*[@text='${text}']
+    ${txtElementIos}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${text}"`]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element On Scroll    ${txtElementAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Element On Scroll    ${txtElementIos}
+
+Click Product Widget By Index
+    [Arguments]    ${index}
+    ${dynamicProductWidgetByIndexAndroid}=    Set Variable    xpath=(//androidx.cardview.widget.CardView[@resource-id='${APP_PACKAGE}:id/cmsPageWidgetProductListItemRoot'])[${index}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Scroll To Element    ${dynamicProductWidgetByIndexAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicProductWidgetByIndexAndroid}
+    

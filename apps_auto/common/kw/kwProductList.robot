@@ -4,7 +4,7 @@ Resource          ../config/defaultConfig.robot
 *** Keywords ***
 Click Variant Product from API
     [Arguments]    ${itemIndex}=0
-    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MAX_TIMEOUT}
     ${txtProduct}=    Get Variant Product to Add To Cart    ${itemIndex}
     Click Element On Scroll    ${txtProduct}
 
@@ -321,7 +321,7 @@ Verify Sorted Products
 
     ${txtProduct}=    Get First Sort Product    ${sort}
     ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    10
+    FOR    ${index}    IN RANGE    30
         ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
         Run Keyword If
             ...    ${chkProdVisible}==${True}
@@ -388,3 +388,14 @@ Verify Filtered Products
         ${index}=    Evaluate    ${index} + 1
     END
     Should Be True    ${chkProdVisible}
+
+Click Promotion Item By Index
+    [Documentation]    Clicks a promotion product item based on its index as displayed on the screen. This keyword will work for both
+                        ...    daily deals and app deals screen etc.
+    [Arguments]    ${itemIndex}
+    ${dynamicItemByIndexAndroid}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/dealsWidgetPromotionProductItemTitle'])[${itemIndex}]
+    ${dynamicItemByIndexIos}=    Set Variable    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeImage[${itemIndex}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Page Contains Element    ${dynamicItemByIndexAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicItemByIndexAndroid}  
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Wait Until Page Contains Element    ${dynamicItemByIndexIos}
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Element    ${dynamicItemByIndexIos}

@@ -6,6 +6,12 @@ Click Item Promotion Text
     Wait Until Element Is Visible    ${btnItemPromotion}    ${MIN_TIMEOUT}
     Click Element    ${btnItemPromotion}
 
+Click Item Promotion Text By Index
+    [Documentation]    Clicks the promotion text based on index.
+    [Arguments]    ${index}
+    ${dynamicItemPromotionTextAndroid}=    Set Variable    xpath=(//android.view.ViewGroup/android.widget.Button[@resource-id='${APP_PACKAGE}:id/cartProductItemPromotionText'])[${index}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicItemPromotionTextAndroid}
+        
 Click Missed Promotion Text
     Wait Until Element Is Visible    ${lblCheckoutMissedPromotion}    ${MIN_TIMEOUT}
     Click Element    ${lblCheckoutMissedPromotion}
@@ -124,25 +130,11 @@ Change Cart Quantity Scroll
     ${txtCartQty}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'android'
         ${txtCartQty}=    Set Variable    xpath=//*[@text="${qty}"]
+        Scroll To Element    xpath=//*[@text="1"]    scrollSwipeDirection=Down
+        Scroll To Element    ${txtCartQty}
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${txtCartQty}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
     END
-               
-    Verify Text On Screen    Select quantity
-
-    Set Implicitly Wait    1
-    ${index}=    Set Variable    0
-    FOR    ${index}    IN RANGE    15
-        ${chkProdVisible}=    Run Keyword And Return Status    Element Should Be Visible    ${txtCartQty}
-
-        IF    ${chkProdVisible} == ${True}
-            Exit For Loop
-        END
-
-        Swipe Up    ${windowScroll}
-        ${index}=    Evaluate    ${index} + 1
-    END
-    Set Implicitly Wait    5
     Click Element    ${txtCartQty}
 
 Click Add Items to Qualify iOS
@@ -216,6 +208,10 @@ Click Cart Delete
         #In ios only one delete button is visible when you swipe the cart left hence no need for a dynamic index like android and button is part of UI and not canvas graphics.
         Click Element    ${btnDeleteUnderItemCard}
     END
+
+Click Cart Continue Shopping
+    Wait Until Element Is Visible    ${btnCartContinueShopping}
+    Click Element    ${btnCartContinueShopping}
 
     
     
