@@ -277,3 +277,14 @@ Click No Deal
     IF    ${btnPresentNotificationsNo} == ${True}
         Click Element    ${btnDealsNotification}
     END
+
+Dismiss Reviews Text
+    Click Menu
+    Click Menu My Account
+    IF    '${PLATFORM_NAME}'=='android'
+        Sleep    2
+        Wait Until Page Contains    Product Reviews    ${MIN_TIMEOUT}
+        Click Menu
+        Wait Until Element Is Visible    ${btnMenuLogin}    ${MIN_TIMEOUT}
+        Sleep    2
+    END

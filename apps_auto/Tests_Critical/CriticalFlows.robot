@@ -8,6 +8,7 @@ Register User
     [Setup]    Install Application
     Click No Deal     ${MAX_TIMEOUT}
     Click Menu
+    Dismiss Reviews Text
     Click Menu Login
     Close Application
     Start Application
@@ -18,7 +19,9 @@ Register User
     Click Menu My Account
     Click Menu Address Book
     Click Add Delivery Address
-    Click Residential
+    IF    '${PLATFORM_NAME}'=='ios'
+        Click Residential
+    END
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Wait Until Element Is Visible    ${btnAddressDelete}    ${MIN_TIMEOUT}
     Wait Until Page Contains    Tester Residential    10s
@@ -113,7 +116,9 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Checkout
     Click Delivery
     Click Add Delivery Address
-    Click Residential
+    IF    '${PLATFORM_NAME}'=='ios'
+        Click Residential
+    END
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Click Any Delivery
     Click Donate No Thanks
@@ -168,7 +173,9 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Back Android
     Click Menu Address Book
     Click Add Delivery Address
-    Click Residential
+    IF    '${PLATFORM_NAME}'=='ios'
+        Click Residential
+    END
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Click Back Delivery Android
     Click Back Delivery iOS
