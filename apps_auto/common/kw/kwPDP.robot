@@ -406,12 +406,9 @@ Verify Product YAML from API
 
 Click Variant Option By Index
     [Arguments]    ${index}
-    ${dynamicVariantOption}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicVariantOption}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/variantSelectorOptionContainer'])[${index}]
-    END
-    Scroll To Text    Description
-    Click Element    ${dynamicVariantOption}
+    ${dynamicVariantOptionAndroid}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/variantSelectorOptionContainer'])[${index}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Scroll To Text    Description
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicVariantOptionAndroid}
 
 Click Sold By Name
     Wait Until Element Is Visible    ${btnPDPSoldByName}
