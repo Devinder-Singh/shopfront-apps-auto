@@ -4,7 +4,7 @@
     ],
     "robot.completions.keywords.format": "Title Case",
     "python.experiments.enabled": false,
-    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.activateEnvInCurrentTerminal": false,
     "debug.terminal.clearBeforeReusing": true,
     "robot.codeFormatter": "robotidy",
     "robot.lint.robocop.enabled": true,
