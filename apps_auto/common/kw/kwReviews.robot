@@ -226,9 +226,6 @@ Click Review Report
 
 Click Review Helpful By Index
     [Arguments]    ${index}
-    ${dynamicHelpfulButton}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicHelpfulButton}=    Set Variable    xpath=(//androidx.recyclerview.widget.RecyclerView[@resource-id='${APP_PACKAGE}:id/reviews_container'])/android.view.ViewGroup/android.widget.Button[@resource-id='fi.android.takealot.debug:id/review_up_vote_button' and contains(@text,'Helpful')][${index}]
-    END
-    Wait Until Element Is Visible    ${dynamicHelpfulButton}    ${MIN_TIMEOUT}
-    Click Element    ${dynamicHelpfulButton}
+    ${dynamicHelpfulButtonAndroid}=    Set Variable    xpath=(//androidx.recyclerview.widget.RecyclerView[@resource-id='${APP_PACKAGE}:id/reviews_container'])/android.view.ViewGroup/android.widget.Button[@resource-id='fi.android.takealot.debug:id/review_up_vote_button' and contains(@text,'Helpful')][${index}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicHelpfulButtonAndroid}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicHelpfulButtonAndroid}

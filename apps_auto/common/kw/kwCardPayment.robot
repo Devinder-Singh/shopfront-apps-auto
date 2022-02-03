@@ -60,7 +60,7 @@ Verify Card Payment Text
         Wait Until Page Contains    ${verifyText}    ${MAX_TIMEOUT}
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Page Should Contain Text    ${verifyText}
-    END    
+    END
 
 Pay via Credit Card Paygate
     [Arguments]    ${cardDesc}='Test'    ${cardHolder}='Tester'    ${cardNum}=4000000000000002    ${cardExpM}=05    ${cardExpY}=2025    ${cardCVV}=877    ${cardSave}=${False}

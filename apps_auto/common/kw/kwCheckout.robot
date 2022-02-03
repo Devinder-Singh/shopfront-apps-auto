@@ -9,12 +9,9 @@ Click Item Promotion Text
 Click Item Promotion Text By Index
     [Documentation]    Clicks the promotion text based on index.
     [Arguments]    ${index}
-    ${dynamicItemPromotionText}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicItemPromotionText}=    Set Variable    xpath=(//android.view.ViewGroup/android.widget.Button[@resource-id='${APP_PACKAGE}:id/cartProductItemPromotionText'])[${index}]
-    END
-    Click Element    ${dynamicItemPromotionText}
-
+    ${dynamicItemPromotionTextAndroid}=    Set Variable    xpath=(//android.view.ViewGroup/android.widget.Button[@resource-id='${APP_PACKAGE}:id/cartProductItemPromotionText'])[${index}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicItemPromotionTextAndroid}
+        
 Click Missed Promotion Text
     Wait Until Element Is Visible    ${lblCheckoutMissedPromotion}    ${MIN_TIMEOUT}
     Click Element    ${lblCheckoutMissedPromotion}

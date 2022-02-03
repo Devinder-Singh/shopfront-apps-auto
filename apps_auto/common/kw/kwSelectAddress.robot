@@ -253,29 +253,21 @@ Verify All Pickup Points
 
 Select Province Dynamically
     [Arguments]    ${province}
-    ${dynamicProvince}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicProvince}=    Set Variable    xpath=//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/tal_input_selector_field_layout_selector_title' and @text='${province}']
-    END 
-    Wait Until Element Is Visible    ${dynamicProvince}
-    Click Element    ${dynamicProvince}
+    ${dynamicProvinceAndroid}=    Set Variable    xpath=//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/tal_input_selector_field_layout_selector_title' and @text='${province}']
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicProvinceAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicProvinceAndroid}
 
 Click Edit Button By Index
     [Arguments]    ${index}
-    ${dynamicEditButtonIndex}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicEditButtonIndex}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_left_action'])[${index}]
-    END 
-    Wait Until Element Is Visible    ${dynamicEditButtonIndex}
-    Click Element    ${dynamicEditButtonIndex}
+    ${dynamicEditButtonIndexAndroid}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_left_action'])[${index}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicEditButtonIndexAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicEditButtonIndexAndroid}
 
 Click Delete Address By Index
     [Arguments]    ${index}
-    ${dynamicDeleteButtonIndex}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicDeleteButtonIndex}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_right_action'])[${index}]
-    END 
-    Wait Until Element Is Visible    ${dynamicDeleteButtonIndex}
-    Click Element    ${dynamicDeleteButtonIndex}
+    ${dynamicDeleteButtonIndexAndroid}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_right_action'])[${index}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicDeleteButtonIndexAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicDeleteButtonIndexAndroid}
+    
     Wait Until Element Is Visible    ${btnConfDeleteAddress}    ${MIN_TIMEOUT}
     Click Element    ${btnConfDeleteAddress}
