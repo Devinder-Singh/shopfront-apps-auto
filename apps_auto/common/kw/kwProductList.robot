@@ -420,11 +420,9 @@ Click Promotion Item By Index
     [Documentation]    Clicks a promotion product item based on its index as displayed on the screen. This keyword will work for both
                         ...    daily deals and app deals screen etc.
     [Arguments]    ${itemIndex}
-    ${dynamicItemByIndex}=    Set Variable    ${None}
-    IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicItemByIndex}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/dealsWidgetPromotionProductItemTitle'])[${itemIndex}]
-    ELSE IF    '${PLATFORM_NAME}' == 'ios'    
-        ${dynamicItemByIndex}=    Set Variable    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeImage[${itemIndex}]
-    END
-    Wait Until Page Contains Element    ${dynamicItemByIndex}
-    Click Element    ${dynamicItemByIndex}
+    ${dynamicItemByIndexAndroid}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/dealsWidgetPromotionProductItemTitle'])[${itemIndex}]
+    ${dynamicItemByIndexIos}=    Set Variable    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeImage[${itemIndex}]
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Page Contains Element    ${dynamicItemByIndexAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicItemByIndexAndroid}  
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Wait Until Page Contains Element    ${dynamicItemByIndexIos}
+    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Element    ${dynamicItemByIndexIos}
