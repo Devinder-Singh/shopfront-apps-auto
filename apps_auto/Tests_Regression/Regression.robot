@@ -150,10 +150,10 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    ${MAX_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ADD    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    TO QUALIFY    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Add    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    to qualify    ${MIN_TIMEOUT}
+    Verify Text On Screen    ADD    ${MIN_TIMEOUT}
+    Verify Text On Screen    TO QUALIFY    ${MIN_TIMEOUT}
+    Verify Text On Screen    Add    ${MIN_TIMEOUT}
+    Verify Text On Screen    to qualify    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Home

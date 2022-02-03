@@ -1,5 +1,5 @@
 *** Settings ***
-Default Tags      orders
+Default Tags      Landing_Pages_CMS
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
