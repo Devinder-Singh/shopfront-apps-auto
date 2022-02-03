@@ -1351,3 +1351,18 @@ Create New Order API
     ${retOorderId}=    Output    $.order_id
     Set Global Variable    ${query_order_id}    ${retOorderId}
     [Return]    ${retOorderId}
+
+Get Department Categories API
+    [Documentation]    Gets a list of all department categories that will be displayed on the UI. Returns the list in the form of an array.
+    ${getDepartmentCategoriesEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/cms/pages/primary-navigation
+    Get    ${getDepartmentCategoriesEndpoint}
+    Integer    response status    200
+    
+    @{uncleanDepartmentCatList}=    Output    $.page.widgets[*].value.title
+    @{cleanDepartmentcCatList}=    Set Variable    ${None}
+    FOR    ${item}    IN    @{uncleanDepartmentCatList}
+        ${cleanedItem}=    Remove String    ${item}    "
+        Append To List    ${cleanDepartmentcCatList}    ${cleanedItem}
+    END
+
+    [Return]    @{cleanDepartmentcCatList}
