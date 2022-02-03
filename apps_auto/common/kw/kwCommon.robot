@@ -147,18 +147,19 @@ Verify Price On Screen
 
 Verify Text On Screen
     [Arguments]    ${verifyText}    ${timeout}=5s
-        ${txtVerify}=    Set Variable    ${None}
+    ${txtVerify}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'
         ${txtVerify}=    Set Variable    xpath=//*[contains(@text,'${verifyText}')]
     END
-    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${txtVerify}    ${timeout}
+    ${chkTextSuccess}=    Run Keyword And Return Status    Page Should Contain Element    ${txtVerify}
+    Sleep    ${timeout}
     Should Be True    ${chkTextSuccess} == ${True}
 
 Verify Text Not On Screen
     [Arguments]    ${verifyText}    ${timeout}=5s
-        ${txtVerify}=    Set Variable    ${None}
+    ${txtVerify}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'

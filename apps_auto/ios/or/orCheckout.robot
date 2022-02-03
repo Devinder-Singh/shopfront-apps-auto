@@ -1,5 +1,5 @@
 *** Variables ***
-${btnCheckout}      chain=**/XCUIElementTypeButton[`label == "Checkout"`]
+${btnCheckout}      chain=**/XCUIElementTypeButton[`label == "Proceed to Checkout"`]
 ${btnCheckoutDelete}      chain=**/XCUIElementTypeButton[`name == "CartItemDeleteButton"`]
 ${btnItemPromotion}    chain=**/XCUIElementTypeButton[`label == "1 promotion applied"`]
 
