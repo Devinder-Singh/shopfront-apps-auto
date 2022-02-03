@@ -10,6 +10,7 @@ Start Application
     Log Many    &{cap}
     Open Application    ${REMOTE_URL}    &{cap}
     Set Implicitly Wait    5
+    Click No Deal
 
 Clear Environment And Start Application
     Clear Environment
