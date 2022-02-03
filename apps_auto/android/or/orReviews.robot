@@ -8,7 +8,7 @@ ${btnReviewSort}      id=${APP_PACKAGE}:id/sort_button
 ${lblReviewSortHelpful}      xpath=//*[@text="Most Helpful"]
 ${lblReviewRecent}      xpath=//*[@text="Most Recent"]
 
-${btnReviewFilter}      xpath=//*[@text="Filter"][1]
+${btnReviewFilter}      xpath=//*[@text="FILTER"][1]
 ${lblReviewFilterRating}      xpath=//*[@text="Ratings"]
 ${lblReviewFilterFive}      xpath=//*[contains(@text, "5")]
 ${btnReviewFilterDone}      xpath=//*[@text="Done"]

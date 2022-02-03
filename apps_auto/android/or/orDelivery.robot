@@ -1,7 +1,7 @@
 *** Variables ***
 ${btnDelivery}      xpath=//*[@text="Delivery"]
 ${btnCollect}      xpath=//*[@text="Collect"]
-${btnDeliveryAddress}      xpath=//*[contains(@text, "Add Delivery Address")]
+${btnDeliveryAddress}      xpath=//*[contains(@text, "New Delivery Address")]
 
 ${btnCollectNotAvailable}      xpath=//*[@text="Collect Not Available"]
 ${btnBackDelivery}      xpath=//android.widget.ImageButton[@content-desc="Navigate up"]

@@ -144,7 +144,6 @@ Verify Price On Screen
     IF    ${cnt} == 5
         Verify Text On Screen    ${resultFinal}    ${delay}
     END
-    
 
 Verify Text On Screen
     [Arguments]    ${verifyText}    ${timeout}=5s
@@ -197,7 +196,8 @@ Click Back Screen
     Sleep    1s
 
 Click Back Android
-    Sleep    1s
+    [Arguments]    ${sleepBeforeAction}= 0.5s
+    Sleep    ${sleepBeforeAction}
     IF    '${PLATFORM_NAME}' == 'android'
         Wait Until Element Is Visible    ${navBack}    ${MIN_TIMEOUT}
         Click Element    ${navBack}
@@ -231,7 +231,7 @@ Click Cancel Screen
     Sleep    1s
 
 Click Element On Scroll
-    [Arguments]    ${clickElement}    ${loopTimes}=10
+    [Arguments]    ${clickElement}    ${loopTimes}=30
     Scroll To Element    ${clickElement}    ${loopTimes}    ${windowScroll}
     Click Element    ${clickElement}
 
@@ -246,18 +246,23 @@ Verify Snack Bar
     Verify Element On Screen    ${dynamicSnackBarPopupWithText}    ${MIN_TIMEOUT}
     
 Scroll To Text
-    [Arguments]    ${text}    ${loopTimes}=10
+    [Arguments]    ${text}    ${loopTimes}=10    ${scrollSwipeDirection}=Up
     ${element}=      Set Variable    ${EMPTY}
     IF    '${PLATFORM_NAME}'== 'android'
         ${element}=    Set Variable    xpath=//*[contains(@text,"${text}")]
     ELSE
         ${element}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${text}"`]
     END
-    Scroll To Element   ${element}    ${loopTimes}    ${windowScroll}
+
+    IF    '${scrollSwipeDirection}' == 'Up'
+        Scroll To Element   ${element}    ${loopTimes}    ${windowScroll}
+    ELSE IF    '${scrollSwipeDirection}' == 'Down'
+        Scroll To Element   ${element}    ${loopTimes}    ${windowScroll}    scrollSwipeDirection=Down
+    END
     Page Should Contain Element    ${element}
 
 Scroll To Element
-    [Arguments]    ${element}    ${loopTimes}=10    ${scrollElement}=${windowScroll}
+    [Arguments]    ${element}    ${loopTimes}=30    ${scrollElement}=${windowScroll}    ${scrollSwipeDirection}=Up
     Set Implicitly Wait    1
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    ${loopTimes}
@@ -265,7 +270,13 @@ Scroll To Element
         IF    ${chkProdVisible}==${True}
             Exit For Loop
         END
-        Swipe Up    ${scrollElement}
+        
+        IF    '${scrollSwipeDirection}' == 'Up'  
+            Swipe Up    ${scrollElement}
+        ELSE IF    '${scrollSwipeDirection}' == 'Down'
+            Swipe Down    ${scrollElement}
+        END
+
         ${index}=    Evaluate    ${index} + 1
     END
     Set Implicitly Wait    5

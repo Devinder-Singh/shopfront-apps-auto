@@ -46,7 +46,7 @@ Apps - Checkout - Delivery Methods - Digital Only - QASA-114
     Click Back Payment Voucher
     Verify Element On Screen    ${rdoPaymentUseMyCredit}    ${MIN_TIMEOUT}
     Click Payment Confirm Order
-    Click Track Order
+    Click Track Order Detail
     Swipe Up    ${windowScroll}
     Verify Element On Screen    ${txtDigitalDeliveryMethod}    ${MIN_TIMEOUT}
     Verify Element On Screen    ${txtDigitalShippingAddress}    ${MIN_TIMEOUT}

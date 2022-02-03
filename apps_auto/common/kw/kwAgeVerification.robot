@@ -25,3 +25,7 @@ Click Select Age
 Click Age Selector OK Button
     Wait Until Element Is Visible    ${ageSelectorOKButton}
     Click Element    ${ageSelectorOKButton}
+
+Click Continue To Checkout
+    Wait Until Element Is Visible    ${btnContinueCheckout}
+    Click Element    ${btnContinueCheckout}

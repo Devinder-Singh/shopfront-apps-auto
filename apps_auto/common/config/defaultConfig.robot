@@ -44,6 +44,7 @@ Resource          ../../${PLATFORM_NAME}/or/orCommon.robot
 Resource          ../../${PLATFORM_NAME}/or/orReturns.robot
 Resource          ../../${PLATFORM_NAME}/or/orPaymentPayfast.robot
 Resource          ../../${PLATFORM_NAME}/or/orOrderDetail.robot
+Resource          ../../${PLATFORM_NAME}/or/orPayWithCreditCard.robot
 Resource          ../../android/or/orWeb.robot
 
 Resource          ../../${PLATFORM_NAME}/config/testConfig.robot
@@ -109,3 +110,4 @@ ${PLATFORM_NAME}    ios
 ${PATH}           /users/jenkins/desktop/shopfront-apps-auto/apps_auto
 ${MIN_TIMEOUT}    10s
 ${MAX_TIMEOUT}    30s
+${APPIUM_NEW_COMMAND_TIMEOUT}    240s
