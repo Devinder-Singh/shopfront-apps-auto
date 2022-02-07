@@ -279,8 +279,8 @@ Click No Deal
     END
 
 Dismiss Reviews Text
-    Click Menu
     IF    '${PLATFORM_NAME}'=='android'
+        Click Menu
         Click Menu My Account
         Sleep    2
         Wait Until Page Contains    Product Reviews    ${MIN_TIMEOUT}
