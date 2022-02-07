@@ -3,7 +3,7 @@ Resource          ../config/defaultConfig.robot
 
 *** Keywords ***
 Click Continue Digital Item
-    Wait Until Element Is Visible    ${btnContinueAirtime}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnContinueAirtime}    60
     Click Element    ${btnContinueAirtime}
 
 Click Cancel Airtime

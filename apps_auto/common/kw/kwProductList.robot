@@ -338,10 +338,6 @@ Verify Sorted Products
     Should Be True    ${chkProdVisible}
 
     ${txtProduct}=    Get Third Sort Product    ${sort}
-#    Run Keyword If    '${txtProduct}'!='0'
-#    ...    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
-#    ...  ELSE
-#    ...    Verify Text On Screen    We could not find results    ${MIN_TIMEOUT}
 
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    10

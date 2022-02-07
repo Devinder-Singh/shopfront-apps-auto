@@ -47,4 +47,4 @@ ${lblAddresOptionMyAccGauteng}      xpath=//*[@text="12 Ridge Way, Green Point, 
 
 ${lblAddresOptionMyAccMapSuburb}      ${EMPTY}
 
-${btnAddressDelete}    id=${APP_PACKAGE}:id/checkout_address_item_recipient_address_delete
+${btnAddressDelete}    id=${APP_PACKAGE}:id/address_selection_detail_item_address_right_action

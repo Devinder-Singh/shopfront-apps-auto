@@ -18,7 +18,7 @@ Click Missed Promotion Text
 
 Click Checkout
     Set Test Variable    ${ISORDERED}    ${False}
-    Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
+    Wait Until Element Enabled    ${btnCheckout}    ${MAX_TIMEOUT}
     Click Element    ${btnCheckout}
 
 Click CAB Add To Cart

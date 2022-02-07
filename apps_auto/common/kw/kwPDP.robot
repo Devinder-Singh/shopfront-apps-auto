@@ -36,7 +36,6 @@ Click Close Ad
 
 Click Add To Cart
     [Arguments]    ${seconds}=0s
-    Wait Until Element Is Visible    ${btnAddToCart}    ${MAX_TIMEOUT}
     Click Element    ${btnAddToCart}
 
 Click Wishlist Change
@@ -291,12 +290,10 @@ Click Product Variant From API
         Set Local Variable    ${txtProduct}    ${txtProduct}\[${index}]
     ELSE
         Set Local Variable    ${txtProduct}    ${txtProduct}
-    END            
+    END
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MAX_TIMEOUT}
     Click Element    ${btnPDPSelectOption}
-    #Add sleep for PDP reload on ios
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Sleep    5  
-    Wait Until Page Contains Element    ${txtProduct}    ${MAX_TIMEOUT}
+    Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MAX_TIMEOUT}
     Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API
