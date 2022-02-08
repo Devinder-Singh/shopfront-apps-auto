@@ -7,6 +7,11 @@ Click Residential
     Click Element    ${btnResidential}   
     
 Click Address Business
+    IF    '${PLATFORM_NAME}' == 'android'
+      Wait Until Element Is Visible    ${btnAddressTypeSelector}    ${MIN_TIMEOUT}
+      Click Element    ${btnAddressTypeSelector}
+    END  
+
     Wait Until Element Is Visible    ${lblAddressBusiness}    ${MIN_TIMEOUT}
     Click Element    ${lblAddressBusiness}
 
@@ -189,6 +194,11 @@ Edit Delivery Address On Map My Acc
     END
 
     Sleep    3s
+    
+    IF     '${PLATFORM_NAME}' == 'android'
+        Hide Keyboard
+    END    
+
     Wait Until Element Is Visible    ${lblEditAddressMapLocation}    ${MIN_TIMEOUT}
     Click Element    ${lblEditAddressMapLocation}
 
@@ -202,15 +212,15 @@ Edit Delivery Address On Map My Acc Suburb
     Sleep    10s
 
     IF     '${PLATFORM_NAME}' == 'android'
-    Click Element    ${txtSearchAddressOnMap}
-    Sleep    5s
-    Press Keycode    67
-    Sleep    5s
-    Press Keycode    32
-    Sleep    10s
-    Press Keycode    20
-    Sleep    1s
-    Press Keycode    66
+        Click Element    ${txtSearchAddressOnMap}
+        Sleep    5s
+        Press Keycode    67
+        Sleep    5s
+        Press Keycode    32
+        Sleep    10s
+        Press Keycode    20
+        Sleep    1s
+        Press Keycode    66
     ELSE IF    '${PLATFORM_NAME}' == 'ios' and '${street}' != '""'
         Wait Until Element Is Visible    ${lblAddresOptionMyAccMapSuburb}    ${MIN_TIMEOUT}
         Click Element    ${lblAddresOptionMyAccMapSuburb}
@@ -258,7 +268,7 @@ Edit Delivery Address Postal Code
 
 Edit Delivery Address Postal Code My Acc
     [Arguments]    ${postalCode}
-    Wait Until Element Is Visible    ${lblRecepientMobile}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${txtRecipientMobile}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
 
     Wait Until Element Is Visible    ${txtRecipientPostCodeEdit}    ${MIN_TIMEOUT}
@@ -266,11 +276,10 @@ Edit Delivery Address Postal Code My Acc
     Input Text    ${txtRecipientPostCodeEdit}    ${postalCode}
 
     #Sleep    1s
-    Click Element    ${lblRecepientPostCode}
     Swipe Up    ${windowScroll}
 
 Edit Delivery Address Suburb My Acc
-    Wait Until Element Is Visible    ${lblRecepientMobile}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${txtRecipientMobile}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
 
     Wait Until Element Is Visible    ${lblAddresOptionMyAccSuburb}    ${MIN_TIMEOUT}
@@ -278,11 +287,10 @@ Edit Delivery Address Suburb My Acc
 
     #Sleep    1s
     Wait Until Element Is Visible    ${lblAddresMyAccSuburb}    ${MIN_TIMEOUT}
-    Click Element    ${lblAddresMyAccSuburb}
     Swipe Up    ${windowScroll}
 
 Edit Delivery Address My Acc Empty
-    Wait Until Element Is Visible    ${lblRecepientMobile}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${txtRecipientMobile}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
 
     Clear Text    ${txtRecipientName}
@@ -291,7 +299,6 @@ Edit Delivery Address My Acc Empty
     Clear Text    ${txtRecipientCityMyAcc}
 
     #Sleep    1s
-    Click Element    ${lblRecepientPostCode}
     Swipe Up    ${windowScroll}
 
 Edit Delivery Address Confirm Address
