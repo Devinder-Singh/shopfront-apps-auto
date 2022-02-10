@@ -1226,10 +1226,38 @@ Cart Update & Cart Notification - TV - QASA-248
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    Televisio
+    Search Product    Pencil
     Click Product from API
     Click Add To Cart
     Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Any Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Add To Cart    105641362
+    Click Pay With Credit Card
+    Click Cart Update Continue Checkout
+    Click Domestic TV Licence
+    Close Application
+    Start Application
+    Clear Environment
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Any Delivery
+    Click Donate No Thanks
+    Add To Cart    105641362
+    Click Pay With Credit Card
+    Click Cart Update Back To Cart
     Click Checkout
     Click Domestic TV Licence
     [Teardown]    Tear Down

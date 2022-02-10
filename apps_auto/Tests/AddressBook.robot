@@ -15,7 +15,8 @@ Apps > My Account > Address Book > Delivery Address (with pre-saved addresses) -
     Click Menu Address Book
     Click Delete Address
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Address successfully deleted    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You don't have any addresses saved. Please add a Delivery Address    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You don't have any addresses saved.    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please add a Delivery Address    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You don't have any addresses saved. Please add a Delivery Address    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
@@ -34,8 +35,9 @@ Apps > My Account > Address Book > Add Business Address > Street Suggestion - QA
     Add Delivery Address Business My Acc No Name    Tester Residential    0723456778    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter a business name    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please enter a business name    ${MIN_TIMEOUT}
+    Swipe Down    ${windowScroll}
     Edit Delivery Address Business My Acc    ABC
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Add Delivery Address    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    New Delivery Address    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Tester Residential    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    BUSINESS    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
@@ -72,7 +74,7 @@ Apps > My Account > Address Book > Add Residential Address > Street Suggestion -
     Click Menu My Account
     Click Menu Address Book
     Click Add Delivery Address
-    Click Residential
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'   Click Residential
     Add Delivery Address    Tester Residential    072345677    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Please enter a 10-digit SA phone number without country code, spaces, or special characters    ${MIN_TIMEOUT}
@@ -82,12 +84,12 @@ Apps > My Account > Address Book > Add Residential Address > Street Suggestion -
     Click Menu My Account
     Click Menu Address Book
     Click Add Delivery Address
-    Click Residential
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'  Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Add Delivery Address    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    New Delivery Address    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Tester Residential    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    RESIDENTIAL    1s
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    1s
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    0723456778    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Add Delivery Address    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Tester Residential    1s
@@ -104,7 +106,7 @@ Apps > My Account > Address Book > Add Residential Address > Street Suggestion -
     Click Go To Cart
     Click Checkout
     Click Delivery
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    0723456778    1s
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    ABC, 13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    0723456778    1s
@@ -122,14 +124,16 @@ Apps > My Account > Address Book > Delivery Address (with no saved addresses) - 
     Click Menu Address Book
     Click Delete Address
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Address successfully deleted    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You don't have any addresses saved. Please add a Delivery Address    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You don't have any addresses saved.    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please add a Delivery Address    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You don't have any addresses saved. Please add a Delivery Address    ${MIN_TIMEOUT}
     Close Application
     Start Application
     Click Menu
     Click Menu My Account
     Click Menu Address Book
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You don't have any addresses saved. Please add a Delivery Address    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    You don't have any addresses saved.    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Please add a Delivery Address    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    You don't have any addresses saved. Please add a Delivery Address    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
@@ -315,6 +319,7 @@ Apps > My Account > Address Book > Edit Address > Pin On Map - QASA-480
     Click Save Address
     Edit Delivery Address Confirm Address My Acc
     Click Address Got It Thanks
+    # Fix edit delivery pin on Map
     Edit Delivery Address On Map My Acc    12 Ridge Way
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    12 Ridge Way, Green Point, Cape Town, Western Cape, 8007    ${MIN_TIMEOUT}

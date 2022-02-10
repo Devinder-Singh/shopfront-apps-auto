@@ -152,6 +152,7 @@ Add To Cart
     Get Customer ID
     Get Tokens
     ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    Log To Console    ${Add_cart_Body}
     Post    ${Add_cart_URL}    ${Add_cart_Body}
     Integer    response status    200
 

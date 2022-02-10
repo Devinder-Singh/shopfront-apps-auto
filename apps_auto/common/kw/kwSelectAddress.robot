@@ -21,7 +21,7 @@ Click Pickup Point
         ${txtProduct}=    Set Variable    xpath=//*[contains(@text, '${point}')]
     END
 
-    Click Element On Scroll    ${txtProduct}    25
+    Click Element On Scroll    ${txtProduct}    30
 
 Click Pickup Point Info
     Wait Until Element Is Visible    ${txtInfoAddress}    ${MIN_TIMEOUT}
