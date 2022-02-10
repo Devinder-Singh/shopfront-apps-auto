@@ -151,8 +151,9 @@ Verify Text On Screen
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'
-        ${txtVerify}=    Set Variable    xpath=//*[contains(@text,'${verifyText}')]
+        ${txtVerify}=    Set Variable    xpath=//*[contains(@text,"${verifyText}")]
     END
+    
     ${chkTextSuccess}=    Run Keyword And Return Status    Page Should Contain Element    ${txtVerify}
     Sleep    ${timeout}
     Should Be True    ${chkTextSuccess} == ${True}
@@ -163,7 +164,7 @@ Verify Text Not On Screen
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'
-        ${txtVerify}=    Set Variable    xpath=//*[contains(@text,'${verifyText}')]
+        ${txtVerify}=    Set Variable    xpath=//*[contains(@text,"${verifyText}")]
     END
     ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Page Does Not Contain Element    ${txtVerify}    ${timeout}
     Should Be True    ${chkTextSuccess} == ${True}
@@ -247,7 +248,7 @@ Verify Snack Bar
     Verify Element On Screen    ${dynamicSnackBarPopupWithText}    ${MIN_TIMEOUT}
     
 Scroll To Text
-    [Arguments]    ${text}    ${loopTimes}=10    ${scrollSwipeDirection}=Up
+    [Arguments]    ${text}    ${loopTimes}=30    ${scrollElement}=${windowScroll}    ${scrollSwipeDirection}=Up
     ${element}=      Set Variable    ${EMPTY}
     IF    '${PLATFORM_NAME}'== 'android'
         ${element}=    Set Variable    xpath=//*[contains(@text,"${text}")]
@@ -256,9 +257,13 @@ Scroll To Text
     END
 
     IF    '${scrollSwipeDirection}' == 'Up'
-        Scroll To Element   ${element}    ${loopTimes}    ${windowScroll}
+        Scroll To Element   ${element}    ${loopTimes}    ${scrollElement}
     ELSE IF    '${scrollSwipeDirection}' == 'Down'
-        Scroll To Element   ${element}    ${loopTimes}    ${windowScroll}    scrollSwipeDirection=Down
+        Scroll To Element   ${element}    ${loopTimes}    ${scrollElement}    scrollSwipeDirection=Down
+    ELSE IF    '${scrollSwipeDirection}' == 'Left'
+        Scroll To Element   ${element}    ${loopTimes}    ${scrollElement}    scrollSwipeDirection=Left
+    ELSE IF    '${scrollSwipeDirection}' == 'Right'
+        Scroll To Element   ${element}    ${loopTimes}    ${scrollElement}    scrollSwipeDirection=Right
     END
     Page Should Contain Element    ${element}
 
@@ -271,11 +276,15 @@ Scroll To Element
         IF    ${chkProdVisible}==${True}
             Exit For Loop
         END
-        
-        IF    '${scrollSwipeDirection}' == 'Up'  
+
+        IF    '${scrollSwipeDirection}' == 'Up'
             Swipe Up    ${scrollElement}
         ELSE IF    '${scrollSwipeDirection}' == 'Down'
             Swipe Down    ${scrollElement}
+        ELSE IF    '${scrollSwipeDirection}' == 'Left'
+            Swipe Left    ${scrollElement}
+        ELSE IF    '${scrollSwipeDirection}' == 'Right'
+            Swipe Right    ${scrollElement}
         END
 
         ${index}=    Evaluate    ${index} + 1
