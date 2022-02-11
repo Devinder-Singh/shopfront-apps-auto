@@ -35,11 +35,28 @@ ${items_Body_Delete_any}    {"products":[{"id":94086375}]}
 
 ${createNewOrderEndpoint}=    http://tal-test-data-service.master.env/create_new_order
 
+${cmsPagesPrimaryNavigationEndpoint}    ${APP_ENVIRONMENT}rest/v-1-10-0/cms/pages/primary-navigation
+
 ${envMaster}    http://api.master.env
 ${envProd}    https://api.takealot.com
 
+${apiRetryCount}    3x
+${apiRetryInterval}    1s
 
 *** Keywords ***
+Generic Post
+    [Documentation]    Performs a generic HTTP POST call to a given endpoint. This method is a wrapper for the default HTTP REST library.
+    [Arguments]    ${endPoint}    ${jsonBody}=${None}    ${HttpStatusAssertion}=200
+    @{response}=    POST    ${endPoint}    ${jsonBody}
+    Log Many    @{response}
+    Integer    response status    ${HttpStatusAssertion}
+
+Generic Get
+    [Documentation]    Performs a generic HTTP GET call to a given endpoint. This method is a wrapper for the default HTTP REST library.
+    [Arguments]    ${endPoint}    ${queryString}=${None}    ${HttpStatusAssertion}=200
+    GET    ${endPoint}    ${queryString}
+    Integer    response status    ${HttpStatusAssertion}
+
 Clear Environment
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
     Clear Cart
@@ -50,15 +67,15 @@ Clear Environment
 Create Wishlists
     Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
     ${WL_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": ${query_customer_id}, "count": 25 }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": 4933518, "count": 24 }
-    Post    ${wishlist_URL_add}    ${WL_Body}
-    Integer    response status    200
-
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${wishlist_URL_add}    ${WL_Body}
+    
 Get Customer ID
     ${token_URL}=    Set Variable    http://tal-test-data-service.master.env/login/tokens
     ${token_BODY}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "remember_me": true}
 
-    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Post    ${token_URL}    ${token_BODY}
-    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Integer    response status    200
+    IF    '${APP_ENVIRONMENT}' == 'http://api.master.env/'
+        Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${token_URL}    ${token_BODY}
+    END
 
     ${result_ID}=    Output    $.customer_id
 
@@ -69,27 +86,22 @@ Get Customer ID
 
 Clear Cart
     ${cart_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": "${query_customer_id}", "env": "master.env" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "4933518", "env": "takealot.com" }
-    Post    ${cart_URL}    ${cart_Body}
-    Integer    response status    200
-
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${cart_URL}    ${cart_Body}
+   
 Clear Wishlist
     ${wishlist_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
-    Post    ${wishlist_URL_clear}    ${wishlist_Body}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${wishlist_URL_clear}    ${wishlist_Body}
 
 Delete Wishlist
     ${wishlist_Del_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
-    Post    ${wishlist_Del_URL}    ${wishlist_Del_Body}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${wishlist_Del_URL}    ${wishlist_Del_Body}
 
 Clear Address
     ${address_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id":${query_customer_id}, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "takealot", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
-    Post    ${address_URL}    ${address_Body}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${address_URL}    ${address_Body}
 
 Clear Address Business
-    Post    ${address_URL}    ${address_Body_Business}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${address_URL}    ${address_Body_Business}
 
 Get Tokens
     ${token_URL}=    Set Variable    http://tal-test-data-service.master.env/login/tokens
@@ -1367,17 +1379,83 @@ Get CMS Widget Products Attributes
     ${searchResult}=    Set Variable    ${results_title}[${index}]
     [return]    ${searchResult}
 
-Get Department Categories API
+Get Department Categories CMS Widget List API
+    [Documentation]    This API will return a list of department category widget names that belong to CMS pages which are present on the UI.
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${cmsPagesPrimaryNavigationEndpoint}
+    
+    #Get all widgets from json array, load into robot array and determine array size to be used in loop.
+    ${cmsPagesWidgetJsonArray}=    Output    $.page.widgets[*]
+    ${cmsPagesWidgetJsonArraySize}=    Get Length    ${cmsPagesWidgetJsonArray}
+    
+    #Loop through each json array object and check if the action type is 'page'. If true then get the title and append to array. 
+    @{departmentCategoryCmsWidgetNameList}    Set Variable    ${None}
+    FOR    ${index}    IN RANGE   ${cmsPagesWidgetJsonArraySize}
+        ${actionType}=    Get Value From Json    ${cmsPagesWidgetJsonArray}[${index}]    $.[*].value.link_data.action
+
+        #Nothing too hectic here just converting json action value to string and doing some clean up
+        ${actionType}=    Convert JSON To String    ${actionType}
+        ${actionType}=    Remove String    ${actionType}    ["
+        ${actionType}=    Remove String    ${actionType}    "]
+
+        IF    '${actionType}' == 'page'
+            #Same clean up happening here with title.
+            ${title}=    Get Value From Json    ${cmsPagesWidgetJsonArray}[${index}]    $.[*].value.title
+            ${title}=    Convert JSON To String    ${title}
+            ${title}=    Remove String    ${title}    ["
+            ${title}=    Remove String    ${title}    "]
+            Append To List    ${departmentCategoryCmsWidgetNameList}    ${title}
+        END
+    END
+    [Return]    ${departmentCategoryCmsWidgetNameList}
+
+Get Department Categories CMS Widget Slug List API
+    [Documentation]    This API will return a list of department category widget slug values that belong to CMS pages which are present on the UI.
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${cmsPagesPrimaryNavigationEndpoint}
+    
+    #Get all widgets from json array, load into robot array and determine array size to be used in loop.
+    ${cmsPagesWidgetJsonArray}=    Output    $.page.widgets[*]
+    ${cmsPagesWidgetJsonArraySize}=    Get Length    ${cmsPagesWidgetJsonArray}
+    
+    #Loop through each json array object and check if the action type is 'page'. If true then get the title and append to array. 
+    @{departmentCategoryCmsWidgetSlugList}    Set Variable    ${None}
+    FOR    ${index}    IN RANGE   ${cmsPagesWidgetJsonArraySize}
+        ${actionType}=    Get Value From Json    ${cmsPagesWidgetJsonArray}[${index}]    $.[*].value.link_data.action
+
+        #Nothing too hectic here just converting json action value to string and doing some clean up
+        ${actionType}=    Convert JSON To String    ${actionType}
+        ${actionType}=    Remove String    ${actionType}    ["
+        ${actionType}=    Remove String    ${actionType}    "]
+
+        IF    '${actionType}' == 'page'
+            #Same clean up happening here with slug.
+            ${slugValue}=    Get Value From Json    ${cmsPagesWidgetJsonArray}[${index}]    $.[*].value.link_data.parameters.slug
+            ${slugValue}=    Convert JSON To String    ${slugValue}
+            ${slugValue}=    Remove String    ${slugValue}    ["
+            ${slugValue}=    Remove String    ${slugValue}    "]
+            Append To List    ${departmentCategoryCmsWidgetSlugList}    ${slugValue}
+        END
+    END
+    [Return]    ${departmentCategoryCmsWidgetSlugList}
+    
+Get Department Categories List API
     [Documentation]    Gets a list of all department categories that will be displayed on the UI. Returns the list in the form of an array.
-    ${getDepartmentCategoriesEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/cms/pages/primary-navigation
-    Get    ${getDepartmentCategoriesEndpoint}
-    Integer    response status    200
+                        ...    this will return all department categories example ones that re-route to products, deals,search etc.
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${cmsPagesPrimaryNavigationEndpoint}
     
     @{uncleanDepartmentCatList}=    Output    $.page.widgets[*].value.title
+    
     @{cleanDepartmentcCatList}=    Set Variable    ${None}
-    FOR    ${item}    IN    @{uncleanDepartmentCatList}
-        ${cleanedItem}=    Remove String    ${item}    "
-        Append To List    ${cleanDepartmentcCatList}    ${cleanedItem}
+    FOR    ${departmentCategory}    IN    @{uncleanDepartmentCatList}
+        ${departmentCategory}=    Remove String    ${departmentCategory}    "
+        Append To List    ${cleanDepartmentcCatList}    ${departmentCategory}
     END
-
     [Return]    @{cleanDepartmentcCatList}
+
+Get Department Category CMS Widget Title By Slug API
+    [Documentation]    Gets a department category widget title based on the cms department category slug name.
+    [Arguments]    ${departmentCategorySlugName}
+    ${getDepartmentCategoryTitleEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/cms/pages/${departmentCategorySlugName}
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${getDepartmentCategoryTitleEndpoint}
+    
+    ${deptCatTitle}=    Output    $.page.widgets[0].value.content
+    [Return]    ${deptCatTitle}

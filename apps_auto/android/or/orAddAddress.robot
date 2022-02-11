@@ -3,14 +3,14 @@ ${btnResidential}      xpath=//*[@text="Residential"]
 ${txtRecipientName}      xpath=(//android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/address_input_recipient_name'])//android.widget.EditText
 ${txtRecipientMobile}      xpath=(//android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/address_input_recipient_mobile_number'])//android.widget.EditText
 ${txtRecipientStreet}      id=${APP_PACKAGE}:id/address_input_auto_complete_info_input
-${txtBusinessName}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${txtBusinessName}      xpath=//*/android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/address_input_business_name']/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 
 ${btnSaveAddress}      id=${APP_PACKAGE}:id/sticky_action_button
 
-${txtRecipientPostCode}      xpath=(//android.view.ViewGroup[@resource-id='fi.android.takealot.debug:id/address_input_postal_code'])//android.widget.EditText
-${txtRecipientCityMyAcc}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[5]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
-${txtRecipientSuburbMyAcc}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
-${txtRecipientComplexMyAcc}      xpath=//*/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.EditText
+${txtRecipientPostCode}      xpath=//*/android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/address_input_postal_code']/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${txtRecipientCityMyAcc}      xpath=//*/android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/address_input_city']/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${txtRecipientSuburbMyAcc}      xpath=//*/android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/address_input_suburb']/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${txtRecipientComplexMyAcc}      xpath=//*/android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/address_input_complex_info']/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
 
 ${lblAddAddress}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView
 ${lblEditAddress}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView
@@ -29,13 +29,13 @@ ${lblAddresOptionChanged}      xpath=//*[contains(@text, "13 Caro Road, Robertsh
 ${lytAddressType}      id=${APP_PACKAGE}:id/checkout_address_item_recipient_address_edit
 
 ${lblEditAddressBusiness}      xpath=//*[@text="EDIT"]
-${txtSearchAddressOnMap}      id=${APP_PACKAGE}:id/address_text_input_auto_complete_map_text
+${txtSearchAddressOnMap}      id=${APP_PACKAGE}:id/address_input_auto_complete_info_input
 
 ${lblEditAddressMapLocation}      xpath=//*[@text="USE THIS LOCATION"]
 
-${lblRecepientMobile}      xpath=//*[@text="RECIPIENT MOBILE NUMBER"]
-${txtRecipientPostCodeEdit}      xpath=//*[@text="8005"]
-${lblRecepientPostCode}      xpath=//*[@text="CITY / TOWN"]
+${lblRecepientMobile}      xpath=//*[@text="Recipient Mobile Number"]
+${txtRecipientPostCodeEdit}     xpath=//*/android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/address_input_postal_code']/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${lblRecepientPostCode}      xpath=//*[@text="Postal Code"]
 
 ${lblAddresOptionMyAcc}      xpath=//*[@text="12 Ridge Way, Green Point, Cape Town, Western Cape, 8007"]
 ${lblAddresOptionMyAccMap}      xpath=//*[@text="12 Ridge Way, Pinelands, Cape Town, South Africa"]
@@ -48,3 +48,5 @@ ${lblAddresOptionMyAccGauteng}      xpath=//*[@text="12 Ridge Way, Green Point, 
 ${lblAddresOptionMyAccMapSuburb}      ${EMPTY}
 
 ${btnAddressDelete}    id=${APP_PACKAGE}:id/address_selection_detail_item_address_right_action
+
+${btnAddressTypeSelector}    id=${APP_PACKAGE}:id/address_input_type_selector

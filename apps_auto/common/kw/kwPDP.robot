@@ -293,7 +293,7 @@ Click Product Variant From API
     END
     Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MAX_TIMEOUT}
     Click Element    ${btnPDPSelectOption}
-    Wait Until Element Is Visible    ${btnPDPSelectOption}    ${MAX_TIMEOUT}
+    Sleep    5
     Click Element    ${txtProduct}
 
 Click Product Disabled Variant From API

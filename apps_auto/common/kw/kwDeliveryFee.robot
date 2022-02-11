@@ -6,6 +6,7 @@ Resource          ../config/defaultConfig.robot
 Click Any Delivery
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${scrDeliveryFeeAndroid}    ${MIN_TIMEOUT}
     Set Implicitly Wait    1
+    ${chkTextSuccess}=    Set Variable    ${False}
     FOR    ${counter}    IN RANGE    1    15
         ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnFree}
         IF    ${chkTextSuccess} == ${True}
@@ -27,6 +28,9 @@ Click Any Delivery
             Click Standard Collect
             Exit For Loop
         END
+    END
+    IF    ${chkTextSuccess} == ${False}
+        Fail    "Cannot find Delivery Option"
     END
 
 Click Free Delivery
