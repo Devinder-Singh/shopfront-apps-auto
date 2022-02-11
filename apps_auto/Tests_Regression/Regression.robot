@@ -99,8 +99,7 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     [Tags]    QASA-260    QASA-306
     [Setup]    Start Application
     Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Samsung - 14 Place Setting Dishwasher
@@ -164,7 +163,6 @@ Apps > Promotions (Android) Unboxed & Other Offers - QASA-253 - QASA-306
     [Tags]    QASA-253    QASA-306
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -206,205 +204,23 @@ Verify Home Screen (Logged-In User) > Recently Viewed - QASA-175
     Check Text On Screen Not    Recently Viewed
     [Teardown]    Tear Down
 
-Verify Home Screen > Shop by Dept widget - QASA-861
-    [Tags]    QASA-861
+Verify Home Screen > Shop by Dept widget - QASA-882 - QASA-883 - QASA-861
+    [Tags]    QASA-882    QASA-883    QASA-861
     [Setup]    Start Application
-    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Click Home
-    Scroll To Text    Shop by Department
-    Click Home Icon Daily Deals
-    Verify Element On Screen    ${btnProductSearchFilter}    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Summer
-    Verify Text On Screen    Summer    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Load-shedding
-    Verify Text On Screen    Load Shedding    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Fashion Outlet
-    Verify Text On Screen    Fashion Outlet    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Unboxed Deals
-    Verify Text On Screen    Unboxed Deals    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Exclusive To Takealot
-    Verify Text On Screen    Exclusive To Takealot    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Shop Local
-    Verify Text On Screen    Shop Local    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    [Teardown]    Tear Down
-
-Verify Home Screen > Shop by Dept widget - QASA-882
-    [Tags]    QASA-882
-    [Setup]    Start Application
-    Click Home
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Swipe Left    ${cntHomeDeptIcons}
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Brand Stores
-    Verify Text On Screen    Brands Store    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Auto
-    Verify Text On Screen    Automotive    ${MAX_TIMEOUt}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Baby & Toddler
-    Verify Text On Screen    Baby & Toddler    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Beauty
-    Verify Text On Screen    Beauty    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Books
-    Verify Text On Screen    Books    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Camping
-    Verify Text On Screen    Camping    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Cellphones
-    Verify Text On Screen    Cellphones    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Clothing
-    Verify Text On Screen    Clothing    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Computers
-    Verify Text On Screen    Computers    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    DIY & Home Improvement
-    Verify Text On Screen    DIY & Home Improvement    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Gaming
-    Verify Text On Screen    Gaming    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Garden, Pool & Patio
-    Verify Text On Screen    Garden, Pool & Patio    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Groceries
-    Verify Text On Screen    Household    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Health & Hygiene
-    Verify Text On Screen    Health    ${MAX_TIMEOUT}
-    [Teardown]    Tear Down
-
-Verify Home Screen > Shop by Dept widget - QASA-883
-    [Tags]    QASA-883
-    [Setup]    Start Application
-    Click Home
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Swipe Left    ${cntHomeDeptIcons}
-    Swipe Left    ${cntHomeDeptIcons}
-    Swipe Left    ${cntHomeDeptIcons}
-    Swipe Left    ${cntHomeDeptIcons}
-    Swipe Left    ${cntHomeDeptIcons}
-    Swipe Left    ${cntHomeDeptIcons}
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Home & Appliances
-    Verify Text On Screen    Home & Appliances    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Household Cleaning
-    Verify Text On Screen    Household Cleaning    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Kitchen & Appliances
-    Verify Text On Screen    Kitchen & Appliances    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Liquor
-    Verify Text On Screen    Liquor    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Luggage & Travel
-    Verify Text On Screen    Luggage & Travel    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Movies
-    Verify Text On Screen    Movies    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Music
-    Verify Text On Screen    Music    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Musical Instruments
-    Verify Text On Screen    Musical Instruments    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Networking
-    Verify Text On Screen    Networking    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Office
-    Verify Text On Screen    Office    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Pets
-    Verify Text On Screen    Pets    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Photography
-    Verify Text On Screen    Photographic    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Sport & Training
-    Verify Text On Screen    Sport    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Stationery
-    Verify Text On Screen    Stationery    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Toiletries
-    Verify Text On Screen    Personal Care    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Click Home Icon    Toys & Games
-    Verify Text On Screen    Toys    ${MAX_TIMEOUT}
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    TV, Audio & Video
-    Verify Text On Screen    TV, Audio & Video
-    Click Cancel Screen
-    Scroll To Text    Shop by Department
-    Swipe Left    ${cntHomeDeptIcons}
-    Click Home Icon    Wearable Tech
-    Verify Text On Screen    Wearable Tech    ${MAX_TIMEOUT}
+    Click Home 
+    @{departmentCatList}=    Get Department Categories CMS Widget List API
+    @{departmentCatSlugList}=    Get Department Categories CMS Widget Slug List API
+    ${departCatListSize}=    Get Length    ${departmentCatList}
+    
+    FOR    ${index}    IN RANGE    0    ${departCatListSize}
+        Scroll To Text    Shop by Department
+        Scroll To Text    ${departmentCatList}[${index}]    scrollElement=${cntHomeDeptIcons}    scrollSwipeDirection=Left
+        Click Home Icon    ${departmentCatList}[${index}]
+        
+        ${deptWidgetTitle}=    Get Department Category CMS Widget Title By Slug API    ${departmentCatSlugList}[${index}]
+        Verify Text On Screen    ${deptWidgetTitle}
+        Click Cancel Screen
+    END
     [Teardown]    Tear Down
 
 Verify Home Screen > Shop by Dept widget - QASA-862
@@ -413,45 +229,10 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     Click Menu
     Click Menu Shop By Department
     Verify Text On Screen    Daily Deals    ${MAX_TIMEOUT}
-    Scroll To Text    Daily Deals
-    Scroll To Text    Summer
-    Scroll To Text    Load-shedding
-    Scroll To Text    Fashion Outlet
-    Scroll To Text    Unboxed Deals
-    Scroll To Text    Exclusive To Takealot
-    Scroll To Text    Shop Local
-    Scroll To Text    Brand Stores
-    Scroll To Text    Auto
-    Scroll To Text    Baby & Toddler
-    Scroll To Text    Beauty
-    Scroll To Text    Books
-    Scroll To Text    Camping
-    Scroll To Text    Cellphones
-    Scroll To Text    Clothing
-    Scroll To Text    Computers
-    Scroll To Text    DIY & Home Improvement
-    Scroll To Text    Gaming
-    Scroll To Text    Garden, Pool & Patio
-    Scroll To Text    Groceries
-    Scroll To Text    Health & Hygiene
-    Scroll To Text    Home & Appliances
-    Scroll To Text    Household Cleaning
-    Scroll To Text    Kitchen
-    Scroll To Text    Liquor
-    Scroll To Text    Luggage & Travel
-    Scroll To Text    Movies
-    Scroll To Text    Music
-    Scroll To Text    Musical Instruments
-    Scroll To Text    Networking
-    Scroll To Text    Office
-    Scroll To Text    Pets
-    Scroll To Text    Photography 
-    Scroll To Text    Sport & Training
-    Scroll To Text    Stationery
-    Scroll To Text    Toiletries
-    Scroll To Text    Toys & Games
-    Scroll To Text    TV, Audio & Video
-    Scroll To Text    Wearable Tech
+    @{departmentCatList}=    Get Department Categories List API
+    FOR    ${departmentCat}    IN    @{departmentCatList}
+        Scroll To Text    ${departmentCat}
+    END
     Close Application
     Start Application
     Clear Environment
@@ -465,7 +246,7 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     Close Application
     Start Application
     Click Home
-    Scroll To Text    Recently Viewed    loopTimes=20
+    Scroll To Text    Recently Viewed    loopTimes=30
     Click Home Icon Wish List
     Verify Text On Screen    Item added to Wish List
     [Teardown]    Tear Down

@@ -175,9 +175,9 @@ Click Home Icon
     [Arguments]    ${iconText}
 
     IF    '${PLATFORM_NAME}' == 'ios'
-        ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${iconText}'`]
+        ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${iconText}"`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'
-        ${txtProduct}=    Set Variable    xpath=//*[contains(@text, '${iconText}')]
+        ${txtProduct}=    Set Variable    xpath=//*[contains(@text, "${iconText}")]
     END
     Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
     Click Element    ${txtProduct}
