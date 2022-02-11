@@ -1085,14 +1085,13 @@ Apps > Order Tracking > Delivery Order > QASA-80
     [Setup]    Start Application
     Clear Environment
     ${completedOrderProductId}=    Search And Return Product Id API    sunlight
-    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
-
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    false
     Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
     Click Menu My Account
     Click Menu Orders
-    Click Order By Index    1
+    Click Awaiting Order By Index    1
     Verify Text On Screen    ORDER SUMMARY    ${MIN_TIMEOUT}
     Verify Text On Screen    1 Item
     Verify Text On Screen    Delivery
@@ -1100,21 +1099,6 @@ Apps > Order Tracking > Delivery Order > QASA-80
     Verify Text On Screen    Credit Card
     Verify Text On Screen    DELIVERY METHOD
     Verify Text On Screen    Standard
-    Scroll To Text    SHIPPING ADDRESS
-    Verify Text On Screen    Nkhabi
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Swipe Up    ${windowScroll}
-    Verify Text On Screen    5 Templar Street
-    Verify Text On Screen    Camelot
-    Verify Text On Screen    Cape Town
-    Verify Text On Screen    7580
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Back Screen
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Back Screen
-    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    Back
-    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Back iOS    My Account
-    ${awaitingOrderProductId}=    Search And Return Product Id API    sunlight
-    Create New Order API    ${awaitingOrderProductId}    1    PayFast    COURIER    false
-    Click Menu Orders
-    Click Awaiting Order By Index    1
     Click Pay Now Button
     Click Change Payment Method Only
     Click Card Payment Method
