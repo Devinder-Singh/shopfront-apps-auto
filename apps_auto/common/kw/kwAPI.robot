@@ -47,7 +47,8 @@ ${apiRetryInterval}    1s
 Generic Post
     [Documentation]    Performs a generic HTTP POST call to a given endpoint. This method is a wrapper for the default HTTP REST library.
     [Arguments]    ${endPoint}    ${jsonBody}=${None}    ${HttpStatusAssertion}=200
-    POST    ${endPoint}    ${jsonBody}
+    @{response}=    POST    ${endPoint}    ${jsonBody}
+    Log Many    @{response}
     Integer    response status    ${HttpStatusAssertion}
 
 Generic Get
