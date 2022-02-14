@@ -22,9 +22,9 @@ Apps > Register & Login - QASA-498
     Verify Text On Screen    Please enter your email address    ${MIN_TIMEOUT}
     Verify Text On Screen    Please enter your password    ${MIN_TIMEOUT}
     Login Takealot    ${new_email_address}    t@ke@!ot1234
-    #Click Home
-    #Click Menu
-    #Click Menu Logout
+    Click Home
+    Click Menu
+    Click Menu Logout
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Daily Deals - QASA-476 - QASA-306
