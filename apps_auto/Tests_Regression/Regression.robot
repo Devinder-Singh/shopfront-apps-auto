@@ -22,9 +22,9 @@ Apps > Register & Login - QASA-498
     Verify Text On Screen    Please enter your email address    ${MIN_TIMEOUT}
     Verify Text On Screen    Please enter your password    ${MIN_TIMEOUT}
     Login Takealot    ${new_email_address}    t@ke@!ot1234
-    Click Home
-    Click Menu
-    Click Menu Logout
+    #Click Home
+    #Click Menu
+    #Click Menu Logout
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Daily Deals - QASA-476 - QASA-306
@@ -99,7 +99,6 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     [Tags]    QASA-260    QASA-306
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -164,7 +163,6 @@ Apps > Promotions (Android) Unboxed & Other Offers - QASA-253 - QASA-306
     [Tags]    QASA-253    QASA-306
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -482,7 +480,6 @@ Apps > Verify Home Screen - QASA-173
     [Tags]    QASA-173
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -517,7 +514,6 @@ Apps > PLP - QASA-473
     [Tags]    QASA-473
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
@@ -745,7 +741,6 @@ Apps > PDP - QASA-519
     [Tags]    QASA-519
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -779,7 +774,6 @@ Apps > PDP - QASA-170
     [Tags]    QASA-170
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -870,7 +864,6 @@ Apps > PDP - QASA-167
     [Tags]    QASA-167
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1131,7 +1124,6 @@ Apps > My Account Verifications - QASA-477
     [Tags]    QASA-477
     [Setup]    Start Application    ${False}
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
@@ -1235,7 +1227,6 @@ Apps > Order Tracking (Collect) - QASA-547
     [Tags]    QASA-547
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -1292,7 +1283,6 @@ Apps > Order Tracking 05 - QASA-79
     [Tags]    QASA-79
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -1347,7 +1337,6 @@ Apps > Cart (Android) > QASA-524 - QASA-81
     [Tags]    QASA-524    QASA-81
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1365,7 +1354,6 @@ Apps > Cart (Android) 02 - QASA-84
     [Tags]    QASA-84
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -1398,7 +1386,6 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     [Tags]    QASA-83    QASA-82
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1441,7 +1428,6 @@ Cart Update & Cart Notification - TV - QASA-248
     [Tags]    QASA-248
     [Setup]    Start Application    ${False}
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1519,7 +1505,6 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     [Tags]    QASA-247
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1578,7 +1563,6 @@ Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
     [Tags]    QASA-874
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1644,7 +1628,6 @@ Returns > Non-Variant item - QASA-865
     ${completedOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
     Update Order Delivery DB    ${query_order_id}
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
