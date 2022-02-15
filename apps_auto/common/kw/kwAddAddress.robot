@@ -40,7 +40,7 @@ Add Delivery Address
     Clear Text    ${txtRecipientName}
     Input Text    ${txtRecipientName}    ${name}
     Input Text    ${txtRecipientMobile}    ${mobile}
-    
+
 
     IF    '${PLATFORM_NAME}' == 'android'
         Click Element    ${txtRecipientStreet}
@@ -289,6 +289,24 @@ Edit Delivery Address Suburb My Acc
     Wait Until Element Is Visible    ${lblAddresMyAccSuburb}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
 
+Edit Delivery Address Confirm
+    Wait Until Element Is Visible    ${lblAddresOptionMyAccGauteng}    ${MIN_TIMEOUT}
+    Click Element    ${lblAddresOptionMyAccGauteng}
+
+Click Delivery Address Suburb
+    [Arguments]    ${suburb}=Western Cape
+
+    ${txtProduct}=    Set Variable    ${None}
+
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${txtProduct}=    Set Variable    xpath=//*[@text='${suburb}']
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${txtProduct}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == '${suburb}'`]
+    END
+
+    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
+    Click Element    ${txtProduct}
+
 Edit Delivery Address My Acc Empty
     Wait Until Element Is Visible    ${txtRecipientMobile}    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
@@ -310,8 +328,8 @@ Edit Delivery Address Confirm Address My Acc
     Click Element    ${lblAddresOptionMyAcc}
 
 Edit Delivery Address Confirm Address My Acc Suburb
-    Wait Until Element Is Visible    ${lblAddresOptionMyAccGauteng}    ${MIN_TIMEOUT}
-    Click Element    ${lblAddresOptionMyAccGauteng}
+    Wait Until Element Is Visible    ${lblAddresOptionMyAcc}    ${MIN_TIMEOUT}
+    Click Element    ${lblAddresOptionMyAcc}
 
 Edit Delivery Address Street
     [Arguments]    ${street}

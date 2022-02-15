@@ -3,6 +3,84 @@ Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
+
+fi.android.takealot.debug:id/context_menu_button
+fi.android.takealot.debug:id/title
+
+	
+It is abusive or harmful
+fi.android.takealot.debug:id/sticky_action_button
+Your report has been submitted
+
+
+Apps > Reviews > Report Abuse (Logged-in user) - QASA-273
+    [Tags]    QASA-273
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+
+    Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
+
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test
+    Click Review Submit
+    Verify Text On Screen    Thank you for your review    ${MIN_TIMEOUT}
+    Click Review Submit OK
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Swipe Down    ${windowScroll}
+    Click PDP Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test
+    Click Review Submit
+    Verify Text On Screen    You've already submitted a review for this product    ${MIN_TIMEOUT}
+    Click Back Android
+    Click Back iOS    ${query_result_CartProduct}
+    Click PDP Show All Reviews
+    Click Review Sort
+    Click Review Sort Most Helpful
+    Click Review Sort
+    Click Review Sort Most Recent
+    Click Review Helpful By Index    index=1
+    Verify Text On Screen    Thank you for your feedback    ${MAX_TIMEOUT}
+    Click Review Filter
+    Click Review Filter Rating
+    Click Review Filter Rating Five
+    Click Review Filter Apply
+    Verify Element On Screen    ${btnReviewFilter}    ${MIN_TIMEOUT}
+    Click Review Icon More
+    Click Review Report
+    Verify Text On Screen    Your report has been submitted    ${MIN_TIMEOUT}
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    jean
+    Click Variant Product from API
+    Click PDP Write Review
+    Verify Element On Screen    ${btnLogin}    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
 Apps > Order Refactor > Order Detail > Collected Order - QASA-352
     [Tags]    QASA-352
     [Setup]    Start Application

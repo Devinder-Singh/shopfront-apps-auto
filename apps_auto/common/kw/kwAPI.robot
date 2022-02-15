@@ -58,7 +58,7 @@ Generic Get
     Integer    response status    ${HttpStatusAssertion}
 
 Clear Environment
-    Run Keyword If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    Get Customer ID
+    Run Keyword If    '${APP_ENVIRONMENT}'!='https://api.takealot.com/'    Get Customer ID
     Clear Cart
     Delete Wishlist
     Clear Wishlist
@@ -73,31 +73,31 @@ Get Customer ID
     ${token_URL}=    Set Variable    http://tal-test-data-service.master.env/login/tokens
     ${token_BODY}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "remember_me": true}
 
-    IF    '${APP_ENVIRONMENT}' == 'http://api.master.env/'
+    IF    '${APP_ENVIRONMENT}' != 'https://api.takealot.com/'
         Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${token_URL}    ${token_BODY}
     END
 
     ${result_ID}=    Output    $.customer_id
 
     ${query_result}=    Set Variable    0
-    ${query_result}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    ${result_ID}
+    ${query_result}=    Set Variable If    '${APP_ENVIRONMENT}'!='https://api.takealot.com/'    ${result_ID}
     Set Global Variable    ${query_customer_id}    ${query_result}
     [return]    ${query_result}
 
 Clear Cart
-    ${cart_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": "${query_customer_id}", "env": "master.env" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "4933518", "env": "takealot.com" }
+    ${cart_Body}=    Set Variable If    '${APP_ENVIRONMENT}'!='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": "${query_customer_id}", "env": "master.env" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id": "4933518", "env": "takealot.com" }
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${cart_URL}    ${cart_Body}
    
 Clear Wishlist
-    ${wishlist_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
+    ${wishlist_Body}=    Set Variable If    '${APP_ENVIRONMENT}'!='https://api.takealot.com/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${wishlist_URL_clear}    ${wishlist_Body}
 
 Delete Wishlist
-    ${wishlist_Del_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
+    ${wishlist_Del_Body}=    Set Variable If    '${APP_ENVIRONMENT}'!='https://api.takealot.com/'    { "namespace": "master", "customer_id":${query_customer_id}, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "namespace": "takealot", "customer_id":4933518, "email": "${G_EMAIL}", "password": "${G_PASSWORD}" }
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${wishlist_Del_URL}    ${wishlist_Del_Body}
 
 Clear Address
-    ${address_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id":${query_customer_id}, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "takealot", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
+    ${address_Body}=    Set Variable If    '${APP_ENVIRONMENT}'!='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id":${query_customer_id}, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }    '${APP_ENVIRONMENT}'=='https://api.takealot.com/'    { "email": "${G_EMAIL}", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "takealot", "add_default_address":true, "addresses": [{"address_type": "residential", "city": "Cape Town", "contact_number": "0820000000", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${address_URL}    ${address_Body}
 
 Clear Address Business

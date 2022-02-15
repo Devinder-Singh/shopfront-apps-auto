@@ -1,5 +1,5 @@
 *** Variables ***
-${PLATFORM_VERSION}    14.4
+${PLATFORM_VERSION}    14.5
 ${UDID}           ${EMPTY}
 ${REMOTE_URL}     http://0.0.0.0:4723/wd/hub
 ${APP_ACTIVITY}    ${EMPTY}

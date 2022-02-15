@@ -3,7 +3,7 @@ ${btnFree}      chain=**/XCUIElementTypeStaticText[`label == "Free"`]
 #${btnFree}      id=Standard Delivery
 ${txtStandardCollect}      id=Standard Collect
 ${txtStandardDelivery}    id=Standard Delivery
-${txtSurchargeDelivery}      chain=**/XCUIElementTypeStaticText[`label == "Standard Delivery + Delivery Surcharge"`]
+${txtSurchargeDelivery}      chain=**/XCUIElementTypeStaticText[`label == "Standard"`]
 
 ${navDeliveryOptBack}      chain=**/XCUIElementTypeNavigationBar[`name == "Delivery Options"`]/XCUIElementTypeButton
 ${navCollectOptBack}      chain=**/XCUIElementTypeNavigationBar[`name == "Collect Options"`]/XCUIElementTypeButton
