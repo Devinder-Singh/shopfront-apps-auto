@@ -104,6 +104,7 @@ Library           TalLibrary
 Library           String
 Library           Collections
 Library           REST
+Library           JSONLibrary
 
 *** Variables ***
 ${PLATFORM_NAME}    ios
