@@ -12,3 +12,6 @@ results
 *.png
 .gitignore
 *.cpython-39.pyc
+build
+dist
+TalLibrary.egg-info
