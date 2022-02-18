@@ -241,7 +241,7 @@ Buy Airtime along with another Item on Collection
 
 Register User
     [Tags]    Production8
-    [Setup]    Clear Environment And Start Application
+    [Setup]    Start Application
     Click Menu
     Click Menu Login
     Close Application
