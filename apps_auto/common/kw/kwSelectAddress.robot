@@ -259,15 +259,27 @@ Select Province Dynamically
 
 Click Edit Button By Index
     [Arguments]    ${index}
-    ${dynamicEditButtonIndexAndroid}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_left_action'])[${index}]
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicEditButtonIndexAndroid}
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicEditButtonIndexAndroid}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicEditButtonIndexAndroid}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_left_action'])[${index}]
+        Wait Until Element Is Visible    ${dynamicEditButtonIndexAndroid}
+        Click Element    ${dynamicEditButtonIndexAndroid}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicEditButtonIndexIos}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "EDIT"`][${index}]
+        Wait Until Element Is Visible    ${dynamicEditButtonIndexIos}
+        Click Element    ${dynamicEditButtonIndexIos}
+    END
 
 Click Delete Address By Index
     [Arguments]    ${index}
-    ${dynamicDeleteButtonIndexAndroid}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_right_action'])[${index}]
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicDeleteButtonIndexAndroid}
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicDeleteButtonIndexAndroid}
-    
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicDeleteButtonIndexAndroid}=    Set Variable    xpath=(//android.widget.Button[@resource-id='${APP_PACKAGE}:id/address_selection_detail_item_address_right_action'])[${index}]
+        Wait Until Element Is Visible    ${dynamicDeleteButtonIndexAndroid}
+        Click Element    ${dynamicDeleteButtonIndexAndroid}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicDeleteButtonIndexIos}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "DELETE"`][${index}]
+        Wait Until Element Is Visible    ${dynamicDeleteButtonIndexIos}
+        Click Element    ${dynamicDeleteButtonIndexIos}
+    END    
     Wait Until Element Is Visible    ${btnConfDeleteAddress}    ${MIN_TIMEOUT}
     Click Element    ${btnConfDeleteAddress}
+    

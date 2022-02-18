@@ -3,7 +3,7 @@ ${btnHome}      chain=**/XCUIElementTypeButton[`label == "Home"`]
 ${btnAddWishlist}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther[3]/XCUIElementTypeButton
 ${btnSearchIcon}      chain=**/XCUIElementTypeButton[`label == "icon search"`]
 
-${btnMoreOptions}      chain=**/XCUIElementTypeButton[`label == "overflowDots"`]
+${btnMoreOptions}      chain=**/XCUIElementTypeButton[`label == "icon overflowDots"`]
 ${btnOptionHome}      ${EMPTY}
 ${btnOptionCategories}      ${EMPTY}
 ${btnOptionDeals}      ${EMPTY}
@@ -27,5 +27,5 @@ ${btnWishListIcon}      chain=**/XCUIElementTypeButton[`label == "My Lists"`]
 
 ${btnHomeWishListIcon}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeButton[1]
 
-${cntHomeDeptIcons}      ${EMPTY}
+${cntHomeDeptIcons}    chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]
 ${imgHomeWishList}      ${EMPTY}

@@ -159,7 +159,8 @@ Verify Text On Screen
     Should Be True    ${chkTextSuccess} == ${True}
 
 Verify Text Not On Screen
-    [Arguments]    ${verifyText}    ${timeout}=5s
+    [Arguments]    ${verifyText}    ${timeout}=5s    ${sleepBeforeAction}=0.5s
+    Sleep    ${sleepBeforeAction}
     ${txtVerify}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
@@ -177,7 +178,7 @@ Verify Product Review
    
 Check Text On Screen Not
     [Arguments]    ${verifyText}
-    Wait Until Page Does Not Contain    ${verifyText}    ${MIN_TIMEOUT} 
+    Wait Until Page Does Not Contain    ${verifyText}    ${MAX_TIMEOUT} 
 
 Verify Element On Screen
     [Arguments]    ${verifyElement}    ${timeout}
@@ -253,9 +254,9 @@ Scroll To Text
     IF    '${PLATFORM_NAME}'== 'android'
         ${element}=    Set Variable    xpath=//*[contains(@text,"${text}")]
     ELSE
-        ${element}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${text}"`]
+        ${element}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${text}"`]
     END
-
+    
     IF    '${scrollSwipeDirection}' == 'Up'
         Scroll To Element   ${element}    ${loopTimes}    ${scrollElement}
     ELSE IF    '${scrollSwipeDirection}' == 'Down'
@@ -266,6 +267,8 @@ Scroll To Text
         Scroll To Element   ${element}    ${loopTimes}    ${scrollElement}    scrollSwipeDirection=Right
     END
     Page Should Contain Element    ${element}
+
+    
 
 Scroll To Element
     [Arguments]    ${element}    ${loopTimes}=30    ${scrollElement}=${windowScroll}    ${scrollSwipeDirection}=Up

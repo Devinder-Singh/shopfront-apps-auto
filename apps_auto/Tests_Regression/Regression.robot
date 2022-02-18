@@ -201,7 +201,7 @@ Verify Home Screen (Logged-In User) > Recently Viewed - QASA-175
     Swipe Up    ${windowScroll}
     Click Clear All Recently Viewed
     Confirm Clear All Recently Viewed
-    Check Text On Screen Not    Recently Viewed
+    Verify Text Not On Screen    Recently Viewed
     [Teardown]    Tear Down
 
 Verify Home Screen > Shop by Dept widget - QASA-882 - QASA-883 - QASA-861
@@ -213,7 +213,7 @@ Verify Home Screen > Shop by Dept widget - QASA-882 - QASA-883 - QASA-861
     ${departCatListSize}=    Get Length    ${departmentCatList}
     
     FOR    ${index}    IN RANGE    0    ${departCatListSize}
-        Scroll To Text    Shop by Department
+        Scroll To Text    Shop by Department    sleepBeforeAction=2s
         Scroll To Text    ${departmentCatList}[${index}]    scrollElement=${cntHomeDeptIcons}    scrollSwipeDirection=Left
         Click Home Icon    ${departmentCatList}[${index}]
         
@@ -792,7 +792,6 @@ Apps > Wishlist (iOS) - QASA-472
     [Tags]    QASA-472
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -937,6 +936,7 @@ Apps > My Account Verifications - QASA-477
     Click Back iOS    My Account
     Click Menu Address Book
     Click Add Delivery Address
+    Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
     Click Back Delivery Android
@@ -1161,7 +1161,8 @@ Apps > Cart (Android) 02 - QASA-84
     Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    2
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Change Cart Quantity Android    2
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Change Cart Quantity Scroll    2
     Click Checkout
     [Teardown]    Tear Down
 

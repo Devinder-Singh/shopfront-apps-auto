@@ -36,6 +36,7 @@ ${items_Body_Delete_any}    {"products":[{"id":94086375}]}
 ${createNewOrderEndpoint}=    http://tal-test-data-service.master.env/create_new_order
 
 ${cmsPagesPrimaryNavigationEndpoint}    ${APP_ENVIRONMENT}rest/v-1-10-0/cms/pages/primary-navigation
+${dailyDealsCatelogueEndpoint}    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,facets,filters,sort_options,product_count,related_searches?qsearch=guns&filter=Available%3Atrue
 
 ${envMaster}    http://api.master.env
 ${envProd}    https://api.takealot.com
@@ -479,8 +480,7 @@ Get Product Review Count Multiple
 
 Get Product Auto to Add To Cart
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?sort=Relevance&department_slug=pool-garden&category_slug=maintenance-and-service-25855
-    Get    ${search_URL}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${search_URL}
 
     @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.is_add_to_cart_available
     @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
@@ -853,7 +853,6 @@ Get Product in JHB only
     [return]    ${searchResult}
 
 Get Product in CPT only
-
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
@@ -1445,3 +1444,11 @@ Get Department Category CMS Widget Title By Slug API
     
     ${deptCatTitle}=    Output    $.page.widgets[0].value.content
     [Return]    ${deptCatTitle}
+
+Get Daily Deals Product Title
+    [Documentation]    This API will return a daily deals product item title.
+                        ...    The default item will be the first item.
+                        ...    You can also by using the index get a specific item from the return list.
+    [Arguments]    ${index}=1
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${dailyDealsCatelogueEndpoint}
+    ${dailDealsItemIndex}=    Output    $

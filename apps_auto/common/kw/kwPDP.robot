@@ -208,7 +208,7 @@ Click Other Offers Add To Cart iOS
 
 Click Other Offers Add To Cart
     Wait Until Element Is Visible    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${btnPDPOtherOfferAddToCart}    10
+    Click Element On Scroll    ${btnPDPOtherOfferAddToCart}    30
 
 Click Other Offer Sellers Add To Cart
     Click Element    ${btnPDPShowAllOffersCart}

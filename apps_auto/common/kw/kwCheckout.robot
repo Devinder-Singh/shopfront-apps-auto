@@ -63,24 +63,16 @@ Wait for Checkout
 
 Click Checkout Delete First Item
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
-
-    IF    '${PLATFORM_NAME}' == 'android'
-        Click Element    ${btnCheckoutEdit}
-        Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
-        Click Element    ${btnCheckoutSelect}    
-    END
-    
+    Click Element    ${btnCheckoutEdit}
+    Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
+    Click Element    ${btnCheckoutSelect}    
     Click Element    ${btnCheckoutDelete}
 
 Click Checkout Move To Wishlist First Item
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
-    
-    IF    '${PLATFORM_NAME}' == 'android'
-        Click Element    ${btnCheckoutEdit}
-        Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
-        Click Element    ${btnCheckoutSelect}
-    END
-    
+    Click Element    ${btnCheckoutEdit}
+    Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
+    Click Element    ${btnCheckoutSelect}
     Click Element    ${btnCheckoutMoveToWishlist}
 
 Click Checkout Move To Wishlist Swipe
@@ -134,6 +126,8 @@ Change Cart Quantity Scroll
         Scroll To Element    ${txtCartQty}
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         ${txtCartQty}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
+         Scroll To Element    chain=**/XCUIElementTypeStaticText[`label == "1"`]    scrollSwipeDirection=Down
+         Scroll To Element    ${txtCartQty}
     END
     Click Element    ${txtCartQty}
 
@@ -148,10 +142,8 @@ Click Checkout Cart Undo
     END
     
 Add To Cart Trending First Item
-    IF    '${PLATFORM_NAME}' == 'android'
-        Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    ${MIN_TIMEOUT}
-        Click Element    ${btnCartTrendingAddToCart}
-    END
+    Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    ${MIN_TIMEOUT}
+    Click Element    ${btnCartTrendingAddToCart}
 
 Swipe Cart Item Left
     [Documentation]    This keyword will swipe a cart item card left partially based on a specified index dynamically.
