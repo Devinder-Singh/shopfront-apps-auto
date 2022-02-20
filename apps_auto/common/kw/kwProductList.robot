@@ -198,7 +198,7 @@ Click Product From Title
     [Arguments]    ${title}
     ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, "${title}")]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${title}"`]
     Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${lblProdTitle}    10
+    Click Element On Scroll    ${lblProdTitle}    20
 
 Click YMAL Product From Title
     [Arguments]    ${title}

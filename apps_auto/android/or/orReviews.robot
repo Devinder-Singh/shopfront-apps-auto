@@ -12,7 +12,7 @@ ${btnReviewFilter}      xpath=//*[@text="FILTER"][1]
 ${lblReviewFilterRating}      xpath=//*[@text="Ratings"]
 ${lblReviewFilterFive}      xpath=//*[contains(@text, "5")]
 ${btnReviewFilterDone}      xpath=//*[@text="Done"]
-${btnReviewFilterApply}      xpath=//*[@text="Apply"]
+${btnReviewFilterApply}      xpath=//*[@text="APPLY"]
 
 ${lblReviewHelpful}      xpath=//*[contains(@text, "Helpful")][2]
 ${lblReviewMore}      xpath=//*[@text="icon more"]

@@ -10,10 +10,6 @@ Apps - Checkout - Delivery Methods - QASA-593
     Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
-    Click Menu
-    Click Menu Login
-    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
-    Click Home
     Click Search Home
     Search Product    Pencil Case
     Click Product from API
@@ -21,7 +17,7 @@ Apps - Checkout - Delivery Methods - QASA-593
     Click Go To Cart
     Click Checkout
     Verify Delivery Text    Courier delivery to your door
-    Verify Delivery Text    70+ Takealot Pickup Points nationwide. Open 6 days a week
+    Verify Delivery Text    80+ Takealot Pickup Points nationwide. Open 7 days a week
     [Teardown]    Tear Down
 
 Apps - Checkout - Delivery Methods - Digital Only - QASA-114
@@ -66,7 +62,7 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
     Click Go To Cart
     Click Checkout
     Verify Delivery Text    Courier delivery to your door
-    Verify Delivery Text    70+ Takealot Pickup Points nationwide. Open 6 days a week
+    Verify Delivery Text    80+ Takealot Pickup Points nationwide. Open 7 days a week
     Click Collect
     Click Pickup Point
     [Teardown]    Tear Down
@@ -226,10 +222,10 @@ Checkout > Delivery Address > Saved Addresses - QASA-616
     Click Go To Cart
     Click Checkout
     Click Delivery
-    Verify Delivery Address Text    You don't have any addresses saved. Please add a Delivery Address
+    Verify Text On Screen    You don't have any addresses saved    ${MIN_TIMEOUT}
+    Verify Text On Screen    Please add a Delivery Address
     Click Add Delivery Address
-    Click Residential
-    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
+    Add Delivery Address    Test    0723456778    13 Caro Road
     Click Any Delivery
     [Teardown]    Tear Down
 
@@ -375,8 +371,7 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QASA
     Click Checkout
     Click Delivery
     Click Add Delivery Address
-    Click Residential
-    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
+    Add Delivery Address    Test    0723456778    13 Caro Road
     Click Any Delivery
     Get Address Coordinates
     [Teardown]    Tear Down
@@ -789,7 +784,7 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
     Click Home
     Click Search Home
     Search Product    zagg slim book
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -868,8 +863,8 @@ Apps > Checkout > Order Review - QASA-590
     Click Home
     Click Search Home
     Search Product    airtime
-    Click Product
-    Click Airtime
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -929,7 +924,7 @@ Apps > Checkout > Payment > Earn eBucks - QASA-605
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -965,7 +960,7 @@ Apps > Checkout > Payment > Gift Msg - QASA-613
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1006,7 +1001,7 @@ Apps > Checkout > Payment > Payment Method Availability - QASA-607
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1116,7 +1111,7 @@ Apps > Checkout > Payment > Donation - QASA-618
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1151,7 +1146,7 @@ Apps > Checkout > Payment > Donation 02 - QASA-95
     Click Home
     Click Search Home
     Search Product    pencil
-    Click Product
+    Click Product from API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
@@ -1696,13 +1691,13 @@ Apps > Checkout > Delivery Options > General Test Case - QASA-601
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    airtime
-    Click First Product from API
-    Click Airtime
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Verify Continue Digital Item Text    Digital Items
+    Verify Continue Digital Item Text    DIGITAL ITEMS
     Verify Continue Digital Item Text    Sent upon payment
     Click Continue Digital Item
     Click Donate No Thanks
@@ -1875,15 +1870,15 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QASA-99
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    Airtime
-    Click Product from API
-    Click Airtime
+    Search Product    airtim
+    Click Variant Product from API
+    Click Product Variant From API
     Click Add To Cart
     Click Go To Cart
     Click Checkout
     Verify Continue Digital Item Text    Delivery via email to
-    Verify Continue Digital Item Text    take2Automation+201905213934@gmail.com
-    Verify Continue Digital Item Text    Digital Items
+    Verify Continue Digital Item Text    ${G_EMAIL}
+    Verify Continue Digital Item Text    DIGITAL ITEMS
     Verify Continue Digital Item Text    Sent upon payment
     [Teardown]    Tear Down
 

@@ -73,9 +73,6 @@ Verify Payment Options Text No Wait
         Wait Until Page Contains    ${verifyText}    ${MIN_TIMEOUT}
     END
 
-Verify Payfast Payment
-    Wait Until Element Is Visible    ${lblSecurePaymentPayFast}    ${MIN_TIMEOUT}
-
 Verify COD Payment Info
     Wait Until Element Is Visible    ${lblCODInfo}    ${MIN_TIMEOUT}
 

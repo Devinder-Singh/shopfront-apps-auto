@@ -1292,7 +1292,7 @@ Get Filter Product to Add To Cart
         ${objVariant}=    Get From Dictionary    ${result}    has_variants
         ${objTitle}=    Get From Dictionary    ${result}    title
 
-        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${objTitle}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text="${objTitle}"]
+        ${searchResult}=    Set Variable If    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label == '${objTitle}'`]    '${PLATFORM_NAME}'=='android'    xpath=//*[@text='${objTitle}']
         Set Global Variable    ${query_result_CartFilterProduct}    ${objTitle}
         Exit For Loop If    '${objVariant}'=='False' and ${index} > 0
 
@@ -1382,11 +1382,11 @@ Get CMS Widget Products Attributes
 Get Department Categories CMS Widget List API
     [Documentation]    This API will return a list of department category widget names that belong to CMS pages which are present on the UI.
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${cmsPagesPrimaryNavigationEndpoint}
-    
+
     #Get all widgets from json array, load into robot array and determine array size to be used in loop.
     ${cmsPagesWidgetJsonArray}=    Output    $.page.widgets[*]
     ${cmsPagesWidgetJsonArraySize}=    Get Length    ${cmsPagesWidgetJsonArray}
-    
+
     #Loop through each json array object and check if the action type is 'page'. If true then get the title and append to array. 
     @{departmentCategoryCmsWidgetNameList}    Set Variable    ${None}
     FOR    ${index}    IN RANGE   ${cmsPagesWidgetJsonArraySize}

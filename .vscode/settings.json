@@ -10,6 +10,6 @@
     "robot.codeFormatter": "robotidy",
     "robot.lint.robocop.enabled": true,
     "robot.variables": {
-        "PLATFORM_NAME":"ios",
+        "PLATFORM_NAME":"android",
     }
 }

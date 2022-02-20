@@ -137,10 +137,10 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    ${MAX_TIMEOUT}
-    Verify Text On Screen    ADD    ${MIN_TIMEOUT}
-    Verify Text On Screen    TO QUALIFY    ${MIN_TIMEOUT}
-    Verify Text On Screen    Add    ${MIN_TIMEOUT}
-    Verify Text On Screen    to qualify    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ADD
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    TO QUALIFY
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Add
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    to qualify
     Close Application
     Start Application
     Click Home
@@ -228,7 +228,7 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     [Setup]    Start Application
     Click Menu
     Click Menu Shop By Department
-    Verify Text On Screen    Daily Deals    ${MAX_TIMEOUT}
+    Verify Text On Screen    Deals & Promotions    ${MAX_TIMEOUT}
     @{departmentCatList}=    Get Department Categories List API
     FOR    ${departmentCat}    IN    @{departmentCatList}
         Scroll To Text    ${departmentCat}
@@ -462,6 +462,7 @@ Apps > PLP > Mulit-Filter - QASA-265
 Apps > PLP > Overflow Menus - QASA-264
     [Tags]    QASA-264
     [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -550,7 +551,6 @@ Apps > PDP - QASA-519
     #Verify Text On Screen    % OFF    2s
     Verify Text On Screen    ${query_result_adProductStatus}    ${MIN_TIMEOUT}
     Verify Text On Screen    ${query_result_adProductPrice}    ${MIN_TIMEOUT}
-    Verify Text On Screen    ${query_result_adProductBrand}    ${MIN_TIMEOUT}
     Click Product From Title    ${query_result_adProductTitle}
     Scroll To Text    Related Products
     Verify Text On Screen    Sponsored    ${MIN_TIMEOUT}
