@@ -12,14 +12,6 @@ results
 *.png
 .gitignore
 *.cpython-39.pyc
-.vscode/launch.json
-.vscode/settings.json
-apps_auto/android/config/testConfig.robot
-apps_auto/android/config/testData.robot
-apps_auto/iOS/config/testConfig.robot
-apps_auto/iOS/config/testData.robot
-Common/config/defaultConfig.robot
-Common/config/testData.robot
-Tests_Critical/CriticalFlows01.robot
-launch.json
-settings.json
+build
+dist
+TalLibrary.egg-info

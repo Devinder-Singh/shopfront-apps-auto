@@ -20,6 +20,12 @@ This repo serves primarily to automate the ui for Shopfront Apps on android and 
 
 Apps automation setup wiki: https://jira.takealot.com/wiki/display/TST/Apps+Automation+Setup+Robot+Framework+and+Appium
 
+### TalLibrary and required packages install/update
+- run from vscode terminal with shopfront-apps-auto as root folder
+pip3 install -r requirements.txt
+python3 ./setup.py install
+python3 ./setup.py develop
+
 
 ### Send Stats to Graphite
 
