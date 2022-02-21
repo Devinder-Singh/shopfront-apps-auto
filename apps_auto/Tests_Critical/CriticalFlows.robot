@@ -107,7 +107,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Menu
     Click Menu Shop By Department
     Click Menu Sport and Fitness
-    Click Product Department
+    Click Product Department    2
     Click Add To Wishlist
     Click Wishlist    ${True}
     Click Wishlist Add To Cart    ${False}
