@@ -29,3 +29,5 @@ ${btnHomeWishListIcon}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListItemAdd
 
 ${cntHomeDeptIcons}      id=${APP_PACKAGE}:id/shopByDepartmentContainer
 ${imgHomeWishList}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListItemAddToList
+
+${btnHomeAdClose}      ${EMPTY}

@@ -4,8 +4,10 @@ Library    DateTime
 
 *** Keywords ***
 Click Menu
+    Click Home Screen Close Ad
+
     IF    '${PLATFORM_NAME}'=='ios'
-        Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
+        Verify Element On Screen    ${btnMenu}    ${MIN_TIMEOUT}
         Click Element    ${btnMenu}
     END
     IF    '${PLATFORM_NAME}'=='android'
@@ -36,8 +38,8 @@ Click Menu Login
 
 Log In If Not Logged In
     [Arguments]    ${email}    ${password}
-    Verify Element On Screen    ${btnMenu}    ${MIN_TIMEOUT}
-    Click Element    ${btnMenu}
+
+    Click Menu
     ${chkVisible}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    ${MIN_TIMEOUT}
     IF   ${chkVisible} == ${False}
         Click Element    ${btnMenuLogin}

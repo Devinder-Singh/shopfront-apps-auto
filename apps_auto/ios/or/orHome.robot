@@ -29,3 +29,5 @@ ${btnHomeWishListIcon}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOth
 
 ${cntHomeDeptIcons}      ${EMPTY}
 ${imgHomeWishList}      ${EMPTY}
+
+${btnHomeAdClose}      id=Close

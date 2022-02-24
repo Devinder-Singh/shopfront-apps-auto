@@ -118,6 +118,14 @@ Click Review Submit
     Wait Until Element Is Visible    ${btnReviewSubmit}    ${MIN_TIMEOUT}
     Click Element    ${btnReviewSubmit}
 
+Click Write Product Review
+    Wait Until Element Is Visible    ${btnWriteProdReview}    ${MIN_TIMEOUT}
+    Click Element    ${btnWriteProdReview}
+
+Click Understand Write Review
+    Wait Until Element Is Visible    ${btnReviewUnderstand}    ${MIN_TIMEOUT}
+    Click Element    ${btnReviewUnderstand}
+
 Click Review Submit OK
     Wait Until Element Is Visible    ${txtPDPReviewOK}    ${MIN_TIMEOUT}
     Click Element    ${txtPDPReviewOK}

@@ -184,3 +184,51 @@ Apps > Reviews > Write A Review (Legacy) - QASA-142
     Click Review Submit
     Verify Text On Screen    Thank you for your review    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
+
+Apps > Reviews > Report Abuse (Logged-in user) - QASA-273
+    [Tags]    QASA-273
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click PDP Write Review
+    Click Write Product Review
+    Click Understand Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test Auto Test Auto Test
+    Click Review Submit
+    Verify Text On Screen    Awaiting Approval    ${MIN_TIMEOUT}
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order Delivery
+    Click Order Item By Title
+    Click PDP Write Review
+    Verify Element Not On Screen    ${btnWriteProdReview}
+    [Teardown]    Tear Down
+
+Apps > Reviews > PDP > Product Description - QASA-14
+    [Tags]    QASA-14
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click PDP Write Review
+    Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
+    Verify Text On Screen    You are only able to review products purchased from Takealot.com    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down

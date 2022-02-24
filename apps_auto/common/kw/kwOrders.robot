@@ -97,6 +97,10 @@ Click Order Delivery
     Wait Until Element Is Visible    ${txtOrdersDelivery}    ${MIN_TIMEOUT}
     Click Element    ${txtOrdersDelivery}
 
+Click Order Item By Title
+    Wait Until Element Is Visible    ${btnOrdersItemTitle}    ${MIN_TIMEOUT}
+    Click Element    ${btnOrdersItemTitle}
+
 Verify Order Status By Index
     [Documentation]    This keyword will verify an order status based on its index.
     [Arguments]        ${statusText}    ${orderIndex}

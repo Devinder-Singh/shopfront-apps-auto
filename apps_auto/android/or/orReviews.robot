@@ -1,8 +1,10 @@
 *** Variables ***
-${txtReviewMsg}      id=${APP_PACKAGE}:id/validation_input_text_input_edit_text
-${btnReviewSubmit}      id=${APP_PACKAGE}:id/pdp_write_a_review_submit_button
+${txtReviewMsg}      xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[3]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText
+${btnReviewSubmit}      id=${APP_PACKAGE}:id/sticky_action_button
 
-${btnReviewStarRating}      id=${APP_PACKAGE}:id/pdp_widget_touchable_star_4
+${btnReviewUnderstand}      xpath=//*[@text="I UNDERSTAND"]
+${btnReviewStarRating}      id=${APP_PACKAGE}:id/touchable_star_4
+${btnWriteProdReview}      xpath=(//android.widget.ImageView[@resource-id="${APP_PACKAGE}:id/product_reviews_item_action_button"])[1]
 
 ${btnReviewSort}      id=${APP_PACKAGE}:id/sort_button
 ${lblReviewSortHelpful}      xpath=//*[@text="Most Helpful"]
