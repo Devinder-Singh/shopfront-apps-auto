@@ -34,7 +34,7 @@ Swipe Up
     ${start_y}=         Evaluate      ${element_location['y']} + (${element_size['height']} * 0.7)
     ${end_x}=           Evaluate      ${element_location['x']} + (${element_size['width']} * 0.5)
     ${end_y}=           Evaluate      ${element_location['y']} + (${element_size['height']} * 0.3)
-    Swipe               ${start_x}    ${start_y}  ${end_x}  ${end_y}  800
+    Swipe               ${start_x}  ${start_y}  ${end_x}  ${end_y}  800
 
 Swipe Right
     [Arguments]       ${locator}

@@ -4,7 +4,7 @@ ${imgProductDealsDept}  xpath=//androidx.recyclerview.widget.RecyclerView/androi
 
 ${lblProduct}     android=new UiSelector().textContains("$productText")
 
-${btnProductAppOnlyDeals}      accessibility_id=App Only Deals
+${btnProductAppOnlyDeals}      accessibility_id=Fire Sale Tech Deals
 ${btnProductWineClubDeals}      accessibility_id=Wine Club
 ${btnProductFilter}      xpath=//*[contains(@text, "FILTER")]
 ${btnProductSearchFilter}      xpath=//*[contains(@text, "FILTER")]

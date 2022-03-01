@@ -20,7 +20,7 @@ Apps > Register & Login - QASA-498
     Click Menu Login
     Login Takealot Only    ${EMPTY}    ${EMPTY}
     Verify Text On Screen    Please enter your email address    ${MIN_TIMEOUT}
-    Verify Text On Screen    Please enter your password    ${MIN_TIMEOUT}
+    Verify Text On Screen    Please enter your password
     Login Takealot    ${new_email_address}    t@ke@!ot1234
     Click Home
     Click Menu

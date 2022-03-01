@@ -2,9 +2,9 @@
 ${btnMenu}        id=${APP_PACKAGE}:id/app_root_account
 ${btnMenuLogin}    id=${APP_PACKAGE}:id/accountLogin
 ${btnLogout}      id=${APP_PACKAGE}:id/accountLogout
-${btnMenuRegister}    id=${APP_PACKAGE}:id/accountRegisterToolTip2
+${btnMenuRegister}    xpath=//*[@text="REGISTER"]
 
-${btnMenuDailyDeals}    xpath=//*[@text="Daily Deals"]
+${btnMenuDailyDeals}    xpath=//*[@text="Blue Dot Sale"]
 ${mnuShopByDepartment}    id=${APP_PACKAGE}:id/dept_menu_item
 ${mnuSportFitness}    xpath=//*[@text="Auto"]
 ${mnuMyAccount}    id=${APP_PACKAGE}:id/your_account_menu_item

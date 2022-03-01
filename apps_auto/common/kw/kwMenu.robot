@@ -29,19 +29,23 @@ Click Menu Login
     END
     ${chkLoginElement}=    Run Keyword And Return Status    Page Should Contain Element    ${btnMenuLogin}
     IF    ${chkLoginElement}==${False}
+        Wait Until Element Is Visible    ${btnLogout}
         Click Element    ${btnLogout}
     END
     IF    '${PLATFORM_NAME}'=='ios' and ${chkLoginElement}==${False}
         Click Element    ${btnMenu}
     END
+    Wait Until Element Is Visible    ${btnMenuLogin}
     Click Element    ${btnMenuLogin}
 
 Log In If Not Logged In
     [Arguments]    ${email}    ${password}
 
     Click Menu
+    Click Menu Login
     ${chkVisible}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    ${MIN_TIMEOUT}
     IF   ${chkVisible} == ${False}
+        Wait Until Element Is Visible    ${btnMenuLogin}
         Click Element    ${btnMenuLogin}
         Login Takealot    ${email}    ${password}
         Click Element    ${btnMenu}
@@ -67,6 +71,7 @@ Click Menu Register
         Swipe Up    ${windowScroll}
     END
 
+    Wait Until Element Is Visible    ${btnMenuRegister}    ${MIN_TIMEOUT}
     Click Element    ${btnMenuRegister}
 
 Click Menu Register Android
@@ -106,8 +111,10 @@ Click Menu Logout If Logged In
 
 Click Menu Daily Deals
     IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${btnMenuCategories}    ${MIN_TIMEOUT}
         Click Element    ${btnMenuCategories}
     END
+    Wait Until Element Is Visible    ${btnMenuDailyDeals}    ${MIN_TIMEOUT}
     Click Element    ${btnMenuDailyDeals}
 
 Click Menu Shop By Department

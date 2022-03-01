@@ -44,10 +44,10 @@ Click Login Register
 Verify Register Takealot Blank
     IF    '${PLATFORM_NAME}' == 'android'
         Verify Text On Screen    Please enter your first name    ${MIN_TIMEOUT}
-        Verify Text On Screen    Please enter your surname    ${MIN_TIMEOUT}
-        Verify Text On Screen    Please enter your email address    ${MIN_TIMEOUT}
-        Verify Text On Screen    Please enter your password    ${MIN_TIMEOUT}
-        Verify Text On Screen    Please confirm your password    ${MIN_TIMEOUT}
+        Verify Text On Screen    Please enter your surname
+        Verify Text On Screen    Please enter your email address
+        Verify Text On Screen    Please enter your password
+        Verify Text On Screen    Please confirm your password
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
         Verify Text On Screen    Please provide your first name    ${MIN_TIMEOUT}
         Verify Text On Screen    Please provide your last name    ${MIN_TIMEOUT}
