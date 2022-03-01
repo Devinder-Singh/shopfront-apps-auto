@@ -3,22 +3,6 @@ Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
-Apps > Reviews > Read Reviews > Reviews Submitted by Customers - QASA-284
-    [Tags]    QASA-284
-    [Setup]    Start Application
-    Click Menu
-    Click Menu Login
-    Close Application
-    Start Application    ${False}
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Product from API
-    Click PDP Write Review
-    Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
-    Verify Text On Screen    You are only able to review products purchased from Takealot.com    ${MIN_TIMEOUT}
-    [Teardown]    Tear Down
-
 Apps > Order Refactor > Order Detail > Collected Order - QASA-352
     [Tags]    QASA-352
     [Setup]    Start Application

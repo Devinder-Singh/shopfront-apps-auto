@@ -195,6 +195,8 @@ Apps > Reviews > Report Abuse (Logged-in user) - QASA-273
     Click Menu
     Click Menu Register
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    ${completedOrderProductId}=    Search And Return Product Id API    pencil
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
     Click Home
     Click Search Home
     Search Product    pencil
@@ -231,4 +233,21 @@ Apps > Reviews > PDP > Product Description - QASA-14
     Click PDP Write Review
     Login Takealot Only    ${G_EMAIL}    t@ke@!ot1234
     Verify Text On Screen    You are only able to review products purchased from Takealot.com    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Reviews > Read Reviews > Reviews Submitted by Customers - QASA-284
+    [Tags]    QASA-284
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click PDP Show All Reviews
+    Verify Text On Screen    Helpful    ${MAX_TIMEOUT}
+    Verify Text On Screen    Reviewed
+    Verify Text On Screen    after purchase
+    Verify Element On Screen    ${btnReviewsStarRating}
+    Verify Element On Screen    ${btnReviewsMsg}
     [Teardown]    Tear Down

@@ -181,7 +181,7 @@ Checkout - Collect - White Goods - QASA-580
 
 Checkout - Age Verification - QASA-576
     [Tags]    QASA-576
-    [Setup]    Start Application
+    [Setup]    Start Application    ${False}
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
@@ -511,7 +511,7 @@ Checkout - Delivery Address - Street Suggestion - QASA-582
 
 Checkout - Delivery Address - Pin on Map - QASA-570
     [Tags]    QASA-570
-    [Setup]    Start Application
+    [Setup]    Start Application    ${False}
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
@@ -862,7 +862,7 @@ Apps > Checkout > Order Review - QASA-590
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    airtime
+    Search Product    airtim
     Click Variant Product from API
     Click Product Variant From API
     Click Add To Cart
@@ -875,7 +875,7 @@ Apps > Checkout > Order Review - QASA-590
     Click Payment Show Details
     Verify Payment Details Text    Sent upon payment
     Verify Payment Details Text    DIGITAL ITEMS
-    Verify Payment Details Text    Delivery via email to take2Automation+201905211152@gmail.com
+    Verify Payment Details Text    Delivery via email to
     Verify Payment Details Text    Vodacom Mobile Airtime Voucher - R10
     Verify Payment Details Text    Qty: 1
     Click Payment Cancel

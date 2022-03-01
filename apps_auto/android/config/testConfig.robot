@@ -1,5 +1,5 @@
 *** Variables ***
-${PLATFORM_VERSION}    11.0
+${PLATFORM_VERSION}    12.0
 ${UDID}           emulator-5554
 ${REMOTE_URL}     http://0.0.0.0:4723/wd/hub
 ${APP_ACTIVITY}    fi.android.takealot.clean.presentation.splash.ViewSplashScreenActivity

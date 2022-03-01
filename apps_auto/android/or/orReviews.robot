@@ -43,3 +43,6 @@ ${btnReviewsMenuButton}    xpath=//androidx.recyclerview.widget.RecyclerView[con
 ${btnReviewsReportReviewButton}    id=${APP_PACKAGE}:id/title
 ${btnReviewsReportReviewText}    id=${APP_PACKAGE}:id/review_reported_success_message
 ${btnReviewsReportReviewDialogButton}    id=android:id/button1
+
+${btnReviewsStarRating}    id=${APP_PACKAGE}:id/pdp_widget_review_star_item_star_main
+${btnReviewsMsg}    id=${APP_PACKAGE}:id/review_message

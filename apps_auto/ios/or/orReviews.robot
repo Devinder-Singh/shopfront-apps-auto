@@ -44,3 +44,6 @@ ${btnReviewsMenuButton}    xpath=(//XCUIElementTypeButton[@name="icon more"])[1]
 ${btnReviewsReportReviewButton}   id=Report Review
 ${btnReviewsReportReviewText}    ${EMPTY}
 ${btnReviewsReportReviewDialogButton}    ${EMPTY}
+
+${btnReviewsStarRating}    chain=**/XCUIElementTypeButton[`label == "icon ratingStar1"`]
+${btnReviewsMsg}    chain**/XCUIElementTypeCell[`name == "btnPDPUserReviews"`]

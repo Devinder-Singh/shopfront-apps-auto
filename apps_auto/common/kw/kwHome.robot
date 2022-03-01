@@ -71,14 +71,15 @@ Click Search Icon
     ${btnPresentSearchHistory}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnSearchClearAll}    ${MIN_TIMEOUT}
     IF    ${btnPresentSearchHistory} == ${True}
         Click Element    ${btnSearchClearAll}
-    END    
+    END
 
 Click Home Screen Close Ad
 
-    ${btnAdClose}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnHomeAdClose}    ${MIN_TIMEOUT}
-    IF    ${btnAdClose} == ${True}
-        Click Element    ${btnHomeAdClose}
-    END
+    ${btnAdClose}=    Set Variable    ${False}
+#    ${btnAdClose}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${btnHomeAdClose}    ${MIN_TIMEOUT}
+#    IF    ${btnAdClose} == ${True}
+#        Click Element    ${btnHomeAdClose}
+#    END
 
 Click View All Daily Deals
     Wait Until Element Is Visible    ${btnHomeViewAllDailyDeals}    ${MIN_TIMEOUT}
