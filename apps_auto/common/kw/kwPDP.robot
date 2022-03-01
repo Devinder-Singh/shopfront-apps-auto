@@ -36,6 +36,7 @@ Click Close Ad
 
 Click Add To Cart
     [Arguments]    ${seconds}=0s
+    Wait Until Element Is Visible    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Element    ${btnAddToCart}
 
 Click Wishlist Change

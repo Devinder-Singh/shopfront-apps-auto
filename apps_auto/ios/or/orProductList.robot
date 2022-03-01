@@ -1,6 +1,6 @@
 *** Variables ***
 ${imgProductDeals}    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]/XCUIElementTypeOther
-${imgProductDealsDept}    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell[3]
+${imgProductDealsDept}    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell
 
 ${lblProduct}     id=$productText
 

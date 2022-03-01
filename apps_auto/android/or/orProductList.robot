@@ -1,6 +1,6 @@
 *** Variables ***
 ${imgProductDeals}      id=${APP_PACKAGE}:id/productListingImage
-${imgProductDealsDept}    id=${APP_PACKAGE}:id/productListingTitle
+${imgProductDealsDept}  xpath=//androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout
 
 ${lblProduct}     android=new UiSelector().textContains("$productText")
 

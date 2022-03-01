@@ -6,9 +6,9 @@ Verify Card Payment
     Set Implicitly Wait    1
     ${success}=    Set Variable    ${False}
     FOR    ${counter}    IN RANGE    1    60
-        ${success}=    Run Keyword And Return Status    Page Should Contain Element    ${lblCardNumber}    1s
+        ${success}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${lblCardNumber}    1s
         IF    ${success} == ${False}
-            ${success}=    Run Keyword And Return Status    Page Should Contain Element    ${txtCardNumberPAYU}    1s
+            ${success}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txtCardNumberPAYU}    1s
         ELSE
             Exit For Loop
         END
