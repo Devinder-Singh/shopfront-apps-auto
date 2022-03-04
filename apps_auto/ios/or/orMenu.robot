@@ -4,7 +4,7 @@ ${btnMenuLogin}    chain=**/XCUIElementTypeStaticText[`label == "Login"`]
 ${btnLogout}      chain=**/XCUIElementTypeStaticText[`label == "Sign out"`]
 ${btnMenuRegister}    chain=**/XCUIElementTypeButton[`label == "Register"`]
 
-${btnMenuDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Fire Sale"`][1]
+${btnMenuDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Daily Deals"`][1]
 ${mnuShopByDepartment}      chain=**/XCUIElementTypeStaticText[`label == "Shop by Department"`]
 ${mnuSportFitness}      chain=**/XCUIElementTypeStaticText[`label == "Auto"`]
 ${mnuMyAccount}      chain=**/XCUIElementTypeButton[`label CONTAINS "My Account"`]

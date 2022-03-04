@@ -177,7 +177,7 @@ Apps > Verify Home Screen - QASA-478
     [Tags]    QASA-478
     [Setup]    Start Application
     Click Home
-    Verify Text On Screen    Blue Dot Sale    ${MIN_TIMEOUT}
+    Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
     Click Home Icon Daily Deals
     Click Daily Deals Product from API
     [Teardown]    Tear Down
