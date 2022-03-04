@@ -18,7 +18,7 @@ ${address_Body}    { "email": "take2Automation+201905213934@gmail.com", "passwor
 ${address_Body_Business}    { "email": "take2Automation+201905213934@gmail.com", "password": "t@ke@!ot1234", "customer_id":4933518, "namespace": "master", "add_default_address":true, "addresses": [{"address_type": "business", "city": "Cape Town", "contact_number": "0820000001", "suburb": "Green Point", "street": "12 Ridge Way", "postal_code": "8005", "recipient": "Test", "province": "Western Cape", "latitude":-33.9379687, "longitude":18.5006588, "verification_channel": "DESKTOP"}] }
 
 ${voucher_URL}    http://tal-test-data-service.master.env/execute_query_voucher_service
-${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2021-12-31' and DateUsed is null limit 1" }
+${voucher_Body}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired > '2022-03-31' and DateUsed is null limit 1" }
 ${voucher_Body_Expired}    { "host": "voucher_service", "query": "select VoucherCode, VoucherAmount, DateCreated, DateExpired, DateUsed from vouchers where VoucherAmount > 60 and DateExpired < '2021-11-18' and DateUsed is null limit 1" }
 
 ${wishlist_URL_add}    http://tal-test-data-service.master.env/add_customer_wishlists
@@ -36,6 +36,7 @@ ${items_Body_Delete_any}    {"products":[{"id":94086375}]}
 ${createNewOrderEndpoint}=    http://tal-test-data-service.master.env/create_new_order
 
 ${cmsPagesPrimaryNavigationEndpoint}    ${APP_ENVIRONMENT}rest/v-1-10-0/cms/pages/primary-navigation
+${dailyDealsCatelogueEndpoint}    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,facets,filters,sort_options,product_count,related_searches?qsearch=guns&filter=Available%3Atrue
 
 ${envMaster}    http://api.master.env
 ${envProd}    https://api.takealot.com
@@ -122,30 +123,25 @@ Update Order Delivery DB
     [Arguments]    ${orderId}
 
     ${OrderDel_URL}=    Set Variable    http://admin.master.env/s3cret/admin/pickcreate.php?idOrder=${orderId}
-    Get    ${OrderDel_URL}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${OrderDel_URL}
 
     ${query_OrderDel_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "Update wms2_instructions set idInstructionStatus = 6 where idOrder = ${orderId}" }
-    Post    ${query_URL}    ${query_OrderDel_Body}
-    Integer    response status    200
-
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${query_URL}    ${query_OrderDel_Body}
+    
     ${query_OrderInst_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "select idInstruction From wms2_instructions where idOrder = ${orderId}" }
-    Post    ${query_URL}    ${query_OrderInst_Body}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${query_URL}    ${query_OrderInst_Body}
 
     ${retInstId}=    Output    $[0].idInstruction
     Set Global Variable    ${query_Instruction_id}    ${retInstId}
 
     ${OrderShip_URL}=    Set Variable    http://tal-test-data-service.master.env/pack_and_ship/order/${orderId}/instruction/${retInstId}
-    Get    ${OrderShip_URL}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${OrderShip_URL}
 
     ${date}=      Get Current Date    exclude_millis=True
     ${todayDateFormat}=      Convert Date      ${date}      result_format=%Y-%m-%d
 
     ${query_OrderShip_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "Update orderitems set DateDelivered = ${todayDateFormat} where idOrder = ${orderId}" }
-    Post    ${query_URL}    ${query_OrderShip_Body}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${query_URL}    ${query_OrderShip_Body}
 
 Add To Cart
     [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
@@ -154,10 +150,8 @@ Add To Cart
     Get Customer ID
     Get Tokens
     ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
-    Log To Console    ${Add_cart_Body}
-    Post    ${Add_cart_URL}    ${Add_cart_Body}
-    Integer    response status    200
-
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${Add_cart_URL}    ${Add_cart_Body}
+    
 Add Items To Cart Full
     [Arguments]    ${search}
 
@@ -480,8 +474,7 @@ Get Product Review Count Multiple
 
 Get Product Auto to Add To Cart
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?sort=Relevance&department_slug=pool-garden&category_slug=maintenance-and-service-25855
-    Get    ${search_URL}
-    Integer    response status    200
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${search_URL}
 
     @{results}=    Output    $.sections.products.results[*].product_views.buybox_summary.is_add_to_cart_available
     @{results_title}=    Output    $.sections.products.results[*].product_views.core.title
@@ -854,7 +847,6 @@ Get Product in JHB only
     [return]    ${searchResult}
 
 Get Product in CPT only
-
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}
     Integer    response status    200
@@ -1443,6 +1435,80 @@ Get Department Category CMS Widget Title By Slug API
     [Arguments]    ${departmentCategorySlugName}
     ${getDepartmentCategoryTitleEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/cms/pages/${departmentCategorySlugName}
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${getDepartmentCategoryTitleEndpoint}
-    
+
     ${deptCatTitle}=    Output    $.page.widgets[0].value.content
     [Return]    ${deptCatTitle}
+
+Search Product And Return PLID API
+    [Documentation]    This keyword will call the search API and return a PLID. The default PLID that will be returned will be the first items PLID.
+                        ...    Note that if the 'enableHasMoreColoursFlag' is set then the 'searchResultIndex' will only reference these items when returning.
+    [Arguments]    ${searchTerm}    ${searchResultIndex}=1    ${enableHasMoreColoursFlag}=${False}
+    
+    #Parse search term to this method which calls another API to simulate recommended search results to match UI suggestions to make API search and UI search in sync.
+    #This method will set a global value which will be used in search.
+    Get First Search Option    ${searchTerm}
+
+    ${PLID}=    Set Variable    ${None}
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    endPoint=${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,facets,filters,sort_options,product_count,related_searches?filter=Available%3Atrue&qsearch=${query_result_search}
+
+    IF    '${enableHasMoreCOloursFlag}' == '${True}'
+        #Stage 1 - Load all search results as an array.
+        @{searchResultArray}=    Output    $.sections.products.results[*]
+        ${listSize}=    Get Length    ${searchResultArray}
+        @{hasMoreColoursTrueList}=    Set Variable    ${None}
+        
+        #Stage 2 - Loop through each product in array and determine if the 'has more colours' flag is true. if true then append product PLID to seperate array.
+        FOR    ${index}    IN RANGE    ${listSize}
+            ${hasMoreColoursFlagListItem}=    Output    $.sections.products.results[${index}].product_views.variant_summary.has_more_colours
+            IF    '${hasMoreColoursFlagListItem}' == 'True'
+                ${hasMoreColourPLID}=    Output    $.sections.products.results[${index}].product_views.core.id
+                Append To List    ${hasMoreColoursTrueList}    ${hasMoreColourPLID}
+            END
+        END
+        
+        #Stage 3 - Since we now have a new list with PLID's for products with 'has more colour' enabled we can return the PLID based on the param index.
+        ${PLID}=    Set Variable    ${hasMoreColoursTrueList}[${searchResultIndex}]
+    ELSE
+        ${PLID}=    Output    $.sections.products.results[${searchResultIndex}].product_views.core.id
+    END
+
+    [Return]    PLID${PLID}
+
+Get Product Title By PLID API
+    [Documentation]    Calls the get product details API and returns the product title based on PLID.
+    [Arguments]    ${PLID}
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    endPoint=${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${PLID}
+    ${productTitle}=    Output    $.title
+    [Return]    ${productTitle}
+
+Get Product Variants By PLID API
+    [Documentation]    Calls the get product API and returns a list of the variants based on variant type. An example of a type can be Value (airtime), Colour or Size.
+    [Arguments]    ${PLID}    ${variantType}
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    endPoint=${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${PLID}
+    
+    #First get a list of variant selectors and loop through them until you find the specified type at a specified index.
+    @{variantSelectorTitleArray}=    Output    $.variants.selectors[*]
+    ${variantSelectorTitleArraySize}=    Get Length    ${variantSelectorTitleArray}
+
+    @{variantList}=    Set Variable    ${None}
+    FOR    ${index}    IN RANGE    ${variantSelectorTitleArraySize}
+        ${variantTypeTitle}=    Output    $.variants.selectors[${index}].title
+        ${variantTypeTitle}=    Remove String    ${variantTypeTitle}    "
+        #Once the specified type is detected then derive the list of its relative variants.
+        IF    '${variantTypeTitle}' == '${variantType}'
+            IF    '${variantType}' == 'Size'
+                @{variantList}=    Output    $.variants.selectors[${index}].options[*].value
+                Exit For Loop
+            END
+            IF    '${variantTypeTitle}' == 'Colour'
+                @{variantList}=    Output    $.variants.selectors[${index}].options[*].value.name
+                Exit For Loop
+            END
+            IF    '${variantTypeTitle}' == 'Value'
+                @{variantList}=    Output    $.variants.selectors[${index}].options[*].value
+                Exit For Loop
+            END
+        END
+    END
+    [Return]    ${variantList}
+

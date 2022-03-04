@@ -87,7 +87,7 @@ Apps > Promotions (Android) Other Promo tabs - QASA-255 - QASA-306
     Click Filter Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    5
+    Change Cart Quantity    5
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     Verify Text On Screen    ${query_result_CartFilterProduct}    ${MIN_TIMEOUT}
     Click Item Promotion Text
@@ -153,7 +153,7 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     Click Variant Option By Index    1
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    3
+    Change Cart Quantity    3
     Check Text On Screen Not    Missed promotion
     Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
     Check Text On Screen Not    Add 1 item to qualify
@@ -194,14 +194,14 @@ Verify Home Screen (Logged-In User) > Recently Viewed - QASA-175
     Close Application
     Start Application    ${False}
     Click Home
-    Scroll To Text    Recommended For You
+    Scroll To Text    Recommended for you
     Scroll To Text    Recently Viewed
     Click Clear All Recently Viewed
     Click Cancel Clear All Recently Viewed
     Swipe Up    ${windowScroll}
     Click Clear All Recently Viewed
     Confirm Clear All Recently Viewed
-    Check Text On Screen Not    Recently Viewed
+    Verify Text Not On Screen    Recently Viewed    timeout=10s
     [Teardown]    Tear Down
 
 Verify Home Screen > Shop by Dept widget - QASA-882 - QASA-883 - QASA-861
@@ -263,7 +263,6 @@ Apps > Verify Home Screen - QASA-173
     [Tags]    QASA-173
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -281,6 +280,7 @@ Apps > Verify Home Screen - QASA-173
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This list is empty!    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
+#test needs to be re-worked in future.
 Apps > Search - QASA-475
     [Tags]    QASA-475
     [Setup]    Start Application
@@ -298,7 +298,6 @@ Apps > PLP - QASA-473
     [Tags]    QASA-473
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
@@ -476,7 +475,7 @@ Apps > PLP > Overflow Menus - QASA-264
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Click More Options Menu Android
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click More Options Menu
     Click Options Menu Home
     Click Back iOS    pencil case
     Click Back iOS    Back
@@ -485,17 +484,16 @@ Apps > PLP > Overflow Menus - QASA-264
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Click More Options Menu Android
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click More Options Menu
     Click Options Menu Categories
     Click Back iOS    pencil case
     Click Back iOS    Back
-    Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
     Click Home
     Click Search Home
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Click More Options Menu Android
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click More Options Menu
     Click Options Menu Deals
     Click Back iOS    pencil case
     Click Back iOS    Back
@@ -504,18 +502,18 @@ Apps > PLP > Overflow Menus - QASA-264
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Click More Options Menu Android
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click More Options Menu
     Click Options Menu Lists
     Click Back iOS    pencil case
     Click Back iOS    Back
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Wish List    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    My Lists    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Element On Screen    ${btnWishListIcon}    ${MIN_TIMEOUT}
     Click Home
     Click Search Home
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Click More Options Menu Android
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click More Options Menu
     Click Options Menu Account
     Click Back iOS    pencil case
     Click Back iOS    Back
@@ -526,22 +524,24 @@ Apps > PDP - QASA-519
     [Tags]    QASA-519
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
+    ${PLID}=    Search Product And Return PLID API    pencil case
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
     Search Product    pencil case
-    Click Product from API
+    Click Product From Search Result    ${productTitle}
     Click Add To Cart
     Click Go To Cart
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
-    Click Product Text    ${query_result_CartProduct}
+    Click Product Text    ${productTitle}
     Click Add To Wishlist Only
-    Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
+    Verify Text On Screen    Item added to Wish List    ${MAX_TIMEOUT}
     Close Application
     Start Application
     Click Home
     Click Search Home
+    Start Application
     Search Product    face mask pac
     Get Sponsored Product Detail
     Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
@@ -560,18 +560,20 @@ Apps > PDP - QASA-170
     [Tags]    QASA-170
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
+    ${productPLID}=    Search Product And Return PLID API    Telkom
+    ${productTitle}=    Get Product Title By PLID API    ${productPLID}
+    @{productVariants}=    Get Product Variants By PLID API    ${productPLID}    Value
     Search Product    Telkom
-    Click Variant Product from API
-    Click Product Variant From API
+    Click Product    ${productTitle}
+    Click Variant By Value Dynamically    ${productVariants}[0]
     Click Add To Cart
     Click Go To Cart
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
-    Click Product Text    ${query_result_CartProduct}
-    Click Product Variant From API
+    Click Product Text    ${productTitle}
+    Click Variant By Value Dynamically    ${productVariants}[0]
     Click Add To Wishlist Only
     Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
@@ -581,8 +583,10 @@ Apps > PDP - QASA-169
     [Setup]    Start Application
     Click Home
     Click Search Home
-    Search Product    shirt
-    Click Variant Product from API
+    ${PLID}=    Search Product And Return PLID API    jean for wom    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    Search Product    jean for wom
+    Click Product From Search Result    ${productTitle}
     Verify PDP Screen Element Not Exists    ${btnAddToCart}
     Verify PDP Screen Element Not Exists    ${btnAddWishlist}
     [Teardown]    Tear Down
@@ -599,25 +603,26 @@ Apps > PDP - QASA-168
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
     Click Home
     Click Search Home
-    Search Product    jean
-    Click Variant Product from API
+    ${PLID}=    Search Product And Return PLID API    jean for wom    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
+    Search Product    jean for wom
+    Click Product From Search Result    ${productTitle}
+    Click Variant By Colour Dynamically    ${colourVariants}[0]
+    Click Variant By Size Dynamically    ${SizeVariants}[0]
     Click PDP Write Review
     Click Review Rating
     Enter Review Message    Auto Test
     Click Review Submit
     Verify Text On Screen    Thank you for your review    ${MIN_TIMEOUT}
-    Click Review Submit OK
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
-    Swipe Down    ${windowScroll}
     Click PDP Write Review
     Click Review Rating
     Enter Review Message    Auto Test
     Click Review Submit
     Verify Text On Screen    You've already submitted a review for this product    ${MIN_TIMEOUT}
     Click Back Android
-    Click Back iOS    ${query_result_CartProduct}
+    Click Back iOS    ${productTitle}
     Click PDP Show All Reviews
     Click Review Sort
     Click Review Sort Most Helpful
@@ -641,8 +646,8 @@ Apps > PDP - QASA-168
     Start Application    ${False}
     Click Home
     Click Search Home
-    Search Product    jean
-    Click Variant Product from API
+    Search Product    jean for wome
+    Click Product From Search Result    ${productTitle}
     Click PDP Write Review
     Verify Element On Screen    ${btnLogin}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
@@ -651,14 +656,18 @@ Apps > PDP - QASA-167
     [Tags]    QASA-167
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    tshirt for m
-    Click Variant Product from API    itemIndex=1
+    ${PLID}=    Search Product And Return PLID API    mens shirts    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    @{sizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
+    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+    Search Product    mens shirts
+    Click Product    ${productTitle}
     Verify PDP Screen Element Not Exists    ${btnAddToCart}
-    Click Product Variant From API
+    Click Variant By Colour Dynamically    ${colourVariants}[0]
+    Click Variant By Size Dynamically    ${sizeVariants}[0]
     Click Add To Wishlist Only
     Verify Text On Screen    Item added to Wish List    ${MIN_TIMEOUT}
     Click Add To Cart
@@ -743,11 +752,16 @@ Apps > Wishlist (Android) > Delete List - QASA-161
     [Tags]    QASA-161
     [Setup]    Start Application
     Clear Environment
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Menu Logout If Logged In
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
+    ${PLID}=    Search Product And Return PLID API    Pencil    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
     Search Product    Pencil
-    Click Product from API
+    Click Product From Search Result    ${productTitle}
+    Click Variant By Colour Dynamically    ${colourVariants}[0]
     Click Add To Wishlist
     Close Application
     Start Application
@@ -760,12 +774,12 @@ Apps > Wishlist (Android) > Delete List - QASA-161
     Click Home Cart
     Click Checkout
     Close Application
-    Start Application
+    Start Application    ${False}
     Click Home
     Click Wishlist Nav Bar
     Click Create Wishlist
     Navigate to Wishlist Auto
-    Click More Options Menu Android
+    Click More Options Menu
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Rename List    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delete List    ${MIN_TIMEOUT}
     Click Delete Wishlist
@@ -775,11 +789,13 @@ Apps > Wishlist (Android) > Bottom Navigation - QASA-160
     [Tags]    QASA-160
     [Setup]    Start Application
     Clear Environment
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    sunlight
-    Click Product from API
+    ${PLID}=    Search Product And Return PLID API    sunlight dish washing liquid
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    Search Product    sunlight dish washing liquid
+    Click Product From Search Result    ${productTitle}
     Click Add To Wishlist
     Close Application
     Start Application    ${False}
@@ -789,26 +805,27 @@ Apps > Wishlist (Android) > Bottom Navigation - QASA-160
     Click Wishlist Add To Cart
     Click More Options Menu
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Share List    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Share    ${MIN_TIMEOUT}
-    Verify Text On Screen    Edit    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Edit    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Element On Screen    ${btnMoreOptionsShare}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Element On Screen    ${btnMoreOptionsEdit}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Wishlist (iOS) - QASA-472
     [Tags]    QASA-472
     [Setup]    Start Application
     Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
+    Click Menu Shop By Department
     Click Menu Daily Deals
     Click Daily Deals Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    2
+    Change Cart Quantity    2
     Click Checkout Delete First Item
-    Click Checkout Cart Undo
-    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Checkout Cart Undo
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 #Wishlist icon on PLP screen is not unique
@@ -912,7 +929,6 @@ Apps > My Account Verifications - QASA-477
     [Tags]    QASA-477
     [Setup]    Start Application    ${False}
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
@@ -943,6 +959,7 @@ Apps > My Account Verifications - QASA-477
     Click Back iOS    My Account
     Click Menu Address Book
     Click Add Delivery Address
+    Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
     Click Back Delivery Android
@@ -1016,8 +1033,7 @@ Apps > Order Tracking (Collect) - QASA-547
     [Tags]    QASA-547
     [Setup]    Start Application
     Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1073,8 +1089,7 @@ Apps > Order Tracking 05 - QASA-79
     [Tags]    QASA-79
     [Setup]    Start Application
     Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Fridg
@@ -1083,7 +1098,11 @@ Apps > Order Tracking 05 - QASA-79
     Click Go To Cart
     Click Checkout
     Click Delivery
-    Click Address
+    ${noAddressExists}=    Run Keyword And Return Status    Verify Text On Screen    Please add a Delivery    ${MAX_TIMEOUT} 
+    Run Keyword If    '${noAddressExists}' == '${True}'    Click Add Delivery Address
+    Run Keyword If    '${noAddressExists}' == '${True}'    Click Residential
+    Run Keyword If    '${noAddressExists}' == '${True}'    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
+    Click Address By Index
     Click Surcharge Delivery
     Click Donate No Thanks
     Click Add Payment Voucher
@@ -1091,7 +1110,7 @@ Apps > Order Tracking 05 - QASA-79
     Click Apply Payment Voucher
     Click Back Payment Voucher
     Click Payment Confirm Order
-    Click Track Order
+    kwConfirmation.Click Track Order
     Close Application
     Start Application
     Click Menu
@@ -1111,11 +1130,11 @@ Apps > Order Tracking 05 - QASA-79
     Verify Text On Screen    Standard    ${MIN_TIMEOUT}
     Verify Text On Screen    SHIPPING ADDRESS    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
-    Verify Text On Screen    Test    ${MIN_TIMEOUT}
-    Verify Text On Screen    12 Ridge Way    ${MIN_TIMEOUT}
-    Verify Text On Screen    Green Point    ${MIN_TIMEOUT}
-    Verify Text On Screen    Cape Town    ${MIN_TIMEOUT}
-    Verify Text On Screen    8005    ${MIN_TIMEOUT}
+    Verify Text On Screen    Tester Residential    ${MIN_TIMEOUT}
+    Verify Text On Screen    13 Caro Road    ${MIN_TIMEOUT}
+    Verify Text On Screen    Robertsham    ${MIN_TIMEOUT}
+    Verify Text On Screen    Johannesburg South    ${MIN_TIMEOUT}
+    Verify Text On Screen    2091    ${MIN_TIMEOUT}
     Swipe Down    ${windowScroll}
     Click Order Pay Now
     Click Change Payment Method Only
@@ -1128,7 +1147,6 @@ Apps > Cart (Android) > QASA-524 - QASA-81
     [Tags]    QASA-524    QASA-81
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1146,12 +1164,16 @@ Apps > Cart (Android) 02 - QASA-84
     [Tags]    QASA-84
     [Setup]    Start Application
     Clear Environment
-    Click Menu
-    Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
+    Click Menu Logout If Logged In
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
+    ${PLID}=    Search Product And Return PLID API    Pencil    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
     Search Product    Pencil
-    Click Product from API
+    Click Product From Search Result    ${productTitle}
+    Click Variant By Colour Dynamically    ${colourVariants}[0]
     Click Add To Cart
     Click Go To Cart
     Click Checkout Move To Wishlist First Item
@@ -1167,11 +1189,16 @@ Apps > Cart (Android) 02 - QASA-84
     Clear Environment
     Click Home
     Click Search Home
+    ${PLID}=    Search Product And Return PLID API    Pencil    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
     Search Product    Pencil
-    Click Product from API
+    Click Product From Search Result    ${productTitle}
+    Click Variant By Colour Dynamically    ${colourVariants}[0]
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    2
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Change Cart Quantity    2
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Change Cart Quantity    2
     Click Checkout
     [Teardown]    Tear Down
 
@@ -1179,13 +1206,15 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     [Tags]    QASA-83    QASA-82
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
+    ${telkomProductPLID}=    Search Product And Return PLID API    Telkom
+    ${telkomProductTitle}=    Get Product Title By PLID API    ${telkomProductPLID}
     Search Product    Telkom
-    Click Variant Product from API
-    Click Product Variant From API
+    Click Product    ${telkomProductTitle}
+    @{telkomProductVariants}=    Get Product Variants By PLID API    ${telkomProductPLID}    Value
+    Click Variant By Value Dynamically    ${telkomProductVariants}[0]
     Click Add To Cart
     Click Go To Cart
     Close Application
@@ -1222,7 +1251,6 @@ Cart Update & Cart Notification - TV - QASA-248
     [Tags]    QASA-248
     [Setup]    Start Application    ${False}
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1280,19 +1308,20 @@ Cart Update & Cart Notification - Liquor - QASA-249
     [Setup]    Start Application
     Clear Environment
     Add To Cart
+    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Click Cart
+    Click Home Cart
     Click Checkout
     Click Delivery
-    Click Address
+    Click Address By Index
     Click Any Delivery
     Click Donate No Thanks
     ${liquorProductId}=    Search And Return Product Id API    liquor
     Add To Cart    productId=${liquorProductId}
     Click Pay With Credit Card
-    Verify Text On Screen    You've added the following new item(s) to your cart
+    Verify Text On Screen    You've added the following new item(s) to your cart    timeout=${MAX_TIMEOUT}
     Click Continue To Checkout
-    Verify Text On Screen    Age Verification
+    Verify Text On Screen    Age Verification    timeout=${MAX_TIMEOUT}
     Verify Text On Screen    You have added liquor to your cart. Please verify that you are 18 years of age or older.
     [Teardown]    Tear Down
 
@@ -1300,7 +1329,6 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     [Tags]    QASA-247
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1359,7 +1387,6 @@ Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
     [Tags]    QASA-874
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1425,7 +1452,6 @@ Returns > Non-Variant item - QASA-865
     ${completedOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
     Update Order Delivery DB    ${query_order_id}
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu

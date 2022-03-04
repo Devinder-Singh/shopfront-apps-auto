@@ -302,11 +302,19 @@ Verify Product Image
     Verify Daily Deals Image
 
 Click Product
-    [Arguments]    ${productText}
+    [Arguments]    ${productText}    ${sleepBeforeAction}=1s
+    Sleep    ${sleepBeforeAction}
     ${lblProduct}=    Replace String    ${lblProduct}    $productText    ${productText}
-    Wait Until Page Contains Element    ${lblProduct}    ${MIN_TIMEOUT}
+    Wait Until Page Contains Element    ${lblProduct}    ${MAX_TIMEOUT}
     Click Element    ${lblProduct}
 
+Click Product From Search Result
+    [Arguments]    ${productTitle}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicProductByTitle}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${productTitle}"`]
+        Scroll To Element    ${dynamicProductByTitle}
+        Click Element    ${dynamicProductByTitle}
+    END
 Click Product No Reviews
     ${txtProduct}=    Get Product No Reviews
 

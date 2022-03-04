@@ -17,8 +17,9 @@ Click Missed Promotion Text
     Click Element    ${lblCheckoutMissedPromotion}
 
 Click Checkout
+    Sleep    3s
     Set Test Variable    ${ISORDERED}    ${False}
-    Wait Until Element Enabled    ${btnCheckout}    ${MAX_TIMEOUT}
+    Wait Until Element Is Visible    ${btnCheckout}    ${MAX_TIMEOUT}
     Click Element    ${btnCheckout}
 
 Click CAB Add To Cart
@@ -63,24 +64,16 @@ Wait for Checkout
 
 Click Checkout Delete First Item
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
-
-    IF    '${PLATFORM_NAME}' == 'android'
-        Click Element    ${btnCheckoutEdit}
-        Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
-        Click Element    ${btnCheckoutSelect}    
-    END
-    
+    Click Element    ${btnCheckoutEdit}
+    Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
+    Click Element    ${btnCheckoutSelect}    
     Click Element    ${btnCheckoutDelete}
 
 Click Checkout Move To Wishlist First Item
     Wait Until Element Is Visible    ${btnCheckout}    ${MIN_TIMEOUT}
-    
-    IF    '${PLATFORM_NAME}' == 'android'
-        Click Element    ${btnCheckoutEdit}
-        Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
-        Click Element    ${btnCheckoutSelect}
-    END
-    
+    Click Element    ${btnCheckoutEdit}
+    Wait Until Element Is Visible    ${btnCheckoutSelect}    ${MIN_TIMEOUT}
+    Click Element    ${btnCheckoutSelect}
     Click Element    ${btnCheckoutMoveToWishlist}
 
 Click Checkout Move To Wishlist Swipe
@@ -103,39 +96,41 @@ Verify Checkout Delete And Wishlist
     Verify Element On Screen    ${btnCheckoutDelete}    ${MIN_TIMEOUT}
     Verify Element On Screen    ${btnCheckoutMoveToWishlist}    ${MIN_TIMEOUT}
 
-Change Cart Quantity Android
-    [Arguments]    ${qty}
-
-    Wait Until Element Is Visible    ${btnCartQty}    ${MIN_TIMEOUT}
-    Click Element    ${btnCartQty}
-
-    ${txtCartQty}=    Set Variable    ${None}
-
+Change Cart Quantity
+    [Arguments]    ${qty}    ${index}=1
     IF    '${PLATFORM_NAME}' == 'android'
+        ${btnCartQty}=    Set Variable    xpath=(//android.widget.EditText[@resource-id='fi.android.takealot.debug:id/cartProductItemQuantityText'])[${index}]
         ${txtCartQty}=    Set Variable    xpath=//*[@text="${qty}"]
-    ELSE IF    '${PLATFORM_NAME}' == 'ios'    
-        ${txtCartQty}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]    
+        Wait Until Element Is Visible    ${btnCartQty}    ${MIN_TIMEOUT}
+        Click Element    ${btnCartQty}
+        Wait Until Element Is Visible    ${txtCartQty}    ${MIN_TIMEOUT}
+        Click Element    ${txtCartQty}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        #Off set index by 1 to cater for promotion button which falls under same table as qty selector buttons.
+        ${index}=    Evaluate    ${index} + 1
+        ${btnCartQty}=    Set Variable    chain=**/XCUIElementTypeTable/XCUIElementTypeCell[${index}]/XCUIElementTypeButton
+        Wait Until Element Is Visible    ${btnCartQty}
+        Click Element    ${btnCartQty}
+        Input Text    ${qtyPickerWheel}    ${qty}
+        Click Element    ${btnQtyPickerWheelDone}
     END
             
-    Wait Until Element Is Visible    ${txtCartQty}    ${MIN_TIMEOUT}
-    Click Element    ${txtCartQty}
-#    Sleep    3s
+    
 
 Change Cart Quantity Scroll
-    [Arguments]    ${qty}
-
-    Wait Until Element Is Visible    ${btnCartQty}    ${MIN_TIMEOUT}
-    Click Element    ${btnCartQty}
-    
-    ${txtCartQty}=    Set Variable    ${None}
+    [Arguments]    ${qty}    ${index}=1
     IF    '${PLATFORM_NAME}' == 'android'
+        ${btnCartQty}=    Set Variable    xpath=(//android.widget.EditText[@resource-id='fi.android.takealot.debug:id/cartProductItemQuantityText'])[${index}]
         ${txtCartQty}=    Set Variable    xpath=//*[@text="${qty}"]
+        Click Element    ${btnCartQty}
         Scroll To Element    xpath=//*[@text="1"]    scrollSwipeDirection=Down
         Scroll To Element    ${txtCartQty}
+        Click Element    ${txtCartQty}
     ELSE IF    '${PLATFORM_NAME}' == 'ios'
-        ${txtCartQty}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${qty}"`]
+        #Since ios cannot scroll quantity by use of picker wheel use normal quantity selection method.
+        Change Cart Quantity    ${qty}    ${index}
     END
-    Click Element    ${txtCartQty}
+    
 
 Click Add Items to Qualify iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnCartAddPromoItems}    ${MIN_TIMEOUT}
@@ -148,10 +143,8 @@ Click Checkout Cart Undo
     END
     
 Add To Cart Trending First Item
-    IF    '${PLATFORM_NAME}' == 'android'
-        Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    ${MIN_TIMEOUT}
-        Click Element    ${btnCartTrendingAddToCart}
-    END
+    Wait Until Element Is Visible    ${btnCartTrendingAddToCart}    ${MIN_TIMEOUT}
+    Click Element    ${btnCartTrendingAddToCart}
 
 Swipe Cart Item Left
     [Documentation]    This keyword will swipe a cart item card left partially based on a specified index dynamically.

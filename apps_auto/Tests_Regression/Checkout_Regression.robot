@@ -7,7 +7,6 @@ Apps - Checkout - Delivery Methods - QASA-593
     [Tags]    QASA-593
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
@@ -21,14 +20,13 @@ Apps - Checkout - Delivery Methods - QASA-593
     Click Go To Cart
     Click Checkout
     Verify Delivery Text    Courier delivery to your door
-    Verify Delivery Text    70+ Takealot Pickup Points nationwide. Open 6 days a week
+    Verify Delivery Text    80+ Takealot Pickup Points nationwide. Open 7 days a week
     [Teardown]    Tear Down
 
 Apps - Checkout - Delivery Methods - Digital Only - QASA-114
     [Tags]    QASA-114
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -56,7 +54,6 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
     [Tags]    QASA-115
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -66,7 +63,7 @@ Apps - Checkout - Delivery Methods - Digital Items 03 - QASA-115
     Click Go To Cart
     Click Checkout
     Verify Delivery Text    Courier delivery to your door
-    Verify Delivery Text    70+ Takealot Pickup Points nationwide. Open 6 days a week
+    Verify Delivery Text    80+ Takealot Pickup Points nationwide. Open 7 days a week
     Click Collect
     Click Pickup Point
     [Teardown]    Tear Down
@@ -75,7 +72,6 @@ Apps > Checkout > Collect > Liquor Item - QASA-588
     [Tags]    QASA-588
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -94,7 +90,6 @@ Apps - Checkout - Delivery Methods - Digital and Physical Item and Collect 04 - 
     [Tags]    QASA-117
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -125,7 +120,6 @@ Checkout - Collect - Add Delivery and Digital Items - QASA-589
     [Tags]    QASA-589
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -152,7 +146,6 @@ Checkout - Collect - Add Only Delivery Items - QASA-574
     [Tags]    QASA-574
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -170,7 +163,6 @@ Checkout - Collect - White Goods - QASA-580
     [Tags]    QASA-580
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -188,7 +180,6 @@ Checkout - Age Verification - QASA-576
     [Tags]    QASA-576
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -205,7 +196,6 @@ Checkout > Delivery Address > Saved Addresses - QASA-616
     [Tags]    QASA-616
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -237,7 +227,6 @@ Checkout - Delivery Address - General 03 - QASA-112
     [Tags]    QASA-112
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -254,7 +243,6 @@ Checkout - Delivery Address - General 04 - QASA-111
     [Tags]    QASA-111
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -277,7 +265,6 @@ Checkout - Delivery Address - Edit Address - Street Correction - QASA-610
     [Tags]    QASA-610
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -364,7 +351,6 @@ Checkout - Delivery Address - Add Residential Address - Street Suggestion - QASA
     [Tags]    QASA-603
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -386,7 +372,6 @@ Checkout - Delivery Address - Address Form Validation - QASA-600
     [Tags]    QASA-600
     [Setup]    Start Application    ${False}
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
@@ -478,7 +463,6 @@ Checkout - Delivery Address - Street Suggestion - QASA-582
     [Tags]    QASA-582
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -518,7 +502,6 @@ Checkout - Delivery Address - Pin on Map - QASA-570
     [Tags]    QASA-570
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -554,7 +537,6 @@ Apps > Checkout > Collect > Select Pickup Point Info button - QASA-565
     [Tags]    QASA-565
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -573,7 +555,6 @@ Apps > Checkout > Collect > Pickup Point INFO - QASA-609
     [Tags]    QASA-609
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -633,7 +614,6 @@ Apps > Checkout > Collect > Pickup Points List - QASA-583
     [Tags]    QASA-583
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -686,7 +666,6 @@ Apps > Checkout > Collect > Add Only Digital Item - QASA-556
     [Tags]    QASA-556
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -704,7 +683,6 @@ Apps > Checkout > Collect > Shipping Options (Standard) - QASA-577
     [Tags]    QASA-577
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -722,7 +700,6 @@ Apps > Checkout > Collect > Shipping Options > Free (Order above 450) - QASA-581
     [Tags]    QASA-581
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -744,7 +721,6 @@ Apps > Checkout > Collect > Shipping Options > R25 (Order below 450) - QASA-614
     [Tags]    QASA-614
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -765,7 +741,6 @@ Apps > Checkout > Collect > Shipping Options > No Fee (CapeTown DC) - QASA-563
     [Tags]    QASA-563
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -786,7 +761,6 @@ Apps > Checkout > Collect > Delivery Options (Collect Options) - QASA-597
     [Tags]    QASA-597
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -815,7 +789,6 @@ Apps > Checkout > Collect > Tablet > Change Delivery Method - QASA-569
     [Tags]    QASA-569
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -840,7 +813,6 @@ Apps > Checkout > Collect > Change Pickup point - QASA-571
     [Tags]    QASA-571
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -863,7 +835,6 @@ Apps > Checkout > Order Review - QASA-590
     [Tags]    QASA-590
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -922,7 +893,6 @@ Apps > Checkout > Payment > Earn eBucks - QASA-605
     [Tags]    QASA-605
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -958,7 +928,6 @@ Apps > Checkout > Payment > Gift Msg - QASA-613
     [Tags]    QASA-613
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -980,7 +949,6 @@ Apps > Checkout > Payment > Gift Msg 02 - QASA-109
     [Tags]    QASA-109
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -999,7 +967,6 @@ Apps > Checkout > Payment > Payment Method Availability - QASA-607
     [Tags]    QASA-607
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1032,7 +999,6 @@ Apps > Checkout > Payment > Payment Method Availability 02 - QASA-107
     [Tags]    QASA-107
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1053,7 +1019,6 @@ Apps > Checkout > Payment > Payment Method Availability 03 - QASA-108
     [Tags]    QASA-108
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1077,7 +1042,6 @@ Apps > Checkout > Payment > Post-Order Creation - QASA-542
     [Tags]    QASA-542
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1107,7 +1071,6 @@ Apps > Checkout > Payment > Donation - QASA-618
     [Tags]    QASA-618
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1142,7 +1105,6 @@ Apps > Checkout > Payment > Donation 02 - QASA-95
     [Tags]    QASA-95
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1170,7 +1132,6 @@ Apps > Checkout > Payment > Confirmation - QASA-552
     [Tags]    QASA-552
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1205,7 +1166,6 @@ Apps > Checkout > Payment > Confirmation 02 - QASA-106
     [Tags]    QASA-106
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1230,7 +1190,6 @@ Apps > Checkout > Payment > Pay with PayFast - QASA-539
     [Tags]    QASA-539
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1263,7 +1222,6 @@ Apps > Checkout > Payment > Credit Card - PayU - QASA-536
     [Tags]    QASA-536
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1286,7 +1244,6 @@ Apps > Checkout > Payment > COD - QASA-535
     [Tags]    QASA-535
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1309,7 +1266,6 @@ Apps > Checkout > Payment > Credit Card - PayGate - Unsuccessful Payment - QASA-
     [Tags]    QASA-534
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1342,7 +1298,6 @@ Apps > Checkout > Payment > Pay with Ozow - QASA-533
     [Tags]    QASA-533
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1373,7 +1328,6 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QAS
     [Tags]    QASA-532
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1403,7 +1357,6 @@ Apps > Checkout > Payment > Mobicred - QASA-527
     [Tags]    QASA-527
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1426,7 +1379,6 @@ Apps > Checkout > TV Licence Verification - QASA-307
     [Tags]    QASA-307
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1452,7 +1404,6 @@ Apps > Checkout > TV Licence Verification 02 - QASA-105
     [Tags]    QASA-105
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1475,7 +1426,6 @@ Apps > Checkout > Delivery Options > Promise Date - QASA-611
     [Tags]    QASA-611
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1553,7 +1503,6 @@ Apps > Checkout > Collect Options > Promise Date - QASA-606
     [Tags]    QASA-606
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1619,7 +1568,6 @@ Apps > Checkout > Payment > Pay with eBucks - QASA-538
     [Tags]    QASA-538
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1646,7 +1594,6 @@ Apps > Checkout > Payment > Credits (Voucher) - QASA-537
     [Tags]    QASA-537
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1679,7 +1626,6 @@ Apps > Checkout > Delivery Options > General Test Case - QASA-601
     [Tags]    QASA-601
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1699,7 +1645,6 @@ Apps > Checkout > Delivery Options > General Test Case 02 - QASA-104
     [Tags]    QASA-104
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1726,7 +1671,6 @@ Apps > Checkout > Delivery Options > General Test Case 03 - QASA-103
     [Tags]    QASA-103
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1743,7 +1687,6 @@ Apps > Checkout > Delivery Options > General Test Case 04 - QASA-102
     [Tags]    QASA-102
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1764,7 +1707,6 @@ Apps > Checkout > Delivery Options > General Test Case 05 - QASA-101
     [Tags]    QASA-101
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1785,7 +1727,6 @@ Apps > Checkout > Delivery Options > General Test Case 06 - QASA-100
     [Tags]    QASA-100
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1827,7 +1768,6 @@ Apps > Checkout > Delivery Options > Add Gift Recipient - QASA-298
     [Tags]    QASA-298
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1847,7 +1787,6 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 02 - QASA-99
     [Tags]    QASA-99
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1867,7 +1806,6 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 03 - QASA-98
     [Tags]    QASA-98
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1880,7 +1818,6 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QASA-97
     [Tags]    QASA-97
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1899,7 +1836,6 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QASA-96
     [Tags]    QASA-96
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1918,7 +1854,6 @@ Apps > Checkout > Payment > Mobicred - QASA-555
     [Tags]    QASA-555
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
