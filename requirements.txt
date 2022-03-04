@@ -1,0 +1,11 @@
+# click  # Removed. Not used - caused lib bloat + conflicts
+# holidays  # Removed. Not used anymore.
+wheel
+robotframework
+robotframework-appiumlibrary
+robotframework-databaselibrary
+Appium-Python-Client
+webdrivermanager
+robotframework-selenium2library
+RESTinstance
+robotframework-jsonlibrary

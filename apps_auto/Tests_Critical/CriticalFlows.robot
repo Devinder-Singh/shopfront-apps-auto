@@ -107,7 +107,7 @@ Search and Buy Item on Delivery using Payfast and Create new Address
     Click Menu
     Click Menu Shop By Department
     Click Menu Sport and Fitness
-    Click Product Department
+    Click Product Department    2
     Click Add To Wishlist
     Click Wishlist    ${True}
     Click Wishlist Add To Cart    ${False}
@@ -144,7 +144,7 @@ Search and Buy Heavy Item on Delivery along with TV
     Click Home
     Click Search Home
     Search Product    Televisio
-    Click Product from API    1
+    Click Product from API    2
     Click Add To Cart
     Click Go To Cart
     Click Checkout

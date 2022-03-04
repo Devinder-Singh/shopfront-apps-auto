@@ -48,15 +48,15 @@ ${apiRetryInterval}    1s
 Generic Post
     [Documentation]    Performs a generic HTTP POST call to a given endpoint. This method is a wrapper for the default HTTP REST library.
     [Arguments]    ${endPoint}    ${jsonBody}=${None}    ${HttpStatusAssertion}=200
-    @{response}=    POST    ${endPoint}    ${jsonBody}
-    Log Many    @{response}
+    ${response}=    POST    ${endPoint}    ${jsonBody}
+    Log Many    ${response}
     Integer    response status    ${HttpStatusAssertion}
 
 Generic Get
     [Documentation]    Performs a generic HTTP GET call to a given endpoint. This method is a wrapper for the default HTTP REST library.
     [Arguments]    ${endPoint}    ${queryString}=${None}    ${HttpStatusAssertion}=200
-    Log To Console    ${endPoint}
-    GET    ${endPoint}    ${queryString}
+    ${response}=    GET    ${endPoint}    ${queryString}
+    Log Many    ${response}
     Integer    response status    ${HttpStatusAssertion}
 
 Clear Environment
@@ -1498,6 +1498,7 @@ Get Product Variants By PLID API
         IF    '${variantTypeTitle}' == '${variantType}'
             IF    '${variantType}' == 'Size'
                 @{variantList}=    Output    $.variants.selectors[${index}].options[*].value
+                Exit For Loop
             END
             IF    '${variantTypeTitle}' == 'Colour'
                 @{variantList}=    Output    $.variants.selectors[${index}].options[*].value.name

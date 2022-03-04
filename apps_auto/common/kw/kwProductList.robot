@@ -190,6 +190,11 @@ Click Product Seller Deals
     Click Element    ${txtProduct}
 
 Click Product Department
+    [Arguments]    ${index}=1
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${index}=    Evaluate    ${index} + 1
+    END
+    ${imgProductDealsDept}=    Set Variable    ${imgProductDealsDept}\[${index}]
     Wait Until Element Is Visible    ${btnProductFilter}    ${MAX_TIMEOUT}
     Wait Until Element Is Visible    ${imgProductDealsDept}
     Click Element    ${imgProductDealsDept}
