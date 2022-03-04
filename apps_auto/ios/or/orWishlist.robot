@@ -25,3 +25,5 @@ ${btnWishlistDeleteUndo}    ${EMPTY}
 ${btnDeleteWishlistItemsCancel}      chain=**/XCUIElementTypeButton[`label == "Cancel"`]
 
 ${btnRenameWishlist}      chain=**/XCUIElementTypeButton[`label == "Rename"`]
+${btnMoreOptionsShare}    chain=**/XCUIElementTypeButton[`label == "Share"`]
+${btnMoreOptionsEdit}    chain=**/XCUIElementTypeButton[`label == "Edit"`]

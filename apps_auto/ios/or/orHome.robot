@@ -1,6 +1,6 @@
 *** Variables ***
 ${btnHome}      chain=**/XCUIElementTypeButton[`label == "Home"`]
-${btnAddWishlist}      chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther[3]/XCUIElementTypeButton
+${btnAddWishlist}      chain=**/XCUIElementTypeOther[`name == "NavController"`]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[3]/XCUIElementTypeButton
 ${btnSearchIcon}      chain=**/XCUIElementTypeButton[`label == "icon search"`]
 
 ${btnMoreOptions}      chain=**/XCUIElementTypeButton[`label == "icon overflowDots"`]
@@ -16,7 +16,7 @@ ${btnHomeClearAllRecent}      chain=**/XCUIElementTypeStaticText[`label == "Clea
 ${btnHomeClearCancelRecent}      chain=**/XCUIElementTypeButton[`label == "Cancel"`]
 ${btnHomeClearRecent}      id=Clear
 
-${btnHomeDeptDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Daily Deals"`]
+${btnHomeDeptDailyDeals}      chain=**/XCUIElementTypeStaticText[`label == "Fire Sale"`]
 ${btnHomeDeptAppOnlyDeals}      id=App Only
 ${btnHomeDeptHomeCook}      chain=**/XCUIElementTypeStaticText[`label == "Gaming & Tech "`]
 ${btnHomeDeptHealthCare}      id=Health & Personal Care

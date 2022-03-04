@@ -104,8 +104,10 @@ Click Menu Logout If Logged In
 
 Click Menu Daily Deals
     IF    '${PLATFORM_NAME}' == 'android'
+        Wait Until Element Is Visible    ${btnMenuCategories}    ${MAX_TIMEOUT}
         Click Element    ${btnMenuCategories}
     END
+    Wait Until Element Is Visible    ${btnMenuDailyDeals}    ${MAX_TIMEOUT}
     Click Element    ${btnMenuDailyDeals}
 
 Click Menu Shop By Department

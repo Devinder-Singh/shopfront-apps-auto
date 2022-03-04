@@ -146,21 +146,19 @@ Verify Price On Screen
     END
 
 Verify Text On Screen
-    [Arguments]    ${verifyText}    ${timeout}=5s
+    [Arguments]    ${verifyText}    ${timeout}=${MIN_TIMEOUT}
     ${txtVerify}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
     ELSE IF    '${PLATFORM_NAME}' == 'android'
         ${txtVerify}=    Set Variable    xpath=//*[contains(@text,\"${verifyText}\")]
     END
-    
-    ${chkTextSuccess}=    Run Keyword And Return Status    Page Should Contain Element    ${txtVerify}
-    Sleep    ${timeout}
+
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${txtVerify}    ${timeout}
     Should Be True    ${chkTextSuccess} == ${True}
 
 Verify Text Not On Screen
-    [Arguments]    ${verifyText}    ${timeout}=5s    ${sleepBeforeAction}=0.5s
-    Sleep    ${sleepBeforeAction}
+    [Arguments]    ${verifyText}    ${timeout}=5s
     ${txtVerify}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
@@ -276,7 +274,7 @@ Scroll To Element
     ${chkProdVisible}=    Set Variable    ${False}
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    ${loopTimes}
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    1s
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    ${MAX_TIMEOUT}
         IF    ${chkProdVisible}==${True}
             Exit For Loop
         END

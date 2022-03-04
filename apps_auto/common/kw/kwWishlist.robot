@@ -56,9 +56,9 @@ Click Wishlist Move Items
     Click Element    ${btnWishlistDelete}
 
 Click Delete Wishlist
-    Wait Until Element Is Visible    ${btnDeleteWishlist}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnDeleteWishlist}    ${MAX_TIMEOUT}
     Click Element    ${btnDeleteWishlist}
-    Wait Until Element Is Visible    ${btnDeleteWishlistConfirm}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnDeleteWishlistConfirm}    ${MAX_TIMEOUT}
     Click Element    ${btnDeleteWishlistConfirm}
 
 Click Rename Wishlist

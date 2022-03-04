@@ -103,7 +103,7 @@ Apps > Checkout > Collect > Subtitle change - QASA-596
     Click Add To Cart
     Click Go To Cart
     Click Checkout
-    Verify Text On Screen    70+ Takealot Pickup Points nationwide. Open 6 days a week    ${MIN_TIMEOUT}
+    Verify Text On Screen    80+ Takealot Pickup Points nationwide. Open 7 days a week    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Checkout > Collect > Pickup Points > No Last Used Pickup Point - QASA-562

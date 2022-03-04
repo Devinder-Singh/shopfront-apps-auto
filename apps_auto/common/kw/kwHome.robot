@@ -11,7 +11,7 @@ Click Home iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnHome}
 
 Click Add To Wishlist
-    Wait Until Element Is Visible    ${btnAddWishlist}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnAddWishlist}    ${MAX_TIMEOUT}
     Click Element    ${btnAddWishlist}
     Verify Text On Screen    Item added to Wish List    ${MAX_TIMEOUT}
     Verify Text Not On Screen    Item added to Wish List    ${MAX_TIMEOUT}

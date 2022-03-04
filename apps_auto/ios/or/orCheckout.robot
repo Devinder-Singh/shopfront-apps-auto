@@ -8,7 +8,7 @@ ${btnCheckoutMoveToWishlist}    chain=**/XCUIElementTypeStaticText[`label == "Mo
 ${btnCheckoutEdit}    chain=**/XCUIElementTypeButton[`label == "icon pencil"`]
 ${btnCheckoutSelect}    chain=**/XCUIElementTypeCell/XCUIElementTypeButton
 
-${btnCartQty}    id=CartItemQuantityButton
+${btnCartQty}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeButton[2]
 
 ${btnCartUndo}    ${EMPTY}
 ${btnCartTrendingAddToCart}    chain=**/XCUIElementTypeButton[`label == "icon cartButton"`]
@@ -23,3 +23,5 @@ ${btnCartCustomersAlsoBought}    ${EMPTY}
 ${btnCartItemContainer}    ${EMPTY}
 
 ${btnDeleteUnderItemCard}    chain=**/XCUIElementTypeButton[`label == "Delete"`]
+${qtyPickerWheel}    chain=**/XCUIElementTypePickerWheel
+${btnQtyPickerWheelDone}    chain=**/XCUIElementTypeButton[`label == "Done"`]

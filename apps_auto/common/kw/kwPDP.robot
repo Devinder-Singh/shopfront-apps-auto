@@ -420,4 +420,29 @@ Click Product Info Bubble By Name
     ${dynamicBubbleOptionAndroid}=    Set Variable    xpath=(//android.view.ViewGroup[@resource-id='${APP_PACKAGE}:id/materialChipContainerChipGroup'])/android.widget.Button[@text='${name}']
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicBubbleOptionAndroid}
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicBubbleOptionAndroid}
-    
+
+Click Variant By Value Dynamically
+    [Arguments]    ${value}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicVariantToSelect}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${value}"`][2]
+        Scroll To Element    ${dynamicVariantToSelect}
+        Wait Until Element Is Visible    ${dynamicVariantToSelect}
+        Click Element    ${dynamicVariantToSelect}
+    END
+
+Click Variant By Colour Dynamically
+    [Arguments]    ${colour}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicVariantToSelect}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${colour}"`]
+        Scroll To Element    ${dynamicVariantToSelect}
+        Click Element    ${dynamicVariantToSelect}
+    END
+
+Click Variant By Size Dynamically
+    [Arguments]    ${size}    ${sleepBeforeAction}=5s
+    Sleep    ${sleepBeforeAction}
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicVariantToSelect}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${size}"`][2]
+        Scroll To Element    ${dynamicVariantToSelect}
+        Click Element    ${dynamicVariantToSelect}
+    END

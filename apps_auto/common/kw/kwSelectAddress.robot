@@ -10,6 +10,14 @@ Click Address Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${btnAddress}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${btnAddress}
 
+Click Address By Index
+    [Arguments]    ${index}=1
+    IF    '${PLATFORM_NAME}' == 'ios'
+        ${addressByIndex}=    Set Variable    chain=**/XCUIElementTypeCell[`name == "SharedAddressTableViewCell"`][${index}]
+        Wait Until Element Is Visible    ${addressByIndex}
+        Click Element    ${addressByIndex}
+    END
+
 Click Pickup Point
     [Arguments]    ${point}=Takealot Cape Town Warehouse
 
@@ -253,9 +261,16 @@ Verify All Pickup Points
 
 Select Province Dynamically
     [Arguments]    ${province}
-    ${dynamicProvinceAndroid}=    Set Variable    xpath=//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/tal_input_selector_field_layout_selector_title' and @text='${province}']
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Element Is Visible    ${dynamicProvinceAndroid}
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicProvinceAndroid}
+
+     IF    '${PLATFORM_NAME}' == 'android'
+       ${dynamicProvinceAndroid}=    Set Variable    xpath=//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/tal_input_selector_field_layout_selector_title' and @text='${province}']
+        Wait Until Element Is Visible    ${dynamicProvinceAndroid}
+        Click Element    ${dynamicProvinceAndroid}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+       ${dynamicProvinceIos}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${province}"`]
+        Wait Until Element Is Visible    ${dynamicProvinceIos}
+        Click Element    ${dynamicProvinceIos}
+    END
 
 Click Edit Button By Index
     [Arguments]    ${index}

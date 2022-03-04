@@ -1099,11 +1099,11 @@ Apps > PDP > Notification Banner > Limited Stock - QASA-54
     Click In Stock Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    10
-    Change Cart Quantity Android    14
-    Change Cart Quantity Android    18
-    Change Cart Quantity Android    22
-    Change Cart Quantity Android    26
+    Change Cart Quantity    10
+    Change Cart Quantity    14
+    Change Cart Quantity    18
+    Change Cart Quantity    22
+    Change Cart Quantity    26
     Verify Text On Screen    You've attempted to order more stock than currently available at our warehouse (current stock    10s
     Verify Text On Screen    The products will need to be ordered from our supplier. If you'd rather not wait for the extra stock to arrive from the supplier, please update the quantity accordingly    1s
     [Teardown]    Tear Down
