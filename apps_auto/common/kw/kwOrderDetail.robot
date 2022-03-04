@@ -26,8 +26,8 @@ View and Verify Collect Order
     Swipe Up    ${windowScroll}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Standard Collect
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Element On Screen    chain=**/XCUIElementTypeStaticText[`label == "Standard Collect"`]    ${MIN_TIMEOUT}
-    
+
 Click Track Order Detail
     [Documentation]    Clicks the Track button within the order detail screen. Usually available for Delivery orders.
-    Wait Until Element Is Visible    ${btnOrderTrack}
+    Wait Until Element Is Visible    ${btnOrderTrack}    ${MAX_TIMEOUT}
     Click Element    ${btnOrderTrack}

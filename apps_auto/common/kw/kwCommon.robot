@@ -153,8 +153,8 @@ Verify Text On Screen
     ELSE IF    '${PLATFORM_NAME}' == 'android'
         ${txtVerify}=    Set Variable    xpath=//*[contains(@text,"${verifyText}")]
     END
-    
-    ${chkTextSuccess}=    Run Keyword And Return Status    Page Should Contain Element    ${txtVerify}
+
+    ${chkTextSuccess}=    Run Keyword And Return Status    Wait Until Page Contains Element    ${txtVerify}    ${timeout}
     Sleep    ${timeout}
     Should Be True    ${chkTextSuccess} == ${True}
 

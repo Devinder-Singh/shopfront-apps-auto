@@ -14,5 +14,5 @@ Click Confirm Address Partially
      IF    '${PLATFORM_NAME}' == 'android'
         ${dynamicPartialAddress}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/navigation_widget_title' and starts-with(@text,'${partialAddress}')])
     END
-    Wait Until Element Is Visible    ${dynamicPartialAddress}
+    Wait Until Element Is Visible    ${dynamicPartialAddress}    ${MIN_TIMEOUT}
     Click Element    ${dynamicPartialAddress}

@@ -20,7 +20,7 @@ Apps > Register & Login - QASA-498
     Click Menu Login
     Login Takealot Only    ${EMPTY}    ${EMPTY}
     Verify Text On Screen    Please enter your email address    ${MIN_TIMEOUT}
-    Verify Text On Screen    Please enter your password    ${MIN_TIMEOUT}
+    Verify Text On Screen    Please enter your password
     Login Takealot    ${new_email_address}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -44,9 +44,9 @@ Apps > Promotions (Android) Daily Deals - QASA-476 - QASA-306
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     Click Item Promotion Text
     Verify Text On Screen    4 x R    ${MAX_TIMEOUT}
-    Verify Text On Screen    Daily Deals    ${MAX_TIMEOUT}
-    Verify Text On Screen    Only 4 per customer    ${MAX_TIMEOUT}
-    Verify Text On Screen    Item Total    ${MAX_TIMEOUT}
+    Verify Text On Screen    Daily Deals
+    Verify Text On Screen    Only 4 per customer
+    Verify Text On Screen    Item Total
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) App Only Deals - QASA-256 - QASA-306
@@ -62,9 +62,10 @@ Apps > Promotions (Android) App Only Deals - QASA-256 - QASA-306
     Click Add To Cart
     Click Go To Cart
     Change Cart Quantity Scroll    4
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     Click Item Promotion Text
     Verify Text On Screen    4 x R    ${MAX_TIMEOUT}
-    Verify Text On Screen    App Only Deals    ${MIN_TIMEOUT}
+    Verify Text On Screen    Fire Sale Tech Deals    ${MIN_TIMEOUT}
     Verify Text On Screen    Only 4 per customer    ${MIN_TIMEOUT}
     Verify Text On Screen    Item Total    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
@@ -79,8 +80,8 @@ Apps > Promotions (Android) Other Promo tabs - QASA-255 - QASA-306
     Click Menu Daily Deals
     Select Third Deals From API
     Get Product Deals Third Tab Slug
-    ${txtProduct}=    Get Daily Deals Product to Add To Cart
-    Scroll To Element    ${txtProduct}
+#    ${txtProduct}=    Get Daily Deals Product to Add To Cart
+#    Scroll To Element    ${txtProduct}
     Click Product Filter
     Select Third Deals Filter Option From API
     Click Apply Filter
@@ -102,8 +103,8 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    Samsung - 14 Place Setting Dishwasher
-    Click Product From Title    Samsung - 14 Place Setting Dishwasher
+    Search Product    Montego
+    Click Product From Title    Montego - Monty & Me Adult Dog Food
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    ${MIN_TIMEOUT}
@@ -114,8 +115,8 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     Clear Environment
     Click Home
     Click Search Home
-    Search Product    Samsung - 14 Place Setting Dishwasher
-    Click Product From Title    Samsung - 14 Place Setting Dishwasher
+    Search Product    Montego
+    Click Product From Title    Montego - Monty & Me Adult Dog Food
     Click Add Bundle To Cart
     Click Go To Cart
     Wait for Checkout
@@ -131,9 +132,9 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
-    Search Product    versus soc
-    Click Product From Title    Versus Table Mountain Performance Running Hidden Socks
-    Click Variant Option By Index    1
+    Search Product    Montgomery
+    Click Product From Title    Montgomery's Gourmet Pork & Apple Dog Treat 1kg
+#    Click Variant Option By Index    1
     Click Add To Cart
     Click Go To Cart
     Verify Text On Screen    Missed promotion    ${MAX_TIMEOUT}
@@ -145,18 +146,18 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     Start Application
     Click Home
     Click Search Home
-    Search Product    versus soc
-    Click Product From Title    Versus Table Mountain Performance Running Hidden Socks
-    Click Variant Option By Index    1
+    Search Product    Montgomery
+    Click Product From Title    Montgomery's Gourmet Pork & Apple Dog Treat 1kg
+#    Click Variant Option By Index    1
     Click Shop The Deal
-    Click Product From Title    Versus Table Mountain Performance Running Hidden Socks
-    Click Variant Option By Index    1
+    Click Product From Title    Montgomery's Gourmet Grilled Steak Dog Treat 1kg
+#    Click Variant Option By Index    1
     Click Add To Cart
     Click Go To Cart
     Change Cart Quantity Android    3
     Check Text On Screen Not    Missed promotion
-    Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
-    Check Text On Screen Not    Add 1 item to qualify
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Check Text On Screen Not    Add 1 item to qualify
     [Teardown]    Tear Down
 
 Apps > Promotions (Android) Unboxed & Other Offers - QASA-253 - QASA-306
@@ -177,7 +178,7 @@ Apps > Verify Home Screen - QASA-478
     [Tags]    QASA-478
     [Setup]    Start Application
     Click Home
-    Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
+    Verify Text On Screen    Blue Dot Sale    ${MIN_TIMEOUT}
     Click Home Icon Daily Deals
     Click Daily Deals Product from API
     [Teardown]    Tear Down
@@ -207,7 +208,7 @@ Verify Home Screen (Logged-In User) > Recently Viewed - QASA-175
 Verify Home Screen > Shop by Dept widget - QASA-882 - QASA-883 - QASA-861
     [Tags]    QASA-882    QASA-883    QASA-861
     [Setup]    Start Application
-    Click Home 
+    Click Home
     @{departmentCatList}=    Get Department Categories CMS Widget List API
     @{departmentCatSlugList}=    Get Department Categories CMS Widget Slug List API
     ${departCatListSize}=    Get Length    ${departmentCatList}
@@ -228,7 +229,7 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     [Setup]    Start Application
     Click Menu
     Click Menu Shop By Department
-    Verify Text On Screen    Deals & Promotions    ${MAX_TIMEOUT}
+    Verify Text On Screen    Blue Dot Sale    ${MAX_TIMEOUT}
     @{departmentCatList}=    Get Department Categories List API
     FOR    ${departmentCat}    IN    @{departmentCatList}
         Scroll To Text    ${departmentCat}
@@ -298,7 +299,6 @@ Apps > PLP - QASA-473
     [Tags]    QASA-473
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
@@ -335,20 +335,21 @@ Apps > PLP - QASA-473
     Start Application
     Click Home
     Click Search Home
-    Search Product    flying fish lemon
+    Search Product    flying fis
     Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Click Sold By Name
-    Verify Text On Screen    ACA Liquors    timeout=10s
-    Click Product Filter
-    Verify Text On Screen    ACA Liquors
-    Click Back Screen
-    Click Back Screen
-    Click Brand Name
     Verify Text On Screen    Flying Fish    timeout=10s
     Click Product Filter
     Verify Text On Screen    Flying Fish
     Click Back Screen
-    Click Back Screen
+#    Click Back Screen
+    Click Brand Name
+    Verify Text On Screen    FLYING FISH    timeout=10s
+#    Click Product Filter
+#    Verify Text On Screen    Flying Fish
+#    Click Back Screen
+#    Click Back Screen
     Scroll To Text    You Might Also Like
     Click Product Info Bubble By Name    Liquor
     Verify Text On Screen    Liquor
@@ -490,7 +491,7 @@ Apps > PLP > Overflow Menus - QASA-264
     Click Options Menu Categories
     Click Back iOS    pencil case
     Click Back iOS    Back
-    Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
+    Verify Text On Screen    Blue Dot Sale    ${MIN_TIMEOUT}
     Click Home
     Click Search Home
     Search Product    pencil
@@ -527,7 +528,6 @@ Apps > PDP - QASA-519
     [Tags]    QASA-519
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -767,7 +767,7 @@ Apps > Wishlist (Android) > Delete List - QASA-161
     Navigate to Wishlist Auto
     Click More Options Menu Android
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Rename List    ${MIN_TIMEOUT}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delete List    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delete List
     Click Delete Wishlist
     [Teardown]    Tear Down
 
@@ -797,7 +797,6 @@ Apps > Wishlist (iOS) - QASA-472
     [Tags]    QASA-472
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Menu
@@ -867,9 +866,8 @@ Apps > Order Tracking > Delivery Order > QASA-80
     Clear Environment
     ${completedOrderProductId}=    Search And Return Product Id API    sunlight
     Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    false
-    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
+    Click Menu
     Click Menu My Account
     Click Menu Orders
     Click Awaiting Order By Index    1
@@ -896,7 +894,6 @@ Apps > My Account Verifications - QASA-477
     [Tags]    QASA-477
     [Setup]    Start Application    ${False}
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Menu
@@ -993,14 +990,13 @@ Apps > My Account Verifications - QASA-89
     Verify Text On Screen    Superbalist    5s
     Click Back Android
     Click Menu Help
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    What can we help you with?    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Chrome    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
 Apps > Order Tracking (Collect) - QASA-547
     [Tags]    QASA-547
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -1057,7 +1053,6 @@ Apps > Order Tracking 05 - QASA-79
     [Tags]    QASA-79
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -1112,7 +1107,6 @@ Apps > Cart (Android) > QASA-524 - QASA-81
     [Tags]    QASA-524    QASA-81
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1130,7 +1124,6 @@ Apps > Cart (Android) 02 - QASA-84
     [Tags]    QASA-84
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    t@ke@!ot1234
     Click Home
     Click Search Home
@@ -1163,7 +1156,6 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     [Tags]    QASA-83    QASA-82
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1206,7 +1198,6 @@ Cart Update & Cart Notification - TV - QASA-248
     [Tags]    QASA-248
     [Setup]    Start Application    ${False}
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1271,12 +1262,12 @@ Cart Update & Cart Notification - Liquor - QASA-249
     Click Address
     Click Any Delivery
     Click Donate No Thanks
-    ${liquorProductId}=    Search And Return Product Id API    liquor
+    ${liquorProductId}=    Search And Return Product Id API    johnnie+walker
     Add To Cart    productId=${liquorProductId}
     Click Pay With Credit Card
-    Verify Text On Screen    You've added the following new item(s) to your cart
+    Verify Text On Screen    added the following new item(s) to your cart    ${MIN_TIMEOUT}
     Click Continue To Checkout
-    Verify Text On Screen    Age Verification
+    Verify Text On Screen    Age Verification    ${MIN_TIMEOUT}
     Verify Text On Screen    You have added liquor to your cart. Please verify that you are 18 years of age or older.
     [Teardown]    Tear Down
 
@@ -1284,7 +1275,6 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     [Tags]    QASA-247
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1343,7 +1333,6 @@ Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
     [Tags]    QASA-874
     [Setup]    Start Application
     Clear Environment
-    Click Menu
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home

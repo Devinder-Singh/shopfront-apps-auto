@@ -23,9 +23,9 @@ Verify Payfast Payment Text
     ${success}=    Set Variable    ${False}
     FOR    ${counter}    IN RANGE    1    120
         Log    ${counter}
-        ${success}=    Run Keyword And Return Status    Verify Text On Screen    Instant EFT    1s
+        ${success}=    Run Keyword And Return Status    Verify Text On Screen    Instant EFT    ${MIN_TIMEOUT}
         IF    ${success}==${False}
-            ${success}=    Run Keyword And Return Status    Verify Text On Screen    Test Merchant    1s
+            ${success}=    Run Keyword And Return Status    Verify Text On Screen    Test Merchant    ${MIN_TIMEOUT}
         END
         IF    ${success}==${True}
             Exit For Loop
@@ -42,7 +42,7 @@ Click Pay with Credit Card Back
 
 Input Credit Card Number
     [Arguments]    ${cardNumber}
-    Wait Until Element Is Visible    ${txtCreditCardNumber}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${txtCreditCardNumber}    ${MAX_TIMEOUT}
     Click Element    ${txtCreditCardNumber}
 
     Clear Text    ${txtCreditCardNumber}

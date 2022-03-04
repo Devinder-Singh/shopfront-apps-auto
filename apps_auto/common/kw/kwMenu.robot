@@ -42,12 +42,18 @@ Log In If Not Logged In
     [Arguments]    ${email}    ${password}
 
     Click Menu
-    Click Menu Login
+    IF    '${PLATFORM_NAME}'=='android'
+        Wait Until Element Is Visible    ${btnMenu}    ${MIN_TIMEOUT}
+        Click Element    ${btnMenu}
+        Swipe Up    ${windowScroll}
+    END
+
     ${chkVisible}=    Run Keyword And Return Status    Verify Element On Screen    ${btnLogout}    ${MIN_TIMEOUT}
+
     IF   ${chkVisible} == ${False}
         Wait Until Element Is Visible    ${btnMenuLogin}
         Click Element    ${btnMenuLogin}
-        Login Takealot    ${email}    ${password}
+        Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
         Click Element    ${btnMenu}
     END
 
@@ -186,9 +192,9 @@ Click Menu Personal Detail
     Click Element    ${btnMenuPersonalDetail}
 
 Click Menu Orders
-    IF    '${PLATFORM_NAME}'=='android'
-        Swipe Down    ${windowScroll}
-    END
+#    IF    '${PLATFORM_NAME}'=='android'
+#        Swipe Down    ${windowScroll}
+#    END
     Wait Until Element Is Visible    ${btnMenuOrders}
     Click Element    ${btnMenuOrders}
 

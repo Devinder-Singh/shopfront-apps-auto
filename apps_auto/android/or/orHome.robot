@@ -16,7 +16,7 @@ ${btnHomeClearAllRecent}      xpath=//*[@text="CLEAR ALL"]
 ${btnHomeClearCancelRecent}      id=${APP_PACKAGE}:id/snackbar_action
 ${btnHomeClearRecent}      ${EMPTY}
 
-${btnHomeDeptDailyDeals}      xpath=//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/cmsPageWidgetImageListItemHeading' and @text='Daily Deals']
+${btnHomeDeptDailyDeals}      xpath=//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/cmsPageWidgetImageListItemHeading' and @text='Blue Dot Sale']
 ${btnHomeDeptAppOnlyDeals}      xpath=//*[@text="App Only Deals"]
 ${btnHomeDeptHomeCook}      xpath=//*[@text="Home Cook Essentials"]
 ${btnHomeDeptHealthCare}      xpath=//*[@text="Health & Personal Care"]

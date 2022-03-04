@@ -252,6 +252,7 @@ Click Wine Club Deals
 
 Click Product Filter
     Wait Until Element Is Visible    ${btnProductFilter}    ${MIN_TIMEOUT}
+    Sleep    1
     Click Element    ${btnProductFilter}
 
 Click Product Grid View
@@ -295,8 +296,9 @@ Click Product available in JHB and CPT
 
 Click Product in Leadtime
     ${txtProduct}=    Get Product with Leadtime
-    Wait Until Element Is Visible    ${txtProduct}    ${MIN_TIMEOUT}
-    Click Element    ${txtProduct}
+
+    Wait Until Element Is Visible    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
+    Click Element On Scroll    ${txtProduct}
 
 Verify Product Image
     Verify Daily Deals Image
@@ -396,7 +398,7 @@ Click Promotion Item By Index
     [Arguments]    ${itemIndex}
     ${dynamicItemByIndexAndroid}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='${APP_PACKAGE}:id/dealsWidgetPromotionProductItemTitle'])[${itemIndex}]
     ${dynamicItemByIndexIos}=    Set Variable    chain=**/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeImage[${itemIndex}]
-    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Page Contains Element    ${dynamicItemByIndexAndroid}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Wait Until Page Contains Element    ${dynamicItemByIndexAndroid}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Element    ${dynamicItemByIndexAndroid}  
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Wait Until Page Contains Element    ${dynamicItemByIndexIos}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Element    ${dynamicItemByIndexIos}

@@ -6,7 +6,7 @@ ${btnCarouselWidget}      id=${APP_PACKAGE}:id/cmsPageWidgetCarouselViewPagerInd
 ${btnBannerWidget}      id=${APP_PACKAGE}:id/cmsPageWidgetBannerPairItemImage
 ${btnProductWidget}      xpath=//*[contains(@text, "OFF")]
 ${btnImageWidget}      id=${APP_PACKAGE}:id/cmsPageWidgetImageListItemImage
-${btnContextWidget}      xpath=(//android.widget.TextView)[2]
+${btnContextWidget}      id=${APP_PACKAGE}:id/cmsPageWidgetCarouselItemImage
 
 ${btnWidgetProdTitle}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListItemTitle
 ${btnWidgetProdPrice}      id=${APP_PACKAGE}:id/cmsPageWidgetProductListItemPrice

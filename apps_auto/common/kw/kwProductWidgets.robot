@@ -31,6 +31,7 @@ Click Product Widget Image
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element On Scroll    ${btnImageWidget}
 
 Click Product Widget Context
+    Wait Until Element Is Visible    ${btnContextWidget}    ${MAX_TIMEOUT}
     Click Element On Scroll    ${btnContextWidget}    15
 
 Verify Product Widget Navigation
