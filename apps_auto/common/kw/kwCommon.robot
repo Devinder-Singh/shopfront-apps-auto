@@ -146,7 +146,7 @@ Verify Price On Screen
     END
 
 Verify Text On Screen
-    [Arguments]    ${verifyText}    ${timeout}=5s
+    [Arguments]    ${verifyText}    ${timeout}=${MIN_TIMEOUT}
     ${txtVerify}=    Set Variable    ${None}
     IF    '${PLATFORM_NAME}' == 'ios'
         ${txtVerify}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${verifyText}"`]
@@ -177,7 +177,7 @@ Verify Product Review
    
 Check Text On Screen Not
     [Arguments]    ${verifyText}
-    Wait Until Page Does Not Contain    ${verifyText}    ${MIN_TIMEOUT} 
+    Wait Until Page Does Not Contain    ${verifyText}    ${MAX_TIMEOUT} 
 
 Verify Element On Screen
     [Arguments]    ${verifyElement}    ${timeout}=5s
@@ -253,9 +253,9 @@ Scroll To Text
     IF    '${PLATFORM_NAME}'== 'android'
         ${element}=    Set Variable    xpath=//*[contains(@text,"${text}")]
     ELSE
-        ${element}=    Set Variable    chain=**/XCUIElementTypeButton[`label CONTAINS "${text}"`]
+        ${element}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS "${text}"`]
     END
-
+    
     IF    '${scrollSwipeDirection}' == 'Up'
         Scroll To Element   ${element}    ${loopTimes}    ${scrollElement}
     ELSE IF    '${scrollSwipeDirection}' == 'Down'
@@ -267,13 +267,15 @@ Scroll To Text
     END
     Page Should Contain Element    ${element}
 
+    
+
 Scroll To Element
     [Arguments]    ${element}    ${loopTimes}=30    ${scrollElement}=${windowScroll}    ${scrollSwipeDirection}=Up
     Set Implicitly Wait    1
     ${chkProdVisible}=    Set Variable    ${False}
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    ${loopTimes}
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    1s
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    ${MAX_TIMEOUT}
         IF    ${chkProdVisible}==${True}
             Exit For Loop
         END

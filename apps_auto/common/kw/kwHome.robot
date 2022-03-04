@@ -12,7 +12,7 @@ Click Home iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Click Element    ${btnHome}
 
 Click Add To Wishlist
-    Wait Until Element Is Visible    ${btnAddWishlist}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnAddWishlist}    ${MAX_TIMEOUT}
     Click Element    ${btnAddWishlist}
     Verify Text On Screen    Item added to Wish List    ${MAX_TIMEOUT}
     Verify Text Not On Screen    Item added to Wish List    ${MAX_TIMEOUT}
@@ -119,12 +119,14 @@ Click Clear All Recently Viewed Android
     END
 
 Click Cancel Clear All Recently Viewed
+    [Arguments]    ${sleepBeforeAction}=1s
+    Sleep    ${sleepBeforeAction}
     Wait Until Element Is Visible    ${btnHomeClearCancelRecent}    ${MIN_TIMEOUT}
     Click Element    ${btnHomeClearCancelRecent}
 
 Confirm Clear All Recently Viewed
     IF    '${PLATFORM_NAME}' == 'ios'
-        Wait Until Element Is Visible    ${btnHomeClearRecent}    ${MIN_TIMEOUT}
+        Wait Until Element Is Visible    ${btnHomeClearRecent}    ${MAX_TIMEOUT}
         Click Element    ${btnHomeClearRecent}
     END
 

@@ -319,7 +319,7 @@ Apps > Cart > Limitations - QASA-522
     Start Application
     Click Home
     Click Home Cart
-    Change Cart Quantity Android    2
+    Change Cart Quantity    2
     Click Checkout
     [Teardown]    Tear Down
 
@@ -490,7 +490,7 @@ Apps > Product Card Actions > Stock Check - QASA-2
 #    Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    10
+    Change Cart Quantity    10
     Verify Text On Screen    You've attempted to order more stock than currently available at our warehouse    ${MIN_TIMEOUT}
     Verify Text On Screen    The products will need to be ordered from our supplier. If you'd rather not wait for the extra stock to arrive from the supplier, please update the quantity accordingly    1s
     Close Application
@@ -501,7 +501,7 @@ Apps > Product Card Actions > Stock Check - QASA-2
     Click Leadtime Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    10
+    Change Cart Quantity    10
     Verify Text On Screen    You asked for 10 but we only have    ${MIN_TIMEOUT}
     Verify Text On Screen    available    1s
     [Teardown]    Tear Down
@@ -518,7 +518,7 @@ Apps > Cart > Product Card Actions > Update Quantity - QASA-3
     Click In Stock Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    2
+    Change Cart Quantity    2
     Verify Text On Screen    2    ${MIN_TIMEOUT}
     Change Cart Quantity Scroll    150
     Verify Text On Screen    You have attempted to order over 200kg of liquor items. We restrict liquor to a maximum of 200kg    ${MIN_TIMEOUT}
@@ -537,7 +537,7 @@ Apps > Cart > Product Card Actions > Edit - QASA-5
     Click Product from API
     Click Add To Cart
     Click Go To Cart
-    Change Cart Quantity Android    2
+    Change Cart Quantity    2
     Click Checkout Delete First Item
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    No items    ${MIN_TIMEOUT}
     Click Checkout Cart Undo

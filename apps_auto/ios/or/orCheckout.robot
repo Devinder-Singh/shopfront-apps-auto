@@ -1,18 +1,18 @@
 *** Variables ***
 ${btnCheckout}      chain=**/XCUIElementTypeButton[`label == "Proceed to Checkout"`]
-${btnCheckoutDelete}      chain=**/XCUIElementTypeButton[`name == "CartItemDeleteButton"`]
+${btnCheckoutDelete}      chain=**/XCUIElementTypeButton[`name == "Remove"`]
 ${btnItemPromotion}    chain=**/XCUIElementTypeButton[`label == "1 promotion applied"`]
 
-${btnCheckoutMoveToWishlist}    id=CartItemWishlistButton
+${btnCheckoutMoveToWishlist}    chain=**/XCUIElementTypeStaticText[`label == "Move to List"`]
 
-${btnCheckoutEdit}    accessibility_id=Edit
-${btnCheckoutSelect}    chain=**/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeButton
+${btnCheckoutEdit}    chain=**/XCUIElementTypeButton[`label == "icon pencil"`]
+${btnCheckoutSelect}    chain=**/XCUIElementTypeCell/XCUIElementTypeButton
 
-${btnCartQty}    id=CartItemQuantityButton
+${btnCartQty}    chain=**/XCUIElementTypeTable/XCUIElementTypeCell/XCUIElementTypeButton[2]
 
 ${btnCartUndo}    ${EMPTY}
-${btnCartTrendingAddToCart}      ${EMPTY}
-${btnCartContinueShopping}      ${EMPTY}
+${btnCartTrendingAddToCart}    chain=**/XCUIElementTypeButton[`label == "icon cartButton"`]
+${btnCartContinueShopping}    chain=**/XCUIElementTypeButton[`label == "Continue Shopping"`]
 
 ${btnCartQtyRoot}    chain=**/XCUIElementTypeNavigationBar[`name == "Shopping Cart"`]
 ${btnCartAddPromoItems}    chain=**/XCUIElementTypeButton[`label == "Add 1 item to qualify"`]
@@ -23,3 +23,5 @@ ${btnCartCustomersAlsoBought}    ${EMPTY}
 ${btnCartItemContainer}    ${EMPTY}
 
 ${btnDeleteUnderItemCard}    chain=**/XCUIElementTypeButton[`label == "Delete"`]
+${qtyPickerWheel}    chain=**/XCUIElementTypePickerWheel
+${btnQtyPickerWheelDone}    chain=**/XCUIElementTypeButton[`label == "Done"`]
