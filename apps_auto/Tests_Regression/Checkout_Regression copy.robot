@@ -1845,8 +1845,9 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 04 - QASA-97
     Click Checkout
     Click Delivery
     Click Address
-    Verify Delivery Options Text    Items for Delivery
-    Verify Delivery Options Text    When would you like it delivered?
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ITEMS FOR DELIVERY    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Items for Delivery    ${MIN_TIMEOUT}
+    Verify Text On Screen    When would you like it delivered?
     [Teardown]    Tear Down
 
 Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QASA-96
@@ -1863,8 +1864,9 @@ Apps > Checkout > Delivery Options > Add Gift Recipient 05 - QASA-96
     Click Checkout
     Click Collect
     Click Pickup Point
-    Verify Delivery Options Text    Items for Collection
-    Verify Delivery Options Text    Estimated collection from:
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ITEMS FOR COLLECTION    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Items For Collection    ${MIN_TIMEOUT}
+    Verify Text On Screen    Estimated collection from:
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Mobicred - QASA-555
