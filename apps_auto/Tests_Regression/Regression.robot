@@ -604,26 +604,30 @@ Apps > PDP - QASA-168
     Click Menu
     Click Menu Register
     Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    ${completedOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}
     Click Home
     Click Search Home
-    ${PLID}=    Search Product And Return PLID API    jean for wom    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${PLID}=    Search Product And Return PLID API    sunlight    searchResultIndex=0    enableHasMoreColoursFlag=${True}
     ${productTitle}=    Get Product Title By PLID API    ${PLID}
-    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
-    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
-    Search Product    jean for wom
+#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+#    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
     Click Product From Search Result    ${productTitle}
-    Click Variant By Colour Dynamically    ${colourVariants}[0]
-    Click Variant By Size Dynamically    ${SizeVariants}[0]
+#    Click Variant By Colour Dynamically    ${colourVariants}[0]
+#    Click Variant By Size Dynamically    ${SizeVariants}[0]
     Click PDP Write Review
+    Click Write Product Review
+    Click Understand Write Review
     Click Review Rating
-    Enter Review Message    Auto Test
+    Enter Review Message    Auto Test Auto Test Auto Test
     Click Review Submit
-    Verify Text On Screen    Thank you for your review    ${MIN_TIMEOUT}
-    Click PDP Write Review
-    Click Review Rating
-    Enter Review Message    Auto Test
-    Click Review Submit
-    Verify Text On Screen    You've already submitted a review for this product    ${MIN_TIMEOUT}
+    Verify Text On Screen    Awaiting Approval    ${MIN_TIMEOUT}
+#    Click PDP Write Review
+#    Click Review Rating
+#    Enter Review Message    Auto Test
+#    Click Review Submit
+#    Verify Text On Screen    You've already submitted a review for this product    ${MIN_TIMEOUT}
     Click Back Android
     Click Back iOS    ${productTitle}
     Click PDP Show All Reviews
@@ -649,8 +653,9 @@ Apps > PDP - QASA-168
     Start Application    ${False}
     Click Home
     Click Search Home
-    Search Product    jean for wome
-    Click Product From Search Result    ${productTitle}
+    Search Product    sunlight
+    Click Product from API
+#    Click Product From Search Result    ${productTitle}
     Click PDP Write Review
     Verify Element On Screen    ${btnLogin}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
@@ -1312,7 +1317,7 @@ Cart Update & Cart Notification - Liquor - QASA-249
     Verify Text On Screen    You have added liquor to your cart. Please verify that you are 18 years of age or older.
     [Teardown]    Tear Down
 
-Cart Update & Cart Notification - Heavy Good - QASA-247
+Cart Update & Cart Notification - Heavy Good (Delivery) - QASA-247
     [Tags]    QASA-247
     [Setup]    Start Application
     Clear Environment
@@ -1334,9 +1339,13 @@ Cart Update & Cart Notification - Heavy Good - QASA-247
     Click Pay With Credit Card
     Click Cart Update Continue Checkout
     Click Pay With Credit Card
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Cart Update & Cart Notification - Heavy Good (Collect) - QASA-1023
+    [Tags]    QASA-247
+    [Setup]    Start Application
     Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Pencil
@@ -1370,60 +1379,60 @@ PDP - Brand Links - QASA-28
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
-    [Tags]    QASA-874
-    [Setup]    Start Application
-    Clear Environment
-    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Collect
-    Click Filter Province
-    Select Province Dynamically    Western Cape
-    Click Pickup Point
-    Click Any Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Add To Cart    productId=101371987
-    Click Pay With Credit Card
-    Click Cart Update Continue Checkout
-    Click Collect Not Available
-    Click Delivery
-    Click Address
-    Click Surcharge Delivery
-    Close Application
-    Start Application
-    Clear Environment
-    Click Home
-    Click Search Home
-    Search Product    Pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Collect
-    Click Filter Province
-    Select Province Dynamically    Western Cape
-    Click Pickup Point
-    Click Any Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Add To Cart    productId=101371987
-    Click Pay With Credit Card
-    Click Cart Update Back To Cart
-    Click Checkout
-    Click Collect Not Available
-    Click Delivery
-    Click Address
-    Click Surcharge Delivery
-    [Teardown]    Tear Down
+#Cart Update & Cart Notification - Heavy Good - Collect - QASA-874
+#    [Tags]    QASA-874
+#    [Setup]    Start Application
+#    Clear Environment
+#    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+#    Click Home
+#    Click Search Home
+#    Search Product    Pencil
+#    Click Product from API
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout
+#    Click Collect
+#    Click Filter Province
+#    Select Province Dynamically    Western Cape
+#    Click Pickup Point
+#    Click Any Delivery
+#    Click Donate No Thanks
+#    Click Change Payment Method
+#    Click Card Payment Method
+#    Add To Cart    productId=101371987
+#    Click Pay With Credit Card
+#    Click Cart Update Continue Checkout
+#    Click Collect Not Available
+#    Click Delivery
+#    Click Address
+#    Click Surcharge Delivery
+#    Close Application
+#    Start Application
+#    Clear Environment
+#    Click Home
+#    Click Search Home
+#    Search Product    Pencil
+#    Click Product from API
+#    Click Add To Cart
+#    Click Go To Cart
+#    Click Checkout
+#    Click Collect
+#    Click Filter Province
+#   Select Province Dynamically    Western Cape
+#    Click Pickup Point
+#    Click Any Delivery
+#    Click Donate No Thanks
+#    Click Change Payment Method
+#    Click Card Payment Method
+#    Add To Cart    productId=101371987
+#    Click Pay With Credit Card
+#    Click Cart Update Back To Cart
+#    Click Checkout
+#    Click Collect Not Available
+#    Click Delivery
+#    Click Address
+#    Click Surcharge Delivery
+#    [Teardown]    Tear Down
 
 iOS > Privacy Attention Prompt - QASA-43
     [Tags]    QASA-43

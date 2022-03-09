@@ -114,6 +114,10 @@ Click Reviews Sort Option Most Helpful
     Wait Until Element Is Visible    ${btnReviewsSortOptionMostHelpful}    10s
     Click Element    ${btnReviewsSortOptionMostHelpful}
 
+Click Review Report Reason
+    Wait Until Element Is Visible    ${lblReviewReportReason}    ${MIN_TIMEOUT}
+    Click Element    ${lblReviewReportReason}
+
 Click Review Submit
     Wait Until Element Is Visible    ${btnReviewSubmit}    ${MIN_TIMEOUT}
     Click Element    ${btnReviewSubmit}
@@ -133,6 +137,18 @@ Click Review Submit OK
 Click Review Rating
     Wait Until Element Is Visible    ${btnReviewStarRating}    ${MIN_TIMEOUT}
     Click Element    ${btnReviewStarRating}
+
+Click Edit Review
+    Wait Until Element Is Visible    ${btnReviewStarRating}    ${MIN_TIMEOUT}
+    Click Element    ${btnReviewStarRating}
+
+Click Delete Review
+    Wait Until Element Is Visible    ${btnReviewStarRating}    ${MIN_TIMEOUT}
+    Click Element    ${btnReviewStarRating}
+
+Click Remove Review
+    Wait Until Element Is Visible    ${btnReviewsRemove}    ${MIN_TIMEOUT}
+    Click Element    ${btnReviewsRemove}
 
 Click Review Upvote Button
     Click Element    ${btnReviewsUpvoteButton}

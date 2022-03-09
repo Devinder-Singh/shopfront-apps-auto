@@ -47,3 +47,8 @@ ${btnReviewsReportReviewDialogButton}    ${EMPTY}
 
 ${btnReviewsStarRating}    chain=**/XCUIElementTypeButton[`label == "icon ratingStar1"`]
 ${btnReviewsMsg}    chain**/XCUIElementTypeCell[`name == "btnPDPUserReviews"`]
+
+${btnReviewsEdit}    chain=**/XCUIElementTypeButton[`label CONTAINS "Edit"`]
+${btnReviewsDelete}    chain=**/XCUIElementTypeButton[`label CONTAINS "Delete"`]
+${btnReviewsRemove}    chain=**/XCUIElementTypeButton[`label CONTAINS "Remove"`]
+${lblReviewReportReason}    chain=**/XCUIElementTypeStaticText[`label CONTAINS "It is abusive or harmful"`]

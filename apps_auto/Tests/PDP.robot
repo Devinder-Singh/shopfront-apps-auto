@@ -1254,3 +1254,14 @@ Apps > PDP > Heavy Charge - QASA-426
     Click Product from API
     Verify Text On Screen    + R 200 Delivery Surcharge
     [Teardown]    Tear Down
+
+Apps > Brand Links > Merchandised Page - QASA-32
+    [Tags]    QASA-32
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    Search Product    Samsung
+    Click First Product from API
+    Click Brand Name
+    Verify Text On Screen    Samsung    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down

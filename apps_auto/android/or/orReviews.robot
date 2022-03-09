@@ -46,3 +46,8 @@ ${btnReviewsReportReviewDialogButton}    id=android:id/button1
 
 ${btnReviewsStarRating}    id=${APP_PACKAGE}:id/pdp_widget_review_star_item_star_main
 ${btnReviewsMsg}    id=${APP_PACKAGE}:id/review_message
+
+${btnReviewsEdit}    id=${APP_PACKAGE}:id/Edit
+${btnReviewsDelete}    id=${APP_PACKAGE}:id/Delete
+${btnReviewsRemove}    id=${APP_PACKAGE}:id/REMOVE
+${lblReviewReportReason}      xpath=//*[@text="It is abusive or harmful"]

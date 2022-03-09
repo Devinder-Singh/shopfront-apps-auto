@@ -550,22 +550,61 @@ Apps > Cart > Product Card Actions > On boarding > QASA-4
     Clear Environment
     ${productId}=    Search And Return Product Id API    Sunlight Regular Dishwashing Liquid
     Add To Cart    ${productId}
-
     ${productId}=    Search And Return Product Id API    omo auto washing
     Add To Cart    ${productId}
-        
     Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Menu
     Click Home Cart
-    
     Swipe Cart Item Left    1
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Cart Move To Wishlist    1
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Verify Snack Bar    Item moved to list
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Click Cart Delete    1
-
     Swipe Cart Item Left    1    3s
     Click Cart Delete    1
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Verify Snack Bar    Item removed from Cart.    
     Run Keyword If    '${PLATFORM_NAME}' == 'ios'    Verify Text On Screen    No items
+    [Teardown]    Tear Down
+
+Apps > Cart > Promotions > Daily Deal - QASA-949
+    [Tags]    QASA-949
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Menu
+    Click Menu Daily Deals
+    Click App Only Deals
+    Click Promotion Item By Index    itemIndex=4
+    Click Add To Cart
+    Click Go To Cart
+    Change Cart Quantity Scroll    5
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Click Item Promotion Text
+    Verify Text On Screen    4 x R    ${MAX_TIMEOUT}
+    Verify Text On Screen    Fire Sale Tech Deals    ${MIN_TIMEOUT}
+    Verify Text On Screen    Only 4 per customer    ${MIN_TIMEOUT}
+    Verify Text On Screen    Item Total    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Cart > Promotions > App-Only Deal - QASA-1012
+    [Tags]    QASA-1012
+    [Setup]    Start Application
+    Clear Environment
+    Click Menu
+    Click Menu Login
+    Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Menu
+    Click Menu Daily Deals
+    Click Promotion Item By Index    itemIndex=1
+    Click Add To Cart
+    Click Go To Cart
+    Change Cart Quantity Scroll    4
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Click Item Promotion Text
+    Verify Text On Screen    4 x R    ${MAX_TIMEOUT}
+    Verify Text On Screen    Daily Deals
+    Verify Text On Screen    Only 4 per customer
+    Verify Text On Screen    Item Total
     [Teardown]    Tear Down

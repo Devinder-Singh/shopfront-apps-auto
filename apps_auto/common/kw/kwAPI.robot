@@ -145,8 +145,8 @@ Update Order Delivery DB
         Post    ${query_URL}    ${query_OrderShip_Body}
         Integer    response status    200
     END
-    ${query_OrderShip_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "Update orderitems set DateDelivered = ${todayDateFormat} where idOrder = ${orderId}" }
-    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${query_URL}    ${query_OrderShip_Body}
+#    ${query_OrderShip_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "Update orderitems set DateDelivered = ${todayDateFormat} where idOrder = ${orderId}" }
+#    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${query_URL}    ${query_OrderShip_Body}
 
 Add To Cart
     [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
@@ -1460,7 +1460,7 @@ Search Product And Return PLID API
     [Documentation]    This keyword will call the search API and return a PLID. The default PLID that will be returned will be the first items PLID.
                         ...    Note that if the 'enableHasMoreColoursFlag' is set then the 'searchResultIndex' will only reference these items when returning.
     [Arguments]    ${searchTerm}    ${searchResultIndex}=1    ${enableHasMoreColoursFlag}=${False}
-    
+
     #Parse search term to this method which calls another API to simulate recommended search results to match UI suggestions to make API search and UI search in sync.
     #This method will set a global value which will be used in search.
     Get First Search Option    ${searchTerm}
@@ -1502,7 +1502,7 @@ Get Product Variants By PLID API
     [Documentation]    Calls the get product API and returns a list of the variants based on variant type. An example of a type can be Value (airtime), Colour or Size.
     [Arguments]    ${PLID}    ${variantType}
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    endPoint=${APP_ENVIRONMENT}rest/v-1-10-0/product-details/${PLID}
-    
+
     #First get a list of variant selectors and loop through them until you find the specified type at a specified index.
     @{variantSelectorTitleArray}=    Output    $.variants.selectors[*]
     ${variantSelectorTitleArraySize}=    Get Length    ${variantSelectorTitleArray}

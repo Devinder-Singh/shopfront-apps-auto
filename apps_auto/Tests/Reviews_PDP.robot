@@ -251,3 +251,94 @@ Apps > Reviews > Read Reviews > Reviews Submitted by Customers - QASA-284
     Verify Element On Screen    ${btnReviewsStarRating}
     Verify Element On Screen    ${btnReviewsMsg}
     [Teardown]    Tear Down
+
+My Account > Product Reviews - QASA-956
+    [Tags]    QASA-956
+    [Setup]    Start Application
+    Click Menu
+    Click Menu Login
+    Close Application
+    Start Application    ${False}
+    Click Menu
+    Click Menu Register
+    Register Takealot    AutoTest    Test    ?    t@ke@!ot1234
+    ${completedOrderProductId}=    Search And Return Product Id API    sunlight
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+    Update Order Delivery DB    ${query_order_id}
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    sunlight    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+#    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
+    Click Product From Search Result    ${productTitle}
+#    Click Variant By Colour Dynamically    ${colourVariants}[0]
+#    Click Variant By Size Dynamically    ${SizeVariants}[0]
+    Click PDP Write Review
+    Click Write Product Review
+    Click Understand Write Review
+    Click Review Rating
+    Enter Review Message    Auto Test Auto Test Auto Test
+    Click Review Submit
+    Verify Text On Screen    Awaiting Approval    ${MIN_TIMEOUT}
+#    Click PDP Write Review
+#    Click Review Rating
+#    Enter Review Message    Auto Test
+#    Click Review Submit
+#    Verify Text On Screen    You've already submitted a review for this product    ${MIN_TIMEOUT}
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    sunlight    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+#    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
+    Click Product From Search Result    ${productTitle}
+    Click PDP Write Review
+    Verify Text On Screen    REVIEWS HISTORY    ${MIN_TIMEOUT}
+    Click Product From Search Result    ${productTitle}
+    Click Edit Review
+    Click Review Rating
+    Enter Review Message    Auto Test Auto Test Auto Test
+    Click Review Submit
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    sunlight    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+#    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
+    Click Product From Search Result    ${productTitle}
+    Click PDP Write Review
+    Verify Text On Screen    REVIEWS HISTORY    ${MIN_TIMEOUT}
+    Click Product From Search Result    ${productTitle}
+    Click Delete Review
+    Click Remove Review
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    sunlight    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+#    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
+    Click Product From Search Result    ${productTitle}
+    Click Review Helpful
+    Verify Text On Screen    You cannot upvote your own review    ${MIN_TIMEOUT}
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    sunlight    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+#    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
+    Click Product From Search Result    ${productTitle}
+    Click Review Report Review Menu Button
+    Click Review Report
+    Click Review Report Reason
+    Click Review Submit
+    Verify Text On Screen    You cannot report your own review    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down

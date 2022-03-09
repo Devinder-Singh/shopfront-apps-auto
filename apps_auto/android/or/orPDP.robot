@@ -12,7 +12,7 @@ ${btnPDPCartItemIncrease}      id=${APP_PACKAGE}:id/pdpAddToCartIncreaseButton
 ${navBackPDP}    accessibility_id=Navigate up
 ${navCartScr}    ${EMPTY}${APP_PACKAGE}:id/pdp_widget_stock_status_seller_btn
 
-${btnPDPSellerName}    id=${APP_PACKAGE}:id/productListingSubtitle
+${btnPDPSellerName}    id=${APP_PACKAGE}:id/pdp_widget_buy_box_sub_title_action_button
 ${btnPDPSoldByName}    id=${APP_PACKAGE}:id/pdp_widget_buy_box_sub_title_action_button
 ${lblBlueValue}      xpath=//*[@text="Blue"]
 ${btnPDPReview}      xpath=//*[contains(@text, "WRITE REVIEW")]
