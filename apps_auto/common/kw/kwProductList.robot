@@ -214,6 +214,14 @@ Click YMAL Product From Title
 
     Click Element    ${lblProdTitle}
 
+Click Related Product From Title
+    [Arguments]    ${title}
+
+    ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
+
+    Verify Text On Screen    Related Products    ${MIN_TIMEOUT}
+    Click Element On Scroll    ${lblProdTitle}    10
+
 Click Product Text
     [Arguments]    ${title}
 

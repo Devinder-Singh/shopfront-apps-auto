@@ -262,6 +262,44 @@ Get Sponsored Product Detail
 
     [return]    ${searchResult}
 
+
+Get Sponsored Products in PDP
+    [Arguments]    ${search_item}
+    ${index}=    Set Variable    1
+
+    FOR    ${index}    IN RANGE    100
+        ${PLID}=    Search Product And Return PLID API    ${search_item}    ${index}
+        ${productTitle}=    Get Product Title By PLID API    ${PLID} 
+        ${relatedProduct_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/sponsored-products/${PLID}?uuid=6f357297-967b-387d-a93f-295e80fa5f5d&platform=android
+        Get    ${relatedProduct_URL}
+        Integer    response status    200
+        ${num_items}=    Output    $.num_items
+        IF    ${num_items} > 0
+            ${results_title}=    Output    $.results[0].core.title
+            ${results_brand}=    Output    $.results[0].core.brand
+            ${results_rating}=    Output    $.results[0].core.star_rating
+
+            ${results_price}=    Output    $.results[0].buybox_summary.pretty_price
+            ${results_listprice}=    Output    $.results[0].buybox_summary.listing_price
+            ${results_status}=    Output    $.results[0].stock_availability_summary.status
+
+            ${searchResult}=    Set Variable    'True'
+            Set Global Variable    ${query_result_adNumItems}    ${num_items}
+            Set Global Variable    ${query_result_adProductTitle}    ${results_title}
+            Set Global Variable    ${query_result_adProductBrand}    ${results_brand}
+            Set Global Variable    ${query_result_adProductRating}    ${results_rating}
+
+            Set Global Variable    ${query_result_adProductPrice}    ${results_price}
+            Set Global Variable    ${query_result_adProductListPrice}    ${results_listprice}
+            Set Global Variable    ${query_result_adProductStatus}    ${results_status}
+            Exit For Loop            
+        END
+        ${index}=    Evaluate    ${index} + 1
+        
+    END
+    [return]    ${productTitle}
+
+
 Get Leadtime Product to Add To Cart
     ${search_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,filters,facets,sort_options,breadcrumbs,slots_audience,context,seo?qsearch=${query_result_search}
     Get    ${search_URL}

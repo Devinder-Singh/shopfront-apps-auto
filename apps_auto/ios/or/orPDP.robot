@@ -66,7 +66,7 @@ ${lblPDPAutoTestWishListSave}    chain=**/XCUIElementTypeStaticText[`label == "'
 ${btnPDPShowAllReviews}    chain=**/XCUIElementTypeButton[`label CONTAINS "Show All Reviews"`]
 
 ${lblPDPRelatedProdSponsored}    chain=**/XCUIElementTypeStaticText[`label == "Sponsored"`]
-${lblPDPRelatedProdSponsoredOK}    chain=**/XCUIElementTypeStaticText[`label == "OK"`]
+${lblPDPRelatedProdSponsoredOK}    chain=**/XCUIElementTypeButton[`label == "Cancel"`]
 
 ${lblPDPWishlistChange}    chain=**/XCUIElementTypeStaticText[`label == "CHANGE"`]
 
