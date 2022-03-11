@@ -1079,6 +1079,7 @@ Apps > Order Tracking (Collect) - QASA-547
 Apps > Order Tracking 05 - QASA-79
     [Tags]    QASA-79
     [Setup]    Start Application
+    #Test Setup
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
@@ -1089,10 +1090,6 @@ Apps > Order Tracking 05 - QASA-79
     Click Go To Cart
     Click Checkout
     Click Delivery
-    ${noAddressExists}=    Run Keyword And Return Status    Verify Text On Screen    Please add a Delivery    ${MAX_TIMEOUT} 
-    Run Keyword If    '${noAddressExists}' == '${True}'    Click Add Delivery Address
-    Run Keyword If    '${noAddressExists}' == '${True}'    Click Residential
-    Run Keyword If    '${noAddressExists}' == '${True}'    Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Click Address By Index
     Click Surcharge Delivery
     Click Donate No Thanks
@@ -1100,9 +1097,14 @@ Apps > Order Tracking 05 - QASA-79
     Enter Payment Voucher Code
     Click Apply Payment Voucher
     Click Back Payment Voucher
+<<<<<<< HEAD
     Click Payment Confirm Order
     Click Track Order Detail
     kwConfirmation.Click Track Order
+=======
+    Click Pay With Credit Card
+    #Main Test
+>>>>>>> 549599fdd9c1beb2562e752233c3a76e0810266c
     Close Application
     Start Application
     Click Menu
@@ -1122,11 +1124,11 @@ Apps > Order Tracking 05 - QASA-79
     Verify Text On Screen    Standard    ${MIN_TIMEOUT}
     Verify Text On Screen    SHIPPING ADDRESS    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
-    Verify Text On Screen    Tester Residential    ${MIN_TIMEOUT}
-    Verify Text On Screen    13 Caro Road    ${MIN_TIMEOUT}
-    Verify Text On Screen    Robertsham    ${MIN_TIMEOUT}
-    Verify Text On Screen    Johannesburg South    ${MIN_TIMEOUT}
-    Verify Text On Screen    2091    ${MIN_TIMEOUT}
+    Verify Text On Screen    Test    ${MIN_TIMEOUT}
+    Verify Text On Screen    12 Ridge Way    ${MIN_TIMEOUT}
+    Verify Text On Screen    Green Point    ${MIN_TIMEOUT}
+    Verify Text On Screen    Cape Town    ${MIN_TIMEOUT}
+    Verify Text On Screen    8005    ${MIN_TIMEOUT}
     Swipe Down    ${windowScroll}
     Click Order Pay Now
     Click Change Payment Method Only
@@ -1204,7 +1206,7 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     ${telkomProductPLID}=    Search Product And Return PLID API    Telkom
     ${telkomProductTitle}=    Get Product Title By PLID API    ${telkomProductPLID}
     Search Product    Telkom
-    Click Product    ${telkomProductTitle}
+    Click Product From Search Result    ${telkomProductTitle}
     @{telkomProductVariants}=    Get Product Variants By PLID API    ${telkomProductPLID}    Value
     Click Variant By Value Dynamically    ${telkomProductVariants}[0]
     Click Add To Cart
@@ -1213,16 +1215,20 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Start Application
     Click Home
     Click Search Home
-    Search Product    book
-    Click Product from API
+    ${bookProductPLID}=    Search Product And Return PLID API    Book
+    ${bookProductTitle}=    Get Product Title By PLID API    ${bookProductPLID}
+    Search Product    Book
+    Click Product From Search Result    ${bookProductTitle} 
     Click Add To Cart
     Click Go To Cart
     Close Application
     Start Application
     Click Home
     Click Search Home
+    ${voucherProductPLID}=    Search Product And Return PLID API    vouche
+    ${voucherProductTitle}=    Get Product Title By PLID API    ${voucherProductPLID}
     Search Product    vouche
-    Click Product from API
+    Click Product From Search Result    ${voucherProductTitle}
     Click Add To Cart
     Click Go To Cart
     Verify Element On Screen    ${btnWishListIcon}    ${MIN_TIMEOUT}
