@@ -65,7 +65,7 @@ Apps > Promotions (Android) App Only Deals - QASA-256 - QASA-306
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     Click Item Promotion Text
     Verify Text On Screen    4 x R    ${MAX_TIMEOUT}
-    Verify Text On Screen    Fire Sale Tech Deals    ${MIN_TIMEOUT}
+    Verify Text On Screen    App Only Deals    ${MIN_TIMEOUT}
     Verify Text On Screen    Only 4 per customer    ${MIN_TIMEOUT}
     Verify Text On Screen    Item Total    ${MIN_TIMEOUT}
     [Teardown]    Tear Down

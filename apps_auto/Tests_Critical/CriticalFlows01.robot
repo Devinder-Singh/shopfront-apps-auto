@@ -3,6 +3,11 @@ Default Tags      critical01
 Resource          ../common/config/defaultConfig.robot
 
 *** Test Cases ***
+Apps > Order Refactor > Order Detail > Collected Order
+    Clear Environment
+    ${completedOrderProductId}=    Search And Return Product Id API    pencil
+    Create New Order API   ${completedOrderProductId}    1    Credit Card    COURIER    true
+
 Apps > Order Refactor > Order Detail > Collected Order - QASA-352
     [Tags]    QASA-352
     [Setup]    Start Application

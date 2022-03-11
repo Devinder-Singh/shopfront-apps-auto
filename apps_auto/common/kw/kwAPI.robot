@@ -127,7 +127,7 @@ Update Order Delivery DB
 
     ${query_OrderDel_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "Update wms2_instructions set idInstructionStatus = 6 where idOrder = ${orderId}" }
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${query_URL}    ${query_OrderDel_Body}
-    
+
     ${query_OrderInst_Body}=    Set Variable If    '${APP_ENVIRONMENT}'=='http://api.master.env/'    { "db_lookup": "", "db_host": "proxysql.stagealot.com", "db_port": 9002, "db_name": "take2", "username": "take2_bespoke", "password": "t4k32_b3sp0k3", "db_type": "mysql+pymysql", "query": "select idInstruction From wms2_instructions where idOrder = ${orderId}" }
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${query_URL}    ${query_OrderInst_Body}
 
@@ -1355,7 +1355,8 @@ Create New Order API
 
     ${customerId}=    Get Customer ID
     ${createNewOrderJsonBody}=    Set Variable    {"customer_id":${customerId},"products":[{"product_id":${productId},"quantity":${productQuantity}, "unit_price":190}],"address_id":"${addressID}","payment_method":"${paymentMethod}","delivery_method":"${deliveryMethod}","pay_full_amount_due":true,"percentage_of_amount_due_to_pay":100,"complete_payment":${completePayment},"add_donation":false,"cancel_order":false}
-
+    Log    ${createNewOrderEndpoint}
+    Log    ${createNewOrderJsonBody}
     POST    ${createNewOrderEndpoint}    ${createNewOrderJsonBody}
     Integer    response status    200
 
