@@ -1082,7 +1082,7 @@ Apps > Order Tracking (Collect) - QASA-547
     Click Pay With Payfast
     Verify Payfast Payment Text
     Click Complete Payment With Payfast
-    kwConfirmation.Click Track Order
+    kwConfirmation.Click Track Order    #TODO - Conflicting keywords to be sorted out.
     [Teardown]    Tear Down
 
 Apps > Order Tracking 05 - QASA-79
