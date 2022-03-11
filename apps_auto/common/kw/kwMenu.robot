@@ -182,7 +182,8 @@ Click Menu Orders
     IF    '${PLATFORM_NAME}'=='android'
         Swipe Down    ${windowScroll}
     END
-    Wait Until Element Is Visible    ${btnMenuOrders}
+    Sleep    2s
+    Wait Until Element Is Visible    ${btnMenuOrders}    ${MAX_TIMEOUT}
     Click Element    ${btnMenuOrders}
 
 Click Menu Exchanges And Returns
