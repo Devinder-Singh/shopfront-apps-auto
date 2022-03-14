@@ -183,7 +183,7 @@ Click Menu Orders
         Swipe Down    ${windowScroll}
     END
     Sleep    2s
-    Wait Until Element Is Visible    ${btnMenuOrders}    ${MAX_TIMEOUT}
+    Wait Until Element Is Visible    ${btnMenuOrders}
     Click Element    ${btnMenuOrders}
 
 Click Menu Exchanges And Returns
