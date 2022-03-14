@@ -1097,14 +1097,11 @@ Apps > Order Tracking 05 - QASA-79
     Enter Payment Voucher Code
     Click Apply Payment Voucher
     Click Back Payment Voucher
-<<<<<<< HEAD
     Click Payment Confirm Order
     Click Track Order Detail
     kwConfirmation.Click Track Order
-=======
     Click Pay With Credit Card
     #Main Test
->>>>>>> 549599fdd9c1beb2562e752233c3a76e0810266c
     Close Application
     Start Application
     Click Menu
