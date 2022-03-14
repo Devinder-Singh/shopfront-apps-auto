@@ -110,8 +110,11 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     Verify Text On Screen    Missed promotion    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    VIEW BUNDLE    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    View Bundle    ${MIN_TIMEOUT}
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306 - 02
+    [Tags]    QASA-260    QASA-306
+    [Setup]    Start Application
     Clear Environment
     Click Home
     Click Search Home
@@ -142,8 +145,13 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    TO QUALIFY
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Add
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    to qualify
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306 - 02
+    [Tags]    QASA-254    QASA-306
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    Montgomery
@@ -760,7 +768,7 @@ Apps > Wishlist (Android) > Delete List - QASA-161
     [Tags]    QASA-161
     [Setup]    Start Application
     Clear Environment
-    Click Menu Logout If Logged In
+#    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1099,8 +1107,8 @@ Apps > Order Tracking 05 - QASA-79
     Click Back Payment Voucher
     Click Payment Confirm Order
     Click Track Order Detail
-    kwConfirmation.Click Track Order
-    Click Pay With Credit Card
+    Click Track Order
+#    Click Pay With Credit Card
     #Main Test
     Close Application
     Start Application
@@ -1155,7 +1163,7 @@ Apps > Cart (Android) 02 - QASA-84
     [Tags]    QASA-84
     [Setup]    Start Application
     Clear Environment
-    Click Menu Logout If Logged In
+#    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1197,7 +1205,7 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     [Tags]    QASA-83    QASA-82
     [Setup]    Start Application
     Clear Environment
-    Click Menu Logout If Logged In
+#    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1304,7 +1312,7 @@ Cart Update & Cart Notification - Liquor - QASA-249
     [Setup]    Start Application
     Clear Environment
     Add To Cart
-    Click Menu Logout If Logged In
+#    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home Cart
     Click Checkout
@@ -1346,7 +1354,7 @@ Cart Update & Cart Notification - Heavy Good (Delivery) - QASA-247
     [Teardown]    Tear Down
 
 Cart Update & Cart Notification - Heavy Good (Collect) - QASA-1023
-    [Tags]    QASA-247
+    [Tags]    QASA-1023
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
