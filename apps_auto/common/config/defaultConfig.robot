@@ -107,7 +107,7 @@ Library           REST
 Library           JSONLibrary
 
 *** Variables ***
-${PLATFORM_NAME}    android
+${PLATFORM_NAME}    ios
 ${PATH}           /users/jenkins/desktop/shopfront-apps-auto/apps_auto
 ${MIN_TIMEOUT}    10s
 ${MAX_TIMEOUT}    30s
