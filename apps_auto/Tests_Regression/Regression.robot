@@ -1203,6 +1203,7 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     [Tags]    QASA-83    QASA-82
     [Setup]    Start Application
     Clear Environment
+    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home

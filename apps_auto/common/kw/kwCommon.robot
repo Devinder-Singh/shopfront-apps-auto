@@ -274,7 +274,7 @@ Scroll To Element
     ${chkProdVisible}=    Set Variable    ${False}
     ${index}=    Set Variable    0
     FOR    ${index}    IN RANGE    ${loopTimes}
-        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    3s
+        ${chkProdVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}    5s
         IF    ${chkProdVisible}==${True}
             Exit For Loop
         END
