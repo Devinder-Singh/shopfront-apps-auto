@@ -182,6 +182,7 @@ Click Menu Orders
     IF    '${PLATFORM_NAME}'=='android'
         Swipe Down    ${windowScroll}
     END
+    Sleep    2s
     Wait Until Element Is Visible    ${btnMenuOrders}
     Click Element    ${btnMenuOrders}
 

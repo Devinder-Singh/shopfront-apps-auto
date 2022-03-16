@@ -1558,3 +1558,11 @@ Search Product And Return PLID List API
         Append To List    ${PLIDListCompleted}    ${PLIDItemCompleted}
     END
     [Return]    ${PLIDListCompleted}
+
+Update Stock Quantity API
+    [Documentation]    This keyword will update stock on a product based on its quantity in both JHB and CPT warehouses. The quantity entered will be split between both DC's
+    [Arguments]    ${productId}    ${quantity}
+    ${updateStockEndpoint}=    Set Variable    http://tal-s4f-testing-service.master.env/update_product_stock_bust_cache
+    ${updateStockJsonBody}=    Set Variable    { "product_id": ${productId}, "stock_quantity": ${quantity}, "warehouse_ids": [1,3] }
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${updateStockEndpoint}    ${updateStockJsonBody}
+

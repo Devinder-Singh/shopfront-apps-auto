@@ -32,7 +32,7 @@ Click Track Order
                 Click Element    ${btnappReviewClose}
             END
     END
-    Wait Until Element Is Visible    ${btnTrackOrder}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${btnTrackOrder}    ${MAX_TIMEOUT}
     Click Element    ${btnTrackOrder}
 
 Close Ratings Popup

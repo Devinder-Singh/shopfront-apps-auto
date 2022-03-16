@@ -429,7 +429,11 @@ Click Variant By Value Dynamically
     IF    '${PLATFORM_NAME}' == 'ios'
         ${dynamicVariantToSelect}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${value}"`][2]
         Scroll To Element    ${dynamicVariantToSelect}
-        Wait Until Element Is Visible    ${dynamicVariantToSelect}
+        Click Element    ${dynamicVariantToSelect}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicVariantToSelect}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/variantSelectorOptionText' and @text='${value}'])
+        Swipe Up    ${windowScroll}
+        Scroll To Element    ${dynamicVariantToSelect}
         Click Element    ${dynamicVariantToSelect}
     END
 
@@ -439,13 +443,25 @@ Click Variant By Colour Dynamically
         ${dynamicVariantToSelect}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${colour}"`]
         Scroll To Element    ${dynamicVariantToSelect}
         Click Element    ${dynamicVariantToSelect}
+            
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicVariantToSelect}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/variantSelectorOptionText' and @text='${colour}'])
+        Swipe Up    ${windowScroll}
+        Scroll To Element    ${dynamicVariantToSelect}
+        Click Element    ${dynamicVariantToSelect}
     END
 
 Click Variant By Size Dynamically
-    [Arguments]    ${size}    ${sleepBeforeAction}=5s
+    [Arguments]    ${size}    ${sleepBeforeAction}=2s
     Sleep    ${sleepBeforeAction}
     IF    '${PLATFORM_NAME}' == 'ios'
         ${dynamicVariantToSelect}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${size}"`][2]
+        Scroll To Element    ${dynamicVariantToSelect}
+        Click Element    ${dynamicVariantToSelect}
+
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicVariantToSelect}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/variantSelectorOptionText' and @text='${size}'])
+        Swipe Up    ${windowScroll}
         Scroll To Element    ${dynamicVariantToSelect}
         Click Element    ${dynamicVariantToSelect}
     END
