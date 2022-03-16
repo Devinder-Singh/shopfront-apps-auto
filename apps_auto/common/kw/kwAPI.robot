@@ -1518,3 +1518,27 @@ Update Stock Quantity API
     ${updateStockEndpoint}=    Set Variable    http://tal-s4f-testing-service.master.env/update_product_stock_bust_cache
     ${updateStockJsonBody}=    Set Variable    { "product_id": ${productId}, "stock_quantity": ${quantity}, "warehouse_ids": [1,3] }
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${updateStockEndpoint}    ${updateStockJsonBody}
+
+Get Trending Products API
+    [Documentation]    Calls the search API and gets a list of all products trending.
+    [Arguments]    ${trendingProductIndex}=1
+    ${tredningProductsEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/search/trending?platform=android&limit=10
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${tredningProductsEndpoint}
+    ${tredningProductByIndex}=    Output    $.suggestions[${trendingProductIndex}].*
+    [Return]    ${tredningProductByIndex}
+
+Search Product And Return PLID List API
+    [Documentation]    This keyword will call the search API and return a all PLIDs as a list.
+    [Arguments]    ${searchTerm}
+    #Parse search term to this method which calls another API to simulate recommended search results to match UI suggestions to make API search and UI search in sync.
+    #This method will set a global value which will be used in search.
+    Get First Search Option    ${searchTerm}
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    endPoint=${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,facets,filters,sort_options,product_count,related_searches?filter=Available%3Atrue&qsearch=${query_result_search}
+    @{PLIDList}=    Output    $.sections.products.results[*].product_views.core.id
+    @{PLIDListCompleted}=    Set Variable    ${None}
+    FOR    ${item}    IN    @{plidList}
+        ${PLIDItemCompleted}=    Set Variable    PLID${item}
+        Append To List    ${PLIDListCompleted}    ${PLIDItemCompleted}
+    END
+    [Return]    ${PLIDListCompleted}
+

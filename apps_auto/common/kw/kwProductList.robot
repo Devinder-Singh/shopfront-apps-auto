@@ -314,7 +314,12 @@ Click Product From Search Result
         ${dynamicProductByTitle}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${productTitle}"`]
         Scroll To Element    ${dynamicProductByTitle}
         Click Element    ${dynamicProductByTitle}
+    ELSE IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicProductByTitle}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/productListingTitle' and @text='${productTitle}'])
+        Scroll To Element    ${dynamicProductByTitle}
+        Click Element    ${dynamicProductByTitle}
     END
+    
 Click Product No Reviews
     ${txtProduct}=    Get Product No Reviews
 
