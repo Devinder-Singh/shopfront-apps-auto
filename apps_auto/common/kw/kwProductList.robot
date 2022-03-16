@@ -214,13 +214,17 @@ Click YMAL Product From Title
 
     Click Element    ${lblProdTitle}
 
-Click Related Product From Title
+Click Related Product By Title
     [Arguments]    ${title}
-
-    ${lblProdTitle}=    Set Variable If    '${PLATFORM_NAME}'=='android'    xpath=//*[contains(@text, '${title}')]    '${PLATFORM_NAME}'=='ios'    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
-
-    Verify Text On Screen    Related Products    ${MIN_TIMEOUT}
-    Click Element On Scroll    ${lblProdTitle}    10
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${lblProdTitle}=    Set Variable    xpath=//*[contains(@text, '${title}')]
+        Verify Text On Screen    Related Products    ${MIN_TIMEOUT}
+        Click Element On Scroll    ${lblProdTitle}    10
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${lblProdTitle}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
+        Verify Text On Screen    Related products    ${MIN_TIMEOUT}
+        Click Element On Scroll    ${lblProdTitle}    10
+    END
 
 Click Product Text
     [Arguments]    ${title}

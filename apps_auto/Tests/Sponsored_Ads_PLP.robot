@@ -255,16 +255,17 @@ Apps > Sponsored Ads (PDP) > Sponsored Ad product rules - QASA-319
 
 Apps > Sponsored Ads (PDP) > Sponsored Product Widget - Display Rules - QASA-313
     [Tags]    QASA-313
-    [Setup]    Start Application
+    [Setup]    Start Application    ${False}
     Click Home
     ${search_item}=    Set Variable     pencil
     Get Sponsored Products in PDP    ${search_item}
     Click Search Home
     Search Product    ${search_item}
     Click Product From Search Result    ${ProductTitle}
-    Scroll To Text    Related Products
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Scroll To Text    Related Products
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Scroll To Text    Related products
     Verify Text On Screen    Sponsored  
     Click Related Products Sponsored
     Click Related Products Sponsored OK
-    Click Related Product From Title    ${query_result_adProductTitle}
+    Click Related Product By Title    ${query_result_adProductTitle}
     [Teardown]    Tear Down
