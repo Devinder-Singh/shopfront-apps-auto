@@ -1566,3 +1566,10 @@ Update Stock Quantity API
     ${updateStockJsonBody}=    Set Variable    { "product_id": ${productId}, "stock_quantity": ${quantity}, "warehouse_ids": [1,3] }
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${updateStockEndpoint}    ${updateStockJsonBody}
 
+Get Trending Products API
+    [Documentation]    Calls the search API and gets a list of all products trending.
+    [Arguments]    ${trendingProductIndex}=1
+    ${tredningProductsEndpoint}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/search/trending?platform=android&limit=10
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${tredningProductsEndpoint}
+    ${tredningProductByIndex}=    Output    $.suggestions[${trendingProductIndex}].*
+    [Return]    ${tredningProductByIndex}
