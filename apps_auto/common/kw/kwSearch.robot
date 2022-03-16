@@ -61,6 +61,19 @@ Click Search Trending Option By Index
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Wait Until Element Is Visible    ${dynamicTrendingOptionAndroid}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Click Element    ${dynamicTrendingOptionAndroid}
 
+Click Trending Option By Text
+    [Documentation]    Clicks a trending option from the search page by text.
+    [Arguments]    ${text}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${dynamicTrendingOption}=    Set Variable    xpath=(//android.widget.TextView)/preceding-sibling::android.widget.HorizontalScrollView//android.widget.Button[@text='${text}']
+        Wait Until Element Is Visible    ${dynamicTrendingOption}
+        Click Element    ${dynamicTrendingOption}
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${dynamicTrendingOption}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label == "${text}"`]
+        Wait Until Element Is Visible    ${dynamicTrendingOption}
+        Click Element    ${dynamicTrendingOption}
+    END
+
 Enter Search Text
     [Documentation]    This method will enter search text
                         ...    This will not initiate the search
