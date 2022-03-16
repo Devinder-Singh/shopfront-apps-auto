@@ -230,7 +230,7 @@ Apps > Sponsored Ads (PDP) > Product Card Layout - QASA-315
     Scroll To Text    Related Products
     Click Related Products Sponsored
     Verify Text On Screen    You're seeing these ads based on the product's relevance to your product query    5s
-    Click Related Products Sponsored OK
+    Click Related Products Sponsored Popup
     Check Text On Screen Not    You're seeing these ads based on the product's relevance to your product query
     [Teardown]    Tear Down
 
@@ -266,6 +266,6 @@ Apps > Sponsored Ads (PDP) > Sponsored Product Widget - Display Rules - QASA-313
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Scroll To Text    Related products
     Verify Text On Screen    Sponsored  
     Click Related Products Sponsored
-    Click Related Products Sponsored OK
+    Click Related Products Sponsored Popup
     Click Related Product By Title    ${query_result_adProductTitle}
     [Teardown]    Tear Down
