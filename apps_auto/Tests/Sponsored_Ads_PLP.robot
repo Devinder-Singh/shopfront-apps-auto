@@ -257,13 +257,13 @@ Apps > Sponsored Ads (PDP) > Sponsored Product Widget - Display Rules - QASA-313
     [Tags]    QASA-313
     [Setup]    Start Application
     Click Home
-    ${search_item}=    Set Variable     pencil case
-    ${productTitle}=    Get Sponsored Products in PDP    ${search_item}
+    ${search_item}=    Set Variable     pencil
+    Get Sponsored Products in PDP    ${search_item}
     Click Search Home
     Search Product    ${search_item}
-    Click Product From Title    ${productTitle}
+    Click Product From Search Result    ${ProductTitle}
     Scroll To Text    Related Products
-    Verify Text On Screen    Sponsored    5s    
+    Verify Text On Screen    Sponsored  
     Click Related Products Sponsored
     Click Related Products Sponsored OK
     Click Related Product From Title    ${query_result_adProductTitle}

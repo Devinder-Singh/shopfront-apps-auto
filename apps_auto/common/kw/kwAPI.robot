@@ -264,40 +264,34 @@ Get Sponsored Product Detail
 
 
 Get Sponsored Products in PDP
-    [Arguments]    ${search_item}
-    ${index}=    Set Variable    1
-
-    FOR    ${index}    IN RANGE    100
-        ${PLID}=    Search Product And Return PLID API    ${search_item}    ${index}
-        ${productTitle}=    Get Product Title By PLID API    ${PLID} 
-        ${relatedProduct_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/sponsored-products/${PLID}?uuid=6f357297-967b-387d-a93f-295e80fa5f5d&platform=android
-        Get    ${relatedProduct_URL}
-        Integer    response status    200
+    [Arguments]    ${search_item}    ${relatedProductIndexToSet}=0
+    @{PLIDListCompleted}=    Search Product And Return PLID List API    ${search_item}
+    FOR    ${plid}    IN    @{PLIDListCompleted}
+        ${relatedProduct_URL}=    Set Variable    ${APP_ENVIRONMENT}rest/v-1-10-0/sponsored-products/${plid}?uuid=6f357297-967b-387d-a93f-295e80fa5f5d&platform=android
+        Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    ${relatedProduct_URL}
         ${num_items}=    Output    $.num_items
         IF    ${num_items} > 0
-            ${results_title}=    Output    $.results[0].core.title
-            ${results_brand}=    Output    $.results[0].core.brand
-            ${results_rating}=    Output    $.results[0].core.star_rating
+            # Related Product Details
+            ${results_title}=    Output    $.results[${relatedProductIndexToSet}].core.title
+            ${results_brand}=    Output    $.results[${relatedProductIndexToSet}].core.brand
+            ${results_rating}=    Output    $.results[${relatedProductIndexToSet}].core.star_rating
+            ${results_price}=    Output    $.results[${relatedProductIndexToSet}].buybox_summary.pretty_price
+            ${results_listprice}=    Output    $.results[${relatedProductIndexToSet}].buybox_summary.listing_price
+            ${results_status}=    Output    $.results[${relatedProductIndexToSet}].stock_availability_summary.status
+            # Main PDP's title
+            ${productTitle}=    Get Product Title By PLID API    ${plid}
 
-            ${results_price}=    Output    $.results[0].buybox_summary.pretty_price
-            ${results_listprice}=    Output    $.results[0].buybox_summary.listing_price
-            ${results_status}=    Output    $.results[0].stock_availability_summary.status
-
-            ${searchResult}=    Set Variable    'True'
             Set Global Variable    ${query_result_adNumItems}    ${num_items}
             Set Global Variable    ${query_result_adProductTitle}    ${results_title}
             Set Global Variable    ${query_result_adProductBrand}    ${results_brand}
             Set Global Variable    ${query_result_adProductRating}    ${results_rating}
-
             Set Global Variable    ${query_result_adProductPrice}    ${results_price}
             Set Global Variable    ${query_result_adProductListPrice}    ${results_listprice}
             Set Global Variable    ${query_result_adProductStatus}    ${results_status}
+            Set Global Variable    ${ProductTitle}    ${productTitle}
             Exit For Loop            
-        END
-        ${index}=    Evaluate    ${index} + 1
-        
+        END        
     END
-    [return]    ${productTitle}
 
 
 Get Leadtime Product to Add To Cart
@@ -1550,3 +1544,17 @@ Get Product Variants By PLID API
     END
     [Return]    ${variantList}
 
+Search Product And Return PLID List API
+    [Documentation]    This keyword will call the search API and return all PLIDs.
+    [Arguments]    ${searchTerm}
+    #Parse search term to this method which calls another API to simulate recommended search results to match UI suggestions to make API search and UI search in sync.
+    #This method will set a global value which will be used in search.
+    Get First Search Option    ${searchTerm}
+    Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Get    endPoint=${APP_ENVIRONMENT}rest/v-1-10-0/searches/products,facets,filters,sort_options,product_count,related_searches?filter=Available%3Atrue&qsearch=${query_result_search}
+    @{PLIDList}=    Output    $.sections.products.results[*].product_views.core.id
+    @{PLIDListCompleted}=    Set Variable    ${None}
+    FOR    ${item}    IN    @{plidList}
+        ${PLIDItemCompleted}=    Set Variable    PLID${item}
+        Append To List    ${PLIDListCompleted}    ${PLIDItemCompleted}
+    END
+    [Return]    ${PLIDListCompleted}

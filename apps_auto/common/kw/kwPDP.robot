@@ -172,7 +172,9 @@ Click Related Products Sponsored
 
 Click Related Products Sponsored OK
     ${chkElement}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${lblPDPRelatedProdSponsoredOK}    ${MIN_TIMEOUT}
-    Run Keyword If    ${chkElement}==${True}    Click Element    ${lblPDPRelatedProdSponsoredOK}
+    IF    ${chkElement} == ${True}    
+        Click Element    ${lblPDPRelatedProdSponsoredOK}
+    END
 
 Click Continue Shopping iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnContinueShopping}    ${MIN_TIMEOUT}
