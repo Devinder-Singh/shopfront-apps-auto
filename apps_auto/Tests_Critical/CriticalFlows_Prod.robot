@@ -141,7 +141,7 @@ Edit Personal Details, Create Address and Buy Item on Delivery
     Click Home
     Click Search Home
     Search Product    Pencil
-    Click Product from API    2
+    Click Product from API    3
     Click Add To Cart
     Click Go To Cart
     Click Checkout
