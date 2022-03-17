@@ -1191,39 +1191,6 @@ Apps > Checkout > Payment > Confirmation 02 - QASA-106
     Verify Text On Screen    Please enter a valid credit card number    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
-Apps > Checkout > Payment > Pay with PayFast - QASA-539
-    [Tags]    QASA-539
-    [Setup]    Start Application
-    Clear Environment
-    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Product From API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Any Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Payfast Payment Method
-    Click Pay With Payfast
-    Verify Payfast Payment Text
-    Click Back Screen
-    Click Pay With Payfast
-    Verify Payfast Payment Text
-    Close Application
-    Start Application
-    Click Menu
-    Click Menu My Account
-    Click Menu Orders
-    Click Order Awaiting Payment
-    Click Order Pay Now
-    Click Change Payment Method
-    [Teardown]    Tear Down
-
 Apps > Checkout > Payment > Credit Card - PayU - QASA-536
     [Tags]    QASA-536
     [Setup]    Start Application
@@ -1332,36 +1299,6 @@ Apps > Checkout > Payment > Pay with Ozow - QASA-533
     Click Order Awaiting Payment
     Click Order Pay Now
     Click Pay With Ozow
-    [Teardown]    Tear Down
-
-Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QASA-532
-    [Tags]    QASA-532
-    [Setup]    Start Application
-    Clear Environment
-    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Product from API
-    Click Add To Cart
-    Click Go To Cart
-    Click Checkout
-    Click Delivery
-    Click Address
-    Click Any Delivery
-    Click Donate No Thanks
-    Click Change Payment Method
-    Click Card Payment Method
-    Click Pay With Credit Card
-    Verify Card Payment
-    Close Application
-    Start Application
-    Click Menu
-    Click Menu My Account
-    Click Menu Orders
-    Click Order Awaiting Payment
-    Click Order Pay Now
-    Click Pay With Credit Card
     [Teardown]    Tear Down
 
 Apps > Checkout > Payment > Mobicred - QASA-527

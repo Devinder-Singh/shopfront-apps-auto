@@ -242,8 +242,11 @@ Verify Home Screen > Shop by Dept widget - QASA-862
     FOR    ${departmentCat}    IN    @{departmentCatList}
         Scroll To Text    ${departmentCat}
     END
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Verify Home Screen > Shop by Dept widget - QASA-1061
+    [Tags]    QASA-1061
+    [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
@@ -331,16 +334,26 @@ Apps > PLP - QASA-473
     Click Product from API
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Apps > PLP - QASA-1041
+    [Tags]    QASA-1041
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    johnnie wal
     Click Product from API
     Click Add To Cart
     Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Apps > PLP - QASA-1042
+    [Tags]    QASA-1042
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Search Product    flying fis
@@ -477,19 +490,18 @@ Apps > PLP > Overflow Menus - QASA-264
     Search Product    pencil
     Click Product from API
     Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
-    Click Back Android
-    Click Back Android
-    Click Back iOS    pencil case
-    Click Back iOS    Back
-    Click Home
-    Click Search Home
-    Search Product    pencil
-    Click Product from API
-    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click More Options Menu
     Click Options Menu Home
     Click Back iOS    pencil case
     Click Back iOS    Back
+    Click Home
+    Click Search Home
+    [Teardown]    Tear Down
+
+Apps > PLP > Overflow Menus - QASA-1043
+    [Tags]    QASA-1043
+    [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -500,6 +512,12 @@ Apps > PLP > Overflow Menus - QASA-264
     Click Back iOS    pencil case
     Click Back iOS    Back
     Verify Text On Screen    Daily Deals    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > PLP > Overflow Menus - QASA-1044
+    [Tags]    QASA-1044
+    [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -509,6 +527,12 @@ Apps > PLP > Overflow Menus - QASA-264
     Click Options Menu Deals
     Click Back iOS    pencil case
     Click Back iOS    Back
+    [Teardown]    Tear Down
+
+Apps > PLP > Overflow Menus - QASA-1045
+    [Tags]    QASA-1045
+    [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -520,6 +544,29 @@ Apps > PLP > Overflow Menus - QASA-264
     Click Back iOS    Back
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Wish List    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Element On Screen    ${btnWishListIcon}    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > PLP > Overflow Menus - QASA-1046
+    [Tags]    QASA-1046
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Verify Element On Screen    ${btnAddToCart}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click More Options Menu
+    Click Options Menu Account
+    Click Back iOS    pencil case
+    Click Back iOS    Back
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Personal Details    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > PLP > Overflow Menus - QASA-1047
+    [Tags]    QASA-1047
+    [Setup]    Start Application
+    Clear Environment
     Click Home
     Click Search Home
     Search Product    pencil
@@ -549,8 +596,33 @@ Apps > PDP - QASA-519
     Click Product Text    ${productTitle}
     Click Add To Wishlist Only
     Verify Text On Screen    Item added to Wish List    ${MAX_TIMEOUT}
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Apps > PDP - QASA-1048
+    [Tags]    QASA-1048
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Search Home
+    Search Product    face mask pac
+    Get Sponsored Product Detail
+    Verify Element On Screen    ${btnProductSearchFilter}    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Sponsored    ${MIN_TIMEOUT}
+    Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    Sponsored    ${MIN_TIMEOUT}
+    #Verify Text On Screen    % OFF    2s
+    Verify Text On Screen    ${query_result_adProductStatus}    ${MIN_TIMEOUT}
+    Verify Text On Screen    ${query_result_adProductPrice}    ${MIN_TIMEOUT}
+    Click Product From Title    ${query_result_adProductTitle}
+    Scroll To Text    Related Products
+    Verify Text On Screen    Sponsored    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > PDP - QASA-1049
+    [Tags]    QASA-1049
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     Start Application
@@ -631,13 +703,22 @@ Apps > PDP - QASA-168
     Enter Review Message    Auto Test Auto Test Auto Test
     Click Review Submit
     Verify Text On Screen    Awaiting Approval    ${MIN_TIMEOUT}
-#    Click PDP Write Review
-#    Click Review Rating
-#    Enter Review Message    Auto Test
-#    Click Review Submit
-#    Verify Text On Screen    You've already submitted a review for this product    ${MIN_TIMEOUT}
-    Click Back Android
-    Click Back iOS    ${productTitle}
+    Click PDP Write Review
+    [Teardown]    Tear Down
+
+Apps > PDP - QASA-1051
+    [Tags]    QASA-1051
+    [Setup]    Start Application
+    Click Home
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    sunlight    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+#    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
+    Click Product From Search Result    ${productTitle}
+#    Click Variant By Colour Dynamically    ${colourVariants}[0]
+#    Click Variant By Size Dynamically    ${SizeVariants}[0]
     Click PDP Show All Reviews
     Click Review Sort
     Click Review Sort Most Helpful
@@ -653,8 +734,31 @@ Apps > PDP - QASA-168
     Click Review Icon More
     Click Review Report
     Verify Text On Screen    Your report has been submitted    ${MIN_TIMEOUT}
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Apps > PDP - QASA-1052
+    [Tags]    QASA-1052
+    [Setup]    Start Application
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    sunlight    searchResultIndex=0    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+#    @{SizeVariants}=    Get Product Variants By PLID API    ${PLID}    Size
+    Click Product From Search Result    ${productTitle}
+#    Click Variant By Colour Dynamically    ${colourVariants}[0]
+#    Click Variant By Size Dynamically    ${SizeVariants}[0]
+    Click PDP Show All Reviews
+    Click Review Helpful By Index    index=1
+    Verify Text On Screen    Thank you for your feedback    ${MAX_TIMEOUT}
+    Click Review Icon More
+    Click Review Report
+    Verify Text On Screen    Your report has been submitted    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > PDP - QASA-1053
+    [Tags]    QASA-1053
+    [Setup]    Start Application
     Click Menu
     Click Menu Login
     Close Application
@@ -935,11 +1039,14 @@ Apps > My Account Verifications - QASA-477
     Click Menu My Account
     Click Menu Orders
     Verify Text On Screen    Last 3 months    ${MIN_TIMEOUT}
-    Click Back Android
-    Click Back iOS    My Account
-    Click Menu Exchanges And Returns
-    Close Application
-    Start Application    ${False}
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications - QASA-1054
+    [Tags]    QASA-1054
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
     Click Menu
     Click Menu My Account
     Click Menu Personal Detail
@@ -955,17 +1062,32 @@ Apps > My Account Verifications - QASA-477
     Verify Text On Screen    Your password has been successfully updated    ${MIN_TIMEOUT}
     Update Personal Detail Business    Automation    12345
     Verify Text On Screen    Your business details have been successfully updated    ${MIN_TIMEOUT}
-    Click Back Android
-    Click Back iOS    My Account
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications - QASA-1055
+    [Tags]    QASA-1055
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Menu
+    Click Menu My Account
     Click Menu Address Book
     Click Add Delivery Address
     Click Residential
     Add Delivery Address    Tester Residential    0723456778    13 Caro Road
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
-    Click Back Delivery Android
-    Click Back iOS    My Account
-    Click Menu Address Book
-    Click Edit Button By Index    2
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications - QASA-1056
+    [Tags]    QASA-1056
+    [Setup]    Start Application    ${False}
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Menu
+    Click Menu My Account
+    Click Edit Button By Index    1
     Edit Delivery Address Street My Acc    13 Caro Roa
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    DELETE    ${MIN_TIMEOUT}
     Click Back Delivery Android
@@ -989,6 +1111,8 @@ Apps > My Account Verifications - QASA-477
 Apps > My Account Verifications - QASA-89
     [Tags]    QASA-89
     [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu
     Click Menu My Account
     Click Menu Load Gift Voucher
@@ -1009,8 +1133,13 @@ Apps > My Account Verifications - QASA-89
     Click Back iOS    Credit & Refunds
     Click Menu Refund History
     Verify Text On Screen    You have no refund history    ${MIN_TIMEOUT}
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+Apps > My Account Verifications - QASA-1057
+    [Tags]    QASA-1057
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Menu
     Click Menu My Account Android
     Click Menu Settings
@@ -1160,6 +1289,23 @@ Apps > Cart (Android) > QASA-524 - QASA-81
     Verify Toolbar iOS
     [Teardown]    Tear Down
 
+Apps > Cart (Android) > QASA-1062 - QASA-81
+    [Tags]    QASA-1062    QASA-81
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout Delete First Item
+    Click Checkout Cart Undo
+    Click Checkout Android
+    Verify Toolbar iOS
+    [Teardown]    Tear Down
+
 Apps > Cart (Android) 02 - QASA-84
     [Tags]    QASA-84
     [Setup]    Start Application
@@ -1206,7 +1352,6 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     [Tags]    QASA-83    QASA-82
     [Setup]    Start Application
     Clear Environment
-#    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
@@ -1218,8 +1363,15 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Click Variant By Value Dynamically    ${telkomProductVariants}[0]
     Click Add To Cart
     Click Go To Cart
-    Close Application
-    Start Application
+    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The prepaid code will be delivered to you via email    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Cart (Android) 04 - QASA-1058 / QASA-82
+    [Tags]    QASA-1058    QASA-82
+    [Setup]    Start Application
+    Clear Environment
+#    Click Menu Logout If Logged In
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
     Click Home
     Click Search Home
     ${bookProductPLID}=    Search Product And Return PLID API    Book
@@ -1242,7 +1394,6 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The gift voucher will be delivered via email to the recipient    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
     Swipe Up    ${windowScroll}
-    Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The prepaid code will be delivered to you via email    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    This product is not eligible for Cash on Delivery (COD)    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Cart    ${MIN_TIMEOUT}
     Click Checkout
@@ -1250,6 +1401,22 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     Click Address
     Click Any Delivery
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Delivery via email to    ${MIN_TIMEOUT}
+    [Teardown]    Tear Down
+
+Apps > Cart (Android) 04 - QASA-1059 / QASA-82
+    [Tags]    QASA-1059    QASA-82
+    [Setup]    Start Application
+    Clear Environment
+#    Click Menu Logout If Logged In
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Search Home
+    ${bookProductPLID}=    Search Product And Return PLID API    Book
+    ${bookProductTitle}=    Get Product Title By PLID API    ${bookProductPLID}
+    Search Product    Book
+    Click Product From Search Result    ${bookProductTitle} 
+    Click Add To Cart
+    Click Go To Cart
     [Teardown]    Tear Down
 
 Cart Update & Cart Notification - TV - QASA-248
@@ -1301,8 +1468,11 @@ My Account > Takealot Group > Superbalist & Mr.D Links - QASA-44
     Click Menu
     Click Menu My Account Android
     Click Menu Superbalist
-    Close Application
-    Start Application
+    [Teardown]    Tear Down
+
+My Account > Takealot Group > Superbalist & Mr.D Links - QASA-1060
+    [Tags]    QASA-1060
+    [Setup]    Start Application
     Click Menu
     Click Menu My Account Android
     Click Menu MrD
@@ -1492,4 +1662,67 @@ Apps > Merchandised Landing Pages (CMS Widgets) - Featured Collection Widget - Q
     Click Featured Collection Widget    Tote Bags
     Verify Product Widget Navigation
     Verify Text On Screen    Totes
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QASA-532
+    [Tags]    QASA-532
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Any Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Card Payment Method
+    Click Pay With Credit Card
+    Verify Card Payment
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Click Order Pay Now
+    Click Pay With Credit Card
+    [Teardown]    Tear Down
+
+Apps > Checkout > Payment > Pay with PayFast - QASA-539
+    [Tags]    QASA-539
+    [Setup]    Start Application
+    Clear Environment
+    Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product From API
+    Click Add To Cart
+    Click Go To Cart
+    Click Checkout
+    Click Delivery
+    Click Address
+    Click Any Delivery
+    Click Donate No Thanks
+    Click Change Payment Method
+    Click Payfast Payment Method
+    Click Pay With Payfast
+    Verify Payfast Payment Text
+    Click Back Screen
+    Click Pay With Payfast
+    Verify Payfast Payment Text
+    Close Application
+    Start Application
+    Click Menu
+    Click Menu My Account
+    Click Menu Orders
+    Click Order Awaiting Payment
+    Click Order Pay Now
+    Click Change Payment Method
     [Teardown]    Tear Down
