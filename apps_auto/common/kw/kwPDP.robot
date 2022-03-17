@@ -170,14 +170,9 @@ Click Related Products Sponsored
     Wait Until Element Is Visible    ${lblPDPRelatedProdSponsored}    ${MIN_TIMEOUT}
     Click Element    ${lblPDPRelatedProdSponsored}
 
-Click Related Products Sponsored Popup
-    IF    '${PLATFORM_NAME}' == 'android'
-        Wait Until Element Is Visible    ${lblPDPRelatedProdSponsoredOK}    ${MIN_TIMEOUT}  
-        Click Element    ${lblPDPRelatedProdSponsoredOK}
-    ELSE IF    '${PLATFORM_NAME}' == 'ios'
-        Wait Until Element Is Visible    ${lblPDPRelatedProdSponsoredCancel}    ${MIN_TIMEOUT}  
-        Click Element    ${lblPDPRelatedProdSponsoredCancel}
-    END
+Click Related Products Sponsored OK
+    Wait Until Element Is Visible    ${lblPDPRelatedProdSponsoredOK}    ${MIN_TIMEOUT}  
+    Click Element    ${lblPDPRelatedProdSponsoredOK}
 
 Click Continue Shopping iOS
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Wait Until Element Is Visible    ${btnContinueShopping}    ${MIN_TIMEOUT}
