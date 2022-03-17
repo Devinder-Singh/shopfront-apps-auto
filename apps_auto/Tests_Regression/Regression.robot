@@ -699,7 +699,8 @@ Apps > Merchandised Landing Pages (CMS Widgets) - QASA-165
     Click Home
     Click Search Home
     Verify Text On Screen    Trending    ${MIN_TIMEOUT}
-    Click Search Trending Option By Index    index=1
+    ${trendingProduct}=    Get Trending Products API
+    Click Trending Option By Text    ${trendingProduct}
     [Teardown]    Tear Down
 
 Merchandised Landing Pages (CMS Widgets) -> Product List Widget - QASA-164
