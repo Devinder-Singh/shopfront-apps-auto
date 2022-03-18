@@ -214,6 +214,18 @@ Click YMAL Product From Title
 
     Click Element    ${lblProdTitle}
 
+Click Related Product By Title
+    [Arguments]    ${title}
+    IF    '${PLATFORM_NAME}' == 'android'
+        ${lblProdTitle}=    Set Variable    xpath=//*[contains(@text, '${title}')]
+        Verify Text On Screen    Related Products    ${MIN_TIMEOUT}
+        Click Element On Scroll    ${lblProdTitle}    10
+    ELSE IF    '${PLATFORM_NAME}' == 'ios'
+        ${lblProdTitle}=    Set Variable    chain=**/XCUIElementTypeStaticText[`label CONTAINS '${title}'`]
+        Verify Text On Screen    Related products    ${MIN_TIMEOUT}
+        Click Element On Scroll    ${lblProdTitle}    10
+    END
+
 Click Product Text
     [Arguments]    ${title}
 
@@ -315,11 +327,11 @@ Click Product From Search Result
         Scroll To Element    ${dynamicProductByTitle}
         Click Element    ${dynamicProductByTitle}
     ELSE IF    '${PLATFORM_NAME}' == 'android'
-        ${dynamicProductByTitle}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/productListingTitle' and @text='${productTitle}'])
+        ${dynamicProductByTitle}=    Set Variable    xpath=(//android.widget.TextView[@resource-id='fi.android.takealot.debug:id/productListingTitle' and @text="${productTitle}"])
         Scroll To Element    ${dynamicProductByTitle}
         Click Element    ${dynamicProductByTitle}
     END
-    
+
 Click Product No Reviews
     ${txtProduct}=    Get Product No Reviews
 
