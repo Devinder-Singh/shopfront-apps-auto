@@ -151,19 +151,63 @@ Update Order Delivery DB
 Add To Cart
     [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
                         ...    Please note that the deafult product to be added will be a wine cooler classified as a heavy duty product.
-    [Arguments]    ${productId}=90391104    ${productQuantity}=1
+    [Arguments]    ${productId}=90391104    ${productQuantity}=1    ${productType}=physical
     Get Customer ID
     Get Tokens
-    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+
+    IF    '${productType}'=='physical'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='airtime'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='voucher'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='alcohol'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='heavy'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='tv'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='variant'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${Add_cart_URL}    ${Add_cart_Body}
-    
+
 Add To Wishlist
     [Documentation]    This keyword will add an item with a specified quantity to the users cart by product id using the takealot API.
                         ...    Please note that the deafult product to be added will be a wine cooler classified as a heavy duty product.
-    [Arguments]    ${productId}=90391104    ${productQuantity}=1
+    [Arguments]    ${productId}=90391104    ${productQuantity}=1    ${productType}=physical
     Get Customer ID
     Get Tokens
-    ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+
+    IF    '${productType}'=='physical'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='airtime'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='voucher'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='alcohol'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='heavy'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='tv'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+    IF    '${productType}'=='variant'
+        ${Add_cart_Body}=    Set Variable    { "email": "${G_EMAIL}", "password": "${G_PASSWORD}", "customer_id": ${query_customer_id}, "environment": "master.env", "bearer_token": "${query_customer_bearer}", "csrf_token": "${query_customer_csrf}", "products": [{"id":${productId} , "quantity": ${productQuantity}}]}
+    END
+
     Wait Until Keyword Succeeds    ${apiRetryCount}    ${apiRetryInterval}    Generic Post    ${Add_cart_URL}    ${Add_cart_Body}
 
 Add Items To Cart Full
