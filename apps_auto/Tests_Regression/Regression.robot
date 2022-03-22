@@ -35,14 +35,12 @@ Apps > Promotions (Android) Daily Deals - QASA-476 - QASA-306
     Click Menu
     Click Menu Login
     Login Takealot    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Menu
-#    Click Menu Daily Deals
-#    Click Promotion Item By Index    itemIndex=1
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Menu
+    Click Menu Daily Deals
+    Click Promotion Item By Index    itemIndex=1
+    Click Add To Cart
+    Click Go To Cart
     Change Cart Quantity Scroll    4
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     Click Item Promotion Text
@@ -57,15 +55,13 @@ Apps > Promotions (Android) App Only Deals - QASA-256 - QASA-306
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Menu
-#    Click Menu Daily Deals
-#    Click App Only Deals
-#    Click Promotion Item By Index    itemIndex=4
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Menu
+    Click Menu Daily Deals
+    Click App Only Deals
+    Click Promotion Item By Index    itemIndex=4
+    Click Add To Cart
+    Click Go To Cart
     Change Cart Quantity Scroll    4
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     Click Item Promotion Text
@@ -80,21 +76,19 @@ Apps > Promotions (Android) Other Promo tabs - QASA-255 - QASA-306
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Menu
-#    Click Menu Daily Deals
-#    Select Third Deals From API
-#    Get Product Deals Third Tab Slug
-#    ${txtProduct}=    Get Daily Deals Product to Add To Cart
-#    Scroll To Element    ${txtProduct}
-#    Click Product Filter
-#    Select Third Deals Filter Option From API
-#    Click Apply Filter
-#    Click Filter Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Menu
+    Click Menu Daily Deals
+    Select Third Deals From API
+    Get Product Deals Third Tab Slug
+    ${txtProduct}=    Get Daily Deals Product to Add To Cart
+    Scroll To Element    ${txtProduct}
+    Click Product Filter
+    Select Third Deals Filter Option From API
+    Click Apply Filter
+    Click Filter Product from API
+    Click Add To Cart
+    Click Go To Cart
     Change Cart Quantity    5
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     Verify Text On Screen    ${query_result_CartFilterProduct}    ${MIN_TIMEOUT}
@@ -108,14 +102,12 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Montego
-#    Click Product From Title    Montego - Monty & Me Adult Dog Food
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Montego
+    Click Product From Title    Montego - Monty & Me Adult Dog Food
+    Click Add To Cart
+    Click Go To Cart
     Verify Text On Screen    Missed promotion    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    VIEW BUNDLE    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Verify Text On Screen    View Bundle    ${MIN_TIMEOUT}
@@ -126,14 +118,12 @@ Apps > Promotions (Android) Set Bundle - QASA-260 - QASA-306 - 02
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Montego
-#    Click Product From Title    Montego - Monty & Me Adult Dog Food
-#    Click Add Bundle To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Montego
+    Click Product From Title    Montego - Monty & Me Adult Dog Food
+    Click Add Bundle To Cart
+    Click Go To Cart
     Wait for Checkout
     Check Text On Screen Not    Missed promotion
     Check Text On Screen Not    VIEW BUNDLE
@@ -145,15 +135,13 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Montgomery
-#    Click Product From Title    Montgomery's Gourmet Pork & Apple Dog Treat 1kg
-#    Click Variant Option By Index    1
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Montgomery
+    Click Product From Title    Montgomery's Gourmet Pork & Apple Dog Treat 1kg
+    Click Variant Option By Index    1
+    Click Add To Cart
+    Click Go To Cart
     Verify Text On Screen    Missed promotion    ${MAX_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    ADD
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    TO QUALIFY
@@ -166,18 +154,16 @@ Apps > Promotions (Android) Multi-Buys - QASA-254 - QASA-306 - 02
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Montgomery
-#    Click Product From Title    Montgomery's Gourmet Pork & Apple Dog Treat 1kg
-##    Click Variant Option By Index    1
-#    Click Shop The Deal
-#    Click Product From Title    Montgomery's Gourmet Grilled Steak Dog Treat 1kg
-##    Click Variant Option By Index    1
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Montgomery
+    Click Product From Title    Montgomery's Gourmet Pork & Apple Dog Treat 1kg
+#    Click Variant Option By Index    1
+    Click Shop The Deal
+    Click Product From Title    Montgomery's Gourmet Grilled Steak Dog Treat 1kg
+#    Click Variant Option By Index    1
+    Click Add To Cart
+    Click Go To Cart
     Change Cart Quantity    3
     Check Text On Screen Not    Missed promotion
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Check Text On Screen Not    ADD 1 ITEM TO QUALIFY
@@ -189,14 +175,12 @@ Apps > Promotions (Android) Unboxed & Other Offers - QASA-253 - QASA-306
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Unboxed Dea
-#    Click Product from API
-#    Click Other Offers Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Unboxed Dea
+    Click Product from API
+    Click Other Offers Add To Cart
+    Click Go To Cart
     Click Checkout
     [Teardown]    Tear Down
 
@@ -213,14 +197,13 @@ Verify Home Screen (Logged-In User) > Recently Viewed - QASA-175
     [Tags]    QASA-175
     [Setup]    Start Application
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Close Application
-#    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Close Application
+    Start Application    ${False}
     Click Home
     Scroll To Text    Recommended for you
     Scroll To Text    Recently Viewed
@@ -268,15 +251,14 @@ Verify Home Screen > Shop by Dept widget - QASA-1061
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-#    Click Home
-#    Click Menu
-#    Click Menu Daily Deals
-#    Click Daily Deals Product from API
-#    Click Add To Cart
-#    Click Go To Cart
-#    Close Application
-#    Start Application
+    Click Home
+    Click Menu
+    Click Menu Daily Deals
+    Click Daily Deals Product from API
+    Click Add To Cart
+    Click Go To Cart
+    Close Application
+    Start Application
     Click Home
     Scroll To Text    Recently Viewed    loopTimes=30
     Click Home Icon Wish List
@@ -296,15 +278,14 @@ Apps > Verify Home Screen - QASA-173
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Wishlist    105641362
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Wishlist
-#    Click Wishlist
-#    Close Application
-#    Start Application    ${False}
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Wishlist
+    Click Wishlist
+    Close Application
+    Start Application    ${False}
     Click Home
     Click Home WishList
     Click Wishlist Edit
@@ -332,17 +313,15 @@ Apps > PLP - QASA-473
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Wishlist    105641362
-    Add To Cart    105641362
-#    Click Home
-#    Click Menu
-#    Click Menu Daily Deals
-#    Click Daily Deals Product from API
-#    Verify Add To Wishlist
-#    Click Add To Cart
-#    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
-#    Close Application
-#    Start Application
+    Click Home
+    Click Menu
+    Click Menu Daily Deals
+    Click Daily Deals Product from API
+    Verify Add To Wishlist
+    Click Add To Cart
+    Verify Element On Screen    ${btnGoToCart}    ${MIN_TIMEOUT}
+    Close Application
+    Start Application
     Click Home
     Click Search Home
     Search Product    puzzle
@@ -607,17 +586,15 @@ Apps > PDP - QASA-519
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    ${PLID}=    Search Product And Return PLID API    pencil case
-#    ${productTitle}=    Get Product Title By PLID API    ${PLID}
-#    Search Product    pencil case
-#    Click Product From Search Result    ${productTitle}
-#    Click Add To Cart
-#    Click Go To Cart
-#    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    pencil case
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    Search Product    pencil case
+    Click Product From Search Result    ${productTitle}
+    Click Add To Cart
+    Click Go To Cart
+    Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     Click Product Text    ${productTitle}
     Click Add To Wishlist Only
     Verify Text On Screen    Item added to Wish List    ${MAX_TIMEOUT}
@@ -669,18 +646,16 @@ Apps > PDP - QASA-170
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart    105641362
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    ${productPLID}=    Search Product And Return PLID API    Telkom
-#    ${productTitle}=    Get Product Title By PLID API    ${productPLID}
-#    @{productVariants}=    Get Product Variants By PLID API    ${productPLID}    Value
-#    Search Product    Telkom
-#    Click Product    ${productTitle}
-#    Click Variant By Value Dynamically    ${productVariants}[0]
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    ${productPLID}=    Search Product And Return PLID API    Telkom
+    ${productTitle}=    Get Product Title By PLID API    ${productPLID}
+    @{productVariants}=    Get Product Variants By PLID API    ${productPLID}    Value
+    Search Product    Telkom
+    Click Product    ${productTitle}
+    Click Variant By Value Dynamically    ${productVariants}[0]
+    Click Add To Cart
+    Click Go To Cart
     Verify Element On Screen    ${btnCheckout}    ${MIN_TIMEOUT}
     Click Product Text    ${productTitle}
     Click Variant By Value Dynamically    ${productVariants}[0]
@@ -902,18 +877,17 @@ Apps > Wishlist (Android) > Delete List - QASA-161
     Clear Environment
 #    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Wishlist
-#    Click Home
-#    Click Search Home
-#    ${PLID}=    Search Product And Return PLID API    Pencil    enableHasMoreColoursFlag=${True}
-#    ${productTitle}=    Get Product Title By PLID API    ${PLID}
-#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
-#    Search Product    Pencil
-#    Click Product From Search Result    ${productTitle}
-#    Click Variant By Colour Dynamically    ${colourVariants}[0]
-#    Click Add To Wishlist
-#    Close Application
-#    Start Application
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    Pencil    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+    Search Product    Pencil
+    Click Product From Search Result    ${productTitle}
+    Click Variant By Colour Dynamically    ${colourVariants}[0]
+    Click Add To Wishlist
+    Close Application
+    Start Application
     Click Home
     Click Wishlist Nav Bar
     Click Wishlist Default
@@ -939,16 +913,15 @@ Apps > Wishlist (Android) > Bottom Navigation - QASA-160
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Wishlist
-#    Click Home
-#    Click Search Home
-#    ${PLID}=    Search Product And Return PLID API    sunlight dish washing liquid
-#    ${productTitle}=    Get Product Title By PLID API    ${PLID}
-#    Search Product    sunlight dish washing liquid
-#    Click Product From Search Result    ${productTitle}
-#    Click Add To Wishlist
-#    Close Application
-#    Start Application    ${False}
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    sunlight dish washing liquid
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    Search Product    sunlight dish washing liquid
+    Click Product From Search Result    ${productTitle}
+    Click Add To Wishlist
+    Close Application
+    Start Application    ${False}
     Click Home
     Click Wishlist Nav Bar
     Click Wishlist Default
@@ -965,15 +938,13 @@ Apps > Wishlist (iOS) - QASA-472
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Menu
-#    Click Menu Shop By Department
-#    Click Menu Daily Deals
-#    Click Daily Deals Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Menu
+    Click Menu Shop By Department
+    Click Menu Daily Deals
+    Click Daily Deals Product from API
+    Click Add To Cart
+    Click Go To Cart
     Change Cart Quantity    2
     Click Checkout Delete First Item
     Run Keyword If    '${PLATFORM_NAME}' == 'android'    Click Checkout Cart Undo
@@ -1128,14 +1099,12 @@ Apps > My Account Verifications - QASA-1056
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    Address successfully deleted    ${MIN_TIMEOUT}
     Close Application
     Start Application
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout
     Click Delivery
     Verify Text On Screen    13 Caro Road, Robertsham, Johannesburg South, Gauteng, 2091    ${MIN_TIMEOUT}
@@ -1196,14 +1165,12 @@ Apps > Order Tracking (Collect) - QASA-547
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout
     Click Collect
     Display WC Province Pickup Points
@@ -1255,14 +1222,12 @@ Apps > Order Tracking 05 - QASA-79
     #Test Setup
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Fridg
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Fridg
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout
     Click Delivery
     Click Address By Index
@@ -1314,14 +1279,12 @@ Apps > Cart (Android) > QASA-524 - QASA-81
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout Delete First Item
     Click Checkout Cart Undo
     Click Checkout Android
@@ -1333,14 +1296,12 @@ Apps > Cart (Android) > QASA-1062 - QASA-81
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout Delete First Item
     Click Checkout Cart Undo
     Click Checkout Android
@@ -1353,18 +1314,16 @@ Apps > Cart (Android) 02 - QASA-84
     Clear Environment
 #    Click Menu Logout If Logged In
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    ${PLID}=    Search Product And Return PLID API    Pencil    enableHasMoreColoursFlag=${True}
-#    ${productTitle}=    Get Product Title By PLID API    ${PLID}
-#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
-#    Search Product    Pencil
-#    Click Product From Search Result    ${productTitle}
-#    Click Variant By Colour Dynamically    ${colourVariants}[0]
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    Pencil    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+    Search Product    Pencil
+    Click Product From Search Result    ${productTitle}
+    Click Variant By Colour Dynamically    ${colourVariants}[0]
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout Move To Wishlist First Item
     Click Cart Continue Shopping
     Click Home Cart
@@ -1376,18 +1335,16 @@ Apps > Cart (Android) 02 - QASA-84
     Close Application
     Start Application
     Clear Environment
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    ${PLID}=    Search Product And Return PLID API    Pencil    enableHasMoreColoursFlag=${True}
-#    ${productTitle}=    Get Product Title By PLID API    ${PLID}
-#    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
-#    Search Product    Pencil
-#    Click Product From Search Result    ${productTitle}
-#    Click Variant By Colour Dynamically    ${colourVariants}[0]
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    ${PLID}=    Search Product And Return PLID API    Pencil    enableHasMoreColoursFlag=${True}
+    ${productTitle}=    Get Product Title By PLID API    ${PLID}
+    @{colourVariants}=    Get Product Variants By PLID API    ${PLID}    Colour
+    Search Product    Pencil
+    Click Product From Search Result    ${productTitle}
+    Click Variant By Colour Dynamically    ${colourVariants}[0]
+    Click Add To Cart
+    Click Go To Cart
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Change Cart Quantity    2
     Run Keyword If    '${PLATFORM_NAME}'=='ios'    Change Cart Quantity    2
     Click Checkout
@@ -1398,18 +1355,16 @@ Apps > Cart (Android) 04 - QASA-83 / QASA-82
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    ${telkomProductPLID}=    Search Product And Return PLID API    Telkom
-#    ${telkomProductTitle}=    Get Product Title By PLID API    ${telkomProductPLID}
-#    Search Product    Telkom
-#    Click Product From Search Result    ${telkomProductTitle}
-#    @{telkomProductVariants}=    Get Product Variants By PLID API    ${telkomProductPLID}    Value
-#    Click Variant By Value Dynamically    ${telkomProductVariants}[0]
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    ${telkomProductPLID}=    Search Product And Return PLID API    Telkom
+    ${telkomProductTitle}=    Get Product Title By PLID API    ${telkomProductPLID}
+    Search Product    Telkom
+    Click Product From Search Result    ${telkomProductTitle}
+    @{telkomProductVariants}=    Get Product Variants By PLID API    ${telkomProductPLID}    Value
+    Click Variant By Value Dynamically    ${telkomProductVariants}[0]
+    Click Add To Cart
+    Click Go To Cart
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The prepaid code will be delivered to you via email    ${MIN_TIMEOUT}
     [Teardown]    Tear Down
 
@@ -1418,27 +1373,24 @@ Apps > Cart (Android) 04 - QASA-1058 / QASA-82
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-#    Click Home
-#    Click Search Home
-#    ${bookProductPLID}=    Search Product And Return PLID API    Book
-#    ${bookProductTitle}=    Get Product Title By PLID API    ${bookProductPLID}
-#    Search Product    Book
-#    Click Product From Search Result    ${bookProductTitle} 
-#    Click Add To Cart
-#    Click Go To Cart
-#    Close Application
-#    Start Application
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    ${voucherProductPLID}=    Search Product And Return PLID API    vouche
-#    ${voucherProductTitle}=    Get Product Title By PLID API    ${voucherProductPLID}
-#    Search Product    vouche
-#    Click Product From Search Result    ${voucherProductTitle}
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    ${bookProductPLID}=    Search Product And Return PLID API    Book
+    ${bookProductTitle}=    Get Product Title By PLID API    ${bookProductPLID}
+    Search Product    Book
+    Click Product From Search Result    ${bookProductTitle} 
+    Click Add To Cart
+    Click Go To Cart
+    Close Application
+    Start Application
+    Click Home
+    Click Search Home
+    ${voucherProductPLID}=    Search Product And Return PLID API    vouche
+    ${voucherProductTitle}=    Get Product Title By PLID API    ${voucherProductPLID}
+    Search Product    vouche
+    Click Product From Search Result    ${voucherProductTitle}
+    Click Add To Cart
+    Click Go To Cart
     Verify Element On Screen    ${btnWishListIcon}    ${MIN_TIMEOUT}
     Run Keyword If    '${PLATFORM_NAME}'=='android'    Verify Text On Screen    The gift voucher will be delivered via email to the recipient    ${MIN_TIMEOUT}
     Swipe Up    ${windowScroll}
@@ -1473,14 +1425,12 @@ Cart Update & Cart Notification - TV - QASA-248
     [Setup]    Start Application    ${False}
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout
     Click Delivery
     Click Address
@@ -1495,14 +1445,12 @@ Cart Update & Cart Notification - TV - QASA-248
     Close Application
     Start Application
     Clear Environment
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout
     Click Delivery
     Click Address
@@ -1558,14 +1506,12 @@ Cart Update & Cart Notification - Heavy Good (Delivery) - QASA-247
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout
     Click Delivery
     Click Address
@@ -1584,14 +1530,12 @@ Cart Update & Cart Notification - Heavy Good (Collect) - QASA-1023
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    Pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    Pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout
     Click Delivery
     Click Address
@@ -1726,14 +1670,12 @@ Apps > Checkout > Payment > Credit Card - Success Payment - Existing Order - QAS
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    pencil
-#    Click Product from API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product from API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout
     Click Delivery
     Click Address
@@ -1758,14 +1700,12 @@ Apps > Checkout > Payment > Pay with PayFast - QASA-539
     [Setup]    Start Application
     Clear Environment
     Log In If Not Logged In    ${G_EMAIL}    ${G_PASSWORD}
-    Add To Cart
-    Click Home Cart
-#    Click Home
-#    Click Search Home
-#    Search Product    pencil
-#    Click Product From API
-#    Click Add To Cart
-#    Click Go To Cart
+    Click Home
+    Click Search Home
+    Search Product    pencil
+    Click Product From API
+    Click Add To Cart
+    Click Go To Cart
     Click Checkout
     Click Delivery
     Click Address
