@@ -171,7 +171,7 @@ Click Related Products Sponsored
     Click Element    ${lblPDPRelatedProdSponsored}
 
 Click Related Products Sponsored OK
-    Wait Until Element Is Visible    ${lblPDPRelatedProdSponsoredOK}    ${MIN_TIMEOUT}
+    Wait Until Element Is Visible    ${lblPDPRelatedProdSponsoredOK}    ${MIN_TIMEOUT}  
     Click Element    ${lblPDPRelatedProdSponsoredOK}
 
 Click Continue Shopping iOS

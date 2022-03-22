@@ -21,11 +21,14 @@ Verify Card Payment
 Verify Payfast Payment Text
     Set Implicitly Wait    1
     ${success}=    Set Variable    ${False}
-    FOR    ${counter}    IN RANGE    1    120
+    FOR    ${counter}    IN RANGE    1    90
         Log    ${counter}
         ${success}=    Run Keyword And Return Status    Verify Text On Screen    Instant EFT    ${MIN_TIMEOUT}
         IF    ${success}==${False}
             ${success}=    Run Keyword And Return Status    Verify Text On Screen    Test Merchant    ${MIN_TIMEOUT}
+        END
+        IF    ${success}==${False}
+            ${success}=    Run Keyword And Return Status    Verify Text On Screen    How can we get hold of you?    1s
         END
         IF    ${success}==${True}
             Exit For Loop
